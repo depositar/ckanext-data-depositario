@@ -1,0 +1,6 @@
+python-dateutil
+geomet>=0.1.0
+ckanext-pdfview>=0.0.5
+git+git://github.com/open-data/ckanext-scheming.git@bef270c#egg=ckanext-scheming
+-e git+git://github.com/open-data/ckanext-repeating.git#egg=ckanext-repeating
+-e git+git://github.com/ckan/ckanext-pages.git#egg=ckanext-pages

@@ -1,0 +1,11 @@
+{# For old schema definition #}
+{% if data.get(field.field_name) is string %}
+  {% do data.update({field.field_name: [data[field.field_name]]}) %}
+{% endif %}
+
+{%- set values = data[field.field_name] -%}
+<ol>
+{%- for element in values -%}
+  <li>{{ element }}</li>
+{%- endfor -%}
+</ol>

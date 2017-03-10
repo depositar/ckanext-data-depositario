@@ -1,0 +1,23 @@
+<h3>{{ title }}</h3>
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th scope="col">{{ _('Field') }}</th>
+      <th scope="col">{{ _('Value') }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- for field in schema.dataset_fields -%}
+      {%- if pkg_dict[field.field_name] and field.field_name not in exclude_fields and field.field_name in additional_fields -%}
+        <tr>
+          <th scope="row" class="dataset-label">{{
+            h.scheming_language_text(field.label) }}</th>
+          <td class="dataset-details"{%
+            if field.display_property %} property="{{ field.display_property
+            }}"{% endif %}>{%- snippet 'scheming/snippets/display_field.html',
+            field=field, data=pkg_dict -%}</td>
+        </tr>
+      {%- endif -%}
+    {%- endfor -%}
+  </tbody>
+</table>

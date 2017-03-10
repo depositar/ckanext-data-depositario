@@ -1,0 +1,81 @@
+{% extends 'package/new_package_form.html' %}
+
+{# For old schema definition #}
+{% if data.get('extras', [])|length %}
+  {% set extras = h.extras_to_dict(data) %}
+  {% do data.update(extras) %}
+{% endif %}
+{% for field_name in ['ref', 'loc_keyword'] %}
+  {% do data.update({field_name: h.string_to_list(data.get(field_name))}) %}
+{% endfor %}
+{% set old_values = [] %}
+{% if data.get('theme_keyword_1') %}
+  {% do old_values.append(data.theme_keyword_1) %}
+{% elif data.get('theme_keyword_2') %}
+  {% do old_values.append(data.theme_keyword_2) %}
+{% elif data.get('theme_keyword_3') %}
+  {% do old_values.append(data.theme_keyword_3) %}
+{% elif data.get('theme_keyword_4') %}
+  {% do old_values.append(data.theme_keyword_4) %}
+{% elif data.get('theme_keyword_5') %}
+  {% do old_values.append(data.theme_keyword_5) %}
+{% endif %}
+{% if old_values|length %}
+  {% do data.update({'theme_keyword': old_values}) %}
+{% endif %}
+
+{% block basic_fields %}
+  {%- if not dataset_type -%}
+    <p>
+    dataset_type not passed to template. your version of CKAN
+    might not be compatible with ckanext-scheming
+    </p>
+  {%- endif -%}
+  {%- set schema = h.scheming_get_dataset_schema(dataset_type) -%}
+  {%- for field in schema.dataset_fields -%}
+    {# For old schema definition #}
+    {% if field.field_name == 'book_isbn' %}
+      <div id="book-fields">
+      <legend><h2> {{ _('Book') }} </h2></legend>
+    {% elif field.field_name == 'scan_source' %}
+      </div>
+      <div id="scanned-image-fields">
+      <legend><h2> {{ _('Scanned Image') }} </h2></legend>
+    {% elif field.field_name == 'crs' %}
+      </div>
+      <div id="spatial-type-fields">
+      <legend><h2> {{ _('Spatial Type') }} </h2></legend>
+    {% elif field.field_name == 'time_period' %}
+      </div>
+      <legend><h2> {{ _('Temporal Information') }} ({{ _('Time Period of Dataset') }})</h2></legend>
+    {% elif field.field_name == 'author_name' %}
+      <legend><h2>{{ _('Contact Information') }}</h2></legend>
+    {% elif field.field_name == 'theme_keyword' %}
+      <legend><h2> {{ _('Keywords') }} </h2></legend>
+    {% elif field.field_name == 'loc_keyword' %}
+      <legend><h2> {{ _('Spatial Fields') }} </h2></legend>
+    {% elif field.field_name == 'language' %}
+      {% set gmap_config = h.get_gmap_config() %}
+      <div class="control-group control-medium">
+        <div class="controls">
+          <button id='convert_from_four_range' class='btn btn-primary' type='button'>{{_('Convert from Parcel Corner')}}</button>
+          <button id='show_map' class='btn btn-primary' type='button'>{{_('Using a Map')}}</button>
+	  <div data-module='map' id='map' data-module-gmap_config='{{ h.dump_json(gmap_config) }}'></div>
+        </div>
+      </div>
+      <legend><h2> {{_('Miscellaneous') }} </h2></legend>
+    {% endif %}
+    {%- snippet 'scheming/snippets/form_field.html',
+      field=field, data=data, errors=errors, licenses=c.licenses,
+      schema=schema -%}
+  {%- endfor -%}
+
+  {% resource 'ckanext-data-depositario/package_form' %}
+
+{% endblock %}
+
+{% block metadata_fields %}
+{% endblock %}
+
+{% block disclaimer %}
+{% endblock %}

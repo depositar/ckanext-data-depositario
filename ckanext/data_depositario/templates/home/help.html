@@ -1,0 +1,28 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Help') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">
+    <a class="active" href="/help">{{ _('Help') }}</a>
+  </li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+    <h2>{{ _('Manuals') }}</h2>
+    <ul>
+      <li><a href="http://www.slideshare.net/u10313335/ckan-application/" class="external" target="_blank">{{ _('Manual (In Chinese)') }}</a></li>
+      <li><a href="http://www.slideshare.net/u10313335/ckan-20-introduction140618/" class="external" target="_blank">{{ _('Introduction to CKAN') }}</a></li>
+    </ul>
+    <h2>{{ _('Bulk Upload Instructions and Sample File (for uploading 20 or more datasets)') }}</h2>
+    <ul>
+      <li>{{ _('Instructions (In Chinese)') }} (20150228 updated): <a href="http://goo.gl/5FFp1M" class="external" target="_blank">{{ _('Download Here') }}</a></li>
+      <li>{{ _('Template') }} (20150228 updated): <a href="http://goo.gl/50l7xH" class="external" target="_blank">{{ _('Download Here') }}</a> {{ _('Select "File" → "Download as" → "Microsoft Excel (.xlsx)" in the opened window.') }}</li>
+    </ul>
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}

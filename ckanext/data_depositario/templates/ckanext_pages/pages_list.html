@@ -1,0 +1,20 @@
+{% ckan_extends %}
+
+{% block subtitle %}{{ _('News') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">
+    <a class="active" href="/pages">{{ _('News') }}</a>
+  </li>
+{% endblock %}
+
+{% block page_primary_action %}
+  {% if h.check_access('ckanext_pages_update', {}) %}
+    {% link_for _('Add News'), controller='ckanext.pages.controller:PagesController', action='pages_edit', page='', class_='btn btn-primary', icon='plus-sign-alt' %}
+  {% endif %}
+{% endblock %}
+
+{% block primary_content_inner %}
+  <h1 class="hide-heading">{{ _('News') }}</h1>
+  {% snippet 'ckanext_pages/snippets/pages_list.html', pages=c.pages_dict %}
+{% endblock %}

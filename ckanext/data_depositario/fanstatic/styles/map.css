@@ -1,0 +1,12 @@
+#map {
+  height: 400px;
+}
+
+#map input {
+  width: auto;
+  top: auto;
+}
+
+#map label:after {
+  content: none;
+}

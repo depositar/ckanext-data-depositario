@@ -1,0 +1,146 @@
+{%- set exclude_fields = [
+    'title',
+    'name',
+    'notes',
+    'tag_string',
+    'license_id',
+    'owner_org',
+    ] -%}
+
+{%- set additional_fields = [
+    'identifier',
+    'data_type',
+    'proj',
+    'created_time',
+    'language',
+    'encoding',
+    'ref',
+    ] -%}
+
+{%- set temporal_fields = [
+    'start_time',
+    'end_time',
+    ] -%}
+
+{%- set contact_fields = [
+    'author_name',
+    'author_mail',
+    'author_phone',
+    'maintainer_name',
+    'maintainer_mail',
+    'maintainer_phone',
+    ] -%}
+
+{%- set theme_keyword_field = [
+    'theme_keyword',
+    ] -%}
+
+{%- set theme_fields = [
+    'theme_keyword_1',
+    'theme_keyword_2',
+    'theme_keyword_3',
+    'theme_keyword_4',
+    'theme_keyword_5',
+    ] -%}
+
+{%- set spatial_fields = [
+    'loc_keyword',
+    'x_min',
+    'x_max',
+    'y_min',
+    'y_max',
+    'spatial',
+    ] -%}
+
+{%- set scanned_image_fields = [
+    'scan_source',
+    'scan_size',
+    'scan_res',
+    ] -%}
+
+{%- set spatial_type_fields = [
+    'crs',
+    'spatial_res',
+    'scale',
+    'preprocessing'
+    ] -%}
+  
+{%- set book_fields = [
+    'book_isbn',
+    'book_issn',
+    'book_journal',
+    'book_volume',
+    'book_proceeding',
+    'book_location',
+    'book_publisher',
+    'book_year',
+    'book_query',
+    'book_url',
+    'book_hist_materials'
+    ] -%}
+
+{# For old schema definition #}
+{% if pkg_dict.get('extras', [])|length %}
+  {% set extras = h.extras_to_dict(pkg_dict) %}
+  {% do pkg_dict.update(extras) %}
+{% endif %}
+{% for field_name in ['ref', 'loc_keyword'] %}
+  {% do pkg_dict.update({field_name: h.string_to_list(pkg_dict.get(field_name))}) %}
+{% endfor %}
+{% set old_values = [] %}
+{% if pkg_dict.get('theme_keyword_1') %}
+  {% do old_values.append(pkg_dict.theme_keyword_1) %}
+{% elif pkg_dict.get('theme_keyword_2') %}
+  {% do old_values.append(pkg_dict.theme_keyword_2) %}
+{% elif pkg_dict.get('theme_keyword_3') %}
+  {% do old_values.append(pkg_dict.theme_keyword_3) %}
+{% elif pkg_dict.get('theme_keyword_4') %}
+  {% do old_values.append(pkg_dict.theme_keyword_4) %}
+{% elif pkg_dict.get('theme_keyword_5') %}
+  {% do old_values.append(pkg_dict.theme_keyword_5) %}
+{% endif %}
+{% if old_values|length %}
+  {% do pkg_dict.update({'theme_keyword': old_values}) %}
+{% endif %}
+
+<section class="additional-info">
+  {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Basic Information'), pkg_dict=pkg_dict, additional_fields=additional_fields, exclude_fields=exclude_fields, schema=schema %}
+</section>
+
+{% if pkg_dict.get('start_time') %}
+  <section class="additional-info">
+    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Temporal Information'), pkg_dict=pkg_dict, additional_fields=temporal_fields, exclude_fields=exclude_fields, schema=schema %}
+  </section>
+{% endif %}
+
+<sction class="additional-info">
+  {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Contact Information'), pkg_dict=pkg_dict, additional_fields=contact_fields, exclude_fields=exclude_fields, schema=schema %}
+
+{% if pkg_dict.get('theme_keyword') %}
+  <sction class="additional-info">
+    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Keywords'), pkg_dict=pkg_dict, additional_fields=theme_keyword_field, exclude_fields=exclude_fields, schema=schema %}
+{% endif %}
+
+{% if pkg_dict.get('loc_keyword') or pkg_dict.get('x_min') or pkg_dict.get('x_max') or pkg_dict.get('y_min') or pkg_dict.get('y_max') or pkg_dict.get('spatial') %}
+  <section class="additional-info">
+    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Spatial Fields'), pkg_dict=pkg_dict, additional_fields=spatial_fields, exclude_fields=exclude_fields, schema=schema %}
+  </section>
+{% endif %}
+
+{% if pkg_dict.get('scan_source') or pkg_dict.get('scan_size') or pkg_dict.get('scan_res') %}
+  <section class="additional-info">
+    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Scanned Image'), pkg_dict=pkg_dict, additional_fields=scanned_image_fields, exclude_fields=exclude_fields, schema=schema %}
+  </section>
+{% endif %}
+
+{% if pkg_dict.get('crs') or pkg_dict.get('spatial_res') or pkg_dict.get('scale') or pkg_dict.get('preprocessing') %}
+  <section class="additional-info">
+    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Spatial Type'), pkg_dict=pkg_dict, additional_fields=spatial_type_fields, exclude_fields=exclude_fields, schema=schema %}
+  </section>
+{% endif %}
+
+{% if pkg_dict.get('book_isbn') or pkg_dict.get('booak_issn') or pkg_dict.get('book_journal') or pkg_dict.get('book_volume') or pkg_dict.get('book_proceeding') or pkg_dict.get('book_location') or pkg_dict.get('book_publisher') or pkg_dict.get('book_year') or pkg_dict.get('book_query') or pkg_dict.get('book_url') or pkg_dict.get('book_hist_materials') %}
+  <section class="additional-info">
+    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Book'), pkg_dict=pkg_dict, additional_fields=book_fields, exclude_fields=exclude_fields, schema=schema %}
+  </section>
+{% endif %}

@@ -1,0 +1,1896 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "dataset",
+  "about_url": "https://github.com/depositar-io/ckanext-data-depositario",
+  "dataset_fields": [
+    {
+      "field_name": "title",
+      "label": {
+        "en": "Title",
+	"zh_TW": "標題"
+      },
+      "preset": "title",
+      "form_placeholder": {
+        "en": "eg. A descriptive title",
+	"zh_TW": "例如：一個描述性的標題"
+      }
+    },
+    {
+      "field_name": "name",
+      "label": {
+        "en": "URL",
+	"zh_TW": "網址"
+      },
+      "preset": "dataset_slug",
+      "validators": "not_empty unicode package_name_validator",
+      "form_placeholder": {
+        "en": "eg. my-dataset",
+	"zh_TW": "例如：我的資料集"
+      }
+    },
+    {
+      "field_name": "notes",
+      "label": {
+        "en": "Description",
+        "zh_TW": "摘要"
+      },
+      "form_snippet": "markdown.html",
+      "form_placeholder": {
+        "en": "eg. Some useful notes about the data",
+        "zh_TW": "例如: 此資料一些有用的紀錄"
+      }
+    },
+    {
+      "field_name": "identifier",
+      "label": {
+        "en": "Identifier",
+        "zh_TW": "識別碼"
+      }
+    },
+    {
+      "field_name": "data_type",
+      "label": {
+        "en": "Data Type",
+	"zh_TW": "資料類型"
+      },
+      "preset": "select",
+      "required": true,
+      "form_attrs": {
+        "data-module": "autocomplete"
+      },
+      "choices": [
+        {
+          "value": "statistics",
+	  "label": {
+  	    "en": "Statistics",
+  	    "zh_TW": "統計資料"
+	  }
+        },
+	{
+	  "value": "books",
+	  "label": {
+  	    "en": "Books",
+  	    "zh_TW": "文獻書籍"
+	  }
+	},
+        {
+          "value": "pics_non_spatial",
+          "label": {
+            "en": "Pictures (Non spatial)",
+            "zh_TW": "掃描圖像 (非空間類)"
+           }
+        },
+        {
+          "value": "pics_spatial",
+          "label": {
+            "en": "Pictures (Spatial)",
+            "zh_TW": "掃描圖像 (空間類)"
+           }
+        },
+        {
+          "value": "grid",
+          "label": {
+            "en": "Grid",
+            "zh_TW": "網格資料"
+          }
+        },
+        {
+          "value": "vector",
+          "label": {
+            "en": "Vector",
+            "zh_TW": "向量資料"
+          }
+        },
+        {
+          "value": "tin",
+          "label": {
+            "en": "Tin",
+            "zh_TW": "不規則三角網"
+          }
+        },
+        {
+          "value": "steropair",
+          "label": {
+            "en": "Steropair",
+            "zh_TW": "立體像對"
+          }
+        },
+        {
+          "value": "multimedia",
+          "label": {
+            "en": "Multimedia",
+            "zh_TW": "影音多媒體"
+          }
+        }
+      ]
+    },
+    {
+      "field_name": "proj",
+      "label": {
+        "en": "Sub Project",
+        "zh_TW": "所屬子計畫"
+      },
+      "preset": "select_modified",
+      "choices": [
+        {
+          "value": "proj_1",
+          "label": {
+            "en": "Sub Project 1",
+            "zh_TW": "子計畫一"
+          }
+        },
+        {
+          "value": "proj_2",
+          "label": {
+            "en": "Sub Project 2",
+            "zh_TW": "子計畫二"
+          }
+        },
+        {
+          "value": "proj_3",
+          "label": {
+            "en": "Sub Project 3",
+            "zh_TW": "子計畫三"
+          }
+        },
+        {
+          "value": "proj_4",
+          "label": {
+            "en": "Sub Project 4",
+            "zh_TW": "子計畫四"
+          }
+        }
+      ]
+    },
+    {
+      "field_name": "created_time",
+      "label": {
+        "en": "Created Time",
+	"zh_TW": "資料建置時間"
+      },
+      "preset": "date_modified",
+      "validators": "ignore_missing date_validator",
+      "has_temp_res": false,
+      "help_text": {
+        "en": "The time when data become available. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'. Missing month (Day) will be filled with '01'",
+        "zh_TW": "此處填寫資料產出時間，接受的格式為 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'。若未填寫月 (日)，則由 '01' 取代。"
+      }
+    },
+    {
+      "field_name": "owner_org",
+      "label": {
+        "en": "Organization",
+        "zh_TW": "組織"
+      },
+      "preset": "dataset_organization"
+    },
+    {
+      "field_name": "book_isbn",
+      "label": {
+        "en": "ISBN-13",
+        "zh_TW": "ISBN-13"
+      },
+      "form_placeholder": "978-1-234-56789-7"
+    },
+    {
+      "field_name": "book_issn",
+      "label": {
+        "en": "ISSN",
+        "zh_TW": "ISSN"
+      },
+      "form_placeholder": "1234-5678"
+    },
+    {
+      "field_name": "book_journal",
+      "label": {
+        "en": "Journal",
+        "zh_TW": "期刊"
+      }
+    },
+    {
+      "field_name": "book_volume",
+      "label": {
+        "en": "Volume",
+        "zh_TW": "卷期"
+      }
+    },
+    {
+      "field_name": "book_proceeding",
+      "label": {
+        "en": "Proceeding",
+        "zh_TW": "論文集名稱"
+      }
+    },
+    {
+      "field_name": "book_location",
+      "label": {
+        "en": "Location",
+        "zh_TW": "出版地"
+      }
+    },
+    {
+      "field_name": "book_publisher",
+      "label": {
+        "en": "Publisher",
+        "zh_TW": "出版單位"
+      }
+    },
+    {
+      "field_name": "book_year",
+      "label": {
+        "en": "Publication Year",
+        "zh_TW": "出版年"
+      }
+    },
+    {
+      "field_name": "book_query",
+      "label": {
+        "en": "Book Query",
+        "zh_TW": "書目查詢"
+      }
+    },
+    {
+      "field_name": "book_url",
+      "label": {
+        "en": "URL",
+        "zh_TW": "網址"
+      }
+    },
+    {
+      "field_name": "book_hist_materials",
+      "label": {
+        "en": "Historical Material",
+	"zh_TW": "使用史料"
+      },
+      "preset": "multiple_choice",
+      "choices": [
+        {
+          "value": "local_chronicles_in_qing_dynasty",
+          "label": {
+            "en": "Local chronicles in Qing dynasty",
+            "zh_TW": "清代方志"
+          }
+        },
+        {
+          "value": "japan_officials",
+          "label": {
+            "en": "Japan officials",
+	    "zh_TW": "日治出版品與官方資料"
+	  }
+        },
+        {
+          "value": "officials_in_postwar_period",
+          "label": {
+	    "en": "Officials in postwar period",
+	    "zh_TW": "戰後官方資料與鄉鎮志"
+	  }
+        },
+        {
+          "value": "inscriptions",
+          "label": {
+	    "en": "Inscriptions",
+	    "zh_TW": "碑文"
+	  }
+        },
+        {
+          "value": "newspapers",
+          "label": {
+	    "en": "Newspapers",
+	    "zh_TW": "報紙"
+	  }
+        },
+        {
+          "value": "maps",
+          "label": {
+            "en": "Maps",
+            "zh_TW": "地圖"
+          }
+        },
+        {
+          "value": "taiwanese_governor_office_files",
+          "label": {
+            "en": "Taiwanese Governor Office Files",
+            "zh_TW": "台灣總督府檔案（公文類纂、府報、調查報告、職員錄、衛生法規）"
+          }
+        },
+        {
+          "value": "dutch_formosa",
+          "label": {
+            "en": "Dutch Formosa",
+            "zh_TW": "荷治時期檔案"
+          }
+        },
+        {
+          "value": "field_researches",
+          "label": {
+            "en": "Field Researches",
+            "zh_TW": "地方田野收集文獻（族譜、寺廟志、帳冊、契約）"
+          }
+        }
+      ]
+    },
+    {
+      "field_name": "book_area_village",
+      "label": {
+        "en": "Village of Research Area",
+        "zh_TW": "研究區的聚落名"
+      }
+    },
+    {
+      "field_name": "book_area_religion",
+      "label": {
+        "en": "Religion of Research Area",
+        "zh_TW": "研究區的宗教"
+      }
+    },
+    {
+      "field_name": "book_area_family",
+      "label": {
+        "en": "Family of Research Area",
+        "zh_TW": "研究區的家族"
+      }
+    },
+    {
+      "field_name": "book_area_reservoir",
+      "label": {
+        "en": "Reservoir of Research Area",
+        "zh_TW": "研究區的埤圳"
+      }
+    },
+    {
+      "field_name": "book_area_industry",
+      "label": {
+        "en": "Industry of Research Area",
+        "zh_TW": "研究區的特殊產業"
+      }
+    },
+    {
+      "field_name": "book_notes",
+      "label": {
+        "en": "Notes",
+        "zh_TW": "備註"
+      }
+    },
+    {
+      "field_name": "scan_source",
+      "label": {
+        "en": "Scan Source",
+        "zh_TW": "掃描原件來源"
+      }
+    },
+    {
+      "field_name": "scan_size",
+      "label": {
+        "en": "Scan Size",
+        "zh_TW": "掃描原件尺寸"
+      },
+      "form_placeholder": {
+        "en": "填寫原件尺寸大小，單位為公分，如 60x72",
+	"zh_TW": "填寫原件尺寸大小，單位為公分，如 60x72"
+      }
+    },
+    {
+      "field_name": "scan_res",
+      "label": {
+        "en": "Scan Resolution",
+        "zh_TW": "掃描解析度"
+      },
+      "validators": "ignore_missing positive_integer_validator",
+      "form_placeholder": {
+        "en": "填寫掃描解析度數值，單位為 DPI，如 300",
+	"zh_TW": "填寫掃描解析度數值，單位為 DPI，如 300"
+      }
+    },
+    {
+      "field_name": "spatial_res",
+      "label": {
+        "en": "Spatial Resolution",
+        "zh_TW": "空間解析度"
+      },
+      "validators": "ignore_missing positive_float_validator",
+      "form_placeholder": {
+        "en": "填寫資料空間解析度數值，以公尺為單位",
+	"zh_TW": "填寫資料空間解析度數值，以公尺為單位"
+      }
+    },
+    {
+      "field_name": "scale",
+      "label": {
+        "en": "Scale",
+        "zh_TW": "比例尺"
+      },
+      "validators": "ignore_missing positive_integer_validator",
+      "form_placeholder": {
+        "en": "填寫資料比例尺之分母",
+	"zh_TW": "填寫資料比例尺之分母"
+      }
+    },
+    {
+      "field_name": "preprocessing",
+      "label": {
+        "en": "Preprocessing",
+        "zh_TW": "資料處理歷程"
+      },
+      "form_placeholder": {
+        "en": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫",
+	"zh_TW": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫"
+      },
+      "form_snippet": "markdown.html"
+    },
+    {
+      "field_name": "time_period",
+      "label": {
+        "en": "Time Period Shortcut",
+        "zh_TW": "時間區間捷徑"
+      },
+      "preset": "select_modified",
+      "help_text": {
+        "en": "This shortcut provides some historical periods for filling temporal information of the dataset.",
+        "zh_TW": "此捷徑提供部分歷史時期，供您快速填寫資料歷史年代。"
+      },
+      "help_inline": true,
+      "form_attrs": {
+        "data-module": "autocomplete"
+      },
+      "choices": [
+        {
+          "value": "荷西時期 (1624-1662)",
+          "label": "荷西時期 (1624-1662)"
+        },
+        {
+          "value": "明鄭時期 (1661-1683)",
+          "label": "明鄭時期 (1661-1683)"
+        },
+        {
+          "value": "清康熙時期 (1662-1722)",
+          "label": "清康熙時期 (1662-1722)"
+        },
+        {
+          "value": "清治前期 (1684-1786)",
+          "label": "清治前期 (1684-1786)"
+        },
+        {
+          "value": "清雍正時期 (1723-1735)",
+          "label": "清雍正時期 (1723-1735)"
+        },
+        {
+          "value": "清乾隆時期 (1736-1795)",
+          "label": "清乾隆時期 (1736-1795)"
+        },
+        {
+          "value": "清治後期 (1787-1895)",
+          "label": "清治後期 (1787-1895)"
+        },
+        {
+          "value": "清嘉慶時期 (1796-1820)",
+          "label": "清嘉慶時期 (1796-1820)"
+        },
+        {
+          "value": "清道光時期 (1821-1850)",
+          "label": "清道光時期 (1821-1850)"
+        },
+        {
+          "value": "清咸豐時期 (1851-1861)",
+          "label": "清咸豐時期 (1851-1861)"
+        },
+        {
+          "value": "清同治時期 (1862-1874)",
+          "label": "清同治時期 (1862-1874)"
+        },
+        {
+          "value": "清光緒時期 (1875-1908)",
+          "label": "清光緒時期 (1875-1908)"
+        },
+        {
+          "value": "日治時期 (1895-1945)",
+          "label": "日治時期 (1895-1945)"
+        },
+        {
+          "value": "日治時期 (明治) (1895-1911)",
+          "label": "日治時期 (明治) (1895-1911)"
+        },
+        {
+          "value": "日治時期 (大正) (1912-1925)",
+          "label": "日治時期 (大正) (1912-1925)"
+        },
+        {
+          "value": "日治時期 (昭和) (1926-1945)",
+          "label": "日治時期 (昭和) (1926-1945)"
+        },
+        {
+          "value": "太平洋戰爭時期 (1941-1945)",
+          "label": "太平洋戰爭時期 (1941-1945)"
+        },
+        {
+	  "value": "戰後 (1945-)",
+	  "label": "戰後 (1945-)"
+        }
+      ]
+    },
+    {
+      "field_name": "temp_res",
+      "label": {
+        "en": "Temporal Resolution",
+        "zh_TW": "時間解析度"
+      },
+      "preset": "select_modified",
+      "choices": [
+        {
+          "value": "year",
+          "label": {
+            "en": "Year",
+            "zh_TW": "年"
+          }
+        },
+       {
+         "value": "decade",
+         "label": {
+           "en": "Decade",
+           "zh_TW": "十年"
+         }
+       },
+       {
+         "value": "century",
+         "label": {
+           "en": "Century",
+           "zh_TW": "一百年"
+         }
+       },
+       {
+         "value": "date",
+         "label": {
+           "en": "Date",
+           "zh_TW": "日"
+         }
+       },
+       {
+         "value": "month",
+         "label": {
+           "en": "Month",
+           "zh_TW": "月"
+         }
+       }
+      ]
+    },
+    {
+      "field_name": "start_time",
+      "label": {
+        "en": "Start Time",
+	"zh_TW": "起始時間"
+      },
+      "preset": "date_modified",
+      "validators": "ignore_missing temp_res_validator",
+      "help_text": {
+        "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
+	"zh_TW": "由時間解析度決定。接受的格式為 'YYYY' (年/十年/百年)、'YYYY-MM' (月)、'YYYY-MM-DD' (日)。"
+      },
+      "help_inline": true
+    },
+    {
+      "field_name": "end_time",
+      "label": {
+        "en": "End Time",
+        "zh_TW": "結束時間"
+      },
+      "preset": "date_modified",
+      "validators": "ignore_missing temp_res_validator",
+      "help_text": {
+        "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
+        "zh_TW": "由時間解析度決定。接受的格式為 'YYYY' (年/十年/百年)、'YYYY-MM' (月)、'YYYY-MM-DD' (日)。"
+      },
+      "help_inline": true
+    },
+    {
+      "field_name": "author_name",
+      "label": {
+        "en": "Author",
+        "zh_TW": "作者"
+      },
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator",
+      "validators": "not_empty",
+      "required": true
+    },
+    {
+      "field_name": "author_mail",
+      "label": {
+        "en": "Author Email",
+        "zh_TW": "作者的電子郵件"
+      },
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:creator",
+      "display_snippet": "email.html"
+    },
+    {
+      "field_name": "author_phone",
+      "label": {
+        "en": "Author Phone",
+        "zh_TW": "作者的聯絡電話"
+      },
+      "form_placeholder": "02-12345678"
+    },
+    {
+      "field_name": "maintainer_name",
+      "label": {
+        "en": "Maintainer",
+        "zh_TW": "維護者"
+      },
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:contributor"
+    },
+    {
+      "field_name": "maintainer_mail",
+      "label": {
+        "en": "Maintainer Email",
+        "zh_TW": "維護者的電子郵件"
+      },
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:contributor",
+      "display_snippet": "email.html"
+    },
+    {
+      "field_name": "maintainer_phone",
+      "label": {
+        "en": "Maintainer Phone",
+        "zh_TW": "維護者的聯絡電話"
+      },
+      "form_placeholder": "02-12345678"
+    },
+    {
+      "field_name": "theme_keyword",
+      "label": {
+        "en": "Theme Keyword",
+        "zh_TW": "主題關鍵字"
+      },
+      "preset": "repeating_select",
+      "validators": "repeating_text append_time_period duplicate_validator",
+      "form_attrs": {
+        "data-module": "autocomplete"
+      },
+      "choices": [
+        {
+          "value": "荷西時期 (1624-1662)",
+          "label": {
+            "en": "荷西時期 (1624-1662)",
+            "zh_TW": "荷西時期 (1624-1662)"
+          }
+        },
+        {
+          "value": "明鄭時期 (1661-1683)",
+          "label": {
+            "en": "明鄭時期 (1661-1683)",
+            "zh_TW": "明鄭時期 (1661-1683)"
+          }
+        },
+        {
+          "value": "清康熙時期 (1662-1722)",
+          "label": "清康熙時期 (1662-1722)"
+        },
+        {
+          "value": "清治前期 (1684-1786)",
+          "label": "清治前期 (1684-1786)"
+        },
+        {
+          "value": "清雍正時期 (1723-1735)",
+          "label": "清雍正時期 (1723-1735)"
+        },
+        {
+          "value": "清乾隆時期 (1736-1795)",
+          "label": "清乾隆時期 (1736-1795)"
+        },
+        {
+          "value": "清治後期 (1787-1895)",
+          "label": "清治後期 (1787-1895)"
+        },
+        {
+          "value": "清嘉慶時期 (1796-1820)",
+          "label": "清嘉慶時期 (1796-1820)"
+        },
+        {
+          "value": "清道光時期 (1821-1850)",
+          "label": "清道光時期 (1821-1850)"
+        },
+        {
+          "value": "清咸豐時期 (1851-1861)",
+          "label": "清咸豐時期 (1851-1861)"
+        },
+        {
+          "value": "清同治時期 (1862-1874)",
+          "label": "清同治時期 (1862-1874)"
+        },
+        {
+          "value": "清光緒時期 (1875-1908)",
+          "label": "清光緒時期 (1875-1908)"
+        },
+        {
+          "value": "日治時期 (1895-1945)",
+          "label": "日治時期 (1895-1945)"
+        },
+        {
+          "value": "日治時期 (明治) (1895-1911)",
+          "label": "日治時期 (明治) (1895-1911)"
+        },
+        {
+          "value": "日治時期 (大正) (1912-1925)",
+          "label": "日治時期 (大正) (1912-1925)"
+        },
+        {
+          "value": "日治時期 (昭和) (1926-1945)",
+          "label": "日治時期 (昭和) (1926-1945)"
+        },
+        {
+          "value": "太平洋戰爭時期 (1941-1945)",
+          "label": "太平洋戰爭時期 (1941-1945)"
+        },
+        {
+          "value": "戰後 (1945-)",
+          "label": "戰後 (1945-)"
+        },
+        {
+          "value": "事件",
+          "label": "事件"
+        },
+        {
+          "value": "災害",
+          "label": "災害"
+        },
+        {
+          "value": "地震",
+          "label": "地震"
+        },
+        {
+          "value": "水災",
+          "label": "水災"
+        },
+        {
+          "value": "颱風",
+          "label": "颱風"
+        },
+        {
+          "value": "政治",
+          "label": "政治"
+        },
+        {
+          "value": "荷蘭",
+          "label": "荷蘭"
+        },
+        {
+          "value": "西班牙",
+          "label": "西班牙"
+        },
+        {
+          "value": "日本",
+          "label": "日本"
+        },
+        {
+          "value": "清朝",
+          "label": "清朝"
+        },
+        {
+          "value": "國民政府",
+          "label": "國民政府"
+        },
+        {
+          "value": "行政區",
+          "label": "行政區"
+        },
+        {
+          "value": "行政機構",
+          "label": "行政機構"
+        },
+        {
+          "value": "聚落",
+          "label": "聚落"
+        },
+        {
+          "value": "地形",
+          "label": "地形"
+        },
+        {
+          "value": "沖積層",
+          "label": "沖積層"
+        },
+        {
+          "value": "海岸",
+          "label": "海岸"
+        },
+        {
+          "value": "海岸變遷",
+          "label": "海岸變遷"
+        },
+        {
+          "value": "地震",
+          "label": "地震"
+        },
+        {
+          "value": "斷層",
+          "label": "斷層"
+        },
+        {
+          "value": "氾濫平原",
+          "label": "氾濫平原"
+        },
+        {
+          "value": "潟湖",
+          "label": "潟湖"
+        },
+        {
+          "value": "地層下陷",
+          "label": "地層下陷"
+        },
+        {
+          "value": "沿岸漂沙",
+          "label": "沿岸漂沙"
+        },
+        {
+          "value": "沿岸沙洲",
+          "label": "沿岸沙洲"
+        },
+        {
+          "value": "沿岸流",
+          "label": "沿岸流"
+        },
+        {
+          "value": "溼地",
+          "label": "溼地"
+        },
+        {
+          "value": "古河道",
+          "label": "古河道"
+        },
+        {
+          "value": "沙丘",
+          "label": "沙丘"
+        },
+        {
+          "value": "海埔新生地",
+          "label": "海埔新生地"
+        },
+        {
+          "value": "水文",
+          "label": "水文"
+        },
+        {
+          "value": "河流",
+          "label": "河流"
+        },
+        {
+          "value": "流域",
+          "label": "流域"
+        },
+        {
+          "value": "水井",
+          "label": "水井"
+        },
+        {
+          "value": "水圳",
+          "label": "水圳"
+        },
+        {
+          "value": "水庫",
+          "label": "水庫"
+        },
+        {
+          "value": "水源地",
+          "label": "水源地"
+        },
+        {
+          "value": "生態",
+          "label": "生態"
+        },
+        {
+          "value": "生態保育區",
+          "label": "生態保育區"
+        },
+        {
+          "value": "國家公園",
+          "label": "國家公園"
+        },
+        {
+          "value": "公共衛生",
+          "label": "公共衛生"
+        },
+        {
+          "value": "醫院",
+          "label": "醫院"
+        },
+        {
+          "value": "流行病",
+          "label": "流行病"
+        },
+        {
+          "value": "經濟產業",
+          "label": "經濟產業"
+        },
+        {
+          "value": "農業",
+          "label": "農業"
+        },
+        {
+          "value": "漁業",
+          "label": "漁業"
+        },
+        {
+          "value": "林業",
+          "label": "林業"
+        },
+        {
+          "value": "商業",
+          "label": "商業"
+        },
+        {
+          "value": "工業",
+          "label": "工業"
+        },
+        {
+          "value": "糖廠",
+          "label": "糖廠"
+        },
+        {
+          "value": "銀行",
+          "label": "銀行"
+        },
+        {
+          "value": "樟腦",
+          "label": "樟腦"
+        },
+        {
+          "value": "土地利用",
+          "label": "土地利用"
+        },
+        {
+          "value": "族群",
+          "label": "族群"
+        },
+        {
+          "value": "人口統計",
+          "label": "人口統計"
+        },
+        {
+          "value": "人口分佈",
+          "label": "人口分佈"
+        },
+        {
+          "value": "原住民",
+          "label": "原住民"
+        },
+        {
+          "value": "平埔族",
+          "label": "平埔族"
+        },
+        {
+          "value": "西拉雅",
+          "label": "西拉雅"
+        },
+        {
+          "value": "荷蘭人",
+          "label": "荷蘭人"
+        },
+        {
+          "value": "西班牙人",
+          "label": "西班牙人"
+        },
+        {
+          "value": "日本人",
+          "label": "日本人"
+        },
+        {
+          "value": "漢人",
+          "label": "漢人"
+        },
+        {
+          "value": "宗教信仰",
+          "label": "宗教信仰"
+        },
+        {
+          "value": "寺廟",
+          "label": "寺廟"
+        },
+        {
+          "value": "教堂",
+          "label": "教堂"
+        },
+        {
+          "value": "交通",
+          "label": "交通"
+        },
+        {
+          "value": "道路",
+          "label": "道路"
+        },
+        {
+          "value": "港口",
+          "label": "港口"
+        },
+        {
+          "value": "鐵路",
+          "label": "鐵路"
+        },
+        {
+          "value": "郵政",
+          "label": "郵政"
+        },
+        {
+          "value": "航線",
+          "label": "航線"
+        },
+        {
+          "value": "主題圖",
+          "label": "主題圖"
+        },
+        {
+          "value": "基本圖",
+          "label": "基本圖"
+        },
+        {
+          "value": "歷史地圖",
+          "label": "歷史地圖"
+        },
+        {
+          "value": "海圖",
+          "label": "海圖"
+        },
+        {
+          "value": "港口圖",
+          "label": "港口圖"
+        },
+        {
+          "value": "耕地圖",
+          "label": "耕地圖"
+        },
+        {
+          "value": "溪地圖",
+          "label": "溪地圖"
+        },
+        {
+          "value": "市街圖",
+          "label": "市街圖"
+        },
+        {
+          "value": "鳥瞰圖",
+          "label": "鳥瞰圖"
+        },
+        {
+          "value": "戰爭圖",
+          "label": "戰爭圖"
+        },
+        {
+          "value": "港口圖",
+          "label": "港口圖"
+        },
+        {
+          "value": "耕地圖",
+          "label": "耕地圖"
+        },
+        {
+          "value": "溪地圖",
+          "label": "溪地圖"
+        },
+        {
+          "value": "市街圖",
+          "label": "市街圖"
+        },
+        {
+          "value": "鳥瞰圖",
+          "label": "鳥瞰圖"
+        },
+        {
+          "value": "戰爭圖",
+          "label": "戰爭圖"
+        },
+        {
+          "value": "衛星影像",
+          "label": "衛星影像"
+        },
+        {
+          "value": "航空相片",
+          "label": "航空相片"
+        },
+        {
+          "value": "地名",
+          "label": "地名"
+        },
+        {
+          "value": "氣候",
+          "label": "氣候"
+        },
+        {
+          "value": "數位典藏",
+          "label": "數位典藏"
+        },
+	{
+	  "value": "戶口調查",
+	  "label": "戶口調查"
+        },
+	{
+	  "value": "種族系",
+	  "label": "種族系"
+        }
+      ]
+    },
+    {
+      "field_name": "loc_keyword",
+      "label": {
+        "en": "Spatial Keyword",
+        "zh_TW": "空間範圍關鍵字"
+      },
+      "preset": "repeating_select",
+      "form_attrs": {
+        "data-module": "autocomplete"
+      },
+      "choices": [
+        {
+          "value": "1",
+          "label": "七股區"
+        },
+        {
+          "value": "2",
+          "label": "下營區"
+        },
+        {
+          "value": "3",
+          "label": "中西區"
+        },
+        {
+          "value": "4",
+          "label": "仁德區"
+        },
+        {
+          "value": "5",
+          "label": "佳里區"
+        },
+        {
+          "value": "6",
+          "label": "六甲區"
+        },
+        {
+          "value": "7",
+          "label": "北區"
+        },
+        {
+          "value": "8",
+          "label": "北門區"
+        },
+        {
+          "value": "9",
+          "label": "南化區"
+        },
+        {
+          "value": "10",
+          "label": "南區"
+        },
+        {
+          "value": "11",
+          "label": "台南市"
+        },
+        {
+          "value": "12",
+          "label": "善化區"
+        },
+        {
+          "value": "13",
+          "label": "大內區"
+        },
+        {
+          "value": "14",
+          "label": "學甲區"
+        },
+        {
+          "value": "15",
+          "label": "安南區"
+        },
+        {
+          "value": "16",
+          "label": "安定區"
+        },
+        {
+          "value": "17",
+          "label": "安平區"
+        },
+        {
+          "value": "18",
+          "label": "官田區"
+        },
+        {
+          "value": "19",
+          "label": "將軍區"
+        },
+        {
+          "value": "20",
+          "label": "山上區"
+        },
+        {
+          "value": "21",
+          "label": "左鎮區"
+        },
+        {
+          "value": "22",
+          "label": "後壁區"
+        },
+        {
+          "value": "23",
+          "label": "新化區"
+        },
+        {
+          "value": "24",
+          "label": "新市區"
+        },
+        {
+          "value": "25",
+          "label": "新營區"
+        },
+        {
+          "value": "26",
+          "label": "東區"
+        },
+        {
+          "value": "27",
+          "label": "東山區"
+        },
+        {
+          "value": "28",
+          "label": "柳營區"
+        },
+        {
+          "value": "29",
+          "label": "楠西區"
+        },
+        {
+          "value": "30",
+          "label": "歸仁區"
+        },
+        {
+          "value": "31",
+          "label": "永康區"
+        },
+        {
+          "value": "32",
+          "label": "玉井區"
+        },
+        {
+          "value": "33",
+          "label": "白河區"
+        },
+        {
+          "value": "34",
+          "label": "西港區"
+        },
+        {
+          "value": "35",
+          "label": "關廟區"
+        },
+        {
+          "value": "36",
+          "label": "鹽水區"
+        },
+        {
+          "value": "37",
+          "label": "麻豆區"
+        },
+        {
+          "value": "38",
+          "label": "龍崎區"
+        },
+        {
+          "value": "39",
+          "label": "新港社"
+        },
+        {
+          "value": "40",
+          "label": "歐王社"
+        },
+        {
+          "value": "41",
+          "label": "蕭壟社"
+        },
+        {
+          "value": "42",
+          "label": "北線尾"
+        },
+        {
+          "value": "43",
+          "label": "鹿耳門"
+        },
+        {
+          "value": "44",
+          "label": "赤崁樓"
+        },
+        {
+          "value": "45",
+          "label": "熱蘭遮城"
+        },
+        {
+          "value": "46",
+          "label": "紅毛城"
+        },
+        {
+          "value": "47",
+          "label": "大目降社"
+        },
+        {
+          "value": "48",
+          "label": "赤崁街"
+        },
+        {
+          "value": "49",
+          "label": "赤崁社"
+        },
+        {
+          "value": "50",
+          "label": "大員"
+        },
+        {
+          "value": "51",
+          "label": "台江"
+        },
+        {
+          "value": "52",
+          "label": "赤崁"
+        },
+        {
+          "value": "53",
+          "label": "麻豆社"
+        },
+        {
+          "value": "54",
+          "label": "噍吧哖"
+        },
+        {
+          "value": "55",
+          "label": "哆喀嘓社"
+        },
+        {
+          "value": "56",
+          "label": "蕭壟溪"
+        },
+        {
+          "value": "57",
+          "label": "新港溪"
+        },
+        {
+          "value": "58",
+          "label": "清水溪"
+        },
+        {
+          "value": "59",
+          "label": "鹽水溪"
+        },
+        {
+          "value": "60",
+          "label": "堯港"
+        },
+        {
+          "value": "61",
+          "label": "下淡水社"
+        },
+        {
+          "value": "62",
+          "label": "打狗"
+        },
+        {
+          "value": "63",
+          "label": "放索溪"
+        },
+        {
+          "value": "64",
+          "label": "萬丹"
+        },
+        {
+          "value": "65",
+          "label": "目加溜灣"
+        },
+        {
+          "value": "66",
+          "label": "大武壟社"
+        },
+        {
+          "value": "67",
+          "label": "芒仔芒社"
+        },
+        {
+          "value": "68",
+          "label": "加老灣"
+        },
+        {
+          "value": "69",
+          "label": "茄藤社"
+        },
+        {
+          "value": "70",
+          "label": "漁夫角"
+        },
+        {
+          "value": "71",
+          "label": "上淡水社"
+        },
+        {
+          "value": "72",
+          "label": "瑯嶠"
+        },
+        {
+          "value": "73",
+          "label": "搭樓社"
+        },
+        {
+          "value": "74",
+          "label": "力力社"
+        },
+        {
+          "value": "75",
+          "label": "加祿堂"
+        },
+        {
+          "value": "76",
+          "label": "阿猴社"
+        },
+        {
+          "value": "77",
+          "label": "大澤機社"
+        },
+        {
+          "value": "78",
+          "label": "打狗山"
+        },
+        {
+          "value": "79",
+          "label": "小琉球嶼"
+        },
+        {
+          "value": "80",
+          "label": "淡水溪"
+        },
+        {
+          "value": "81",
+          "label": "放索社"
+        },
+        {
+          "value": "82",
+          "label": "魍港"
+        },
+        {
+          "value": "83",
+          "label": "笨港"
+        },
+        {
+          "value": "84",
+          "label": "打貓社"
+        },
+        {
+          "value": "85",
+          "label": "他里霧社"
+        },
+        {
+          "value": "86",
+          "label": "斗六社"
+        },
+        {
+          "value": "87",
+          "label": "猴悶社"
+        },
+        {
+          "value": "88",
+          "label": "魍港城堡"
+        },
+        {
+          "value": "89",
+          "label": "漁夫島"
+        },
+        {
+          "value": "90",
+          "label": "華武壟社"
+        },
+        {
+          "value": "91",
+          "label": "大坵田"
+        },
+        {
+          "value": "92",
+          "label": "龜佛山"
+        },
+        {
+          "value": "93",
+          "label": "槺榔"
+        },
+        {
+          "value": "94",
+          "label": "鹿仔草"
+        },
+        {
+          "value": "95",
+          "label": "南勢竹"
+        },
+        {
+          "value": "96",
+          "label": "龜仔港"
+        },
+        {
+          "value": "97",
+          "label": "土獅仔"
+        },
+        {
+          "value": "98",
+          "label": "諸羅山社"
+        },
+        {
+          "value": "99",
+          "label": "笨港溪"
+        },
+        {
+          "value": "100",
+          "label": "麻豆溪"
+        },
+        {
+          "value": "101",
+          "label": "井水港"
+        },
+        {
+          "value": "102",
+          "label": "北新"
+        },
+        {
+          "value": "103",
+          "label": "二鯤鯓"
+        },
+        {
+          "value": "104",
+          "label": "三鯤鯓"
+        },
+        {
+          "value": "105",
+          "label": "四鯤鯓"
+        },
+        {
+          "value": "106",
+          "label": "安平港"
+        },
+        {
+          "value": "107",
+          "label": "安平街"
+        },
+        {
+          "value": "108",
+          "label": "南鯤身廟"
+        },
+        {
+          "value": "109",
+          "label": "大道公廟"
+        },
+        {
+          "value": "110",
+          "label": "關帝廟"
+        },
+	{
+	  "value": "111",
+	  "label": "台灣"
+        },
+        {
+          "value": "112",
+          "label": "臺南洲"
+        },
+        {
+          "value": "113",
+          "label": "臺南市"
+        },
+        {
+          "value": "114",
+          "label": "北門郡"
+        },
+        {
+          "value": "115",
+          "label": "新營郡"
+        },
+        {
+          "value": "116",
+          "label": "東石郡"
+        },
+        {
+          "value": "117",
+          "label": "北門郡"
+        },
+        {
+          "value": "118",
+          "label": "新化郡"
+        },
+        {
+          "value": "119",
+          "label": "新豐郡"
+        },
+        {
+          "value": "120",
+          "label": "臺南廳"
+        },
+        {
+          "value": "121",
+          "label": "嘉義廳"
+        },
+        {
+          "value": "122",
+          "label": "曾文郡"
+        }
+      ]
+    },
+    {
+      "field_name": "x_min",
+      "label": {
+        "en": "X.min",
+        "zh_TW": "空間範圍.X.min"
+      },
+      "validators": "scheming_required long_validator",
+      "form_placeholder": {
+        "en": "填寫圖資空間四至範圍之最西經度值",
+        "zh_TW": "填寫圖資空間四至範圍之最西經度值"
+      }
+    },
+    {
+      "field_name": "x_max",
+      "label": {
+        "en": "X.max",
+        "zh_TW": "空間範圍.X.max"
+      },
+      "validators": "scheming_required long_validator",
+      "form_placeholder": {
+        "en": "填寫圖資空間四至範圍之最東經度值",
+        "zh_TW": "填寫圖資空間四至範圍之最東經度值"
+      }
+    },
+    {
+      "field_name": "y_min",
+      "label": {
+        "en": "Y.min",
+        "zh_TW": "空間範圍.Y.min"
+      },
+      "validators": "scheming_required lat_validator",
+      "form_placeholder": {
+        "en": "填寫圖資空間四至範圍之最南緯度值",
+        "zh_TW": "填寫圖資空間四至範圍之最南緯度值"
+      }
+    },
+    {
+      "field_name": "y_max",
+      "label": {
+        "en": "Y.max",
+        "zh_TW": "空間範圍.Y.max"
+      },
+      "validators": "scheming_required lat_validator",
+      "form_placeholder": {
+        "en": "填寫圖資空間四至範圍之最北緯度值",
+        "zh_TW": "填寫圖資空間四至範圍之最北緯度值"
+      }
+    },
+    {
+      "field_name": "spatial",
+      "label": {
+        "en": "Spatial",
+        "zh_TW": "空間範圍"
+      },
+      "validators": "scheming_required json_validator remove_blank_wrap",
+      "form_placeholder": {
+        "en": "Accept GeoJSON format",
+        "zh_TW": "僅接受 GeoJSON"
+      },
+      "form_snippet": "text_area.html",
+      "display_snippet": "collapse_text.html",
+      "info": {
+        "en": "This column is used for geo-indexing the dataset. Click for details.",
+        "zh_TW": "此欄位將作為空間索引之用。點選以了解更多。"
+      },
+      "link": "http://docs.ckan.org/projects/ckanext-spatial/en/latest/spatial-search.html#geo-indexing-your-datasets"
+    },
+    {
+      "field_name": "language",
+      "label": {
+        "en": " Language",
+        "zh_TW": "語言"
+      },
+      "preset": "select",
+      "required": true,
+      "form_attrs": {
+        "data-module": "autocomplete"
+      },
+      "choices": [
+        {
+          "value": "zho",
+          "label": "現代標準漢語 (zho)"
+        },
+        {
+          "value": "hak",
+          "label": "客家語 (hak)"
+        },
+        {
+          "value": "nan",
+          "label": "閩南語 (nan)"
+        },
+        {
+          "value": "yue",
+          "label": "粵語 (yue)"
+        },
+        {
+          "value": "lzh",
+          "label": "文言文 (lzh)"
+        },
+        {
+          "value": "jpn",
+          "label": "日語 (jpn)"
+        },
+        {
+          "value": "eng",
+          "label": "英語 (eng)"
+        },
+        {
+          "value": "spa",
+          "label": "西班牙語 (spa)"
+        },
+        {
+          "value": "nld",
+          "label": "荷蘭語 (nld)"
+        },
+        {
+          "value": "fos",
+          "label": "西拉雅語 (fos)"
+        },
+        {
+          "value": "por",
+          "label": "葡萄牙語 (por)"
+        }
+      ]
+    },
+    {
+      "field_name": "encoding",
+      "label": {
+        "en": "Encoding",
+        "zh_TW": "編碼"
+      },
+      "preset": "select",
+      "required": true,
+      "form_attrs": {
+        "data-module": "autocomplete"
+      },
+      "choices": [
+        {
+          "value": "big5",
+          "label": "big5 (繁體中文)"
+        },
+        {
+          "value": "utf-8",
+          "label": "UTF-8"
+        },
+        {
+          "value": "latin1",
+          "label": "ISO-8859-1/Latin-1 (西歐字元)"
+        },
+        {
+          "value": "gb2312",
+          "label": "GB2312 (簡體中文)"
+        },
+        {
+          "value": "gb18030",
+          "label": "GB18030 (簡體中文)"
+        },
+        {
+          "value": "shift_jis",
+          "label": "Shift_JIS (日文)"
+        },
+        {
+          "value": "euc-jp",
+          "label": "EUC-JP (日文)"
+        }
+      ]
+    },
+    {
+      "field_name": "tag_string",
+      "label": {
+        "en": "Tags",
+        "zh_TW": "標籤"
+      },
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": {
+        "en": "eg. economy, mental health, government",
+	"zh_TW": "例如：經濟、醫療衛生、政府"
+      }
+    },
+    {
+      "field_name": "ref",
+      "preset": "repeating_text_modified",
+      "label": {
+        "en": "Reference",
+        "zh_TW": "參考來源"
+      },
+      "form_blanks": 3
+    },
+    {
+      "field_name": "license_id",
+      "label": {
+        "en": "License",
+        "zh_TW": "授權"
+      },
+      "form_snippet": "license.html"
+    }
+  ],
+  "resource_fields": [
+    {
+      "field_name": "url",
+      "label": {
+        "en": "URL",
+	"zh_TW": "網址"
+      },
+      "preset": "resource_url_upload",
+      "upload_label": {
+        "en": "File",
+        "zh_TW": "檔案"
+      }
+    },
+    {
+      "field_name": "name",
+      "label": {
+        "en": "Name",
+        "zh_TW": "名稱"
+       },
+      "form_placeholder": {
+        "en": "eg. January 2011 Gold Prices",
+        "zh_TW": "例如：2011 年 1 月金價"
+      }
+    },
+    {
+      "field_name": "description",
+      "label": {
+        "en": "Description",
+        "zh_TW": "摘要"
+      },
+      "form_snippet": "markdown.html",
+      "form_placeholder": {
+        "en": "Some useful notes about the data",
+        "zh_TW": "一些與此資料有關的紀錄"
+      }
+    },
+    {
+      "field_name": "resource_crs",
+      "label": {
+        "en": "Coordinate Systems",
+        "zh_TW": "座標參考系統"
+      },
+      "preset": "prepend_text",
+      "prepend_text": "EPSG",
+      "validators": "ignore_missing positive_integer_validator",
+      "form_placeholder": {
+        "en": "eg. 4326",
+        "zh_TW": "例如：4326"
+      },
+      "help_text": {
+        "en": "EPSG:4326→WGS84 (Default), EPSG:3826→TWD97/TM2 Taiwan, EPSG:3821→TWD67, EPSG:3825→TWD97/TM2 Penghu, EPSG:3828→TWD67/TM2 Taiwan",
+	"zh_TW": "EPSG:4326→WGS84 (預設), EPSG:3826→TWD97/TM2 台灣, EPSG:3821→TWD67, EPSG:3825→TWD97/TM2 澎湖, EPSG:3828→TWD67/TM2 台灣"
+      }
+    },
+    {
+      "field_name": "format",
+      "label": {
+        "en": "Format",
+        "zh_TW": "格式"
+      },
+      "preset": "resource_format_autocomplete",
+      "form_placeholder": {
+        "en": "eg. CSV, XML or JSON",
+        "zh_TW": "例如：CSV, XML 或 JSON"
+      }
+    }
+  ]
+}

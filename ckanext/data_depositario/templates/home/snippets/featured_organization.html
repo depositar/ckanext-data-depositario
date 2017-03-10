@@ -1,0 +1,11 @@
+{% set organizations = h.get_featured_organizations(3)|sort(attribute='name', reverse=True) %}
+<div class="box stat">
+  <header class="module-heading dataset-heading">
+    <h2><a href="{{ h.url_for(controller='organization', action='index') }}">{{ _('Organization') }}</a></h2>
+  </header>
+  <div class="inner">
+    {% for organization in organizations %}
+      {% snippet 'snippets/organization_item.html', organization=organization, truncate=80, truncate_title=35 %}
+    {% endfor %}
+  </div>
+</div>

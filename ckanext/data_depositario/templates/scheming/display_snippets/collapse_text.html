@@ -1,0 +1,12 @@
+<script>
+function toggle (t) {
+  if (t.innerHTML == "{{ _('show more') }}") {
+    t.innerHTML = "{{ _('show less') }}";
+  } else {
+    t.innerHTML = "{{ _('show more') }}";
+  }
+}
+</script>
+
+<a href="javascript:void(0);" onclick="toggle(this)" data-toggle="collapse" data-target="#spatial-content">{{ _('show more') }}</a>
+<div id="spatial-content" class="collapse">{{ data[field.field_name] }}</div>

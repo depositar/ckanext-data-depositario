@@ -1,0 +1,6 @@
+{%- set values = data[field.field_name] -%}
+<ol>
+{%- for element in values -%}
+  <li>{{ h.scheming_choices_label(field.choices, element|string) }}</li>
+{%- endfor -%}
+</ol>

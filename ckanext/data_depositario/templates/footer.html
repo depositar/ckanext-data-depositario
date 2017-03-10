@@ -1,0 +1,16 @@
+{% ckan_extends %}
+
+{% block footer_links %}
+  {{ super() }}
+  <li>{{ _('Contact us') }}{{ ': contact AT depositar.io' }}</li>
+{% endblock %}
+
+{% block footer_links_ckan %}
+  {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
+  <li><a href="{{ api_url }}" class="external" target="_blank">{{ _('CKAN API') }}</a> | <a href="/stats">{{_('Site Statistics') }}</a></li>
+{% endblock %}
+
+{% block footer_attribution %}
+  {{ super() }}
+  {% trans %}<p>Source code available on <a href="https://github.com/depositar-io" class="external" target="_blank">GitHub.</a></p>{% endtrans %}
+{% endblock %}

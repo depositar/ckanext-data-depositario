@@ -1,0 +1,143 @@
+/****************** Beta label ******************/
+img#beta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.hero {
+  background: url("/promoted-image.jpg") repeat-x center center;
+}
+
+
+/* =====================================================
+   The "account masthead" bar across the top of the site
+   ===================================================== */
+
+.account-masthead {
+  background-color: rgb(40, 40, 40);
+}
+/* The "bubble" containing the number of new notifications. */
+.account-masthead .account .notifications a span {
+  background-color: black;
+}
+/* The text and icons in the user account info. */
+.account-masthead .account ul li a {
+  color: rgba(255, 255, 255, 0.6);
+}
+/* The user account info text and icons, when the user's pointer is hovering
+   over them. */
+.account-masthead .account ul li a:hover {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: black;
+}
+
+
+/* ========================================================================
+   The main masthead bar that contains the site logo, nav links, and search
+   ======================================================================== */
+
+.masthead {
+  background-color: #3d3d3d;
+}
+/* The "navigation pills" in the masthead (the links to Datasets,
+   Organizations, etc) when the user's pointer hovers over them. */
+.masthead .navigation .nav-pills li a:hover {
+  background-color: rgb(48, 48, 48);
+  color: white;
+}
+/* The "active" navigation pill (for example, when you're on the /dataset page
+   the "Datasets" link is active). */
+.masthead .navigation .nav-pills li.active a {
+  background-color: rgb(74, 74, 74);
+}
+
+
+/* ===========================================
+   The content in the middle of the front page
+   =========================================== */
+
+/* Change the size of the "Search Your Data" box. */
+.homepage .container.container-search {
+  width: 712px;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -356px;
+}
+@media (max-width: 767px) {
+  .homepage .container.container-search {
+    width: 100%;
+    left: auto;
+    margin: auto;
+  }
+}
+/* Change the colors of the "Search Your Data" box. */
+.homepage .module-search .module-content {
+  background-color: #3d3d3d;
+}
+/* Change the background color of the "Popular Tags" box. */
+.homepage .module-search .tags {
+  background-color: rgb(40, 40, 40);
+}
+
+
+/* ====================================
+   The footer at the bottom of the site
+   ==================================== */
+
+.site-footer,
+body {
+  background-color: rgb(40, 40, 40);
+}
+/* The text in the footer. */
+.site-footer,
+.site-footer label,
+.site-footer small {
+  color: rgba(255, 255, 255, 0.6);
+}
+/* The link texts in the footer. */
+.site-footer a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* Additional info - used on both dataset and resource page */
+.additional-info thead {
+  display: none;
+}
+
+.additional-info th {
+  width: 15%;
+}
+
+.additional-info td, .additional-info th {
+  border-top: none;
+}
+
+a.external:after {
+  content: "\f08e";
+  font-family: FontAwesome;
+  font-weight: lighter;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-size: 10px;
+  line-height: 10px;
+  position: relative;
+  top: -3px;
+  left: 3px;
+  margin-right: 5px;
+}
+
+a.external:after:hover {
+  text-decoration: none;
+}
+
+div .module-heading > .search-form.no-bottom-border {
+  padding-bottom: 0;
+}

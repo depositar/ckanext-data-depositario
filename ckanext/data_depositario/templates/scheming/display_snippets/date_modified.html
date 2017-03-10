@@ -1,0 +1,5 @@
+{% if field.has_temp_res %}
+  {{ h.date_to_iso(data[field.field_name], data.temp_res) }}
+{% else %}
+  {{ h.date_to_iso(data[field.field_name]) }}
+{% endif %}
