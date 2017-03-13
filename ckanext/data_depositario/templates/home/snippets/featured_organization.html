@@ -1,4 +1,4 @@
-{% set organizations = h.get_featured_organizations(3)|sort(attribute='name', reverse=True) %}
+{% set organizations = h.get_featured_organizations(3)|sort(attribute='created', reverse=True) %}
 <div class="box stat">
   <header class="module-heading dataset-heading">
     <h2><a href="{{ h.url_for(controller='organization', action='index') }}">{{ _('Organization') }}</a></h2>
