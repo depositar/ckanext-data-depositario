@@ -43,6 +43,13 @@
         "validators": "repeating_text duplicate_validator",
         "output_validators": "repeating_text_output"
       }
+    },
+    {
+      "preset_name": "dataset_state",
+      "values": {
+        "validators": "ignore_not_package_admin ignore_missing",
+        "form_snippet": "state.html"
+      }
     }
   ]
 }

@@ -1,0 +1,25 @@
+{# This is specific to datasets' state field and won't work #}
+{# if used with other fields #}
+
+{% import 'macros/form.html' as form %}
+
+{% if data.id and h.check_access('package_delete', {'id': data.id}) and data.state != 'active' %}
+
+  {%- set options=[] -%}
+  {%- for c in field.choices -%}
+    {%- do options.append({
+      'value': c.value,
+      'text': h.scheming_language_text(c.label)}) -%}
+  {%- endfor -%}
+
+  {% call form.select(
+    field.field_name,
+    id='field-' + field.field_name,
+    label=h.scheming_language_text(field.label),
+    options=options,
+    selected=data[field.field_name]
+    )
+  %}
+  {% endcall %}
+
+{% endif %}

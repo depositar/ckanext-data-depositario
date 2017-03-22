@@ -185,6 +185,30 @@
       "preset": "dataset_organization"
     },
     {
+      "field_name": "state",
+      "label": {
+        "en": "State",
+        "zh_TW": "狀態"
+      },
+      "preset": "dataset_state",
+      "choices": [
+        {
+          "value": "active",
+          "label": {
+            "en": "Active",
+            "zh_TW": "啟用"
+          }
+        },
+        {
+          "value": "deleted",
+          "label": {
+            "en": "Deleted",
+            "zh_TW": "刪除"
+          }
+        }
+      ]
+    },
+    {
       "field_name": "book_isbn",
       "label": {
         "en": "ISBN-13",
