@@ -25,8 +25,8 @@ ckan.module('map', function (jQuery, _) {
         attribution: '內政部國土測繪中心'
       });
       // Thunderforest tile layer
-      var tf = L.tileLayer('https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png', {
-        attribution: 'Maps &copy; <a href="http://www.thunderforest.com">Thunderforest</a>, Data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+      var tf = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map tiles & Data by <a href="http://www.openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>.'
       });
       // Google Maps tile layer
       var ggl = new L.gridLayer.googleMutant({type: 'roadmap'});
