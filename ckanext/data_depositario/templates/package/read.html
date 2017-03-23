@@ -19,16 +19,11 @@
         <p>{{ _('The information on this page (the dataset metadata) is also available in these formats:') }}</p>
         <p class="btn-group">
           <a href="{{ h.url_for(controller='api', logic_function='package_show', action='action', id=c.pkg.name,ver=3) }}" class="btn btn-small">
-            <i class="ckan-icon ckan-icon-json"></i> JSON
+            <i class="icon-code"></i>JSON
           </a>
         </p>
 	<p><small>{{ _('via the ') }}<a href="{{ api_url }}" class="external" target="_blank">{{ _('CKAN API') }}</a></small></p>
       </div>
     </section>
   {% endblock %}
-{% endblock %}
-
-{% block styles %}
-  {{ super() }}
-  {% resource 'ckanext-data-depositario/styles/icons.css' %}
 {% endblock %}
