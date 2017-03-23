@@ -26,7 +26,7 @@ ckan.module('map', function (jQuery, _) {
       });
       // Thunderforest tile layer
       var tf = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map tiles & Data by <a href="http://www.openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>.'
+        attribution: 'Map tiles & Data by <a href="http://www.openstreetmap.org" class="external">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/2.0/" class="external">CC BY-SA</a>.'
       });
       // Google Maps tile layer
       var ggl = new L.gridLayer.googleMutant({type: 'roadmap'});
