@@ -9,6 +9,7 @@
   {% endif %}
 
   {% block other_access %}
+    {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
     <section class="module module-narrow module-shallow">
       <h2 class="module-heading">
         <i class="icon-copy"></i>
@@ -20,11 +21,8 @@
           <a href="{{ h.url_for(controller='api', logic_function='package_show', action='action', id=c.pkg.name,ver=3) }}" class="btn btn-small">
             <i class="ckan-icon ckan-icon-json"></i> JSON
           </a>
-          <a rel="rdfs:seeAlso" href="/dataset/{{  c.pkg_dict['name'] }}.rdf" class="btn btn-small">
-            <i class="ckan-icon ckan-icon-rdfxml"></i> RDF-XML
-          </a>
         </p>
-	<p><small>{{ _('via the ') }}<a href="http://docs.ckan.org/en/latest/api.html">CKAN API</a></small></p>
+	<p><small>{{ _('via the ') }}<a href="{{ api_url }}" class="external" target="_blank">{{ _('CKAN API') }}</a></small></p>
       </div>
     </section>
   {% endblock %}
