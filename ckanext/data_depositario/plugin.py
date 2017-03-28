@@ -68,7 +68,7 @@ class DataDepositarioDatasets(p.SingletonPlugin):
         for field_name in ['data_type', 'proj', 'language', 'encoding']:
             value = data_dict.get(field_name)
             if value:
-                data_dict[field_name+'_facet'] = fields[field_name][value]
+                data_dict[field_name+'_facet'] = value
         if data_dict.get('theme_keyword'):
             data_dict['theme_keyword_facets'] = json.loads(data_dict.get('theme_keyword'))
         #For old schema definition

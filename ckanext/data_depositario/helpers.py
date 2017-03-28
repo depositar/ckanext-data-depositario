@@ -83,10 +83,13 @@ def get_field_choices(dataset_type):
    return fields
 
 def get_time_period():
-   time_period_dict = get_field_choices('dataset')['time_period']
+   from ckanext.scheming import helpers as scheming_helpers
+   schema = scheming_helpers.scheming_get_dataset_schema('dataset')
+   field = scheming_helpers.scheming_field_by_name(schema['dataset_fields'], 'time_period')
    time_period_list = []
-   for value, label in time_period_dict.iteritems():
-      splitted = re.split(r'[-()]', label)
+   for choice in field['choices']:
+      splitted = re.split(r'[-()]', choice['value'])
+      label = scheming_helpers.scheming_choices_label(field['choices'], choice['value'])
       time_period_list.append((label, splitted[-3], splitted[-2]))
    time_period_list.sort(key=lambda tup:tup[1])
    return time_period_list

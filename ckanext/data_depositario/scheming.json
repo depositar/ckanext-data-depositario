@@ -286,7 +286,7 @@
         "en": "Historical Material",
 	"zh_TW": "使用史料"
       },
-      "preset": "multiple_choice",
+      "preset": "multiple_checkbox",
       "choices": [
         {
           "value": "local_chronicles_in_qing_dynasty",

@@ -1,0 +1,18 @@
+{% ckan_extends %}
+
+{% block organization_facets %}
+  {%- set schema = h.scheming_get_dataset_schema('dataset') -%}
+  {% for facet in c.facet_titles %}
+    {% if facet not in ['license_id', 'organization', 'groups'] %}
+      {% set field_name = facet|replace('_facet', '') %}
+      {% set field = h.scheming_field_by_name(schema.dataset_fields, field_name) %}
+      {% macro render_choices_label(item) %}
+        {{ h.scheming_choices_label(field.choices, item.name) }}
+      {% endmacro %}
+      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet, extras={'id':c.group_dict.id}, label_function=render_choices_label) }}
+    {# These three facets do not have translations #}
+    {% elif facet in ['license_id', 'organization', 'groups'] %}
+      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet, extras={'id':c.group_dict.id}) }}
+    {% endif %}
+  {% endfor %}
+{% endblock %}
