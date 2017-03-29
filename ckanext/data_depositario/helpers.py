@@ -6,6 +6,7 @@ import re
 import logging
 import dateutil
 from datetime import date
+from ckanext.scheming import helpers as scheming_helpers
 
 log = logging.getLogger(__name__)
 
@@ -70,21 +71,24 @@ def get_date_url_param():
          continue
    return params
 
-def get_field_choices(dataset_type):
-   from ckanext.scheming import helpers as scheming_helpers
-   schema = scheming_helpers.scheming_get_dataset_schema(dataset_type)
-   fields = dict()
-   for field in schema['dataset_fields']:
-      if field.get('choices'):
-         choices_new = dict()
-         for choice in field.get('choices'):
-            choices_new[choice['value']] = choice['label']['zh_TW'] if isinstance(choice['label'], dict) else choice['label']
-         fields[field['field_name']] = choices_new
-   return fields
+def get_schema(data_type):
+   schema = scheming_helpers.scheming_get_dataset_schema(data_type)
+   return schema
+
+def get_field_by_name(fields, name):
+   field = scheming_helpers.scheming_field_by_name(fields, name)
+   return field
+
+def get_choices_value(choices, label):
+   for c in choices:
+      if isinstance(c['label'], dict) and c['label'].get('zh_TW') == label:
+         return c['value']
+      if c['label'] == label:
+         return c['value']
+   return label
 
 def get_time_period():
-   from ckanext.scheming import helpers as scheming_helpers
-   schema = scheming_helpers.scheming_get_dataset_schema('dataset')
+   schema = get_schema('dataset')
    field = scheming_helpers.scheming_field_by_name(schema['dataset_fields'], 'time_period')
    time_period_list = []
    for choice in field['choices']:

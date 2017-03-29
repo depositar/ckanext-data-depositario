@@ -63,26 +63,34 @@ class DataDepositarioDatasets(p.SingletonPlugin):
 
     def before_index(self, data_dict):
         data_dict.update({'data_type_facet': '', 'proj_facet': '', 'language_facet': '',
-                'encoding_facet': '', 'theme_keyword_facets': [], 'loc_keyword_facet': []})
-        fields = helpers.get_field_choices('dataset')
+                'encoding_facet': '', 'theme_keyword_facet': [], 'loc_keyword_facet': [],
+                'book_hist_materials_facet': []})
         for field_name in ['data_type', 'proj', 'language', 'encoding']:
             value = data_dict.get(field_name)
             if value:
                 data_dict[field_name+'_facet'] = value
-        if data_dict.get('theme_keyword'):
-            data_dict['theme_keyword_facets'] = json.loads(data_dict.get('theme_keyword'))
-        #For old schema definition
-        for i in range(5):
-            field_name = 'theme_keyword_' + str(i+1)
-            if isinstance(data_dict.get(field_name), unicode):
-	        data_dict['theme_keyword_facets'].append(fields['theme_keyword'].get(data_dict[field_name]))
-        if data_dict.get('loc_keyword'):
-            data_dict['loc_keyword_facet'] = json.loads(data_dict.get('loc_keyword'))
-            if isinstance(data_dict['loc_keyword_facet'], list):
-                data_dict['loc_keyword_facet'] = [fields['loc_keyword'][loc_keyword] for loc_keyword in filter(None, data_dict['loc_keyword_facet'])]
-            #For old schema definition
-	    elif isinstance(data_dict['loc_keyword_facet'], int):
-                data_dict['loc_keyword_facet'] = fields['loc_keyword'][str(data_dict['loc_keyword'])]
+        schema = helpers.get_schema('dataset')
+        for field_name in ['theme_keyword', 'loc_keyword', 'book_hist_materials']:
+            field = helpers.get_field_by_name(schema['dataset_fields'], field_name)
+            value = data_dict.get(field_name)
+            if value:
+                keywords = json.loads(value)
+                if isinstance(keywords, int):
+                    #For the old loc_keyword (a single id)
+                    keywords = [str(keywords)]
+                #Get the (zh_TW) value for the old label of theme_keyword
+                data_dict[field_name+'_facet'] = \
+                        [helpers.get_choices_value(field['choices'], k) for k in keywords]
+        #For the old theme_keyword (five keywords)
+        if data_dict.get('theme_keyword_1'):
+            field = helpers.get_field_by_name(schema['dataset_fields'], 'theme_keyword')
+            for i in range(5):
+                field_name = 'theme_keyword_' + str(i+1)
+                value = data_dict.get(field_name)
+                if value:
+                    #Get the (zh_TW) value for the old label of theme_keyword
+                    data_dict['theme_keyword_facet'].append(helpers.get_choices_value(field['choices'],
+                            value))
         return data_dict
 
     ## IFacets
@@ -92,8 +100,9 @@ class DataDepositarioDatasets(p.SingletonPlugin):
         facets_dict['proj_facet'] = p.toolkit._('Project')
         facets_dict['language_facet'] = p.toolkit._('Language')
         facets_dict['encoding_facet'] = p.toolkit._('Encoding')
-        facets_dict['theme_keyword_facets'] = p.toolkit._('Theme Keyword')
+        facets_dict['theme_keyword_facet'] = p.toolkit._('Theme Keyword')
         facets_dict['loc_keyword_facet'] = p.toolkit._('Spatial Keyword')
+        facets_dict['book_hist_materials_facet'] = p.toolkit._('Historical Material')
 
         return facets_dict
 
@@ -105,8 +114,9 @@ class DataDepositarioDatasets(p.SingletonPlugin):
         facets_dict['proj_facet'] = p.toolkit._('Project')
         facets_dict['language_facet'] = p.toolkit._('Language')
         facets_dict['encoding_facet'] = p.toolkit._('Encoding')
-        facets_dict['theme_keyword_facets'] = p.toolkit._('Theme Keyword')
+        facets_dict['theme_keyword_facet'] = p.toolkit._('Theme Keyword')
         facets_dict['loc_keyword_facet'] = p.toolkit._('Spatial Keyword')
+        facets_dict['book_hist_materials_facet'] = p.toolkit._('Historical Material')
 
         return facets_dict
 
@@ -135,7 +145,6 @@ class DataDepositarioDatasets(p.SingletonPlugin):
             'date_to_iso',
             'get_default_slider_values',
             'get_date_url_param',
-            'get_field_choices',
             'get_time_period',
             'string_to_list',
             'get_gmap_config'
