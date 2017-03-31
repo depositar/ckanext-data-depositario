@@ -179,6 +179,8 @@ schema. In this case the version should be set to the next CKAN version number.
     <field name="theme_keyword_facet" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="loc_keyword_facet" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="book_hist_materials_facet" type="string" indexed="true" stored="true" multiValued="true"/>
+    <!-- For multilingual keywords -->
+    <dynamicField name="*_label" type="text" indexed="true" stored="true" multiValued="true"/>
 </fields>
 
 <uniqueKey>index_id</uniqueKey>
@@ -205,5 +207,6 @@ schema. In this case the version should be set to the next CKAN version number.
 <copyField source="res_description" dest="text"/>
 <copyField source="maintainer" dest="text"/>
 <copyField source="author" dest="text"/>
+<copyField source="*_label" dest="text"/>
 
 </schema>

@@ -62,35 +62,37 @@ class DataDepositarioDatasets(p.SingletonPlugin):
         return search_params
 
     def before_index(self, data_dict):
-        data_dict.update({'data_type_facet': '', 'proj_facet': '', 'language_facet': '',
-                'encoding_facet': '', 'theme_keyword_facet': [], 'loc_keyword_facet': [],
-                'book_hist_materials_facet': []})
         for field_name in ['data_type', 'proj', 'language', 'encoding']:
-            value = data_dict.get(field_name)
-            if value:
-                data_dict[field_name+'_facet'] = value
+            value = data_dict.get(field_name, '')
+            data_dict[field_name+'_facet'] = value
         schema = helpers.get_schema('dataset')
+        #For the old five theme keywords
+        if data_dict.get('theme_keyword_1'):
+            data_dict['theme_keyword'] = []
+            for i in range(5):
+                field_name = 'theme_keyword_' + str(i+1)
+                data_dict['theme_keyword'].append(data_dict.get(field_name, ''))
         for field_name in ['theme_keyword', 'loc_keyword', 'book_hist_materials']:
             field = helpers.get_field_by_name(schema['dataset_fields'], field_name)
-            value = data_dict.get(field_name)
+            value = data_dict.get(field_name, [])
             if value:
                 keywords = json.loads(value)
                 if isinstance(keywords, int):
                     #For the old loc_keyword (a single id)
                     keywords = [str(keywords)]
-                #Get the (zh_TW) value for the old label of theme_keyword
-                data_dict[field_name+'_facet'] = \
-                        [helpers.get_choices_value(field['choices'], k) for k in keywords]
-        #For the old theme_keyword (five keywords)
-        if data_dict.get('theme_keyword_1'):
-            field = helpers.get_field_by_name(schema['dataset_fields'], 'theme_keyword')
-            for i in range(5):
-                field_name = 'theme_keyword_' + str(i+1)
-                value = data_dict.get(field_name)
-                if value:
-                    #Get the (zh_TW) value for the old label of theme_keyword
-                    data_dict['theme_keyword_facet'].append(helpers.get_choices_value(field['choices'],
-                            value))
+                #Get the value for the old Chinese label of theme_keyword
+                value = [helpers.get_choices_value(field['choices'], k) for k in keywords]
+            data_dict[field_name+'_facet'] = value
+        #But we still need the labels for text search
+        for field_name in ['theme_keyword', 'loc_keyword']:
+            field = helpers.get_field_by_name(schema['dataset_fields'], field_name)
+            data_dict[field_name+'_en_label'] = \
+                    [helpers.get_choices_label(field['choices'], v, 'en') \
+		        for v in data_dict[field_name+'_facet']]
+            data_dict[field_name+'_zh_TW_label'] = \
+                    [helpers.get_choices_label(field['choices'], v, 'zh_TW') \
+                        for v in data_dict[field_name+'_facet']]
+
         return data_dict
 
     ## IFacets

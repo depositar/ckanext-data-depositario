@@ -79,6 +79,12 @@ def get_field_by_name(fields, name):
    field = scheming_helpers.scheming_field_by_name(fields, name)
    return field
 
+def get_choices_label(choices, value, prefer_lang='zh_TW'):
+   for c in choices:
+       if c['value'] == value:
+           return scheming_helpers.scheming_language_text(c['label'], prefer_lang)
+   return scheming_helpers.scheming_language_text(value)
+
 def get_choices_value(choices, label):
    for c in choices:
       if isinstance(c['label'], dict) and c['label'].get('zh_TW') == label:
@@ -89,7 +95,7 @@ def get_choices_value(choices, label):
 
 def get_time_period():
    schema = get_schema('dataset')
-   field = scheming_helpers.scheming_field_by_name(schema['dataset_fields'], 'time_period')
+   field = get_field_by_name(schema['dataset_fields'], 'time_period')
    time_period_list = []
    for choice in field['choices']:
       splitted = re.split(r'[-()]', choice['value'])
