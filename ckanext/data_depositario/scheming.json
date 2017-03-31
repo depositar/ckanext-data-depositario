@@ -1728,47 +1728,80 @@
       "choices": [
         {
           "value": "zho",
-          "label": "現代標準漢語 (zho)"
+          "label": {
+	    "en": "Chinese",
+	    "zh_TW": "華語/中文"
+	  }
         },
         {
           "value": "hak",
-          "label": "客家語 (hak)"
+          "label": {
+	    "en": "Hakka Chinese",
+	    "zh_TW": "客家話"
+	  }
         },
         {
           "value": "nan",
-          "label": "閩南語 (nan)"
+          "label": {
+	    "en": "Min Nan Chinese",
+	    "zh_TW": "閩南語"
+          }
         },
         {
           "value": "yue",
-          "label": "粵語 (yue)"
+          "label": {
+	    "en": "Yue Chinese (Cantonese)",
+	    "zh_TW": "粵語"
+          }
         },
         {
           "value": "lzh",
-          "label": "文言文 (lzh)"
+          "label": {
+	    "en": "Literary Chinese",
+	    "zh_TW": "文言文"
+	  }
         },
         {
           "value": "jpn",
-          "label": "日語 (jpn)"
+          "label": {
+	    "en": "Japanese",
+	    "zh_TW": "日語"
+	  }
         },
         {
           "value": "eng",
-          "label": "英語 (eng)"
+          "label": {
+	    "en": "English",
+	    "zh_TW": "英語"
+	  }
         },
         {
           "value": "spa",
-          "label": "西班牙語 (spa)"
+          "label": {
+	    "en": "Spanish (Castilian)",
+	    "zh_TW": "西班牙語"
+	  }
         },
         {
           "value": "nld",
-          "label": "荷蘭語 (nld)"
+          "label": {
+	    "en": "Dutch",
+	    "zh_TW": "荷蘭語"
+	  }
         },
         {
           "value": "fos",
-          "label": "西拉雅語 (fos)"
+          "label": {
+	    "en": "Siraya",
+	    "zh_TW": "西拉雅語"
+	  }
         },
         {
           "value": "por",
-          "label": "葡萄牙語 (por)"
+          "label": {
+	    "en": "Portuguese",
+	    "zh_TW": "葡萄牙語"
+	  }
         }
       ]
     },
@@ -1786,31 +1819,52 @@
       "choices": [
         {
           "value": "big5",
-          "label": "big5 (繁體中文)"
+          "label": {
+	    "en": "Big5",
+	    "zh_TW": "Big5 (繁體中文大五碼)"
+	  }
         },
         {
           "value": "utf-8",
-          "label": "UTF-8"
+          "label": {
+	    "en": "UTF-8",
+	    "zh_TW": "UTF-8"
+	  }
         },
         {
           "value": "latin1",
-          "label": "ISO-8859-1/Latin-1 (西歐字元)"
+          "label": {
+	    "en": "ISO-8859-1",
+	    "zh_TW": "ISO-8859-1 (西歐字元)"
+	  }
         },
         {
           "value": "gb2312",
-          "label": "GB2312 (簡體中文)"
+          "label": {
+	    "en": "GB2312",
+	    "zh_TW": "GB2312 (簡體中文)"
+	  }
         },
         {
           "value": "gb18030",
-          "label": "GB18030 (簡體中文)"
+          "label": {
+	    "en" : "GB18030",
+	    "zh_TW": "GB18030 (簡體中文)"
+	  }
         },
         {
           "value": "shift_jis",
-          "label": "Shift_JIS (日文)"
+          "label": {
+	    "en": "Shift_JIS",
+	    "zh_TW": "Shift_JIS (日文)"
+	  }
         },
         {
           "value": "euc-jp",
-          "label": "EUC-JP (日文)"
+          "label": {
+	    "en": "EUC-JP",
+	    "zh_TW": "EUC-JP (日文)"
+	  }
         }
       ]
     },
