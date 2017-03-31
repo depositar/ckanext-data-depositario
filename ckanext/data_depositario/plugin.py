@@ -68,10 +68,11 @@ class DataDepositarioDatasets(p.SingletonPlugin):
         schema = helpers.get_schema('dataset')
         #For the old five theme keywords
         if data_dict.get('theme_keyword_1'):
-            data_dict['theme_keyword'] = []
+            theme_keywords = []
             for i in range(5):
                 field_name = 'theme_keyword_' + str(i+1)
-                data_dict['theme_keyword'].append(data_dict.get(field_name, ''))
+                theme_keywords.append(data_dict.get(field_name))
+            data_dict['theme_keyword'] = json.dumps(theme_keywords)
         for field_name in ['theme_keyword', 'loc_keyword', 'book_hist_materials']:
             field = helpers.get_field_by_name(schema['dataset_fields'], field_name)
             value = data_dict.get(field_name, [])
