@@ -1,0 +1,44 @@
+[English below]
+
+{{ user_name }} 您好，
+
+您已被邀請加入 {{ site_title }}。
+
+使用者帳號為 {{ user_name }}。
+
+您可於登入後至 {{ site_url }}/user/edit 頁面修改此帳號名稱。
+
+同時您已被加入 {{ group_title }} {{ group_type }}，身份為 {{ role_name }}。
+
+請點選以下連結以確認此邀請，並修改密碼：
+
+   {{ reset_link }}
+
+
+祝您有個美好的一天。
+
+--
+{{ site_title }} ({{ site_url }})
+
+
+[English]
+
+Dear {{ user_name }},
+
+You have been invited to {{ site_title }}.
+
+A user has already been created for you with the username {{ user_name }}. You can change it later at:
+
+   {{ site_url }}/user/edit
+
+You have been added to the {{ group_type }} {{ group_title }} with the following role: {{ role_name }}.
+
+To accept this invite, please reset your password at:
+
+   {{ reset_link }}
+
+
+Have a nice day.
+
+--
+Message sent by {{ site_title }} ({{ site_url }})
