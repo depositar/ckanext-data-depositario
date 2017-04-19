@@ -6,7 +6,7 @@
 
 使用者帳號為 {{ user_name }}。
 
-您可於登入後至 {{ site_url }}/user/edit 頁面修改此帳號名稱。
+您可於登入後至 {{ site_url }}/user/edit 頁面修改此帳號名稱與欲顯示之名稱（「全名」欄位）。
 
 同時您已被加入 {{ group_title }} {{ group_type }}，身份為 {{ role_name }}。
 
