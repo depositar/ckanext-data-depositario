@@ -2,6 +2,6 @@ requests[security]
 python-dateutil
 geomet>=0.1.0
 ckanext-pdfview>=0.0.5
-ckanext-scheming==1.0.0
+git+git://github.com/ckan/ckanext-scheming.git@b5294e0#egg=ckanext-scheming
 -e git+git://github.com/open-data/ckanext-repeating.git#egg=ckanext-repeating
 -e git+git://github.com/ckan/ckanext-pages.git#egg=ckanext-pages
