@@ -1,5 +1,11 @@
 {% ckan_extends %}
 
+{% block head_extras -%}
+  {% set description = h.markdown_extract(pkg.notes|default(''), extract_length=200)|forceescape %}
+  <meta property="og:title" content="{{ h.dataset_display_name(pkg) }} - {{ g.site_title }}">
+  <meta property="og:description" content="{{ description|forceescape|trim }}">
+{% endblock -%}
+
 {% block content_primary_nav %}
   {{ super() }}
   {% set history_link = h.nav_link(_('History'), controller='package', action='history', id=pkg.name, icon='code-fork') %}
