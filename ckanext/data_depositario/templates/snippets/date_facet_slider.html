@@ -15,7 +15,7 @@ Displays a slider widget to define a date filter on the dataset search page side
   <div class="control-group">
     <select id="field-time-period" name="time-period">
       <option>{{ _('Or use time period shortcut') }}</option>
-      {% for label, start, end in h.get_time_period() %}
+      {% for label, start, end in h.get_time_period_for_facet_slider() %}
         <option data-start="{{ start }}" data-end="{{ end }}" {% if start + "-01-01" == default_dates[0] and end + "-12-31" == default_dates[1] %} selected="selected" {% endif %}>{{ label }}</option>
       {% endfor %}
     </select>

@@ -33,14 +33,26 @@ ckan.module('map', function (jQuery, _) {
       var ggls = new L.gridLayer.googleMutant({type: 'hybrid'});
 
       function showPolygonArea(e) {
-        var geo = e.layer.toGeoJSON().geometry['coordinates'];
-        var longs = [];
-        var lats = [];
-        for (i=0; i < geo[0].length; i++) {
-          longs.push(geo[0][i][0]);
-          lats.push(geo[0][i][1]);
+        var geometry = JSON.stringify(e.layer.toGeoJSON().geometry);
+        var north_east = {};
+	var south_west = {};
+
+        if (e.layer.getBounds) {
+	  north_east = e.layer.getBounds().getNorthEast();
+	  south_west = e.layer.getBounds().getSouthWest();
         }
-        $('#field-spatial').val(JSON.stringify(e.layer.toGeoJSON().geometry));
+        var field_values = [
+          {'field': '#field-spatial', 'value': geometry},
+          {'field': '#field-x_min', 'value': south_west.lng || ''},
+          {'field': '#field-x_max', 'value': north_east.lng || ''},
+          {'field': '#field-y_min', 'value': south_west.lat || ''},
+          {'field': '#field-y_max', 'value': north_east.lat || ''}
+        ];
+        field_values.forEach(function(field_value) {
+          $(field_value.field)
+            .prop('readonly', true)
+            .val(field_value.value);
+        });
         featureGroup.clearLayers();
         featureGroup.addLayer(e.layer);
       }
@@ -90,29 +102,6 @@ ckan.module('map', function (jQuery, _) {
       $('#show_map').click(function() {
         $('#map').toggle();
       });
-
-/*
-$(document).ready(function(){
-  $('#show_map').click(function(){
-    $('#map').toggle();
-  });
-  $('#convert_from_four_range').click(function() {
-    if ($.isNumeric($('#field-x_min').val()) && $.isNumeric($('#field-x_max').val()) && $.isNumeric($('#field-y_min').val()) && $.isNumeric($('#field-y_max').val())){
-      if (parseFloat($('#field-x_min').val()) > parseFloat($('#field-x_max').val()) || parseFloat($('#field-y_min').val()) > parseFloat($('#field-y_max').val())){
-        alert('X (Y) 之最小值需小於最大值');
-      }
-      else{
-        var geojson = '{"type":"Polygon","coordinates":[[['+$('#field-x_min').val()+','+$('#field-y_min').val()+'],['+$('#field-x_min').val()+','+$('#field-y_max').val()+'],['+$('#field-x_max').val()+','+$('#field-y_max').val()+'],['+$('#field-x_max').val()+','+$('#field-y_min').val()+'],['+$('#field-x_min').val()+','+$('#field-y_min').val()+']]]}';
-        $('#field-spatial').val(geojson);
-      }
-    }
-    else{
-      alert('請輸入完整四至座標資訊');
-    }
-  });
-});
-*/
-
     }
   }
 });

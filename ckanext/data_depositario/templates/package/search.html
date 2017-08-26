@@ -45,7 +45,9 @@
         {% endmacro %}
         {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet, label_function=render_choices_label) }}
       {# These three facets do not have translations #}
-      {% elif facet in ['license_id', 'organization', 'groups'] %}
+      {% elif facet == 'license_id' %}
+        {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet, extra_snippet='snippets/license_details.html') }}
+      {% elif facet in ['organization', 'groups'] %}
         {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}
       {% endif %}
     {% endfor %}

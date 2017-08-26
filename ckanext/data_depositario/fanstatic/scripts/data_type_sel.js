@@ -1,4 +1,4 @@
-var all_fields = ['#book-fields', '#scanned-image-fields', '#spatial-type-fields']
+var all_fields = ['#book-fields', '#image-fields', '#spatial-type-fields']
 var need_book_fields = ['books'];
 var need_scanned_image_fields = ['pics_non_spatial', 'pics_spatial'];
 var need_spatial_fields = ['pics_spatial', 'grid', 'vector', 'tin', 'steropair'];

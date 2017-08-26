@@ -10,6 +10,7 @@
 	"zh_TW": "標題"
       },
       "preset": "title",
+      "required": true,
       "form_placeholder": {
         "en": "eg. A descriptive title",
 	"zh_TW": "例如：一個描述性的標題"
@@ -38,13 +39,6 @@
       "form_placeholder": {
         "en": "eg. Some useful notes about the data",
         "zh_TW": "例如: 此資料一些有用的紀錄"
-      }
-    },
-    {
-      "field_name": "identifier",
-      "label": {
-        "en": "Identifier",
-        "zh_TW": "識別碼"
       }
     },
     {
@@ -77,22 +71,15 @@
           "value": "pics_non_spatial",
           "label": {
             "en": "Pictures (Non spatial)",
-            "zh_TW": "掃描圖像 (非空間類)"
+            "zh_TW": "圖像 (非空間類)"
            }
         },
         {
           "value": "pics_spatial",
           "label": {
             "en": "Pictures (Spatial)",
-            "zh_TW": "掃描圖像 (空間類)"
+            "zh_TW": "圖像 (空間類)"
            }
-        },
-        {
-          "value": "grid",
-          "label": {
-            "en": "Grid",
-            "zh_TW": "網格資料"
-          }
         },
         {
           "value": "vector",
@@ -102,452 +89,129 @@
           }
         },
         {
-          "value": "tin",
+          "value": "3d_model",
           "label": {
-            "en": "Tin",
-            "zh_TW": "不規則三角網"
-          }
-        },
-        {
-          "value": "steropair",
-          "label": {
-            "en": "Steropair",
-            "zh_TW": "立體像對"
+            "en": "3D Model",
+            "zh_TW": "三維模型"
           }
         },
         {
           "value": "multimedia",
           "label": {
             "en": "Multimedia",
-            "zh_TW": "影音多媒體"
+            "zh_TW": "影音資料"
           }
         }
       ]
     },
     {
-      "field_name": "proj",
+      "field_name": "tag_string",
       "label": {
-        "en": "Sub Project",
-        "zh_TW": "所屬子計畫"
+        "en": "Tags",
+        "zh_TW": "標籤"
       },
-      "preset": "select_modified",
-      "choices": [
-        {
-          "value": "proj_1",
-          "label": {
-            "en": "Sub Project 1",
-            "zh_TW": "子計畫一"
-          }
-        },
-        {
-          "value": "proj_2",
-          "label": {
-            "en": "Sub Project 2",
-            "zh_TW": "子計畫二"
-          }
-        },
-        {
-          "value": "proj_3",
-          "label": {
-            "en": "Sub Project 3",
-            "zh_TW": "子計畫三"
-          }
-        },
-        {
-          "value": "proj_4",
-          "label": {
-            "en": "Sub Project 4",
-            "zh_TW": "子計畫四"
-          }
-        }
-      ]
-    },
-    {
-      "field_name": "created_time",
-      "label": {
-        "en": "Created Time",
-	"zh_TW": "資料建置時間"
-      },
-      "preset": "date_modified",
-      "validators": "ignore_missing date_validator",
-      "has_temp_res": false,
-      "help_text": {
-        "en": "The time when data become available. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'. Missing month (Day) will be filled with '01'",
-        "zh_TW": "此處填寫資料產出時間，接受的格式為 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'。若未填寫月 (日)，則由 '01' 取代。"
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": {
+        "en": "eg. economy, mental health, government",
+        "zh_TW": "例如：經濟、醫療衛生、政府"
       }
     },
     {
-      "field_name": "owner_org",
+      "field_name": "remarks",
       "label": {
-        "en": "Organization",
-        "zh_TW": "組織"
-      },
-      "preset": "dataset_organization"
-    },
-    {
-      "field_name": "state",
-      "label": {
-        "en": "State",
-        "zh_TW": "狀態"
-      },
-      "preset": "dataset_state",
-      "choices": [
-        {
-          "value": "active",
-          "label": {
-            "en": "Active",
-            "zh_TW": "啟用"
-          }
-        },
-        {
-          "value": "deleted",
-          "label": {
-            "en": "Deleted",
-            "zh_TW": "刪除"
-          }
-        }
-      ]
-    },
-    {
-      "field_name": "book_isbn",
-      "label": {
-        "en": "ISBN-13",
-        "zh_TW": "ISBN-13"
-      },
-      "form_placeholder": "978-1-234-56789-7"
-    },
-    {
-      "field_name": "book_issn",
-      "label": {
-        "en": "ISSN",
-        "zh_TW": "ISSN"
-      },
-      "form_placeholder": "1234-5678"
-    },
-    {
-      "field_name": "book_journal",
-      "label": {
-        "en": "Journal",
-        "zh_TW": "期刊"
-      }
-    },
-    {
-      "field_name": "book_volume",
-      "label": {
-        "en": "Volume",
-        "zh_TW": "卷期"
-      }
-    },
-    {
-      "field_name": "book_proceeding",
-      "label": {
-        "en": "Proceeding",
-        "zh_TW": "論文集名稱"
-      }
-    },
-    {
-      "field_name": "book_location",
-      "label": {
-        "en": "Location",
-        "zh_TW": "出版地"
-      }
-    },
-    {
-      "field_name": "book_publisher",
-      "label": {
-        "en": "Publisher",
-        "zh_TW": "出版單位"
-      }
-    },
-    {
-      "field_name": "book_year",
-      "label": {
-        "en": "Publication Year",
-        "zh_TW": "出版年"
-      }
-    },
-    {
-      "field_name": "book_query",
-      "label": {
-        "en": "Book Query",
-        "zh_TW": "書目查詢"
-      }
-    },
-    {
-      "field_name": "book_url",
-      "label": {
-        "en": "URL",
-        "zh_TW": "網址"
-      }
-    },
-    {
-      "field_name": "book_hist_materials",
-      "label": {
-        "en": "Historical Material",
-	"zh_TW": "使用史料"
-      },
-      "preset": "multiple_checkbox",
-      "choices": [
-        {
-          "value": "local_chronicles_in_qing_dynasty",
-          "label": {
-            "en": "Local chronicles in Qing dynasty",
-            "zh_TW": "清代方志"
-          }
-        },
-        {
-          "value": "japan_officials",
-          "label": {
-            "en": "Japan officials",
-	    "zh_TW": "日治出版品與官方資料"
-	  }
-        },
-        {
-          "value": "officials_in_postwar_period",
-          "label": {
-	    "en": "Officials in postwar period",
-	    "zh_TW": "戰後官方資料與鄉鎮志"
-	  }
-        },
-        {
-          "value": "inscriptions",
-          "label": {
-	    "en": "Inscriptions",
-	    "zh_TW": "碑文"
-	  }
-        },
-        {
-          "value": "newspapers",
-          "label": {
-	    "en": "Newspapers",
-	    "zh_TW": "報紙"
-	  }
-        },
-        {
-          "value": "maps",
-          "label": {
-            "en": "Maps",
-            "zh_TW": "地圖"
-          }
-        },
-        {
-          "value": "taiwanese_governor_office_files",
-          "label": {
-            "en": "Taiwanese Governor Office Files",
-            "zh_TW": "台灣總督府檔案（公文類纂、府報、調查報告、職員錄、衛生法規）"
-          }
-        },
-        {
-          "value": "dutch_formosa",
-          "label": {
-            "en": "Dutch Formosa",
-            "zh_TW": "荷治時期檔案"
-          }
-        },
-        {
-          "value": "field_researches",
-          "label": {
-            "en": "Field Researches",
-            "zh_TW": "地方田野收集文獻（族譜、寺廟志、帳冊、契約）"
-          }
-        }
-      ]
-    },
-    {
-      "field_name": "book_area_village",
-      "label": {
-        "en": "Village of Research Area",
-        "zh_TW": "研究區的聚落名"
-      }
-    },
-    {
-      "field_name": "book_area_religion",
-      "label": {
-        "en": "Religion of Research Area",
-        "zh_TW": "研究區的宗教"
-      }
-    },
-    {
-      "field_name": "book_area_family",
-      "label": {
-        "en": "Family of Research Area",
-        "zh_TW": "研究區的家族"
-      }
-    },
-    {
-      "field_name": "book_area_reservoir",
-      "label": {
-        "en": "Reservoir of Research Area",
-        "zh_TW": "研究區的埤圳"
-      }
-    },
-    {
-      "field_name": "book_area_industry",
-      "label": {
-        "en": "Industry of Research Area",
-        "zh_TW": "研究區的特殊產業"
-      }
-    },
-    {
-      "field_name": "book_notes",
-      "label": {
-        "en": "Notes",
+        "en": "Remarks",
         "zh_TW": "備註"
-      }
+      },
+      "form_snippet": "markdown.html",
+      "display_snippet": "markdown.html"
     },
     {
-      "field_name": "scan_source",
+      "field_name": "language",
       "label": {
-        "en": "Scan Source",
-        "zh_TW": "掃描原件來源"
-      }
-    },
-    {
-      "field_name": "scan_size",
-      "label": {
-        "en": "Scan Size",
-        "zh_TW": "掃描原件尺寸"
+        "en": " Language",
+        "zh_TW": "語言"
       },
-      "form_placeholder": {
-        "en": "填寫原件尺寸大小，單位為公分，如 60x72",
-	"zh_TW": "填寫原件尺寸大小，單位為公分，如 60x72"
-      }
-    },
-    {
-      "field_name": "scan_res",
-      "label": {
-        "en": "Scan Resolution",
-        "zh_TW": "掃描解析度"
-      },
-      "validators": "ignore_missing positive_integer_validator",
-      "form_placeholder": {
-        "en": "填寫掃描解析度數值，單位為 DPI，如 300",
-	"zh_TW": "填寫掃描解析度數值，單位為 DPI，如 300"
-      }
-    },
-    {
-      "field_name": "spatial_res",
-      "label": {
-        "en": "Spatial Resolution",
-        "zh_TW": "空間解析度"
-      },
-      "validators": "ignore_missing positive_float_validator",
-      "form_placeholder": {
-        "en": "填寫資料空間解析度數值，以公尺為單位",
-	"zh_TW": "填寫資料空間解析度數值，以公尺為單位"
-      }
-    },
-    {
-      "field_name": "scale",
-      "label": {
-        "en": "Scale",
-        "zh_TW": "比例尺"
-      },
-      "validators": "ignore_missing positive_integer_validator",
-      "form_placeholder": {
-        "en": "填寫資料比例尺之分母",
-	"zh_TW": "填寫資料比例尺之分母"
-      }
-    },
-    {
-      "field_name": "preprocessing",
-      "label": {
-        "en": "Preprocessing",
-        "zh_TW": "資料處理歷程"
-      },
-      "form_placeholder": {
-        "en": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫",
-	"zh_TW": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫"
-      },
-      "form_snippet": "markdown.html"
-    },
-    {
-      "field_name": "time_period",
-      "label": {
-        "en": "Time Period Shortcut",
-        "zh_TW": "時間區間捷徑"
-      },
-      "preset": "select_modified",
-      "help_text": {
-        "en": "This shortcut provides some historical periods for filling temporal information of the dataset.",
-        "zh_TW": "此捷徑提供部分歷史時期，供您快速填寫資料歷史年代。"
-      },
-      "help_inline": true,
+      "preset": "select",
       "form_attrs": {
         "data-module": "autocomplete"
       },
       "choices": [
         {
-          "value": "荷西時期 (1624-1662)",
-          "label": "荷西時期 (1624-1662)"
+          "value": "zho",
+          "label": {
+            "en": "Chinese",
+            "zh_TW": "華語/中文"
+          }
         },
         {
-          "value": "明鄭時期 (1661-1683)",
-          "label": "明鄭時期 (1661-1683)"
+          "value": "hak",
+          "label": {
+            "en": "Hakka Chinese",
+            "zh_TW": "客家話"
+          }
         },
         {
-          "value": "清康熙時期 (1662-1722)",
-          "label": "清康熙時期 (1662-1722)"
+          "value": "nan",
+          "label": {
+            "en": "Min Nan Chinese",
+            "zh_TW": "閩南語"
+          }
         },
         {
-          "value": "清治前期 (1684-1786)",
-          "label": "清治前期 (1684-1786)"
+          "value": "yue",
+          "label": {
+            "en": "Yue Chinese (Cantonese)",
+            "zh_TW": "粵語"
+          }
         },
         {
-          "value": "清雍正時期 (1723-1735)",
-          "label": "清雍正時期 (1723-1735)"
+          "value": "lzh",
+          "label": {
+            "en": "Literary Chinese",
+            "zh_TW": "文言文"
+          }
         },
         {
-          "value": "清乾隆時期 (1736-1795)",
-          "label": "清乾隆時期 (1736-1795)"
+          "value": "jpn",
+          "label": {
+            "en": "Japanese",
+            "zh_TW": "日語"
+          }
         },
         {
-          "value": "清治後期 (1787-1895)",
-          "label": "清治後期 (1787-1895)"
+          "value": "eng",
+          "label": {
+            "en": "English",
+            "zh_TW": "英語"
+          }
         },
         {
-          "value": "清嘉慶時期 (1796-1820)",
-          "label": "清嘉慶時期 (1796-1820)"
+          "value": "spa",
+          "label": {
+            "en": "Spanish (Castilian)",
+            "zh_TW": "西班牙語"
+          }
         },
         {
-          "value": "清道光時期 (1821-1850)",
-          "label": "清道光時期 (1821-1850)"
+          "value": "nld",
+          "label": {
+            "en": "Dutch",
+            "zh_TW": "荷蘭語"
+          }
         },
         {
-          "value": "清咸豐時期 (1851-1861)",
-          "label": "清咸豐時期 (1851-1861)"
+          "value": "fos",
+          "label": {
+            "en": "Siraya",
+            "zh_TW": "西拉雅語"
+          }
         },
         {
-          "value": "清同治時期 (1862-1874)",
-          "label": "清同治時期 (1862-1874)"
-        },
-        {
-          "value": "清光緒時期 (1875-1908)",
-          "label": "清光緒時期 (1875-1908)"
-        },
-        {
-          "value": "日治時期 (1895-1945)",
-          "label": "日治時期 (1895-1945)"
-        },
-        {
-          "value": "日治時期 (明治) (1895-1911)",
-          "label": "日治時期 (明治) (1895-1911)"
-        },
-        {
-          "value": "日治時期 (大正) (1912-1925)",
-          "label": "日治時期 (大正) (1912-1925)"
-        },
-        {
-          "value": "日治時期 (昭和) (1926-1945)",
-          "label": "日治時期 (昭和) (1926-1945)"
-        },
-        {
-          "value": "太平洋戰爭時期 (1941-1945)",
-          "label": "太平洋戰爭時期 (1941-1945)"
-        },
-        {
-	  "value": "戰後 (1945-)",
-	  "label": "戰後 (1945-)"
+          "value": "por",
+          "label": {
+            "en": "Portuguese",
+            "zh_TW": "葡萄牙語"
+          }
         }
       ]
     },
@@ -557,7 +221,7 @@
         "en": "Temporal Resolution",
         "zh_TW": "時間解析度"
       },
-      "preset": "select_modified",
+      "preset": "select",
       "choices": [
         {
           "value": "year",
@@ -600,13 +264,13 @@
       "field_name": "start_time",
       "label": {
         "en": "Start Time",
-	"zh_TW": "起始時間"
+        "zh_TW": "起始時間"
       },
       "preset": "date_modified",
       "validators": "ignore_missing temp_res_validator",
       "help_text": {
         "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
-	"zh_TW": "由時間解析度決定。接受的格式為 'YYYY' (年/十年/百年)、'YYYY-MM' (月)、'YYYY-MM-DD' (日)。"
+        "zh_TW": "由時間解析度決定。接受的格式為 'YYYY' (年/十年/百年)、'YYYY-MM' (月)、'YYYY-MM-DD' (日)。"
       },
       "help_inline": true
     },
@@ -625,60 +289,71 @@
       "help_inline": true
     },
     {
-      "field_name": "author_name",
+      "field_name": "spatial",
       "label": {
-        "en": "Author",
-        "zh_TW": "作者"
+        "en": "Spatial",
+        "zh_TW": "空間範圍"
       },
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:creator",
-      "validators": "not_empty",
-      "required": true
+      "validators": "scheming_required json_validator remove_blank_wrap",
+      "form_placeholder": {
+        "en": "Accept GeoJSON format",
+        "zh_TW": "僅接受 GeoJSON"
+      },
+      "form_snippet": "text_area.html",
+      "display_snippet": "collapse_text.html",
+      "info": {
+        "en": "This column is used for geo-indexing the dataset. Click for details.",
+        "zh_TW": "此欄位將作為空間索引之用。點選以了解更多。"
+      },
+      "link": "http://docs.ckan.org/projects/ckanext-spatial/en/latest/spatial-search.html#geo-indexing-your-datasets"
     },
     {
-      "field_name": "author_mail",
+      "field_name": "x_min",
       "label": {
-        "en": "Author Email",
-        "zh_TW": "作者的電子郵件"
+        "en": "X.min",
+        "zh_TW": "空間範圍.X.min"
       },
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:creator",
-      "display_snippet": "email.html"
+      "validators": "scheming_required long_validator",
+      "form_placeholder": {
+        "en": "Westmost longitude of the spatial extent",
+        "zh_TW": "填寫圖資空間四至範圍之最西經度值"
+      }
     },
     {
-      "field_name": "author_phone",
+      "field_name": "x_max",
       "label": {
-        "en": "Author Phone",
-        "zh_TW": "作者的聯絡電話"
+        "en": "X.max",
+        "zh_TW": "空間範圍.X.max"
       },
-      "form_placeholder": "02-12345678"
+      "validators": "scheming_required long_validator",
+      "form_placeholder": {
+        "en": "Eastmost longitude of the spatial extent",
+        "zh_TW": "填寫圖資空間四至範圍之最東經度值"
+      }
     },
     {
-      "field_name": "maintainer_name",
+      "field_name": "y_min",
       "label": {
-        "en": "Maintainer",
-        "zh_TW": "維護者"
+        "en": "Y.min",
+        "zh_TW": "空間範圍.Y.min"
       },
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:contributor"
+      "validators": "scheming_required lat_validator",
+      "form_placeholder": {
+        "en": "Southmost latitude of the spatial extent",
+        "zh_TW": "填寫圖資空間四至範圍之最南緯度值"
+      }
     },
     {
-      "field_name": "maintainer_mail",
+      "field_name": "y_max",
       "label": {
-        "en": "Maintainer Email",
-        "zh_TW": "維護者的電子郵件"
+        "en": "Y.max",
+        "zh_TW": "空間範圍.Y.max"
       },
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:contributor",
-      "display_snippet": "email.html"
-    },
-    {
-      "field_name": "maintainer_phone",
-      "label": {
-        "en": "Maintainer Phone",
-        "zh_TW": "維護者的聯絡電話"
-      },
-      "form_placeholder": "02-12345678"
+      "validators": "scheming_required lat_validator",
+      "form_placeholder": {
+        "en": "Northmost latitude of the spatial extent",
+        "zh_TW": "填寫圖資空間四至範圍之最北緯度值"
+      }
     },
     {
       "field_name": "theme_keyword",
@@ -1648,246 +1323,264 @@
       ]
     },
     {
-      "field_name": "x_min",
+      "field_name": "book_isbn",
       "label": {
-        "en": "X.min",
-        "zh_TW": "空間範圍.X.min"
+        "en": "ISBN-13",
+        "zh_TW": "ISBN-13"
       },
-      "validators": "scheming_required long_validator",
-      "form_placeholder": {
-        "en": "填寫圖資空間四至範圍之最西經度值",
-        "zh_TW": "填寫圖資空間四至範圍之最西經度值"
+      "form_placeholder": "978-1-234-56789-7"
+    },
+    {
+      "field_name": "book_issn",
+      "label": {
+        "en": "ISSN",
+        "zh_TW": "ISSN"
+      },
+      "form_placeholder": "1234-5678"
+    },
+    {
+      "field_name": "book_journal",
+      "label": {
+        "en": "Journal",
+        "zh_TW": "期刊"
       }
     },
     {
-      "field_name": "x_max",
+      "field_name": "book_volume",
       "label": {
-        "en": "X.max",
-        "zh_TW": "空間範圍.X.max"
-      },
-      "validators": "scheming_required long_validator",
-      "form_placeholder": {
-        "en": "填寫圖資空間四至範圍之最東經度值",
-        "zh_TW": "填寫圖資空間四至範圍之最東經度值"
+        "en": "Volume",
+        "zh_TW": "卷期"
       }
     },
     {
-      "field_name": "y_min",
+      "field_name": "book_proceeding",
       "label": {
-        "en": "Y.min",
-        "zh_TW": "空間範圍.Y.min"
-      },
-      "validators": "scheming_required lat_validator",
-      "form_placeholder": {
-        "en": "填寫圖資空間四至範圍之最南緯度值",
-        "zh_TW": "填寫圖資空間四至範圍之最南緯度值"
+        "en": "Proceeding",
+        "zh_TW": "論文集名稱"
       }
     },
     {
-      "field_name": "y_max",
+      "field_name": "book_location",
       "label": {
-        "en": "Y.max",
-        "zh_TW": "空間範圍.Y.max"
-      },
-      "validators": "scheming_required lat_validator",
-      "form_placeholder": {
-        "en": "填寫圖資空間四至範圍之最北緯度值",
-        "zh_TW": "填寫圖資空間四至範圍之最北緯度值"
+        "en": "Location",
+        "zh_TW": "出版地"
       }
     },
     {
-      "field_name": "spatial",
+      "field_name": "book_publisher",
       "label": {
-        "en": "Spatial",
-        "zh_TW": "空間範圍"
-      },
-      "validators": "scheming_required json_validator remove_blank_wrap",
-      "form_placeholder": {
-        "en": "Accept GeoJSON format",
-        "zh_TW": "僅接受 GeoJSON"
-      },
-      "form_snippet": "text_area.html",
-      "display_snippet": "collapse_text.html",
-      "info": {
-        "en": "This column is used for geo-indexing the dataset. Click for details.",
-        "zh_TW": "此欄位將作為空間索引之用。點選以了解更多。"
-      },
-      "link": "http://docs.ckan.org/projects/ckanext-spatial/en/latest/spatial-search.html#geo-indexing-your-datasets"
+        "en": "Publisher",
+        "zh_TW": "出版單位"
+      }
     },
     {
-      "field_name": "language",
+      "field_name": "book_year",
       "label": {
-        "en": " Language",
-        "zh_TW": "語言"
+        "en": "Publication Year",
+        "zh_TW": "出版年"
+      }
+    },
+    {
+      "field_name": "book_query",
+      "label": {
+        "en": "Book Query",
+        "zh_TW": "書目查詢"
+      }
+    },
+    {
+      "field_name": "book_url",
+      "label": {
+        "en": "URL",
+        "zh_TW": "網址"
+      }
+    },
+    {
+      "field_name": "book_hist_materials",
+      "label": {
+        "en": "Historical Material",
+        "zh_TW": "使用史料"
       },
-      "preset": "select",
-      "required": true,
-      "form_attrs": {
-        "data-module": "autocomplete"
-      },
+      "preset": "multiple_checkbox",
       "choices": [
         {
-          "value": "zho",
+          "value": "local_chronicles_in_qing_dynasty",
           "label": {
-	    "en": "Chinese",
-	    "zh_TW": "華語/中文"
-	  }
-        },
-        {
-          "value": "hak",
-          "label": {
-	    "en": "Hakka Chinese",
-	    "zh_TW": "客家話"
-	  }
-        },
-        {
-          "value": "nan",
-          "label": {
-	    "en": "Min Nan Chinese",
-	    "zh_TW": "閩南語"
+            "en": "Local chronicles in Qing dynasty",
+            "zh_TW": "清代方志"
           }
         },
         {
-          "value": "yue",
+          "value": "japan_officials",
           "label": {
-	    "en": "Yue Chinese (Cantonese)",
-	    "zh_TW": "粵語"
+            "en": "Japan officials",
+            "zh_TW": "日治出版品與官方資料"
           }
         },
         {
-          "value": "lzh",
+          "value": "officials_in_postwar_period",
           "label": {
-	    "en": "Literary Chinese",
-	    "zh_TW": "文言文"
-	  }
+            "en": "Officials in postwar period",
+            "zh_TW": "戰後官方資料與鄉鎮志"
+          }
         },
         {
-          "value": "jpn",
+          "value": "inscriptions",
           "label": {
-	    "en": "Japanese",
-	    "zh_TW": "日語"
-	  }
+            "en": "Inscriptions",
+            "zh_TW": "碑文"
+          }
         },
         {
-          "value": "eng",
+          "value": "newspapers",
           "label": {
-	    "en": "English",
-	    "zh_TW": "英語"
-	  }
+            "en": "Newspapers",
+            "zh_TW": "報紙"
+          }
         },
         {
-          "value": "spa",
+          "value": "maps",
           "label": {
-	    "en": "Spanish (Castilian)",
-	    "zh_TW": "西班牙語"
-	  }
+            "en": "Maps",
+            "zh_TW": "地圖"
+          }
         },
         {
-          "value": "nld",
+          "value": "maps",
           "label": {
-	    "en": "Dutch",
-	    "zh_TW": "荷蘭語"
-	  }
+            "en": "Maps",
+            "zh_TW": "地圖"
+          }
         },
         {
-          "value": "fos",
+          "value": "taiwanese_governor_office_files",
           "label": {
-	    "en": "Siraya",
-	    "zh_TW": "西拉雅語"
-	  }
+            "en": "Taiwanese Governor Office Files",
+            "zh_TW": "台灣總督府檔案（公文類纂、府報、調查報告、職員錄、衛生法規）"
+          }
         },
         {
-          "value": "por",
+          "value": "dutch_formosa",
           "label": {
-	    "en": "Portuguese",
-	    "zh_TW": "葡萄牙語"
-	  }
+            "en": "Dutch Formosa",
+            "zh_TW": "荷治時期檔案"
+          }
+        },
+        {
+          "value": "field_researches",
+          "label": {
+            "en": "Field Researches",
+            "zh_TW": "地方田野收集文獻（族譜、寺廟志、帳冊、契約）"
+          }
         }
       ]
     },
     {
-      "field_name": "encoding",
+      "field_name": "book_area_village",
       "label": {
-        "en": "Encoding",
-        "zh_TW": "編碼"
-      },
-      "preset": "select",
-      "required": true,
-      "form_attrs": {
-        "data-module": "autocomplete"
-      },
-      "choices": [
-        {
-          "value": "big5",
-          "label": {
-	    "en": "Big5",
-	    "zh_TW": "Big5 (繁體中文大五碼)"
-	  }
-        },
-        {
-          "value": "utf-8",
-          "label": {
-	    "en": "UTF-8",
-	    "zh_TW": "UTF-8"
-	  }
-        },
-        {
-          "value": "latin1",
-          "label": {
-	    "en": "ISO-8859-1",
-	    "zh_TW": "ISO-8859-1 (西歐字元)"
-	  }
-        },
-        {
-          "value": "gb2312",
-          "label": {
-	    "en": "GB2312",
-	    "zh_TW": "GB2312 (簡體中文)"
-	  }
-        },
-        {
-          "value": "gb18030",
-          "label": {
-	    "en" : "GB18030",
-	    "zh_TW": "GB18030 (簡體中文)"
-	  }
-        },
-        {
-          "value": "shift_jis",
-          "label": {
-	    "en": "Shift_JIS",
-	    "zh_TW": "Shift_JIS (日文)"
-	  }
-        },
-        {
-          "value": "euc-jp",
-          "label": {
-	    "en": "EUC-JP",
-	    "zh_TW": "EUC-JP (日文)"
-	  }
-        }
-      ]
-    },
-    {
-      "field_name": "tag_string",
-      "label": {
-        "en": "Tags",
-        "zh_TW": "標籤"
-      },
-      "preset": "tag_string_autocomplete",
-      "form_placeholder": {
-        "en": "eg. economy, mental health, government",
-	"zh_TW": "例如：經濟、醫療衛生、政府"
+        "en": "Village of Research Area",
+        "zh_TW": "研究區的聚落名"
       }
     },
     {
-      "field_name": "ref",
-      "preset": "repeating_text_modified",
+      "field_name": "book_area_religion",
       "label": {
-        "en": "Reference",
-        "zh_TW": "參考來源"
+        "en": "Religion of Research Area",
+        "zh_TW": "研究區的宗教"
+      }
+    },
+    {
+      "field_name": "book_area_family",
+      "label": {
+        "en": "Family of Research Area",
+        "zh_TW": "研究區的家族"
+      }
+    },
+    {
+      "field_name": "book_area_reservoir",
+      "label": {
+        "en": "Reservoir of Research Area",
+        "zh_TW": "研究區的埤圳"
+      }
+    },
+    {
+      "field_name": "book_area_industry",
+      "label": {
+        "en": "Industry of Research Area",
+        "zh_TW": "研究區的特殊產業"
+      }
+    },
+    {
+      "field_name": "book_notes",
+      "label": {
+        "en": "Notes",
+        "zh_TW": "備註"
+      }
+    },
+    {
+      "field_name": "scan_source",
+      "label": {
+        "en": "Original Source",
+        "zh_TW": "掃描原件來源"
+      }
+    },
+    {
+      "field_name": "scan_size",
+      "label": {
+        "en": "Scan Size",
+        "zh_TW": "掃描原件尺寸"
       },
-      "form_blanks": 3
+      "form_placeholder": {
+        "en": "Size (cm) of source (e.g., 60x72)",
+        "zh_TW": "填寫原件尺寸大小，單位為公分，如 60x72"
+      }
+    },
+    {
+      "field_name": "scan_res",
+      "label": {
+        "en": "Scanning Resolution",
+        "zh_TW": "掃描解析度"
+      },
+      "validators": "ignore_missing positive_integer_validator",
+      "form_placeholder": {
+        "en": "Resolution (DPI) of source (e.g., 300)",
+        "zh_TW": "填寫掃描解析度數值，單位為 DPI，如 300"
+      }
+    },
+    {
+      "field_name": "spatial_res",
+      "label": {
+        "en": "Spatial Resolution",
+        "zh_TW": "空間解析度"
+      },
+      "validators": "ignore_missing positive_float_validator",
+      "form_placeholder": {
+        "en": "Spatial resolution (m) of source",
+        "zh_TW": "填寫資料空間解析度數值，以公尺為單位"
+      }
+    },
+    {
+      "field_name": "scale",
+      "label": {
+        "en": "Scale Denominator",
+        "zh_TW": "比例尺"
+      },
+      "validators": "ignore_missing positive_integer_validator",
+      "form_placeholder": {
+        "en": "Scale denominator of data",
+        "zh_TW": "填寫資料比例尺之分母"
+      }
+    },
+    {
+      "field_name": "preprocessing",
+      "label": {
+        "en": "Preprocessing",
+        "zh_TW": "資料處理歷程"
+      },
+      "form_placeholder": {
+        "en": "Steps of data generating process",
+        "zh_TW": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫"
+      },
+      "form_snippet": "markdown.html"
     },
     {
       "field_name": "license_id",
@@ -1895,7 +1588,103 @@
         "en": "License",
         "zh_TW": "授權"
       },
+      "required": true,
       "form_snippet": "license.html"
+    },
+    {
+      "field_name": "author_name",
+      "label": {
+        "en": "Author",
+        "zh_TW": "產製者"
+      },
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator",
+      "validators": "not_empty",
+      "required": true
+    },
+    {
+      "field_name": "created_time",
+      "label": {
+        "en": "Created Time",
+        "zh_TW": "資料產製時間"
+      },
+      "preset": "date_modified",
+      "validators": "ignore_missing date_validator",
+      "has_temp_res": false,
+      "help_text": {
+        "en": "Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'. Missing month (Day) will be filled with '01'",
+        "zh_TW": "接受的格式為 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'。若未填寫月 (日)，則由 '01' 取代。"
+      }
+    },
+    {
+      "field_name": "owner_org",
+      "label": {
+        "en": "Organization",
+        "zh_TW": "組織"
+      },
+      "preset": "dataset_organization"
+    },
+    {
+      "field_name": "maintainer_name",
+      "label": {
+        "en": "Maintainer",
+        "zh_TW": "維護者"
+      },
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:contributor"
+    },
+    {
+      "field_name": "maintainer_mail",
+      "label": {
+        "en": "Maintainer Email",
+        "zh_TW": "維護者的電子郵件"
+      },
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:contributor",
+      "display_snippet": "email.html"
+    },
+    {
+      "field_name": "maintainer_phone",
+      "label": {
+        "en": "Maintainer Phone",
+        "zh_TW": "維護者的聯絡電話"
+      },
+      "form_placeholder": "02-12345678"
+    },
+    {
+      "field_name": "identifier",
+      "label": {
+        "en": "Identifier",
+        "zh_TW": "識別碼"
+      },
+      "form_placeholder": {
+        "en": "The unique identifier of this dataset",
+        "zh_TW": "來自資料集，其原始具有之唯一識別碼"
+      }
+    },
+    {
+      "field_name": "state",
+      "label": {
+        "en": "State",
+        "zh_TW": "狀態"
+      },
+      "preset": "dataset_state",
+      "choices": [
+        {
+          "value": "active",
+          "label": {
+            "en": "Active",
+            "zh_TW": "啟用"
+          }
+        },
+        {
+          "value": "deleted",
+          "label": {
+            "en": "Deleted",
+            "zh_TW": "刪除"
+          }
+        }
+      ]
     }
   ],
   "resource_fields": [
@@ -1933,6 +1722,68 @@
         "en": "Some useful notes about the data",
         "zh_TW": "一些與此資料有關的紀錄"
       }
+    },
+    {
+      "field_name": "encoding",
+      "label": {
+        "en": "Encoding",
+        "zh_TW": "編碼"
+      },
+      "preset": "select",
+      "form_attrs": {
+        "data-module": "autocomplete"
+      },
+      "choices": [
+        {
+          "value": "big5",
+          "label": {
+            "en": "Big5",
+            "zh_TW": "Big5 (繁體中文大五碼)"
+          }
+        },
+        {
+          "value": "utf-8",
+          "label": {
+            "en": "UTF-8",
+            "zh_TW": "UTF-8"
+          }
+        },
+        {
+          "value": "latin1",
+          "label": {
+            "en": "ISO-8859-1",
+            "zh_TW": "ISO-8859-1 (西歐字元)"
+          }
+        },
+        {
+          "value": "gb2312",
+          "label": {
+            "en": "GB2312",
+            "zh_TW": "GB2312 (簡體中文)"
+          }
+        },
+        {
+          "value": "gb18030",
+          "label": {
+            "en" : "GB18030",
+            "zh_TW": "GB18030 (簡體中文)"
+          }
+        },
+        {
+          "value": "shift_jis",
+          "label": {
+            "en": "Shift_JIS",
+            "zh_TW": "Shift_JIS (日文)"
+          }
+        },
+        {
+          "value": "euc-jp",
+          "label": {
+            "en": "EUC-JP",
+            "zh_TW": "EUC-JP (日文)"
+          }
+        }
+      ]
     },
     {
       "field_name": "resource_crs",

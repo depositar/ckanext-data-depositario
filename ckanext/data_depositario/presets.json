@@ -4,14 +4,6 @@
   "about_url": "http://github.com/depositar-io/ckanext-data-depositario",
   "presets": [
     {
-      "preset_name": "select_modified",
-      "values": {
-        "form_snippet": "select_modified.html",
-        "display_snippet": "select.html",
-        "validators": "scheming_required scheming_choices"
-      }
-    },
-    {
       "preset_name": "date_modified",
       "values": {
 	"form_snippet": "date_modified.html",

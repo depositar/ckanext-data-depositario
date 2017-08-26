@@ -1,0 +1,3 @@
+{% set license_list = h.get_license_list() %}
+
+<a href="#license_details" title="{% trans %}License Details{% endtrans %}" data-target="popover" data-content="<table class='table table-striped table-bordered table-condensed'><tr><th>{{ _('Title') }}</th><th>{{ _('Chinese') }}</th>{% for license in license_list %}{% if license.title %}<tr><td>{{ license.title }}</td><td>{{ license.title_zh }}</td></tr>{% endif %}{% endfor %}</table>" data-html="true">{% if not label %}<i class="icon-info-sign"></i>{% endif %}{{ label }}</a>

@@ -8,9 +8,9 @@ function set_time_period(start, end) {
   $('#field-end_time').attr('disabled', false);
   $('#field-end_time').attr('readonly', true);
 }
-$('#field-time_period').on('select2-selecting', function(e) {
-  var date = e.val.split(/[-()]/).reverse();
-  var start = date[2];
+$('#time_period').on('select2-selecting', function(e) {
+  var date = e.val.split('-');
+  var start = date[0];
   var end = date[1];
   if (end == '') {
     end = $.datepicker.formatDate('yy', new Date());

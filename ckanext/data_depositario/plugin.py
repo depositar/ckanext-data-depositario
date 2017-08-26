@@ -62,7 +62,7 @@ class DataDepositarioDatasets(p.SingletonPlugin):
         return search_params
 
     def before_index(self, data_dict):
-        for field_name in ['data_type', 'proj', 'language', 'encoding']:
+        for field_name in ['data_type', 'language']:
             value = data_dict.get(field_name, '')
             data_dict[field_name+'_facet'] = value
         schema = helpers.get_schema('dataset')
@@ -100,9 +100,7 @@ class DataDepositarioDatasets(p.SingletonPlugin):
     def dataset_facets(self, facets_dict, package_type):
         facets_dict['date_facet'] = p.toolkit._('Date of Dataset')
         facets_dict['data_type_facet'] = p.toolkit._('Data Type')
-        facets_dict['proj_facet'] = p.toolkit._('Project')
         facets_dict['language_facet'] = p.toolkit._('Language')
-        facets_dict['encoding_facet'] = p.toolkit._('Encoding')
         facets_dict['theme_keyword_facet'] = p.toolkit._('Theme Keyword')
         facets_dict['loc_keyword_facet'] = p.toolkit._('Spatial Keyword')
         facets_dict['book_hist_materials_facet'] = p.toolkit._('Historical Material')
@@ -114,9 +112,7 @@ class DataDepositarioDatasets(p.SingletonPlugin):
 
     def organization_facets(self, facets_dict, organization_type, package_type):
         facets_dict['data_type_facet'] = p.toolkit._('Data Type')
-        facets_dict['proj_facet'] = p.toolkit._('Project')
         facets_dict['language_facet'] = p.toolkit._('Language')
-        facets_dict['encoding_facet'] = p.toolkit._('Encoding')
         facets_dict['theme_keyword_facet'] = p.toolkit._('Theme Keyword')
         facets_dict['loc_keyword_facet'] = p.toolkit._('Spatial Keyword')
         facets_dict['book_hist_materials_facet'] = p.toolkit._('Historical Material')
@@ -149,8 +145,10 @@ class DataDepositarioDatasets(p.SingletonPlugin):
             'get_default_slider_values',
             'get_date_url_param',
             'get_time_period',
+            'get_time_period_for_facet_slider',
             'string_to_list',
-            'get_gmap_config'
+            'get_gmap_config',
+            'get_license_list',
         )
         return _get_module_functions(helpers, function_names)
 

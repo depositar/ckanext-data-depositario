@@ -3,6 +3,9 @@ import ckan.plugins as p
 from ckan.common import json
 from geomet import wkt
 import re
+import os
+import json
+import inspect
 import logging
 import dateutil
 from datetime import date
@@ -10,6 +13,23 @@ from ckanext.scheming import helpers as scheming_helpers
 
 log = logging.getLogger(__name__)
 
+
+def _load_schema_module_path(url):
+   """
+   Given a path like "ckanext.spatialx:spatialx_schema.json"
+   find the second part relative to the import path of the first
+   Borrowed from ckanext-scheming
+   """
+
+   module, file_name = url.split(':', 1)
+   try:
+       # __import__ has an odd signature
+       m = __import__(module, fromlist=[''])
+   except ImportError:
+       return
+   p = os.path.join(os.path.dirname(inspect.getfile(m)), file_name)
+   if os.path.exists(p):
+       return json.load(open(p))
 
 def extras_to_dict(pkg):
    extras_dict = {}
@@ -94,15 +114,17 @@ def get_choices_value(choices, label):
    return label
 
 def get_time_period():
-   schema = get_schema('dataset')
-   field = get_field_by_name(schema['dataset_fields'], 'time_period')
-   time_period_list = []
-   for choice in field['choices']:
-      splitted = re.split(r'[-()]', choice['value'])
-      label = scheming_helpers.scheming_choices_label(field['choices'], choice['value'])
-      time_period_list.append((label, splitted[-3], splitted[-2]))
-   time_period_list.sort(key=lambda tup:tup[1])
-   return time_period_list
+   return _load_schema_module_path('ckanext.data_depositario:time_period.json')
+
+def get_time_period_for_facet_slider():
+   out = []
+   time_periold_list = get_time_period()
+   for time_period in time_periold_list:
+      if not time_period['value']: continue
+      splitted = time_period['value'].split('-')
+      label = scheming_helpers.scheming_choices_label(time_periold_list, time_period['value'])
+      out.append((label, splitted[0], splitted[1]))
+   return out
 
 def string_to_list(value):
    if value == [u''] or value == None:
@@ -127,3 +149,6 @@ def get_gmap_config():
 
     return dict([(k.replace(namespace, ''), v) for k, v in config.iteritems()
                  if k.startswith(namespace)])
+
+def get_license_list():
+   return p.toolkit.get_action('license_list')({}, {})
