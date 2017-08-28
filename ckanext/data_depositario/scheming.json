@@ -1641,7 +1641,8 @@
       },
       "form_placeholder": "joe@example.com",
       "display_property": "dc:contributor",
-      "display_snippet": "email.html"
+      "display_snippet": "email.html",
+      "display_email_name_field": "maintainer_mail"
     },
     {
       "field_name": "maintainer_phone",
