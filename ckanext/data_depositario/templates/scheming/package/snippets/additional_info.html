@@ -70,30 +70,6 @@
     'identifier'
     ] -%}
 
-{# For old schema definition #}
-{% if pkg_dict.get('extras', [])|length %}
-  {% set extras = h.extras_to_dict(pkg_dict) %}
-  {% do pkg_dict.update(extras) %}
-{% endif %}
-{% for field_name in ['ref', 'loc_keyword'] %}
-  {% do pkg_dict.update({field_name: h.string_to_list(pkg_dict.get(field_name))}) %}
-{% endfor %}
-{% set old_values = [] %}
-{% if pkg_dict.get('theme_keyword_1') %}
-  {% do old_values.append(pkg_dict.theme_keyword_1) %}
-{% elif pkg_dict.get('theme_keyword_2') %}
-  {% do old_values.append(pkg_dict.theme_keyword_2) %}
-{% elif pkg_dict.get('theme_keyword_3') %}
-  {% do old_values.append(pkg_dict.theme_keyword_3) %}
-{% elif pkg_dict.get('theme_keyword_4') %}
-  {% do old_values.append(pkg_dict.theme_keyword_4) %}
-{% elif pkg_dict.get('theme_keyword_5') %}
-  {% do old_values.append(pkg_dict.theme_keyword_5) %}
-{% endif %}
-{% if old_values|length %}
-  {% do pkg_dict.update({'theme_keyword': old_values}) %}
-{% endif %}
-
 <section class="additional-info">
   {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Basic Information'), pkg_dict=pkg_dict, additional_fields=basic_info_fields, exclude_fields=exclude_fields, schema=schema %}
 </section>

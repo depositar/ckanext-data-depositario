@@ -1,29 +1,5 @@
 {% extends 'package/new_package_form.html' %}
 
-{# For old schema definition #}
-{% if data.get('extras', [])|length %}
-  {% set extras = h.extras_to_dict(data) %}
-  {% do data.update(extras) %}
-{% endif %}
-{% for field_name in ['ref', 'loc_keyword'] %}
-  {% do data.update({field_name: h.string_to_list(data.get(field_name))}) %}
-{% endfor %}
-{% set old_values = [] %}
-{% if data.get('theme_keyword_1') %}
-  {% do old_values.append(data.theme_keyword_1) %}
-{% elif data.get('theme_keyword_2') %}
-  {% do old_values.append(data.theme_keyword_2) %}
-{% elif data.get('theme_keyword_3') %}
-  {% do old_values.append(data.theme_keyword_3) %}
-{% elif data.get('theme_keyword_4') %}
-  {% do old_values.append(data.theme_keyword_4) %}
-{% elif data.get('theme_keyword_5') %}
-  {% do old_values.append(data.theme_keyword_5) %}
-{% endif %}
-{% if old_values|length %}
-  {% do data.update({'theme_keyword': old_values}) %}
-{% endif %}
-
 {% block basic_fields %}
   {%- if not dataset_type -%}
     <p>

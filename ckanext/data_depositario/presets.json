@@ -19,15 +19,6 @@
       }
     },
     {
-      "preset_name": "repeating_text_modified",
-      "values": {
-        "form_snippet": "repeating_text_modified.html",
-        "display_snippet": "repeating_text_modified.html",
-        "validators": "repeating_text duplicate_validator",
-        "output_validators": "repeating_text_output"
-      }
-    },
-    {
       "preset_name": "repeating_select",
       "values": {
         "form_snippet": "repeating_select.html",

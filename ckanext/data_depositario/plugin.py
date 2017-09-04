@@ -68,21 +68,11 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             value = data_dict.get(field_name, '')
             data_dict[field_name+'_facet'] = value
         schema = helpers.get_schema('dataset')
-        #For the old five theme keywords
-        if data_dict.get('theme_keyword_1'):
-            theme_keywords = []
-            for i in range(5):
-                field_name = 'theme_keyword_' + str(i+1)
-                theme_keywords.append(data_dict.get(field_name))
-            data_dict['theme_keyword'] = json.dumps(theme_keywords)
         for field_name in ['theme_keyword', 'loc_keyword', 'book_hist_materials']:
             field = helpers.get_field_by_name(schema['dataset_fields'], field_name)
             value = data_dict.get(field_name, [])
             if value:
                 keywords = json.loads(value)
-                if isinstance(keywords, int):
-                    #For the old loc_keyword (a single id)
-                    keywords = [str(keywords)]
                 #Get the value for the old Chinese label of theme_keyword
                 value = [helpers.get_choices_value(field['choices'], k) for k in keywords]
             data_dict[field_name+'_facet'] = value
@@ -148,7 +138,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             'get_date_url_param',
             'get_time_period',
             'get_time_period_for_facet_slider',
-            'string_to_list',
             'get_gmap_config',
             'get_license_list',
         )

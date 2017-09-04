@@ -126,13 +126,6 @@ def get_time_period_for_facet_slider():
       out.append((label, splitted[0], splitted[1]))
    return out
 
-def string_to_list(value):
-   if value == [u''] or value == None:
-      return []
-   if isinstance(value, list):
-      return value
-   return [value]
-
 def get_gmap_config():
     '''
         Returns a dict with all configuration options related to the
