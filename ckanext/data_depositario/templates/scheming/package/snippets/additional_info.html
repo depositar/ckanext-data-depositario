@@ -123,7 +123,7 @@
 
 {% if pkg_dict.get('scan_source') or pkg_dict.get('scan_size') or pkg_dict.get('scan_res') or pkg_dict.get('spatial_res') or pkg_dict.get('scale') or pkg_dict.get('preprocessing') %}
   <section class="additional-info">
-    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Scanned Image'), pkg_dict=pkg_dict, additional_fields=picture_fields, exclude_fields=exclude_fields, schema=schema %}
+    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Pictures'), pkg_dict=pkg_dict, additional_fields=picture_fields, exclude_fields=exclude_fields, schema=schema %}
   </section>
 {% endif %}
 

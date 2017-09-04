@@ -5,7 +5,7 @@ version = '5.0'
 
 entry_points = {
     'ckan.plugins': [
-	'data_depositario_datasets = ckanext.data_depositario.plugin:DataDepositarioDatasets',
+	'data_depositario = ckanext.data_depositario.plugin:DataDepositarioDatasets',
     ],
     'babel.extractors': [
         'ckan = ckan.lib.extract:extract_ckan',
@@ -32,4 +32,10 @@ setup(
         # -*- Extra requirements: -*-
     ],
     entry_points=entry_points,
+    message_extractors={
+        'ckanext': [
+            ('**.py', 'python', None),
+            ('**/templates/**.html', 'ckan', None),
+        ],
+    }
 )

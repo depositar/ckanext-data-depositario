@@ -106,10 +106,6 @@ body {
 
 
 /* Additional info - used on both dataset and resource page */
-.additional-info thead {
-  display: none;
-}
-
 .additional-info th {
   width: 15%;
 }

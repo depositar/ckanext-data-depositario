@@ -1,0 +1,507 @@
+# Chinese (Traditional, Taiwan) translations for ckanext-data-depositario.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the
+# ckanext-data-depositario project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-data-depositario 5.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-09-02 16:57+0800\n"
+"PO-Revision-Date: 2017-09-02 16:58+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_Hant_TW\n"
+"Language-Team: zh_Hant_TW <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ckanext/data_depositario/plugin.py:104
+#: ckanext/data_depositario/plugin.py:116
+msgid "Data Type"
+msgstr "資料類型"
+
+#: ckanext/data_depositario/plugin.py:105
+#: ckanext/data_depositario/plugin.py:117
+msgid "Language"
+msgstr "語言"
+
+#: ckanext/data_depositario/plugin.py:106
+#: ckanext/data_depositario/plugin.py:118
+msgid "Theme Keyword"
+msgstr "主題關鍵字"
+
+#: ckanext/data_depositario/plugin.py:107
+#: ckanext/data_depositario/plugin.py:119
+msgid "Spatial Keyword"
+msgstr "空間範圍關鍵字"
+
+#: ckanext/data_depositario/plugin.py:108
+#: ckanext/data_depositario/plugin.py:120
+msgid "Historical Material"
+msgstr "使用史料"
+
+#: ckanext/data_depositario/validators.py:16
+msgid "Must be a positive integer"
+msgstr "必須是正整數"
+
+#: ckanext/data_depositario/validators.py:26
+msgid "Must be a valid longitude coordinate"
+msgstr "必須是有效的經度值"
+
+#: ckanext/data_depositario/validators.py:36
+msgid "Must be a valid latitude coordinate"
+msgstr "必須是有效的緯度值"
+
+#: ckanext/data_depositario/validators.py:46
+msgid "Must be a positive float"
+msgstr "必須是正浮點數"
+
+#: ckanext/data_depositario/validators.py:86
+#: ckanext/data_depositario/validators.py:127
+msgid "Date format incorrect"
+msgstr "日期格式不正確"
+
+#: ckanext/data_depositario/validators.py:86
+msgid ", should be: "
+msgstr "，應為："
+
+#: ckanext/data_depositario/templates/footer.html:5
+msgid "Contact us"
+msgstr "聯絡我們"
+
+#: ckanext/data_depositario/templates/footer.html:10
+#: ckanext/data_depositario/templates/package/read.html:25
+msgid "CKAN API"
+msgstr "CKAN API"
+
+#: ckanext/data_depositario/templates/footer.html:10
+msgid "Site Statistics"
+msgstr "網站統計"
+
+#: ckanext/data_depositario/templates/footer.html:15
+msgid ""
+"<p>Source code available on <a href=\"https://github.com/depositar-io\" "
+"class=\"external\" target=\"_blank\">GitHub.</a></p>"
+msgstr "<p>程式碼可於 <a href=\"https://github.com/depositar-io\" class=\"external\"target=\"_blank\">GitHub</a> 取得。</p>"
+
+#: ckanext/data_depositario/templates/header.html:8
+msgid "Datasets"
+msgstr "資料集"
+
+#: ckanext/data_depositario/templates/header.html:9
+msgid "Organizations"
+msgstr "組織"
+
+#: ckanext/data_depositario/templates/header.html:10
+#: ckanext/data_depositario/templates/theme.html:3
+msgid "Groups"
+msgstr "主題"
+
+#: ckanext/data_depositario/templates/header.html:11
+msgid "About"
+msgstr "關於"
+
+#: ckanext/data_depositario/templates/header.html:12
+#: ckanext/data_depositario/templates/home/help.html:3
+#: ckanext/data_depositario/templates/home/help.html:7
+msgid "Help"
+msgstr "支援"
+
+#: ckanext/data_depositario/templates/theme.html:4
+msgid "group"
+msgstr "主題"
+
+#: ckanext/data_depositario/templates/theme.html:5
+msgid "Group"
+msgstr "主題"
+
+#: ckanext/data_depositario/templates/theme.html:6
+msgid "Add a Group"
+msgstr "新增一個主題"
+
+#: ckanext/data_depositario/templates/theme.html:7
+msgid "Group Form"
+msgstr "主題表單"
+
+#: ckanext/data_depositario/templates/theme.html:8
+msgid "Are you sure you want to delete group - {name}?"
+msgstr "確定要刪除主題：{name}嗎？"
+
+#: ckanext/data_depositario/templates/theme.html:9
+msgid "Edit Group"
+msgstr "編輯主題"
+
+#: ckanext/data_depositario/templates/theme.html:10
+msgid "Add Group"
+msgstr "新增主題"
+
+#: ckanext/data_depositario/templates/theme.html:11
+msgid "Search groups..."
+msgstr "搜尋主題"
+
+#: ckanext/data_depositario/templates/theme.html:12
+msgid "There are currently no groups for this site"
+msgstr "此網站上目前沒有任何主題"
+
+#: ckanext/data_depositario/templates/theme.html:13
+msgid "Create a Group"
+msgstr "建立一個主題"
+
+#: ckanext/data_depositario/templates/theme.html:14
+msgid "Update Group"
+msgstr "更新主題"
+
+#: ckanext/data_depositario/templates/theme.html:15
+msgid "Create Group"
+msgstr "建立主題"
+
+#: ckanext/data_depositario/templates/theme.html:16
+msgid "Datasets in group: {group}"
+msgstr "主題{group}中的資料集"
+
+#: ckanext/data_depositario/templates/theme.html:17
+msgid "My Group"
+msgstr "我的主題"
+
+#: ckanext/data_depositario/templates/theme.html:18
+msgid "my-group"
+msgstr "我的主題"
+
+#: ckanext/data_depositario/templates/theme.html:19
+msgid "A little information about my group..."
+msgstr "關於我的主題的資訊..."
+
+#: ckanext/data_depositario/templates/theme.html:20
+msgid "Are you sure you want to delete this Group?"
+msgstr "確定要刪除這個主題嗎？"
+
+#: ckanext/data_depositario/templates/theme.html:21
+msgid "Save Group"
+msgstr "儲存主題"
+
+#: ckanext/data_depositario/templates/theme.html:22
+msgid "Remove dataset from this group"
+msgstr "從此主題移除資料集"
+
+#: ckanext/data_depositario/templates/theme.html:23
+msgid "What are Groups?"
+msgstr "什麼是主題？"
+
+#: ckanext/data_depositario/templates/theme.html:24
+msgid "groups"
+msgstr "主題"
+
+#: ckanext/data_depositario/templates/theme.html:25
+msgid "Associate this group with this dataset"
+msgstr "將資料集加入此主題"
+
+#: ckanext/data_depositario/templates/theme.html:26
+msgid "Add to group"
+msgstr "加入主題"
+
+#: ckanext/data_depositario/templates/theme.html:27
+msgid "There are no groups associated with this dataset"
+msgstr "沒有主題跟此資料集有關聯"
+
+#: ckanext/data_depositario/templates/theme.html:28
+msgid "{number} group found for \"{query}\""
+msgid_plural "{number} groups found for \"{query}\""
+msgstr[0] "根據\"{query}\"找到{number}個主題"
+
+#: ckanext/data_depositario/templates/theme.html:29
+msgid "No groups found for \"{query}\""
+msgstr "找不到符合 \"{query}\" 的主題"
+
+#: ckanext/data_depositario/templates/theme.html:30
+msgid "{number} group found"
+msgid_plural "{number} groups found"
+msgstr[0] "找到{number}個主題"
+
+#: ckanext/data_depositario/templates/theme.html:31
+msgid "No groups found"
+msgstr "找不到主題"
+
+#: ckanext/data_depositario/templates/theme.html:32
+msgid "My Groups"
+msgstr "我的主題"
+
+#: ckanext/data_depositario/templates/theme.html:33
+msgid "You are not a member of any groups."
+msgstr "你不屬於任何主題之成員。"
+
+#: ckanext/data_depositario/templates/theme.html:34
+msgid "Create datasets, groups and other exciting things"
+msgstr "建立資料集、主題以及其他有趣的事物"
+
+#: ckanext/data_depositario/templates/theme.html:35
+msgid "This group has no description"
+msgstr "此主題沒有說明"
+
+#: ckanext/data_depositario/templates/theme.html:36
+msgid "Largest Groups"
+msgstr "擁有最多資料集的主題"
+
+#: ckanext/data_depositario/templates/theme.html:37
+msgid "No groups"
+msgstr "沒有主題"
+
+#: ckanext/data_depositario/templates/theme.html:38
+msgid ""
+" <p><strong>Admin:</strong> Can edit group information, as well as manage"
+" organization members.</p> <p><strong>Member:</strong> Can add/remove "
+"datasets from groups</p> "
+msgstr ""
+"<p><strong>管理者：</strong> 可以編輯主題資訊，以及管理主題成員。</p>"
+"<p><strong>一般成員：</strong>可以瀏覽主題的私有資料集，但無法新增資料集。</p>"
+
+#: ckanext/data_depositario/templates/theme.html:43
+msgid ""
+" You can use CKAN Groups to create and manage collections of datasets. "
+"This could be to catalogue datasets for a particular project or team, or "
+"on a particular theme, or as a very simple way to help people find and "
+"search your own published datasets. "
+msgstr "您可以使用 CKAN 主題建立並管理多個資料集。主題可以代表一個主題、專案或是小組，可以幫助使用者快速找尋資料集。"
+
+#: ckanext/data_depositario/templates/theme.html:52
+msgid "Filter by location"
+msgstr "空間搜尋"
+
+#: ckanext/data_depositario/templates/home/help.html:14
+msgid "Manuals"
+msgstr "教學文件"
+
+#: ckanext/data_depositario/templates/home/help.html:16
+msgid "Manual (In Chinese)"
+msgstr "使用教學手冊"
+
+#: ckanext/data_depositario/templates/home/help.html:17
+msgid "Introduction to CKAN"
+msgstr "CKAN 基礎介紹"
+
+#: ckanext/data_depositario/templates/home/help.html:19
+msgid ""
+"Bulk Upload Instructions and Sample File (for uploading 20 or more "
+"datasets)"
+msgstr "大量上傳規範及範例檔案 (僅接受 20 筆以上 (含 20 筆) 之大量上傳服務)"
+
+#: ckanext/data_depositario/templates/home/help.html:21
+msgid ""
+"Service temporarily unavailable due to recent metadata changes. Please "
+"contact us via email: data.contact AT depositar.io if you still need this"
+" service."
+msgstr "因後設資料變動，暫時停止大量上傳服務。若您仍有需求，請透過電子郵件信箱聯絡我們：data.contact AT depositar.io。"
+
+#: ckanext/data_depositario/templates/home/snippets/featured_organization.html:4
+msgid "Organization"
+msgstr "組織"
+
+#: ckanext/data_depositario/templates/home/snippets/news.html:5
+msgid "News"
+msgstr "最新消息"
+
+#: ckanext/data_depositario/templates/home/snippets/news.html:9
+msgid "No latest news."
+msgstr "沒有最新消息。"
+
+#: ckanext/data_depositario/templates/home/snippets/news.html:18
+msgid "This news currently has no content."
+msgstr "這則消息目前沒有內容。"
+
+#: ckanext/data_depositario/templates/home/snippets/news.html:23
+msgid "read more"
+msgstr "讀取更多"
+
+#: ckanext/data_depositario/templates/package/read.html:16
+msgid "Other Access"
+msgstr "其他存取方式"
+
+#: ckanext/data_depositario/templates/package/read.html:19
+msgid ""
+"The information on this page (the dataset metadata) is also available in "
+"these formats:"
+msgstr "此頁面上的資訊 (資料集之後設資料) 也提供以下格式："
+
+#: ckanext/data_depositario/templates/package/read.html:25
+msgid "via the "
+msgstr "經由 "
+
+#: ckanext/data_depositario/templates/package/read_base.html:11
+msgid "History"
+msgstr "歷史紀錄"
+
+#: ckanext/data_depositario/templates/package/search.html:18
+msgid "Relevance"
+msgstr "關聯"
+
+#: ckanext/data_depositario/templates/package/search.html:19
+msgid "Name Ascending"
+msgstr "根據名稱遞增排序"
+
+#: ckanext/data_depositario/templates/package/search.html:20
+msgid "Name Descending"
+msgstr "根據名稱遞減排序"
+
+#: ckanext/data_depositario/templates/package/search.html:21
+msgid "Last Modified"
+msgstr "最後修改"
+
+#: ckanext/data_depositario/templates/package/search.html:22
+msgid "Popular"
+msgstr "熱門的"
+
+#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:7
+msgid "Revision"
+msgstr "版本"
+
+#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:8
+msgid "Timestamp"
+msgstr "變更的時間"
+
+#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:9
+msgid "Author"
+msgstr "作者"
+
+#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:10
+msgid "Log Message"
+msgstr "記錄訊息"
+
+#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:24
+#, python-format
+msgid "Read dataset as of %s"
+msgstr "閱讀資料集 %s"
+
+#: ckanext/data_depositario/templates/scheming/display_snippets/collapse_text.html:3
+#: ckanext/data_depositario/templates/scheming/display_snippets/collapse_text.html:6
+#: ckanext/data_depositario/templates/scheming/display_snippets/collapse_text.html:11
+msgid "show more"
+msgstr "顯示更多"
+
+#: ckanext/data_depositario/templates/scheming/display_snippets/collapse_text.html:4
+msgid "show less"
+msgstr "顯示較少"
+
+#: ckanext/data_depositario/templates/scheming/form_snippets/license.html:27
+#: ckanext/data_depositario/templates/snippets/license_details.html:3
+msgid "License Details"
+msgstr "授權說明"
+
+#: ckanext/data_depositario/templates/scheming/form_snippets/organization.html:27
+msgid "No organization"
+msgstr "沒有此組織"
+
+#: ckanext/data_depositario/templates/scheming/form_snippets/organization.html:44
+msgid "Open for organization members only"
+msgstr "只對組織內成員公開"
+
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:5
+msgid "Additional Information"
+msgstr "其他資訊"
+
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:10
+msgid "Last updated"
+msgstr "最後更新"
+
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:11
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:17
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:23
+msgid "unknown"
+msgstr "未知的"
+
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:16
+msgid "Created"
+msgstr "建立"
+
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:22
+msgid "Format"
+msgstr "格式"
+
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:42
+#: ckanext/data_depositario/templates/snippets/license.html:4
+msgid "License"
+msgstr "授權"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:98
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:35
+msgid "Basic Information"
+msgstr "基本資訊"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:103
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:40
+msgid "Temporal Information (Time Period of Dataset)"
+msgstr "時間資訊（資料內容時間）"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:109
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:51
+msgid "Spatial Fields"
+msgstr "空間範圍資訊"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:115
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:43
+msgid "Keywords"
+msgstr "關鍵字"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:120
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:62
+msgid "Book"
+msgstr "文獻書籍"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:126
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:66
+msgid "Pictures"
+msgstr "圖像"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:131
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:69
+msgid "Management Information"
+msgstr "管理資訊"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
+msgid "Descriptive Information"
+msgstr "描述資訊"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:47
+msgid "Use your account information to fill in maintainer's name and email"
+msgstr "使用您的帳號資訊填入維護者與電子郵件"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:55
+msgid "Convert from Parcel Corner"
+msgstr "自四至範圍轉換"
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:56
+msgid "Using a Map"
+msgstr "使用圖台新增"
+
+#: ckanext/data_depositario/templates/snippets/date_facet_slider.html:10
+msgid "Temporal Search"
+msgstr "時間搜尋"
+
+#: ckanext/data_depositario/templates/snippets/date_facet_slider.html:12
+msgid "Clear"
+msgstr "清除"
+
+#: ckanext/data_depositario/templates/snippets/date_facet_slider.html:17
+msgid "Or use time period shortcut"
+msgstr "或使用時間區間捷徑"
+
+#: ckanext/data_depositario/templates/snippets/license_details.html:3
+msgid "Title"
+msgstr "標題"
+
+#: ckanext/data_depositario/templates/snippets/license_details.html:3
+msgid "Chinese"
+msgstr "中文"
+
+#: ckanext/data_depositario/templates/snippets/time_period_select.html:13
+msgid "Time Period Shortcut"
+msgstr "時間區間捷徑"
+
+#: ckanext/data_depositario/templates/snippets/time_period_select.html:22
+msgid ""
+"This shortcut provides some historical periods for filling temporal "
+"information of the dataset."
+msgstr "此捷徑提供部分歷史時期，供您快速填寫資料歷史年代。"
+

@@ -2,6 +2,7 @@ from logging import getLogger
 
 import ckan.plugins as p
 from ckan.common import json
+from ckan.lib.plugins import DefaultTranslation
 from datetime import datetime
 from ckanext.data_depositario import helpers
 from ckanext.data_depositario import validators
@@ -10,8 +11,9 @@ log = getLogger(__name__)
 ignore_empty = p.toolkit.get_validator('ignore_empty')
 
 
-class DataDepositarioDatasets(p.SingletonPlugin):
+class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
+    p.implements(p.ITranslation)
     p.implements(p.ITemplateHelpers)
     p.implements(p.IConfigurer)
     p.implements(p.IPackageController, inherit=True)
@@ -98,7 +100,7 @@ class DataDepositarioDatasets(p.SingletonPlugin):
 
     ## IFacets
     def dataset_facets(self, facets_dict, package_type):
-        facets_dict['date_facet'] = p.toolkit._('Date of Dataset')
+        facets_dict['date_facet'] = ''
         facets_dict['data_type_facet'] = p.toolkit._('Data Type')
         facets_dict['language_facet'] = p.toolkit._('Language')
         facets_dict['theme_keyword_facet'] = p.toolkit._('Theme Keyword')
