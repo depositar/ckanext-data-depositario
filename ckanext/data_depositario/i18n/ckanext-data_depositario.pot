@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-data-depositario 5.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-09-02 16:57+0800\n"
+"POT-Creation-Date: 2017-09-06 11:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:104 ckanext/data_depositario/plugin.py:116
+#: ckanext/data_depositario/plugin.py:94 ckanext/data_depositario/plugin.py:106
 msgid "Data Type"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:105 ckanext/data_depositario/plugin.py:117
+#: ckanext/data_depositario/plugin.py:95 ckanext/data_depositario/plugin.py:107
 msgid "Language"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:106 ckanext/data_depositario/plugin.py:118
+#: ckanext/data_depositario/plugin.py:96 ckanext/data_depositario/plugin.py:108
 msgid "Theme Keyword"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:107 ckanext/data_depositario/plugin.py:119
+#: ckanext/data_depositario/plugin.py:97 ckanext/data_depositario/plugin.py:109
 msgid "Spatial Keyword"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:108 ckanext/data_depositario/plugin.py:120
+#: ckanext/data_depositario/plugin.py:98 ckanext/data_depositario/plugin.py:110
 msgid "Historical Material"
 msgstr ""
 
@@ -416,54 +416,54 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:98
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:35
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:74
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:11
 msgid "Basic Information"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:103
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:40
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:79
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:16
 msgid "Temporal Information (Time Period of Dataset)"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:109
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:51
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:85
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:27
 msgid "Spatial Fields"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:115
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:43
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:91
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:120
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:62
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:96
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
 msgid "Book"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:126
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:66
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:102
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:42
 msgid "Pictures"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:131
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:69
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:107
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:45
 msgid "Management Information"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:14
 msgid "Descriptive Information"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:47
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:23
 msgid "Use your account information to fill in maintainer's name and email"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:55
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:31
 msgid "Convert from Parcel Corner"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:56
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:32
 msgid "Using a Map"
 msgstr ""
 

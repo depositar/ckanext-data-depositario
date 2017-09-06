@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-data-depositario 5.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-09-02 16:57+0800\n"
+"POT-Creation-Date: 2017-09-06 11:17+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -19,28 +19,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:104
-#: ckanext/data_depositario/plugin.py:116
+#: ckanext/data_depositario/plugin.py:94 ckanext/data_depositario/plugin.py:106
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:105
-#: ckanext/data_depositario/plugin.py:117
+#: ckanext/data_depositario/plugin.py:95 ckanext/data_depositario/plugin.py:107
 msgid "Language"
 msgstr "語言"
 
-#: ckanext/data_depositario/plugin.py:106
-#: ckanext/data_depositario/plugin.py:118
+#: ckanext/data_depositario/plugin.py:96 ckanext/data_depositario/plugin.py:108
 msgid "Theme Keyword"
 msgstr "主題關鍵字"
 
-#: ckanext/data_depositario/plugin.py:107
-#: ckanext/data_depositario/plugin.py:119
+#: ckanext/data_depositario/plugin.py:97 ckanext/data_depositario/plugin.py:109
 msgid "Spatial Keyword"
 msgstr "空間範圍關鍵字"
 
-#: ckanext/data_depositario/plugin.py:108
-#: ckanext/data_depositario/plugin.py:120
+#: ckanext/data_depositario/plugin.py:98 ckanext/data_depositario/plugin.py:110
 msgid "Historical Material"
 msgstr "使用史料"
 
@@ -86,7 +81,9 @@ msgstr "網站統計"
 msgid ""
 "<p>Source code available on <a href=\"https://github.com/depositar-io\" "
 "class=\"external\" target=\"_blank\">GitHub.</a></p>"
-msgstr "<p>程式碼可於 <a href=\"https://github.com/depositar-io\" class=\"external\"target=\"_blank\">GitHub</a> 取得。</p>"
+msgstr ""
+"<p>程式碼可於 <a href=\"https://github.com/depositar-io\" "
+"class=\"external\"target=\"_blank\">GitHub</a> 取得。</p>"
 
 #: ckanext/data_depositario/templates/header.html:8
 msgid "Datasets"
@@ -255,8 +252,8 @@ msgid ""
 " organization members.</p> <p><strong>Member:</strong> Can add/remove "
 "datasets from groups</p> "
 msgstr ""
-"<p><strong>管理者：</strong> 可以編輯主題資訊，以及管理主題成員。</p>"
-"<p><strong>一般成員：</strong>可以瀏覽主題的私有資料集，但無法新增資料集。</p>"
+"<p><strong>管理者：</strong> "
+"可以編輯主題資訊，以及管理主題成員。</p><p><strong>一般成員：</strong>可以瀏覽主題的私有資料集，但無法新增資料集。</p>"
 
 #: ckanext/data_depositario/templates/theme.html:43
 msgid ""
@@ -424,54 +421,54 @@ msgstr "格式"
 msgid "License"
 msgstr "授權"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:98
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:35
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:74
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:11
 msgid "Basic Information"
 msgstr "基本資訊"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:103
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:40
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:79
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:16
 msgid "Temporal Information (Time Period of Dataset)"
 msgstr "時間資訊（資料內容時間）"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:109
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:51
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:85
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:27
 msgid "Spatial Fields"
 msgstr "空間範圍資訊"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:115
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:43
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:91
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr "關鍵字"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:120
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:62
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:96
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
 msgid "Book"
 msgstr "文獻書籍"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:126
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:66
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:102
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:42
 msgid "Pictures"
 msgstr "圖像"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:131
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:69
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:107
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:45
 msgid "Management Information"
 msgstr "管理資訊"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:14
 msgid "Descriptive Information"
 msgstr "描述資訊"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:47
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:23
 msgid "Use your account information to fill in maintainer's name and email"
 msgstr "使用您的帳號資訊填入維護者與電子郵件"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:55
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:31
 msgid "Convert from Parcel Corner"
 msgstr "自四至範圍轉換"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:56
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:32
 msgid "Using a Map"
 msgstr "使用圖台新增"
 
