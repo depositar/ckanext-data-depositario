@@ -41,9 +41,6 @@ def extras_to_dict(pkg):
 def geojson_to_wkt(value):
    return wkt.dumps(json.loads(value))
 
-def latest_news(truncate=2):
-   return p.toolkit.get_action('ckanext_pages_list')(None, {'private': False})[::-1][:truncate]
-
 def date_to_iso(value, temp_res=None):
    result = ''
    result = dateutil.parser.parse(value).isoformat().split('T')[0]

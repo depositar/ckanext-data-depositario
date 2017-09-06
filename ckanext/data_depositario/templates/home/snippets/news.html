@@ -1,26 +1,31 @@
-{% set pages = h.latest_news() %}
+{% set pages = h.get_recent_blog_posts(number=2) %}
 
 <div class="box stat">
   <header class="module-heading dataset-heading">
-    <h2><a href="{{ h.url_for(controller='ckanext.pages.controller:PagesController', action='pages_show', page='') }}">{{ _('News') }}</a></h2>
+    <h2><a href="{{ h.url_for('blog_index') }}">{{ _('News') }}</a></h2>
   </header>
   <div class="inner">
     {% if not pages %}
       <p class="empty">{{ _('No latest news.') }}</p>
     {% else %}
       {% for page in pages %}
-        {% set url = h.url_for(controller='ckanext.pages.controller:PagesController', action='pages_show', page='/' + page.name) %}
-        <div class="dataset-item">
-          <h3 class="dataset-heading"><a href={{ url }}>{{ page.title }}</a></h3>
+        <div class="page-list-item dataset-item">
+          <h3 class="dataset-heading">
+	     <a href={{ h.url_for('blog_index') }}>{{ page.title or page.name }}</a>
+            <br>
+            {% if page.publish_date %}
+              <small>{{ h.render_datetime(page.publish_date) }}</small>
+            {% endif %}
+          </h3>
           {% if page.content %}
-	    <a href="{{ url }}" style="color: #444444">{{ h.markdown_extract(page.content, extract_length=80) }}</a>
+	    {{ h.render_markdown(page.content|truncate) }}
           {% else %}
             <p class="empty">{{ _('This news currently has no content.') }}</p>
           {% endif %}
         </div>
       {% endfor %}
       <div class="dataset-item">
-        <a href="{{ h.url_for(controller='ckanext.pages.controller:PagesController', action='pages_show', page='') }}">{{ _('read more') }}</a>
+        <a href="{{ h.url_for('blog_index') }}">{{ _('read more') }}</a>
       </div>
     {% endif %}
   </div>

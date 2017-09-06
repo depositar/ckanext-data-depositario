@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-data-depositario 5.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-09-06 11:17+0800\n"
+"POT-Creation-Date: 2017-09-06 11:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -299,11 +299,11 @@ msgstr ""
 msgid "No latest news."
 msgstr ""
 
-#: ckanext/data_depositario/templates/home/snippets/news.html:18
+#: ckanext/data_depositario/templates/home/snippets/news.html:23
 msgid "This news currently has no content."
 msgstr ""
 
-#: ckanext/data_depositario/templates/home/snippets/news.html:23
+#: ckanext/data_depositario/templates/home/snippets/news.html:28
 msgid "read more"
 msgstr ""
 
