@@ -9,9 +9,10 @@
       <p class="empty">{{ _('No latest news.') }}</p>
     {% else %}
       {% for page in pages %}
+        {% set url = h.url_for(controller='ckanext.pages.controller:PagesController', action='blog_show', page='/' + page.name) %}
         <div class="page-list-item dataset-item">
           <h3 class="dataset-heading">
-	     <a href={{ h.url_for('blog_index') }}>{{ page.title or page.name }}</a>
+            <a href="{{ url }}">{{ page.title or page.name }}</a>
             <br>
             {% if page.publish_date %}
               <small>{{ h.render_datetime(page.publish_date) }}</small>
