@@ -27,3 +27,10 @@
     </section>
   {% endblock %}
 {% endblock %}
+
+{% block package_tags %}
+  {% if pkg.tags %}
+    <h3>{{ _('Tags') }}</h3>
+  {% endif %}
+  {{ super() }}
+{% endblock %}

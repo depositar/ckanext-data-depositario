@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-data-depositario 5.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-09-06 11:19+0800\n"
+"POT-Creation-Date: 2017-11-02 19:44+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:94 ckanext/data_depositario/plugin.py:106
+#: ckanext/data_depositario/plugin.py:135
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:86
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
+msgid "Keywords"
+msgstr ""
+
+#: ckanext/data_depositario/plugin.py:139
 msgid "Data Type"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:95 ckanext/data_depositario/plugin.py:107
+#: ckanext/data_depositario/plugin.py:140
 msgid "Language"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:96 ckanext/data_depositario/plugin.py:108
-msgid "Theme Keyword"
-msgstr ""
-
-#: ckanext/data_depositario/plugin.py:97 ckanext/data_depositario/plugin.py:109
-msgid "Spatial Keyword"
-msgstr ""
-
-#: ckanext/data_depositario/plugin.py:98 ckanext/data_depositario/plugin.py:110
+#: ckanext/data_depositario/plugin.py:142
 msgid "Historical Material"
 msgstr ""
 
@@ -299,11 +297,11 @@ msgstr ""
 msgid "No latest news."
 msgstr ""
 
-#: ckanext/data_depositario/templates/home/snippets/news.html:23
+#: ckanext/data_depositario/templates/home/snippets/news.html:24
 msgid "This news currently has no content."
 msgstr ""
 
-#: ckanext/data_depositario/templates/home/snippets/news.html:28
+#: ckanext/data_depositario/templates/home/snippets/news.html:29
 msgid "read more"
 msgstr ""
 
@@ -319,6 +317,10 @@ msgstr ""
 
 #: ckanext/data_depositario/templates/package/read.html:25
 msgid "via the "
+msgstr ""
+
+#: ckanext/data_depositario/templates/package/read.html:33
+msgid "Tags"
 msgstr ""
 
 #: ckanext/data_depositario/templates/package/read_base.html:11
@@ -416,37 +418,32 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:74
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:69
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:11
 msgid "Basic Information"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:79
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:74
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:16
 msgid "Temporal Information (Time Period of Dataset)"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:85
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:80
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:27
 msgid "Spatial Fields"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:91
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
-msgid "Keywords"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:96
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:93
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
 msgid "Book"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:102
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:99
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:42
 msgid "Pictures"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:107
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:104
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:45
 msgid "Management Information"
 msgstr ""
@@ -485,6 +482,14 @@ msgstr ""
 
 #: ckanext/data_depositario/templates/snippets/license_details.html:3
 msgid "Chinese"
+msgstr ""
+
+#: ckanext/data_depositario/templates/snippets/search_form.html:16
+msgid "Remove"
+msgstr ""
+
+#: ckanext/data_depositario/templates/snippets/search_form.html:21
+msgid "Filter Results"
 msgstr ""
 
 #: ckanext/data_depositario/templates/snippets/time_period_select.html:13

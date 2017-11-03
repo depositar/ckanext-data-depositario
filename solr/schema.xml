@@ -174,8 +174,7 @@ schema. In this case the version should be set to the next CKAN version number.
     <!-- For custom facets -->
     <field name="data_type_facet" type="string" indexed="true" stored="true"/>
     <field name="language_facet" type="string" indexed="true" stored="true"/>
-    <field name="theme_keyword_facet" type="string" indexed="true" stored="true" multiValued="true"/>
-    <field name="loc_keyword_facet" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="keywords_facet" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="book_hist_materials_facet" type="string" indexed="true" stored="true" multiValued="true"/>
     <!-- For multilingual keywords -->
     <dynamicField name="*_label" type="text" indexed="true" stored="true" multiValued="true"/>

@@ -19,15 +19,6 @@
       }
     },
     {
-      "preset_name": "repeating_select",
-      "values": {
-        "form_snippet": "repeating_select.html",
-        "display_snippet": "repeating_select.html",
-        "validators": "repeating_text duplicate_validator",
-        "output_validators": "repeating_text_output"
-      }
-    },
-    {
       "preset_name": "dataset_state",
       "values": {
         "validators": "ignore_not_package_admin ignore_missing",

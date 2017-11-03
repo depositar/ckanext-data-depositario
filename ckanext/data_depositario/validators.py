@@ -127,13 +127,15 @@ def date_validator(key, data, errors, context):
         raise Invalid(_('Date format incorrect'))
     data[key] = datetime.strptime(value, time_format).isoformat() + 'Z'
 
-def duplicate_validator(key, data, errors, context):
-    if errors[key]:
-        return
-    value = json.loads(data[key])
-    
-    unduplicated = list(set(value))
-    data[key] = json.dumps(unduplicated)
-
 def remove_blank_wrap(value, context):
    return "".join(value.split())
+
+def multiple_select(key, data, errors, context):
+   if isinstance(data[key], basestring):
+      out = [element.strip() \
+            for element in data[key].split(',') \
+            if element.strip()]
+   else:
+      out = data[key]
+
+   data[key] = json.dumps(out)

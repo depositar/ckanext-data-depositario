@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-data-depositario 5.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-09-06 11:19+0800\n"
+"POT-Creation-Date: 2017-11-02 19:44+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -19,23 +19,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:94 ckanext/data_depositario/plugin.py:106
+#: ckanext/data_depositario/plugin.py:135
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:86
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
+msgid "Keywords"
+msgstr "關鍵字"
+
+#: ckanext/data_depositario/plugin.py:139
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:95 ckanext/data_depositario/plugin.py:107
+#: ckanext/data_depositario/plugin.py:140
 msgid "Language"
 msgstr "語言"
 
-#: ckanext/data_depositario/plugin.py:96 ckanext/data_depositario/plugin.py:108
-msgid "Theme Keyword"
-msgstr "主題關鍵字"
-
-#: ckanext/data_depositario/plugin.py:97 ckanext/data_depositario/plugin.py:109
-msgid "Spatial Keyword"
-msgstr "空間範圍關鍵字"
-
-#: ckanext/data_depositario/plugin.py:98 ckanext/data_depositario/plugin.py:110
+#: ckanext/data_depositario/plugin.py:142
 msgid "Historical Material"
 msgstr "使用史料"
 
@@ -304,11 +302,11 @@ msgstr "最新消息"
 msgid "No latest news."
 msgstr "沒有最新消息。"
 
-#: ckanext/data_depositario/templates/home/snippets/news.html:23
+#: ckanext/data_depositario/templates/home/snippets/news.html:24
 msgid "This news currently has no content."
 msgstr "這則消息目前沒有內容。"
 
-#: ckanext/data_depositario/templates/home/snippets/news.html:28
+#: ckanext/data_depositario/templates/home/snippets/news.html:29
 msgid "read more"
 msgstr "讀取更多"
 
@@ -325,6 +323,10 @@ msgstr "此頁面上的資訊 (資料集之後設資料) 也提供以下格式�
 #: ckanext/data_depositario/templates/package/read.html:25
 msgid "via the "
 msgstr "經由 "
+
+#: ckanext/data_depositario/templates/package/read.html:33
+msgid "Tags"
+msgstr "標籤"
 
 #: ckanext/data_depositario/templates/package/read_base.html:11
 msgid "History"
@@ -421,37 +423,32 @@ msgstr "格式"
 msgid "License"
 msgstr "授權"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:74
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:69
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:11
 msgid "Basic Information"
 msgstr "基本資訊"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:79
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:74
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:16
 msgid "Temporal Information (Time Period of Dataset)"
 msgstr "時間資訊（資料內容時間）"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:85
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:80
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:27
 msgid "Spatial Fields"
 msgstr "空間範圍資訊"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:91
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
-msgid "Keywords"
-msgstr "關鍵字"
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:96
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:93
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
 msgid "Book"
 msgstr "文獻書籍"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:102
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:99
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:42
 msgid "Pictures"
 msgstr "圖像"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:107
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:104
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:45
 msgid "Management Information"
 msgstr "管理資訊"
@@ -492,6 +489,14 @@ msgstr "標題"
 msgid "Chinese"
 msgstr "中文"
 
+#: ckanext/data_depositario/templates/snippets/search_form.html:16
+msgid "Remove"
+msgstr "移除"
+
+#: ckanext/data_depositario/templates/snippets/search_form.html:21
+msgid "Filter Results"
+msgstr "篩選結果"
+
 #: ckanext/data_depositario/templates/snippets/time_period_select.html:13
 msgid "Time Period Shortcut"
 msgstr "時間區間捷徑"
@@ -501,4 +506,14 @@ msgid ""
 "This shortcut provides some historical periods for filling temporal "
 "information of the dataset."
 msgstr "此捷徑提供部分歷史時期，供您快速填寫資料歷史年代。"
+
+#~ msgid "Theme Keyword"
+#~ msgstr "主題關鍵字"
+
+#~ msgid "Spatial Keyword"
+#~ msgstr "空間範圍關鍵字"
+
+# | msgid "Keywords"
+#~ msgid "Keyword"
+#~ msgstr "關鍵字"
 

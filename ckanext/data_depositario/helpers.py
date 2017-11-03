@@ -63,7 +63,7 @@ def get_default_slider_values():
       begin = dateutil.parser.parse(start_time).isoformat().split('T')[0]
    else:
       begin = date.today().isoformat()
-   
+
    data_dict = {
             'sort': 'end_time desc',
             'rows': 1,
@@ -87,28 +87,6 @@ def get_date_url_param():
       else:
          continue
    return params
-
-def get_schema(data_type):
-   schema = scheming_helpers.scheming_get_dataset_schema(data_type)
-   return schema
-
-def get_field_by_name(fields, name):
-   field = scheming_helpers.scheming_field_by_name(fields, name)
-   return field
-
-def get_choices_label(choices, value, prefer_lang='zh_TW'):
-   for c in choices:
-       if c['value'] == value:
-           return scheming_helpers.scheming_language_text(c['label'], prefer_lang)
-   return scheming_helpers.scheming_language_text(value)
-
-def get_choices_value(choices, label):
-   for c in choices:
-      if isinstance(c['label'], dict) and c['label'].get('zh_TW') == label:
-         return c['value']
-      if c['label'] == label:
-         return c['value']
-   return label
 
 def get_time_period():
    return _load_schema_module_path('ckanext.data_depositario:time_period.json')

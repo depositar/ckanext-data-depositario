@@ -1,0 +1,13 @@
+{% import 'macros/form.html' as form %}
+
+{% set _class = _class or 'tag-list' %}
+<div id="multiple_choice_labels" {{ form.attributes({"data-module": "show-wikidata"}) }}>
+  <ul class="{{ _class }}">
+    {% for keyword in keywords %}
+      <li class="tag">{{ keyword }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% resource 'ckanext-data-depositario/scripts/vendor/wikidata-sdk/wikidata-sdk.js' %}
+{% resource 'ckanext-data-depositario/scripts/modules/show-wikidata.js' %}

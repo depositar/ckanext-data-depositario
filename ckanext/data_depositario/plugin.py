@@ -2,6 +2,7 @@ from logging import getLogger
 
 import ckan.plugins as p
 from ckan.common import json
+from ckan.common import OrderedDict
 from ckan.lib.plugins import DefaultTranslation
 from datetime import datetime
 from ckanext.data_depositario import helpers
@@ -67,49 +68,22 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         for field_name in ['data_type', 'language']:
             value = data_dict.get(field_name, '')
             data_dict[field_name+'_facet'] = value
-        schema = helpers.get_schema('dataset')
-        for field_name in ['theme_keyword', 'loc_keyword', 'book_hist_materials']:
-            field = helpers.get_field_by_name(schema['dataset_fields'], field_name)
+        for field_name in ['keywords', 'book_hist_materials']:
             value = data_dict.get(field_name, [])
             if value:
-                keywords = json.loads(value)
-                #Get the value for the old Chinese label of theme_keyword
-                value = [helpers.get_choices_value(field['choices'], k) for k in keywords]
-            data_dict[field_name+'_facet'] = value
-        #But we still need the labels for text search
-        for field_name in ['theme_keyword', 'loc_keyword']:
-            field = helpers.get_field_by_name(schema['dataset_fields'], field_name)
-            data_dict[field_name+'_en_label'] = \
-                    [helpers.get_choices_label(field['choices'], v, 'en') \
-		        for v in data_dict[field_name+'_facet']]
-            data_dict[field_name+'_zh_TW_label'] = \
-                    [helpers.get_choices_label(field['choices'], v, 'zh_TW') \
-                        for v in data_dict[field_name+'_facet']]
+                data_dict[field_name+'_facet'] = json.loads(value)
 
         return data_dict
 
     ## IFacets
     def dataset_facets(self, facets_dict, package_type):
-        facets_dict['date_facet'] = ''
-        facets_dict['data_type_facet'] = p.toolkit._('Data Type')
-        facets_dict['language_facet'] = p.toolkit._('Language')
-        facets_dict['theme_keyword_facet'] = p.toolkit._('Theme Keyword')
-        facets_dict['loc_keyword_facet'] = p.toolkit._('Spatial Keyword')
-        facets_dict['book_hist_materials_facet'] = p.toolkit._('Historical Material')
-
-        return facets_dict
+        return _add_facets(facets_dict)
 
     def group_facets(self, facets_dict, group_type, package_type):
-        return facets_dict
+        return _add_facets(facets_dict, group=True)
 
     def organization_facets(self, facets_dict, organization_type, package_type):
-        facets_dict['data_type_facet'] = p.toolkit._('Data Type')
-        facets_dict['language_facet'] = p.toolkit._('Language')
-        facets_dict['theme_keyword_facet'] = p.toolkit._('Theme Keyword')
-        facets_dict['loc_keyword_facet'] = p.toolkit._('Spatial Keyword')
-        facets_dict['book_hist_materials_facet'] = p.toolkit._('Historical Material')
-
-        return facets_dict
+        return _add_facets(facets_dict, group=True)
 
     ## IValidators
     def get_validators(self):
@@ -122,8 +96,8 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             'temp_res_validator',
             'append_time_period',
             'date_validator',
-            'duplicate_validator',
             'remove_blank_wrap',
+            'multiple_select',
         )
         return _get_module_functions(validators, function_names)
 
@@ -155,3 +129,16 @@ def _get_module_functions(module, function_names):
         functions[f] = module.__dict__[f]
 
     return functions
+
+def _add_facets(facets_dict, group=False):
+    new_facets_dict = OrderedDict(facets_dict.items()[:2])
+    new_facets_dict['keywords_facet'] = p.toolkit._('Keywords')
+    new_facets_dict = OrderedDict(new_facets_dict.items() + facets_dict.items()[2:])
+    if not group:
+        new_facets_dict['date_facet'] = ''
+    new_facets_dict['data_type_facet'] = p.toolkit._('Data Type')
+    new_facets_dict['language_facet'] = p.toolkit._('Language')
+    new_facets_dict['book_hist_materials_facet'] = \
+            p.toolkit._('Historical Material')
+
+    return new_facets_dict
