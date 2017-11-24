@@ -117,3 +117,6 @@ def get_gmap_config():
 
     return dict([(k.replace(namespace, ''), v) for k, v in config.iteritems()
                  if k.startswith(namespace)])
+
+def get_license_list():
+   return p.toolkit.get_action('license_list')({}, {})
