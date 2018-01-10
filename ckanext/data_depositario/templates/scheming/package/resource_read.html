@@ -25,14 +25,16 @@
         {%- endblock -%}
         {%- block resource_fields -%}
           {%- for field in schema.resource_fields -%}
-            {%- if field.field_name not in exclude_fields and res[field.field_name]-%}
+            {%- if field.field_name not in exclude_fields and res[field.field_name]
+                and field.display_snippet is not none -%}
               <tr>
                 <th scope="row">
                   {{- h.scheming_language_text(field.label) -}}
                 </th>
                 <td>
                   {%- snippet 'scheming/snippets/display_field.html',
-                      field=field, data=res, schema=schema -%}
+                      field=field, data=res, entity_type='dataset',
+                      object_type=dataset_type -%}
                 </td>
               </tr>
             {%- endif -%}

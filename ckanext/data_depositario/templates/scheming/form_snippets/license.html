@@ -1,6 +1,14 @@
 {% import 'macros/form.html' as form %}
 
 {%- set options=[] -%}
+{%- if field.get('form_include_blank_choice', false) -%}
+    {%- do options.append({
+        'value': '',
+        'text': ''}) -%}
+{%- endif -%}
+{%- if field.get('sorted_choices', true) -%}
+    {%- set licenses = licenses|sort -%}
+{%- endif -%}
 {%- for license_desc, license_id in licenses -%}
     {%- if license_id or not h.scheming_field_required(field) -%}
         {%- do options.append({
@@ -17,7 +25,9 @@
     selected=data.get(field.field_name, field.get('default', 'notspecified')),
     error=errors[field.field_name],
     classes=['control-medium'],
-    attrs=field.form_attrs if 'form_attrs' in field else {},
+    attrs=field.form_attrs if 'form_attrs' in field else {
+      "data-module": "autocomplete"
+    },
     is_required=h.scheming_field_required(field),
     )
 %}

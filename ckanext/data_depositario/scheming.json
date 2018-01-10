@@ -299,13 +299,12 @@
         "en": "Accept GeoJSON format",
         "zh_TW": "僅接受 GeoJSON"
       },
-      "form_snippet": "text_area.html",
+      "form_snippet": "textarea.html",
       "display_snippet": "collapse_text.html",
-      "info": {
-        "en": "This column is used for geo-indexing the dataset. Click for details.",
-        "zh_TW": "此欄位將作為空間索引之用。點選以了解更多。"
-      },
-      "link": "http://docs.ckan.org/projects/ckanext-spatial/en/latest/spatial-search.html#geo-indexing-your-datasets"
+      "help_text": {
+        "en": "This column is used for geo-indexing the dataset. Check http://geojson.org/ for details.",
+        "zh_TW": "此欄位將作為空間索引之用。請參閱 http://geojson.org/ 的說明。"
+      }
     },
     {
       "field_name": "x_min",
@@ -634,6 +633,7 @@
         "zh_TW": "授權"
       },
       "required": true,
+      "sorted_choices": false,
       "form_snippet": "license.html"
     },
     {

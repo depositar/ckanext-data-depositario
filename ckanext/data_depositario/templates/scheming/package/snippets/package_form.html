@@ -46,7 +46,7 @@
     {% endif %}
     {%- snippet 'scheming/snippets/form_field.html',
       field=field, data=data, errors=errors, licenses=c.licenses,
-      schema=schema -%}
+      entity_type='dataset', object_type=dataset_type -%}
   {%- endfor -%}
 
   {% resource 'ckanext-data-depositario/package_form' %}
