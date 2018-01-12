@@ -81,12 +81,7 @@
   </section>
 {% endif %}
 
-{% if pkg_dict.get('keywords') %}
-  <section class="tags">
-    <h3>{{ _('Keywords') }}</h3>
-    {% snippet 'snippets/keyword_list.html', keywords=pkg_dict['keywords'], _class='tag-list well' %}
-  </section>
-{% endif %}
+{% snippet 'wikidatakeyword/snippets/wikidatakeyword_list.html', keywords=pkg_dict['keywords'] %}
 
 {% if pkg_dict.get('book_isbn') or pkg_dict.get('book_issn') or pkg_dict.get('book_journal') or pkg_dict.get('book_volume') or pkg_dict.get('book_proceeding') or pkg_dict.get('book_location') or pkg_dict.get('book_publisher') or pkg_dict.get('book_year') or pkg_dict.get('book_query') or pkg_dict.get('book_url') or pkg_dict.get('book_hist_materials') or pkg_dict.get('book_area_village') or pkg_dict.get('book_area_religion') or pkg_dict.get('book_area_family') or pkg_dict.get('book_area_reservoir') or pkg_dict.get('book_area_industry') or pkg_dict.get('book_notes') %}
   <section class="additional-info">

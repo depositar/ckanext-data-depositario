@@ -360,11 +360,7 @@
         "en": "Keywords",
         "zh_TW": "關鍵字"
       },
-      "preset": "multiple_select",
-      "validators": "multiple_select",
-      "form_attrs": {
-        "data-module": "input-wikidata"
-      }
+      "preset": "wikidata_keyword"
     },
     {
       "field_name": "book_isbn",

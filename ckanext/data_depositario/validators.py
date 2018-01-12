@@ -129,13 +129,3 @@ def date_validator(key, data, errors, context):
 
 def remove_blank_wrap(value, context):
    return "".join(value.split())
-
-def multiple_select(key, data, errors, context):
-   if isinstance(data[key], basestring):
-      out = [element.strip() \
-            for element in data[key].split(',') \
-            if element.strip()]
-   else:
-      out = data[key]
-
-   data[key] = json.dumps(out)

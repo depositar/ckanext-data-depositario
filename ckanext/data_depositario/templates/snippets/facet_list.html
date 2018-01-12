@@ -10,12 +10,3 @@
     {% endif %}
   </h2>
 {% endblock %}
-
-{% block facet_list_items %}
-  {% if name == 'keywords_facet' %}
-    <div data-module="show-wikidata"/>
-    {% resource 'ckanext-data-depositario/scripts/vendor/wikidata-sdk/wikidata-sdk.js' %}
-    {% resource 'ckanext-data-depositario/scripts/modules/show-wikidata.js' %}
-  {% endif %}
-  {{ super() }}
-{% endblock %}

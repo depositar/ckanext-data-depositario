@@ -68,7 +68,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         for field_name in ['data_type', 'language']:
             value = data_dict.get(field_name, '')
             data_dict[field_name+'_facet'] = value
-        for field_name in ['keywords', 'book_hist_materials']:
+        if field_name == 'book_hist_materials':
             value = data_dict.get(field_name, [])
             if value:
                 data_dict[field_name+'_facet'] = json.loads(value)
@@ -97,7 +97,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             'append_time_period',
             'date_validator',
             'remove_blank_wrap',
-            'multiple_select',
         )
         return _get_module_functions(validators, function_names)
 
