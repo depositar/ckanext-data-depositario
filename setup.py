@@ -18,12 +18,17 @@ setup(
     description="CKAN extension for data.depositar.io",
     long_description='''
     ''',
-    classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
-    keywords='',
-    author='Sol Lee',
+    # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
+    classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 2.7',
+    ],
+    keywords='CKAN',
+    author='Cheng-Jen Lee',
     author_email='u103133.u103135@gmail.com',
-    url='',
-    license='AGPL',
+    url='https://github.com/depositar-io/ckanext-data-depositario',
+    license='MIT',
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
     namespace_packages=['ckanext'],
     include_package_data=True,
