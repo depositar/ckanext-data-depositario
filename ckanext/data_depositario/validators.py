@@ -6,16 +6,6 @@ import re
 from datetime import datetime
 
 
-def positive_integer_validator(value, context):
-   if value is None:
-      return None
-   if hasattr(value, 'strip') and not value.strip():
-      return None
-   value = int_validator(value, context)
-   if value < 1:
-      raise Invalid(_('Must be a positive integer'))
-   return value
-
 def long_validator(value, context):
    if value is None:
       return None
@@ -41,10 +31,14 @@ def positive_float_validator(value, context):
       return None
    if hasattr(value, 'strip') and not value.strip():
       return None
-   value = float_validator(value, context)
-   if value < 1:
-      raise Invalid(_('Must be a positive float'))
-   return value
+
+   try:
+      if float(value) > 0:
+         return value
+   except ValueError:
+      pass
+
+   raise Invalid(_('Must be a positive float'))
 
 def json_validator(value, context):
    if value == '':
@@ -86,16 +80,6 @@ def temp_res_validator(key, data, errors, context):
             raise Invalid(_('Date format incorrect') + _(', should be: ') + '%s' % time_format[temp_res][1])
         data[key] = value.isoformat() + 'Z'
 
-def append_time_period(key, data, errors, context):
-    if errors[key]:
-        return
-
-    value = data[key]
-    if data.get(('time_period',), ''):
-        out = json.loads(value)
-        out.append(data[('time_period',)])
-        data[key] = json.dumps(out)
-
 def date_validator(key, data, errors, context):
     if errors[key]:
         return
@@ -126,6 +110,3 @@ def date_validator(key, data, errors, context):
     if len(set(is_error)) <= 1:
         raise Invalid(_('Date format incorrect'))
     data[key] = datetime.strptime(value, time_format).isoformat() + 'Z'
-
-def remove_blank_wrap(value, context):
-   return "".join(value.split())

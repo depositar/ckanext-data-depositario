@@ -7,9 +7,9 @@ from ckan.lib.plugins import DefaultTranslation
 from datetime import datetime
 from ckanext.data_depositario import helpers
 from ckanext.data_depositario import validators
+from ckanext.data_depositario import converters
 
 log = getLogger(__name__)
-ignore_empty = p.toolkit.get_validator('ignore_empty')
 
 
 class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
@@ -87,18 +87,20 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
     ## IValidators
     def get_validators(self):
-        function_names = (
-            'positive_integer_validator',
+        validator_names = (
             'long_validator',
             'lat_validator',
             'positive_float_validator',
             'json_validator',
             'temp_res_validator',
-            'append_time_period',
             'date_validator',
+        )
+        converter_names = (
             'remove_blank_wrap',
         )
-        return _get_module_functions(validators, function_names)
+        field_validators = _get_module_functions(validators, validator_names)
+        field_validators.update(_get_module_functions(converters, converter_names))
+        return field_validators
 
     ## ITemplateHelpers
     def get_helpers(self):

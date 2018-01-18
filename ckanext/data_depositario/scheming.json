@@ -10,7 +10,6 @@
 	"zh_TW": "標題"
       },
       "preset": "title",
-      "required": true,
       "form_placeholder": {
         "en": "eg. A descriptive title",
 	"zh_TW": "例如：一個描述性的標題"
@@ -267,7 +266,7 @@
         "zh_TW": "起始時間"
       },
       "preset": "date_modified",
-      "validators": "ignore_missing temp_res_validator",
+      "validators": "ignore_empty temp_res_validator",
       "help_text": {
         "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
         "zh_TW": "由時間解析度決定。接受的格式為 'YYYY' (年/十年/百年)、'YYYY-MM' (月)、'YYYY-MM-DD' (日)。"
@@ -281,7 +280,7 @@
         "zh_TW": "結束時間"
       },
       "preset": "date_modified",
-      "validators": "ignore_missing temp_res_validator",
+      "validators": "ignore_empty temp_res_validator",
       "help_text": {
         "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
         "zh_TW": "由時間解析度決定。接受的格式為 'YYYY' (年/十年/百年)、'YYYY-MM' (月)、'YYYY-MM-DD' (日)。"
@@ -294,7 +293,7 @@
         "en": "Spatial",
         "zh_TW": "空間範圍"
       },
-      "validators": "scheming_required json_validator remove_blank_wrap",
+      "validators": "ignore_empty json_validator remove_blank_wrap",
       "form_placeholder": {
         "en": "Accept GeoJSON format",
         "zh_TW": "僅接受 GeoJSON"
@@ -312,7 +311,7 @@
         "en": "X.min",
         "zh_TW": "空間範圍.X.min"
       },
-      "validators": "scheming_required long_validator",
+      "validators": "ignore_empty long_validator",
       "form_placeholder": {
         "en": "Westmost longitude of the spatial extent",
         "zh_TW": "填寫圖資空間四至範圍之最西經度值"
@@ -324,7 +323,7 @@
         "en": "X.max",
         "zh_TW": "空間範圍.X.max"
       },
-      "validators": "scheming_required long_validator",
+      "validators": "ignore_empty long_validator",
       "form_placeholder": {
         "en": "Eastmost longitude of the spatial extent",
         "zh_TW": "填寫圖資空間四至範圍之最東經度值"
@@ -336,7 +335,7 @@
         "en": "Y.min",
         "zh_TW": "空間範圍.Y.min"
       },
-      "validators": "scheming_required lat_validator",
+      "validators": "ignore_empty lat_validator",
       "form_placeholder": {
         "en": "Southmost latitude of the spatial extent",
         "zh_TW": "填寫圖資空間四至範圍之最南緯度值"
@@ -348,7 +347,7 @@
         "en": "Y.max",
         "zh_TW": "空間範圍.Y.max"
       },
-      "validators": "scheming_required lat_validator",
+      "validators": "ignore_empty lat_validator",
       "form_placeholder": {
         "en": "Northmost latitude of the spatial extent",
         "zh_TW": "填寫圖資空間四至範圍之最北緯度值"
@@ -580,7 +579,7 @@
         "en": "Scanning Resolution",
         "zh_TW": "掃描解析度"
       },
-      "validators": "ignore_missing positive_integer_validator",
+      "validators": "ignore_empty is_positive_integer",
       "form_placeholder": {
         "en": "Resolution (DPI) of source (e.g., 300)",
         "zh_TW": "填寫掃描解析度數值，單位為 DPI，如 300"
@@ -592,7 +591,7 @@
         "en": "Spatial Resolution",
         "zh_TW": "空間解析度"
       },
-      "validators": "ignore_missing positive_float_validator",
+      "validators": "ignore_empty positive_float_validator",
       "form_placeholder": {
         "en": "Spatial resolution (m) of source",
         "zh_TW": "填寫資料空間解析度數值，以公尺為單位"
@@ -604,7 +603,7 @@
         "en": "Scale Denominator",
         "zh_TW": "比例尺"
       },
-      "validators": "ignore_missing positive_integer_validator",
+      "validators": "ignore_empty is_positive_integer",
       "form_placeholder": {
         "en": "Scale denominator of data",
         "zh_TW": "填寫資料比例尺之分母"
@@ -640,7 +639,6 @@
       },
       "form_placeholder": "Joe Bloggs",
       "display_property": "dc:creator",
-      "validators": "not_empty",
       "required": true
     },
     {
@@ -650,7 +648,7 @@
         "zh_TW": "資料產製時間"
       },
       "preset": "date_modified",
-      "validators": "ignore_missing date_validator",
+      "validators": "ignore_empty date_validator",
       "has_temp_res": false,
       "help_text": {
         "en": "Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'. Missing month (Day) will be filled with '01'",
@@ -835,7 +833,7 @@
       },
       "preset": "prepend_text",
       "prepend_text": "EPSG",
-      "validators": "ignore_missing positive_integer_validator",
+      "validators": "ignore_empty is_positive_integer",
       "form_placeholder": {
         "en": "eg. 4326",
         "zh_TW": "例如：4326"
