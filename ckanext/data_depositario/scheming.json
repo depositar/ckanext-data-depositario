@@ -484,13 +484,6 @@
           }
         },
         {
-          "value": "maps",
-          "label": {
-            "en": "Maps",
-            "zh_TW": "地圖"
-          }
-        },
-        {
           "value": "taiwanese_governor_office_files",
           "label": {
             "en": "Taiwanese Governor Office Files",
