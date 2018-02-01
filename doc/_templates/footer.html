@@ -1,0 +1,13 @@
+<footer>
+  <p class="copyright">
+    {%- if show_copyright %}
+      {% trans copyright=copyright|safe|e %}{{ copyright }}{% endtrans %}
+    {%- endif %}
+  </p>
+
+  <p>
+    <a href="https://github.com/depositar-io/ckanext-data-depositario">Source</a>
+    &mdash;
+    Contact us: data.contact AT depositar.io
+  </p>
+</footer>

@@ -7,6 +7,10 @@ from datetime import datetime
 
 
 def long_validator(value, context):
+   """
+   Raises Invalid if the given value is not a valid
+   longitude coordinate.
+   """
    if value is None:
       return None
    if hasattr(value, 'strip') and not value.strip():
@@ -17,6 +21,10 @@ def long_validator(value, context):
    return value
 
 def lat_validator(value, context):
+   """
+   Raises Invalid if the given value is not a valid
+   latitude coordinate.
+   """
    if value is None:
       return None
    if hasattr(value, 'strip') and not value.strip():
@@ -27,6 +35,10 @@ def lat_validator(value, context):
    return value
 
 def positive_float_validator(value, context):
+   """
+   Raises Invalid if the given value is not a
+   positive float.
+   """
    if value is None:
       return None
    if hasattr(value, 'strip') and not value.strip():
@@ -41,6 +53,10 @@ def positive_float_validator(value, context):
    raise Invalid(_('Must be a positive float'))
 
 def json_validator(value, context):
+   """
+   Raises Invalid if the given value is not a valid
+   JSON string.
+   """
    if value == '':
       return value
    try:
@@ -50,6 +66,12 @@ def json_validator(value, context):
    return value
 
 def temp_res_validator(key, data, errors, context):
+    """
+    Raises Invalid if the given value is not
+    YYYY (as Temporal Resolution is year, decade, or century),
+    YYYY-MM (as Temporal Resolution is month), or
+    YYYY-MM-DD (as Temporal Resolution is date).
+    """
     if errors[key]:
         return
 
@@ -81,6 +103,12 @@ def temp_res_validator(key, data, errors, context):
         data[key] = value.isoformat() + 'Z'
 
 def date_validator(key, data, errors, context):
+    """
+    Raises Invalid if the given value is not
+    YYYY, YYYY-MM, or YYYY-MM-DD.
+
+    The month and day will be ``01`` if either one is missing.
+    """
     if errors[key]:
         return
 

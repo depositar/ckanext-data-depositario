@@ -2,6 +2,10 @@
 data.depositar.io
 =================
 
+.. image:: https://readthedocs.org/projects/data-depositario-docs/badge/?version=latest
+    :target: http://docs.depositar.io
+    :alt: Documentation
+
 The https://data.depositar.io is a research data repository for the humanities and areas studies.
 
 
