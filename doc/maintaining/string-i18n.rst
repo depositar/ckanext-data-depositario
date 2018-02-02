@@ -10,7 +10,7 @@
 
 .. note::
 
-   本節僅簡要記述，詳細作法請直接參考 `CKAN官方文件 <http://docs.ckan.org/en/ckan-2.6.4/contributing/string-i18n.html>`_
+   本節僅簡要記述，詳細作法請直接參考 `CKAN 官方文件 <http://docs.ckan.org/en/ckan-2.6.4/contributing/string-i18n.html>`_
 
 #. Jinja2 模板內字串翻譯
 
@@ -36,7 +36,7 @@
 
 .. important::
 
-   執行以下指令時，請確認您位於Python虛擬環境中，否則安裝作業可能會失敗。當虛擬環境執行時，命令提示字元（shell prompt）會有類似以下前綴： ::
+   執行以下指令時，請確認您位於 Python 虛擬環境中，否則安裝作業可能會失敗。當虛擬環境執行時，命令提示字元（shell prompt）會有類似以下前綴： ::
 
      (default) $ _
 
@@ -64,13 +64,13 @@ b. 建立個別語系待翻譯字串
 
       以下均以因台灣繁體中文為例說明。
 
-      另因本語系已存在，故使用update_catalog參數以保留已翻譯字串。若欲新增語系，請改為init_catalog。
+      另因本語系已存在，故使用 update_catalog 參數以保留已翻譯字串。若欲新增語系，請改為 init_catalog。
 
    .. parsed-literal::
 
       python setup.py update_catalog -l zh_TW
 
-c. 開啟以下檔案並開始翻譯字串（msgstr部分）
+c. 開啟以下檔案並開始翻譯字串（msgstr 部分）
 
    .. parsed-literal::
 
@@ -82,11 +82,11 @@ d. 編譯已翻譯字串
 
       python setup.py compile_catalog
 
-e. 重新啟動CKAN以使更改生效
+e. 重新啟動 CKAN 以使更改生效
 
    .. note::
 
-      此處假設您已完成CKAN部署工作，若尚未完成請先參考 :doc:`installing/deployment` 完成部署。
+      此處假設您已完成 CKAN 部署工作，若尚未完成請先參考 :doc:`installing/deployment` 完成部署。
 
    .. parsed-literal::
 

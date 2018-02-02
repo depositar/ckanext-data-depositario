@@ -1,8 +1,8 @@
---------
-安裝CKAN
---------
+---------
+安裝 CKAN
+---------
 
-目前本平台係以原始碼方式安裝CKAN。
+目前本平台係以原始碼方式安裝 CKAN。
 
 詳見 :doc:`install-from-source` 與 :doc:`deployment` 。
 
