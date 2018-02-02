@@ -51,23 +51,17 @@ b. 安裝 CKAN 於虛擬環境
 
       pip install setuptools==36.1
 
-   安裝 CKAN：
-
-   .. parsed-literal::
-
-      pip install -e 'git+https://github.com/depositar-io/ckan.git#egg=ckan'
-
-c. 安裝 CKAN 所需 Python 套件
-
-   .. parsed-literal::
-
-      pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
-
-d. 安裝本平台客製套件
+c. 安裝 CKAN 與本平台客製套件
 
    .. parsed-literal::
 
       pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
+
+d. 安裝 CKAN 所需 Python 套件
+
+   .. parsed-literal::
+
+      pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
 
 e. 安裝本平台客製套件所需 Python 套件
 

@@ -22,6 +22,8 @@
     pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
     cd pyenv/src/ckanext-data-depositario
     pip install -r requirements-docs.txt
+    cd ../ckan
+    pip install -r requirements.txt
 
 開始編輯
 ========
@@ -41,6 +43,7 @@
 
 .. parsed-literal::
 
+   cd ../ckanext-data-depositario
    python setup.py build_sphinx
 
 您即可使用瀏覽器開啟 ``build/sphinx/html/index.html`` 檔案瀏覽生成之 HTML 檔案。
