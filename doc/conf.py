@@ -27,6 +27,13 @@ import os
 #
 # needs_sphinx = '1.0'
 
+rst_epilog = u'''
+
+.. |site_name| replace:: 研究資料公眾寄存所
+
+'''
+
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
