@@ -17,6 +17,7 @@
 
 ::
 
+    sudo apt-get install python-dev libpq-dev python-pip python-virtualenv
     virtualenv --no-site-packages pyenv
     . pyenv/bin/activate
     pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
@@ -24,6 +25,7 @@
     pip install -r requirements-docs.txt
     cd ../ckan
     pip install -r requirements.txt
+    pip install setuptools==36.1
 
 開始編輯
 ========
