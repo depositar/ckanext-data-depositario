@@ -5,7 +5,7 @@
 註冊帳號
 ========
 
-本平台（|site_name|）不開放直接註冊，若您或您的組織希望上傳資料至本平台，請發送一電子郵件至 data.contact AT depositar.io（AT 請代換為 @），主旨為 ``|site_name|：組織申請`` ，並包含以下內容：
+本平台（|site_name|）不開放直接註冊，若您或您的組織希望上傳資料至本平台，請發送一電子郵件至 data.contact AT depositar.io（AT 請代換為 @），主旨為「|site_name|：組織申請」，並包含以下內容：
 
 .. hint::
 
