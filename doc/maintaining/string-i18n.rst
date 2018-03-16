@@ -10,7 +10,7 @@
 
 .. note::
 
-   本節僅簡要記述，詳細作法請直接參考 `CKAN 官方文件 <http://docs.ckan.org/en/ckan-2.6.4/contributing/string-i18n.html>`_
+   本節僅簡要記述，詳細作法請直接參考 `String internationalization`_
 
 #. Jinja2 模板內字串翻譯
 
