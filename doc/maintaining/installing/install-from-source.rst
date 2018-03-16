@@ -343,7 +343,7 @@ c. DataStore 資料庫權限設定
 
    .. parsed-literal::
 
-      paster --plugin=ckan datastore set-permissions -c /etc/ckan/default/development.ini
+      paster --plugin=ckan datastore set-permissions -c /etc/ckan/default/development.ini | sudo -u postgres psql --set ON_ERROR_STOP=1
 
 --------------------
 9. 建立 who.ini link
