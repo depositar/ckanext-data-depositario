@@ -108,7 +108,7 @@ ckan.module('map', function (jQuery, _) {
       if ($('#field-spatial').val() != '') {
         var geojson = jQuery.parseJSON($('#field-spatial').val());
         var extentLayer = L.geoJson(geojson, {style: function (feature) {
-          return {color: feature.properties.color};
+          return {color: '#444444'};
         }}).addTo(self.map);
         if (geojson.type == 'Point') {
           self.map.setView(L.latLng(geojson.coordinates[1], geojson.coordinates[0]), 9);
