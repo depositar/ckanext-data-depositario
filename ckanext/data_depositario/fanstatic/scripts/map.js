@@ -63,6 +63,17 @@ ckan.module('map', function (jQuery, _) {
         });
       }
 
+      function deleteFieldValues(e) {
+        // if the layer has been deleted, remove the spatial field values, too.
+        if (e.layers.getLayers().length != 0) {
+          var fields = ['#field-spatial', '#field-x_min', '#field-x_max', '#field-y_min',
+            '#field-y_max'];
+          fields.forEach(function(field) {
+            $(field).val('').prop('readonly', false);
+          });
+        }
+      }
+
       // add layer control
       self.map.addLayer(tf);
       self.map.addControl(new L.control.layers({"OpenStreetMap": tf, "Google Maps": ggl, "Google Maps (衛星)": ggls, "通用版電子地圖": nlsc}));
@@ -70,17 +81,25 @@ ckan.module('map', function (jQuery, _) {
 
       // add draw control
       var drawControl = new L.Control.Draw({
+        edit: {
+          featureGroup: featureGroup,
+          poly: {
+            allowIntersection: false
+          }
+        },
         draw: {
-          polygon: true,
-          polyline: false,
-          rectangle: true,
+          polygon: {
+            allowIntersection: false,
+            showArea: true
+          },
           circle: false,
-	  marker: true
+          circlemarker: false
         }
       }).addTo(self.map);
 
       self.map.on('draw:created', showPolygonArea);
       self.map.on('draw:edited', showPolygonAreaEdited);
+      self.map.on('draw:deleted', deleteFieldValues);
 
       // hide the map first
       $('#map').hide();
@@ -89,7 +108,7 @@ ckan.module('map', function (jQuery, _) {
       if ($('#field-spatial').val() != '') {
         var geojson = jQuery.parseJSON($('#field-spatial').val());
         var extentLayer = L.geoJson(geojson, {style: function (feature) {
-          return {color: feature.properties.color};
+          return {color: '#444444'};
         }}).addTo(self.map);
         if (geojson.type == 'Point') {
           self.map.setView(L.latLng(geojson.coordinates[1], geojson.coordinates[0]), 9);
