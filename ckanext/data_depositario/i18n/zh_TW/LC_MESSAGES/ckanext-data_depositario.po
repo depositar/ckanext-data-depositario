@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-data-depositario 5.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-11-02 19:44+0800\n"
+"POT-Creation-Date: 2018-03-23 14:49+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -19,46 +19,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:135
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:86
+#: ckanext/data_depositario/plugin.py:136
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr "關鍵字"
 
-#: ckanext/data_depositario/plugin.py:139
+#: ckanext/data_depositario/plugin.py:140
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:140
+#: ckanext/data_depositario/plugin.py:141
 msgid "Language"
 msgstr "語言"
 
-#: ckanext/data_depositario/plugin.py:142
+#: ckanext/data_depositario/plugin.py:143
 msgid "Historical Material"
 msgstr "使用史料"
 
 #: ckanext/data_depositario/validators.py:16
-msgid "Must be a positive integer"
-msgstr "必須是正整數"
-
-#: ckanext/data_depositario/validators.py:26
 msgid "Must be a valid longitude coordinate"
 msgstr "必須是有效的經度值"
 
-#: ckanext/data_depositario/validators.py:36
+#: ckanext/data_depositario/validators.py:26
 msgid "Must be a valid latitude coordinate"
 msgstr "必須是有效的緯度值"
 
-#: ckanext/data_depositario/validators.py:46
+#: ckanext/data_depositario/validators.py:41
 msgid "Must be a positive float"
 msgstr "必須是正浮點數"
 
-#: ckanext/data_depositario/validators.py:86
-#: ckanext/data_depositario/validators.py:127
+#: ckanext/data_depositario/validators.py:80
+#: ckanext/data_depositario/validators.py:111
 msgid "Date format incorrect"
 msgstr "日期格式不正確"
 
-#: ckanext/data_depositario/validators.py:86
+#: ckanext/data_depositario/validators.py:80
 msgid ", should be: "
 msgstr "，應為："
 
@@ -74,6 +69,10 @@ msgstr "CKAN API"
 #: ckanext/data_depositario/templates/footer.html:10
 msgid "Site Statistics"
 msgstr "網站統計"
+
+#: ckanext/data_depositario/templates/footer.html:10
+msgid "Site Status"
+msgstr "網站狀態"
 
 #: ckanext/data_depositario/templates/footer.html:15
 msgid ""
@@ -383,18 +382,18 @@ msgstr "顯示更多"
 msgid "show less"
 msgstr "顯示較少"
 
-#: ckanext/data_depositario/templates/scheming/form_snippets/license.html:27
-#: ckanext/data_depositario/templates/snippets/license_details.html:3
-msgid "License Details"
-msgstr "授權說明"
-
-#: ckanext/data_depositario/templates/scheming/form_snippets/organization.html:27
+#: ckanext/data_depositario/templates/scheming/form_snippets/_organization_select.html:21
 msgid "No organization"
 msgstr "沒有此組織"
 
-#: ckanext/data_depositario/templates/scheming/form_snippets/organization.html:44
+#: ckanext/data_depositario/templates/scheming/form_snippets/_organization_select.html:35
 msgid "Open for organization members only"
 msgstr "只對組織內成員公開"
+
+#: ckanext/data_depositario/templates/scheming/form_snippets/license.html:37
+#: ckanext/data_depositario/templates/snippets/license_details.html:3
+msgid "License Details"
+msgstr "授權說明"
 
 #: ckanext/data_depositario/templates/scheming/package/resource_read.html:5
 msgid "Additional Information"
@@ -418,7 +417,7 @@ msgstr "建立"
 msgid "Format"
 msgstr "格式"
 
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:42
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:44
 #: ckanext/data_depositario/templates/snippets/license.html:4
 msgid "License"
 msgstr "授權"
@@ -438,17 +437,17 @@ msgstr "時間資訊（資料內容時間）"
 msgid "Spatial Fields"
 msgstr "空間範圍資訊"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:93
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:88
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
 msgid "Book"
 msgstr "文獻書籍"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:99
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:94
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:42
 msgid "Pictures"
 msgstr "圖像"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:104
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:99
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:45
 msgid "Management Information"
 msgstr "管理資訊"
@@ -489,14 +488,6 @@ msgstr "標題"
 msgid "Chinese"
 msgstr "中文"
 
-#: ckanext/data_depositario/templates/snippets/search_form.html:16
-msgid "Remove"
-msgstr "移除"
-
-#: ckanext/data_depositario/templates/snippets/search_form.html:21
-msgid "Filter Results"
-msgstr "篩選結果"
-
 #: ckanext/data_depositario/templates/snippets/time_period_select.html:13
 msgid "Time Period Shortcut"
 msgstr "時間區間捷徑"
@@ -506,14 +497,3 @@ msgid ""
 "This shortcut provides some historical periods for filling temporal "
 "information of the dataset."
 msgstr "此捷徑提供部分歷史時期，供您快速填寫資料歷史年代。"
-
-#~ msgid "Theme Keyword"
-#~ msgstr "主題關鍵字"
-
-#~ msgid "Spatial Keyword"
-#~ msgstr "空間範圍關鍵字"
-
-# | msgid "Keywords"
-#~ msgid "Keyword"
-#~ msgstr "關鍵字"
-

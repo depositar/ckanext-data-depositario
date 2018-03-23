@@ -1,15 +1,15 @@
 # Translations template for ckanext-data-depositario.
-# Copyright (C) 2017 ORGANIZATION
+# Copyright (C) 2018 ORGANIZATION
 # This file is distributed under the same license as the
 # ckanext-data-depositario project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 5.0\n"
+"Project-Id-Version: ckanext-data-depositario 6.1.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-11-02 19:44+0800\n"
+"POT-Creation-Date: 2018-03-23 14:49+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,46 +18,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:135
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:86
+#: ckanext/data_depositario/plugin.py:136
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:139
+#: ckanext/data_depositario/plugin.py:140
 msgid "Data Type"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:140
+#: ckanext/data_depositario/plugin.py:141
 msgid "Language"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:142
+#: ckanext/data_depositario/plugin.py:143
 msgid "Historical Material"
 msgstr ""
 
 #: ckanext/data_depositario/validators.py:16
-msgid "Must be a positive integer"
-msgstr ""
-
-#: ckanext/data_depositario/validators.py:26
 msgid "Must be a valid longitude coordinate"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:36
+#: ckanext/data_depositario/validators.py:26
 msgid "Must be a valid latitude coordinate"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:46
+#: ckanext/data_depositario/validators.py:41
 msgid "Must be a positive float"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:86
-#: ckanext/data_depositario/validators.py:127
+#: ckanext/data_depositario/validators.py:80
+#: ckanext/data_depositario/validators.py:111
 msgid "Date format incorrect"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:86
+#: ckanext/data_depositario/validators.py:80
 msgid ", should be: "
 msgstr ""
 
@@ -72,6 +67,10 @@ msgstr ""
 
 #: ckanext/data_depositario/templates/footer.html:10
 msgid "Site Statistics"
+msgstr ""
+
+#: ckanext/data_depositario/templates/footer.html:10
+msgid "Site Status"
 msgstr ""
 
 #: ckanext/data_depositario/templates/footer.html:15
@@ -378,17 +377,17 @@ msgstr ""
 msgid "show less"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/form_snippets/license.html:27
-#: ckanext/data_depositario/templates/snippets/license_details.html:3
-msgid "License Details"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/form_snippets/organization.html:27
+#: ckanext/data_depositario/templates/scheming/form_snippets/_organization_select.html:21
 msgid "No organization"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/form_snippets/organization.html:44
+#: ckanext/data_depositario/templates/scheming/form_snippets/_organization_select.html:35
 msgid "Open for organization members only"
+msgstr ""
+
+#: ckanext/data_depositario/templates/scheming/form_snippets/license.html:37
+#: ckanext/data_depositario/templates/snippets/license_details.html:3
+msgid "License Details"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/package/resource_read.html:5
@@ -413,7 +412,7 @@ msgstr ""
 msgid "Format"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:42
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:44
 #: ckanext/data_depositario/templates/snippets/license.html:4
 msgid "License"
 msgstr ""
@@ -433,17 +432,17 @@ msgstr ""
 msgid "Spatial Fields"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:93
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:88
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
 msgid "Book"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:99
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:94
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:42
 msgid "Pictures"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:104
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:99
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:45
 msgid "Management Information"
 msgstr ""
@@ -482,14 +481,6 @@ msgstr ""
 
 #: ckanext/data_depositario/templates/snippets/license_details.html:3
 msgid "Chinese"
-msgstr ""
-
-#: ckanext/data_depositario/templates/snippets/search_form.html:16
-msgid "Remove"
-msgstr ""
-
-#: ckanext/data_depositario/templates/snippets/search_form.html:21
-msgid "Filter Results"
 msgstr ""
 
 #: ckanext/data_depositario/templates/snippets/time_period_select.html:13
