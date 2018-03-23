@@ -8,3 +8,4 @@
    join-guide
    maintaining/index
    appendix/index
+   changelog
