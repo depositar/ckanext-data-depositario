@@ -18,6 +18,7 @@ Prerequirements
   - `depositar-io/ckanext-spatial <https://github.com/depositar-io/ckanext-spatial>`_ - Geospatial extension for CKAN.
   - `depositar-io/ckanext-geoview <https://github.com/depositar-io/ckanext-geoview>`_ - CKAN Geospatial ResourceView.
   - `depositar-io/ckanext-dga-stats <https://github.com/depositar-io/ckanext-dga-stats>`_ - CKAN's built-in Statistics plugin modified for data.depositar.io.
+  - `depositar-io/ckanext-wikidatakeyword <https://github.com/depositar-io/ckanext-wikidatakeyword>_` - Wikidata-powered keyword field for CKAN.
 
 
 Install
