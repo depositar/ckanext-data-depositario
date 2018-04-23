@@ -2,7 +2,7 @@
 data.depositar.io
 =================
 
-.. image:: https://readthedocs.org/projects/data-depositario-docs/badge/?version=latest
+.. image:: https://readthedocs.org/projects/datadepositario/badge/?version=latest
     :target: http://docs.depositar.io
     :alt: Documentation
 
