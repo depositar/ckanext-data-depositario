@@ -29,7 +29,7 @@ import os
 
 rst_epilog = u'''
 
-.. |site_name| replace:: 研究資料公眾寄存所
+.. |site_name| replace:: 跨領域區域研究資料集
 
 .. _Writing documentation: http://docs.ckan.org/en/ckan-2.6.5/contributing/documentation.html
 .. _User guide — CKAN 2.6.5 documentation: http://docs.ckan.org/en/ckan-2.6.5/user-guide.html
