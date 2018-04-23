@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.1.0b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.1.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-03-23 14:49+0800\n"
+"POT-Creation-Date: 2018-04-23 14:23+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,24 +35,24 @@ msgstr ""
 msgid "Historical Material"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:16
+#: ckanext/data_depositario/validators.py:20
 msgid "Must be a valid longitude coordinate"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:26
+#: ckanext/data_depositario/validators.py:34
 msgid "Must be a valid latitude coordinate"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:41
+#: ckanext/data_depositario/validators.py:53
 msgid "Must be a positive float"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:80
-#: ckanext/data_depositario/validators.py:111
+#: ckanext/data_depositario/validators.py:102
+#: ckanext/data_depositario/validators.py:139
 msgid "Date format incorrect"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:80
+#: ckanext/data_depositario/validators.py:102
 msgid ", should be: "
 msgstr ""
 
@@ -71,6 +71,10 @@ msgstr ""
 
 #: ckanext/data_depositario/templates/footer.html:10
 msgid "Site Status"
+msgstr ""
+
+#: ckanext/data_depositario/templates/footer.html:10
+msgid "Documentation"
 msgstr ""
 
 #: ckanext/data_depositario/templates/footer.html:15

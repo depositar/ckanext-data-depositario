@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-data-depositario 5.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-03-23 14:49+0800\n"
+"POT-Creation-Date: 2018-04-23 14:23+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -36,24 +36,24 @@ msgstr "語言"
 msgid "Historical Material"
 msgstr "使用史料"
 
-#: ckanext/data_depositario/validators.py:16
+#: ckanext/data_depositario/validators.py:20
 msgid "Must be a valid longitude coordinate"
 msgstr "必須是有效的經度值"
 
-#: ckanext/data_depositario/validators.py:26
+#: ckanext/data_depositario/validators.py:34
 msgid "Must be a valid latitude coordinate"
 msgstr "必須是有效的緯度值"
 
-#: ckanext/data_depositario/validators.py:41
+#: ckanext/data_depositario/validators.py:53
 msgid "Must be a positive float"
 msgstr "必須是正浮點數"
 
-#: ckanext/data_depositario/validators.py:80
-#: ckanext/data_depositario/validators.py:111
+#: ckanext/data_depositario/validators.py:102
+#: ckanext/data_depositario/validators.py:139
 msgid "Date format incorrect"
 msgstr "日期格式不正確"
 
-#: ckanext/data_depositario/validators.py:80
+#: ckanext/data_depositario/validators.py:102
 msgid ", should be: "
 msgstr "，應為："
 
@@ -73,6 +73,10 @@ msgstr "網站統計"
 #: ckanext/data_depositario/templates/footer.html:10
 msgid "Site Status"
 msgstr "網站狀態"
+
+#: ckanext/data_depositario/templates/footer.html:10
+msgid "Documentation"
+msgstr "使用手冊"
 
 #: ckanext/data_depositario/templates/footer.html:15
 msgid ""
@@ -497,3 +501,4 @@ msgid ""
 "This shortcut provides some historical periods for filling temporal "
 "information of the dataset."
 msgstr "此捷徑提供部分歷史時期，供您快速填寫資料歷史年代。"
+
