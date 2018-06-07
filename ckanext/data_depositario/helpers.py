@@ -10,6 +10,7 @@ import logging
 import dateutil
 from datetime import date
 from ckanext.scheming import helpers as scheming_helpers
+from ckanext import data_depositario
 
 log = logging.getLogger(__name__)
 
@@ -120,3 +121,16 @@ def get_gmap_config():
 
 def get_license_list():
    return p.toolkit.get_action('license_list')({}, {})
+
+def get_pkg_version():
+    """
+    Obtain the extension version for documentation
+    Borrowed from CKAN core
+    """
+    pkg_version = data_depositario.__version__
+    pkg_base_version = re.sub('[^0-9\.]', '', pkg_version)
+    if pkg_base_version == pkg_version:
+       pkg_version = pkg_version[:5]
+    else:
+       pkg_version = 'latest'
+    return pkg_version
