@@ -35,7 +35,7 @@ a. 新增一個 Python 虛擬環境（virtualenv）供 CKAN 使用，並進入�
 
         . /usr/lib/ckan/default/bin/activate
 
-b. 安裝 CKAN 於虛擬環境
+b. 安裝建議的 setuptools 版本
 
    .. important::
 
@@ -44,8 +44,6 @@ b. 安裝 CKAN 於虛擬環境
       .. parsed-literal::
 
          cd /usr/lib/ckan/default/
-
-   安裝 setuptools：
 
    .. parsed-literal::
 
@@ -282,7 +280,7 @@ b. 執行 Solr 安裝腳本
 
       sudo bash ./install_solr_service.sh solr-5.5.5.tgz
 
-c. 建立供 CKAN 使用之Solr configset
+c. 建立供 CKAN 使用之 Solr configset
 
    .. parsed-literal::
 
@@ -292,10 +290,12 @@ c. 建立供 CKAN 使用之Solr configset
       sudo -u solr touch /var/solr/data/configsets/ckan/conf/protwords.txt
       sudo -u solr touch /var/solr/data/configsets/ckan/conf/synonyms.txt
 
-d. 下載中文斷詞函式庫 `mmesg4j <http://pan.baidu.com/s/1dD7qMFf>`_ ，並複製 ``mmseg4j-core-*.jar`` 與 ``mmseg4j-solr-*.jar`` 至 Solr 目錄（/opt/solr/server/solr-webapp/webapp/WEB-INF/lib）
+d. 下載中文斷詞函式庫 ``mmesg4j``，並複製至 Solr 目錄
 
    .. parsed-literal::
 
+      wget http://central.maven.org/maven2/com/chenlb/mmseg4j/mmseg4j-core/1.10.0/mmseg4j-core-1.10.0.jar
+      wget http://central.maven.org/maven2/com/chenlb/mmseg4j/mmseg4j-solr/2.3.1/mmseg4j-solr-2.3.1.jar
       sudo cp mmseg4j-\*.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
 
 e. 下載空間搜尋函式庫 JTS 1.13 或以上版本並複製至 Solr 目錄

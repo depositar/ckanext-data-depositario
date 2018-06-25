@@ -6,10 +6,10 @@ gco:CharacterString [#]_
   字串（文字）
 
 gco:Date
-  日期（ISO8601標準）
+  日期（ISO8601 標準）
 
 GeoJSON
-  GeoJSON格式（參見 http://geojson.org/）
+  GeoJSON 格式（參見 http://geojson.org/）
 
 gco:Decimal
   十進位值
@@ -31,7 +31,7 @@ Data_type
    * - 影音資料
 
 Language_type
-  依據ISO639標準（參見下表）
+  依據 ISO639 標準（參見下表）
 
 .. list-table::
 
@@ -101,4 +101,4 @@ Encoding_type
    * - Shift_JIS (日文)
    * - EUC-JP (日文)
 
-.. [#] gco為 `Geographic COmmon extensible markup language <http://www.isotc211.org/2005/gco/>`_ 詮釋資料標準
+.. [#] gco 為 `Geographic COmmon extensible markup language <http://www.isotc211.org/2005/gco/>`_ 詮釋資料標準
