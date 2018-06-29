@@ -29,7 +29,7 @@ import os
 
 rst_epilog = u'''
 
-.. |site_name| replace:: data.depositar.io
+.. |site_name| replace:: ``depositar``
 
 .. _Writing documentation: http://docs.ckan.org/en/2.6/contributing/documentation.html
 .. _User guide — CKAN 2.6.6 documentation: http://docs.ckan.org/en/2.6/user-guide.html
@@ -57,8 +57,8 @@ source_suffix = '.rst'
 master_doc = 'contents'
 
 # General information about the project.
-project = u'data.depositar.io'
-copyright = u'''2017, The <a href="https://data.depositar.io/">data.depositar.io</a> Team.
+project = u'depositar'
+copyright = u'''2017, The <a href="https://data.depositar.io/">depositar</a> Team.
     Licensed under <a
     href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons
     Attribution ShareAlike (Unported) v3.0 License</a>.<br />
@@ -158,6 +158,6 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sphinx.tex', u'data.depositar.io Documentation',
-     u'The data.depositar.io Team', 'manual'),
+    (master_doc, 'sphinx.tex', u'depositar Documentation',
+     u'The depositar Team', 'manual'),
 ]
