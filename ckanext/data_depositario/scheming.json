@@ -612,7 +612,8 @@
         "en": "Steps of data generating process",
         "zh_TW": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫"
       },
-      "form_snippet": "markdown.html"
+      "form_snippet": "markdown.html",
+      "display_snippet": "markdown.html"
     },
     {
       "field_name": "license_id",
