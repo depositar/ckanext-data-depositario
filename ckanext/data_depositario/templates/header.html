@@ -1,5 +1,29 @@
 {% ckan_extends %}
 
+{% macro language_selector() %}
+  {% set current_lang = request.environ.CKAN_LANG %}
+  {% if current_lang != "en" %}
+    <li>
+      <a href="{% url_for h.current_url(), locale='en' %}">English</a>
+    </li>
+  {% endif %}
+  {% if current_lang != "zh_TW" %}
+    <li>
+      <a href="{% url_for h.current_url(), locale='zh_TW' %}">中文</a>
+    </li>
+  {% endif %}
+{% endmacro %}
+
+{% block header_account_logged %}
+  {{ super() }}
+  {{ language_selector() }}
+{% endblock %}
+
+{% block header_account_notlogged %}
+  {{ super() }}
+  {{ language_selector() }}
+{% endblock %}
+
 {% block header_site_navigation %}
   <nav class="section navigation">
     <ul class="nav nav-pills">
