@@ -7,6 +7,15 @@
 Changelog
 ---------
 
+v6.1.3 2018-07-06
+=================
+
+ * Add: English documentation in footer.
+ * Improvement: Move the language selector to the top-right corner.
+ * Improvement: Fix an issue where the ``Preprocessing`` dataset level field cannot be
+   displayed correctly (#2).
+ * Improvement: Correct some errors in Chinese documentation.
+
 v6.1.2 2018-05-10
 =================
 
