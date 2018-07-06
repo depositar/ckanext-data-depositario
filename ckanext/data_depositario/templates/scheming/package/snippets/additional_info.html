@@ -85,7 +85,7 @@
 
 {% if pkg_dict.get('book_isbn') or pkg_dict.get('book_issn') or pkg_dict.get('book_journal') or pkg_dict.get('book_volume') or pkg_dict.get('book_proceeding') or pkg_dict.get('book_location') or pkg_dict.get('book_publisher') or pkg_dict.get('book_year') or pkg_dict.get('book_query') or pkg_dict.get('book_url') or pkg_dict.get('book_hist_materials') or pkg_dict.get('book_area_village') or pkg_dict.get('book_area_religion') or pkg_dict.get('book_area_family') or pkg_dict.get('book_area_reservoir') or pkg_dict.get('book_area_industry') or pkg_dict.get('book_notes') %}
   <section class="additional-info">
-    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Book'), pkg_dict=pkg_dict, additional_fields=book_fields, exclude_fields=exclude_fields, schema=schema %}
+    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Books'), pkg_dict=pkg_dict, additional_fields=book_fields, exclude_fields=exclude_fields, schema=schema %}
   </section>
 {% endif %}
 

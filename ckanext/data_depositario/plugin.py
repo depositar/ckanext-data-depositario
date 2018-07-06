@@ -114,6 +114,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             'get_time_period_for_facet_slider',
             'get_gmap_config',
             'get_license_list',
+            'get_pkg_version',
         )
         return _get_module_functions(helpers, function_names)
 
