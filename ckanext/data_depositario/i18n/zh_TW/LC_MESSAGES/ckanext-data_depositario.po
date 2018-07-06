@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 5.0\n"
+"Project-Id-Version: ckanext-data-depositario 6.1.3b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-04-23 14:23+0800\n"
+"POT-Creation-Date: 2018-07-06 11:46+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -19,20 +19,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:136
+#: ckanext/data_depositario/plugin.py:137
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr "關鍵字"
 
-#: ckanext/data_depositario/plugin.py:140
+#: ckanext/data_depositario/plugin.py:141
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:141
+#: ckanext/data_depositario/plugin.py:142
 msgid "Language"
 msgstr "語言"
 
-#: ckanext/data_depositario/plugin.py:143
+#: ckanext/data_depositario/plugin.py:144
 msgid "Historical Material"
 msgstr "使用史料"
 
@@ -61,24 +61,24 @@ msgstr "，應為："
 msgid "Contact us"
 msgstr "聯絡我們"
 
-#: ckanext/data_depositario/templates/footer.html:10
+#: ckanext/data_depositario/templates/footer.html:11
 #: ckanext/data_depositario/templates/package/read.html:25
 msgid "CKAN API"
 msgstr "CKAN API"
 
-#: ckanext/data_depositario/templates/footer.html:10
+#: ckanext/data_depositario/templates/footer.html:11
 msgid "Site Statistics"
 msgstr "網站統計"
 
-#: ckanext/data_depositario/templates/footer.html:10
+#: ckanext/data_depositario/templates/footer.html:11
 msgid "Site Status"
 msgstr "網站狀態"
 
-#: ckanext/data_depositario/templates/footer.html:10
+#: ckanext/data_depositario/templates/footer.html:11
 msgid "Documentation"
 msgstr "使用手冊"
 
-#: ckanext/data_depositario/templates/footer.html:15
+#: ckanext/data_depositario/templates/footer.html:16
 msgid ""
 "<p>Source code available on <a href=\"https://github.com/depositar-io\" "
 "class=\"external\" target=\"_blank\">GitHub.</a></p>"
@@ -86,24 +86,24 @@ msgstr ""
 "<p>程式碼可於 <a href=\"https://github.com/depositar-io\" "
 "class=\"external\"target=\"_blank\">GitHub</a> 取得。</p>"
 
-#: ckanext/data_depositario/templates/header.html:8
+#: ckanext/data_depositario/templates/header.html:32
 msgid "Datasets"
 msgstr "資料集"
 
-#: ckanext/data_depositario/templates/header.html:9
+#: ckanext/data_depositario/templates/header.html:33
 msgid "Organizations"
 msgstr "組織"
 
-#: ckanext/data_depositario/templates/header.html:10
+#: ckanext/data_depositario/templates/header.html:34
 #: ckanext/data_depositario/templates/theme.html:3
 msgid "Groups"
 msgstr "主題"
 
-#: ckanext/data_depositario/templates/header.html:11
+#: ckanext/data_depositario/templates/header.html:35
 msgid "About"
 msgstr "關於"
 
-#: ckanext/data_depositario/templates/header.html:12
+#: ckanext/data_depositario/templates/header.html:36
 #: ckanext/data_depositario/templates/home/help.html:3
 #: ckanext/data_depositario/templates/home/help.html:7
 msgid "Help"
@@ -443,7 +443,7 @@ msgstr "空間範圍資訊"
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:88
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
-msgid "Book"
+msgid "Books"
 msgstr "文獻書籍"
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:94

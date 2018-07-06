@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.1.1\n"
+"Project-Id-Version: ckanext-data-depositario 6.1.3b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-04-23 14:23+0800\n"
+"POT-Creation-Date: 2018-07-06 11:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:136
+#: ckanext/data_depositario/plugin.py:137
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:140
+#: ckanext/data_depositario/plugin.py:141
 msgid "Data Type"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:141
+#: ckanext/data_depositario/plugin.py:142
 msgid "Language"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:143
+#: ckanext/data_depositario/plugin.py:144
 msgid "Historical Material"
 msgstr ""
 
@@ -60,47 +60,47 @@ msgstr ""
 msgid "Contact us"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:10
+#: ckanext/data_depositario/templates/footer.html:11
 #: ckanext/data_depositario/templates/package/read.html:25
 msgid "CKAN API"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:10
+#: ckanext/data_depositario/templates/footer.html:11
 msgid "Site Statistics"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:10
+#: ckanext/data_depositario/templates/footer.html:11
 msgid "Site Status"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:10
+#: ckanext/data_depositario/templates/footer.html:11
 msgid "Documentation"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:15
+#: ckanext/data_depositario/templates/footer.html:16
 msgid ""
 "<p>Source code available on <a href=\"https://github.com/depositar-io\" "
 "class=\"external\" target=\"_blank\">GitHub.</a></p>"
 msgstr ""
 
-#: ckanext/data_depositario/templates/header.html:8
+#: ckanext/data_depositario/templates/header.html:32
 msgid "Datasets"
 msgstr ""
 
-#: ckanext/data_depositario/templates/header.html:9
+#: ckanext/data_depositario/templates/header.html:33
 msgid "Organizations"
 msgstr ""
 
-#: ckanext/data_depositario/templates/header.html:10
+#: ckanext/data_depositario/templates/header.html:34
 #: ckanext/data_depositario/templates/theme.html:3
 msgid "Groups"
 msgstr ""
 
-#: ckanext/data_depositario/templates/header.html:11
+#: ckanext/data_depositario/templates/header.html:35
 msgid "About"
 msgstr ""
 
-#: ckanext/data_depositario/templates/header.html:12
+#: ckanext/data_depositario/templates/header.html:36
 #: ckanext/data_depositario/templates/home/help.html:3
 #: ckanext/data_depositario/templates/home/help.html:7
 msgid "Help"
@@ -438,7 +438,7 @@ msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:88
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
-msgid "Book"
+msgid "Books"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:94
