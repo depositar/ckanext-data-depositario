@@ -27,16 +27,16 @@ if_empty_same_as(name)
   若空值則參照「網址」欄位
 
 unicode
-  必須是unicode字元
+  必須是 unicode 字元
 
 not_empty
   不能為空值
 
 package_name_validator
-  不得重複、長度需介於2~100字元（包含2與100）
+  不得重複、長度需介於 2 至 100 字元（包含 2 與 100）
 
 scheming_required
-  若欄位為必填則不能為空值（套用not_empty），反之則接受空值（套用ignore_missing）
+  若欄位為必填則不能為空值（套用 not_empty），反之則接受空值（套用 ignore_missing）
 
 scheming_choices
   必須是空值或給定候選項之一
@@ -45,16 +45,16 @@ ignore_missing
   若欄位為空值，接受該空值並忽略位於其後之所有校驗器（若欄位非空值，則其後之所有校驗器仍有效）
 
 tag_string_convert
-  標籤長度須介於1~100字元（包含1與100）、標籤須為unicode文數字或「-」、「_」與「.」符號
+  標籤長度須介於 1 至 100 字元（包含 1 與 100）、標籤須為 unicode 文數字或「-」、「_」與「.」符號
 
 ignore_empty
   接受空值
 
 wikidata_keyword
-  （經API上傳資料集時）只接受以Python list格式（如 ``["Q1", "Q2"]`` ）或字串形式（如 ``"Q1, Q2"`` ）呈現之資料
+  （經 API 上傳資料集時）只接受以 Python list 格式（如 ``["Q1", "Q2"]`` ）或字串形式（如 ``"Q1, Q2"`` ）呈現之資料
 
 scheming_multiple_choice
-  （經API上傳資料集時）只接受以Python list格式（如 ``["Q1", "Q2"]`` ）或字串形式（如 ``"Q1, Q2"`` ）呈現之資料。資料值需為給定候選項中之一至多個
+  （經 API 上傳資料集時）只接受以 Python list 格式（如 ``["Q1", "Q2"]`` ）或字串形式（如 ``"Q1, Q2"`` ）呈現之資料。資料值需為給定候選項中之一至多個
 
 is_positive_integer
   必須是正整數
