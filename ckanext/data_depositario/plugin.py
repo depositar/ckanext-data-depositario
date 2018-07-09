@@ -1,6 +1,7 @@
 from logging import getLogger
 
 import ckan.plugins as p
+import ckan.logic as logic
 from ckan.common import json
 from ckan.common import OrderedDict
 from ckan.lib.plugins import DefaultTranslation
@@ -10,6 +11,8 @@ from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
 
 log = getLogger(__name__)
+
+_check_access = logic.check_access
 
 
 class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
@@ -21,6 +24,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     p.implements(p.IFacets)
     p.implements(p.IValidators)
     p.implements(p.IRoutes, inherit=True)
+    p.implements(p.IActions)
 
     ## IConfigurer
     def update_config(self, config):
@@ -125,6 +129,10 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             action='index')
         return map
 
+    ## IActions
+    def get_actions(self):
+        return {'license_list': license_list}
+
 def _get_module_functions(module, function_names):
     functions = {}
     for f in function_names:
@@ -144,3 +152,19 @@ def _add_facets(facets_dict, group=False):
             p.toolkit._('Historical Material')
 
     return new_facets_dict
+
+def license_list(context, data_dict):
+    '''Return the list of licenses available for datasets on the site.
+
+    Adapted from origial CKAN using a nondeprecated method.
+
+    :rtype: list of dictionaries
+    '''
+    model = context["model"]
+
+    _check_access('license_list', context, data_dict)
+
+    license_register = model.Package.get_license_register()
+    licenses = license_register.values()
+    licenses = [l._data for l in licenses]
+    return licenses
