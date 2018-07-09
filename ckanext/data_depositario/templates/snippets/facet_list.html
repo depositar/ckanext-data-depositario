@@ -5,8 +5,8 @@
     <i class="icon-medium icon-filter"></i>
     {% set title = title or h.get_facet_title(name) %}
     {{ title }}
-    {% if extra_snippet %}
-      {%- snippet extra_snippet -%}
+    {% if name == 'license_id' %}
+      {%- snippet 'snippets/license_details.html' -%}
     {% endif %}
   </h2>
 {% endblock %}
