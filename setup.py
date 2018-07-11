@@ -40,6 +40,8 @@ setup(
     message_extractors={
         'ckanext': [
             ('**.py', 'python', None),
+            ('**/fanstatic/scripts/vendor/**.js', 'ignore', None),
+            ('**.js', 'javascript', None),
             ('**/templates/**.html', 'ckan', None),
         ],
     }

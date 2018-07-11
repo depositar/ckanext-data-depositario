@@ -2,7 +2,7 @@
  * When an organization is selected in the org dropdown then show a checkbox and
  * let user decide whether open this dataset or not
  */
-this.ckan.module('dataset-visibility-checkbox', function ($, _) {
+this.ckan.module('dataset-visibility-checkbox', function (jQuery) {
   return {
     options: {
       organizations: $('#field-organizations'),
