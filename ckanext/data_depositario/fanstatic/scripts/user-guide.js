@@ -3,7 +3,7 @@ this.ckan.module('intro-action', function (jQuery) {
     /* An object of module options */
     options: {
        template: [
-         '<i id="intro-switch" class="icon-question-sign icon-large pull-right">',
+         '<i id="intro-switch" class="fa fa-large fa-question-circle pull-right">',
          '</i>'
        ].join('\n')
     },
