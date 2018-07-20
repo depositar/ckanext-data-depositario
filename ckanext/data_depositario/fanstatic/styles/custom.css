@@ -73,6 +73,11 @@
 .homepage .module-search .tags {
   background-color: rgb(40, 40, 40);
 }
+/* Fix search icon not properly vertically aligned. */
+.search-form .search-input.search-giant button {
+  margin-top: -15px;
+  right: 15px;
+}
 
 
 /* ====================================

@@ -28,6 +28,14 @@
 
       my_string = _("This paragraph is translatable.")
 
+#. JavaScript 程式內字串翻譯
+
+   一般為以下形式。雙引號（或單引號）內的字元（Something that should be translated）即可被翻譯為其他語系。
+
+   .. code-block:: javascript
+
+      this._('Something that should be translated')
+
 ----------------------
 產生與編譯字串翻譯檔案
 ----------------------

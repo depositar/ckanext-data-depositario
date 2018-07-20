@@ -31,10 +31,10 @@ rst_epilog = u'''
 
 .. |site_name| replace:: ``研究資料寄存所``
 
-.. _Writing documentation: http://docs.ckan.org/en/2.6/contributing/documentation.html
-.. _User guide — CKAN 2.6.6 documentation: http://docs.ckan.org/en/2.6/user-guide.html
-.. _Maintainer’s guide — CKAN 2.6.6 documentation: http://docs.ckan.org/en/2.6/maintaining/index.html
-.. _String internationalization: http://docs.ckan.org/en/2.6/contributing/string-i18n.html
+.. _Writing documentation: http://docs.ckan.org/en/2.7/contributing/documentation.html
+.. _User guide — CKAN 2.7.4 documentation: http://docs.ckan.org/en/2.7/user-guide.html
+.. _Maintainer’s guide — CKAN 2.7.4 documentation: http://docs.ckan.org/en/2.7/maintaining/index.html
+.. _String internationalization: http://docs.ckan.org/en/2.7/contributing/string-i18n.html
 '''
 
 

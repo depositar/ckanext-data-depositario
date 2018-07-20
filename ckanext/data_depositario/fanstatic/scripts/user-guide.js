@@ -1,20 +1,9 @@
-this.ckan.module('intro-action', function (jQuery, _) {
+this.ckan.module('intro-action', function (jQuery) {
   return {
     /* An object of module options */
     options: {
-      /* Locale options can be overidden with data-module-i18n attribute */
-      i18n: {
-        keywordSearch: _('Here you can search datasets by a keyword.'),
-        spatialSearch: _('Here you can search datasets by the map.'),
-        temporalSearch: _('Here you can search datasets by a period of time.'),
-        filter: _('Here you can filter datasets.'),
-        datasetList: _('The matched datasets will list here.'),
-        showHelp: _('Click this question mark to show this help again.'),
-        skip: _('Skip'),
-        done: _('Confirm')
-      },
        template: [
-         '<i id="intro-switch" class="icon-question-sign icon-large pull-right">',
+         '<i id="intro-switch" class="fa fa-large fa-question-circle pull-right">',
          '</i>'
        ].join('\n')
     },
@@ -27,46 +16,41 @@ this.ckan.module('intro-action', function (jQuery, _) {
       var md = new MobileDetect(window.navigator.userAgent);
       var isMobile = md.mobile() ? true : false;
 
-      if(jQuery('html').attr('lang') == 'zh_TW') {
-        locale_data = ckan.i18n.options.locale_data.ckan;
-        jQuery.extend(locale_data, this.getLocale());
-      }
-
       intro.setOptions({
         overlayOpacity: 0.5,
         nextLabel: ' &rarr; ',
         prevLabel: '&larr; ',
         showStepNumbers: false,
-        skipLabel: this.i18n('skip'),
-        doneLabel: this.i18n('done'),
+        skipLabel: this._('Skip'),
+        doneLabel: this._('Confirm'),
         steps: [
           {
             element: '.search-input',
-            intro: this.i18n('keywordSearch')
+            intro: this._('Here you can search datasets by a keyword.')
           },
 	  {
 	    element: '#dataset-map',
-	    intro: this.i18n('spatialSearch'),
+	    intro: this._('Here you can search datasets by the map.'),
 	    position: 'right'
 	  },
           {
             element: '[data-module="date-facet"]',
-            intro: this.i18n('temporalSearch'),
+            intro: this._('Here you can search datasets by a period of time.'),
             position: 'right'
           },
           {
             element: '#facets',
-            intro: this.i18n('filter'),
+            intro: this._('Here you can filter datasets.'),
             position: 'right'
           },
           {
             element: '.dataset-list',
-            intro: this.i18n('datasetList'),
+            intro: this._('The matched datasets will list here.'),
             position: 'right'
           },
           {
             element: '#intro-switch',
-            intro: this.i18n('showHelp'),
+            intro: this._('Click this question mark to show this help again.'),
             position: 'right'
           }
         ]
@@ -87,39 +71,6 @@ this.ckan.module('intro-action', function (jQuery, _) {
         localStorage.setItem('intro', 1);
         intro.start();
       }
-    },
-
-    getLocale: function () {
-      return {
-        "Here you can search datasets by a keyword.": [
-          null,
-          "您可以在此進行關鍵字搜尋。"
-        ],
-        "Here you can search datasets by the map.": [
-          null,
-          "您可以在此進行空間搜尋。"
-        ],
-        "Here you can search datasets by a period of time.": [
-          null,
-          "您可以在此進行時間搜尋。"
-        ],
-        "Here you can filter datasets.": [
-          null,
-          "您可以在此過濾資料集。"
-        ],
-        "The matched datasets will list here.": [
-          null,
-          "符合搜尋條件的資料集將顯示在這裡。"
-        ],
-        "Click this question mark to show this help again.": [
-          null,
-          "點選此問號按鈕再次觀看導覽。"
-        ],
-        "Skip": [
-          null,
-          "略過"
-        ]
-      };
     },
 
     createMark: function () {

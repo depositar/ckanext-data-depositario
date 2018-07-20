@@ -1,6 +1,6 @@
 /* Maintainer information autofill
  */
-this.ckan.module('maintainer', function ($, _) {
+this.ckan.module('maintainer', function (jQuery) {
   return {
     options: {
       maintainer_autofill: $('#maintainer_autofill'),

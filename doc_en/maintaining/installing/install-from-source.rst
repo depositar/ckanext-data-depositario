@@ -10,7 +10,7 @@ This section describes how to install CKAN used by |site_name| from source on an
 
 .. parsed-literal::
 
-   sudo apt-get install build-essential libxslt1-dev libxml2-dev python-dev postgresql libpq-dev python-pip python-virtualenv git-core openjdk-8-jdk
+   sudo apt-get install build-essential libxslt1-dev libxml2-dev python-dev postgresql libpq-dev python-pip python-virtualenv git-core openjdk-8-jdk redis-server
 
 -------------------------------------------------
 2. Install CKAN into a Python virtual environment

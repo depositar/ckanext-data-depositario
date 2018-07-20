@@ -1,5 +1,5 @@
 (function(ckan, moment, document) {
-  ckan.module('date-facet', function($, _) {
+  ckan.module('date-facet', function(jQuery) {
     return {
       options : {
         begin: null,

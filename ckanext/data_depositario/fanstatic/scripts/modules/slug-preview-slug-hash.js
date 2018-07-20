@@ -1,15 +1,11 @@
 /* Modified version of ckan's slug-preview.js.
  * It generates sha1 hash as slug when the slugified name is empty.
  */
-this.ckan.module('slug-preview-slug-hash', function (jQuery, _) {
+this.ckan.module('slug-preview-slug-hash', function (jQuery) {
   return {
     options: {
       prefix: '',
-      placeholder: '<slug>',
-      i18n: {
-        url:  _('URL'),
-        edit: _('Edit')
-      }
+      placeholder: '<slug>'
     },
 
     initialize: function () {
@@ -32,8 +28,8 @@ this.ckan.module('slug-preview-slug-hash', function (jQuery, _) {
           prefix: options.prefix,
           placeholder: options.placeholder,
           i18n: {
-            'URL': this.i18n('url'),
-            'Edit': this.i18n('edit')
+            'URL': this._('URL'),
+            'Edit': this._('Edit')
           }
         });
 
@@ -46,20 +42,6 @@ this.ckan.module('slug-preview-slug-hash', function (jQuery, _) {
         });
 
         sandbox.publish('slug-preview-created', preview[0]);
-
-        // Horrible hack to make sure that IE7 rerenders the subsequent
-        // DOM children correctly now that we've render the slug preview element
-        // We should drop this horrible hack ASAP
-        if (jQuery('html').hasClass('ie7')) {
-          jQuery('.btn').on('click', preview, function(){
-            jQuery('.controls').ie7redraw();
-          });
-          preview.hide();
-          setTimeout(function() {
-            preview.show();
-            jQuery('.controls').ie7redraw();
-          }, 10);
-        }
       }
 
       // Watch for updates to the target field and update the hidden slug field

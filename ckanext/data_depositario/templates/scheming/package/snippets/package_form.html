@@ -28,7 +28,7 @@
       {% set gmap_config = h.get_gmap_config() %}
       <div class="control-group control-medium">
         <div class="controls">
-          <button id='convert_from_four_range' class='btn btn-primary' type='button'>{{ _('Convert from Parcel Corner') }}</button>
+          <button data-module='parcel-corner-to-geojson' class='btn btn-primary' type='button'>{{ _('Convert from Parcel Corner') }}</button>
           <button id='show_map' class='btn btn-primary' type='button'>{{ _('Using a Map') }}</button>
 	  <div data-module='map' id='map' data-module-gmap_config='{{ h.dump_json(gmap_config) }}'></div>
         </div>

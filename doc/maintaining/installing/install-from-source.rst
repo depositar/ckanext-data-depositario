@@ -10,7 +10,7 @@
 
 .. parsed-literal::
 
-   sudo apt-get install build-essential libxslt1-dev libxml2-dev python-dev postgresql libpq-dev python-pip python-virtualenv git-core openjdk-8-jdk
+   sudo apt-get install build-essential libxslt1-dev libxml2-dev python-dev postgresql libpq-dev python-pip python-virtualenv git-core openjdk-8-jdk redis-server
 
 -------------------------------
 2. 安裝 CKAN 於 Python 虛擬環境

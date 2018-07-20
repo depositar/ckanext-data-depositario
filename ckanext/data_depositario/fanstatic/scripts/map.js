@@ -1,4 +1,4 @@
-ckan.module('map', function (jQuery, _) {
+ckan.module('map', function (jQuery) {
   return {
     initialize: function () {
       var self = this;
