@@ -19,30 +19,10 @@ Prerequirements
 - **Extensions.** We have developed several CKAN extensions. The `full list of installed extensions can be seen via the CKAN API <https://data.depositar.io/api/util/status>`_. Custom extensions include:
 
   - `depositar-io/ckanext-data-depositario <https://github.com/depositar-io/ckanext-data-depositario>`_ - Most data.depositar.io specific CKAN customizations are contained within this extension.
-  - `depositar-io/ckanext-spatial <https://github.com/depositar-io/ckanext-spatial>`_ - Geospatial extension for CKAN.
-  - `depositar-io/ckanext-geoview <https://github.com/depositar-io/ckanext-geoview>`_ - CKAN Geospatial ResourceView.
-  - `depositar-io/ckanext-dga-stats <https://github.com/depositar-io/ckanext-dga-stats>`_ - CKAN's built-in Statistics plugin modified for data.depositar.io.
   - `depositar-io/ckanext-wikidatakeyword <https://github.com/depositar-io/ckanext-wikidatakeyword>`_ - Wikidata-powered keyword field for CKAN.
 
 
-Install
---------
+Installation
+------------
 
-With your virtualenv activated:
-
-::
-
-   cd src
-   git clone https://github.com/depositar-io/ckanext-data-depositario.git
-   cd ckanext-data-depositario
-   python setup.py develop
-   pip install -r requirements.txt
-
-Add the following plugin and the Google Maps API key to your CKAN ini file:
-
-::
-
-   ckan.plugins = ... data_depositario
-   ckanext.data_depositario.gmap.api_key = YOUR_GOOGLE_MAPS_API_KEY
-
-Then restart your server.
+See the `Documentation <https://docs.depositar.io/>`_ for installation instructions.
