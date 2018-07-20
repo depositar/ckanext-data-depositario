@@ -7,6 +7,13 @@
 Changelog
 ---------
 
+v6.2.0 2018-07-20
+=================
+
+ * Improvement: Add a "License Details" tool beside all Licenses filters.
+ * Update: CKAN core version 2.7.4.
+ * Other improvements and UI adjustments.
+
 v6.1.3 2018-07-06
 =================
 
