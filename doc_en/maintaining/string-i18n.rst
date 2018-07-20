@@ -30,6 +30,14 @@ how to internationalize strings.
 
       my_string = _("This paragraph is translatable.")
 
+#. Internationalizing strings in JavaScript code
+
+   To internationalize a string put it inside a ``this._()`` function:
+
+   .. code-block:: javascript
+
+      this._('Something that should be translated')
+
 -------------------------------------
 Extract strings and edit translations
 -------------------------------------

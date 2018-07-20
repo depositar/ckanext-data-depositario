@@ -7,14 +7,14 @@ User guide
 This user guide covers using CKAN's web interface to organize, publish and find
 data. CKAN also has a powerful API (machine interface), which makes it easy to
 develop extensions and links with other information systems. The API is
-documented in http://docs.ckan.org/en/2.6/api/index.html.
+documented in http://docs.ckan.org/en/2.7/api/index.html.
 
 Some web UI features relating to site administration are available only to
-users with sysadmin status, and are documented in http://docs.ckan.org/en/2.6/sysadmin-guide.html.
+users with sysadmin status, and are documented in http://docs.ckan.org/en/2.7/sysadmin-guide.html.
 
 .. note::
 
-   This manual is translated and adapted from `User guide — CKAN 2.6.6 documentation`_ by `Open Knowledge International <https://okfn.org/>`_ and `contributors <https://github.com/ckan/ckan/graphs/contributors>`_ licensed under `Creative Commons Attribution-ShareAlike 3.0 Unported <https://creativecommons.org/licenses/by-sa/3.0/>`_.
+   This manual is translated and adapted from `User guide — CKAN 2.7.4 documentation`_ by `Open Knowledge International <https://okfn.org/>`_ and `contributors <https://github.com/ckan/ckan/graphs/contributors>`_ licensed under `Creative Commons Attribution-ShareAlike 3.0 Unported <https://creativecommons.org/licenses/by-sa/3.0/>`_.
 
 -------------
 What is CKAN?
@@ -533,8 +533,7 @@ The dataset page also has two other tabs:
 
 * *Activity stream* -- see the history of recent changes to the dataset
 
-* *Related items* -- see any links to web pages related to this dataset, or add
-  your own links.
+* *Groups* -- see any group associated with this dataset.
 
 If the dataset is of interest, you can opt to be notified of changes to it by
 using the "Follow" button on the dataset page. See the section
