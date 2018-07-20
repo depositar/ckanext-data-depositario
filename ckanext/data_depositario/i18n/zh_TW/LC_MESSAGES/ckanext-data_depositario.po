@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.1.3b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.2.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-07-06 11:46+0800\n"
+"POT-Creation-Date: 2018-07-20 14:08+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -19,20 +19,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:137
+#: ckanext/data_depositario/plugin.py:145
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr "關鍵字"
 
-#: ckanext/data_depositario/plugin.py:141
+#: ckanext/data_depositario/plugin.py:149
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:142
+#: ckanext/data_depositario/plugin.py:150
 msgid "Language"
 msgstr "語言"
 
-#: ckanext/data_depositario/plugin.py:144
+#: ckanext/data_depositario/plugin.py:152
 msgid "Historical Material"
 msgstr "使用史料"
 
@@ -56,6 +56,56 @@ msgstr "日期格式不正確"
 #: ckanext/data_depositario/validators.py:102
 msgid ", should be: "
 msgstr "，應為："
+
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:24
+msgid "Skip"
+msgstr "略過"
+
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:25
+msgid "Confirm"
+msgstr "確認"
+
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:29
+msgid "Here you can search datasets by a keyword."
+msgstr "您可以在此進行關鍵字搜尋。"
+
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:33
+msgid "Here you can search datasets by the map."
+msgstr "您可以在此進行空間搜尋。"
+
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:38
+msgid "Here you can search datasets by a period of time."
+msgstr "您可以在此進行時間搜尋。"
+
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:43
+msgid "Here you can filter datasets."
+msgstr "您可以在此過濾資料集。"
+
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:48
+msgid "The matched datasets will list here."
+msgstr "符合搜尋條件的資料集將顯示在這裡。"
+
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:53
+msgid "Click this question mark to show this help again."
+msgstr "點選此問號按鈕再次觀看導覽。"
+
+#: ckanext/data_depositario/fanstatic/scripts/modules/parcel-corner-to-geojson.js:23
+msgid ""
+"The value of X.max (Y.max) must be greater than the value of X.min "
+"(Y.min)."
+msgstr "X (Y) 之最小值需小於最大值"
+
+#: ckanext/data_depositario/fanstatic/scripts/modules/parcel-corner-to-geojson.js:41
+msgid "Please fill in parcel corner coordinates."
+msgstr "請輸入完整四至座標資訊"
+
+#: ckanext/data_depositario/fanstatic/scripts/modules/slug-preview-slug-hash.js:31
+msgid "URL"
+msgstr "網址"
+
+#: ckanext/data_depositario/fanstatic/scripts/modules/slug-preview-slug-hash.js:32
+msgid "Edit"
+msgstr "編輯"
 
 #: ckanext/data_depositario/templates/footer.html:5
 msgid "Contact us"
