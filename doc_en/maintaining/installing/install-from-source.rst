@@ -60,17 +60,17 @@ c. Install the CKAN source code and customized extesion into your virtualenv.
 
       pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
 
-d. Install the Python modules that CKAN requires into your virtualenv:
-
-   .. parsed-literal::
-
-      pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
-
-e. Install the Python modules that customized extesion requires into your virtualenv:
+d. Install the Python modules that customized extesion requires into your virtualenv:
 
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
+
+e. Install the Python modules that CKAN requires into your virtualenv:
+
+   .. parsed-literal::
+
+      pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
 
 f. Install other required Python modules into your virtualenv:
 
@@ -232,7 +232,7 @@ c. Edit the development.ini file in a text editor, changing the following option
       ckan.site_url = http://127.0.0.1:5000
 
       ## Plugins Settings
-      ckan.plugins = data_depositario stats datastore datapusher
+      ckan.plugins = data_depositario wikidatakeyword stats datastore datapusher
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view pages spatial_metadata spatial_query
@@ -240,7 +240,7 @@ c. Edit the development.ini file in a text editor, changing the following option
                      scheming_datasets repeating
 
       ## Front-End Settings
-      licenses_group_url = file:///usr/lib/ckan/data_depositario/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
+      licenses_group_url = file:///usr/lib/ckan/default/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
 
       ## Storage Settings
       ckan.storage_path = /var/lib/ckan/default
@@ -253,6 +253,7 @@ c. Edit the development.ini file in a text editor, changing the following option
       scheming.presets = ckanext.scheming:presets.json
                          ckanext.repeating:presets.json
                          ckanext.data_depositario:presets.json
+                         ckanext.wikidatakeyword:presets.json
       scheming.dataset_schemas = ckanext.data_depositario:scheming.json
 
       ## Spatial Settings
@@ -371,7 +372,7 @@ You have to create your first CKAN sysadmin user from the command line. For exam
 
 .. parsed-literal::
 
-   paster --plugin=ckan sysadmin add admin -c /etc/ckan/default/development.ini
+   paster --plugin=ckan sysadmin add admin email=admin@localhost -c /etc/ckan/default/development.ini
 
 -----------------------------------------
 11. Serve CKAN under a development server
