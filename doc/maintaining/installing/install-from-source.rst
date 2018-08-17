@@ -229,7 +229,7 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ckan.plugins = data_depositario stats datastore datapusher
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
-                     pdf_view pages spatial_metadata spatial_query
+                     pdf_view spatial_metadata spatial_query
                      geo_view geojson_view wmts_view shp_view
                      scheming_datasets repeating
 
