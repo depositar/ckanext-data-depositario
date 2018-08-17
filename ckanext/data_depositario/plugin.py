@@ -1,18 +1,24 @@
 from logging import getLogger
 
+from datetime import datetime
 import ckan.plugins as p
 import ckan.logic as logic
 from ckan.common import json
 from ckan.common import OrderedDict
+import ckan.lib.mailer as mailer
 from ckan.lib.plugins import DefaultTranslation
-from datetime import datetime
+import ckan.lib.dictization.model_save as model_save
+import ckan.lib.dictization.model_dictize as model_dictize
+from ckan.lib.navl import dictization_functions
 from ckanext.data_depositario import helpers
 from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
 
 log = getLogger(__name__)
 
+_validate = dictization_functions.validate
 _check_access = logic.check_access
+ValidationError = logic.ValidationError
 
 
 class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
@@ -123,6 +129,12 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         return _get_module_functions(helpers, function_names)
 
     ## IRoutes
+    def before_map(self, map):
+        map.connect('/user/register',
+            controller='ckanext.data_depositario.controller:CustomUserController',
+            action='register')
+        return map
+
     def after_map(self, map):
         map.connect('help', '/help',
             controller='ckanext.data_depositario.controller:HelpController',
@@ -131,7 +143,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
     ## IActions
     def get_actions(self):
-        return {'license_list': license_list}
+        return {'license_list': license_list, 'user_create': user_create}
 
 def _get_module_functions(module, function_names):
     functions = {}
@@ -156,7 +168,7 @@ def _add_facets(facets_dict, group=False):
 def license_list(context, data_dict):
     '''Return the list of licenses available for datasets on the site.
 
-    Adapted from origial CKAN using a nondeprecated method.
+    Adapted from original CKAN using a nondeprecated method.
 
     :rtype: list of dictionaries
     '''
@@ -168,3 +180,95 @@ def license_list(context, data_dict):
     licenses = license_register.values()
     licenses = [l._data for l in licenses]
     return licenses
+
+def user_create(context, data_dict):
+    '''Create a new user.
+    You must be authorized to create users.
+    Adapted from original CKAN without password.
+    :param name: the name of the new user, a string between 2 and 100
+        characters in length, containing only lowercase alphanumeric
+        characters, ``-`` and ``_``
+    :type name: string
+    :param email: the email address for the new user
+    :type email: string
+    :param id: the id of the new user (optional)
+    :type id: string
+    :param fullname: the full name of the new user (optional)
+    :type fullname: string
+    :param about: a description of the new user (optional)
+    :type about: string
+    :param openid: (optional)
+    :type openid: string
+    :returns: the newly created user
+    :rtype: dictionary
+    '''
+    model = context['model']
+    schema = context.get('schema') or logic.schema.default_user_schema()
+    session = context['session']
+
+    _check_access('user_create', context, data_dict)
+
+    data, errors = _validate(data_dict, schema, context)
+
+    if errors:
+        session.rollback()
+        raise ValidationError(errors)
+
+    # user schema prevents non-sysadmins from providing password_hash
+    if 'password_hash' in data:
+        data['_password'] = data.pop('password_hash')
+
+    # Generate a dummy password
+    data['password'] = helpers.get_ckanpasswd()
+
+    user = model_save.user_dict_save(data, context)
+
+    # Set the user as pending before changing his/her password.
+    user.set_pending()
+
+    # Flush the session to cause user.id to be initialised, because
+    # activity_create() (below) needs it.
+    session.flush()
+
+    activity_create_context = {
+        'model': model,
+        'user': context['user'],
+        'defer_commit': True,
+        'ignore_auth': True,
+        'session': session
+    }
+    activity_dict = {
+        'user_id': user.id,
+        'object_id': user.id,
+        'activity_type': 'new user',
+    }
+    logic.get_action('activity_create')(activity_create_context, activity_dict)
+
+    if not context.get('defer_commit'):
+        model.repo.commit()
+
+    # A new context is required for dictizing the newly constructed user in
+    # order that all the new user's data is returned, in particular, the
+    # api_key.
+    #
+    # The context is copied so as not to clobber the caller's context dict.
+    user_dictize_context = context.copy()
+    user_dictize_context['keep_apikey'] = True
+    user_dictize_context['keep_email'] = True
+    user_dict = model_dictize.user_dictize(user, user_dictize_context)
+
+    context['user_obj'] = user
+    context['id'] = user.id
+
+    model.Dashboard.get(user.id)  # Create dashboard for user.
+
+    log.debug('Created user {name}'.format(name=user.name))
+
+    # Reset the created user's password immediately
+    if user:
+        try:
+            mailer.send_reset_link(user)
+        except mailer.MailerException, e:
+            log.debug('Could not send reset link: %s' % unicode(e))
+
+    return user_dict

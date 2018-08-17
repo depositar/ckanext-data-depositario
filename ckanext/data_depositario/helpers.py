@@ -5,10 +5,12 @@ from geomet import wkt
 import re
 import os
 import json
+import uuid
+import random
 import inspect
 import logging
 import dateutil
-from datetime import date
+from datetime import date, datetime
 from ckanext.scheming import helpers as scheming_helpers
 from ckanext import data_depositario
 
@@ -134,3 +136,12 @@ def get_pkg_version():
     else:
        pkg_version = 'latest'
     return pkg_version
+
+def get_ckanpasswd():
+    """
+    Generates a strong password
+    """
+    passwd = str(random.random()) + datetime.now(). \
+            strftime('%Y-%m-%d %H:%M:%S.%f') + str(uuid.uuid4().hex)
+    passwd = re.sub(r'\s+', '', passwd, flags=re.UNICODE)
+    return passwd
