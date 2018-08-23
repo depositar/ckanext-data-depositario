@@ -80,12 +80,13 @@ License_code
 
    * - 授權條款未指定
    * - 公眾領域
-   * - `公眾領域貢獻宣告 1.0 <http://www.opendefinition.org/licenses/cc-zero>`_
-   * - `創用 CC 姓名標示 4.0 國際 <http://www.opendefinition.org/licenses/cc-by>`_
-   * - `創用 CC 姓名標示-相同方式分享 4.0 國際 <http://www.opendefinition.org/licenses/cc-by-sa>`_
-   * - `ODC 開放資料庫授權條款 1.0 <http://www.opendefinition.org/licenses/odc-odbl>`_
-   * - `GNU 自由文檔許可證 <http://www.opendefinition.org/licenses/gfdl>`_
-   * - `(台灣) 政府資料開放授權條款 <http://data.gov.tw/license>`_
+   * - `公眾領域貢獻宣告 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>`_
+   * - `創用 CC 姓名標示 4.0 <https://creativecommons.org/licenses/by/4.0/>`_
+   * - `創用 CC 姓名標示-相同方式分享 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_
+   * - `創用 CC 姓名標示-非商業性-相同方式分享 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_
+   * - `ODC 開放資料庫授權條款 1.0 <https://www.opendefinition.org/licenses/odc-odbl>`_
+   * - `GNU 自由文檔許可證 <https://www.opendefinition.org/licenses/gfdl>`_
+   * - `(台灣) 政府資料開放授權條款 <https://data.gov.tw/license>`_
    * - 其他授權
 
 Encoding_type

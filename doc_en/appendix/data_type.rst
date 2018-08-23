@@ -80,12 +80,13 @@ License_code
 
    * - License Not Specified
    * - Public Domain
-   * - `CC0 1.0 <http://www.opendefinition.org/licenses/cc-zero>`_
-   * - `CC-BY 4.0 <http://www.opendefinition.org/licenses/cc-by>`_
-   * - `CC-BY-SA 4.0 <http://www.opendefinition.org/licenses/cc-by-sa>`_
-   * - `ODbL 1.0 <http://www.opendefinition.org/licenses/odc-odbl>`_
-   * - `GFDL <http://www.opendefinition.org/licenses/gfdl>`_
-   * - `TWOGDL <http://data.gov.tw/license>`_
+   * - `CC0 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>`_
+   * - `CC-BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`_
+   * - `CC-BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_
+   * - `CC-BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_
+   * - `ODbL 1.0 <https://www.opendefinition.org/licenses/odc-odbl>`_
+   * - `GFDL <https://www.opendefinition.org/licenses/gfdl>`_
+   * - `TWOGDL <https://data.gov.tw/license>`_
    * - Other Licenses
 
 Encoding_type
