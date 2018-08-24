@@ -235,7 +235,7 @@ c. Edit the development.ini file in a text editor, changing the following option
       ckan.plugins = data_depositario wikidatakeyword stats datastore datapusher
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
-                     pdf_view pages spatial_metadata spatial_query
+                     pdf_view spatial_metadata spatial_query
                      geo_view geojson_view wmts_view shp_view
                      scheming_datasets repeating
 
