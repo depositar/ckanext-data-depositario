@@ -7,6 +7,15 @@
 Changelog
 ---------
 
+v6.2.1 2018-08-24
+=================
+
+ * Update: Email confirmation required to create an account.
+ * Update: Correct some errors in documentation.
+ * Update: Update licenses to match https://licenses.opendefinition.org/.
+   Add CC-BY-NC-SA 4.0 license.
+ * Remove: News block in the home page.
+
 v6.2.0 2018-07-20
 =================
 
