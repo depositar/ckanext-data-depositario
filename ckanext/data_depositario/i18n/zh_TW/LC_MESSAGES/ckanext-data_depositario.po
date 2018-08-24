@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.2.0b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.2.1b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-07-20 14:08+0800\n"
+"POT-Creation-Date: 2018-08-24 10:47+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -19,20 +19,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:145
+#: ckanext/data_depositario/controller.py:67
+#, python-format
+msgid "Unauthorized to create user %s"
+msgstr "沒有權限建立使用者%s"
+
+#: ckanext/data_depositario/controller.py:69
+msgid "User not found"
+msgstr "使用者不存在"
+
+#: ckanext/data_depositario/controller.py:71
+msgid "Integrity Error"
+msgstr "完整性錯誤"
+
+#: ckanext/data_depositario/controller.py:73
+msgid "Bad Captcha. Please try again."
+msgstr "驗證碼錯誤，請再試一次。"
+
+#: ckanext/data_depositario/controller.py:81
+msgid "Please check your inbox to set your password."
+msgstr "請至信箱收信，並依通知信指示設定密碼。"
+
+#: ckanext/data_depositario/controller.py:87
+#, python-format
+msgid ""
+"User \"%s\" is now registered but you are still logged in as \"%s\" from "
+"before"
+msgstr "使用者 \"%s\" 已經註冊，但你仍以 \"%s\" 登入中"
+
+#: ckanext/data_depositario/plugin.py:157
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr "關鍵字"
 
-#: ckanext/data_depositario/plugin.py:149
+#: ckanext/data_depositario/plugin.py:161
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:150
+#: ckanext/data_depositario/plugin.py:162
 msgid "Language"
 msgstr "語言"
 
-#: ckanext/data_depositario/plugin.py:152
+#: ckanext/data_depositario/plugin.py:164
 msgid "Historical Material"
 msgstr "使用史料"
 
@@ -347,22 +375,6 @@ msgstr "因後設資料變動，暫時停止大量上傳服務。若您仍有需
 msgid "Organization"
 msgstr "組織"
 
-#: ckanext/data_depositario/templates/home/snippets/news.html:5
-msgid "News"
-msgstr "最新消息"
-
-#: ckanext/data_depositario/templates/home/snippets/news.html:9
-msgid "No latest news."
-msgstr "沒有最新消息。"
-
-#: ckanext/data_depositario/templates/home/snippets/news.html:24
-msgid "This news currently has no content."
-msgstr "這則消息目前沒有內容。"
-
-#: ckanext/data_depositario/templates/home/snippets/news.html:29
-msgid "read more"
-msgstr "讀取更多"
-
 #: ckanext/data_depositario/templates/package/read.html:16
 msgid "Other Access"
 msgstr "其他存取方式"
@@ -551,4 +563,3 @@ msgid ""
 "This shortcut provides some historical periods for filling temporal "
 "information of the dataset."
 msgstr "此捷徑提供部分歷史時期，供您快速填寫資料歷史年代。"
-

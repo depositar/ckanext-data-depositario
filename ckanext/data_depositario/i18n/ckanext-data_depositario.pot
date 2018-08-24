@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.2.0b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.2.1b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-07-20 14:08+0800\n"
+"POT-Creation-Date: 2018-08-24 10:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,20 +18,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ckanext/data_depositario/plugin.py:145
+#: ckanext/data_depositario/controller.py:67
+#, python-format
+msgid "Unauthorized to create user %s"
+msgstr ""
+
+#: ckanext/data_depositario/controller.py:69
+msgid "User not found"
+msgstr ""
+
+#: ckanext/data_depositario/controller.py:71
+msgid "Integrity Error"
+msgstr ""
+
+#: ckanext/data_depositario/controller.py:73
+msgid "Bad Captcha. Please try again."
+msgstr ""
+
+#: ckanext/data_depositario/controller.py:81
+msgid "Please check your inbox to set your password."
+msgstr ""
+
+#: ckanext/data_depositario/controller.py:87
+#, python-format
+msgid ""
+"User \"%s\" is now registered but you are still logged in as \"%s\" from "
+"before"
+msgstr ""
+
+#: ckanext/data_depositario/plugin.py:157
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:149
+#: ckanext/data_depositario/plugin.py:161
 msgid "Data Type"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:150
+#: ckanext/data_depositario/plugin.py:162
 msgid "Language"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:152
+#: ckanext/data_depositario/plugin.py:164
 msgid "Historical Material"
 msgstr ""
 
@@ -338,22 +366,6 @@ msgstr ""
 
 #: ckanext/data_depositario/templates/home/snippets/featured_organization.html:4
 msgid "Organization"
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/snippets/news.html:5
-msgid "News"
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/snippets/news.html:9
-msgid "No latest news."
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/snippets/news.html:24
-msgid "This news currently has no content."
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/snippets/news.html:29
-msgid "read more"
 msgstr ""
 
 #: ckanext/data_depositario/templates/package/read.html:16

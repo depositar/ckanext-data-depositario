@@ -42,6 +42,7 @@ setup(
             ('**.py', 'python', None),
             ('**/fanstatic/scripts/vendor/**.js', 'ignore', None),
             ('**.js', 'javascript', None),
+            ('**/templates/user/new_user_form.html', 'ignore', None),
             ('**/templates/**.html', 'ckan', None),
         ],
     }
