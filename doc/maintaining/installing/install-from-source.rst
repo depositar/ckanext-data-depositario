@@ -55,17 +55,17 @@ c. 安裝 CKAN 與本平台客製套件
 
       pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
 
-d. 安裝 CKAN 所需 Python 套件
-
-   .. parsed-literal::
-
-      pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
-
-e. 安裝本平台客製套件所需 Python 套件
+d. 安裝本平台客製套件所需 Python 套件
 
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
+
+e. 安裝 CKAN 所需 Python 套件
+
+   .. parsed-literal::
+
+      pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
 
 f. 安裝其他所需 Python 套件
 
@@ -226,7 +226,7 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ckan.site_url = http://127.0.0.1:5000
 
       ## Plugins Settings
-      ckan.plugins = data_depositario stats datastore datapusher
+      ckan.plugins = data_depositario wikidatakeyword stats datastore datapusher
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view pages spatial_metadata spatial_query
@@ -234,7 +234,7 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
                      scheming_datasets repeating
 
       ## Front-End Settings
-      licenses_group_url = file:///usr/lib/ckan/data_depositario/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
+      licenses_group_url = file:///usr/lib/ckan/default/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
 
       ## Storage Settings
       ckan.storage_path = /var/lib/ckan/default
@@ -247,6 +247,7 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       scheming.presets = ckanext.scheming:presets.json
                          ckanext.repeating:presets.json
                          ckanext.data_depositario:presets.json
+                         ckanext.wikidatakeyword:presets.json
       scheming.dataset_schemas = ckanext.data_depositario:scheming.json
 
       ## Spatial Settings
@@ -365,7 +366,7 @@ c. DataStore 資料庫權限設定
 
 .. parsed-literal::
 
-   paster --plugin=ckan sysadmin add admin -c /etc/ckan/default/development.ini
+   paster --plugin=ckan sysadmin add admin email=admin@localhost -c /etc/ckan/default/development.ini
 
 .. note::
 
