@@ -9,19 +9,10 @@
 {% endblock %}
 
 {% block primary %}
-  <article class="module">
-    <div class="module-content">
-    <h2>{{ _('Manuals') }}</h2>
-    <ul>
-      <li><a href="https://www.slideshare.net/u10313335/datadepositario-ckan" class="external" target="_blank">{{ _('Manual (In Chinese)') }}</a></li>
-      <li><a href="http://www.slideshare.net/u10313335/ckan-20-introduction140618/" class="external" target="_blank">{{ _('Introduction to CKAN') }}</a></li>
-    </ul>
-    <h2>{{ _('Bulk Upload Instructions and Sample File (for uploading 20 or more datasets)') }}</h2>
-    <ul>
-      <li>{{ _('Service temporarily unavailable due to recent metadata changes. Please contact us via email: data.contact AT depositar.io if you still need this service.') }}</li>
-    </ul>
-    </div>
-  </article>
+  {% set doc_url = 'http://docs.depositar.io/{0}/{1}/'.format(h.lang(), h.get_pkg_version()) %}
+  <iframe src="{{ doc_url }}" frameborder="0" style="width: 100%; height: 895px;">
+    <p>{{ _('Your browser does not support iframes.') }}</p>
+  </iframe>
 {% endblock %}
 
 {% block secondary %}{% endblock %}
