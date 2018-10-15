@@ -106,12 +106,6 @@ Registering and logging in
     features, such as "following" datasets. It is not needed to search for and
     download data.
 
-.. note::
-
-   You can not directly register on |site_name| currently. If you want to create
-   a new account, please refer to :doc:`join-guide` and apply one. Therefore, the information
-   as below is for reference only.
-
 .. hint::
 
    We provide a demo system at https://demo.depositar.io with the same features
@@ -129,13 +123,27 @@ ask for the following:
 
 * *E-mail address* -- this will not be visible to other users
 
-* *Password* -- enter the same password in both boxes
-
 .. image:: /images/register_account.jpg
 
 If there are problems with any of the fields, CKAN will tell you the problem
-and enable you to correct it. When the fields are filled in correctly, CKAN
-will create your user account and automatically log you in.
+and enable you to correct it. When the fields are filled in correctly, we will receive an
+email to set your password as follows.
+Then you can use the "Log in" link at the top of any page to log in.
+
+.. parsed-literal::
+
+   Dear OOO,
+
+   You have requested your password on depositar to be reset.
+
+   Please click the following link to confirm this request:
+
+      https://data.depositar.io/user/reset/[token]
+
+   Have a nice day.
+
+   --
+   Message sent by depositar (https://data.depositar.io)
 
 Features for publishers
 =======================
@@ -147,9 +155,7 @@ Adding a new dataset
 
 .. note::
 
-   You may need to be a member of an organization in order to add and edit
-   datsets. If you want to create a new account, please refer to :doc:`join-guide`
-   and apply one.
+   You may need an user account in order to add and edit datasets.
 
 **Step 1**. You can access CKAN's "Create dataset" screen in two ways.
 
@@ -392,7 +398,9 @@ organization; see :ref:`adding_a_new_dataset` above.
 
 .. note::
 
-    Depending on how CKAN is set up, you may not be authorized to create new
+    You can learn how to fill in the information above by referring to
+    `existing organizations <https://data.depositar.io/organization>`_.
+    And, depending on how CKAN is set up, you may not be authorized to create new
     organizations. In this case, if you need a new organization, you will need to
     contact your site administrator.
 
@@ -422,6 +430,27 @@ By default CKAN allows members of organizations with three roles:
 * *Editor* -- can edit and publish datasets
 
 * *Admin* -- can add, remove and change roles for organization members
+
+Inviting others to organization
+-------------------------------
+
+If you want to invite others to collaborate on datasets, you can invite them to your organization.
+From the organization’s page you should see an “Admin” button above the search box.
+When you select this, CKAN displays the organization admin page.
+
+Select the "Members" tab, and you will see the organization members page.
+Then select the "Add Member" button.
+
+.. image:: /images/invite_user.png
+
+You can invite an user to your organization by his/her email or username in the "Existing User" section.
+Note that he/she must have an account.
+
+.. note::
+
+   Due to the CKAN's privilege design, if the person you would like to invite does not have an account,
+   please send an email with his/her email address to data.contact AT depositar.io. Then CKAN will send
+   an invitation email to his/her.
 
 .. _finding_data:
 
