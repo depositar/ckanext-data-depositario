@@ -1,0 +1,19 @@
+{% extends "page.html" %}
+
+{% block title %}{{ _('Depositar — Deposit, Discover, Reuse') }}{% endblock %}
+
+{%- block scripts %}
+  {% resource 'ckanext-data-depositario/index' %}
+  <script>document.documentElement.className = "js";</script>
+  {{ super() }}
+{% endblock -%}
+
+{% block main_content %}
+  {% snippet "home/snippets/idx_masthead.html" %}
+  {#% snippet "home/snippets/idx_features.html" %#}
+  {% snippet "home/snippets/idx_topics.html" %}
+  {% snippet "home/snippets/idx_datasets.html" %}
+  {% snippet "home/snippets/idx_partners.html" %}
+{% endblock %}
+
+{% block secondary %}{% endblock %}

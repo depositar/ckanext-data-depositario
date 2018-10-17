@@ -1,0 +1,22 @@
+{% set datasets = [
+  {
+    "title": _('Taiwan History and Culture in Time and Space'),
+    "url": "group/thcts",
+    "image": "/visual-sq.jpg",
+    "short_desc": "你知道古代台灣人的航海路線嗎？<br/>你知道東印度公司在轄臺時期，深入花東地區的探金路線嗎？",
+    "long_desc": "這是中研院跨所結合各領域專家，以臺灣的歷史發展與環境變遷，擘畫一套臺灣地圖集，遠從荷西時期的1654年至近代的1996年間，資料類別從人口分佈、交通/軍事防禦>、學校教育、社會事件、航海路線、採金路線等等相當多元又豐富，讓您一探古早人的留下來的數位遺跡。"
+  }
+] %}
+
+<div class="container-fluid padding_tb_sm justify-content-center modify_bloc_4 width_full padding_exceed mt-3 ">
+  <!-- Heading the block-->
+  <div class="row-bs4">
+      <div class="col"><h2 class="featurette-heading">{{ _('Selected Datasets') }}</h2></div>
+  </div>
+
+  {% if datasets|length == 3 %}
+    {% snippet "home/snippets/datasets_three.html", datasets=datasets %}
+  {% else %}
+    {% snippet "home/snippets/datasets_single.html", datasets=datasets %}
+  {% endif %}
+</div>
