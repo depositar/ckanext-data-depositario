@@ -1115,6 +1115,10 @@ div .module-heading > .search-form.no-bottom-border {
       padding-bottom: 6px;
     }
 
+    .featurette-heading a {
+      color: rgb(0, 0, 0);
+    }
+
     .index_topics input[type="text"]{
       border: 0px;
       border-bottom: 2px solid #cdcdcd;
