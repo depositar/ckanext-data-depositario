@@ -1,11 +1,14 @@
 {% ckan_extends %}
 
 {% block meta %}
-  {{ super() }}
+  {% block googleanalytics_header %}
+    {{ h.googleanalytics_header() }}
+  {% endblock %}
   <meta name="apple-mobile-web-app-title" content="Depositar">
   <meta name="application-name" content="Depositar">
   <meta name="msapplication-TileColor" content="#00e09b">
   <meta name="theme-color" content="#00e09b">
+  {{ super() }}
 {% endblock %}
 
 {% block links %}

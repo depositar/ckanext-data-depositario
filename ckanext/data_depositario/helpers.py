@@ -134,3 +134,21 @@ def get_pkg_version():
     else:
        pkg_version = 'latest'
     return pkg_version
+
+def googleanalytics_header():
+    """
+    Render the googleanalytics_header snippet for CKAN 2.0 templates.
+    Borrowed from ckanext-googleanalytics.
+    """
+    googleanalytics_id = config.get('ckanext.data_depositario.googleanalytics.id')
+
+    if not googleanalytics_id:
+        log.critical('''Please specify the ckanext.data_depositario.googleanalytics.id
+                in your config for the Google Analytics''')
+
+    data = {
+        'googleanalytics_id': googleanalytics_id
+    }
+
+    return p.toolkit.render_snippet(
+            'snippets/googleanalytics_header.html', data)
