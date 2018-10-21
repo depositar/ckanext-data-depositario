@@ -258,6 +258,8 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ## 需自行新增
       ## GMAP_AKI_KEY請填入申請之 Google Maps API key
       ckanext.data_depositario.gmap.api_key = GMAP_AKI_KEY
+      ## GA_ID 請填入申請之 Google Analytics id
+      ckanext.data_depositario.googleanalytics.id = GA_ID
 
 ------------------------------------
 7. 安裝 Solr（含中文與空間搜尋支援）
