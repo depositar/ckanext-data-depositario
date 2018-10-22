@@ -512,8 +512,6 @@ You can do spatial search through the following steps:
       
 #. The matched datasets will be shown up.
 
-   .. image:: /images/spatial_search3.jpg
-
 #. If you want to respecify a geographical area, please repeat step 1 and 2.
 
 
@@ -600,12 +598,10 @@ Please refer to step 5 of :ref:`adding_a_new_dataset`. |site_name| can preview t
 
 * Others: PDF and web page
 
-One resource can have multiple views of the same data (for example a grid and some graphs
-for tabular data): 
-
 .. image:: /images/data_preview3.jpg
 
-.. image:: /images/data_preview4.jpg
+One resource can have multiple views of the same data (for example a grid and some graphs
+for tabular data).
 
 You can add a new resource view through the following steps:
 
@@ -656,7 +652,7 @@ You can get access to DataStore API through the following steps:
 
    .. image:: /images/data_api2.jpg
   
-#. Some API functions require an API key. You can get your key from the user profile page:
+#. Some API functions require an API key. You can get your key from the user profile page using the "User" link at the top of any page:
 
     .. image:: /images/data_api3.jpg
 
