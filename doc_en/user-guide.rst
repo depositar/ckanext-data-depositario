@@ -84,7 +84,7 @@ ask for the following:
 
 * *E-mail address* -- this will not be visible to other users
 
-.. image:: /images/register_account.jpg
+.. image:: /images/register_account.png
 
 If there are problems with any of the fields, CKAN will tell you the problem
 and enable you to correct it. When the fields are filled in correctly, we will receive an
@@ -130,7 +130,7 @@ b) Alternatively, select the "projects" link at the top of a page. Now
 
 **Step 2**. CKAN will ask for the information about your data (See :doc:`appendix/dataset_fields`).
 
-.. image:: /images/add_dataset_1.jpg
+.. image:: /images/add_dataset_1.png
 
 .. note::
 
@@ -148,7 +148,7 @@ in.)
 
 **Step 4**. CKAN will display the "Add data" screen.
 
-  .. image:: /images/add_dataset_2.jpg
+  .. image:: /images/add_dataset_2.png
 
 This is where you will add one or more "resources" which contain the data for
 this dataset. Choose a file or link for your data resource and select the
@@ -211,11 +211,11 @@ Before adding a dataset to a theme, you should complete the upload process of th
 
 * Select the "Topics" tab in the dataset's page.
 
-    .. image:: /images/addGroup1.jpg
+    .. image:: /images/add_topic_1.png
 
 + Select an existing topic and select the "Add to topic" button.
 
-    .. image:: /images/addGroup2.jpg
+    .. image:: /images/add_topic_2.png
 
 .. _UI_editing_extend:
 
@@ -256,7 +256,7 @@ You can use the following two methods to generate a valid spatial extent in GeoJ
     Select the "Using a Map" button and draw a polyline, polygon, rectangle, or marker
     on the expanded map to generate the spatial extent.
 
-.. image:: /images/spatialInfo.jpg
+.. image:: /images/spatial_info.png
 
 * **Auto-completion of management metadata**
 
@@ -264,7 +264,7 @@ You can use the "Use your account information to fill in maintainer's name and e
 to automatically fill in the maintainer's information (``Maintainer`` and ``Maintainer Email``)
 using your account information (for account information, please refer to :ref:`managing_profile`).
 
-.. image:: /images/profileInput.jpg
+.. image:: /images/profile_input.png
 
 
 Editing a dataset
@@ -285,7 +285,7 @@ project, then any registered user can edit it.)
 
 #. When you have finished, select the "Update dataset" button to save your changes.
 
-.. image:: /images/edit_dataset.jpg
+.. image:: /images/edit_dataset.png
 
 
 Adding, deleting and editing resources
@@ -351,7 +351,7 @@ To create a project:
 #. Select the "Create Project" button. CKAN creates your project and
    displays its home page. Initially, of course, the project has no datasets.
 
-.. image:: /images/create_organization.jpg
+.. image:: /images/create_project.png
 
 You can now change the access privileges to the project for other users -
 see :ref:`managing_an_project` below. You can also create datasets owned by the
@@ -382,7 +382,7 @@ has two tabs:
 * *Members* -- Here you can add, remove and change access roles for different
   users in the project. Note: you will need to know their username on CKAN.
 
-.. image:: /images/manage_organization.jpg
+.. image:: /images/manage_project.png
 
 By default CKAN allows members of projects with three roles:
 
@@ -436,7 +436,7 @@ If there are a large number of results, the filters can be very helpful, since
 you can combine filters, selectively adding and removing them, and modify and
 repeat the search with existing filters still in place.
 
-.. image:: /images/search_the_site.jpg
+.. image:: /images/search_the_site.png
 
 Extended feature — Temporal search
 ----------------------------------
@@ -450,7 +450,7 @@ You can do temporal search in two ways:
 
 #. Use a time period shortcut which contains some historical periods.
 
-.. image:: /images/time_search.jpg
+.. image:: /images/temporal_search.png
   
 Extended feature — Spatial search
 ---------------------------------
@@ -465,11 +465,11 @@ You can do spatial search through the following steps:
 
 #. Select the pencil icon in the upper-right corner:
 
-   .. image:: /images/spatial_search1.jpg
+   .. image:: /images/spatial_search_1.png
       
 #. Then you can draw a rectangle in the expanded map to specify a geographical area you are interested in:
 
-   .. image:: /images/spatial_search2.jpg
+   .. image:: /images/spatial_search_2.jpg
       
 #. The matched datasets will be shown up.
 
@@ -508,7 +508,7 @@ display the dataset page. This includes
 
 * Links to and brief descriptions of each of the resources
 
-.. image:: /images/exploring_datasets.jpg
+.. image:: /images/exploring_datasets.png
 
 The resource descriptions link to a dedicated page for each resource. This
 resource page includes information about the resource, and enables it to be
@@ -540,11 +540,11 @@ CKAN's data preview allows you learn the data without the need to download the e
 #. Select the "Preview" button inside the "Explore" button beside a resource in
    the "Data and Resources" section:
 
-   .. image:: /images/data_preview.jpg
+   .. image:: /images/data_preview_1.png
     
 #. Then you can preview the resource:
 
-   .. image:: /images/data_preview2.jpg
+   .. image:: /images/data_preview_2.png
 
 The data preview function will check the `Format` field to specify a proper ``resource view``.
 Please refer to step 5 of :ref:`adding_a_new_dataset`. |site_name| can preview the following formats:
@@ -559,7 +559,7 @@ Please refer to step 5 of :ref:`adding_a_new_dataset`. |site_name| can preview t
 
 * Others: PDF and web page
 
-.. image:: /images/data_preview3.jpg
+.. image:: /images/data_preview_3.png
 
 One resource can have multiple views of the same data (for example a grid and some graphs
 for tabular data).
@@ -570,7 +570,7 @@ You can add a new resource view through the following steps:
 
 #. Select the "Manage" button (You must have the right to edit the resource).
 
-   .. image:: /images/new_preview.jpg
+   .. image:: /images/new_preview_1.png
     
 #. Select the "Views" tab in the next page. From here you can create new views,
    update or delete existing ones and reorder them. Available view plugins are:
@@ -588,7 +588,7 @@ You can add a new resource view through the following steps:
 
    * Web page: Adds an ``<iframe>`` tag to embed the resource URL.
 
-   .. image:: /images/new_preview2.jpg
+   .. image:: /images/new_preview_2.png
 
 #. Select the "Add" button to save the new view. You can also take a sneak peek at
    the view by clicking the "Preview" button.
@@ -609,13 +609,13 @@ You can get access to DataStore API through the following steps:
 #. Select the "Data API" button, a pop-up window will show how to use the API and provide
    some examples.
 
-   .. image:: /images/data_api.jpg
+   .. image:: /images/data_api_1.png
 
-   .. image:: /images/data_api2.jpg
+   .. image:: /images/data_api_2.png
   
 #. Some API functions require an API key. You can get your key from the user profile page using the "User" link at the top of any page:
 
-    .. image:: /images/data_api3.jpg
+    .. image:: /images/data_api_3.png
 
 Personalization
 ===============
@@ -635,7 +635,7 @@ dashboard symbol shows the number of new notifications in your News feed since
 you last looked at it. As well as datasets and projects, it is possible to
 follow individual users (to be notified of changes that they make to datasets).
 
-.. image:: /images/manage_news_feed.jpg
+.. image:: /images/manage_news_feed.png
 
 If you want to stop following a dataset (or project or user), go to the
 dataset's page (e.g. by selecting a link to it in your News feed) and select
@@ -652,7 +652,7 @@ your profile when you edit a dataset or upload data to a project that
 they are following.) To do this, select the gearwheel symbol at the top of any
 page.
 
-.. image:: /images/manage_user_profile.jpg
+.. image:: /images/manage_user_profile.png
 
 CKAN displays the user settings page. Here you can change:
 

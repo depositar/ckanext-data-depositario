@@ -54,7 +54,7 @@ CKAN 為用來建立開放資料平台的開源軟體套件（類似於內容管
 
 * *電子郵件* -- 電子郵件為私有資訊，不會公開於本平台上。
 
-.. image:: /images/register_account.jpg
+.. image:: /images/register_account.png
 
 若您輸入的內容有任何錯誤，本平台將顯示紅色警告訊息提示您進行修正。當輸入的內容皆正確後，點選「建立帳號」功能鈕，本平台將寄發密碼設定信件（內容如下）至您填寫的電子郵件信箱，請依據信件指示完成密碼設定，即可建立帳號。點選頁面上方的「登入」按鈕以登入您的帳號。
 
@@ -93,7 +93,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 **步驟 2**. 建立資料集詮釋資料，可包含附錄 :doc:`appendix/dataset_fields` 之欄位：
 
-.. image:: /images/add_dataset_1.jpg
+.. image:: /images/add_dataset_1.png
 
 .. note::
 
@@ -105,7 +105,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 **步驟 4**. 平台介面接著將顯示「新增資料」頁面。
 
-  .. image:: /images/add_dataset_2.jpg
+  .. image:: /images/add_dataset_2.png
 
 本頁面將引導您進行新增一個或多個屬於該筆資料集的「資源」。在「檔案」項目上，您可以選擇上傳一個檔案或是新增該筆檔案的連結。
 
@@ -154,11 +154,11 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 * 在資料集顯示頁面切換至「主題」頁籤。
 
-    .. image:: /images/addGroup1.jpg
+    .. image:: /images/add_topic_1.png
 
 + 選擇欲加入至該資料集的主題，點選「加入主題」鈕，即可加該主題於資料集內。
 
-    .. image:: /images/addGroup2.jpg
+    .. image:: /images/add_topic_2.png
 
 .. _UI_editing_extend:
 
@@ -189,13 +189,13 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
   * *使用圖台新增* -- 本平台亦提供地圖介面，讓使用者自行描繪資料集對應之空間範圍，並自動產生描繪範圍之 GeoJSON 內容。
 
-.. image:: /images/spatialInfo.jpg
+.. image:: /images/spatial_info.png
 
 * **使用快捷方式代入帳號資訊**
 
 若使用者即為資料集維護權責人，本平台提供一便捷的方式自動代入使用者帳號的個人資訊，點選「使用您的帳號資訊填入維護者與電子郵件」鈕，系統將自動填寫維護者及維護者電子郵件欄位（帳號個人資訊請參考 :ref:`managing_profile` 內容）。
 
-.. image:: /images/profileInput.jpg
+.. image:: /images/profile_input.png
 
 編輯資料集
 ----------
@@ -210,7 +210,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 #. 當您完成編輯後，點選「更新」以儲存您剛才所編輯的內容。
 
-.. image:: /images/edit_dataset.jpg
+.. image:: /images/edit_dataset.png
 
 新增、刪除及修改資源
 --------------------
@@ -255,7 +255,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 #. 點擊「建立專案」按鈕，將建立該專案並顯示該專案的首頁內容（該專案內目前應無任何資料集）。
 
-.. image:: /images/create_organization.jpg
+.. image:: /images/create_project.png
 
 您現在可以設定專案內其他成員之使用權限，請參考下段 :ref:`managing_an_organization` 內容；您也可以建立專案內的資料集，請參考上述 :ref:`adding_a_new_dataset` 內容。
 
@@ -274,7 +274,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 * *成員* -- 本頁籤內您可以新增、移除專案成員或變更專案成員之權限（您需要事先知道欲加入專案成員者於本平台之使用者帳號）。
 
-.. image:: /images/manage_organization.jpg
+.. image:: /images/manage_project.png
 
 本平台包含下列三種專案權限：
 
@@ -315,7 +315,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 當您所回傳的搜尋結果數目很龐大時，過濾條件的功能將會非常實用，您可以結合多重的過濾條件，並動態地新增與移除過濾條件，當您重新輸入關鍵字時，這些過濾條件也仍會被保留。
 
-.. image:: /images/search_the_site.jpg
+.. image:: /images/search_the_site.png
 
 本平台補充功能——時間搜尋功能介紹
 --------------------------------
@@ -328,7 +328,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 #. 選擇預設感興趣的時間區間：本系統預設台灣過去歷史時段區間，您可以直接選擇感興趣之歷史區間。
 
-.. image:: /images/time_search.jpg
+.. image:: /images/temporal_search.png
   
 本平台補充功能——空間搜尋功能介紹
 --------------------------------
@@ -341,11 +341,11 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 #. 點選地圖視窗右上方之畫筆圖示。
 
-   .. image:: /images/spatial_search1.jpg
+   .. image:: /images/spatial_search_1.png
       
 #. 點擊後，地圖將展開於搜尋頁面正上方，此時您可於地圖上畫設感興趣之空間範圍。
 
-   .. image:: /images/spatial_search2.jpg
+   .. image:: /images/spatial_search_2.jpg
       
 #. 當您劃設範圍完成後，地圖將縮回搜尋頁面左側欄位，系統並自動進行過濾符合條件之資料集。
 
@@ -375,7 +375,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 * 該筆資料集所包含的資源與其對應連結。
 
-.. image:: /images/exploring_datasets.jpg
+.. image:: /images/exploring_datasets.png
 
 每筆資源的連結將會導向每個資源的描述頁面，或者也可以直接下載該筆資源。CKAN 另一個強大的功能為資源的「預覽」功能，許多格式的資源可以直接在資源頁面上預覽，如 CSV、Excel 等類型的資源可以直接顯示表格在網頁上；透過額外的設定，也能直接在頁面上瀏覽 PDF、影像與網頁。
 
@@ -398,11 +398,11 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 #. 在「資料與資源」清單內，於欲預覽資源的項目上，點選「探索」鈕內之「預覽」功能鈕。
 
-   .. image:: /images/data_preview.jpg
+   .. image:: /images/data_preview_1.png
     
 #. 在資源顯示頁面您即可瀏覽資料集內容。
 
-   .. image:: /images/data_preview2.jpg
+   .. image:: /images/data_preview_2.png
     
 本平台預設會依據資源詮釋資料的「格式」項目設定資料預覽（參閱 :ref:`adding_a_new_dataset` 步驟 5 內容），下列為本平台支援之預覽格式：
 
@@ -418,7 +418,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 當您所設定之資源格式類型符合上述任一項目時，本平台即會自動呈現相應之預覽介面。
 
-.. image:: /images/data_preview3.jpg
+.. image:: /images/data_preview_3.png
 
 此外，單一資源可以設定多種預覽呈現方式，例如原始資料格式若為 CSV 格式，則本平台預設以表格類的方式提供資料預覽介面，但實際資料內容若有包含空間資訊，資料提供者可再另行建立空間預覽的介面。
 
@@ -428,7 +428,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 #. 點選「管理」功能鈕（您需具有編輯該資料集的權限才會顯示此功能鈕）。
 
-   .. image:: /images/new_preview.jpg
+   .. image:: /images/new_preview_1.png
     
 #. 在資源編輯頁面內切換至「檢視」頁籤，並於「新增檢視」下拉選單內，選擇適合該資源的預覽類型後進行設定：
 
@@ -442,7 +442,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
    * 網站：您可新增一個網站連結來做為預覽介面。
 
-   .. image:: /images/new_preview2.jpg
+   .. image:: /images/new_preview_2.png
 
 #. 完成預覽模式設定後按「新增」即完成新增預覽（您也可以使用「預覽」按鈕來事先查看完成發布後的情況）。
 
@@ -457,13 +457,13 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 #. 點選頁面「資料 API」功能鈕，頁面將顯示該筆資源的 API 與操作方式。
 
-   .. image:: /images/data_api.jpg
+   .. image:: /images/data_api_1.png
 
-   .. image:: /images/data_api2.jpg
+   .. image:: /images/data_api_2.png
   
 #. 部分 API 功能會需要使用者帳號的 API Key 作為認證，取得方式為至個人資訊頁面（點選任一頁面最上方之個人帳號），API Key 將顯示於頁面左欄下方處。
 
-    .. image:: /images/data_api3.jpg
+    .. image:: /images/data_api_3.png
 
 個人化設定
 ==========
@@ -477,7 +477,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 本平台頁面最上方為固定的使用者帳號功能列，請點選儀表版圖示（位於您的帳號名稱右方），儀錶板頁面將顯示您所訂閱的資料集變動消息、您所加入或訂閱專案的資料集變動情況、或您於本平台上操作資料集的歷史記錄。儀錶板上的數字顯示為自您上回查看儀表板後所新增的新聞消息。此外，除了專案與資料集，您也可以訂閱特定的使用者帳號。
 
-.. image:: /images/manage_news_feed.jpg
+.. image:: /images/manage_news_feed.png
 
 若您想停止追蹤特定資料集（或專案），您可以至該筆資料集的頁面點選「取消追蹤」。
 
@@ -488,7 +488,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 您可以於帳號資訊頁面變更您在本平台的個人資訊設定。您可於頁面最上方的使用者帳號功能列，點選齒輪圖示進入帳號資訊頁面。
 
-.. image:: /images/manage_user_profile.jpg
+.. image:: /images/manage_user_profile.png
 
 您可以於使用者設定頁面修改下列資訊：
 
