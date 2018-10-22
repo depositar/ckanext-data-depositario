@@ -69,7 +69,7 @@ is_positive_integer
   Must be a postive integer.
 
 owner_org_validator
-  Must be "no organization" or an existing organization.
+  Must be "no project" or an existing project.
 
 remove_whitespace
   Remove the leading and trailing whitespace characters in the string.
