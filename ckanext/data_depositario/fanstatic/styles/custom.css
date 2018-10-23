@@ -45,11 +45,12 @@ a{
   text-decoration: none;
   border-bottom: 2px solid #00e09b;
   color: #000;
+  transition: 0.1s;
 }
 
 .site-footer a{
   text-decoration: none;
-  border-bottom: 2px solid #077a48;
+  border-bottom: none;
   color: #000;
 }
 li{
@@ -133,6 +134,7 @@ header.navbar {
 
 .masthead .container .logo img {
   width: 185px;
+  padding-left: 5px;
 }
 
 [role=main], .main{
@@ -140,6 +142,19 @@ header.navbar {
   padding-bottom: 0px;
 }
 
+
+/*map*/
+
+.dataset-map-expanded #dataset-map{
+  padding-left: calc(100vw / 2 - 940px / 2);
+  padding-right: calc(99vw / 2 - 940px / 2);
+  margin-left: calc(-100vw / 2 + 940px / 2) !important;
+  margin-right: calc(-99vw / 2 + 940px / 2) !important;
+  width: 100% !important;
+  height: 484px !important;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  transition: all 0.3s;
+}
 /*toolbar & breadcrumb*/
 
 @media only screen and (min-width: 979px) {
@@ -368,13 +383,6 @@ header.navbar {
   right: 13px;
 }
 
-/*.wrapper:before, .wrapper:after{
-  display: none !important;
-}
-
-.container:before, .container:after{
-  display: none !important;
-}*/
 
 .no-nav .page-header{
   -webkit-border-radius: 0px 0px 0 0;
@@ -545,21 +553,45 @@ header.navbar {
 }
 /* The "navigation pills" in the masthead (the links to Datasets,
    Organizations, etc) when the user's pointer hovers over them. */
-.masthead .navigation .nav-pills li a:hover {
-  border-bottom: #00e09b solid 3px;
+
+.masthead .navigation .nav-pills li a {
   border-radius: 0;
   color: #000;
 }
+
+.masthead .navigation .nav-pills li a:after {
+  content: '';
+  display: block;
+  width: 0px;
+  margin-top: 6px;
+  height: 3px;
+  background-color: #00e09b;
+  -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+  -webkit-transition-property: width, color;
+  transition-property: width, color;
+}
+
+.masthead .navigation .nav-pills li a:hover:after {
+  width: 100%;
+}
+
+
+
 /* The "active" navigation pill (for example, when you're on the /dataset page
    the "Datasets" link is active). */
-.masthead .navigation .nav-pills li.active a {
-  border-bottom: #000 solid 3px;
+.masthead .navigation .nav-pills li.active a:after {
+  width: 100%;
+  margin-top: 6px;
+  height: 3px;
+  background-color: #00e09b;
   border-radius: 0;
 }
 
 .masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li.active a {
   background-color: #fff;
 }
+
 
 .nav-pills>li>a{
   border-radius: 0;
@@ -585,6 +617,7 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 .search-form .search-input.search-giant button{
   height: 34px;
+  margin-top: -12px;
 }
 
 .search-form .search-input{
@@ -616,31 +649,56 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 /* masthead input for search */
 
 .masthead .site-search input{
-  width: 136px;
-  padding: 0px 15px;
+  width: 30px;
+  padding: 10px 15px;
   color: #000;
-  margin: 0 0;
+  margin: -7px -10px 0 0;
   padding-bottom: 4px;
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
 }
 
-@media (max-width: 979px) {
-  .masthead .site-search input{
-    padding: 20px 15px;
-  }
+.masthead .site-search input:hover{
+  width: 200px;
 }
+
 
 .masthead input[type="text"]{
   border: 0px;
-  border-bottom: 1px solid #ccc;
-  border-radius: 0px;
+  border-radius: 50px;
   box-shadow: none;
+  background: #ededed;
+}
+
+.simple-input .field .btn-search{
+  top:40%;
+}
+
+.masthead .nav-collapse{
+  padding-top:5px;
 }
 
 
-.masthead input[type="text"]:focus{
-  border-bottom: 3px solid #000;
+@media (max-width: 979px) {
+  .masthead .nav-collapse{
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+  .masthead .site-search input{
+    padding: 20px 15px;
+  }
+  .masthead input[type="text"]{
+    width: 100%;
+    border-radius: 4px;
+    margin: 20px 0;
+  }
+  .simple-input .field .btn-search{
+    top:50%;
+  }
+  .masthead .site-search input:hover{
+    width: 100%;
+  }
 }
-
 
 /* ====================================
    The footer at the bottom of the site
@@ -669,7 +727,7 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 /* The link texts in the footer. */
 
 .footer-logo{
-  background: url("../images/logo_eng_han_horizontal_w.svg") no-repeat scroll;
+  background: url("../images/logo_eng_horizontal_w.svg") no-repeat scroll;
   height: 50px;
   width: 30%;
   padding: 0px 0px 10px 0px;
@@ -683,6 +741,11 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 .site-footer a {
   color: rgba(255, 255, 255, 1);
+  transition: 0.1s;
+}
+
+.site-footer a:hover {
+  color: #00e09b;
 }
 
 /* Additional info - used on both dataset and resource page */
@@ -1036,20 +1099,20 @@ div .module-heading > .search-form.no-bottom-border {
       color: #000;
       text-shadow: none;
       border: solid 2px #fff  !important;
-      box-shadow: 0 15px 25px rgba(0,0,0,0.29), 0 6px 6px rgba(0,0,0,0.23);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
       text-decoration: none;
-      transition: 0.2s;
+      transition: 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.02);;
     }
 
     .btn_search{
       margin-top: 12px;
       border: 0;
       background: none;
-      background-color:#cdcdcd;
+      background-color:#333;
       box-shadow: none;
       color: white;
       text-shadow: none;
-      border-radius: 0px;
+      border-radius: 30px;
       padding: 12px 15px;
       border: none  !important;
       font-size: 16px;
@@ -1118,15 +1181,11 @@ div .module-heading > .search-form.no-bottom-border {
     }
 
     .featurette-heading {
-      font-size: 40px;
+      font-size: 35px;
       font-weight: 700;
       line-height: 1.45;
       display: inline;
       padding-bottom: 6px;
-    }
-
-    .featurette-heading a {
-      color: rgb(0, 0, 0);
     }
 
     .index_topics input[type="text"]{
@@ -1158,6 +1217,7 @@ div .module-heading > .search-form.no-bottom-border {
       height: 420px;
       background: #012819;
       overflow: hidden;
+      background-image: linear-gradient(to right, #00e09b -30%, #012819 40%, #012819 95%, #00e09b 130%) ;
     }
 
     .modify_bloc_1{
@@ -1183,6 +1243,7 @@ div .module-heading > .search-form.no-bottom-border {
       height: 169px;
       margin-top: -41px;
       background-image: url("../images/logo_ani.svg");
+      background-repeat: no-repeat;
     }
 
     .m1_bloc_2{
@@ -1194,7 +1255,7 @@ div .module-heading > .search-form.no-bottom-border {
       float: left;
       width: auto;
       margin-top: -81px;
-      padding-left: 2px;
+      padding-left: 1px;
     }
 
     @media (max-width: 979px) {
@@ -1232,6 +1293,17 @@ div .module-heading > .search-form.no-bottom-border {
       padding-bottom: 25px;
     }
 
+    .modify_bloc_3 .tx_black{
+      border: 4px white solid;
+      width: 100%;
+      font-size: 13px;
+      line-height: 1.5em;
+    }
+
+    :lang(zh_TW) .modify_bloc_3 .tx_black{
+      font-size: 16px;
+    }
+
     .img-circle{
       border: 5px #012819 solid;
       background: #012819;
@@ -1261,12 +1333,10 @@ div .module-heading > .search-form.no-bottom-border {
       text-decoration: none;
       border-bottom: 2px solid #00e09b;
       color: #000;
-      }
-
-    .bloc_logo a{
-      text-decoration: none !important;
-      border-bottom: none !important;
-      color: #000;
+    }
+    .modify_bloc_5 a:hover{
+      color: #00e09b;
+      transition: 0.1s;
     }
 
     @media only screen and (max-width: 978px) and (min-width: 767px){
@@ -1869,7 +1939,17 @@ Bootstrap 4 grid ============================ */
   top:300px;
   left: 15px;
   right: 15px;
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+  -webkit-transition-property: all;
+  transition-property: all;
+  border-top: 0px #012819 solid;
 }
+
+.content-toggle:hover{
+  border-top: 4px #012819 solid;
+}
+
 
 .content-toggle-s{
   top:130px;
@@ -1883,7 +1963,6 @@ Bootstrap 4 grid ============================ */
 
 .hover-toggle:hover .content-toggle, .hover-toggle-s:hover .content-toggle-s{
   top: 0;
-  transition: all 0.4s ease-in-out 0s;
 }
 
 .opacity{

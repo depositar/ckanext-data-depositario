@@ -3,11 +3,9 @@
   <div class="row-bs4">
     <div class="col mt-1">
       <h2 class="featurette-heading">
-        <a href="group">{{ _('Topics') }}</a>
+        {{ _('Topics') }}
       </h2>
-    </div>
-    <div class="w-100 hidden-sm-up"></div>
-    <div class="col mt-1">
+
       <div class="pull-right">
         <form class="site-search" action="{% url_for controller='package', action='search' %}" method="get">
           <input id="field-sitewide-search" type="text" name="q" value="" autocomplete="off" placeholder="{{ _('Find datasets?') }}">
