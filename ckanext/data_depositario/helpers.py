@@ -142,10 +142,6 @@ def googleanalytics_header():
     """
     googleanalytics_id = config.get('ckanext.data_depositario.googleanalytics.id')
 
-    if not googleanalytics_id:
-        log.critical('''Please specify the ckanext.data_depositario.googleanalytics.id
-                in your config for the Google Analytics''')
-
     data = {
         'googleanalytics_id': googleanalytics_id
     }
