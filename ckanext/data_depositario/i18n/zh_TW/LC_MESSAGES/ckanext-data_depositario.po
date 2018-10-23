@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.2.1b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.3.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-08-24 10:47+0800\n"
+"POT-Creation-Date: 2018-10-23 12:29+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -47,20 +47,20 @@ msgid ""
 "before"
 msgstr "使用者 \"%s\" 已經註冊，但你仍以 \"%s\" 登入中"
 
-#: ckanext/data_depositario/plugin.py:157
+#: ckanext/data_depositario/plugin.py:158
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr "關鍵字"
 
-#: ckanext/data_depositario/plugin.py:161
+#: ckanext/data_depositario/plugin.py:162
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:162
+#: ckanext/data_depositario/plugin.py:163
 msgid "Language"
 msgstr "語言"
 
-#: ckanext/data_depositario/plugin.py:164
+#: ckanext/data_depositario/plugin.py:165
 msgid "Historical Material"
 msgstr "使用史料"
 
@@ -85,35 +85,35 @@ msgstr "日期格式不正確"
 msgid ", should be: "
 msgstr "，應為："
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:24
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:26
 msgid "Skip"
 msgstr "略過"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:25
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:27
 msgid "Confirm"
 msgstr "確認"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:29
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:31
 msgid "Here you can search datasets by a keyword."
 msgstr "您可以在此進行關鍵字搜尋。"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:33
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:35
 msgid "Here you can search datasets by the map."
 msgstr "您可以在此進行空間搜尋。"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:38
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:40
 msgid "Here you can search datasets by a period of time."
 msgstr "您可以在此進行時間搜尋。"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:43
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:45
 msgid "Here you can filter datasets."
 msgstr "您可以在此過濾資料集。"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:48
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:50
 msgid "The matched datasets will list here."
 msgstr "符合搜尋條件的資料集將顯示在這裡。"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:53
+#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:55
 msgid "Click this question mark to show this help again."
 msgstr "點選此問號按鈕再次觀看導覽。"
 
@@ -135,33 +135,40 @@ msgstr "網址"
 msgid "Edit"
 msgstr "編輯"
 
-#: ckanext/data_depositario/templates/footer.html:5
-msgid "Contact us"
+#: ckanext/data_depositario/templates/footer.html:6
+msgid "Contact Us"
 msgstr "聯絡我們"
 
-#: ckanext/data_depositario/templates/footer.html:11
+#: ckanext/data_depositario/templates/footer.html:7
+msgid "About depositar"
+msgstr "關於研究資料寄存所 (depositar)"
+
+#: ckanext/data_depositario/templates/footer.html:13
 #: ckanext/data_depositario/templates/package/read.html:25
 msgid "CKAN API"
 msgstr "CKAN API"
 
-#: ckanext/data_depositario/templates/footer.html:11
+#: ckanext/data_depositario/templates/footer.html:13
 msgid "Site Statistics"
 msgstr "網站統計"
 
-#: ckanext/data_depositario/templates/footer.html:11
+#: ckanext/data_depositario/templates/footer.html:13
 msgid "Site Status"
 msgstr "網站狀態"
 
-#: ckanext/data_depositario/templates/footer.html:11
-msgid "Documentation"
-msgstr "使用手冊"
+#: ckanext/data_depositario/templates/footer.html:13
+#: ckanext/data_depositario/templates/header.html:36
+#: ckanext/data_depositario/templates/home/help.html:3
+#: ckanext/data_depositario/templates/home/help.html:7
+msgid "Help"
+msgstr "支援"
 
-#: ckanext/data_depositario/templates/footer.html:16
+#: ckanext/data_depositario/templates/footer.html:18
 msgid ""
-"<p>Source code available on <a href=\"https://github.com/depositar-io\" "
+"<p>Source code available on <a href=\"https://github.com/depositar/\" "
 "class=\"external\" target=\"_blank\">GitHub.</a></p>"
 msgstr ""
-"<p>程式碼可於 <a href=\"https://github.com/depositar-io\" "
+"<p>程式碼可於 <a href=\"https://github.com/depositar/\" "
 "class=\"external\"target=\"_blank\">GitHub</a> 取得。</p>"
 
 #: ckanext/data_depositario/templates/header.html:32
@@ -169,23 +176,21 @@ msgid "Datasets"
 msgstr "資料集"
 
 #: ckanext/data_depositario/templates/header.html:33
-msgid "Organizations"
-msgstr "組織"
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:6
+msgid "Topics"
+msgstr "主題"
 
 #: ckanext/data_depositario/templates/header.html:34
-#: ckanext/data_depositario/templates/theme.html:3
-msgid "Groups"
-msgstr "主題"
+msgid "Projects"
+msgstr "專案"
 
 #: ckanext/data_depositario/templates/header.html:35
 msgid "About"
 msgstr "關於"
 
-#: ckanext/data_depositario/templates/header.html:36
-#: ckanext/data_depositario/templates/home/help.html:3
-#: ckanext/data_depositario/templates/home/help.html:7
-msgid "Help"
-msgstr "支援"
+#: ckanext/data_depositario/templates/theme.html:3
+msgid "Groups"
+msgstr "主題"
 
 #: ckanext/data_depositario/templates/theme.html:4
 msgid "group"
@@ -347,33 +352,267 @@ msgid "Filter by location"
 msgstr "空間搜尋"
 
 #: ckanext/data_depositario/templates/home/help.html:14
-msgid "Manuals"
-msgstr "教學文件"
+msgid "Your browser does not support iframes."
+msgstr "你的瀏覽器不支援此頁框"
 
-#: ckanext/data_depositario/templates/home/help.html:16
-msgid "Manual (In Chinese)"
-msgstr "使用教學手冊"
+#: ckanext/data_depositario/templates/home/index.html:3
+msgid "depositar — Deposit, Discover, Reuse"
+msgstr "depositar — 儲存、尋找、分享"
 
-#: ckanext/data_depositario/templates/home/help.html:17
-msgid "Introduction to CKAN"
-msgstr "CKAN 基礎介紹"
-
-#: ckanext/data_depositario/templates/home/help.html:19
+#: ckanext/data_depositario/templates/home/snippets/about_text.html:5
 msgid ""
-"Bulk Upload Instructions and Sample File (for uploading 20 or more "
-"datasets)"
-msgstr "大量上傳規範及範例檔案 (僅接受 20 筆以上 (含 20 筆) 之大量上傳服務)"
+" <h1>What is <em>depositar</em>?</h1> <p><em>depositar</em> — taking the "
+"term from the Portuguese/Spanish verb for <em>to deposit</em> — is an "
+"online repository for research data. The site <a "
+"href=\"https://data.depositar.io/\">data.depositar.io</a> is built by the"
+" researchers for the researchers. You are free to deposit, discover, and "
+"reuse datasets on <em>depositar</em> for all your research purposes.</p> "
+msgstr ""
+" <h1>什麼是<em>研究資料寄存所 (depositar)</em>？</h1> <p><em>depositar</em> "
+"這個詞在葡萄牙語／西班牙語裡是<em>寄存</em>的意思，我們用它來稱呼這個線上寄存研究資料的所在。<a "
+"href=\"https://data.depositar.io/\">data.depositar.io</a> "
+"這網站是由研究人員依據研究人員的需求所建立的。為了研究目的，您可在<em>研究資料寄存所</em>上面自由的儲存、尋找、並再次使用研究資料。</p>"
 
-#: ckanext/data_depositario/templates/home/help.html:21
+#: ckanext/data_depositario/templates/home/snippets/about_text.html:15
 msgid ""
-"Service temporarily unavailable due to recent metadata changes. Please "
-"contact us via email: data.contact AT depositar.io if you still need this"
-" service."
-msgstr "因後設資料變動，暫時停止大量上傳服務。若您仍有需求，請透過電子郵件信箱聯絡我們：data.contact AT depositar.io。"
+" <h2>Your datasets</h2> <p>Datasets — collections of tables, maps, "
+"documents, or other data files — are fast to upload and preview. Once "
+"uploaded, datasets have permanent links for all to reference and "
+"download. You are encouraged to annotate your datasets with rich metadata"
+" so that they can be better discovered. An intuitive interface is "
+"provided to support spatiotemporal description and query for datasets. "
+"Moreover, in <em>depositar</em> all datasets use keywords sourced from <a"
+" href=\"https://wikidata.org/\" class=\"external\" "
+"target=\"_blank\">Wikidata</a>! Datasets on <em>depositar</em> are inter-"
+"connected by their semantics. They are ready to be explored and "
+"reused.</p> "
+msgstr ""
+" <h2>您的資料集</h2> "
+"<p>資料集——表格、地圖、文件或其他資料檔案——在本平台上可以快速的上傳與預覽。上傳之後，資料集會有個永久的連結，供眾人下載和引用。建議您盡可能為資料集填寫詳細的後設資料，這將有助於他們被發現使用。本平台的使用介面相當直觀，並提供資料集的時空描述與查詢功能。此外，<em>研究資料寄存所</em>上面的資料集所使用的關鍵字都來自"
+" <a href=\"https://wikidata.org/\" class=\"external\" "
+"target=\"_blank\">Wikidata</a>! 所寄存的資料集經由語意相互連結，方便探索與再次使用。</p> "
 
-#: ckanext/data_depositario/templates/home/snippets/featured_organization.html:4
-msgid "Organization"
-msgstr "組織"
+#: ckanext/data_depositario/templates/home/snippets/about_text.html:31
+msgid ""
+" <h2>Your projects</h2> <p>Research is team work, and <em>depositar</em> "
+"is built for collaborative research! After getting accounts on "
+"<em>depositar</em>, researchers can form projects to share datasets among"
+" themselves. Datasets can be put under access control, so that they "
+"remain private to project members. Metadata in <em>depositar</em> can be "
+"collaboratively edited, and different uploads of a dataset are versioned."
+" When it is time to release the data, there are several open licenses to "
+"choose from. Of course, data can be dedicated to the public domain "
+"too.</p> "
+msgstr ""
+" <h2>您的專案</h2> "
+"<p>研究是團隊工作，<em>研究資料寄存所</em>就是為了協同研究而建立的！在取得個人帳號之後，研究者就可建立專案，彼此分享資料集。資料集可設有取用限制，僅供專案成員使用。在研究資料寄存所，資料集的後設資料亦可以協同編輯。而且，更新上傳的同份資料集也留存不同的版本。研究資料到可公開釋出的時候，將有數種開放授權條款可供選擇。當然，也可以直接將資料貢獻到公眾領域"
+" (Public Domain)。</p> "
+
+#: ckanext/data_depositario/templates/home/snippets/about_text.html:44
+msgid ""
+" <h2>It's open and free!</h2> <p>The software for <em>depositar</em> is "
+"built on top of <a href=\"https://ckan.org/\" class=\"external\" "
+"target=\"_blank\">CKAN</a>, an open source software package for "
+"publishing open data. CKAN stands for <em>Comprehensive Knowledge Archive"
+" Network</em>. CKAN is a project from <a href=\"https://okfn.org/\" "
+"class=\"external\" target=\"_blank\">Open Knowledge International</a>, "
+"and is itself supported by a viable developer and user community. We "
+"customize and extend the CKAN codebase to better support research data "
+"management. Our extensions to CKAN are <a "
+"href=\"https://github.com/depositar/\" class=\"external\" "
+"target=\"_blank\">open source</a> too. The service provided by <a "
+"href=\"https://data.depositar.io/\">data.depositar.io</a> is experimental"
+" as of now. It is free for all academic use.</p> "
+msgstr ""
+" <h2>開放且自由使用</h2> <p><em>研究資料寄存所</em>此平台是基於 <a href=\"https://ckan.org/\""
+" class=\"external\" target=\"_blank\">CKAN</a> 這套軟體建立的。CKAN "
+"(Comprehensive Knowledge Archive Network) "
+"是一套用來發布開放資料的開放原始碼軟體，乃是「開放知識國際」(<a href=\"https://okfn.org/\" "
+"class=\"external\" target=\"_blank\">Open Knowledge International</a>) "
+"此組織的一項專案產出，並由眾多開發者和用戶群所支持。我們客製化並擴充 CKAN 的程式碼，以支援研究資料管理。我們新擴充的功能也採用<a "
+"href=\"https://github.com/depositar/\" class=\"external\" "
+"target=\"_blank\">開放原始碼</a>方式對外釋出。目前 <a "
+"href=\"https://data.depositar.io/\">data.depositar.io</a> "
+"所提供的服務仍屬實驗性質，可自由使用於學術用途。</p> "
+
+#: ckanext/data_depositario/templates/home/snippets/about_text.html:60
+#, python-format
+msgid ""
+" <h2>More about <em>depositar</em></h2> <p>Project <em>depositar</em> is "
+"a work in progress. Both <a href=\"https://github.com/depositar/\" "
+"class=\"external\" target=\"_blank\">source code</a> and <a "
+"href=\"%(doc_url)s\" class=\"external\" target=\"_blank\">user manual</a>"
+" are available. Please send comments and feedbacks to data.contact AT "
+"depositar.io.</p> <p>This work has been carried out in <a "
+"href=\"https://www.sinica.edu.tw/\" class=\"external\" "
+"target=\"_blank\">Academia Sinica</a>, Taiwan. It has been supported by "
+"the <a href=\"https://www.iis.sinica.edu.tw/\" class=\"external\" "
+"target=\"_blank\">Institute of Information Science</a> and the <a "
+"href=\"https://www.citi.sinica.edu.tw/\" class=\"external\" "
+"target=\"_blank\">Research Center for Information Technology "
+"Innovation</a> (both at Academia Sinica), and in part by research grants "
+"from the Ministry of Science and Technology of Taiwan. The project "
+"started from and remains as a collaboration with the <a "
+"href=\"http://gis.rchss.sinica.edu.tw/\" class=\"external\" "
+"target=\"_blank\">Center for GIS</a> at the Research Center for "
+"Humanities and Social Sciences, Academia Sinica.</p> <p>Developing "
+"<em>depositar</em> has been a team work. The following people, in "
+"alphabetical order, have been or were once in the project team: Tyng-Ruey"
+" Chuang (project lead), Andrea Wei-Ching Huang, Cheng-Jen Lee (lead "
+"developer), Hsiung-Ming Liao, Yen-Tsen Liu, Huang-Sin Syu, Ally Chia-Hsun"
+" Wang (project manager), and Yao-Hsien Yeh.</p> "
+msgstr ""
+" <h2>關於<em>研究資料寄存所</em>的更多資訊</h2> <p><em>研究資料寄存所</em>是進行中的工作。<a "
+"href=\"https://github.com/depositar/\" class=\"external\" "
+"target=\"_blank\">原始程式碼</a>以及<a href=\"%(doc_url)s\" class=\"external\" "
+"target=\"_blank\">使用手冊</a>都可線上取得。任何使用上的意見與回饋，請寄到 data.contact AT "
+"depositar.io.</p> <p>這項工作在台灣的<a href=\"https://www.sinica.edu.tw/\" "
+"class=\"external\" target=\"_blank\">中央研究院</a>進行，得到中央研究院的<a "
+"href=\"https://www.iis.sinica.edu.tw/\" class=\"external\" "
+"target=\"_blank\">資訊科學研究所</a>以及<a "
+"href=\"https://www.citi.sinica.edu.tw/\" class=\"external\" "
+"target=\"_blank\">資訊科技創新研究中心</a>的支持，另外也得到台灣科技部的專題研究計畫的補助。這項計畫啟始於和同在中央研究院的<a"
+" href=\"http://gis.rchss.sinica.edu.tw/\" class=\"external\" "
+"target=\"_blank\">地理資訊科學研究專題中心</a>（隸屬於人文社會科學研究中心）的協力研究工作，並維持到現在。</p> "
+"<p><em>研究資料寄存所</em>的發展是一項團隊工作。目前或是曾經參與此計畫團隊的人員包括（按姓名英文字母序）：莊庭瑞（計畫主持人）、黃韋菁、李承錱（主要開發者）、廖泫銘、劉彥岑、許煌鑫、王家薰（專案經理），以及葉耀鮮。</p>"
+" "
+
+#: ckanext/data_depositario/templates/home/snippets/idx_datasets.html:3
+msgid "Taiwan History and Culture in Time and Space"
+msgstr "台灣歷史文化空間資訊"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_datasets.html:6
+msgid ""
+"Do you know that there are ancient waterway routes around "
+"Taiwan?<br/>Have you heard about the routes for gold prospecting in "
+"Eastern Taiwan during the Dutch Formosa period?"
+msgstr "你知道古代台灣人的航海路線嗎？<br/>你知道東印度公司在轄臺時期，深入花東地區的探金路線嗎？"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_datasets.html:7
+msgid ""
+"The Taiwan History and Culture in Time and Space (THCTS) is a digital "
+"collection of historical atlas focused on the development and "
+"environmental changes in Taiwan from 1654 to 1990. This rich dataset "
+"covers a wide range of subjects including population distribution, "
+"education, societal events, waterways, routes for gold prospecting, etc. "
+"It allows you to have a glimpse of people’s life in ancient Taiwan."
+msgstr "這是中研院跨所結合各領域專家，以臺灣的歷史發展與環境變遷，擘畫一套臺灣地圖集，遠從荷西時期的1654年至近代的1996年間，資料類別從人口分佈、交通／軍事防禦、學校教育、社會事件、航海路線、採金路線等等相當多元又豐富，讓您一探古早人的留下來的數位遺跡。"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_datasets.html:14
+msgid "Selected Datasets"
+msgstr "資料集精選"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_features.html:5
+#: ckanext/data_depositario/templates/home/snippets/idx_features.html:15
+#: ckanext/data_depositario/templates/home/snippets/idx_features.html:24
+msgid "for your ––––"
+msgstr "給您的 ––––"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_features.html:6
+msgid "Dataset"
+msgstr "資料集"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_features.html:9
+#: ckanext/data_depositario/templates/home/snippets/idx_features.html:18
+#: ckanext/data_depositario/templates/home/snippets/idx_features.html:27
+msgid "more"
+msgstr "更多"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_features.html:16
+msgid "Project"
+msgstr "專案"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_features.html:25
+msgid "Promotion"
+msgstr "推廣營運"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_masthead.html:6
+msgid "deposit・discover・reuse"
+msgstr "儲存・尋找・分享"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_masthead.html:7
+msgid "Learn More"
+msgstr "了解更多"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:4
+msgid "Partners"
+msgstr "合作夥伴"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:8
+msgid "Center for GIS, RCHSS, Academia Sinica"
+msgstr "中研院人社中心地理資訊科學研究專題中心"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:9
+msgid "Chia-nan Interdisciplinary Project"
+msgstr "嘉南大圳研究群"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:10
+msgid "Collaborative Zuojhen Project"
+msgstr "左鎮跨領域協作教學研究群"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:15
+msgid "Asian Soundscape Monitoring Network"
+msgstr "亞洲聲景網絡計畫"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:16
+msgid "Taiwan Roadkill Observation Network"
+msgstr "台灣動物路死觀察網"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:11
+msgid "Find datasets?"
+msgstr "想直接搜尋嗎？"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:23
+msgid "General reference"
+msgstr "一般性參考資料"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:27
+msgid "Culture and the arts"
+msgstr "文化與藝術"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:32
+msgid "Geography and places"
+msgstr "地理與地方"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:36
+msgid "Health and fitness"
+msgstr "健康與健身"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:41
+msgid "History and events"
+msgstr "歷史與事件"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:45
+msgid "Human activities"
+msgstr "人類活動"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:50
+msgid "Mathematics and logic"
+msgstr "數學與邏輯"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:54
+msgid "Natural and physical sciences"
+msgstr "自然與物理科學"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:59
+msgid "People and self"
+msgstr "人群與個人"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:63
+msgid "Philosophy and thinking"
+msgstr "哲學與思想"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:68
+msgid "Religion and belief systems"
+msgstr "宗教與信仰"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:72
+msgid "Society and social sciences"
+msgstr "社會與社會科學"
+
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:77
+msgid "Technology and applied sciences"
+msgstr "技術與應用科學"
 
 #: ckanext/data_depositario/templates/package/read.html:16
 msgid "Other Access"
@@ -563,3 +802,4 @@ msgid ""
 "This shortcut provides some historical periods for filling temporal "
 "information of the dataset."
 msgstr "此捷徑提供部分歷史時期，供您快速填寫資料歷史年代。"
+
