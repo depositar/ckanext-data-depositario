@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '6.3.0b'
+version = '6.3.0'
 
 entry_points = {
     'ckan.plugins': [
@@ -15,7 +15,7 @@ entry_points = {
 setup(
     name='ckanext-data-depositario',
     version=version,
-    description="CKAN extension for data.depositar.io",
+    description="CKAN extension for depositar",
     long_description='''
     ''',
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers

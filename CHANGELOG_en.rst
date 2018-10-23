@@ -7,6 +7,13 @@
 Changelog
 ---------
 
+v6.3.0 2018-10-23
+=================
+
+ * Update: Revamped look.
+
+And, registration is open to the public as of today.
+
 v6.2.1 2018-08-24
 =================
 
