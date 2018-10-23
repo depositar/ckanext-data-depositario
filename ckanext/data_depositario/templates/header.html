@@ -30,12 +30,22 @@
       {% block header_site_navigation_tabs %}
         {{ h.build_nav_main(
           ('search', _('Datasets')),
-          ('organizations_index', _('Organizations')),
-          ('group_index', _('Groups')),
+          ('group_index', _('Topics')),
+          ('organizations_index', _('Projects')),
           ('about', _('About')),
 	  ('help', _('Help'))
         ) }}
       {% endblock %}
     </ul>
+    <form class="section site-search simple-input" action="{% url_for controller='package', action
+='search' %}" method="get">
+      <div class="field">
+        <input id="field-sitewide-search" type="text" name="q" placeholder="" />
+        <button class="btn-search" type="submit"><i class="fa fa-search"></i></button>
+      </div>
+    </form>
   </nav>
+{% endblock %}
+
+{% block header_site_search %}
 {% endblock %}

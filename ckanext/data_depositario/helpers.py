@@ -145,3 +145,17 @@ def get_ckanpasswd():
             strftime('%Y-%m-%d %H:%M:%S.%f') + str(uuid.uuid4().hex)
     passwd = re.sub(r'\s+', '', passwd, flags=re.UNICODE)
     return passwd
+
+def googleanalytics_header():
+    """
+    Render the googleanalytics_header snippet for CKAN 2.0 templates.
+    Borrowed from ckanext-googleanalytics.
+    """
+    googleanalytics_id = config.get('ckanext.data_depositario.googleanalytics.id')
+
+    data = {
+        'googleanalytics_id': googleanalytics_id
+    }
+
+    return p.toolkit.render_snippet(
+            'snippets/googleanalytics_header.html', data)

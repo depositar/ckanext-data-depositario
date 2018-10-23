@@ -3,8 +3,10 @@ this.ckan.module('intro-action', function (jQuery) {
     /* An object of module options */
     options: {
        template: [
-         '<i id="intro-switch" class="fa fa-large fa-question-circle pull-right">',
-         '</i>'
+         '<a id="intro-switch" href="#" class="btn btn-primary question"><i class="fa fa-large fa-question-circle"></i></a>',
+         '<i class="icon-question-sign"></i>',
+         '</i>',
+         '</a>'
        ].join('\n')
     },
 
@@ -60,10 +62,6 @@ this.ckan.module('intro-action', function (jQuery) {
         introStart = false;
       } else {
         this.createMark().appendTo('.breadcrumb .active');
-	this.mark.css({
-          'cursor': 'pointer',
-	  'color': '#d9534f'
-        });
 	this.mark.on('click', this._onClick);
       }
 
