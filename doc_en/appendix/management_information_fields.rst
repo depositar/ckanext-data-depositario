@@ -17,7 +17,7 @@
      -
 
    * - Author
-     - The name of the person or organization responsible for producing the data.
+     - The name of the person or project responsible for producing the data.
      - M
      - 1
      - gco:CharacterString
@@ -30,8 +30,8 @@
      - gco:Date
      - :ref:`ignore_empty <external_validators>` :ref:`date_validator <internal_validators>`
 
-   * - Organization [#]_ [#]_
-     - If you are a member of any organizations, this drop-down will enable you to choose
+   * - Project [#]_ [#]_
+     - If you are a member of any projects, this drop-down will enable you to choose
        which one should own the dataset.
      - O
      - 1
@@ -68,10 +68,10 @@
 
 .. [#] If you need to use a license not on the list, please select the "Other Licenses"
        and mark the license in the ``Remarks`` field above.
-.. [#] If you select "No organization", this dataset will not be owned by any organization and
+.. [#] If you select "No project", this dataset will not be owned by any project and
        will be opened to the public.
-.. [#] If you check the "Open for organization members only" box below this field,
-       this dataset will only be seen by members of the organization owning
+.. [#] If you check the "Open for project members only" box below this field,
+       this dataset will only be seen by members of the project owning
        the dataset and will not show up in searches by other users.
        Otherwise, the dataset will be public and can be seen by any user of the site.
 .. image:: /images/add_dataset_3.png

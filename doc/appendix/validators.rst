@@ -60,7 +60,7 @@ is_positive_integer
   必須是正整數
 
 owner_org_validator
-  必須為無指定組織或指定一個已存在之組織
+  必須為無指定專案或指定一個已存在之專案
 
 remove_whitespace
   去除文字首尾空白

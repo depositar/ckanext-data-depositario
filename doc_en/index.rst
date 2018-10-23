@@ -11,7 +11,6 @@ Welcome to |site_name|'s documentation!
    :maxdepth: 2
 
    user-guide
-   join-guide
    maintaining/index
    appendix/index
    changelog

@@ -264,6 +264,8 @@ c. Edit the development.ini file in a text editor, changing the following option
       ## Add these settings
       ## GMAP_AKI_KEY is the API key for Google Maps
       ckanext.data_depositario.gmap.api_key = GMAP_AKI_KEY
+      ## GA_ID is the id for Google Analytics
+      ckanext.data_depositario.googleanalytics.id = GA_ID
 
 -------------------------------------------------------
 7. Setup Solr (with Chinese and spatial search support)
