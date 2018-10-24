@@ -8,7 +8,7 @@
 
       <div class="pull-right">
         <form class="site-search" action="{% url_for controller='package', action='search' %}" method="get">
-          <input id="field-sitewide-search" type="text" name="q" value="" autocomplete="off" placeholder="{{ _('Find datasets?') }}">
+          <input type="text" name="q" value="" autocomplete="off" placeholder="{{ _('Find datasets?') }}">
           <button class="btn_search" type="submit">
             <i class="fa fa-search"></i>
           </button>
