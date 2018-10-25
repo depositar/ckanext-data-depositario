@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.3.1b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.3.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-25 17:05+0800\n"
+"POT-Creation-Date: 2018-10-25 17:39+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -500,7 +500,7 @@ msgid ""
 "RCHSS, Academia Sinica</a><br/>"
 msgstr ""
 
-#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:9
+#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:10
 msgid ""
 "<a href=\"https://chia-nan.geospat.io/en/\">Chia-nan Interdisciplinary "
 "Project</a><br/>"
