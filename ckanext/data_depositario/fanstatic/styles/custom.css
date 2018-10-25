@@ -170,7 +170,7 @@ header.navbar {
     background-color: #333333;
   }
 
-  .toolbar .breadcrumb a{
+  .toolbar .breadcrumb a, .toolbar .breadcrumb li {
     color: #fff;
     font-size: 12pt;
   }
@@ -186,7 +186,7 @@ header.navbar {
     padding-left: 40px;
   }
 
-  .toolbar .breadcrumb a{
+  .toolbar .breadcrumb a, .toolbar .breadcrumb li {
     color: #fff;
     font-size: 12pt;
   }
@@ -300,6 +300,10 @@ header.navbar {
     background-color: #fff;
   }
 
+  .module .module-heading {
+    background-color: #fff;
+    border-bottom: 0;
+  }
 }
 
 @media only screen and (max-width: 978px) and (min-width: 767px) {
@@ -319,6 +323,10 @@ header.navbar {
     background-color: #fff;
   }
 
+  .module .module-heading {
+    background-color: #fff;
+    border-bottom: 0;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -328,6 +336,11 @@ header.navbar {
     border-top: none;
     background-color: #edf7f1;
     margin: -25px -20px;
+  }
+
+  .module .module-heading {
+    background-color: #fff;
+    border-bottom: 0;
   }
 }
 
@@ -832,6 +845,7 @@ div .module-heading > .search-form.no-bottom-border {
 
     .tx_light{
       opacity: 0.85;
+      width: 80%;
     }
 
     .tx_black{
@@ -1188,6 +1202,11 @@ div .module-heading > .search-form.no-bottom-border {
       padding-bottom: 6px;
     }
 
+    .featurette-heading a {
+      text-decoration: none;
+      color: #000;
+    }
+
     .index_topics input[type="text"]{
       border: 0px;
       border-bottom: 2px solid #cdcdcd;
@@ -1294,7 +1313,6 @@ div .module-heading > .search-form.no-bottom-border {
     }
 
     .modify_bloc_3 .tx_black{
-      border: 4px white solid;
       width: 100%;
       font-size: 13px;
       line-height: 1.5em;

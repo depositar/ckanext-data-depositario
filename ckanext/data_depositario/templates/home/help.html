@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block primary %}
-  {% set doc_url = 'http://docs.depositar.io/{0}/{1}/'.format(h.lang(), h.get_pkg_version()) %}
+  {% set doc_url = 'https://docs.depositar.io/{0}/{1}/'.format(h.lang(), h.get_pkg_version()) %}
   <iframe src="{{ doc_url }}" frameborder="0" style="width: 100%; height: 895px;">
     <p>{{ _('Your browser does not support iframes.') }}</p>
   </iframe>
