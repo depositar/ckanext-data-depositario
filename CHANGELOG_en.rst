@@ -7,6 +7,11 @@
 Changelog
 ---------
 
+v6.3.1 2018-10-25
+=================
+
+ * Update: Miscellaneous UI improvements.
+
 v6.3.0 2018-10-23
 =================
 
