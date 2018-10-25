@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.3.0b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.3.1b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-23 12:29+0800\n"
+"POT-Creation-Date: 2018-10-25 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -495,23 +495,31 @@ msgid "Partners"
 msgstr ""
 
 #: ckanext/data_depositario/templates/home/snippets/idx_partners.html:8
-msgid "Center for GIS, RCHSS, Academia Sinica"
+msgid ""
+"<a href=\"http://gis.rchss.sinica.edu.tw/index.php?lang=en\">Center for GIS, "
+"RCHSS, Academia Sinica</a><br/>"
 msgstr ""
 
 #: ckanext/data_depositario/templates/home/snippets/idx_partners.html:9
-msgid "Chia-nan Interdisciplinary Project"
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:10
-msgid "Collaborative Zuojhen Project"
+msgid ""
+"<a href=\"https://chia-nan.geospat.io/en/\">Chia-nan Interdisciplinary "
+"Project</a><br/>"
 msgstr ""
 
 #: ckanext/data_depositario/templates/home/snippets/idx_partners.html:15
-msgid "Asian Soundscape Monitoring Network"
+msgid "<a href=\"#\">Collaborative Zuojhen Project</a><br/>"
 msgstr ""
 
 #: ckanext/data_depositario/templates/home/snippets/idx_partners.html:16
-msgid "Taiwan Roadkill Observation Network"
+msgid ""
+"<a href=\"http://soundscape.twgrid.org/\">Asian Soundscape Monitoring "
+"Network</a><br/>"
+msgstr ""
+
+#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:17
+msgid ""
+"<a href=\"https://roadkill.tw/en/\">Taiwan Roadkill Observation "
+"Network</a><br/>"
 msgstr ""
 
 #: ckanext/data_depositario/templates/home/snippets/idx_topics.html:11
