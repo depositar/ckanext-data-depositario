@@ -183,7 +183,24 @@ Extended feature — Add a dataset to an existing topic
 
 The topic is different from "Projects" feature as the latter is the way to control the visibility of datasets in CKAN and each dataset can belong to ONLY ONE project.
 
-We refer the `ISO19115 <https://www2.usgs.gov/science/about/thesaurus-full.php?thcode=15>`_ standard to define the following themes:
+We refer to the `Wikipedia's categories <https://en.wikipedia.org/wiki/Portal:Contents/Categories>`_
+to define the following topics:
+
+* General reference
+* Culture and the arts
+* Geography and places
+* Health and fitness
+* History and events
+* Human activities
+* Mathematics and logic
+* Natural and physical sciences
+* People and self
+* Philosophy and thinking
+* Religion and belief systems
+* Society and social sciences
+* Technology and applied sciences
+
+You can also use the following topics, which are based on `ISO19115 <https://www2.usgs.gov/science/about/thesaurus-full.php?thcode=15>`_ standard:
 
 * **farming**: Rearing of animals or cultivation of plants, for example agriculture, irrigation, aquaculture, plantations, herding, pests and diseases affecting crops and livestock
 * **biota**: Flora or fauna in natural environment, for example wildlife, vegetation, biological sciences, ecology, wilderness, sea life, wetlands, habitat, biological resources
@@ -684,6 +701,10 @@ System Limitation
   Up to dozens of MB for PDFs.
 
 * Filename length: 3 to 100 characters (including the filename extension).
+
+* Limitations of XLS/XLSX/CSV files: the field name length must be less than
+  or equal to 63 characters (or 21 Chinese characters).
+  Merged cells and multiple sheets are not supported.
 
 .. [#] This section uses material from the Wikipedia article
        `Temporal resolution <https://en.wikipedia.org/wiki/Temporal_resolution>`_,
