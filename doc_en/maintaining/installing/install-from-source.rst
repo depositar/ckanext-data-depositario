@@ -232,12 +232,12 @@ c. Edit the development.ini file in a text editor, changing the following option
       ckan.site_url = http://127.0.0.1:5000
 
       ## Plugins Settings
-      ckan.plugins = data_depositario wikidatakeyword stats datastore datapusher
+      ckan.plugins = data_depositario depositar_theme wikidatakeyword stats datastore datapusher
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view spatial_metadata spatial_query
                      geo_view geojson_view wmts_view shp_view
-                     scheming_datasets repeating
+                     scheming_datasets repeating multilingual_dataset
 
       ## Front-End Settings
       licenses_group_url = file:///usr/lib/ckan/default/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
