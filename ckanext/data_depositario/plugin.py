@@ -31,6 +31,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     p.implements(p.IValidators)
     p.implements(p.IRoutes, inherit=True)
     p.implements(p.IActions)
+    p.implements(p.IConfigurable, inherit=True)
 
     ## IConfigurer
     def update_config(self, config):
@@ -145,6 +146,10 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     ## IActions
     def get_actions(self):
         return {'license_list': license_list, 'user_create': user_create}
+
+    ## IConfigurable
+    def configure(self, config):
+        helpers.init_translation()
 
 def _get_module_functions(module, function_names):
     functions = {}
