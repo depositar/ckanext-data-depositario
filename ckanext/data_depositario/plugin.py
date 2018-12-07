@@ -160,6 +160,8 @@ def _get_module_functions(module, function_names):
 
 def _add_facets(facets_dict, group=False):
     new_facets_dict = OrderedDict(facets_dict.items()[:2])
+    new_facets_dict['organization'] = p.toolkit._('Projects')
+    new_facets_dict['groups'] = p.toolkit._('Topics')
     new_facets_dict['keywords_facet'] = p.toolkit._('Keywords')
     new_facets_dict = OrderedDict(new_facets_dict.items() + facets_dict.items()[2:])
     if not group:

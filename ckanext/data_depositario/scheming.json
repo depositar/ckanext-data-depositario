@@ -652,8 +652,8 @@
     {
       "field_name": "owner_org",
       "label": {
-        "en": "Organization",
-        "zh_TW": "組織"
+        "en": "Project",
+        "zh_TW": "專案"
       },
       "preset": "dataset_organization"
     },
