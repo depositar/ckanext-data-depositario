@@ -7,6 +7,13 @@
 Changelog
 ---------
 
+v6.3.3 2018-12-07
+=================
+
+ * Improvement: Fix an issue where search filters and pills in results cannot be
+   displayed correctly.
+ * Other improvements and UI adjustments.
+
 v6.3.2 2018-10-25
 =================
 
