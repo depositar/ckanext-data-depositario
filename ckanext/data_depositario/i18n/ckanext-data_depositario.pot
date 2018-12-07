@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.3.1\n"
+"Project-Id-Version: ckanext-data-depositario 6.3.3b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-25 17:39+0800\n"
+"POT-Creation-Date: 2018-12-07 13:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,20 +46,31 @@ msgid ""
 "before"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:158
+#: ckanext/data_depositario/plugin.py:163
+#: ckanext/data_depositario/templates/header.html:34
+msgid "Projects"
+msgstr ""
+
+#: ckanext/data_depositario/plugin.py:164
+#: ckanext/data_depositario/templates/header.html:33
+#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:6
+msgid "Topics"
+msgstr ""
+
+#: ckanext/data_depositario/plugin.py:165
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:162
+#: ckanext/data_depositario/plugin.py:169
 msgid "Data Type"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:163
+#: ckanext/data_depositario/plugin.py:170
 msgid "Language"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:165
+#: ckanext/data_depositario/plugin.py:172
 msgid "Historical Material"
 msgstr ""
 
@@ -170,179 +181,11 @@ msgstr ""
 msgid "Datasets"
 msgstr ""
 
-#: ckanext/data_depositario/templates/header.html:33
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:6
-msgid "Topics"
-msgstr ""
-
-#: ckanext/data_depositario/templates/header.html:34
-msgid "Projects"
-msgstr ""
-
 #: ckanext/data_depositario/templates/header.html:35
 msgid "About"
 msgstr ""
 
 #: ckanext/data_depositario/templates/theme.html:3
-msgid "Groups"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:4
-msgid "group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:5
-msgid "Group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:6
-msgid "Add a Group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:7
-msgid "Group Form"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:8
-msgid "Are you sure you want to delete group - {name}?"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:9
-msgid "Edit Group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:10
-msgid "Add Group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:11
-msgid "Search groups..."
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:12
-msgid "There are currently no groups for this site"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:13
-msgid "Create a Group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:14
-msgid "Update Group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:15
-msgid "Create Group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:16
-msgid "Datasets in group: {group}"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:17
-msgid "My Group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:18
-msgid "my-group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:19
-msgid "A little information about my group..."
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:20
-msgid "Are you sure you want to delete this Group?"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:21
-msgid "Save Group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:22
-msgid "Remove dataset from this group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:23
-msgid "What are Groups?"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:24
-msgid "groups"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:25
-msgid "Associate this group with this dataset"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:26
-msgid "Add to group"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:27
-msgid "There are no groups associated with this dataset"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:28
-msgid "{number} group found for \"{query}\""
-msgid_plural "{number} groups found for \"{query}\""
-msgstr[0] ""
-msgstr[1] ""
-
-#: ckanext/data_depositario/templates/theme.html:29
-msgid "No groups found for \"{query}\""
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:30
-msgid "{number} group found"
-msgid_plural "{number} groups found"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ckanext/data_depositario/templates/theme.html:31
-msgid "No groups found"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:32
-msgid "My Groups"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:33
-msgid "You are not a member of any groups."
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:34
-msgid "Create datasets, groups and other exciting things"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:35
-msgid "This group has no description"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:36
-msgid "Largest Groups"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:37
-msgid "No groups"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:38
-msgid ""
-" <p><strong>Admin:</strong> Can edit group information, as well as manage "
-"organization members.</p> <p><strong>Member:</strong> Can add/remove datasets"
-" from groups</p> "
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:43
-msgid ""
-" You can use CKAN Groups to create and manage collections of datasets. This "
-"could be to catalogue datasets for a particular project or team, or on a "
-"particular theme, or as a very simple way to help people find and search your"
-" own published datasets. "
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:52
 msgid "Filter by location"
 msgstr ""
 
@@ -652,11 +495,11 @@ msgid "show less"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/form_snippets/_organization_select.html:21
-msgid "No organization"
+msgid "No project"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/form_snippets/_organization_select.html:35
-msgid "Open for organization members only"
+msgid "Open for project members only"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/form_snippets/license.html:37
