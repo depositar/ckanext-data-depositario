@@ -19,6 +19,7 @@ Prerequirements
 - **Extensions.** We have developed several CKAN extensions. The `full list of installed extensions can be seen via the CKAN API <https://data.depositar.io/api/action/status_show>`_. Custom extensions include:
 
   - `depositar/ckanext-data-depositario <https://github.com/depositar/ckanext-data-depositario>`_ - Most depositar specific CKAN customizations are contained within this extension.
+  - `depositar/ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ - Theming extension for depositar.
   - `depositar/ckanext-wikidatakeyword <https://github.com/depositar/ckanext-wikidatakeyword>`_ - Wikidata-powered keyword field for CKAN.
 
 
