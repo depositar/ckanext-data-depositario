@@ -34,23 +34,8 @@
     {% snippet "spatial/snippets/spatial_query.html", default_extent="[[21.86, 119.18], [25.37, 122.34]]" %}
     {% snippet "snippets/date_facet_slider.html" %}
   </div>
-  <div id="facets">
-    {%- set schema = h.scheming_get_dataset_schema('dataset') -%}
-    {% for facet in c.facet_titles %}
-      {% if facet not in ['date_facet', 'license_id', 'organization', 'groups'] %}
-        {% set field_name = facet|replace('_facet', '') %}
-	{% set field = h.scheming_field_by_name(schema.dataset_fields, field_name) %}
-        {% macro render_choices_label(item) %}
-          {{ h.scheming_choices_label(field.choices, item.name) }}
-        {% endmacro %}
-        {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet, label_function=render_choices_label) }}
-      {# These three facets do not have translations #}
-      {% elif facet in ['license_id', 'organization', 'groups'] %}
-        {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}
-      {% endif %}
-    {% endfor %}
-  </div>
-  <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
+  {% do c.facet_titles.pop('date_facet', None) %}
+  {{ super() }}
 </div>
 {% endblock %}
 
