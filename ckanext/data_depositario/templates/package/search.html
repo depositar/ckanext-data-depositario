@@ -33,9 +33,13 @@
   <div>
     {% snippet "spatial/snippets/spatial_query.html", default_extent="[[21.86, 119.18], [25.37, 122.34]]" %}
     {% snippet "snippets/date_facet_slider.html" %}
+    {% for facet in c.facet_titles %}
+      {% if facet != 'date_facet' %}
+        {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}
+      {% endif %}
+    {% endfor %}
   </div>
-  {% do c.facet_titles.pop('date_facet', None) %}
-  {{ super() }}
+  <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
 </div>
 {% endblock %}
 
