@@ -7,6 +7,12 @@
 Changelog
 ---------
 
+v6.3.4 2018-12-18
+=================
+
+ * Improvement: Fix the scrollable when showing facets on mobile devices.
+ * Update: CKAN core version 2.7.5.
+
 v6.3.3 2018-12-07
 =================
 
