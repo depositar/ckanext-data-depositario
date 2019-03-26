@@ -189,6 +189,20 @@ def license_list(context, data_dict):
 def user_create(context, data_dict):
     user_dict = ckan_user_create(context, data_dict)
 
+    group_context = context.get('group')
+    # We don't do this when inviting new user to a group
+    if not group_context or group_context.type != 'group':
+        # Add the created user to existed groups
+        groups = p.toolkit.get_action('group_list')({}, {})
+        context['ignore_auth'] = True
+        for group in groups:
+            group_dict = {
+                'id': group,
+                'username': user_dict['id'],
+                'role': 'member'
+            }
+            p.toolkit.get_action('group_member_create')(context, group_dict)
+
     # We don't need these when inviting new users
     if not context['auth_user_obj']:
         user = model.User.get(user_dict['id'])
