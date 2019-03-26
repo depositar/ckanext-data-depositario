@@ -188,15 +188,18 @@ def license_list(context, data_dict):
 
 def user_create(context, data_dict):
     user_dict = ckan_user_create(context, data_dict)
-    user = model.User.get(user_dict['id'])
 
-    # Set the user as pending before changing his/her password.
-    user.set_pending()
+    # We don't need these when inviting new users
+    if not context['auth_user_obj']:
+        user = model.User.get(user_dict['id'])
 
-    # Reset the created user's password immediately
-    try:
-        mailer.send_reset_link(user)
-    except mailer.MailerException, e:
-        log.debug('Could not send reset link: %s' % unicode(e))
+        # Set the user as pending before changing his/her password.
+        user.set_pending()
+
+        # Reset the created user's password immediately
+        try:
+            mailer.send_reset_link(user)
+        except mailer.MailerException, e:
+            log.debug('Could not send reset link: %s' % unicode(e))
 
     return user_dict
