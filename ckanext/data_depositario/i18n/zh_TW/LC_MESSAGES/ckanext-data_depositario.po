@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-data-depositario 6.3.4b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-12-18 10:39+0800\n"
+"POT-Creation-Date: 2019-03-29 10:06+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -47,31 +47,31 @@ msgid ""
 "before"
 msgstr "使用者 \"%s\" 已經註冊，但你仍以 \"%s\" 登入中"
 
-#: ckanext/data_depositario/plugin.py:163
+#: ckanext/data_depositario/plugin.py:160
 #: ckanext/data_depositario/templates/header.html:34
 msgid "Projects"
 msgstr "專案"
 
-#: ckanext/data_depositario/plugin.py:164
+#: ckanext/data_depositario/plugin.py:161
 #: ckanext/data_depositario/templates/header.html:33
 #: ckanext/data_depositario/templates/home/snippets/idx_topics.html:6
 msgid "Topics"
 msgstr "主題"
 
-#: ckanext/data_depositario/plugin.py:165
+#: ckanext/data_depositario/plugin.py:162
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
 msgid "Keywords"
 msgstr "關鍵字"
 
-#: ckanext/data_depositario/plugin.py:169
+#: ckanext/data_depositario/plugin.py:166
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:170
+#: ckanext/data_depositario/plugin.py:167
 msgid "Language"
 msgstr "語言"
 
-#: ckanext/data_depositario/plugin.py:172
+#: ckanext/data_depositario/plugin.py:169
 msgid "Historical Material"
 msgstr "使用史料"
 
@@ -651,3 +651,4 @@ msgid ""
 "This shortcut provides some historical periods for filling temporal "
 "information of the dataset."
 msgstr "此捷徑提供部分歷史時期，供您快速填寫資料歷史年代。"
+
