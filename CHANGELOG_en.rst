@@ -7,6 +7,13 @@
 Changelog
 ---------
 
+v6.3.5 2019-03-29
+=================
+
+ * Improvement: Fix an issue where newly created user cannot add datasets to
+   existed topics (#6).
+ * Other improvements.
+
 v6.3.4 2018-12-18
 =================
 
