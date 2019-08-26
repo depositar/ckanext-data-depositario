@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.3.4b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.3.6b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-03-29 10:06+0800\n"
+"POT-Creation-Date: 2019-08-26 14:26+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -155,7 +155,7 @@ msgid "About depositar"
 msgstr "關於研究資料寄存所 (depositar)"
 
 #: ckanext/data_depositario/templates/footer.html:13
-#: ckanext/data_depositario/templates/package/read.html:25
+#: ckanext/data_depositario/templates/package/read.html:27
 msgid "CKAN API"
 msgstr "CKAN API"
 
@@ -193,6 +193,10 @@ msgstr "關於"
 #: ckanext/data_depositario/templates/theme.html:3
 msgid "Filter by location"
 msgstr "空間搜尋"
+
+#: ckanext/data_depositario/templates/citation/package/snippets/citation.html:5
+msgid "Cite as"
+msgstr "引用為"
 
 #: ckanext/data_depositario/templates/home/help.html:14
 msgid "Your browser does not support iframes."
@@ -463,21 +467,21 @@ msgstr "社會與社會科學"
 msgid "Technology and applied sciences"
 msgstr "技術與應用科學"
 
-#: ckanext/data_depositario/templates/package/read.html:16
+#: ckanext/data_depositario/templates/package/read.html:18
 msgid "Other Access"
 msgstr "其他存取方式"
 
-#: ckanext/data_depositario/templates/package/read.html:19
+#: ckanext/data_depositario/templates/package/read.html:21
 msgid ""
 "The information on this page (the dataset metadata) is also available in "
 "these formats:"
 msgstr "此頁面上的資訊 (資料集之後設資料) 也提供以下格式："
 
-#: ckanext/data_depositario/templates/package/read.html:25
+#: ckanext/data_depositario/templates/package/read.html:27
 msgid "via the "
 msgstr "經由 "
 
-#: ckanext/data_depositario/templates/package/read.html:33
+#: ckanext/data_depositario/templates/package/read.html:35
 msgid "Tags"
 msgstr "標籤"
 
