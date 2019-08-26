@@ -7,6 +7,13 @@
 Changelog
 ---------
 
+v6.3.6 2019-08-26
+=================
+
+ * Add: Citation widget on dataset page.
+ * Update: Correct some errors in documentation.
+ * Update: CKAN core version 2.7.6.
+
 v6.3.5 2019-03-29
 =================
 
