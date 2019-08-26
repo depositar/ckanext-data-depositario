@@ -21,6 +21,7 @@ Prerequirements
   - `depositar/ckanext-data-depositario <https://github.com/depositar/ckanext-data-depositario>`_ - Most depositar specific CKAN customizations are contained within this extension.
   - `depositar/ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ - Theming extension for depositar.
   - `depositar/ckanext-wikidatakeyword <https://github.com/depositar/ckanext-wikidatakeyword>`_ - Wikidata-powered keyword field for CKAN.
+  - `depositar/ckanext-citation <https://github.com/depositar/ckanext-citation>`_ - Plugins for exposing citations on CKAN.
 
 
 Installation

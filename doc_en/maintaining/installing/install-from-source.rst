@@ -232,7 +232,8 @@ c. Edit the development.ini file in a text editor, changing the following option
       ckan.site_url = http://127.0.0.1:5000
 
       ## Plugins Settings
-      ckan.plugins = data_depositario depositar_theme wikidatakeyword stats datastore datapusher
+      ckan.plugins = data_depositario depositar_theme citation
+                     wikidatakeyword stats datastore datapusher
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view spatial_metadata spatial_query
@@ -266,6 +267,9 @@ c. Edit the development.ini file in a text editor, changing the following option
       ckanext.data_depositario.gmap.api_key = GMAP_AKI_KEY
       ## GA_ID is the id for Google Analytics
       ckanext.data_depositario.googleanalytics.id = GA_ID
+
+      ## ckanext-citation Settings
+      ckanext.citation.csl_mappings = {"author": "author_name"}
 
 -------------------------------------------------------
 7. Setup Solr (with Chinese and spatial search support)

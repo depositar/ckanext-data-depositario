@@ -226,7 +226,8 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ckan.site_url = http://127.0.0.1:5000
 
       ## Plugins Settings
-      ckan.plugins = data_depositario depositar_themewikidatakeyword stats datastore datapusher
+      ckan.plugins = data_depositario depositar_theme citation
+                     wikidatakeyword stats datastore datapusher
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view spatial_metadata spatial_query
@@ -260,6 +261,9 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ckanext.data_depositario.gmap.api_key = GMAP_AKI_KEY
       ## GA_ID 請填入申請之 Google Analytics id
       ckanext.data_depositario.googleanalytics.id = GA_ID
+
+      ## ckanext-citation Settings
+      ckanext.citation.csl_mappings = {"author": "author_name"}
 
 ------------------------------------
 7. 安裝 Solr（含中文與空間搜尋支援）
