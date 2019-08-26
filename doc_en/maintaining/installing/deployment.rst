@@ -151,7 +151,7 @@ a. Create a Systemd service for DataPusher:
 
    .. parsed-literal::
 
-      sudo vi /etc/init/datapusher.conf
+      sudo vi /etc/systemd/system/datapusher.service
 
 b. In the vi editor, add the following contents:
 

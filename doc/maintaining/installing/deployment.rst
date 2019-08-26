@@ -145,7 +145,7 @@ a. 建立 Systemd 服務
 
    .. parsed-literal::
 
-      sudo vi /etc/init/datapusher.conf
+      sudo vi /etc/systemd/system/datapusher.service
 
 b. 在開啟的 vi 編輯器中，輸入以下內容
 
