@@ -1,0 +1,68 @@
+.. list-table::
+   :widths: 20 5 45 30
+   :header-rows: 1
+
+   * - 名稱
+     - 必填
+     - 說明
+     - 資料範圍
+
+   * - 資料類型
+     - 是
+     - 資料集所屬之類型，依據不同類型將顯示不同詮釋資料填寫項目。接受多值。
+     - `PARSE.Insight content-types <http://gfzpublic.gfz-potsdam.de/pubman/item/escidoc:1397899:6/component/escidoc:1398549/re3data_schema_documentation_v3_0.pdf>`_
+
+   * - 時間解析度
+     - 否
+     - 請參考 :ref:`時間資訊填寫輔助功能 <UI_editing_extend_time>`。
+     - 限以下時間之一：
+
+       | 一百年
+       | 十年
+       | 年
+       | 月
+       | 日
+
+   * - 起始時間
+     - 否
+     - 同上
+     - 限制以下時間格式：
+
+       | YYYY（當時間解析度為百年、十年、年）
+       | YYYY-MM（當時間解析度為月）
+       | YYYY-MM-DD（當時間解析度為日）
+
+   * - 結束時間
+     - 否
+     - 同上
+     - 同上
+
+   * - 空間範圍
+     - 否
+     - 請參考 :ref:`空間範圍填寫輔助功能 <UI_editing_extend_spatial>`。
+     - 需為 GeoJSON 格式。
+
+   * - 空間範圍.X.min
+     - 否
+     - 同上
+     - 必須為 -180 至 180 之浮點數，且 X.max > X.min。
+
+   * - 空間範圍.X.max
+     - 否
+     - 同上
+     - 同上
+
+   * - 空間範圍.Y.min
+     - 否
+     - 同上
+     - 必須為 -90 至 90 之浮點數，且 Y.max > Y.min。
+
+   * - 空間範圍.Y.max
+     - 否
+     - 同上
+     - 同上
+
+   * - 空間解析度
+     - 否
+     - 填寫資料空間解析度數值，以公尺為單位。
+     - 必須為正浮點數。
