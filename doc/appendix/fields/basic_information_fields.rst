@@ -24,8 +24,8 @@
 
    * - 資料類型
      - 是
-     - 資料集所屬之類型。接受多值。
-     - `PARSE.Insight content-types <http://gfzpublic.gfz-potsdam.de/pubman/item/escidoc:1397899:6/component/escidoc:1398549/re3data_schema_documentation_v3_0.pdf>`_
+     - 資料集所屬之類型。
+     - 接受多值。`PARSE.Insight content-types <http://gfzpublic.gfz-potsdam.de/pubman/item/escidoc:1397899:6/component/escidoc:1398549/re3data_schema_documentation_v3_0.pdf>`_
 
    * - Wikidata 關鍵字
      - 否
@@ -35,8 +35,8 @@
 
    * - 標籤
      - 否
-     - 標籤欄位可協助使用者更容易找到該筆資料集，例如您可加上「人口」、「犯罪」等標籤。若無法自 Wikidata 尋得合適條目填入「關鍵字」欄位時，始建議使用此「標籤」欄位。接受多值。
-     - 長度須介於 1 至 100 字元（包含 1 與 100）、須為 unicode 文數字或「-」、「_」與「.」符號。
+     - 標籤欄位可協助使用者更容易找到該筆資料集，例如您可加上「人口」、「犯罪」等標籤。若無法自 Wikidata 尋得合適條目填入「關鍵字」欄位時，始建議使用此「標籤」欄位。
+     - 接受多值。長度須介於 1 至 100 字元（包含 1 與 100）、須為 unicode 文數字或「-」、「_」與「.」符號。
 
    * - 語言
      - 否
