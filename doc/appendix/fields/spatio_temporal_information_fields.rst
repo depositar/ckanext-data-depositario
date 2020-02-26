@@ -7,11 +7,6 @@
      - 說明
      - 資料範圍
 
-   * - 資料類型
-     - 是
-     - 資料集所屬之類型，依據不同類型將顯示不同詮釋資料填寫項目。接受多值。
-     - `PARSE.Insight content-types <http://gfzpublic.gfz-potsdam.de/pubman/item/escidoc:1397899:6/component/escidoc:1398549/re3data_schema_documentation_v3_0.pdf>`_
-
    * - 時間解析度
      - 否
      - 請參考 :ref:`時間資訊填寫輔助功能 <UI_editing_extend_time>`。

@@ -14,14 +14,17 @@
    * - 摘要
      -
 
-   * - 語言
+   * - 資料類型
      - :ref:`scheming_required <external_validators>` :ref:`scheming_choices <external_validators>`
+
+   * - Wikidata 關鍵字
+     - :ref:`wikidata_keyword <external_validators>`
 
    * - 標籤
      - :ref:`ignore_missing <external_validators>` :ref:`tag_string_convert <external_validators>`
 
-   * - Wikidata 關鍵字
-     - :ref:`wikidata_keyword <external_validators>`
+   * - 語言
+     - :ref:`scheming_required <external_validators>` :ref:`scheming_choices <external_validators>`
 
    * - 備註
      -

@@ -5,9 +5,6 @@
    * - 名稱
      - 校驗（轉換）器
 
-   * - 資料類型
-     - :ref:`scheming_required <external_validators>` :ref:`scheming_choices <external_validators>`
-
    * - 時間解析度
      - :ref:`scheming_required <external_validators>` :ref:`scheming_choices <external_validators>`
 

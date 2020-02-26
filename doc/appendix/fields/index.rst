@@ -10,7 +10,7 @@
 資料集層級之詮釋資料項目
 ------------------------
 
-計有「基本資訊」、「描述資訊」與「管理資訊」三大部分。
+計有「基本資訊」、「時空資訊」與「管理資訊」三大部分。
 
 ^^^^^^^^
 基本資訊
@@ -19,10 +19,10 @@
 .. include:: basic_information_fields.rst
 
 ^^^^^^^^
-描述資訊
+時空資訊
 ^^^^^^^^
 
-.. include:: descriptive_information_fields.rst
+.. include:: spatio_temporal_information_fields.rst
 
 ^^^^^^^^
 管理資訊

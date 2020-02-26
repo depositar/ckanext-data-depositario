@@ -13,7 +13,7 @@
      - 限以下授權之一：
 
        | 授權條款未指定
-       | 公眾領域
+       | `公眾領域 <https://creativecommons.org/publicdomain/mark/1.0/>`_
        | `公眾領域貢獻宣告 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>`_
        | `創用 CC 姓名標示 4.0 <https://creativecommons.org/licenses/by/4.0/>`_
        | `創用 CC 姓名標示-相同方式分享 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_

@@ -89,10 +89,10 @@ clean_format
 .. include:: basic_information_validators.rst
 
 """"""""
-描述資訊
+時空資訊
 """"""""
 
-.. include:: descriptive_information_validators.rst
+.. include:: spatio_temporal_information_validators.rst
 
 """"""""
 管理資訊
