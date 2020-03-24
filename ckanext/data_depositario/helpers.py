@@ -1,6 +1,5 @@
 from pylons import config
 import ckan.plugins as p
-from ckan import model
 from ckan.common import json
 from geomet import wkt
 import re
@@ -149,33 +148,3 @@ def googleanalytics_header():
 
     return p.toolkit.render_snippet(
             'snippets/googleanalytics_header.html', data)
-
-def init_translation():
-    """
-    Update dictionary.
-    """
-    user = p.toolkit.get_action('get_site_user')(
-            {'model': model, 'ignore_auth': True}, {})
-
-    context = {
-            'model': model,
-            'session': model.Session,
-            'user': user,
-            'ignore_auth': True,
-    }
-
-    schema = _load_schema_module_path('ckanext.data_depositario:scheming.json')
-
-    for field in schema['dataset_fields']:
-        choices = scheming_helpers.scheming_field_choices(field)
-        if choices:
-            for choice in choices:
-                term = choice['value']
-                for lang, label in choice['label'].iteritems():
-                    data_dict = {
-                            'term': term,
-                            'term_translation': label,
-                            'lang_code': lang,
-                    }
-                    p.toolkit.get_action('term_translation_update') \
-                        (context, data_dict)

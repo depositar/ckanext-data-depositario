@@ -9,6 +9,7 @@ from ckan.common import json
 from ckan.common import OrderedDict
 import ckan.lib.mailer as mailer
 from ckan.lib.plugins import DefaultTranslation
+from ckanext.scheming import helpers as scheming_helpers
 from ckanext.data_depositario import helpers
 from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
@@ -28,7 +29,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     p.implements(p.IValidators)
     p.implements(p.IRoutes, inherit=True)
     p.implements(p.IActions)
-    p.implements(p.IConfigurable, inherit=True)
 
     ## IConfigurer
     def update_config(self, config):
@@ -82,6 +82,25 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
                 data_dict[field_name+'_facet'] = json.loads(value)
 
         return data_dict
+
+    def after_search(self, search_results, search_params):
+        facets = search_results.get('search_facets')
+        if not facets:
+            return search_results
+        dataset_type = search_results['results'][0]['type']
+        schema = scheming_helpers.scheming_get_dataset_schema(dataset_type)
+        for facet in facets.values():
+            for item in facet['items']:
+                field_name = facet['title'].replace('_facet', '')
+                field = scheming_helpers.scheming_field_by_name( \
+                        schema['dataset_fields'], field_name)
+                if field and (field.get('choices') or \
+                        field.get('choices_helper')):
+                    choices = scheming_helpers.scheming_field_choices(field)
+                    item['display_name'] = scheming_helpers. \
+                            scheming_choices_label(choices, item['name'])
+
+        return search_results
 
     ## IFacets
     def dataset_facets(self, facets_dict, package_type):
@@ -143,10 +162,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     ## IActions
     def get_actions(self):
         return {'license_list': license_list, 'user_create': user_create}
-
-    ## IConfigurable
-    def configure(self, config):
-        helpers.init_translation()
 
 def _get_module_functions(module, function_names):
     functions = {}
