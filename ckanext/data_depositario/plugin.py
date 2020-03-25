@@ -124,6 +124,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         )
         converter_names = (
             'remove_blank_wrap',
+            'value_string_convert',
         )
         field_validators = _get_module_functions(validators, validator_names)
         field_validators.update(_get_module_functions(converters, converter_names))
