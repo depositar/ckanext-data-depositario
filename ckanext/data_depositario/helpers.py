@@ -1,3 +1,4 @@
+import pycountry
 from pylons import config
 import ckan.plugins as p
 from ckan.common import json
@@ -155,3 +156,21 @@ def schema_license_choices(field):
             'zh_TW': license['title_zh']}} for license in license_list]
 
     return licenses
+
+def schema_language_choices(field):
+    """
+    Language choices helper.
+    """
+    major_lang_alpha_3 = ['zho', 'cmn', 'nan', 'hak', 'jpn', 'eng',
+            'fra', 'spa', 'ara', 'por', 'rus', 'deu']
+    major_lang = [{'value': lang_alpha_3,
+            'label': p.toolkit._(pycountry.languages. \
+            get(alpha_3=lang_alpha_3).name) + \
+            ' (%s)' % lang_alpha_3} \
+            for lang_alpha_3 in major_lang_alpha_3]
+    other_lang = [{'value': lang.alpha_3, 'label': p.toolkit._(lang.name) + \
+            ' (%s)' % lang.alpha_3} \
+            for lang in pycountry.languages \
+            if lang.alpha_3 not in major_lang_alpha_3]
+
+    return major_lang + other_lang

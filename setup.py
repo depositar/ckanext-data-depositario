@@ -6,6 +6,7 @@ version = '6.4.0b'
 entry_points = {
     'ckan.plugins': [
 	'data_depositario = ckanext.data_depositario.plugin:DataDepositarioDatasets',
+        'depositar_iso639 = ckanext.data_depositario.plugin:DepositarISO639'
     ],
     'babel.extractors': [
         'ckan = ckan.lib.extract:extract_ckan',

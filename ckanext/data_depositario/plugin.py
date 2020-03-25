@@ -19,6 +19,14 @@ log = getLogger(__name__)
 _check_access = logic.check_access
 
 
+class DepositarISO639(p.SingletonPlugin, DefaultTranslation):
+
+    p.implements(p.ITranslation)
+
+    ## ITranslation
+    def i18n_domain(self):
+        return 'iso_639-3'
+
 class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
     p.implements(p.ITranslation)
@@ -144,6 +152,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             'get_pkg_version',
             'googleanalytics_header',
             'schema_license_choices',
+            'schema_language_choices',
         )
         return _get_module_functions(helpers, function_names)
 
