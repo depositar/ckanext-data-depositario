@@ -623,6 +623,7 @@
       },
       "required": true,
       "sorted_choices": false,
+      "choices_helper": "schema_license_choices",
       "form_snippet": "license.html"
     },
     {

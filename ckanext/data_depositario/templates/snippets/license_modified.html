@@ -1,0 +1,6 @@
+{%- set schema = h.scheming_get_dataset_schema(pkg_dict.type) -%}
+{%- set field = h.scheming_field_by_name(schema.dataset_fields, 'license_id') -%}
+
+{% do pkg_dict.update({'license_title': h.scheming_choices_label(h.scheming_field_choices(field), pkg_dict.license_id)}) %}
+
+{% snippet "snippets/license.html", pkg_dict=pkg_dict, text_only=text_only %}

@@ -44,8 +44,14 @@
       </div>
       <legend><h2> {{ _('Management Information') }} </h2></legend>
     {% endif %}
+    {%- set license_field = h.scheming_field_by_name(schema.dataset_fields, 'license_id') -%}
+    {%- set licenses = [] -%}
+    {%- for license_desc, license_id in c.licenses -%}
+      {%- set license_label = h.scheming_choices_label(h.scheming_field_choices(license_field), license_id) -%}
+      {% do licenses.append((license_label, license_id)) %}
+    {%- endfor -%}
     {%- snippet 'scheming/snippets/form_field.html',
-      field=field, data=data, errors=errors, licenses=c.licenses,
+      field=field, data=data, errors=errors, licenses=licenses,
       entity_type='dataset', object_type=dataset_type -%}
   {%- endfor -%}
 

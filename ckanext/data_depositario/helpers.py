@@ -119,9 +119,6 @@ def get_gmap_config():
     return dict([(k.replace(namespace, ''), v) for k, v in config.iteritems()
                  if k.startswith(namespace)])
 
-def get_license_list():
-   return p.toolkit.get_action('license_list')({}, {})
-
 def get_pkg_version():
     """
     Obtain the extension version for documentation
@@ -148,3 +145,13 @@ def googleanalytics_header():
 
     return p.toolkit.render_snippet(
             'snippets/googleanalytics_header.html', data)
+
+def schema_license_choices(field):
+    """
+    License choices helper.
+    """
+    license_list = p.toolkit.get_action('license_list')({}, {})
+    licenses = [{'value': license['id'], 'label': {'en': license['title'],
+            'zh_TW': license['title_zh']}} for license in license_list]
+
+    return licenses
