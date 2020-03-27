@@ -146,8 +146,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             'date_to_iso',
             'get_default_slider_values',
             'get_date_url_param',
-            'get_time_period',
-            'get_time_period_for_facet_slider',
             'get_gmap_config',
             'get_pkg_version',
             'googleanalytics_header',

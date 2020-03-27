@@ -14,7 +14,6 @@
       <legend><h2> {{ _('Descriptive Information') }} </h2></legend>
     {% elif field.field_name == 'temp_res' %}
       <h3> {{ _('Temporal Information (Time Period of Dataset)') }} </h3>
-      {%- snippet 'snippets/time_period_select.html', errors=errors -%}
     {% elif field.field_name == 'keywords' %}
       <h3> {{ _('Keywords') }} </h3>
     {% elif field.field_name == 'maintainer_name' %}

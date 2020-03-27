@@ -43,7 +43,6 @@
           })
           .on('userValuesChanged', this._handleSliderChanged);
 
-        $('[id="field-time-period"]', this.el).change(this._setTimePeriod);
 	$('.show-filters').click(this._checkForChanges);
       },
       _convertDate: function (date) {
@@ -76,17 +75,7 @@
           return uri + separator + key + "=" + value;
         }
       },
-      _setTimePeriod: function (event) {
-        var selected = $('[id="field-time-period"] :selected');
-	if (selected.index() == 0) return;
-	if (selected.data('end') == '') selected.data('end', new Date().getFullYear());
-	var url = document.URL;
-	url = this._updateQueryStringParameter(url, 'ext_begin_date', selected.data('start') + '-01-01');
-	url = this._updateQueryStringParameter(url, 'ext_end_date', selected.data('end') + '-12-31');
-	window.location = url;
-      },
       _checkForChanges: function (event) {
-	$('[id="field-time-period"]', this.el).css('width', '100%').css('padding', '0').css('margin', '0');
         $('[id="dateSlider"]', this.el).dateRangeSlider('resize');
       }
     };

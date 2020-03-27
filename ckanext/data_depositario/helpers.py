@@ -4,34 +4,14 @@ import ckan.plugins as p
 from ckan.common import json
 from geomet import wkt
 import re
-import os
 import json
-import inspect
 import logging
 import dateutil
 from datetime import date
-from ckanext.scheming import helpers as scheming_helpers
 from ckanext import data_depositario
 
 log = logging.getLogger(__name__)
 
-
-def _load_schema_module_path(url):
-   """
-   Given a path like "ckanext.spatialx:spatialx_schema.json"
-   find the second part relative to the import path of the first
-   Borrowed from ckanext-scheming
-   """
-
-   module, file_name = url.split(':', 1)
-   try:
-       # __import__ has an odd signature
-       m = __import__(module, fromlist=[''])
-   except ImportError:
-       return
-   p = os.path.join(os.path.dirname(inspect.getfile(m)), file_name)
-   if os.path.exists(p):
-       return json.load(open(p))
 
 def extras_to_dict(pkg):
    extras_dict = {}
@@ -89,19 +69,6 @@ def get_date_url_param():
       else:
          continue
    return params
-
-def get_time_period():
-   return _load_schema_module_path('ckanext.data_depositario:time_period.json')
-
-def get_time_period_for_facet_slider():
-   out = []
-   time_periold_list = get_time_period()
-   for time_period in time_periold_list:
-      if not time_period['value']: continue
-      splitted = time_period['value'].split('-')
-      label = scheming_helpers.scheming_choices_label(time_periold_list, time_period['value'])
-      out.append((label, splitted[0], splitted[1]))
-   return out
 
 def get_gmap_config():
     '''
