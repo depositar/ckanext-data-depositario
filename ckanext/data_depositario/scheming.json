@@ -44,64 +44,128 @@
       "field_name": "data_type",
       "label": {
         "en": "Data Type",
-	"zh_TW": "資料類型"
+        "zh_TW": "資料類型"
       },
-      "preset": "select",
+      "preset": "multiple_select",
+      "form_select_attrs": {
+        "data-module": "select2-enabler"
+      },
       "required": true,
-      "form_attrs": {
-        "data-module": "autocomplete"
-      },
       "choices": [
         {
-          "value": "statistics",
-	  "label": {
-  	    "en": "Statistics",
-  	    "zh_TW": "統計資料"
-	  }
-        },
-	{
-	  "value": "books",
-	  "label": {
-  	    "en": "Books",
-  	    "zh_TW": "文獻書籍"
-	  }
-	},
-        {
-          "value": "pics_non_spatial",
+          "value": "archive",
           "label": {
-            "en": "Pictures (Non spatial)",
-            "zh_TW": "圖像 (非空間類)"
-           }
-        },
-        {
-          "value": "pics_spatial",
-          "label": {
-            "en": "Pictures (Spatial)",
-            "zh_TW": "圖像 (空間類)"
-           }
-        },
-        {
-          "value": "vector",
-          "label": {
-            "en": "Vector",
-            "zh_TW": "向量資料"
+            "en": "Archived data",
+            "zh_TW": "壓縮檔資料"
           }
         },
         {
-          "value": "3d_model",
+          "value": "code",
           "label": {
-            "en": "3D Model",
-            "zh_TW": "三維模型"
+            "en": "Source code",
+            "zh_TW": "原始碼"
+          }
+        },
+        {
+          "value": "config",
+          "label": {
+            "en": "Configuration data",
+            "zh_TW": "組態資料"
+          }
+        },
+        {
+          "value": "database",
+          "label": {
+            "en": "Databases",
+            "zh_TW": "資料庫"
+           }
+        },
+        {
+          "value": "doc",
+          "label": {
+            "en": "Standard office documents",
+            "zh_TW": "辦公軟體文件"
+          }
+        },
+        {
+          "value": "graphic",
+          "label": {
+            "en": "Structured graphics",
+            "zh_TW": "結構化圖形"
+          }
+        },
+        {
+          "value": "image",
+          "label": {
+            "en": "Images",
+            "zh_TW": "影像"
           }
         },
         {
           "value": "multimedia",
           "label": {
-            "en": "Multimedia",
+            "en": "Audiovisual data",
             "zh_TW": "影音資料"
+          }
+        },
+        {
+          "value": "network",
+          "label": {
+            "en": "Networkbased data",
+            "zh_TW": "網路通訊資料"
+          }
+        },
+        {
+          "value": "raw",
+          "label": {
+            "en": "Raw data",
+            "zh_TW": "原始輸出資料"
+          }
+        },
+        {
+          "value": "science",
+          "label": {
+            "en": "Scientific and statistical data formats",
+            "zh_TW": "科學與統計資料"
+          }
+        },
+        {
+          "value": "software",
+          "label": {
+            "en": "Software applications",
+            "zh_TW": "應用程式"
+          }
+        },
+        {
+          "value": "structured",
+          "label": {
+            "en": "Structured text",
+            "zh_TW": "結構化文字資料"
+          }
+        },
+        {
+          "value": "text",
+          "label": {
+            "en": "Plain text",
+            "zh_TW": "純文字資料"
+          }
+        },
+        {
+          "value": "other",
+          "label": {
+            "en": "Other",
+            "zh_TW": "其他"
           }
         }
       ]
+    },
+    {
+      "field_name": "keywords",
+      "label": {
+        "en": "Wikidata Keywords",
+        "zh_TW": "Wikidata 關鍵字"
+      },
+      "preset": "wikidata_keyword"
     },
     {
       "field_name": "tag_string",
@@ -116,6 +180,25 @@
       }
     },
     {
+      "field_name": "language",
+      "label": {
+        "en": "Language",
+        "zh_TW": "語言"
+      },
+      "preset": "multiple_select",
+      "validators": "value_string_convert scheming_multiple_choice",
+      "form_snippet": "multiple_select_pagination.html",
+      "help_text": {
+        "en": "Coded in ISO 639-3 Language Codes (three-letter codes within parentheses for each language on the list). Please refer to https://iso639-3.sil.org/code_tables.",
+        "zh_TW": "使用 ISO 639-3 語言標碼 (各語言後方括號內三碼)。參見 https://iso639-3.sil.org/code_tables。"
+      },
+      "choices_helper": "schema_language_choices",
+      "form_select_attrs": {
+        "data-module": "select2-pagination",
+        "data-module-multiple": "true"
+      }
+    },
+    {
       "field_name": "remarks",
       "label": {
         "en": "Remarks",
@@ -123,96 +206,6 @@
       },
       "form_snippet": "markdown.html",
       "display_snippet": "markdown.html"
-    },
-    {
-      "field_name": "language",
-      "label": {
-        "en": " Language",
-        "zh_TW": "語言"
-      },
-      "preset": "select",
-      "form_attrs": {
-        "data-module": "autocomplete"
-      },
-      "choices": [
-        {
-          "value": "zho",
-          "label": {
-            "en": "Chinese",
-            "zh_TW": "華語/中文"
-          }
-        },
-        {
-          "value": "hak",
-          "label": {
-            "en": "Hakka Chinese",
-            "zh_TW": "客家話"
-          }
-        },
-        {
-          "value": "nan",
-          "label": {
-            "en": "Min Nan Chinese",
-            "zh_TW": "閩南語"
-          }
-        },
-        {
-          "value": "yue",
-          "label": {
-            "en": "Yue Chinese (Cantonese)",
-            "zh_TW": "粵語"
-          }
-        },
-        {
-          "value": "lzh",
-          "label": {
-            "en": "Literary Chinese",
-            "zh_TW": "文言文"
-          }
-        },
-        {
-          "value": "jpn",
-          "label": {
-            "en": "Japanese",
-            "zh_TW": "日語"
-          }
-        },
-        {
-          "value": "eng",
-          "label": {
-            "en": "English",
-            "zh_TW": "英語"
-          }
-        },
-        {
-          "value": "spa",
-          "label": {
-            "en": "Spanish (Castilian)",
-            "zh_TW": "西班牙語"
-          }
-        },
-        {
-          "value": "nld",
-          "label": {
-            "en": "Dutch",
-            "zh_TW": "荷蘭語"
-          }
-        },
-        {
-          "value": "fos",
-          "label": {
-            "en": "Siraya",
-            "zh_TW": "西拉雅語"
-          }
-        },
-        {
-          "value": "por",
-          "label": {
-            "en": "Portuguese",
-            "zh_TW": "葡萄牙語"
-          }
-        }
-      ]
     },
     {
       "field_name": "temp_res",
@@ -366,14 +359,6 @@
       }
     },
     {
-      "field_name": "keywords",
-      "label": {
-        "en": "Keywords",
-        "zh_TW": "關鍵字"
-      },
-      "preset": "wikidata_keyword"
-    },
-    {
       "field_name": "license_id",
       "label": {
         "en": "License",
@@ -385,7 +370,7 @@
       "form_snippet": "license.html"
     },
     {
-      "field_name": "author_name",
+      "field_name": "author",
       "label": {
         "en": "Author",
         "zh_TW": "產製者"
@@ -409,9 +394,9 @@
       }
     },
     {
-      "field_name": "preprocessing",
+      "field_name": "process_step",
       "label": {
-        "en": "Preprocessing",
+        "en": "Process Step",
         "zh_TW": "資料處理歷程"
       },
       "form_placeholder": {
@@ -430,43 +415,24 @@
       "preset": "dataset_organization"
     },
     {
-      "field_name": "maintainer_name",
+      "field_name": "contact_person",
       "label": {
-        "en": "Maintainer",
-        "zh_TW": "維護者"
+        "en": "Contact Person",
+        "zh_TW": "聯絡人"
       },
       "form_placeholder": "Joe Bloggs",
       "display_property": "dc:contributor"
     },
     {
-      "field_name": "maintainer_mail",
+      "field_name": "contact_email",
       "label": {
-        "en": "Maintainer Email",
-        "zh_TW": "維護者的電子郵件"
+        "en": "Contact Person Email",
+        "zh_TW": "聯絡人的電子郵件"
       },
+      "validators": "email_validator",
       "form_placeholder": "joe@example.com",
       "display_property": "dc:contributor",
-      "display_snippet": "email.html",
-      "display_email_name_field": "maintainer_mail"
-    },
-    {
-      "field_name": "maintainer_phone",
-      "label": {
-        "en": "Maintainer Phone",
-        "zh_TW": "維護者的聯絡電話"
-      },
-      "form_placeholder": "02-12345678"
-    },
-    {
-      "field_name": "identifier",
-      "label": {
-        "en": "Identifier",
-        "zh_TW": "識別碼"
-      },
-      "form_placeholder": {
-        "en": "The unique identifier of this dataset",
-        "zh_TW": "來自資料集，其原始具有之唯一識別碼"
-      }
+      "display_snippet": "email.html"
     },
     {
       "field_name": "state",
@@ -512,6 +478,7 @@
         "en": "Name",
         "zh_TW": "名稱"
        },
+      "validators": "ignore_missing unicode",
       "form_placeholder": {
         "en": "eg. January 2011 Gold Prices",
         "zh_TW": "例如：2011 年 1 月金價"
@@ -532,8 +499,8 @@
     {
       "field_name": "encoding",
       "label": {
-        "en": "Encoding",
-        "zh_TW": "編碼"
+        "en": "Character Encodings",
+        "zh_TW": "字元編碼"
       },
       "preset": "select",
       "form_attrs": {

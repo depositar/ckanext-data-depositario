@@ -82,8 +82,12 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
     def before_index(self, data_dict):
         for field_name in ['data_type', 'language']:
-            value = data_dict.get(field_name, '')
-            data_dict[field_name+'_facet'] = value
+            value = data_dict.get(field_name)
+            try:
+                data_dict[field_name+'_facet'] = json.loads(value)
+            except ValueError:
+                # For old datasets with single data_type and language.
+                data_dict[field_name+'_facet'] = value
 
         return data_dict
 
