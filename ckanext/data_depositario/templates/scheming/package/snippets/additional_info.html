@@ -24,41 +24,14 @@
     'x_min',
     'x_max',
     'y_min',
-    'y_max'
-    ] -%}
-
-{%- set book_fields = [
-    'book_isbn',
-    'book_issn',
-    'book_journal',
-    'book_volume',
-    'book_proceeding',
-    'book_location',
-    'book_publisher',
-    'book_year',
-    'book_query',
-    'book_url',
-    'book_hist_materials',
-    'book_area_village',
-    'book_area_religion',
-    'book_area_family',
-    'book_area_reservoir',
-    'book_area_industry',
-    'book_notes'
-    ] -%}
-
-{%- set picture_fields = [
-    'scan_source',
-    'scan_size',
-    'scan_res',
-    'spatial_res',
-    'scale',
-    'preprocessing'
+    'y_max',
+    'spatial_res'
     ] -%}
 
 {%- set mgmt_info_fields = [
     'author_name',
     'created_time',
+    'preprocessing',
     'maintainer_name',
     'maintainer_mail',
     'maintainer_phone',
@@ -82,18 +55,6 @@
 {% endif %}
 
 {% snippet 'wikidatakeyword/snippets/wikidatakeyword_list.html', keywords=pkg_dict['keywords'] %}
-
-{% if pkg_dict.get('book_isbn') or pkg_dict.get('book_issn') or pkg_dict.get('book_journal') or pkg_dict.get('book_volume') or pkg_dict.get('book_proceeding') or pkg_dict.get('book_location') or pkg_dict.get('book_publisher') or pkg_dict.get('book_year') or pkg_dict.get('book_query') or pkg_dict.get('book_url') or pkg_dict.get('book_hist_materials') or pkg_dict.get('book_area_village') or pkg_dict.get('book_area_religion') or pkg_dict.get('book_area_family') or pkg_dict.get('book_area_reservoir') or pkg_dict.get('book_area_industry') or pkg_dict.get('book_notes') %}
-  <section class="additional-info">
-    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Books'), pkg_dict=pkg_dict, additional_fields=book_fields, exclude_fields=exclude_fields, schema=schema %}
-  </section>
-{% endif %}
-
-{% if pkg_dict.get('scan_source') or pkg_dict.get('scan_size') or pkg_dict.get('scan_res') or pkg_dict.get('spatial_res') or pkg_dict.get('scale') or pkg_dict.get('preprocessing') %}
-  <section class="additional-info">
-    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Pictures'), pkg_dict=pkg_dict, additional_fields=picture_fields, exclude_fields=exclude_fields, schema=schema %}
-  </section>
-{% endif %}
 
 <sction class="additional-info">
   {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Management Information'), pkg_dict=pkg_dict, additional_fields=mgmt_info_fields, exclude_fields=exclude_fields, schema=schema %}

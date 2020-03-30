@@ -354,231 +354,6 @@
       }
     },
     {
-      "field_name": "keywords",
-      "label": {
-        "en": "Keywords",
-        "zh_TW": "關鍵字"
-      },
-      "preset": "wikidata_keyword"
-    },
-    {
-      "field_name": "book_isbn",
-      "label": {
-        "en": "ISBN-13",
-        "zh_TW": "ISBN-13"
-      },
-      "form_placeholder": "978-1-234-56789-7"
-    },
-    {
-      "field_name": "book_issn",
-      "label": {
-        "en": "ISSN",
-        "zh_TW": "ISSN"
-      },
-      "form_placeholder": "1234-5678"
-    },
-    {
-      "field_name": "book_journal",
-      "label": {
-        "en": "Journal",
-        "zh_TW": "期刊"
-      }
-    },
-    {
-      "field_name": "book_volume",
-      "label": {
-        "en": "Volume",
-        "zh_TW": "卷期"
-      }
-    },
-    {
-      "field_name": "book_proceeding",
-      "label": {
-        "en": "Proceeding",
-        "zh_TW": "論文集名稱"
-      }
-    },
-    {
-      "field_name": "book_location",
-      "label": {
-        "en": "Location",
-        "zh_TW": "出版地"
-      }
-    },
-    {
-      "field_name": "book_publisher",
-      "label": {
-        "en": "Publisher",
-        "zh_TW": "出版單位"
-      }
-    },
-    {
-      "field_name": "book_year",
-      "label": {
-        "en": "Publication Year",
-        "zh_TW": "出版年"
-      }
-    },
-    {
-      "field_name": "book_query",
-      "label": {
-        "en": "Book Query",
-        "zh_TW": "書目查詢"
-      }
-    },
-    {
-      "field_name": "book_url",
-      "label": {
-        "en": "URL",
-        "zh_TW": "網址"
-      }
-    },
-    {
-      "field_name": "book_hist_materials",
-      "label": {
-        "en": "Historical Material",
-        "zh_TW": "使用史料"
-      },
-      "preset": "multiple_checkbox",
-      "choices": [
-        {
-          "value": "local_chronicles_in_qing_dynasty",
-          "label": {
-            "en": "Local chronicles in Qing dynasty",
-            "zh_TW": "清代方志"
-          }
-        },
-        {
-          "value": "japan_officials",
-          "label": {
-            "en": "Japan officials",
-            "zh_TW": "日治出版品與官方資料"
-          }
-        },
-        {
-          "value": "officials_in_postwar_period",
-          "label": {
-            "en": "Officials in postwar period",
-            "zh_TW": "戰後官方資料與鄉鎮志"
-          }
-        },
-        {
-          "value": "inscriptions",
-          "label": {
-            "en": "Inscriptions",
-            "zh_TW": "碑文"
-          }
-        },
-        {
-          "value": "newspapers",
-          "label": {
-            "en": "Newspapers",
-            "zh_TW": "報紙"
-          }
-        },
-        {
-          "value": "maps",
-          "label": {
-            "en": "Maps",
-            "zh_TW": "地圖"
-          }
-        },
-        {
-          "value": "taiwanese_governor_office_files",
-          "label": {
-            "en": "Taiwanese Governor Office Files",
-            "zh_TW": "台灣總督府檔案（公文類纂、府報、調查報告、職員錄、衛生法規）"
-          }
-        },
-        {
-          "value": "dutch_formosa",
-          "label": {
-            "en": "Dutch Formosa",
-            "zh_TW": "荷治時期檔案"
-          }
-        },
-        {
-          "value": "field_researches",
-          "label": {
-            "en": "Field Researches",
-            "zh_TW": "地方田野收集文獻（族譜、寺廟志、帳冊、契約）"
-          }
-        }
-      ]
-    },
-    {
-      "field_name": "book_area_village",
-      "label": {
-        "en": "Village of Research Area",
-        "zh_TW": "研究區的聚落名"
-      }
-    },
-    {
-      "field_name": "book_area_religion",
-      "label": {
-        "en": "Religion of Research Area",
-        "zh_TW": "研究區的宗教"
-      }
-    },
-    {
-      "field_name": "book_area_family",
-      "label": {
-        "en": "Family of Research Area",
-        "zh_TW": "研究區的家族"
-      }
-    },
-    {
-      "field_name": "book_area_reservoir",
-      "label": {
-        "en": "Reservoir of Research Area",
-        "zh_TW": "研究區的埤圳"
-      }
-    },
-    {
-      "field_name": "book_area_industry",
-      "label": {
-        "en": "Industry of Research Area",
-        "zh_TW": "研究區的特殊產業"
-      }
-    },
-    {
-      "field_name": "book_notes",
-      "label": {
-        "en": "Notes",
-        "zh_TW": "備註"
-      }
-    },
-    {
-      "field_name": "scan_source",
-      "label": {
-        "en": "Original Source",
-        "zh_TW": "掃描原件來源"
-      }
-    },
-    {
-      "field_name": "scan_size",
-      "label": {
-        "en": "Scan Size",
-        "zh_TW": "掃描原件尺寸"
-      },
-      "form_placeholder": {
-        "en": "Size (cm) of source (e.g., 60x72)",
-        "zh_TW": "填寫原件尺寸大小，單位為公分，如 60x72"
-      }
-    },
-    {
-      "field_name": "scan_res",
-      "label": {
-        "en": "Scanning Resolution",
-        "zh_TW": "掃描解析度"
-      },
-      "validators": "ignore_empty is_positive_integer",
-      "form_placeholder": {
-        "en": "Resolution (DPI) of source (e.g., 300)",
-        "zh_TW": "填寫掃描解析度數值，單位為 DPI，如 300"
-      }
-    },
-    {
       "field_name": "spatial_res",
       "label": {
         "en": "Spatial Resolution",
@@ -591,29 +366,12 @@
       }
     },
     {
-      "field_name": "scale",
+      "field_name": "keywords",
       "label": {
-        "en": "Scale Denominator",
-        "zh_TW": "比例尺"
+        "en": "Keywords",
+        "zh_TW": "關鍵字"
       },
-      "validators": "ignore_empty is_positive_integer",
-      "form_placeholder": {
-        "en": "Scale denominator of data",
-        "zh_TW": "填寫資料比例尺之分母"
-      }
-    },
-    {
-      "field_name": "preprocessing",
-      "label": {
-        "en": "Preprocessing",
-        "zh_TW": "資料處理歷程"
-      },
-      "form_placeholder": {
-        "en": "Steps of data generating process",
-        "zh_TW": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫"
-      },
-      "form_snippet": "markdown.html",
-      "display_snippet": "markdown.html"
+      "preset": "wikidata_keyword"
     },
     {
       "field_name": "license_id",
@@ -649,6 +407,19 @@
         "en": "Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'. Missing month (Day) will be filled with '01'",
         "zh_TW": "接受的格式為 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'。若未填寫月 (日)，則由 '01' 取代。"
       }
+    },
+    {
+      "field_name": "preprocessing",
+      "label": {
+        "en": "Preprocessing",
+        "zh_TW": "資料處理歷程"
+      },
+      "form_placeholder": {
+        "en": "Steps of data generating process",
+        "zh_TW": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫"
+      },
+      "form_snippet": "markdown.html",
+      "display_snippet": "markdown.html"
     },
     {
       "field_name": "owner_org",

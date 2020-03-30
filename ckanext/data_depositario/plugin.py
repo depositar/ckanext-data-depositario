@@ -84,10 +84,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         for field_name in ['data_type', 'language']:
             value = data_dict.get(field_name, '')
             data_dict[field_name+'_facet'] = value
-        if field_name == 'book_hist_materials':
-            value = data_dict.get(field_name, [])
-            if value:
-                data_dict[field_name+'_facet'] = json.loads(value)
 
         return data_dict
 
@@ -188,8 +184,6 @@ def _add_facets(facets_dict, group=False):
         new_facets_dict['date_facet'] = ''
     new_facets_dict['data_type_facet'] = p.toolkit._('Data Type')
     new_facets_dict['language_facet'] = p.toolkit._('Language')
-    new_facets_dict['book_hist_materials_facet'] = \
-            p.toolkit._('Historical Material')
 
     return new_facets_dict
 
