@@ -429,7 +429,7 @@
         "en": "Contact Person Email",
         "zh_TW": "聯絡人的電子郵件"
       },
-      "validators": "email_validator",
+      "validators": "ignore_missing unicode email_validator",
       "form_placeholder": "joe@example.com",
       "display_property": "dc:contributor",
       "display_snippet": "email.html"
