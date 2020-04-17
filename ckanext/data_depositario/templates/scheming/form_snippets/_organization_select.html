@@ -3,6 +3,20 @@
 {# this snippet is meant to be called from organization.html,
 not used as a form_snippet directly #}
 
+<style>
+fieldset.checkboxes label {
+    font-weight: normal;
+    display: block;
+}
+fieldset.checkboxes label:after {
+    content: none;
+}
+fieldset.checkboxes label input {
+    width: auto;
+    top: 0;
+}
+</style>
+
 {% macro _organization() %}
   {% set existing_org = data.owner_org or data.group_id %}
   {% call form.input_block('field-organizations',
