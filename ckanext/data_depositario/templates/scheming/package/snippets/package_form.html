@@ -13,10 +13,10 @@
     {% if field.field_name == 'temp_res' %}
       <legend><h2> {{ _('Spatio-temporal Information') }} </h2></legend>
       <h3> {{ _('Temporal Information (Time Period of Dataset)') }} </h3>
-    {% elif field.field_name == 'maintainer_name' %}
+    {% elif field.field_name == 'contact_person' %}
       <div class="control-group control-medium">
-        <div class="controls" data-module="maintainer" data-module-account_display_name="{{ c.userobj.display_name if c.userobj else ''}}" data-module-account_email="{{ c.userobj.email if c.userobj else ''}}">
-          <button id="maintainer_autofill" class="btn btn-primary" type="button">{{ _('Use your account information to fill in contact person\'s name and email') }}</button>
+        <div class="controls" data-module="contact_person" data-module-account_display_name="{{ c.userobj.display_name if c.userobj else ''}}" data-module-account_email="{{ c.userobj.email if c.userobj else ''}}">
+          <button id="contact_person_autofill" class="btn btn-primary" type="button">{{ _('Use your account information to fill in contact person\'s name and email') }}</button>
         </div>
       </div>
     {% elif field.field_name == 'spatial' %}
