@@ -93,10 +93,10 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
     def after_search(self, search_results, search_params):
         facets = search_results.get('search_facets')
-        if not facets:
+        results = search_results.get('results')
+        if not facets or not results:
             return search_results
-        dataset_type = search_results['results'][0]['type']
-        schema = scheming_helpers.scheming_get_dataset_schema(dataset_type)
+        schema = scheming_helpers.scheming_get_dataset_schema(results[0]['type'])
         for facet in facets.values():
             for item in facet['items']:
                 field_name = facet['title'].replace('_facet', '')
