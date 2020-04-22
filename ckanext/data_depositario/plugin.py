@@ -1,6 +1,8 @@
 from logging import getLogger
 
+from datetime import date
 from datetime import datetime
+from dateutil.parser import parse
 import ckan.plugins as p
 import ckan.logic as logic
 from ckan.logic.action.create import user_create as ckan_user_create
@@ -46,32 +48,19 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
     ## IPackageController
     def before_search(self, search_params):
-        def parse_date(date_string):
-            '''
-            Parse a date string or throw a nice error into the log. Re-raises
-            the error for the plugin to catch.
-            '''
-            try:
-                return datetime.strptime(date_string, '%Y-%m-%d')
-            except ValueError as e:
-                log.debug('Date {0} not in the right format. Needs to be YYYY'
-                        '-MM-DD'.format(date_string))
-                raise e
-
-        if (search_params.get('extras', None) and 'ext_begin_date' in
-                search_params['extras'] and 'ext_end_date' in
+        if (search_params.get('extras', None) and 'ext_begin' in
+                search_params['extras'] and 'ext_end' in
                 search_params['extras']):
             try:
-                begin = parse_date(search_params['extras']['ext_begin_date'])
-                end = parse_date(search_params['extras']['ext_end_date'])
+                begin = search_params['extras']['ext_begin']
+                end = search_params['extras']['ext_end']
             except ValueError:
                 return search_params
-            # Adding 'Z' manually here is evil, but we do this in core too.
-            query = ("((start_time: [* TO {0}Z] AND "
-                     "end_time: [{0}Z TO *]) OR "
-                     "(start_time: [{0}Z TO {1}Z] AND "
-                     "end_time: [{0}Z TO *]))")
-            query = query.format(begin.isoformat(), end.isoformat())
+            query = ("((start_time: [* TO {0}] AND "
+                     "end_time: [{0} TO *]) OR "
+                     "(start_time: [{0} TO {1}] AND "
+                     "end_time: [{0} TO *]))")
+            query = query.format(begin, end)
 
             q = search_params.get('q', '').strip() or '""'
             new_q = '%s AND %s' % (q if q else '', query)
@@ -88,6 +77,17 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             except ValueError:
                 # For old datasets with single data_type and language.
                 data_dict[field_name+'_facet'] = value
+        # Index start_time and end_time in TrieDateField because
+        # DateRangeField is not sortable.
+        if data_dict.get('start_time'):
+            data_dict['start_time_t'] = parse( \
+                    data_dict['start_time'],
+                    default=datetime(1, 1, 1)).isoformat() + 'Z'
+        if data_dict.get('end_time'):
+            data_dict['end_time_t'] = parse( \
+                    data_dict['end_time'],
+                    default=datetime(date.today().year, 12, 31)) \
+                    .isoformat() + 'Z'
 
         return data_dict
 
@@ -143,7 +143,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         function_names = (
             'extras_to_dict',
 	    'geojson_to_wkt',
-            'date_to_iso',
             'get_default_slider_values',
             'get_date_url_param',
             'get_gmap_config',

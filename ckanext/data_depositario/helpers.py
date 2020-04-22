@@ -6,8 +6,6 @@ from geomet import wkt
 import re
 import json
 import logging
-import dateutil
-from datetime import date
 from ckanext import data_depositario
 
 log = logging.getLogger(__name__)
@@ -23,48 +21,30 @@ def extras_to_dict(pkg):
 def geojson_to_wkt(value):
    return wkt.dumps(json.loads(value))
 
-def date_to_iso(value, temp_res=None):
-   result = ''
-   result = dateutil.parser.parse(value).isoformat().split('T')[0]
-   if temp_res is not None:
-      if temp_res == u'month':
-         result = result.split('-')[0] + '-' + result.split('-')[1]
-      elif temp_res == u'year' or temp_res == u'decade' or temp_res == u'century':
-         result = result.split('-')[0]
-   return result
-
 def get_default_slider_values():
    data_dict = {
-         'sort': 'start_time asc',
-         'rows': 1,
-          'q': 'start_time:[* TO *]',
+      'sort': 'start_time_t asc',
+      'rows': 1,
+      'q': 'start_time_t:[* TO *]',
    }
    result = p.toolkit.get_action('package_search')({}, data_dict)['results']
-   if len(result) == 1:
-      start_time = result[0].get('start_time')
-      begin = dateutil.parser.parse(start_time).isoformat().split('T')[0]
-   else:
-      begin = date.today().isoformat()
+   start_time = result[0].get('start_time')
 
    data_dict = {
-            'sort': 'end_time desc',
-            'rows': 1,
-            'q': 'end_time:[* TO *]',
+      'sort': 'end_time_t desc',
+      'rows': 1,
+      'q': 'end_time_t:[* TO *]',
    }
    result = p.toolkit.get_action('package_search')({}, data_dict)['results']
-   if len(result) == 1:
-      end_time = result[0].get('end_time')
-      end = dateutil.parser.parse(end_time).isoformat().split('T')[0]
-   else:
-      end = date.today().isoformat()
-   return begin, end
+   end_time = result[0].get('end_time')
+   return start_time, end_time
 
 def get_date_url_param():
    params = ['', '']
    for k, v in p.toolkit.request.params.items():
-      if k == 'ext_begin_date':
+      if k == 'ext_begin':
          params[0] = v
-      elif k == 'ext_end_date':
+      elif k == 'ext_end':
          params[1] = v
       else:
          continue

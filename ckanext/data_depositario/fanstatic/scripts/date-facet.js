@@ -16,8 +16,8 @@
         });
 
         var form = $(".search-form");
-        $('<input type="hidden" />').attr({'id': 'ext_begin_date', 'name': 'ext_begin_date', 'value': this.options.default_begin}).appendTo(form);
-        $('<input type="hidden" />').attr({'id': 'ext_end_date', 'name': 'ext_end_date', 'value': this.options.default_end}).appendTo(form);
+        $('<input type="hidden" />').attr({'id': 'ext_begin', 'name': 'ext_begin', 'value': this.options.default_begin}).appendTo(form);
+        $('<input type="hidden" />').attr({'id': 'ext_end', 'name': 'ext_end', 'value': this.options.default_end}).appendTo(form);
 
         var defaultValues = {
           min: this._getDate(this.options.default_begin),
@@ -26,8 +26,8 @@
         if (defaultValues.min === '' && defaultValues.max === '') {
           defaultValues.min = this._getDate(this.options.begin);
           defaultValues.max = this._getDate(this.options.end);
-	  $('[id="ext_begin_date"]').removeAttr('value');
-	  $('[id="ext_end_date"]').removeAttr('value');
+	  $('[id="ext_begin"]').removeAttr('value');
+	  $('[id="ext_end"]').removeAttr('value');
         }
 
         $('<div id="dateSlider" />')
@@ -39,31 +39,32 @@
               min: this._getDate(this.options.begin),
               max: this._getDate(this.options.end)
             },
-            defaultValues: defaultValues
+            defaultValues: defaultValues,
+            formatter: this._sliderFormatter
           })
           .on('userValuesChanged', this._handleSliderChanged);
 
 	$('.show-filters').click(this._checkForChanges);
       },
       _convertDate: function (date) {
-        return moment(date).format('YYYY-MM-DD');
+        return moment(date).format('YYYY');
       },
       _getDate: function (date) {
         if (date.length !== 0 && date !== true) {
-          return new Date(date);
+          return new Date(date.toString());
         }
         return '';
       },
       _handleSliderChanged: function (event, data) {
 	var url = document.URL;
-	url = this._updateQueryStringParameter(url, 'ext_begin_date', this._convertDate(data.values.min));
-	url = this._updateQueryStringParameter(url, 'ext_end_date', this._convertDate(data.values.max));
+	url = this._updateQueryStringParameter(url, 'ext_begin', this._convertDate(data.values.min));
+	url = this._updateQueryStringParameter(url, 'ext_end', this._convertDate(data.values.max));
 	window.location = url;
       },
       _handleUpdateURL: function (event) {
         var url = document.URL;
-        url = this._updateQueryStringParameter(url, 'ext_begin_date', $('[name="begin"]', this.el).val());
-        url = this._updateQueryStringParameter(url, 'ext_end_date', $('[name="end"]', this.el).val());
+        url = this._updateQueryStringParameter(url, 'ext_begin', $('[name="begin"]', this.el).val());
+        url = this._updateQueryStringParameter(url, 'ext_end', $('[name="end"]', this.el).val());
         window.location = url;
       },
       _updateQueryStringParameter: function (uri, key, value) {
@@ -77,6 +78,9 @@
       },
       _checkForChanges: function (event) {
         $('[id="dateSlider"]', this.el).dateRangeSlider('resize');
+      },
+      _sliderFormatter: function (value) {
+        return value.getFullYear();
       }
     };
   });

@@ -39,6 +39,7 @@ schema. In this case the version should be set to the next CKAN version number.
     <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" omitNorms="true" positionIncrementGap="0"/>
     <fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" omitNorms="true" positionIncrementGap="0"/>
     <fieldType name="date" class="solr.TrieDateField" omitNorms="true" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="date_range" class="solr.DateRangeField"/>
     <fieldType name="tdate" class="solr.TrieDateField" omitNorms="true" precisionStep="6" positionIncrementGap="0"/>
 
     <fieldType name="tdates" class="solr.TrieDateField" precisionStep="7" positionIncrementGap="0" multiValued="true"/>
@@ -169,7 +170,8 @@ schema. In this case the version should be set to the next CKAN version number.
     <dynamicField name="*" type="text" indexed="true" stored="false"/>
 
     <!-- For temporal search -->
-    <dynamicField name="*_time" type="date" indexed="true" stored="true" multiValued="false"/>
+    <dynamicField name="*_time" type="date_range" indexed="true" stored="true" multiValued="false"/>
+    <dynamicField name="*_time_t" type="date" indexed="true" stored="true" multiValued="false"/>
 
     <!-- For spatial search -->
     <field name="spatial_geom" type="location_rpt" indexed="true" stored="true" multiValued="true"/>

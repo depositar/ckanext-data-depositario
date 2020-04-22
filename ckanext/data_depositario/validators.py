@@ -106,8 +106,6 @@ def date_validator(key, data, errors, context):
     """
     Raises Invalid if the given value is not
     YYYY, YYYY-MM, or YYYY-MM-DD.
-
-    The month and day will be ``01`` if either one is missing.
     """
     if errors[key]:
         return
@@ -116,9 +114,6 @@ def date_validator(key, data, errors, context):
 
     if value == '':
         data[key] = None
-        return
-
-    if value[-1] == 'Z':
         return
 
     time_format = ''
@@ -137,4 +132,3 @@ def date_validator(key, data, errors, context):
     except ValueError: is_error[2] = True
     if len(set(is_error)) <= 1:
         raise Invalid(_('Date format incorrect'))
-    data[key] = datetime.strptime(value, time_format).isoformat() + 'Z'

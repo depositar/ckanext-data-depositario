@@ -258,7 +258,6 @@
         "en": "Start Time",
         "zh_TW": "起始時間"
       },
-      "preset": "date_modified",
       "validators": "ignore_empty temp_res_validator",
       "help_text": {
         "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
@@ -272,7 +271,6 @@
         "en": "End Time",
         "zh_TW": "結束時間"
       },
-      "preset": "date_modified",
       "validators": "ignore_empty temp_res_validator",
       "help_text": {
         "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
@@ -385,12 +383,10 @@
         "en": "Created Time",
         "zh_TW": "資料產製時間"
       },
-      "preset": "date_modified",
-      "validators": "ignore_empty date_validator",
-      "has_temp_res": false,
-      "help_text": {
-        "en": "Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'. Missing month (Day) will be filled with '01'",
-        "zh_TW": "接受的格式為 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'。若未填寫月 (日)，則由 '01' 取代。"
+      "validators": "ignore_missing date_validator",
+      "form_placeholder": {
+        "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
+        "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'"
       }
     },
     {
