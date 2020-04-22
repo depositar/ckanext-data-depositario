@@ -65,43 +65,6 @@ def json_validator(value, context):
       raise Invalid('Invalid JSON')
    return value
 
-def temp_res_validator(key, data, errors, context):
-    """
-    Raises Invalid if the given value is not
-    YYYY (as Temporal Resolution is year, decade, or century),
-    YYYY-MM (as Temporal Resolution is month), or
-    YYYY-MM-DD (as Temporal Resolution is date).
-    """
-    if errors[key]:
-        return
-
-    value = data[key]
-
-    if value == '':
-        data[key] = None
-        return
-
-    if value[-1] == 'Z':
-        return
-
-    time_format = { u'date': ['%Y-%m-%d', 'YYYY-MM-DD'],
-            u'month': ['%Y-%m', 'YYYY-MM'],
-            u'year': ['%Y', 'YYYY'],
-            u'decade': ['%Y', 'YYYY', 10],
-            u'century': ['%Y', 'YYYY', 100] }
-    temp_res = data.get(('temp_res',), '')
-    if temp_res:
-        try:
-            if (temp_res == u'decade' or temp_res == u'century'):
-                res = int(value)%time_format[temp_res][2]
-                if (res != 0):
-                    value = str(int(value) - res)
-            value = datetime.strptime(value,
-                    time_format[temp_res][0])
-        except ValueError:
-            raise Invalid(_('Date format incorrect') + _(', should be: ') + '%s' % time_format[temp_res][1])
-        data[key] = value.isoformat() + 'Z'
-
 def date_validator(key, data, errors, context):
     """
     Raises Invalid if the given value is not

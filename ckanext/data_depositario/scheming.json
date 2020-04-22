@@ -258,12 +258,11 @@
         "en": "Start Time",
         "zh_TW": "起始時間"
       },
-      "validators": "ignore_empty temp_res_validator",
-      "help_text": {
-        "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
-        "zh_TW": "由時間解析度決定。接受的格式為 'YYYY' (年/十年/百年)、'YYYY-MM' (月)、'YYYY-MM-DD' (日)。"
-      },
-      "help_inline": true
+      "validators": "ignore_missing date_validator",
+      "form_placeholder": {
+        "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
+        "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD"
+      }
     },
     {
       "field_name": "end_time",
@@ -271,12 +270,11 @@
         "en": "End Time",
         "zh_TW": "結束時間"
       },
-      "validators": "ignore_empty temp_res_validator",
-      "help_text": {
-        "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
-        "zh_TW": "由時間解析度決定。接受的格式為 'YYYY' (年/十年/百年)、'YYYY-MM' (月)、'YYYY-MM-DD' (日)。"
-      },
-      "help_inline": true
+      "validators": "ignore_missing date_validator",
+      "form_placeholder": {
+        "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
+        "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD"
+      }
     },
     {
       "field_name": "spatial",
