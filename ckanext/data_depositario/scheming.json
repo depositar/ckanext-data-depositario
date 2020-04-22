@@ -223,20 +223,6 @@
           }
         },
        {
-         "value": "decade",
-         "label": {
-           "en": "Decade",
-           "zh_TW": "十年"
-         }
-       },
-       {
-         "value": "century",
-         "label": {
-           "en": "Century",
-           "zh_TW": "一百年"
-         }
-       },
-       {
          "value": "date",
          "label": {
            "en": "Date",
