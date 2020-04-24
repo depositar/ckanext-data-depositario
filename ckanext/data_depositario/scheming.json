@@ -247,7 +247,7 @@
       "validators": "ignore_empty",
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
-        "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD"
+        "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'"
       }
     },
     {
@@ -259,7 +259,7 @@
       "validators": "ignore_empty end_time_validator",
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
-        "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD"
+        "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'"
       }
     },
     {
