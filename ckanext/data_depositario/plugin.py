@@ -87,8 +87,10 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         if data_dict.get('end_time'):
             end_time_t = parse(data_dict['end_time'],
                     default=datetime(date.today().year, 12, 1))
-            end_time_t = end_time_t.replace( \
-                    day=monthrange(end_time_t.year, end_time_t.month)[1])
+            if len(data_dict['end_time']) == 7:
+                # If the day of month is missing
+                end_time_t = end_time_t.replace( \
+                        day=monthrange(end_time_t.year, end_time_t.month)[1])
             data_dict['end_time_t'] = end_time_t.isoformat() + 'Z'
 
         return data_dict
