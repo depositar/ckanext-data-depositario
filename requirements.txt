@@ -1,5 +1,5 @@
 requests[security]
-python-dateutil
+python-dateutil>=2.7.0
 geomet>=0.1.0
 pycountry
 -e git+git://github.com/depositar-io/ckan.git#egg=ckan

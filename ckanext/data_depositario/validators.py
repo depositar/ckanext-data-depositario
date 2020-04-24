@@ -3,7 +3,7 @@ from ckan.lib.navl.dictization_functions import Invalid
 from ckan.logic.validators import int_validator
 from ckan.common import _
 import re
-from datetime import datetime
+from dateutil.parser import isoparse
 
 
 def long_validator(value, context):
@@ -72,17 +72,14 @@ def date_validator(key, data, errors, context):
     """
     value = data[key]
 
-    is_error = [False, False, False]
+    # Solr needs zero-padded month and day
+    date_match = re.compile('^\d{4}(-\d{2})?(-\d{2})?$')
+    date_error = _('Date format incorrect')
 
-    try:
-        datetime.strptime(value, '%Y')
-    except ValueError: is_error[0] = True
-    try:
-        datetime.strptime(value, '%Y-%m')
-    except ValueError: is_error[1] = True
-    try:
-        datetime.strptime(value, '%Y-%m-%d')
-    except ValueError: is_error[2] = True
-
-    if len(set(is_error)) <= 1:
-        errors[key] = [_('Date format incorrect')]
+    if date_match.match(value):
+        try:
+            isoparse(value)
+        except ValueError:
+            errors[key] = [date_error]
+    else:
+        errors[key] = [date_error]
