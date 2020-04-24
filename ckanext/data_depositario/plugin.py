@@ -1,5 +1,6 @@
 from logging import getLogger
 
+from calendar import monthrange
 from datetime import date
 from datetime import datetime
 from dateutil.parser import parse
@@ -84,10 +85,11 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
                     data_dict['start_time'],
                     default=datetime(1, 1, 1)).isoformat() + 'Z'
         if data_dict.get('end_time'):
-            data_dict['end_time_t'] = parse( \
-                    data_dict['end_time'],
-                    default=datetime(date.today().year, 12, 31)) \
-                    .isoformat() + 'Z'
+            end_time_t = parse(data_dict['end_time'],
+                    default=datetime(date.today().year, 12, 1))
+            end_time_t = end_time_t.replace( \
+                    day=monthrange(end_time_t.year, end_time_t.month)[1])
+            data_dict['end_time_t'] = end_time_t.isoformat() + 'Z'
 
         return data_dict
 
