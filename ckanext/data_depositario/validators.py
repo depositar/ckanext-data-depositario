@@ -70,28 +70,19 @@ def date_validator(key, data, errors, context):
     Raises Invalid if the given value is not
     YYYY, YYYY-MM, or YYYY-MM-DD.
     """
-    if errors[key]:
-        return
-
     value = data[key]
 
-    if value == '':
-        data[key] = None
-        return
-
-    time_format = ''
     is_error = [False, False, False]
+
     try:
         datetime.strptime(value, '%Y')
-        time_format = '%Y'
     except ValueError: is_error[0] = True
     try:
         datetime.strptime(value, '%Y-%m')
-        time_format = '%Y-%m'
     except ValueError: is_error[1] = True
     try:
         datetime.strptime(value, '%Y-%m-%d')
-        time_format = '%Y-%m-%d'
     except ValueError: is_error[2] = True
+
     if len(set(is_error)) <= 1:
-        raise Invalid(_('Date format incorrect'))
+        errors[key] = [_('Date format incorrect')]

@@ -244,7 +244,7 @@
         "en": "Start Time",
         "zh_TW": "起始時間"
       },
-      "validators": "ignore_missing date_validator",
+      "validators": "ignore_empty date_validator",
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
         "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD"
@@ -256,7 +256,7 @@
         "en": "End Time",
         "zh_TW": "結束時間"
       },
-      "validators": "ignore_missing date_validator",
+      "validators": "ignore_empty date_validator",
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
         "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD"
@@ -367,7 +367,7 @@
         "en": "Created Time",
         "zh_TW": "資料產製時間"
       },
-      "validators": "ignore_missing date_validator",
+      "validators": "ignore_empty date_validator",
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
         "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'"
