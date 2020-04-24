@@ -3,6 +3,10 @@ from ckan.lib.navl.dictization_functions import Invalid
 from ckan.logic.validators import int_validator
 from ckan.common import _
 import re
+from calendar import monthrange
+from datetime import date
+from datetime import datetime
+from dateutil.parser import parse
 from dateutil.parser import isoparse
 
 
@@ -83,3 +87,31 @@ def date_validator(key, data, errors, context):
             errors[key] = [date_error]
     else:
         errors[key] = [date_error]
+
+def end_time_validator(key, data, errors, context):
+   """
+   Raises Invalid if end time is smaller than start time.
+   """
+
+   start_time = data.get(('start_time',))
+   end_time = data.get(('end_time',))
+
+   if not start_time or not end_time:
+      return
+
+   date_validator(('start_time',), data, errors, context)
+   date_validator(('end_time',), data, errors, context)
+
+   if errors.get(('start_time',)) or errors.get(('end_time',)):
+      return
+
+   start_time_p = parse(start_time, default=datetime(1, 1, 1))
+   end_time_p = parse(end_time, default=datetime(date.today().year, 12, 1))
+   if len(end_time) == 7:
+      # If the day of month is missing
+      end_time_p = end_time_p.replace( \
+            day=monthrange(end_time_p.year, end_time_p.month)[1])
+
+   if end_time_p < start_time_p:
+       raise Invalid(_('End time should be greater than \
+             or equal to start time'))
