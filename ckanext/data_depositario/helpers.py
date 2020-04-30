@@ -28,6 +28,7 @@ def get_default_slider_values():
       'q': 'start_time_t:[* TO *]',
    }
    result = p.toolkit.get_action('package_search')({}, data_dict)['results']
+   if not result: return
    start_time = result[0].get('start_time')
 
    data_dict = {
@@ -36,7 +37,11 @@ def get_default_slider_values():
       'q': 'end_time_t:[* TO *]',
    }
    result = p.toolkit.get_action('package_search')({}, data_dict)['results']
+   if not result: return
    end_time = result[0].get('end_time')
+
+   if start_time == end_time: return
+
    return start_time, end_time
 
 def get_date_url_param():

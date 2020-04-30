@@ -4,14 +4,18 @@ Displays a slider widget to define a date filter on the dataset search page side
 {% set date_range = h.get_default_slider_values() %}
 {% set default_dates = h.get_date_url_param() %}
 
-<section class="module module-narrow module-shallow js-hide" data-module="date-facet" data-module-begin="{{ date_range[0] }}" data-module-end="{{ date_range[1] }}" data-module-default_begin="{{ default_dates[0] }}" data-module-default_end="{{ default_dates[1] }}">
+<section class="module module-narrow module-shallow">
   <h2 class="module-heading">
     <i class="fa fa-medium fa-calendar"></i>
     {{ _('Temporal Search') }}
+  {% if date_range %}
     <a href="{{ h.remove_url_param(['ext_begin', 'ext_end']) }}" class="action">
       {{ _('Clear') }}
-    </a>
-  </h2>
+    </a></h2>
+    <div data-module="date-facet" data-module-begin="{{ date_range[0] }}" data-module-end="{{ date_range[1] }}" data-module-default_begin="{{ default_dates[0] }}" data-module-default_end="{{ default_dates[1] }}"></div>
+  {% else %}
+    </h2><p class="module-content empty">{{ _('Add datasets with time range to use this facet') }}</p>
+  {% endif %}
 </section>
 
 {% resource 'ckanext-data-depositario/date_facet_slider' %}

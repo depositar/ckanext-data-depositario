@@ -10,8 +10,6 @@
       initialize: function () {
         $.proxyAll(this, /_/);
 
-        this.el.removeClass('js-hide');
-
         var form = $(".search-form");
         $('<input type="hidden" />').attr({'id': 'ext_begin', 'name': 'ext_begin', 'value': this.options.default_begin}).appendTo(form);
         $('<input type="hidden" />').attr({'id': 'ext_end', 'name': 'ext_end', 'value': this.options.default_end}).appendTo(form);
@@ -28,7 +26,7 @@
         }
 
         $('<div id="dateSlider" />')
-          .insertAfter($('.module-heading', this.el))
+          .insertAfter(this.el)
           .dateRangeSlider({
             valueLabels:"change",
             delayOut: 4000,
