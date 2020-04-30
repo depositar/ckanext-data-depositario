@@ -11,9 +11,6 @@
         $.proxyAll(this, /_/);
 
         this.el.removeClass('js-hide');
-        $('input', this.el).datepicker({
-          dateFormat: 'yy-mm-dd'
-        });
 
         var form = $(".search-form");
         $('<input type="hidden" />').attr({'id': 'ext_begin', 'name': 'ext_begin', 'value': this.options.default_begin}).appendTo(form);
