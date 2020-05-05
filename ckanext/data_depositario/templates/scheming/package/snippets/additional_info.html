@@ -39,9 +39,11 @@
   {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Basic Information'), pkg_dict=pkg_dict, additional_fields=basic_info_fields, exclude_fields=exclude_fields, schema=schema %}
 </section>
 
-<section class="additional-info">
-  {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Spatio-temporal Information'), pkg_dict=pkg_dict, additional_fields=spatial_temporal_fields, exclude_fields=exclude_fields, schema=schema %}
-</section>
+{% if pkg_dict['temp_res'] or pkg_dict['start_time'] or pkg_dict['end_time'] or pkg_dict['spatial'] or pkg_dict['x_min'] or pkg_dict['x_max'] or pkg_dict['y_min'] or pkg_dict['y_max'] or pkg_dict['spatial_res'] %}
+  <section class="additional-info">
+    {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Spatio-temporal Information'), pkg_dict=pkg_dict, additional_fields=spatial_temporal_fields, exclude_fields=exclude_fields, schema=schema %}
+  </section>
+{% endif %}
 
 <sction class="additional-info">
   {% snippet 'scheming/package/snippets/additional_info_fields.html', title=_('Management Information'), pkg_dict=pkg_dict, additional_fields=mgmt_info_fields, exclude_fields=exclude_fields, schema=schema %}
