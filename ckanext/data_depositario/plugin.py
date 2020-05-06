@@ -182,15 +182,17 @@ def _get_module_functions(module, function_names):
     return functions
 
 def _add_facets(facets_dict, group=False):
-    new_facets_dict = OrderedDict(facets_dict.items()[:2])
-    new_facets_dict['organization'] = p.toolkit._('Projects')
-    new_facets_dict['groups'] = p.toolkit._('Topics')
-    new_facets_dict['keywords_facet'] = p.toolkit._('Keywords')
-    new_facets_dict = OrderedDict(new_facets_dict.items() + facets_dict.items()[2:])
+    new_facets_dict = OrderedDict([
+        ('keywords_facet', ''),
+        facets_dict.items()[2],
+        ('data_type_facet', p.toolkit._('Data Type')),
+        ('organization', p.toolkit._('Projects')),
+        ('groups', p.toolkit._('Topics')),
+        ('language_facet', p.toolkit._('Language'))
+    ] + facets_dict.items()[3:])
+
     if not group:
         new_facets_dict['date_facet'] = ''
-    new_facets_dict['data_type_facet'] = p.toolkit._('Data Type')
-    new_facets_dict['language_facet'] = p.toolkit._('Language')
 
     return new_facets_dict
 
