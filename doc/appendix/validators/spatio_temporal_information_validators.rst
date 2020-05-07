@@ -9,10 +9,10 @@
      - :ref:`scheming_required <external_validators>` :ref:`scheming_choices <external_validators>`
 
    * - 起始時間
-     - :ref:`ignore_empty <external_validators>` :ref:`temp_res_validator <internal_validators>`
+     - :ref:`ignore_empty <external_validators>`
 
    * - 結束時間
-     - :ref:`ignore_empty <external_validators>` :ref:`temp_res_validator <internal_validators>`
+     - :ref:`ignore_empty <external_validators>` :ref:`end_time_validator <internal_validators>`
 
    * - 空間範圍
      - :ref:`ignore_empty <external_validators>` :ref:`json_validator <internal_validators>` :ref:`remove_blank_wrap <internal_validators>`
