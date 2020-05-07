@@ -25,7 +25,7 @@
    * - 資料類型
      - 是
      - 資料集所屬之類型。
-     - 接受多值。`PARSE.Insight content-types <http://gfzpublic.gfz-potsdam.de/pubman/item/escidoc:1397899:6/component/escidoc:1398549/re3data_schema_documentation_v3_0.pdf>`_
+     - 接受多值。依據 :ref:`parse-insight-content-types`。
 
    * - Wikidata 關鍵字
      - 否
@@ -40,7 +40,7 @@
 
    * - 語言
      - 否
-     - 本項目說明資料集內容所使用之語言，如歷史文獻可能為華語、日語、西班牙語系等。
+     - 本項目說明資料集內容所使用之語言，如歷史文獻可能為華語、日語、西班牙語系等。選項將先列出主要語言（依據維基百科：`World language`_ 與 `Languages of Taiwan`_ 條目），再依照 ISO 639-3 語言編碼字母排序列出。
      - 接受多值。限使用 ISO 639-3 語言編碼。
 
    * - 備註
@@ -49,3 +49,5 @@
      - Markdown 欄位。
 
 .. [#] .. image:: /images/keyword_wikidata.png
+.. _World language: https://en.wikipedia.org/wiki/World_language#Living_world_languages
+.. _Languages of Taiwan: https://en.wikipedia.org/wiki/Languages_of_Taiwan

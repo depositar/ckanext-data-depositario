@@ -8,3 +8,4 @@
    fields/index
    validators/index
    glossary
+   others/index
