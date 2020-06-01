@@ -2,28 +2,15 @@
 自原始碼安裝
 ============
 
-本節將描述如何自原始碼安裝本平台（|site_name|）使用之 CKAN 軟體。示範系統為 Debian 10 (buster)。
+本節將描述如何自原始碼安裝本平台（|site_name|）使用之 CKAN 軟體。示範系統為 Ubuntu 16.04。
 
 ---------------
 1. 安裝必須套件
 ---------------
 
-a. 請依序執行以下指令，以新增套件資訊
+.. parsed-literal::
 
-   .. parsed-literal::
-
-      sudo apt-get install software-properties-common gnupg
-      sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -c -s)-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
-      sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
-      wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-      wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
-      sudo apt update
-
-b. 安裝套件
-
-   .. parsed-literal::
-
-      sudo apt install build-essential libxslt1-dev libxml2-dev python-dev postgresql-9.6 libpq-dev python-pip python-virtualenv git-core adoptopenjdk-8-hotspot redis-server
+   sudo apt-get install build-essential libxslt1-dev libxml2-dev python-dev postgresql libpq-dev python-pip python-virtualenv git-core openjdk-8-jdk redis-server
 
 -------------------------------
 2. 安裝 CKAN 於 Python 虛擬環境
@@ -168,9 +155,9 @@ c. 安裝 PostGIS
 
    .. parsed-literal::
 
-      sudo apt install postgresql-9.6-postgis-2.5 python-dev libxml2-dev libxslt1-dev libgeos-c1v5
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/9.6/contrib/postgis-2.5/postgis.sql
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/9.6/contrib/postgis-2.5/spatial_ref_sys.sql
+      sudo apt-get install postgresql-9.5-postgis-2.2 python-dev libxml2-dev libxslt1-dev libgeos-c1v5
+      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/9.5/contrib/postgis-2.2/postgis.sql
+      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/9.5/contrib/postgis-2.2/spatial_ref_sys.sql
       sudo -u postgres psql -d ckan_default -c 'ALTER VIEW geometry_columns OWNER TO ckan_default;'
       sudo -u postgres psql -d ckan_default -c 'ALTER TABLE spatial_ref_sys OWNER TO ckan_default;'
 
