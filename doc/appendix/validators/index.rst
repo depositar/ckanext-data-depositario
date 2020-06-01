@@ -84,9 +84,9 @@ clean_format
 
 .. note::
 
-   *選填欄位基本轉換器*：:ref:`ignore_missing <external_validators>` :ref:`unicode <external_validators>`
+   *選填欄位基本校驗器*：:ref:`ignore_missing <external_validators>` :ref:`unicode <external_validators>`
 
-   *必填欄位基本轉換器*：:ref:`not_empty <external_validators>` :ref:`unicode <external_validators>`
+   *必填欄位基本校驗器*：:ref:`not_empty <external_validators>` :ref:`unicode <external_validators>`
 
 """"""""
 基本資訊

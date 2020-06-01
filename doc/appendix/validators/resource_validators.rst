@@ -9,10 +9,10 @@
      - :ref:`ignore_missing <external_validators>` :ref:`unicode <external_validators>` :ref:`remove_whitespace <external_validators>`
 
    * - 名稱
-     - *選填欄位基本轉換器*
+     - *選填欄位基本校驗器*
 
    * - 摘要
-     - *選填欄位基本轉換器*
+     - *選填欄位基本校驗器*
 
    * - 文字編碼
      - :ref:`scheming_required <external_validators>` :ref:`scheming_choices <external_validators>`
