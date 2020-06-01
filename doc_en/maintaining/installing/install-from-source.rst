@@ -54,17 +54,17 @@ b. Install the recommended setuptools version:
 
       pip install setuptools==36.1
 
-c. Install the CKAN source code and customized extesion into your virtualenv.
+c. Install CKAN into your virtualenv:
+
+   .. parsed-literal::
+
+      pip install -e 'git+git://github.com/depositar-io/ckan.git#egg=ckan'
+
+d. Install customized extesion into your virtualenv:
 
    .. parsed-literal::
 
       pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
-
-d. Install the Python modules that customized extesion requires into your virtualenv:
-
-   .. parsed-literal::
-
-      pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
 
 e. Install the Python modules that CKAN requires into your virtualenv:
 
@@ -72,7 +72,13 @@ e. Install the Python modules that CKAN requires into your virtualenv:
 
       pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
 
-f. Install other required Python modules into your virtualenv:
+f. Install the Python modules that customized extesion requires into your virtualenv:
+
+   .. parsed-literal::
+
+      pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
+
+g. Install other required Python modules into your virtualenv:
 
    .. parsed-literal::
 
@@ -112,7 +118,7 @@ b. Install the DataPusher source code into your virtualenv:
 
    .. parsed-literal::
 
-      pip install -e 'git+https://github.com/ckan/datapusher.git#egg=datapusher'
+      pip install -e 'git+https://github.com/ckan/datapusher.git@0.0.15#egg=datapusher'
 
 c. Install the Python modules that DataPusher requires into your virtualenv:
 
@@ -232,13 +238,13 @@ c. Edit the development.ini file in a text editor, changing the following option
       ckan.site_url = http://127.0.0.1:5000
 
       ## Plugins Settings
-      ckan.plugins = data_depositario depositar_theme citation
-                     wikidatakeyword stats datastore datapusher
+      ckan.plugins = data_depositario depositar_iso639 depositar_theme
+                     citation wikidatakeyword stats datastore datapusher
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view spatial_metadata spatial_query
                      geo_view geojson_view wmts_view shp_view
-                     scheming_datasets repeating multilingual_dataset
+                     scheming_datasets repeating
 
       ## Front-End Settings
       licenses_group_url = file:///usr/lib/ckan/default/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
@@ -267,9 +273,6 @@ c. Edit the development.ini file in a text editor, changing the following option
       ckanext.data_depositario.gmap.api_key = GMAP_AKI_KEY
       ## GA_ID is the id for Google Analytics
       ckanext.data_depositario.googleanalytics.id = GA_ID
-
-      ## ckanext-citation Settings
-      ckanext.citation.csl_mappings = {"author": "author_name"}
 
 -------------------------------------------------------
 7. Setup Solr (with Chinese and spatial search support)
@@ -303,12 +306,11 @@ c. Create the Solr configset for CKAN:
       sudo -u solr touch /var/solr/data/configsets/ckan/conf/protwords.txt
       sudo -u solr touch /var/solr/data/configsets/ckan/conf/synonyms.txt
 
-d. Download Chinese tokenizer ``Mmseg4j`` and copy it to the Solr directory:
+d. Download Chinese tokenizer ``mmseg4j`` and copy it to the Solr directory:
 
    .. parsed-literal::
-
-      wget http://central.maven.org/maven2/com/chenlb/mmseg4j/mmseg4j-core/1.10.0/mmseg4j-core-1.10.0.jar
-      wget http://central.maven.org/maven2/com/chenlb/mmseg4j/mmseg4j-solr/2.3.1/mmseg4j-solr-2.3.1.jar
+      wget -O mmseg4j-core-1.10.0.jar https://search.maven.org/remotecontent?filepath=com/chenlb/mmseg4j/mmseg4j-core/1.10.0/mmseg4j-core-1.10.0.jar
+      wget -O mmseg4j-solr-2.4.0.jar https://search.maven.org/remotecontent?filepath=com/chenlb/mmseg4j/mmseg4j-solr/2.4.0/mmseg4j-solr-2.4.0.jar
       sudo cp mmseg4j-\*.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
 
 e. Download geometry library JTS Topology Suite 1.13 (or above) and copy it to the Solr directory:
@@ -318,19 +320,21 @@ e. Download geometry library JTS Topology Suite 1.13 (or above) and copy it to t
       wget -O jts-1.13.jar https://search.maven.org/remotecontent?filepath=com/vividsolutions/jts/1.13/jts-1.13.jar
       sudo cp jts-1.13.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
 
-f. Restart Solr:
+f. Replace all lines in /var/solr/data/configsets/ckan/conf/solrconfig.xml from line 99 to line 102 about ``<schemaFactory class="ManagedIndexSchemaFactory">`` with ``<schemaFactory class="ClassicIndexSchemaFactory"/>``.
+
+g. Restart Solr:
 
    .. parsed-literal::
 
       sudo service solr restart
 
-g. Create a new Solr core called ``ckan`` by entering the following link in a web browser:
+h. Create a new Solr core called ``ckan`` by entering the following link in a web browser:
 
    http://127.0.0.1:8983/solr/admin/cores?action=CREATE&name=ckan&configSet=ckan
 
-h. Open http://127.0.0.1:8983/solr/#/ckan in a web browser, and you should see the Solr front page.
+i. Open http://127.0.0.1:8983/solr/#/ckan in a web browser, and you should see the Solr front page.
 
-i. Modify /etc/ckan/default/development.ini with Solr url:
+j. Modify /etc/ckan/default/development.ini with Solr url:
 
    .. parsed-literal::
 
@@ -378,7 +382,12 @@ You have to create your first CKAN sysadmin user from the command line. For exam
 
 .. parsed-literal::
 
-   paster --plugin=ckan sysadmin add admin email=admin@localhost -c /etc/ckan/default/development.ini
+   paster --plugin=ckan sysadmin add admin -c /etc/ckan/default/development.ini
+   paster --plugin=pylons shell /etc/ckan/default/development.ini
+   Execute the following commands in the interactive shell:
+   model.User.get('admin').state = 'active'
+   model.Session.commit()
+   Then press Ctrl+D to exit the interactive shell.
 
 -----------------------------------------
 11. Serve CKAN under a development server
