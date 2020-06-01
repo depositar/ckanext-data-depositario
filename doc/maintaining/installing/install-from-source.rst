@@ -111,7 +111,7 @@ b. 安裝 DataPusher 於虛擬環境
 
    .. parsed-literal::
 
-      pip install -e 'git+https://github.com/ckan/datapusher.git#egg=datapusher'
+      pip install -e 'git+https://github.com/ckan/datapusher.git@0.0.15#egg=datapusher'
 
 c. 安裝 DataPusher 所需 Python 套件
 
