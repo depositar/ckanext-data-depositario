@@ -216,23 +216,23 @@
       "preset": "select",
       "choices": [
         {
-          "value": "year",
+          "value": "yearly",
           "label": {
-            "en": "Year",
+            "en": "Yearly",
             "zh_TW": "年"
           }
         },
        {
-         "value": "date",
+         "value": "daily",
          "label": {
-           "en": "Date",
+           "en": "Daily",
            "zh_TW": "日"
          }
        },
        {
-         "value": "month",
+         "value": "monthly",
          "label": {
-           "en": "Month",
+           "en": "Monthly",
            "zh_TW": "月"
          }
        }
@@ -479,7 +479,7 @@
     {
       "field_name": "encoding",
       "label": {
-        "en": "Character Encodings",
+        "en": "Character Encoding",
         "zh_TW": "字元編碼"
       },
       "preset": "select",
