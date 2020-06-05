@@ -11,7 +11,7 @@
    * - 產製者
      - *必填欄位基本校驗器*
 
-   * - 資料產置時間
+   * - 資料產製時間
      - :ref:`ignore_empty <external_validators>` :ref:`date_validator <internal_validators>`
 
    * - 資料處理歷程
