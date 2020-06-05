@@ -1,0 +1,6 @@
+{% ckan_extends %}
+
+{% block all_user_agents -%}
+{{ super() }}
+Disallow: /user/activity/*
+{%- endblock %}
