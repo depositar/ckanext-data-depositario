@@ -1,15 +1,15 @@
 # Translations template for ckanext-data-depositario.
-# Copyright (C) 2019 ORGANIZATION
+# Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the
 # ckanext-data-depositario project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.3.6b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.4.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-08-26 14:26+0800\n"
+"POT-Creation-Date: 2020-06-05 16:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,53 +46,43 @@ msgid ""
 "before"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:160
+#: ckanext/data_depositario/plugin.py:188
+msgid "Data Type"
+msgstr ""
+
+#: ckanext/data_depositario/plugin.py:189
 #: ckanext/data_depositario/templates/header.html:34
 msgid "Projects"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:161
+#: ckanext/data_depositario/plugin.py:190
 #: ckanext/data_depositario/templates/header.html:33
 #: ckanext/data_depositario/templates/home/snippets/idx_topics.html:6
 msgid "Topics"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:162
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:19
-msgid "Keywords"
-msgstr ""
-
-#: ckanext/data_depositario/plugin.py:166
-msgid "Data Type"
-msgstr ""
-
-#: ckanext/data_depositario/plugin.py:167
+#: ckanext/data_depositario/plugin.py:191
 msgid "Language"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:169
-msgid "Historical Material"
-msgstr ""
-
-#: ckanext/data_depositario/validators.py:20
+#: ckanext/data_depositario/validators.py:24
 msgid "Must be a valid longitude coordinate"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:34
+#: ckanext/data_depositario/validators.py:38
 msgid "Must be a valid latitude coordinate"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:53
+#: ckanext/data_depositario/validators.py:57
 msgid "Must be a positive float"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:102
-#: ckanext/data_depositario/validators.py:139
+#: ckanext/data_depositario/validators.py:81
 msgid "Date format incorrect"
 msgstr ""
 
-#: ckanext/data_depositario/validators.py:102
-msgid ", should be: "
+#: ckanext/data_depositario/validators.py:116
+msgid "End time should be greater than              or equal to start time"
 msgstr ""
 
 #: ckanext/data_depositario/fanstatic/scripts/user-guide.js:26
@@ -133,6 +123,10 @@ msgstr ""
 
 #: ckanext/data_depositario/fanstatic/scripts/modules/parcel-corner-to-geojson.js:41
 msgid "Please fill in parcel corner coordinates."
+msgstr ""
+
+#: ckanext/data_depositario/fanstatic/scripts/modules/select2-pagination.js:46
+msgid "No matches found"
 msgstr ""
 
 #: ckanext/data_depositario/fanstatic/scripts/modules/slug-preview-slug-hash.js:31
@@ -498,17 +492,12 @@ msgstr ""
 msgid "show less"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/form_snippets/_organization_select.html:21
+#: ckanext/data_depositario/templates/scheming/form_snippets/_organization_select.html:35
 msgid "No project"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/form_snippets/_organization_select.html:35
+#: ckanext/data_depositario/templates/scheming/form_snippets/_organization_select.html:49
 msgid "Open for project members only"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/form_snippets/license.html:37
-#: ckanext/data_depositario/templates/snippets/license_details.html:3
-msgid "License Details"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/package/resource_read.html:5
@@ -534,53 +523,41 @@ msgid "Format"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/package/resource_read.html:44
-#: ckanext/data_depositario/templates/snippets/license.html:4
 msgid "License"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:69
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:11
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:39
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:20
 msgid "Basic Information"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:74
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:16
-msgid "Temporal Information (Time Period of Dataset)"
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:44
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:23
+msgid "Spatio-temporal Information"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:80
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:27
-msgid "Spatial Fields"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:88
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:38
-msgid "Books"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:94
+#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:49
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:42
-msgid "Pictures"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:99
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:45
 msgid "Management Information"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:14
-msgid "Descriptive Information"
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:24
+msgid "Temporal Information (Time Period of Dataset)"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:23
-msgid "Use your account information to fill in maintainer's name and email"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:31
-msgid "Convert from Parcel Corner"
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:28
+msgid "Use your account information to fill in contact person's name and email"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:32
+msgid "Spatial Information"
+msgstr ""
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:36
+msgid "Convert from Parcel Corner"
+msgstr ""
+
+#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:37
 msgid "Using a Map"
 msgstr ""
 
@@ -588,29 +565,11 @@ msgstr ""
 msgid "Temporal Search"
 msgstr ""
 
-#: ckanext/data_depositario/templates/snippets/date_facet_slider.html:12
+#: ckanext/data_depositario/templates/snippets/date_facet_slider.html:13
 msgid "Clear"
 msgstr ""
 
 #: ckanext/data_depositario/templates/snippets/date_facet_slider.html:17
-msgid "Or use time period shortcut"
-msgstr ""
-
-#: ckanext/data_depositario/templates/snippets/license_details.html:3
-msgid "Title"
-msgstr ""
-
-#: ckanext/data_depositario/templates/snippets/license_details.html:3
-msgid "Chinese"
-msgstr ""
-
-#: ckanext/data_depositario/templates/snippets/time_period_select.html:13
-msgid "Time Period Shortcut"
-msgstr ""
-
-#: ckanext/data_depositario/templates/snippets/time_period_select.html:22
-msgid ""
-"This shortcut provides some historical periods for filling temporal "
-"information of the dataset."
+msgid "Add datasets with time range to use this facet"
 msgstr ""
 
