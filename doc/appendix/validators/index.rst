@@ -1,7 +1,7 @@
 校驗（轉換）器說明
 ==================
 
-CKAN具有校驗器（validator）機制，用以檢查欄位是否符合規定，故亦可視為值域。另有轉換器（converter），用以轉換欄位值俾符合規定。
+CKAN 具有校驗器（validator）機制，用以檢查欄位是否符合規定，故亦可視為值域。另有轉換器（converter），用以轉換欄位值俾符合規定。
 
 .. _internal_validators:
 
@@ -62,6 +62,9 @@ is_positive_integer
 owner_org_validator
   必須為無指定專案或指定一個已存在之專案
 
+email_validator
+  必須符合 `電子郵件格式 <https://html.spec.whatwg.org/#e-mail-state-(type=email)>`_
+
 remove_whitespace
   去除文字首尾空白
 
@@ -70,3 +73,41 @@ if_empty_guess_format
 
 clean_format
   將檔案格式轉為小寫
+
+----------------------------
+後設資料使用之校驗（轉換）器
+----------------------------
+
+^^^^^^^^^^
+資料集層級
+^^^^^^^^^^
+
+.. note::
+
+   *選填欄位基本校驗器*：:ref:`ignore_missing <external_validators>` :ref:`unicode <external_validators>`
+
+   *必填欄位基本校驗器*：:ref:`not_empty <external_validators>` :ref:`unicode <external_validators>`
+
+""""""""
+基本資訊
+""""""""
+
+.. include:: basic_information_validators.rst
+
+""""""""
+時空資訊
+""""""""
+
+.. include:: spatio_temporal_information_validators.rst
+
+""""""""
+管理資訊
+""""""""
+
+.. include:: management_information_validators.rst
+
+^^^^^^^^
+資源層級
+^^^^^^^^
+
+.. include:: resource_validators.rst

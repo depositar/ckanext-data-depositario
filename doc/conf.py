@@ -32,8 +32,8 @@ rst_epilog = u'''
 .. |site_name| replace:: ``研究資料寄存所``
 
 .. _Writing documentation: http://docs.ckan.org/en/2.7/contributing/documentation.html
-.. _User guide — CKAN 2.7.4 documentation: http://docs.ckan.org/en/2.7/user-guide.html
-.. _Maintainer’s guide — CKAN 2.7.4 documentation: http://docs.ckan.org/en/2.7/maintaining/index.html
+.. _User guide — CKAN 2.7.6 documentation: http://docs.ckan.org/en/2.7/user-guide.html
+.. _Maintainer’s guide — CKAN 2.7.6 documentation: http://docs.ckan.org/en/2.7/maintaining/index.html
 .. _String internationalization: http://docs.ckan.org/en/2.7/contributing/string-i18n.html
 '''
 
@@ -116,7 +116,13 @@ if not on_rtd:
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# html_static_path = ['_static']
+html_static_path = ['_static']
+
+html_context = {
+    'css_files': [
+        '_static/theme_overrides.css',  # override wide tables in RTD theme
+        ],
+     }
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

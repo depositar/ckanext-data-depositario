@@ -49,17 +49,17 @@ b. 安裝建議的 setuptools 版本
 
       pip install setuptools==36.1
 
-c. 安裝 CKAN 與本平台客製套件
+c. 安裝 CKAN
+
+   .. parsed-literal::
+
+      pip install -e 'git+git://github.com/depositar-io/ckan.git#egg=ckan'
+
+d. 安裝本平台客製套件
 
    .. parsed-literal::
 
       pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
-
-d. 安裝本平台客製套件所需 Python 套件
-
-   .. parsed-literal::
-
-      pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
 
 e. 安裝 CKAN 所需 Python 套件
 
@@ -67,7 +67,13 @@ e. 安裝 CKAN 所需 Python 套件
 
       pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
 
-f. 安裝其他所需 Python 套件
+f. 安裝本平台客製套件所需 Python 套件
+
+   .. parsed-literal::
+
+      pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
+
+g. 安裝其他所需 Python 套件
 
    .. parsed-literal::
 
@@ -105,7 +111,7 @@ b. 安裝 DataPusher 於虛擬環境
 
    .. parsed-literal::
 
-      pip install -e 'git+https://github.com/ckan/datapusher.git#egg=datapusher'
+      pip install -e 'git+https://github.com/ckan/datapusher.git@0.0.15#egg=datapusher'
 
 c. 安裝 DataPusher 所需 Python 套件
 
@@ -226,13 +232,13 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ckan.site_url = http://127.0.0.1:5000
 
       ## Plugins Settings
-      ckan.plugins = data_depositario depositar_theme citation
-                     wikidatakeyword stats datastore datapusher
+      ckan.plugins = data_depositario depositar_iso639 depositar_theme
+                     citation wikidatakeyword stats datastore datapusher
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view spatial_metadata spatial_query
                      geo_view geojson_view wmts_view shp_view
-                     scheming_datasets repeating multilingual_dataset
+                     scheming_datasets repeating
 
       ## Front-End Settings
       licenses_group_url = file:///usr/lib/ckan/default/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
@@ -261,9 +267,6 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ckanext.data_depositario.gmap.api_key = GMAP_AKI_KEY
       ## GA_ID 請填入申請之 Google Analytics id
       ckanext.data_depositario.googleanalytics.id = GA_ID
-
-      ## ckanext-citation Settings
-      ckanext.citation.csl_mappings = {"author": "author_name"}
 
 ------------------------------------
 7. 安裝 Solr（含中文與空間搜尋支援）
@@ -301,8 +304,8 @@ d. 下載中文斷詞函式庫 ``mmesg4j``，並複製至 Solr 目錄
 
    .. parsed-literal::
 
-      wget http://central.maven.org/maven2/com/chenlb/mmseg4j/mmseg4j-core/1.10.0/mmseg4j-core-1.10.0.jar
-      wget http://central.maven.org/maven2/com/chenlb/mmseg4j/mmseg4j-solr/2.3.1/mmseg4j-solr-2.3.1.jar
+      wget -O mmseg4j-core-1.10.0.jar https://search.maven.org/remotecontent?filepath=com/chenlb/mmseg4j/mmseg4j-core/1.10.0/mmseg4j-core-1.10.0.jar
+      wget -O mmseg4j-solr-2.4.0.jar https://search.maven.org/remotecontent?filepath=com/chenlb/mmseg4j/mmseg4j-solr/2.4.0/mmseg4j-solr-2.4.0.jar
       sudo cp mmseg4j-\*.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
 
 e. 下載空間搜尋函式庫 JTS 1.13 或以上版本並複製至 Solr 目錄
@@ -312,19 +315,21 @@ e. 下載空間搜尋函式庫 JTS 1.13 或以上版本並複製至 Solr 目錄
       wget -O jts-1.13.jar https://search.maven.org/remotecontent?filepath=com/vividsolutions/jts/1.13/jts-1.13.jar
       sudo cp jts-1.13.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
 
-f. 重新啟動 Solr
+f. 修改 /var/solr/data/configsets/ckan/conf/solrconfig.xml，將第 99 至 102 行關於 ``<schemaFactory class="ManagedIndexSchemaFactory">`` 之設定刪除，並改為 ``<schemaFactory class="ClassicIndexSchemaFactory"/>``
+
+g. 重新啟動 Solr
 
    .. parsed-literal::
 
       sudo service solr restart
 
-g. 在瀏覽器輸入以下連結，以建立供 CKAN 使用之 Solr Core（此處命名為 ckan）
+h. 在瀏覽器輸入以下連結，以建立供 CKAN 使用之 Solr Core（此處命名為 ckan）
 
    http://127.0.0.1:8983/solr/admin/cores?action=CREATE&name=ckan&configSet=ckan
 
-h. 打開瀏覽器，前往 http://127.0.0.1:8983/solr/#/ckan ，若能看到畫面則代表安裝完成
+i. 打開瀏覽器，前往 http://127.0.0.1:8983/solr/#/ckan ，若能看到畫面則代表安裝完成
 
-i. 修改 /etc/ckan/default/development.ini，指定 Solr 連線位址
+j. 修改 /etc/ckan/default/development.ini，指定 Solr 連線位址
 
    .. parsed-literal::
 
@@ -368,11 +373,17 @@ c. DataStore 資料庫權限設定
 
    （供本平台管理員資訊）請忽略此步驟。
 
-透過 paster 指令新增 CKAN 系統管理者
+請依序執行以下指令，以新增 CKAN 系統管理者
 
 .. parsed-literal::
 
    paster --plugin=ckan sysadmin add admin email=admin@localhost -c /etc/ckan/default/development.ini
+   paster --plugin=ckan sysadmin add admin -c /etc/ckan/default/development.ini
+   paster --plugin=pylons shell /etc/ckan/default/development.ini
+   並於出現的提示介面中依序執行
+   model.User.get('admin').state = 'active'
+   model.Session.commit()
+   後再以 Ctrl+D 離開提示介面
 
 .. note::
 

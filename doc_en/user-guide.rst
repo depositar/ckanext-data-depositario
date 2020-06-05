@@ -14,7 +14,7 @@ users with sysadmin status, and are documented in http://docs.ckan.org/en/2.7/sy
 
 .. note::
 
-   This manual is translated and adapted from `User guide — CKAN 2.7.4 documentation`_ by `Open Knowledge International <https://okfn.org/>`_ and `contributors <https://github.com/ckan/ckan/graphs/contributors>`_ licensed under `Creative Commons Attribution-ShareAlike 3.0 Unported <https://creativecommons.org/licenses/by-sa/3.0/>`_.
+   This manual is translated and adapted from `User guide — CKAN 2.7.6 documentation`_ by `Open Knowledge International <https://okfn.org/>`_ and `contributors <https://github.com/ckan/ckan/graphs/contributors>`_ licensed under `Creative Commons Attribution-ShareAlike 3.0 Unported <https://creativecommons.org/licenses/by-sa/3.0/>`_.
 
 -------------
 What is CKAN?
@@ -128,7 +128,7 @@ b) Alternatively, select the "projects" link at the top of a page. Now
    that you are a member of this project, you can now select the "Add
    Dataset" button above the search box.
 
-**Step 2**. CKAN will ask for the information about your data (See :doc:`appendix/dataset_fields`).
+**Step 2**. CKAN will ask for the information about your data (See :ref:`dataset_fields`).
 
 .. image:: /images/add_dataset_1.png
 
@@ -162,7 +162,7 @@ appropriate choice at the top of the screen:
 * If the data to be added to CKAN is in a file on your computer, select "Upload
   a file". CKAN will give you a file browser to select it.
 
-**Step 5**. Add the other information on the page. (Please refer to :doc:`appendix/resource_fields`)
+**Step 5**. Add the other information on the page. (Please refer to :ref:`resource_fields`)
 CKAN does not require this information, but it is good practice to add it.
 
 **Step 6**. If you have more resources (files or links) to add to the dataset, select
@@ -241,24 +241,23 @@ Extended feature — Fill-in snippet
 
 .. _UI_editing_extend_time:
 
-* **Temporal Information**
+* **Temporal Information (Time Period of Dataset)**
 
 The "temporal information" here means the time to events related to the dataset, not the time when
 the resources in the dataset were created.
 
-  * *Time Period Shortcut* -- This shortcut provides some historical periods for filling temporal
-    information of the dataset.
+  * *Temporal Resolution* -- This refers to the precision of a measurement with respect to time.
+    It can be the minimal time interval between subsequent examinations, or the maximum time error
+    when the time period is uncertain.
 
-  * *Temporal Resolution* [#]_ -- This refers to the precision of a measurement with respect to time.
-    
-  * *Start and End Time* -- It depends on the temporal resolution setting.
+  * *Start and End Time* -- This refers the beginning and end time of the time period.
     Acceptable formats: "YYYY", "YYYY-MM", or "YYYY-MM-DD".
   
-.. image:: /images/timeInfo.jpg
+.. image:: /images/temporal_info.png
 
 .. _UI_editing_extend_spatial:
 
-* **Spatial Fields**
+* **Spatial Information**
 
 Here you can specify the spatial extent of the dataset for indexing, then the dataset can
 be found through `spatial search <Extended feature — Spatial search_>`_.
@@ -277,8 +276,8 @@ You can use the following two methods to generate a valid spatial extent in GeoJ
 
 * **Auto-completion of management metadata**
 
-You can use the "Use your account information to fill in maintainer's name and email" button
-to automatically fill in the maintainer's information (``Maintainer`` and ``Maintainer Email``)
+You can use the "Use your account information to fill in contact person's name and email" button
+to automatically fill in the contact person's information (``Contact Person`` and ``Contact Person Email``)
 using your account information (for account information, please refer to :ref:`managing_profile`).
 
 .. image:: /images/profile_input.png
@@ -422,13 +421,7 @@ Then select the "Add Member" button.
 .. image:: /images/invite_user.png
 
 You can invite an user to your project by his/her email or username in the "Existing User" section.
-Note that he/she must have an account.
-
-.. note::
-
-   Due to the CKAN's privilege design, if the person you would like to invite does not have an account,
-   please send an email with his/her email address to data.contact AT depositar.io. Then CKAN will send
-   an invitation email to his/her.
+Or you can invite a new user via email.
 
 .. _finding_data:
 
@@ -458,14 +451,10 @@ repeat the search with existing filters still in place.
 Extended feature — Temporal search
 ----------------------------------
 
-|site_name| has temporal search function. You can search for the datasets within a given date range.
+|site_name| has temporal search function. You can search for the datasets within a given time range.
 
 You can find the temporal search widget from the left sidebar of the home page of datasets.
-You can do temporal search in two ways:
-
-#. Use a range slider.
-
-#. Use a time period shortcut which contains some historical periods.
+You can use a slider to set the time range.
 
 .. image:: /images/temporal_search.png
   
@@ -572,7 +561,8 @@ Please refer to step 5 of :ref:`adding_a_new_dataset`. |site_name| can preview t
 
 * Table: csv and xls(x)
 
-* Spatial data: WMTS, WMS, and Shapefile [#]_
+* Spatial data: WMTS, WMS, and Shapefile (Please specify the shapefile as "shp" in the ``Format`` field
+  when filling out resource information, otherwise it can not be visualized.)
 
 * Others: PDF and web page
 
@@ -705,10 +695,3 @@ System Limitation
 * Limitations of XLS/XLSX/CSV files: the field name length must be less than
   or equal to 63 characters (or 21 Chinese characters).
   Merged cells and multiple sheets are not supported.
-
-.. [#] This section uses material from the Wikipedia article
-       `Temporal resolution <https://en.wikipedia.org/wiki/Temporal_resolution>`_,
-       which is released under the `Creative Commons Attribution-Share-Alike License 3.0
-       <https://creativecommons.org/licenses/by-sa/3.0/>`_.
-.. [#] Please specify the shapefile as "shp" in the ``Format`` field when filling out its information,
-       otherwise it can not be visualized (Please refer to :doc:`appendix/resource_fields`).
