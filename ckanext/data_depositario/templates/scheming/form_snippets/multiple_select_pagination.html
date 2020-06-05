@@ -1,0 +1,39 @@
+{% import 'macros/form.html' as form %}
+
+{% macro help_text() %}
+  {%- snippet 'scheming/form_snippets/help_text.html', field=field -%}
+{% endmacro %}
+
+{%- call form.input_block(
+    'field-' + field.field_name,
+    label=h.scheming_language_text(field.label),
+    classes=['control-full'],
+    error=errors[field.field_name],
+    is_required=h.scheming_field_required(field),
+    extra_html=help_text()
+    ) -%}
+  {%- set choices = [] -%}
+  {%- set selected = [] -%}
+  {%- for c in h.scheming_field_choices(field) -%}
+    {%- do choices.append(
+      {'id': c.value, 'text': h.scheming_language_text(c.label) }) -%}
+    {%- if c.value in data[field.field_name] -%}
+      {%- do selected.append(
+        {'id': c.value, 'text': h.scheming_language_text(c.label) }) -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if field.get('sorted_choices') -%}
+    {%- set choices = choices|sort(case_sensitive=false, attribute='text') -%}
+  {%- endif -%}
+  <input type="hidden"
+      size="{{ ([field.get('select_size', 10), field.choices|length]|sort)[0] }}"
+      style="display: block"
+      id="field-{{ field.field_name }}"
+      name="{{ field.field_name }}"
+      {{ form.attributes(dict(
+        {"class": "form-control", "data-choices": h.dump_json(choices),
+        "data-selected": h.dump_json(selected)}, **field.get('form_select_attrs', {}))) }}>
+  </input>
+{%- endcall -%}
+
+{% resource 'ckanext-data-depositario/scripts/modules/select2-pagination.js' %}

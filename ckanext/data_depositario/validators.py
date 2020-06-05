@@ -3,7 +3,11 @@ from ckan.lib.navl.dictization_functions import Invalid
 from ckan.logic.validators import int_validator
 from ckan.common import _
 import re
+from calendar import monthrange
+from datetime import date
 from datetime import datetime
+from dateutil.parser import parse
+from dateutil.parser import isoparse
 
 
 def long_validator(value, context):
@@ -65,76 +69,49 @@ def json_validator(value, context):
       raise Invalid('Invalid JSON')
    return value
 
-def temp_res_validator(key, data, errors, context):
-    """
-    Raises Invalid if the given value is not
-    YYYY (as Temporal Resolution is year, decade, or century),
-    YYYY-MM (as Temporal Resolution is month), or
-    YYYY-MM-DD (as Temporal Resolution is date).
-    """
-    if errors[key]:
-        return
-
-    value = data[key]
-
-    if value == '':
-        data[key] = None
-        return
-
-    if value[-1] == 'Z':
-        return
-
-    time_format = { u'date': ['%Y-%m-%d', 'YYYY-MM-DD'],
-            u'month': ['%Y-%m', 'YYYY-MM'],
-            u'year': ['%Y', 'YYYY'],
-            u'decade': ['%Y', 'YYYY', 10],
-            u'century': ['%Y', 'YYYY', 100] }
-    temp_res = data.get(('temp_res',), '')
-    if temp_res:
-        try:
-            if (temp_res == u'decade' or temp_res == u'century'):
-                res = int(value)%time_format[temp_res][2]
-                if (res != 0):
-                    value = str(int(value) - res)
-            value = datetime.strptime(value,
-                    time_format[temp_res][0])
-        except ValueError:
-            raise Invalid(_('Date format incorrect') + _(', should be: ') + '%s' % time_format[temp_res][1])
-        data[key] = value.isoformat() + 'Z'
-
 def date_validator(key, data, errors, context):
     """
     Raises Invalid if the given value is not
     YYYY, YYYY-MM, or YYYY-MM-DD.
-
-    The month and day will be ``01`` if either one is missing.
     """
-    if errors[key]:
-        return
-
     value = data[key]
 
-    if value == '':
-        data[key] = None
-        return
+    # Solr needs zero-padded month and day
+    date_match = re.compile('^\d{4}(-\d{2})?(-\d{2})?$')
+    date_error = _('Date format incorrect')
 
-    if value[-1] == 'Z':
-        return
+    if date_match.match(value):
+        try:
+            isoparse(value)
+        except ValueError:
+            errors[key] = [date_error]
+    else:
+        errors[key] = [date_error]
 
-    time_format = ''
-    is_error = [False, False, False]
-    try:
-        datetime.strptime(value, '%Y')
-        time_format = '%Y'
-    except ValueError: is_error[0] = True
-    try:
-        datetime.strptime(value, '%Y-%m')
-        time_format = '%Y-%m'
-    except ValueError: is_error[1] = True
-    try:
-        datetime.strptime(value, '%Y-%m-%d')
-        time_format = '%Y-%m-%d'
-    except ValueError: is_error[2] = True
-    if len(set(is_error)) <= 1:
-        raise Invalid(_('Date format incorrect'))
-    data[key] = datetime.strptime(value, time_format).isoformat() + 'Z'
+def end_time_validator(key, data, errors, context):
+   """
+   Raises Invalid if end time is smaller than start time.
+   """
+
+   start_time = data.get(('start_time',))
+   end_time = data.get(('end_time',))
+
+   if not start_time or not end_time:
+      return
+
+   date_validator(('start_time',), data, errors, context)
+   date_validator(('end_time',), data, errors, context)
+
+   if errors.get(('start_time',)) or errors.get(('end_time',)):
+      return
+
+   start_time_p = parse(start_time, default=datetime(1, 1, 1))
+   end_time_p = parse(end_time, default=datetime(date.today().year, 12, 1))
+   if len(end_time) == 7:
+      # If the day of month is missing
+      end_time_p = end_time_p.replace( \
+            day=monthrange(end_time_p.year, end_time_p.month)[1])
+
+   if end_time_p < start_time_p:
+       raise Invalid(_('End time should be greater than \
+             or equal to start time'))

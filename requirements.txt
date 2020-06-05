@@ -1,8 +1,8 @@
 requests[security]
-python-dateutil
+python-dateutil>=2.7.0
 geomet>=0.1.0
--e git+git://github.com/depositar-io/ckan.git#egg=ckan
--e git+git://github.com/ckan/ckanext-scheming.git@release-1.1.0#egg=ckanext-scheming
+pycountry
+-e git+git://github.com/ckan/ckanext-scheming.git@release-1.2.0#egg=ckanext-scheming
 -e git+git://github.com/open-data/ckanext-repeating.git#egg=ckanext-repeating
 -e git+git://github.com/depositar-io/ckanext-spatial.git#egg=ckanext-spatial
 -e git+git://github.com/depositar-io/ckanext-geoview.git#egg=ckanext-geoview

@@ -44,64 +44,128 @@
       "field_name": "data_type",
       "label": {
         "en": "Data Type",
-	"zh_TW": "資料類型"
+        "zh_TW": "資料類型"
       },
-      "preset": "select",
+      "preset": "multiple_select",
+      "form_select_attrs": {
+        "data-module": "select2-enabler"
+      },
       "required": true,
-      "form_attrs": {
-        "data-module": "autocomplete"
-      },
       "choices": [
         {
-          "value": "statistics",
-	  "label": {
-  	    "en": "Statistics",
-  	    "zh_TW": "統計資料"
-	  }
-        },
-	{
-	  "value": "books",
-	  "label": {
-  	    "en": "Books",
-  	    "zh_TW": "文獻書籍"
-	  }
-	},
-        {
-          "value": "pics_non_spatial",
+          "value": "archive",
           "label": {
-            "en": "Pictures (Non spatial)",
-            "zh_TW": "圖像 (非空間類)"
-           }
-        },
-        {
-          "value": "pics_spatial",
-          "label": {
-            "en": "Pictures (Spatial)",
-            "zh_TW": "圖像 (空間類)"
-           }
-        },
-        {
-          "value": "vector",
-          "label": {
-            "en": "Vector",
-            "zh_TW": "向量資料"
+            "en": "Archived data",
+            "zh_TW": "壓縮檔資料"
           }
         },
         {
-          "value": "3d_model",
+          "value": "code",
           "label": {
-            "en": "3D Model",
-            "zh_TW": "三維模型"
+            "en": "Source code",
+            "zh_TW": "原始碼"
+          }
+        },
+        {
+          "value": "config",
+          "label": {
+            "en": "Configuration data",
+            "zh_TW": "組態資料"
+          }
+        },
+        {
+          "value": "database",
+          "label": {
+            "en": "Databases",
+            "zh_TW": "資料庫"
+           }
+        },
+        {
+          "value": "doc",
+          "label": {
+            "en": "Standard office documents",
+            "zh_TW": "辦公軟體文件"
+          }
+        },
+        {
+          "value": "graphic",
+          "label": {
+            "en": "Structured graphics",
+            "zh_TW": "結構化圖形"
+          }
+        },
+        {
+          "value": "image",
+          "label": {
+            "en": "Images",
+            "zh_TW": "影像"
           }
         },
         {
           "value": "multimedia",
           "label": {
-            "en": "Multimedia",
+            "en": "Audiovisual data",
             "zh_TW": "影音資料"
+          }
+        },
+        {
+          "value": "network",
+          "label": {
+            "en": "Networkbased data",
+            "zh_TW": "網路通訊資料"
+          }
+        },
+        {
+          "value": "raw",
+          "label": {
+            "en": "Raw data",
+            "zh_TW": "原始輸出資料"
+          }
+        },
+        {
+          "value": "science",
+          "label": {
+            "en": "Scientific and statistical data formats",
+            "zh_TW": "科學與統計資料"
+          }
+        },
+        {
+          "value": "software",
+          "label": {
+            "en": "Software applications",
+            "zh_TW": "應用程式"
+          }
+        },
+        {
+          "value": "structured",
+          "label": {
+            "en": "Structured text",
+            "zh_TW": "結構化文字資料"
+          }
+        },
+        {
+          "value": "text",
+          "label": {
+            "en": "Plain text",
+            "zh_TW": "純文字資料"
+          }
+        },
+        {
+          "value": "other",
+          "label": {
+            "en": "Other",
+            "zh_TW": "其他"
           }
         }
       ]
+    },
+    {
+      "field_name": "keywords",
+      "label": {
+        "en": "Wikidata Keywords",
+        "zh_TW": "Wikidata 關鍵字"
+      },
+      "preset": "wikidata_keyword"
     },
     {
       "field_name": "tag_string",
@@ -116,6 +180,25 @@
       }
     },
     {
+      "field_name": "language",
+      "label": {
+        "en": "Language",
+        "zh_TW": "語言"
+      },
+      "preset": "multiple_select",
+      "validators": "value_string_convert scheming_multiple_choice",
+      "form_snippet": "multiple_select_pagination.html",
+      "help_text": {
+        "en": "Coded in ISO 639-3 Language Codes (three-letter codes within parentheses for each language on the list). Please refer to https://iso639-3.sil.org/code_tables.",
+        "zh_TW": "使用 ISO 639-3 語言標碼 (各語言後方括號內三碼)。參見 https://iso639-3.sil.org/code_tables。"
+      },
+      "choices_helper": "schema_language_choices",
+      "form_select_attrs": {
+        "data-module": "select2-pagination",
+        "data-module-multiple": "true"
+      }
+    },
+    {
       "field_name": "remarks",
       "label": {
         "en": "Remarks",
@@ -123,96 +206,6 @@
       },
       "form_snippet": "markdown.html",
       "display_snippet": "markdown.html"
-    },
-    {
-      "field_name": "language",
-      "label": {
-        "en": " Language",
-        "zh_TW": "語言"
-      },
-      "preset": "select",
-      "form_attrs": {
-        "data-module": "autocomplete"
-      },
-      "choices": [
-        {
-          "value": "zho",
-          "label": {
-            "en": "Chinese",
-            "zh_TW": "華語/中文"
-          }
-        },
-        {
-          "value": "hak",
-          "label": {
-            "en": "Hakka Chinese",
-            "zh_TW": "客家話"
-          }
-        },
-        {
-          "value": "nan",
-          "label": {
-            "en": "Min Nan Chinese",
-            "zh_TW": "閩南語"
-          }
-        },
-        {
-          "value": "yue",
-          "label": {
-            "en": "Yue Chinese (Cantonese)",
-            "zh_TW": "粵語"
-          }
-        },
-        {
-          "value": "lzh",
-          "label": {
-            "en": "Literary Chinese",
-            "zh_TW": "文言文"
-          }
-        },
-        {
-          "value": "jpn",
-          "label": {
-            "en": "Japanese",
-            "zh_TW": "日語"
-          }
-        },
-        {
-          "value": "eng",
-          "label": {
-            "en": "English",
-            "zh_TW": "英語"
-          }
-        },
-        {
-          "value": "spa",
-          "label": {
-            "en": "Spanish (Castilian)",
-            "zh_TW": "西班牙語"
-          }
-        },
-        {
-          "value": "nld",
-          "label": {
-            "en": "Dutch",
-            "zh_TW": "荷蘭語"
-          }
-        },
-        {
-          "value": "fos",
-          "label": {
-            "en": "Siraya",
-            "zh_TW": "西拉雅語"
-          }
-        },
-        {
-          "value": "por",
-          "label": {
-            "en": "Portuguese",
-            "zh_TW": "葡萄牙語"
-          }
-        }
-      ]
     },
     {
       "field_name": "temp_res",
@@ -223,37 +216,23 @@
       "preset": "select",
       "choices": [
         {
-          "value": "year",
+          "value": "yearly",
           "label": {
-            "en": "Year",
+            "en": "Yearly",
             "zh_TW": "年"
           }
         },
        {
-         "value": "decade",
+         "value": "daily",
          "label": {
-           "en": "Decade",
-           "zh_TW": "十年"
-         }
-       },
-       {
-         "value": "century",
-         "label": {
-           "en": "Century",
-           "zh_TW": "一百年"
-         }
-       },
-       {
-         "value": "date",
-         "label": {
-           "en": "Date",
+           "en": "Daily",
            "zh_TW": "日"
          }
        },
        {
-         "value": "month",
+         "value": "monthly",
          "label": {
-           "en": "Month",
+           "en": "Monthly",
            "zh_TW": "月"
          }
        }
@@ -265,13 +244,11 @@
         "en": "Start Time",
         "zh_TW": "起始時間"
       },
-      "preset": "date_modified",
-      "validators": "ignore_empty temp_res_validator",
-      "help_text": {
-        "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
-        "zh_TW": "由時間解析度決定。接受的格式為 'YYYY' (年/十年/百年)、'YYYY-MM' (月)、'YYYY-MM-DD' (日)。"
-      },
-      "help_inline": true
+      "validators": "ignore_empty",
+      "form_placeholder": {
+        "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
+        "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'"
+      }
     },
     {
       "field_name": "end_time",
@@ -279,13 +256,11 @@
         "en": "End Time",
         "zh_TW": "結束時間"
       },
-      "preset": "date_modified",
-      "validators": "ignore_empty temp_res_validator",
-      "help_text": {
-        "en": "Depend on the temporal resolution setting. Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'.",
-        "zh_TW": "由時間解析度決定。接受的格式為 'YYYY' (年/十年/百年)、'YYYY-MM' (月)、'YYYY-MM-DD' (日)。"
-      },
-      "help_inline": true
+      "validators": "ignore_empty end_time_validator",
+      "form_placeholder": {
+        "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
+        "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'"
+      }
     },
     {
       "field_name": "spatial",
@@ -354,231 +329,6 @@
       }
     },
     {
-      "field_name": "keywords",
-      "label": {
-        "en": "Keywords",
-        "zh_TW": "關鍵字"
-      },
-      "preset": "wikidata_keyword"
-    },
-    {
-      "field_name": "book_isbn",
-      "label": {
-        "en": "ISBN-13",
-        "zh_TW": "ISBN-13"
-      },
-      "form_placeholder": "978-1-234-56789-7"
-    },
-    {
-      "field_name": "book_issn",
-      "label": {
-        "en": "ISSN",
-        "zh_TW": "ISSN"
-      },
-      "form_placeholder": "1234-5678"
-    },
-    {
-      "field_name": "book_journal",
-      "label": {
-        "en": "Journal",
-        "zh_TW": "期刊"
-      }
-    },
-    {
-      "field_name": "book_volume",
-      "label": {
-        "en": "Volume",
-        "zh_TW": "卷期"
-      }
-    },
-    {
-      "field_name": "book_proceeding",
-      "label": {
-        "en": "Proceeding",
-        "zh_TW": "論文集名稱"
-      }
-    },
-    {
-      "field_name": "book_location",
-      "label": {
-        "en": "Location",
-        "zh_TW": "出版地"
-      }
-    },
-    {
-      "field_name": "book_publisher",
-      "label": {
-        "en": "Publisher",
-        "zh_TW": "出版單位"
-      }
-    },
-    {
-      "field_name": "book_year",
-      "label": {
-        "en": "Publication Year",
-        "zh_TW": "出版年"
-      }
-    },
-    {
-      "field_name": "book_query",
-      "label": {
-        "en": "Book Query",
-        "zh_TW": "書目查詢"
-      }
-    },
-    {
-      "field_name": "book_url",
-      "label": {
-        "en": "URL",
-        "zh_TW": "網址"
-      }
-    },
-    {
-      "field_name": "book_hist_materials",
-      "label": {
-        "en": "Historical Material",
-        "zh_TW": "使用史料"
-      },
-      "preset": "multiple_checkbox",
-      "choices": [
-        {
-          "value": "local_chronicles_in_qing_dynasty",
-          "label": {
-            "en": "Local chronicles in Qing dynasty",
-            "zh_TW": "清代方志"
-          }
-        },
-        {
-          "value": "japan_officials",
-          "label": {
-            "en": "Japan officials",
-            "zh_TW": "日治出版品與官方資料"
-          }
-        },
-        {
-          "value": "officials_in_postwar_period",
-          "label": {
-            "en": "Officials in postwar period",
-            "zh_TW": "戰後官方資料與鄉鎮志"
-          }
-        },
-        {
-          "value": "inscriptions",
-          "label": {
-            "en": "Inscriptions",
-            "zh_TW": "碑文"
-          }
-        },
-        {
-          "value": "newspapers",
-          "label": {
-            "en": "Newspapers",
-            "zh_TW": "報紙"
-          }
-        },
-        {
-          "value": "maps",
-          "label": {
-            "en": "Maps",
-            "zh_TW": "地圖"
-          }
-        },
-        {
-          "value": "taiwanese_governor_office_files",
-          "label": {
-            "en": "Taiwanese Governor Office Files",
-            "zh_TW": "台灣總督府檔案（公文類纂、府報、調查報告、職員錄、衛生法規）"
-          }
-        },
-        {
-          "value": "dutch_formosa",
-          "label": {
-            "en": "Dutch Formosa",
-            "zh_TW": "荷治時期檔案"
-          }
-        },
-        {
-          "value": "field_researches",
-          "label": {
-            "en": "Field Researches",
-            "zh_TW": "地方田野收集文獻（族譜、寺廟志、帳冊、契約）"
-          }
-        }
-      ]
-    },
-    {
-      "field_name": "book_area_village",
-      "label": {
-        "en": "Village of Research Area",
-        "zh_TW": "研究區的聚落名"
-      }
-    },
-    {
-      "field_name": "book_area_religion",
-      "label": {
-        "en": "Religion of Research Area",
-        "zh_TW": "研究區的宗教"
-      }
-    },
-    {
-      "field_name": "book_area_family",
-      "label": {
-        "en": "Family of Research Area",
-        "zh_TW": "研究區的家族"
-      }
-    },
-    {
-      "field_name": "book_area_reservoir",
-      "label": {
-        "en": "Reservoir of Research Area",
-        "zh_TW": "研究區的埤圳"
-      }
-    },
-    {
-      "field_name": "book_area_industry",
-      "label": {
-        "en": "Industry of Research Area",
-        "zh_TW": "研究區的特殊產業"
-      }
-    },
-    {
-      "field_name": "book_notes",
-      "label": {
-        "en": "Notes",
-        "zh_TW": "備註"
-      }
-    },
-    {
-      "field_name": "scan_source",
-      "label": {
-        "en": "Original Source",
-        "zh_TW": "掃描原件來源"
-      }
-    },
-    {
-      "field_name": "scan_size",
-      "label": {
-        "en": "Scan Size",
-        "zh_TW": "掃描原件尺寸"
-      },
-      "form_placeholder": {
-        "en": "Size (cm) of source (e.g., 60x72)",
-        "zh_TW": "填寫原件尺寸大小，單位為公分，如 60x72"
-      }
-    },
-    {
-      "field_name": "scan_res",
-      "label": {
-        "en": "Scanning Resolution",
-        "zh_TW": "掃描解析度"
-      },
-      "validators": "ignore_empty is_positive_integer",
-      "form_placeholder": {
-        "en": "Resolution (DPI) of source (e.g., 300)",
-        "zh_TW": "填寫掃描解析度數值，單位為 DPI，如 300"
-      }
-    },
-    {
       "field_name": "spatial_res",
       "label": {
         "en": "Spatial Resolution",
@@ -591,31 +341,6 @@
       }
     },
     {
-      "field_name": "scale",
-      "label": {
-        "en": "Scale Denominator",
-        "zh_TW": "比例尺"
-      },
-      "validators": "ignore_empty is_positive_integer",
-      "form_placeholder": {
-        "en": "Scale denominator of data",
-        "zh_TW": "填寫資料比例尺之分母"
-      }
-    },
-    {
-      "field_name": "preprocessing",
-      "label": {
-        "en": "Preprocessing",
-        "zh_TW": "資料處理歷程"
-      },
-      "form_placeholder": {
-        "en": "Steps of data generating process",
-        "zh_TW": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫"
-      },
-      "form_snippet": "markdown.html",
-      "display_snippet": "markdown.html"
-    },
-    {
       "field_name": "license_id",
       "label": {
         "en": "License",
@@ -623,10 +348,11 @@
       },
       "required": true,
       "sorted_choices": false,
+      "choices_helper": "schema_license_choices",
       "form_snippet": "license.html"
     },
     {
-      "field_name": "author_name",
+      "field_name": "author",
       "label": {
         "en": "Author",
         "zh_TW": "產製者"
@@ -641,13 +367,24 @@
         "en": "Created Time",
         "zh_TW": "資料產製時間"
       },
-      "preset": "date_modified",
       "validators": "ignore_empty date_validator",
-      "has_temp_res": false,
-      "help_text": {
-        "en": "Acceptable formats: 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'. Missing month (Day) will be filled with '01'",
-        "zh_TW": "接受的格式為 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'。若未填寫月 (日)，則由 '01' 取代。"
+      "form_placeholder": {
+        "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
+        "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'"
       }
+    },
+    {
+      "field_name": "process_step",
+      "label": {
+        "en": "Process Step",
+        "zh_TW": "資料處理歷程"
+      },
+      "form_placeholder": {
+        "en": "Steps of data generating process",
+        "zh_TW": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫"
+      },
+      "form_snippet": "markdown.html",
+      "display_snippet": "markdown.html"
     },
     {
       "field_name": "owner_org",
@@ -658,43 +395,24 @@
       "preset": "dataset_organization"
     },
     {
-      "field_name": "maintainer_name",
+      "field_name": "contact_person",
       "label": {
-        "en": "Maintainer",
-        "zh_TW": "維護者"
+        "en": "Contact Person",
+        "zh_TW": "聯絡人"
       },
       "form_placeholder": "Joe Bloggs",
       "display_property": "dc:contributor"
     },
     {
-      "field_name": "maintainer_mail",
+      "field_name": "contact_email",
       "label": {
-        "en": "Maintainer Email",
-        "zh_TW": "維護者的電子郵件"
+        "en": "Contact Person Email",
+        "zh_TW": "聯絡人的電子郵件"
       },
+      "validators": "ignore_missing unicode email_validator",
       "form_placeholder": "joe@example.com",
       "display_property": "dc:contributor",
-      "display_snippet": "email.html",
-      "display_email_name_field": "maintainer_mail"
-    },
-    {
-      "field_name": "maintainer_phone",
-      "label": {
-        "en": "Maintainer Phone",
-        "zh_TW": "維護者的聯絡電話"
-      },
-      "form_placeholder": "02-12345678"
-    },
-    {
-      "field_name": "identifier",
-      "label": {
-        "en": "Identifier",
-        "zh_TW": "識別碼"
-      },
-      "form_placeholder": {
-        "en": "The unique identifier of this dataset",
-        "zh_TW": "來自資料集，其原始具有之唯一識別碼"
-      }
+      "display_snippet": "email.html"
     },
     {
       "field_name": "state",
@@ -740,6 +458,7 @@
         "en": "Name",
         "zh_TW": "名稱"
        },
+      "validators": "ignore_missing unicode",
       "form_placeholder": {
         "en": "eg. January 2011 Gold Prices",
         "zh_TW": "例如：2011 年 1 月金價"
@@ -760,8 +479,8 @@
     {
       "field_name": "encoding",
       "label": {
-        "en": "Encoding",
-        "zh_TW": "編碼"
+        "en": "Character Encoding",
+        "zh_TW": "字元編碼"
       },
       "preset": "select",
       "form_attrs": {

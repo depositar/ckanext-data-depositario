@@ -1,6 +1,9 @@
 from logging import getLogger
 
+from calendar import monthrange
+from datetime import date
 from datetime import datetime
+from dateutil.parser import parse
 import ckan.plugins as p
 import ckan.logic as logic
 from ckan.logic.action.create import user_create as ckan_user_create
@@ -9,6 +12,7 @@ from ckan.common import json
 from ckan.common import OrderedDict
 import ckan.lib.mailer as mailer
 from ckan.lib.plugins import DefaultTranslation
+from ckanext.scheming import helpers as scheming_helpers
 from ckanext.data_depositario import helpers
 from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
@@ -17,6 +21,14 @@ log = getLogger(__name__)
 
 _check_access = logic.check_access
 
+
+class DepositarISO639(p.SingletonPlugin, DefaultTranslation):
+
+    p.implements(p.ITranslation)
+
+    ## ITranslation
+    def i18n_domain(self):
+        return 'iso_639-3'
 
 class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
@@ -28,7 +40,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     p.implements(p.IValidators)
     p.implements(p.IRoutes, inherit=True)
     p.implements(p.IActions)
-    p.implements(p.IConfigurable, inherit=True)
 
     ## IConfigurer
     def update_config(self, config):
@@ -38,32 +49,19 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
     ## IPackageController
     def before_search(self, search_params):
-        def parse_date(date_string):
-            '''
-            Parse a date string or throw a nice error into the log. Re-raises
-            the error for the plugin to catch.
-            '''
-            try:
-                return datetime.strptime(date_string, '%Y-%m-%d')
-            except ValueError as e:
-                log.debug('Date {0} not in the right format. Needs to be YYYY'
-                        '-MM-DD'.format(date_string))
-                raise e
-
-        if (search_params.get('extras', None) and 'ext_begin_date' in
-                search_params['extras'] and 'ext_end_date' in
+        if (search_params.get('extras', None) and 'ext_begin' in
+                search_params['extras'] and 'ext_end' in
                 search_params['extras']):
             try:
-                begin = parse_date(search_params['extras']['ext_begin_date'])
-                end = parse_date(search_params['extras']['ext_end_date'])
+                begin = search_params['extras']['ext_begin']
+                end = search_params['extras']['ext_end']
             except ValueError:
                 return search_params
-            # Adding 'Z' manually here is evil, but we do this in core too.
-            query = ("((start_time: [* TO {0}Z] AND "
-                     "end_time: [{0}Z TO *]) OR "
-                     "(start_time: [{0}Z TO {1}Z] AND "
-                     "end_time: [{0}Z TO *]))")
-            query = query.format(begin.isoformat(), end.isoformat())
+            query = ("((start_time: [* TO {0}] AND "
+                     "end_time: [{0} TO *]) OR "
+                     "(start_time: [{0} TO {1}] AND "
+                     "end_time: [{0} TO *]))")
+            query = query.format(begin, end)
 
             q = search_params.get('q', '').strip() or '""'
             new_q = '%s AND %s' % (q if q else '', query)
@@ -74,14 +72,47 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
     def before_index(self, data_dict):
         for field_name in ['data_type', 'language']:
-            value = data_dict.get(field_name, '')
-            data_dict[field_name+'_facet'] = value
-        if field_name == 'book_hist_materials':
-            value = data_dict.get(field_name, [])
-            if value:
+            value = data_dict.get(field_name)
+            try:
                 data_dict[field_name+'_facet'] = json.loads(value)
+            except ValueError:
+                # For old datasets with single data_type and language.
+                data_dict[field_name+'_facet'] = value
+        # Index start_time and end_time in TrieDateField because
+        # DateRangeField is not sortable.
+        if data_dict.get('start_time'):
+            data_dict['start_time_t'] = parse( \
+                    data_dict['start_time'],
+                    default=datetime(1, 1, 1)).isoformat() + 'Z'
+        if data_dict.get('end_time'):
+            end_time_t = parse(data_dict['end_time'],
+                    default=datetime(date.today().year, 12, 1))
+            if len(data_dict['end_time']) == 7:
+                # If the day of month is missing
+                end_time_t = end_time_t.replace( \
+                        day=monthrange(end_time_t.year, end_time_t.month)[1])
+            data_dict['end_time_t'] = end_time_t.isoformat() + 'Z'
 
         return data_dict
+
+    def after_search(self, search_results, search_params):
+        facets = search_results.get('search_facets')
+        results = search_results.get('results')
+        if not facets or not results:
+            return search_results
+        schema = scheming_helpers.scheming_get_dataset_schema(results[0]['type'])
+        for facet in facets.values():
+            for item in facet['items']:
+                field_name = facet['title'].replace('_facet', '')
+                field = scheming_helpers.scheming_field_by_name( \
+                        schema['dataset_fields'], field_name)
+                if field and (field.get('choices') or \
+                        field.get('choices_helper')):
+                    choices = scheming_helpers.scheming_field_choices(field)
+                    item['display_name'] = scheming_helpers. \
+                            scheming_choices_label(choices, item['name'])
+
+        return search_results
 
     ## IFacets
     def dataset_facets(self, facets_dict, package_type):
@@ -100,11 +131,12 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             'lat_validator',
             'positive_float_validator',
             'json_validator',
-            'temp_res_validator',
             'date_validator',
+            'end_time_validator',
         )
         converter_names = (
             'remove_blank_wrap',
+            'value_string_convert',
         )
         field_validators = _get_module_functions(validators, validator_names)
         field_validators.update(_get_module_functions(converters, converter_names))
@@ -115,15 +147,13 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         function_names = (
             'extras_to_dict',
 	    'geojson_to_wkt',
-            'date_to_iso',
             'get_default_slider_values',
             'get_date_url_param',
-            'get_time_period',
-            'get_time_period_for_facet_slider',
             'get_gmap_config',
-            'get_license_list',
             'get_pkg_version',
             'googleanalytics_header',
+            'schema_license_choices',
+            'schema_language_choices',
         )
         return _get_module_functions(helpers, function_names)
 
@@ -144,10 +174,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     def get_actions(self):
         return {'license_list': license_list, 'user_create': user_create}
 
-    ## IConfigurable
-    def configure(self, config):
-        helpers.init_translation()
-
 def _get_module_functions(module, function_names):
     functions = {}
     for f in function_names:
@@ -156,17 +182,17 @@ def _get_module_functions(module, function_names):
     return functions
 
 def _add_facets(facets_dict, group=False):
-    new_facets_dict = OrderedDict(facets_dict.items()[:2])
-    new_facets_dict['organization'] = p.toolkit._('Projects')
-    new_facets_dict['groups'] = p.toolkit._('Topics')
-    new_facets_dict['keywords_facet'] = p.toolkit._('Keywords')
-    new_facets_dict = OrderedDict(new_facets_dict.items() + facets_dict.items()[2:])
+    new_facets_dict = OrderedDict([
+        ('keywords_facet', ''),
+        facets_dict.items()[2],
+        ('data_type_facet', p.toolkit._('Data Type')),
+        ('organization', p.toolkit._('Projects')),
+        ('groups', p.toolkit._('Topics')),
+        ('language_facet', p.toolkit._('Language'))
+    ] + facets_dict.items()[3:])
+
     if not group:
         new_facets_dict['date_facet'] = ''
-    new_facets_dict['data_type_facet'] = p.toolkit._('Data Type')
-    new_facets_dict['language_facet'] = p.toolkit._('Language')
-    new_facets_dict['book_hist_materials_facet'] = \
-            p.toolkit._('Historical Material')
 
     return new_facets_dict
 

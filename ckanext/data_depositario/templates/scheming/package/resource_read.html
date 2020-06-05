@@ -41,8 +41,8 @@
           {%- endfor -%}
         {%- endblock -%}
         <tr>
-	  <th scope="row">{{ _('License') }}{%- snippet 'snippets/license_details.html' -%}</th>
-          <td>{% snippet "snippets/license.html", pkg_dict=pkg, text_only=True %}</td>
+          <th scope="row">{{ _('License') }}</th>
+          <td>{% snippet "snippets/license_modified.html", pkg_dict=pkg, text_only=True %}</td>
         </tr>
       </tbody>
     </table>

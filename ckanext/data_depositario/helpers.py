@@ -1,37 +1,15 @@
+import pycountry
 from pylons import config
 import ckan.plugins as p
-from ckan import model
 from ckan.common import json
 from geomet import wkt
 import re
-import os
 import json
-import inspect
 import logging
-import dateutil
-from datetime import date
-from ckanext.scheming import helpers as scheming_helpers
 from ckanext import data_depositario
 
 log = logging.getLogger(__name__)
 
-
-def _load_schema_module_path(url):
-   """
-   Given a path like "ckanext.spatialx:spatialx_schema.json"
-   find the second part relative to the import path of the first
-   Borrowed from ckanext-scheming
-   """
-
-   module, file_name = url.split(':', 1)
-   try:
-       # __import__ has an odd signature
-       m = __import__(module, fromlist=[''])
-   except ImportError:
-       return
-   p = os.path.join(os.path.dirname(inspect.getfile(m)), file_name)
-   if os.path.exists(p):
-       return json.load(open(p))
 
 def extras_to_dict(pkg):
    extras_dict = {}
@@ -43,65 +21,39 @@ def extras_to_dict(pkg):
 def geojson_to_wkt(value):
    return wkt.dumps(json.loads(value))
 
-def date_to_iso(value, temp_res=None):
-   result = ''
-   result = dateutil.parser.parse(value).isoformat().split('T')[0]
-   if temp_res is not None:
-      if temp_res == u'month':
-         result = result.split('-')[0] + '-' + result.split('-')[1]
-      elif temp_res == u'year' or temp_res == u'decade' or temp_res == u'century':
-         result = result.split('-')[0]
-   return result
-
 def get_default_slider_values():
    data_dict = {
-         'sort': 'start_time asc',
-         'rows': 1,
-          'q': 'start_time:[* TO *]',
+      'sort': 'start_time_t asc',
+      'rows': 1,
+      'q': 'start_time_t:[* TO *]',
    }
    result = p.toolkit.get_action('package_search')({}, data_dict)['results']
-   if len(result) == 1:
-      start_time = result[0].get('start_time')
-      begin = dateutil.parser.parse(start_time).isoformat().split('T')[0]
-   else:
-      begin = date.today().isoformat()
+   if not result: return
+   start_time = result[0].get('start_time')
 
    data_dict = {
-            'sort': 'end_time desc',
-            'rows': 1,
-            'q': 'end_time:[* TO *]',
+      'sort': 'end_time_t desc',
+      'rows': 1,
+      'q': 'end_time_t:[* TO *]',
    }
    result = p.toolkit.get_action('package_search')({}, data_dict)['results']
-   if len(result) == 1:
-      end_time = result[0].get('end_time')
-      end = dateutil.parser.parse(end_time).isoformat().split('T')[0]
-   else:
-      end = date.today().isoformat()
-   return begin, end
+   if not result: return
+   end_time = result[0].get('end_time')
+
+   if start_time == end_time: return
+
+   return start_time, end_time
 
 def get_date_url_param():
    params = ['', '']
    for k, v in p.toolkit.request.params.items():
-      if k == 'ext_begin_date':
+      if k == 'ext_begin':
          params[0] = v
-      elif k == 'ext_end_date':
+      elif k == 'ext_end':
          params[1] = v
       else:
          continue
    return params
-
-def get_time_period():
-   return _load_schema_module_path('ckanext.data_depositario:time_period.json')
-
-def get_time_period_for_facet_slider():
-   out = []
-   time_periold_list = get_time_period()
-   for time_period in time_periold_list:
-      if not time_period['value']: continue
-      splitted = time_period['value'].split('-')
-      label = scheming_helpers.scheming_choices_label(time_periold_list, time_period['value'])
-      out.append((label, splitted[0], splitted[1]))
-   return out
 
 def get_gmap_config():
     '''
@@ -119,9 +71,6 @@ def get_gmap_config():
 
     return dict([(k.replace(namespace, ''), v) for k, v in config.iteritems()
                  if k.startswith(namespace)])
-
-def get_license_list():
-   return p.toolkit.get_action('license_list')({}, {})
 
 def get_pkg_version():
     """
@@ -150,32 +99,30 @@ def googleanalytics_header():
     return p.toolkit.render_snippet(
             'snippets/googleanalytics_header.html', data)
 
-def init_translation():
+def schema_license_choices(field):
     """
-    Update dictionary.
+    License choices helper.
     """
-    user = p.toolkit.get_action('get_site_user')(
-            {'model': model, 'ignore_auth': True}, {})
+    license_list = p.toolkit.get_action('license_list')({}, {})
+    licenses = [{'value': license['id'], 'label': {'en': license['title'],
+            'zh_TW': license['title_zh']}} for license in license_list]
 
-    context = {
-            'model': model,
-            'session': model.Session,
-            'user': user,
-            'ignore_auth': True,
-    }
+    return licenses
 
-    schema = _load_schema_module_path('ckanext.data_depositario:scheming.json')
+def schema_language_choices(field):
+    """
+    Language choices helper.
+    """
+    major_lang_alpha_3 = ['zho', 'cmn', 'nan', 'hak', 'jpn', 'eng',
+            'fra', 'spa', 'ara', 'por', 'rus', 'deu']
+    major_lang = [{'value': lang_alpha_3,
+            'label': p.toolkit._(pycountry.languages. \
+            get(alpha_3=lang_alpha_3).name) + \
+            ' (%s)' % lang_alpha_3} \
+            for lang_alpha_3 in major_lang_alpha_3]
+    other_lang = [{'value': lang.alpha_3, 'label': p.toolkit._(lang.name) + \
+            ' (%s)' % lang.alpha_3} \
+            for lang in pycountry.languages \
+            if lang.alpha_3 not in major_lang_alpha_3]
 
-    for field in schema['dataset_fields']:
-        choices = scheming_helpers.scheming_field_choices(field)
-        if choices:
-            for choice in choices:
-                term = choice['value']
-                for lang, label in choice['label'].iteritems():
-                    data_dict = {
-                            'term': term,
-                            'term_translation': label,
-                            'lang_code': lang,
-                    }
-                    p.toolkit.get_action('term_translation_update') \
-                        (context, data_dict)
+    return major_lang + other_lang
