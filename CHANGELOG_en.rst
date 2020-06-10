@@ -7,6 +7,134 @@
 Changelog
 ---------
 
+v6.4.0 2020-06-10
+=================
+
+Notice:
+ * This version requires `ckanext-scheming 1.2.0 <https://github.com/ckan/ckanext-scheming/releases/tag/release-1.2.0>`_ and the latest `ckanext-wikidatakeyword <https://github.com/depositar/ckanext-wikidatakeyword>`_.
+
+Changes:
+ * Improvement: Simplify metadata. Merge ``Descriptive Information`` into ``Basic Information``, and add the ``Spatio-temporal Information`` section. Please refer to the following table for details. You can also find new metadata standard at the :doc:`appendix/fields/index` section.
+
+ .. list-table::
+    :widths: 25 40 35
+    :header-rows: 1
+
+    * - Original Field Name
+      - Changes
+      - Remarks
+
+    * - Language
+      - Provide all ISO 639-3 languages. Accept multiple values.
+      -
+
+    * - Keywords
+      - Rename as "Wikidata Keywords"
+      -
+
+    * - Data Type
+      - Adopt the :ref:`parse-insight-content-types` used by `Registry of Research Data Repositories (re3data) <https://www.re3data.org/>`_. Accept multiple values.
+
+        The comparison of the old and new options:
+
+        | Statistics → Scientific and statistical data formats
+        | Books → Standard office documents
+        | Pictures (Non spatial) → Images
+        | Pictures (Spatial) → Images
+        | Vector → Scientific and statistical data formats
+        | 3D Model → Structured graphics
+        | Multimedia → Audiovisual data
+
+      -
+
+    * - Time Period Shortcut
+      - Removed
+      - This field is just a tool for inputing for filling temporal information of the dataset and not part of metadata.
+
+    * - Temporal Resolution
+      - Remove the "Decade" and "Century" options. Rename "Year", "Month", and "Date" as "Yearly", "Monthly", and "Daily", respectively.
+      - The definitions of decade and century are controversial and seldom used by datasets in depositar.
+
+    * - Start Time
+      - Does not restricted to the "Temporal Resolution" field anymore.
+      -
+
+    * - End Time
+      - Does not restricted to the "Temporal Resolution" field anymore.
+      - Add a validator to check whether end time is greater than or equal to start time.
+
+    * - Prompted fields when "Books" is selected in the "Data Type" field
+      - Remove the following fields:
+
+        | ISBN-13
+        | ISSN
+        | Journal
+        | Volume
+        | Proceeding
+        | Location
+        | Publisher
+        | Publication Year
+        | Book Query
+        | URL
+        | Historical Material
+        | Village of Research Area
+        | Religion of Research Area
+        | Family of Research Area
+        | Reservoir of Research Area
+        | Industry of Research Area
+        | Notes
+
+      - The values of removed fields are merged into the "Remarks" field.
+
+    * - Prompted fields when "Pictures" is selected in the "Data Type" field
+      - Remove the following fields:
+
+        | Original Source
+        | Scan Size
+        | Scanning Resolution
+        | Scale Denominator
+
+        The following fields remain but are moved to another place:
+
+        | Spatial Resolution
+        | Preprocessing
+
+      - The values of removed fields are merged into the "Remarks" field.
+
+    * - Spatial Resolution
+      - Moved to the Spatio-temporal Information section.
+      - Formerly used to describe "Pictures" type datasets.
+
+    * - Preprocessing
+      - Rename as "Process Step". Moved to the Management Information section.
+      - Formerly used to describe "Pictures" type datasets.
+
+    * - Created Time
+      -
+      - Support the YYYY and YYYY-MM format without converting missing month and day to "01."
+
+    * - Maintainer
+      - Rename as "Contact Person"
+      - Renaming to meet the practical requirements of data management.
+
+    * - Maintainer Email
+      - Rename as "Contact Person Email"
+      - Renaming to meet the practical requirements of data management. Add an email validation.
+
+    * - Maintainer Phone
+      - Removed
+      - Removal due to privacy concerns.
+
+    * - Identifier
+      - Removed
+      - The value of this field is merged into the "Remarks" field.
+
+    * - Encoding
+      - Rename as "Character Encodings"
+      - This is a field in the resource level.
+
+ * Other improvements and UI adjustments.
+
 v6.3.6 2019-08-26
 =================
 
