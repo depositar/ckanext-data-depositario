@@ -506,6 +506,16 @@ header.navbar {
   text-shadow: none;
 }
 
+.form-horizontal .control-label {
+  width: 140px;
+}
+
+@media (min-width: 768px) {
+  .form-horizontal .controls {
+    margin-left: 150px;
+  }
+}
+
 .error-inline{
   color: #720404;
 }

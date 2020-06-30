@@ -9,6 +9,7 @@
         "en": "Title",
 	"zh_TW": "標題"
       },
+      "icon": "book",
       "preset": "title",
       "form_placeholder": {
         "en": "eg. A descriptive title",
@@ -34,6 +35,7 @@
         "en": "Description",
         "zh_TW": "摘要"
       },
+      "icon": "pencil",
       "form_snippet": "markdown.html",
       "form_placeholder": {
         "en": "eg. Some useful notes about the data",
@@ -165,6 +167,7 @@
         "en": "Wikidata Keywords",
         "zh_TW": "Wikidata 關鍵字"
       },
+      "icon": "barcode",
       "preset": "wikidata_keyword"
     },
     {
@@ -173,6 +176,7 @@
         "en": "Tags",
         "zh_TW": "標籤"
       },
+      "icon": "tags",
       "preset": "tag_string_autocomplete",
       "form_placeholder": {
         "en": "eg. economy, mental health, government",
@@ -185,6 +189,7 @@
         "en": "Language",
         "zh_TW": "語言"
       },
+      "icon": "globe",
       "preset": "multiple_select",
       "validators": "value_string_convert scheming_multiple_choice",
       "form_snippet": "multiple_select_pagination.html",
@@ -204,6 +209,7 @@
         "en": "Remarks",
         "zh_TW": "備註"
       },
+      "icon": "pencil",
       "form_snippet": "markdown.html",
       "display_snippet": "markdown.html"
     },
@@ -213,6 +219,7 @@
         "en": "Temporal Resolution",
         "zh_TW": "時間解析度"
       },
+      "icon": "clock-o",
       "preset": "select",
       "choices": [
         {
@@ -244,6 +251,7 @@
         "en": "Start Time",
         "zh_TW": "起始時間"
       },
+      "icon": "calendar",
       "validators": "ignore_empty",
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
@@ -256,6 +264,7 @@
         "en": "End Time",
         "zh_TW": "結束時間"
       },
+      "icon": "calendar",
       "validators": "ignore_empty end_time_validator",
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
@@ -268,6 +277,7 @@
         "en": "Spatial",
         "zh_TW": "空間範圍"
       },
+      "icon": "map-marker",
       "validators": "ignore_empty json_validator remove_blank_wrap",
       "form_placeholder": {
         "en": "Accept GeoJSON format",
@@ -334,6 +344,7 @@
         "en": "Spatial Resolution",
         "zh_TW": "空間解析度"
       },
+      "icon": "expand",
       "validators": "ignore_empty positive_float_validator",
       "form_placeholder": {
         "en": "Spatial resolution (m) of source",
@@ -346,6 +357,7 @@
         "en": "License",
         "zh_TW": "授權"
       },
+      "icon": "certificate",
       "required": true,
       "sorted_choices": false,
       "choices_helper": "schema_license_choices",
@@ -357,6 +369,7 @@
         "en": "Author",
         "zh_TW": "產製者"
       },
+      "icon": "user",
       "form_placeholder": "Joe Bloggs",
       "display_property": "dc:creator",
       "required": true
@@ -367,6 +380,7 @@
         "en": "Created Time",
         "zh_TW": "資料產製時間"
       },
+      "icon": "calendar",
       "validators": "ignore_empty date_validator",
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
@@ -379,6 +393,7 @@
         "en": "Process Step",
         "zh_TW": "資料處理歷程"
       },
+      "icon": "cogs",
       "form_placeholder": {
         "en": "Steps of data generating process",
         "zh_TW": "以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫"
@@ -392,6 +407,8 @@
         "en": "Project",
         "zh_TW": "專案"
       },
+      "icon": "users",
+      "label_name": "organizations",
       "preset": "dataset_organization"
     },
     {
@@ -400,6 +417,7 @@
         "en": "Contact Person",
         "zh_TW": "聯絡人"
       },
+      "icon": "user",
       "form_placeholder": "Joe Bloggs",
       "display_property": "dc:contributor"
     },
@@ -409,6 +427,7 @@
         "en": "Contact Person Email",
         "zh_TW": "聯絡人的電子郵件"
       },
+      "icon": "envelope",
       "validators": "ignore_missing unicode email_validator",
       "form_placeholder": "joe@example.com",
       "display_property": "dc:contributor",
@@ -446,6 +465,8 @@
         "en": "URL",
 	"zh_TW": "網址"
       },
+      "icon": "file",
+      "label_name": "image-upload",
       "preset": "resource_url_upload",
       "upload_label": {
         "en": "File",
@@ -458,6 +479,7 @@
         "en": "Name",
         "zh_TW": "名稱"
        },
+       "icon": "book",
       "validators": "ignore_missing unicode",
       "form_placeholder": {
         "en": "eg. January 2011 Gold Prices",
@@ -470,6 +492,7 @@
         "en": "Description",
         "zh_TW": "摘要"
       },
+      "icon": "pencil",
       "form_snippet": "markdown.html",
       "form_placeholder": {
         "en": "Some useful notes about the data",
@@ -482,6 +505,7 @@
         "en": "Character Encoding",
         "zh_TW": "字元編碼"
       },
+      "icon": "keyboard-o",
       "preset": "select",
       "form_attrs": {
         "data-module": "autocomplete"
@@ -544,6 +568,7 @@
         "en": "Coordinate Systems",
         "zh_TW": "座標參考系統"
       },
+      "icon": "location-arrow",
       "preset": "prepend_text",
       "prepend_text": "EPSG",
       "validators": "ignore_empty is_positive_integer",
@@ -562,6 +587,7 @@
         "en": "Format",
         "zh_TW": "格式"
       },
+      "icon": "archive",
       "preset": "resource_format_autocomplete",
       "form_placeholder": {
         "en": "eg. CSV, XML or JSON",
