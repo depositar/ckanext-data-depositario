@@ -52,14 +52,17 @@
         "en": "Data Type",
         "zh_TW": "資料類型"
       },
-      "preset": "multiple_select",
-      "form_select_attrs": {
-        "data-module": "select2-enabler"
-      },
+      "preset": "multiple_checkbox",
+      "form_snippet": "multiple_checkbox_list.html",
       "required": true,
       "choices": [
         {
           "value": "archive",
+          "icon": "archive",
+          "description": {
+            "en": "ZIP, RAR, JAR, etc.",
+            "zh_TW": "ZIP、RAR、JAR 等"
+          },
           "label": {
             "en": "Archived data",
             "zh_TW": "壓縮檔資料"
@@ -67,6 +70,11 @@
         },
         {
           "value": "code",
+          "icon": "code",
+          "description": {
+            "en": "scripting, Java, C, C++, Fortran, etc.",
+            "zh_TW": "指令碼、Java、C、C++、Fortran 等"
+          },
           "label": {
             "en": "Source code",
             "zh_TW": "原始碼"
@@ -74,6 +82,11 @@
         },
         {
           "value": "config",
+          "icon": "cogs",
+          "description": {
+            "en": "parameter settings, logs, library files",
+            "zh_TW": "參數設定、記錄檔、函式庫檔案"
+          },
           "label": {
             "en": "Configuration data",
             "zh_TW": "組態資料"
@@ -81,6 +94,11 @@
         },
         {
           "value": "database",
+          "icon": "floppy-o",
+          "description": {
+            "en": "DBASE, MS Access, Oracle, MySQL, etc.",
+            "zh_TW": "DBASE、MS Access、Oracle、MySQL 等"
+          },
           "label": {
             "en": "Databases",
             "zh_TW": "資料庫"
@@ -88,6 +106,11 @@
         },
         {
           "value": "doc",
+          "icon": "book",
+          "description": {
+            "en": "text documents, spreadsheets, presentations",
+            "zh_TW": "文字文件、試算表、簡報"
+          },
           "label": {
             "en": "Standard office documents",
             "zh_TW": "辦公軟體文件"
@@ -95,6 +118,11 @@
         },
         {
           "value": "graphic",
+          "icon": "bar-chart-o",
+          "description": {
+            "en": "CAD, CAM, 3D, VRML, etc.",
+            "zh_TW": "CAD、CAM、3D、VRML 等"
+          },
           "label": {
             "en": "Structured graphics",
             "zh_TW": "結構化圖形"
@@ -102,6 +130,11 @@
         },
         {
           "value": "image",
+          "icon": "picture-o",
+          "description": {
+            "en": "JPEG, JPEG2000, GIF, TIF, PNG, SVG, etc.",
+            "zh_TW": "JPEG、JPEG2000、GIF、TIF、PNG、SVG 等"
+          },
           "label": {
             "en": "Images",
             "zh_TW": "影像"
@@ -109,6 +142,11 @@
         },
         {
           "value": "multimedia",
+          "icon": "film",
+          "description": {
+            "en": "WAVE, MP3, MP4, Flash, etc.",
+            "zh_TW": "WAVE、MP3、MP4、Flash 等"
+          },
           "label": {
             "en": "Audiovisual data",
             "zh_TW": "影音資料"
@@ -116,6 +154,11 @@
         },
         {
           "value": "network",
+          "icon": "signal",
+          "description": {
+            "en": "websites, email, chat history, etc.",
+            "zh_TW": "網站、電子郵件、聊天記錄等"
+          },
           "label": {
             "en": "Networkbased data",
             "zh_TW": "網路通訊資料"
@@ -123,6 +166,11 @@
         },
         {
           "value": "raw",
+          "icon": "file-o",
+          "description": {
+            "en": "device specific output",
+            "zh_TW": "數位裝置輸出之資料"
+          },
           "label": {
             "en": "Raw data",
             "zh_TW": "原始輸出資料"
@@ -130,6 +178,11 @@
         },
         {
           "value": "science",
+          "icon": "flask",
+          "description": {
+            "en": "SPSS, FITS, GIS, etc.",
+            "zh_TW": "SPSS、FITS、GIS 等"
+          },
           "label": {
             "en": "Scientific and statistical data formats",
             "zh_TW": "科學與統計資料"
@@ -137,6 +190,11 @@
         },
         {
           "value": "software",
+          "icon": "desktop",
+          "description": {
+            "en": "modelling tools, editors, IDE, compilers, etc.",
+            "zh_TW": "建模工具、編輯器、整合開發環境、編譯器等"
+          },
           "label": {
             "en": "Software applications",
             "zh_TW": "應用程式"
@@ -144,6 +202,11 @@
         },
         {
           "value": "structured",
+          "icon": "table",
+          "description": {
+            "en": "XML, SGML, etc.",
+            "zh_TW": "XML、SGML 等"
+          },
           "label": {
             "en": "Structured text",
             "zh_TW": "結構化文字資料"
@@ -151,6 +214,11 @@
         },
         {
           "value": "text",
+          "icon": "file-text-o",
+          "description": {
+            "en": "TXT in various encodings",
+            "zh_TW": "各種編碼之純文字檔案"
+          },
           "label": {
             "en": "Plain text",
             "zh_TW": "純文字資料"
@@ -158,6 +226,7 @@
         },
         {
           "value": "other",
+          "icon": "asterisk",
           "label": {
             "en": "Other",
             "zh_TW": "其他"
