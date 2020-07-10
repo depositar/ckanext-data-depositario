@@ -27,6 +27,10 @@
       "form_placeholder": {
         "en": "eg. my-dataset",
 	"zh_TW": "例如：我的資料集"
+      },
+      "help_text": {
+        "en": "There can not be a dataset with the given name already exists. Only letters, numbers, - and _ characters are accepted. Length limit: 2 to 100 characters.",
+        "zh_TW": "網址僅能為英數字及 - _ 符號，長度需介於 2 至 100 字元，且不得與其他資料集網址重複。"
       }
     },
     {
