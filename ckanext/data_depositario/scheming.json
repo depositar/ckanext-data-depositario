@@ -283,7 +283,7 @@
         "en": "Accept GeoJSON format",
         "zh_TW": "僅接受 GeoJSON"
       },
-      "form_snippet": "textarea.html",
+      "form_snippet": "spatial_coverage.html",
       "display_snippet": "collapse_text.html",
       "help_text": {
         "en": "This column is used for geo-indexing the dataset. Check http://geojson.org/ for details.",
