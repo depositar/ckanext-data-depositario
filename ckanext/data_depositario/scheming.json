@@ -55,6 +55,7 @@
       "preset": "multiple_checkbox",
       "form_snippet": "multiple_checkbox_list.html",
       "required": true,
+      "multiple": true,
       "choices": [
         {
           "value": "archive",
@@ -241,6 +242,7 @@
         "zh_TW": "Wikidata 關鍵字"
       },
       "icon": "barcode",
+      "multiple": true,
       "preset": "wikidata_keyword"
     },
     {
@@ -250,6 +252,7 @@
         "zh_TW": "標籤"
       },
       "icon": "tags",
+      "multiple": true,
       "preset": "tag_string_autocomplete",
       "form_placeholder": {
         "en": "eg. economy, mental health, government",
@@ -263,6 +266,7 @@
         "zh_TW": "語言"
       },
       "icon": "globe",
+      "multiple": true,
       "preset": "multiple_select",
       "validators": "value_string_convert scheming_multiple_choice",
       "form_snippet": "multiple_select_pagination.html",
