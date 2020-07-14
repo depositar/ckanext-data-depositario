@@ -516,6 +516,28 @@ header.navbar {
   }
 }
 
+.form-actions:before,
+.form-messages:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.form-messages:after {
+  clear: left;
+}
+
+.form-messages .control-required-message {
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 0;
+  line-height: 30px;
+}
+
+.control-required {
+  color: red;
+}
+
 .error-inline{
   color: #720404;
 }
