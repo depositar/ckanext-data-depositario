@@ -113,7 +113,7 @@ def schema_language_choices(field):
     """
     Language choices helper.
     """
-    major_lang_alpha_3 = ['zho', 'cmn', 'nan', 'hak', 'jpn', 'eng',
+    major_lang_alpha_3 = ['zho', 'jpn', 'eng',
             'fra', 'spa', 'ara', 'por', 'rus', 'deu']
     major_lang = [{'value': lang_alpha_3,
             'label': p.toolkit._(pycountry.languages. \
