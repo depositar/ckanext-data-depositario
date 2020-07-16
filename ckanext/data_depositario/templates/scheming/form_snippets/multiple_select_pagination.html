@@ -30,6 +30,7 @@
       style="display: block"
       id="field-{{ field.field_name }}"
       name="{{ field.field_name }}"
+      placeholder="{{ h.scheming_language_text(field.form_placeholder) }}"
       {{ form.attributes(dict(
         {"class": "form-control", "data-choices": h.dump_json(choices),
         "data-selected": h.dump_json(selected)}, **field.get('form_select_attrs', {}))) }}>
