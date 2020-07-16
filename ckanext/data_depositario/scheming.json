@@ -351,7 +351,7 @@
     {
       "field_name": "spatial",
       "label": {
-        "en": "Spatial",
+        "en": "Spatial Coverage",
         "zh_TW": "空間範圍"
       },
       "icon": "map-marker",
