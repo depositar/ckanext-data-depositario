@@ -59,7 +59,7 @@
       "choices": [
         {
           "value": "archive",
-          "icon": "archive",
+          "icon": "file-archive-o",
           "description": {
             "en": "ZIP, RAR, JAR, etc.",
             "zh_TW": "ZIP、RAR、JAR 等"
@@ -95,7 +95,7 @@
         },
         {
           "value": "database",
-          "icon": "floppy-o",
+          "icon": "database",
           "description": {
             "en": "DBASE, MS Access, Oracle, MySQL, etc.",
             "zh_TW": "DBASE、MS Access、Oracle、MySQL 等"
@@ -107,7 +107,7 @@
         },
         {
           "value": "doc",
-          "icon": "book",
+          "icon": "file-word-o",
           "description": {
             "en": "text documents, spreadsheets, presentations",
             "zh_TW": "文字文件、試算表、簡報"
@@ -119,7 +119,7 @@
         },
         {
           "value": "graphic",
-          "icon": "bar-chart-o",
+          "icon": "object-ungroup",
           "description": {
             "en": "CAD, CAM, 3D, VRML, etc.",
             "zh_TW": "CAD、CAM、3D、VRML 等"
@@ -191,7 +191,7 @@
         },
         {
           "value": "software",
-          "icon": "desktop",
+          "icon": "puzzle-piece",
           "description": {
             "en": "modelling tools, editors, IDE, compilers, etc.",
             "zh_TW": "建模工具、編輯器、整合開發環境、編譯器等"
@@ -265,7 +265,7 @@
         "en": "Language",
         "zh_TW": "語言"
       },
-      "icon": "globe",
+      "icon": "language",
       "multiple": true,
       "preset": "multiple_select",
       "validators": "value_string_convert scheming_multiple_choice",
@@ -286,7 +286,7 @@
         "en": "Remarks",
         "zh_TW": "備註"
       },
-      "icon": "pencil",
+      "icon": "sticky-note-o",
       "form_snippet": "markdown.html",
       "display_snippet": "markdown.html"
     },
