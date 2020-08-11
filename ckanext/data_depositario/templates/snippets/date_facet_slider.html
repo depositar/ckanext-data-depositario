@@ -6,7 +6,7 @@ Displays a slider widget to define a date filter on the dataset search page side
 
 <section class="module module-narrow module-shallow">
   <h2 class="module-heading">
-    <i class="fa fa-medium fa-calendar"></i>
+    <i class="fa fa-calendar"></i>
     {{ _('Filter by Time') }}
   {% if date_range %}
     <a href="{{ h.remove_url_param(['ext_begin', 'ext_end']) }}" class="action">
