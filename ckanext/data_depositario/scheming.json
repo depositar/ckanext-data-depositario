@@ -42,8 +42,8 @@
       "icon": "pencil",
       "form_snippet": "markdown.html",
       "form_placeholder": {
-        "en": "eg. Some useful notes about the data",
-        "zh_TW": "例如: 此資料一些有用的紀錄"
+        "en": "Brief and concise summary of the dataset",
+        "zh_TW": "關於資料集簡單扼要的說明"
       }
     },
     {
@@ -97,8 +97,8 @@
           "value": "database",
           "icon": "database",
           "description": {
-            "en": "DBASE, MS Access, Oracle, MySQL, etc.",
-            "zh_TW": "DBASE、MS Access、Oracle、MySQL 等"
+            "en": "MS Access, Oracle, MySQL, SQLite, PostgreSQL, etc.",
+            "zh_TW": "MS Access、Oracle、MySQL、SQLite、PostgreSQL 等"
           },
           "label": {
             "en": "Databases",
@@ -145,8 +145,8 @@
           "value": "multimedia",
           "icon": "film",
           "description": {
-            "en": "WAVE, MP3, MP4, Flash, etc.",
-            "zh_TW": "WAVE、MP3、MP4、Flash 等"
+            "en": "WAVE, MP3, MP4, WebM, FLAC, Ogg, etc.",
+            "zh_TW": "WAVE、MP3、MP4、WebM、FLAC、Ogg 等"
           },
           "label": {
             "en": "Audiovisual data",
@@ -205,8 +205,8 @@
           "value": "structured",
           "icon": "table",
           "description": {
-            "en": "XML, SGML, etc.",
-            "zh_TW": "XML、SGML 等"
+            "en": "XML, SGML, RTF, LaTeX, Markdown, ReST, etc.",
+            "zh_TW": "XML、SGML、RTF、LaTeX、Markdown、ReST 等"
           },
           "label": {
             "en": "Structured text",
@@ -217,8 +217,8 @@
           "value": "text",
           "icon": "file-text-o",
           "description": {
-            "en": "TXT in various encodings",
-            "zh_TW": "各種編碼之純文字檔案"
+            "en": "TXT in various encodings, and CSV files",
+            "zh_TW": "各種編碼之純文字檔案，與 CSV 檔案"
           },
           "label": {
             "en": "Plain text",
@@ -243,7 +243,11 @@
       },
       "icon": "barcode",
       "multiple": true,
-      "preset": "wikidata_keyword"
+      "preset": "wikidata_keyword",
+      "help_text": {
+        "en": "Search Wikidata items for keywords to describe the dataset. For labels that are specific to your projects or datasets (eg. grant no.), use Tags instead.",
+        "zh_TW": "搜尋 Wikidata（維基資料）項目選取關鍵字以描述資料集。只用於您專案或資料集的標記（如：計畫編號），請填寫於「標籤」欄位。"
+      }
     },
     {
       "field_name": "tag_string",
@@ -255,8 +259,12 @@
       "multiple": true,
       "preset": "tag_string_autocomplete",
       "form_placeholder": {
-        "en": "eg. economy, mental health, government",
-        "zh_TW": "例如：經濟、醫療衛生、政府"
+        "en": "eg. first phase, interview with Joe",
+        "zh_TW": "例如：第一期計畫、與 Joe 的訪談"
+      },
+      "help_text": {
+        "en": "Labels that are specific to your projects or datasets.",
+        "zh_TW": "只用於您專案或資料集的標記。"
       }
     },
     {
@@ -270,9 +278,13 @@
       "preset": "multiple_select",
       "validators": "value_string_convert scheming_multiple_choice",
       "form_snippet": "multiple_select_pagination.html",
+      "form_placeholder": {
+        "en": "Search for ISO 639-3 language codes...",
+        "zh_TW": "搜尋 ISO 639-3 語言編碼..."
+      },
       "help_text": {
-        "en": "Coded in ISO 639-3 Language Codes (three-letter codes within parentheses for each language on the list). Please refer to https://iso639-3.sil.org/code_tables.",
-        "zh_TW": "使用 ISO 639-3 語言標碼 (各語言後方括號內三碼)。參見 https://iso639-3.sil.org/code_tables。"
+        "en": "Languages used in the dataset. For ISO 639-3 Language Codes, please refer to https://iso639-3.sil.org/code_tables.",
+        "zh_TW": "資料集內容所使用之語言。ISO 639-3 語言編碼請參見 https://iso639-3.sil.org/code_tables。"
       },
       "choices_helper": "schema_language_choices",
       "form_select_attrs": {
@@ -320,7 +332,11 @@
            "zh_TW": "月"
          }
        }
-      ]
+      ],
+      "help_text": {
+        "en": "This refers to the precision of a measurement with respect to time. It can be the minimal time interval between subsequent examinations, or the maximum time error when the time period is uncertain.",
+        "zh_TW": "時間解析度為表示資料內容對應時間所能精確描述之程度。可以指「相鄰兩次觀測的最小時間間隔」，或「在不確定開始與結束的明確時間時，最大的誤差範圍」。"
+      }
     },
     {
       "field_name": "start_time",
@@ -333,6 +349,10 @@
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
         "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'"
+      },
+      "help_text": {
+        "en": "Please fill in the time related to contents of the dataset, not the time when the resources in the dataset were created or finished.",
+        "zh_TW": "請填寫與資料集內涵所關聯之時間，而資料集內資源的產出或完成之時間。"
       }
     },
     {
@@ -346,6 +366,10 @@
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
         "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'"
+      },
+      "help_text": {
+        "en": "Please fill in the time related to contents of the dataset, not the time when the resources in the dataset were created or finished.",
+        "zh_TW": "請填寫與資料集內涵所關聯之時間，而資料集內資源的產出或完成之時間。"
       }
     },
     {
@@ -357,14 +381,14 @@
       "icon": "map-marker",
       "validators": "ignore_empty json_validator remove_blank_wrap",
       "form_placeholder": {
-        "en": "Accept GeoJSON format",
-        "zh_TW": "僅接受 GeoJSON"
+        "en": "Fill in a GeoJSON text to describe the spatial coverage of the dataset. You can also use a map or parcel corners to fill in this field.",
+        "zh_TW": "以 GeoJSON 描述資料集之空間範圍。您亦可使用圖台，或自四至範圍轉換，以填寫此欄位。"
       },
       "form_snippet": "spatial_coverage.html",
       "display_snippet": "collapse_text.html",
       "help_text": {
-        "en": "This column is used for geo-indexing the dataset. Check http://geojson.org/ for details.",
-        "zh_TW": "此欄位將作為空間索引之用。請參閱 http://geojson.org/ 的說明。"
+        "en": "Fill in a GeoJSON text, then the dataset can be found through spatial search.",
+        "zh_TW": "填寫空間範圍資訊後，方可以空間搜尋獲得此資料集。"
       }
     },
     {
@@ -424,8 +448,8 @@
       "icon": "expand",
       "validators": "ignore_empty positive_float_validator",
       "form_placeholder": {
-        "en": "Spatial resolution (m) of source",
-        "zh_TW": "填寫資料空間解析度數值，以公尺為單位"
+        "en": "Spatial resolution (in meter) of the data",
+        "zh_TW": "資料的空間解析度數值，以公尺為單位"
       }
     },
     {
@@ -438,7 +462,11 @@
       "required": true,
       "sorted_choices": false,
       "choices_helper": "schema_license_choices",
-      "form_snippet": "license.html"
+      "form_snippet": "license.html",
+      "help_text": {
+        "en": "Declare the license for the dataset. If you need to use a license not on the list, please select the “Other Licenses” and mark the license in the Remarks field above.",
+        "zh_TW": "宣告本資料集所使用的授權。若不在候選清單內，請選擇「其他授權」，並於上方「備註」欄位註明授權條款。"
+      }
     },
     {
       "field_name": "author",
@@ -449,7 +477,11 @@
       "icon": "user",
       "form_placeholder": "Joe Bloggs",
       "display_property": "dc:creator",
-      "required": true
+      "required": true,
+      "help_text": {
+        "en": "The name of the person or project responsible for producing the dataset",
+        "zh_TW": "資料生產者或單位的名稱"
+      }
     },
     {
       "field_name": "created_time",
@@ -462,6 +494,10 @@
       "form_placeholder": {
         "en": "Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'",
         "zh_TW": "接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'"
+      },
+      "help_text": {
+        "en": "The time when the resources in the dataset were created",
+        "zh_TW": "資料集檔案產出時間"
       }
     },
     {
@@ -486,7 +522,11 @@
       },
       "icon": "users",
       "label_name": "organizations",
-      "preset": "dataset_organization"
+      "preset": "dataset_organization",
+      "help_text": {
+        "en": "Choose which project should own the dataset. If you select “No project”, the dataset will be opened to the public.",
+        "zh_TW": "設定資料集所屬專案。若選擇「不屬於任何專案」，則此資料集會強制設定為「公開」狀態。"
+      }
     },
     {
       "field_name": "contact_person",
@@ -496,7 +536,11 @@
       },
       "icon": "user",
       "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:contributor"
+      "display_property": "dc:contributor",
+      "help_text": {
+        "en": "The person responsible for maintaining the dataset",
+        "zh_TW": "本資料集主要維護人員"
+      }
     },
     {
       "field_name": "contact_email",
@@ -508,7 +552,11 @@
       "validators": "ignore_missing unicode email_validator",
       "form_placeholder": "joe@example.com",
       "display_property": "dc:contributor",
-      "display_snippet": "email.html"
+      "display_snippet": "email.html",
+      "help_text": {
+        "en": "The email of the person responsible for maintaining the dataset",
+        "zh_TW": "本資料集維護人員之電子郵件信箱"
+      }
     },
     {
       "field_name": "state",
@@ -572,8 +620,8 @@
       "icon": "pencil",
       "form_snippet": "markdown.html",
       "form_placeholder": {
-        "en": "Some useful notes about the data",
-        "zh_TW": "一些與此資料有關的紀錄"
+        "en": "Brief and concise summary of the resource",
+        "zh_TW": "關於資源簡單扼要的說明"
       }
     },
     {
@@ -637,7 +685,11 @@
             "zh_TW": "EUC-JP (日文)"
           }
         }
-      ]
+      ],
+      "help_text": {
+        "en": "The character encoding of the resource. Applied only to shapefile resources for now.",
+        "zh_TW": "此資源所使用之編碼系統。目前僅用於 shapefile 資源。"
+      }
     },
     {
       "field_name": "resource_crs",
@@ -654,8 +706,8 @@
         "zh_TW": "例如：4326"
       },
       "help_text": {
-        "en": "EPSG:4326→WGS84 (Default), EPSG:3826→TWD97/TM2 Taiwan, EPSG:3821→TWD67, EPSG:3825→TWD97/TM2 Penghu, EPSG:3828→TWD67/TM2 Taiwan",
-	"zh_TW": "EPSG:4326→WGS84 (預設), EPSG:3826→TWD97/TM2 台灣, EPSG:3821→TWD67, EPSG:3825→TWD97/TM2 澎湖, EPSG:3828→TWD67/TM2 台灣"
+        "en": "Specify the coordinate systems when the resource is in shapefile format with no projection (.prj file), otherwise the shapefile can not be previewed. Frequently used coordinate systems: EPSG:4326→WGS84 (Default), EPSG:3826→TWD97/TM2 Taiwan, EPSG:3821→TWD67, EPSG:3825→TWD97/TM2 Penghu, EPSG:3828→TWD67/TM2 Taiwan.",
+        "zh_TW": "當您所新增之資源為 shapefile 檔案，且未提供投影格式 (.prj) 檔案時，則需另外填寫此欄位，否則將無法開啟預覽功能。常用座標系統：EPSG:4326→WGS84 (預設)，EPSG:3826→TWD97/TM2 台灣，EPSG:3821→TWD67，EPSG:3825→TWD97/TM2 澎湖，EPSG:3828→TWD67/TM2 台灣。"
       }
     },
     {
@@ -669,6 +721,10 @@
       "form_placeholder": {
         "en": "eg. CSV, XML or JSON",
         "zh_TW": "例如：CSV, XML 或 JSON"
+      },
+      "help_text": {
+        "en": "Specify the shapefile as “shp” in the Format field when filling out resource information and upload a ZIP archive containing the .shp, .shx, .dbf, and .prj files, otherwise the shapefile can not be previewed.",
+        "zh_TW": "Shapefile 檔案請填寫「shp」，並將 .shp、.shx、.dbf、.prj 檔案置於一 zip 壓縮檔內，否則將無法開啟預覽功能。"
       }
     }
   ]
