@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.4.0b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.4.1b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-06-05 16:56+0800\n"
+"POT-Creation-Date: 2020-08-19 10:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -500,69 +500,36 @@ msgstr ""
 msgid "Open for project members only"
 msgstr ""
 
+#: ckanext/data_depositario/templates/scheming/form_snippets/spatial_coverage.html:7
+msgid "Use a map to fill in spatial coverage"
+msgstr ""
+
 #: ckanext/data_depositario/templates/scheming/package/resource_read.html:5
-msgid "Additional Information"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:10
-msgid "Last updated"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:11
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:17
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:23
-msgid "unknown"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:16
-msgid "Created"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:22
 msgid "Format"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:44
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:6
+msgid "unknown"
+msgstr ""
+
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:30
 msgid "License"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:39
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:20
 msgid "Basic Information"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:44
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:23
 msgid "Spatio-temporal Information"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:49
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:42
 msgid "Management Information"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:24
-msgid "Temporal Information (Time Period of Dataset)"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:28
-msgid "Use your account information to fill in contact person's name and email"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:32
-msgid "Spatial Information"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:36
-msgid "Convert from Parcel Corner"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:37
-msgid "Using a Map"
-msgstr ""
-
 #: ckanext/data_depositario/templates/snippets/date_facet_slider.html:10
-msgid "Temporal Search"
+msgid "Filter by Time"
 msgstr ""
 
 #: ckanext/data_depositario/templates/snippets/date_facet_slider.html:13

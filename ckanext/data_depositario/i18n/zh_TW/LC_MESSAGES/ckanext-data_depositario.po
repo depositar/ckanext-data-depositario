@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.4.0b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.4.1b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-06-05 16:56+0800\n"
+"POT-Creation-Date: 2020-08-19 10:53+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -542,69 +542,36 @@ msgstr "不屬於任何專案"
 msgid "Open for project members only"
 msgstr "只對專案內成員公開"
 
+#: ckanext/data_depositario/templates/scheming/form_snippets/spatial_coverage.html:7
+msgid "Use a map to fill in spatial coverage"
+msgstr "使用圖台填寫空間範圍"
+
 #: ckanext/data_depositario/templates/scheming/package/resource_read.html:5
-msgid "Additional Information"
-msgstr "其他資訊"
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:10
-msgid "Last updated"
-msgstr "最後更新"
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:11
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:17
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:23
-msgid "unknown"
-msgstr "未知的"
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:16
-msgid "Created"
-msgstr "建立"
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:22
 msgid "Format"
 msgstr "格式"
 
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:44
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:6
+msgid "unknown"
+msgstr "未知的"
+
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:30
 msgid "License"
 msgstr "授權"
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:39
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:20
 msgid "Basic Information"
 msgstr "基本資訊"
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:44
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:23
 msgid "Spatio-temporal Information"
 msgstr "時空資訊"
 
 #: ckanext/data_depositario/templates/scheming/package/snippets/additional_info.html:49
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:42
 msgid "Management Information"
 msgstr "管理資訊"
 
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:24
-msgid "Temporal Information (Time Period of Dataset)"
-msgstr "時間資訊（資料內容時間）"
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:28
-msgid "Use your account information to fill in contact person's name and email"
-msgstr "使用您的帳號資訊填入聯絡人與電子郵件"
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:32
-msgid "Spatial Information"
-msgstr "空間資訊"
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:36
-msgid "Convert from Parcel Corner"
-msgstr "自四至範圍轉換"
-
-#: ckanext/data_depositario/templates/scheming/package/snippets/package_form.html:37
-msgid "Using a Map"
-msgstr "使用圖台新增"
-
 #: ckanext/data_depositario/templates/snippets/date_facet_slider.html:10
-msgid "Temporal Search"
+msgid "Filter by Time"
 msgstr "時間搜尋"
 
 #: ckanext/data_depositario/templates/snippets/date_facet_slider.html:13
