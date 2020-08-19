@@ -264,13 +264,16 @@ be found through `spatial search <Extended feature — Spatial search_>`_.
 
 You can use the following two methods to generate a valid spatial extent in GeoJSON format:
 
+  * *Using a Map* -- You can also add the spatial extent through digitizing process.
+    Select the "Use a map to fill in spatial coverage" button and draw a polyline, polygon,
+    rectangle, or marker on the expanded map to generate the spatial extent.
+
   * *Convert from Parcel Corner* -- If you already have the longitude and latitude of the corners
     for the parcel to describe the dataset, you can fill in the X.min, X.max, Y.mim, and Y.max
-    fields, then select the "Convert from Parcel Corner" button to generate the spatial extent.
+    fields, then select the "Use parcel corners to fill in spatial coverage" button to generate
+    the spatial extent.
 
-  * *Using a Map* -- You can also add the spatial extent through digitizing process.
-    Select the "Using a Map" button and draw a polyline, polygon, rectangle, or marker
-    on the expanded map to generate the spatial extent.
+You can also fill in the spatial resolution of the dataset here.
 
 .. image:: /images/spatial_info.png
 
@@ -461,7 +464,7 @@ You can use a slider to set the time range.
 Extended feature — Spatial search
 ---------------------------------
 
-If datasets are tagged by geographical area in the ``spatial`` field (please refer to
+If datasets are tagged by geographical area in the ``Spatial Coverage`` field (please refer to
 :ref:`Spatial Fields  <UI_editing_extend_spatial>` for details), it is also possible to run CKAN
 with an extension which allows searching and filtering of datasets by selecting
 an area on a map.

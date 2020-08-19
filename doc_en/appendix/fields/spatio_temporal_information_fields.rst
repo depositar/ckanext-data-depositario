@@ -30,7 +30,7 @@
      - Same as above
      - Same as above
 
-   * - Spatial
+   * - Spatial Coverage
      - No
      - Please refer to :ref:`Fill-in snippet for spatial fields <UI_editing_extend_spatial>`.
      - GeoJSON format
@@ -57,5 +57,5 @@
 
    * - Spatial Resolution
      - No
-     - Spatial resolution (m) of source.
+     - Spatial resolution (in meter) of source.
      - Must be a positive float.

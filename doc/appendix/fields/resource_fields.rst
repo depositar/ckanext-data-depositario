@@ -22,9 +22,9 @@
      - 關於資源的簡短描述。
      - Markdown 欄位。
 
-   * - 文字編碼
+   * - 字元編碼
      - 否
-     - 此檔案所使用之編碼系統，如 UTF-8、Big5 等。**用於 Shapefile 檔案。**
+     - 此資源所使用之編碼系統，如 UTF-8、Big5 等。目前僅用於 shapefile 資源。
      - 限以下 `IANA Character Sets <https://www.iana.org/assignments/character-sets/character-sets.xhtml>`_ 編碼之一：
 
        | Big5 (繁體中文大五碼)
@@ -37,7 +37,7 @@
 
    * - 座標參考系統
      - 否
-     - 當您所新增之資源屬於空間資料時，則需另外填寫該空間資料所參考之坐標系統。採用 EPSG （歐洲石油測量組織）編碼。**用於 Shapefile 檔案。**
+     - 當您所新增之資源為 shapefile 檔案，且未提供投影格式（.prj）檔案時，則需另外填寫此欄位，否則將無法開啟預覽功能。採用 EPSG （歐洲石油測量組織）編碼。
      - 必須是正整數。
 
    * - 格式

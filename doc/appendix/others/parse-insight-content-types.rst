@@ -1,4 +1,4 @@
-譯自 re3data.org 所發行之 `Metadata Schema for the Description of Research Data Repositories`_。
+翻譯與修改自 re3data.org 所發行之 `Metadata Schema for the Description of Research Data Repositories`_。
 
 .. list-table::
    :widths: 25 75
@@ -14,7 +14,7 @@
      - 網站、電子郵件、聊天記錄等
 
    * - 資料庫
-     - DBASE、MS Access、Oracle、MySQL 等
+     - MS Access、Oracle、MySQL、SQLite、PostgreSQL 等
 
    * - 影像
      - JPEG、JPEG2000、GIF、TIF、PNG、SVG 等
@@ -23,7 +23,7 @@
      - CAD、CAM、3D、VRML 等
 
    * - 影音資料
-     - WAVE、MP3、MP4、Flash 等
+     - WAVE、MP3、MP4、WebM、FLAC、Ogg 等
 
    * - 科學與統計資料
      - SPSS、FITS、GIS 等
@@ -32,10 +32,10 @@
      - 數位裝置輸出之資料
 
    * - 純文字資料
-     - 各種編碼之純文字檔案
+     - 各種編碼之純文字檔案，與 CSV 檔案
 
    * - 結構化文字資料
-     - XML、SGML 等
+     - XML、SGML、RTF、LaTeX、Markdown、ReST 等
 
    * - 壓縮檔資料
      - ZIP、RAR、JAR 等

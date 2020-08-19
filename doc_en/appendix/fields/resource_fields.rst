@@ -24,7 +24,7 @@
 
    * - Character Encoding
      - No
-     - The character encoding of the resource (e.g., UTF-8 or Big5). **For Shapefile resource.**
+     - The character encoding of the resource (e.g., UTF-8 or Big5). Applied only to shapefile resources for now.
      - `IANA Character Sets <https://www.iana.org/assignments/character-sets/character-sets.xhtml>`_:
 
        | Big5
@@ -37,7 +37,7 @@
 
    * - Coordinate Systems
      - No
-     - The coordinate systems of the spatial resource. The EPSG (European Petroleum Survey Group) system has been used. **For Shapefile resource.**
+     - This field is required when the resource is in shapefile format with no projection (.prj file), otherwise the shapefile can not be previewed. The EPSG (European Petroleum Survey Group) system has been used.
      - Must be a postive integer.
 
    * - Format

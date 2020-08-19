@@ -38,26 +38,24 @@
 
    * - Wikidata Keywords
      - No
-     - The short term to describe the contents of the dataset. You can search and select
-       keywords from Wikidata by an autocomplete dropdown list as shown below [#]_.
-       Wikidata entries are multilingual, which means the language of keywords may
-       align with the site language setting. Use the Tags field above when there is
-       no proper entry in the Wikidata to describe the dataset.
+     - Search Wikidata items for keywords to describe the dataset as shown below [#]_.
+       For labels that are specific to your projects or datasets (eg. grant no.),
+       use Tags instead.
+       The language of keywords may align with the site language setting.
      - Accept multiple values.
 
    * - Tags
      - No
      - Here you may add tags that will help people find the data and link it with other
-       related data. Please only use this field when there is no proper entry in the
-       Wikidata to describe the dataset. Otherwise, use the Wikidata Keywords field
-       above instead.
+       related data.
+       Tags should be used as labels that are specific to your projects or datasets.
      - Accept multiple values. Must be a valid unicode string, -, _, or . characters.
        The length limit for the tag is from 1 characters to 100 characters.
 
    * - Language
      - No
      - The language of the dataset (e.g., Chinese or Japanese). Main language (according
-       to Wikipedia: `World language`_ and `Languages of Taiwan`_) will be listed first,
+       to Wikipedia: `World language`_) will be listed first,
        followed by other ISO 639-3 languages in alphabetical order.
      - Accept multiple values. Must be a language defined in ISO 639-3.
 
@@ -68,4 +66,3 @@
 
 .. [#] .. image:: /images/keyword_wikidata.png
 .. _World language: https://en.wikipedia.org/wiki/World_language#Living_world_languages
-.. _Languages of Taiwan: https://en.wikipedia.org/wiki/Languages_of_Taiwan

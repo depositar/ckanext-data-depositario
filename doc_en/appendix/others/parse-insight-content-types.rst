@@ -1,4 +1,4 @@
-From `Metadata Schema for the Description of Research Data Repositories`_.
+Adapted from `Metadata Schema for the Description of Research Data Repositories`_.
 
 .. list-table::
    :widths: 25 75
@@ -13,8 +13,8 @@ From `Metadata Schema for the Description of Research Data Repositories`_.
    * - Networkbased data
      - websites, email, chat history, etc.
 
-   * - Databases 
-     - DBASE, MS Access, Oracle, MySQL, etc.
+   * - Databases
+     - MS Access, Oracle, MySQL, SQLite, PostgreSQL, etc.
 
    * - Images
      - JPEG, JPEG2000, GIF, TIF, PNG, SVG, etc.
@@ -23,7 +23,7 @@ From `Metadata Schema for the Description of Research Data Repositories`_.
      - CAD, CAM, 3D, VRML, etc.
 
    * - Audiovisual data
-     - WAVE, MP3, MP4, Flash, etc.
+     - WAVE, MP3, MP4, WebM, FLAC, Ogg, etc.
 
    * - Scientific and statistical data formats
      - SPSS, FITS, GIS, etc.
@@ -32,10 +32,10 @@ From `Metadata Schema for the Description of Research Data Repositories`_.
      - device specific output
 
    * - Plain text
-     - TXT in various encodings
+     - TXT in various encodings, and CSV files
 
    * - Structured text
-     - XML, SGML, etc.
+     - XML, SGML, RTF, LaTeX, Markdown, ReST, etc.
 
    * - Archived data
      - ZIP, RAR, JAR, etc.

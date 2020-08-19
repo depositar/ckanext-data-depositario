@@ -14,7 +14,7 @@
    * - 摘要
      - *選填欄位基本校驗器*
 
-   * - 文字編碼
+   * - 字元編碼
      - :ref:`scheming_required <external_validators>` :ref:`scheming_choices <external_validators>`
 
    * - 座標參考系統

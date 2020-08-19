@@ -9,7 +9,7 @@
 
    * - License
      - Yes
-     - It is important to include license information so that people know how they can use the data. If you need to use a license not on the list, please select the "Other Licenses" and mark the license in the ``Remarks`` field above.
+     - Declare the license for the dataset so that people know how they can use the data. If you need to use a license not on the list, please select the "Other Licenses" and mark the license in the ``Remarks`` field above.
      - Must be one of the following licenses:
 
        | License Not Specified
@@ -55,12 +55,12 @@
 
    * - Contact Person
      - No
-     - The name of the person responsible for maintaining the data.
+     - The person responsible for maintaining the dataset.
      -
 
    * - Contact Person Email
      - No
-     - The email of the person responsible for maintaining the data.
+     - The email of the person responsible for maintaining the dataset.
      - `Email format <https://html.spec.whatwg.org/#e-mail-state-(type=email)>`_
 
 .. [#] .. image:: /images/add_dataset_3.png
