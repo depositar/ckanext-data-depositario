@@ -7,6 +7,19 @@
 更新日誌
 --------
 
+v6.4.1 2020-08-20
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-wikidatakeyword <https://github.com/depositar/ckanext-wikidatakeyword>`_、`ckanext-spatial <https://github.com/depositar/ckanext-spatial>`_，與 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+
+更新內容：
+ * 改善：資料集與資源編輯頁面加入使用手冊連結、欄位圖示，與欄位說明。
+ * 更新：手冊勘誤。
+ * 更新：CKAN 核心至 `2.7.8 <https://docs.ckan.org/en/latest/changelog.html#v-2-7-8-2020-08-05>`_。
+ * 移除：Google+ 分享按鈕。
+ * 其他程式最佳化與細部介面調整。
+
 v6.4.0 2020-06-10
 =================
 

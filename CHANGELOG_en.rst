@@ -7,6 +7,19 @@
 Changelog
 ---------
 
+v6.4.1 2020-08-20
+=================
+
+Notice:
+ * This version requires the latest `ckanext-wikidatakeyword <https://github.com/depositar/ckanext-wikidatakeyword>`_, `ckanext-spatial <https://github.com/depositar/ckanext-spatial>`_, and `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Improvement: Add links to manual, icons, and help texts on dataset and resource form.
+ * Update: Correct some errors in documentation.
+ * Update: CKAN core version `2.7.8 <https://docs.ckan.org/en/latest/changelog.html#v-2-7-8-2020-08-05>`_.
+ * Remove: Google+ share button.
+ * Other improvements and UI adjustments.
+
 v6.4.0 2020-06-10
 =================
 
