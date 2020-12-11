@@ -8,6 +8,9 @@ entry_points = {
 	'data_depositario = ckanext.data_depositario.plugin:DataDepositarioDatasets',
         'depositar_iso639 = ckanext.data_depositario.plugin:DepositarISO639'
     ],
+    'ckan.rdf.profiles': [
+        'dcat = ckanext.data_depositario.profiles.dcat:DCATProfile'
+    ],
     'babel.extractors': [
         'ckan = ckan.lib.extract:extract_ckan',
     ],
