@@ -628,6 +628,8 @@ You can get access to DataStore API through the following steps:
 
     .. image:: /images/data_api_3.png
 
+.. _rdf_serializations:
+
 RDF Serializations
 ==================
 
