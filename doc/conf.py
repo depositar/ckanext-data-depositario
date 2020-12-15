@@ -35,6 +35,7 @@ rst_epilog = u'''
 .. _User guide — CKAN 2.7.6 documentation: http://docs.ckan.org/en/2.7/user-guide.html
 .. _Maintainer’s guide — CKAN 2.7.6 documentation: http://docs.ckan.org/en/2.7/maintaining/index.html
 .. _String internationalization: http://docs.ckan.org/en/2.7/contributing/string-i18n.html
+.. _聯絡我們: data.contact@depositar.io
 '''
 
 
@@ -42,7 +43,8 @@ rst_epilog = u'''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.autodoc',
-    'sphinx.ext.todo']
+    'sphinx.ext.todo',
+    'sphinx.ext.extlinks']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -167,3 +169,10 @@ latex_documents = [
     (master_doc, 'sphinx.tex', u'depositar Documentation',
      u'The depositar Team', 'manual'),
 ]
+
+extlinks = {
+    'site_url': ('https://data.depositar.io/%s', None),
+    'dcat_2': ('https://www.w3.org/TR/vocab-dcat-2/#%s', None),
+    'dcat_ap_jrc': ('https://ec-jrc.github.io/dcat-ap-jrc/#%s', None),
+    'geodcat_ap': ('https://joinup.ec.europa.eu/sites/default/files/distribution/2016-08/geodcat-ap_v1.0.1.pdf#%s', None)
+}

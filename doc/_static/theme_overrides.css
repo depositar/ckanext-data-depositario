@@ -1,5 +1,5 @@
 /* override table width restrictions */
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 1500px) {
 
    .wy-table-responsive table td {
       /* !important prevents the common CSS stylesheets from overriding
@@ -10,4 +10,8 @@
    .wy-table-responsive {
       overflow: visible !important;
    }
+}
+
+.wy-nav-content {
+   max-width: 1500px !important;
 }

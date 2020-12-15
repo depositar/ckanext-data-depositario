@@ -7,4 +7,5 @@ Appendix
 
    fields/index
    validators/index
+   metadata-mapping/index
    others/index

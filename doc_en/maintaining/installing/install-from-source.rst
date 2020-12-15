@@ -84,6 +84,7 @@ g. Install other required Python modules into your virtualenv:
 
       pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-scheming/requirements.txt
+      pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
 
 -------------------------------------------------------
 3. Install DataPusher into a Python virtual environment
@@ -238,8 +239,9 @@ c. Edit the development.ini file in a text editor, changing the following option
       ckan.site_url = http://127.0.0.1:5000
 
       ## Plugins Settings
-      ckan.plugins = data_depositario depositar_iso639 depositar_theme
-                     citation wikidatakeyword stats datastore datapusher
+      ckan.plugins = dat data_depositario depositar_iso639 depositar_theme
+                     citation wikidatakeyword dcat_json_interface structured_data
+                     stats datastore datapusher
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view spatial_metadata spatial_query
@@ -266,6 +268,11 @@ c. Edit the development.ini file in a text editor, changing the following option
       ## Spatial Settings
       ## Add these settings
       ckanext.spatial.search_backend = solr-spatial-field
+
+      ## DCAT Settings
+      ckanext.dcat.rdf.profiles = dcat
+      ckanext.dcat.translate_keys = False
+      ckanext.dcat.enable_content_negotiation = True
 
       ## ckanext-data-depositario Settings
       ## Add these settings
