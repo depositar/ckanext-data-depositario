@@ -4,3 +4,8 @@
 {{ super() }}
 Disallow: /user/activity/*
 {%- endblock %}
+
+{% block additional_user_agents -%}
+User-Agent: SemrushBot
+Disallow: /
+{%- endblock %}
