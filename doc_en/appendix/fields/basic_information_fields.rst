@@ -57,6 +57,7 @@
      - The language of the dataset (e.g., Chinese or Japanese). Main language (according
        to Wikipedia: `World language`_) will be listed first,
        followed by other ISO 639-3 languages in alphabetical order.
+       The translations for language names are taken from Debian's iso-codes_ project.
      - Accept multiple values. Must be a language defined in ISO 639-3.
 
    * - Remarks
@@ -66,3 +67,4 @@
 
 .. [#] .. image:: /images/keyword_wikidata.png
 .. _World language: https://en.wikipedia.org/wiki/World_language#Living_world_languages
+.. _iso-codes: https://hosted.weblate.org/projects/iso-codes/

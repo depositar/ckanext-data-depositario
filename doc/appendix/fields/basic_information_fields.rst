@@ -39,7 +39,7 @@
 
    * - 語言
      - 否
-     - 本項目說明資料集內容所使用之語言，如歷史文獻可能為華語、日語、西班牙語系等。選項將先列出主要語言（依據維基百科：`World language`_ 條目），再依照 ISO 639-3 語言編碼字母排序列出。
+     - 本項目說明資料集內容所使用之語言，如歷史文獻可能為華語、日語、西班牙語系等。選項將先列出主要語言（依據維基百科：`World language`_ 條目），再依照 ISO 639-3 語言編碼字母排序列出。語言名稱翻譯取自 debian iso-codes_ 專案。
      - 接受多值。限使用 ISO 639-3 語言編碼。
 
    * - 備註
@@ -49,3 +49,4 @@
 
 .. [#] .. image:: /images/keyword_wikidata.png
 .. _World language: https://en.wikipedia.org/wiki/World_language#Living_world_languages
+.. _iso-codes: https://hosted.weblate.org/projects/iso-codes/
