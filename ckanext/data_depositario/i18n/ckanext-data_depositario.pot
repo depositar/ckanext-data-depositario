@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.4.1b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.4.2b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-08-19 10:53+0800\n"
+"POT-Creation-Date: 2020-12-15 10:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -146,7 +146,6 @@ msgid "About depositar"
 msgstr ""
 
 #: ckanext/data_depositario/templates/footer.html:13
-#: ckanext/data_depositario/templates/package/read.html:27
 msgid "CKAN API"
 msgstr ""
 
@@ -271,7 +270,7 @@ msgid ""
 "alphabetical order, have been or were once in the project team: Tyng-Ruey "
 "Chuang (project lead), Andrea Wei-Ching Huang, Cheng-Jen Lee (lead "
 "developer), Hsiung-Ming Liao, Yen-Tsen Liu, Huang-Sin Syu, Ally Chia-Hsun "
-"Wang (project manager), and Yao-Hsien Yeh.</p> "
+"Wang (project manager), Yu-Huang Wang, and Yao-Hsien Yeh.</p> "
 msgstr ""
 
 #: ckanext/data_depositario/templates/home/snippets/idx_datasets.html:3
@@ -417,24 +416,6 @@ msgstr ""
 
 #: ckanext/data_depositario/templates/home/snippets/idx_topics.html:77
 msgid "Technology and applied sciences"
-msgstr ""
-
-#: ckanext/data_depositario/templates/package/read.html:18
-msgid "Other Access"
-msgstr ""
-
-#: ckanext/data_depositario/templates/package/read.html:21
-msgid ""
-"The information on this page (the dataset metadata) is also available in "
-"these formats:"
-msgstr ""
-
-#: ckanext/data_depositario/templates/package/read.html:27
-msgid "via the "
-msgstr ""
-
-#: ckanext/data_depositario/templates/package/read.html:35
-msgid "Tags"
 msgstr ""
 
 #: ckanext/data_depositario/templates/package/read_base.html:11
