@@ -7,6 +7,16 @@
 更新日誌
 --------
 
+v6.4.2 2020-12-17
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-spatial <https://github.com/depositar/ckanext-spatial>`_ 與 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+
+更新內容：
+ * 新增：:ref:`rdf_serializations` (測試功能)。
+ * 其他程式最佳化與細部介面調整。
+
 v6.4.1 2020-08-20
 =================
 

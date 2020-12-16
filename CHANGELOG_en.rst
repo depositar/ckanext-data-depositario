@@ -7,6 +7,16 @@
 Changelog
 ---------
 
+v6.4.2 2020-12-17
+=================
+
+Notice:
+ * This version requires the latest `ckanext-spatial <https://github.com/depositar/ckanext-spatial>`_ and `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Add: :ref:`rdf_serializations` (experimental).
+ * Other improvements and UI adjustments.
+
 v6.4.1 2020-08-20
 =================
 
