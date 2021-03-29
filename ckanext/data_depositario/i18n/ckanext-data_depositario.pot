@@ -1,15 +1,15 @@
 # Translations template for ckanext-data-depositario.
-# Copyright (C) 2020 ORGANIZATION
+# Copyright (C) 2021 ORGANIZATION
 # This file is distributed under the same license as the
 # ckanext-data-depositario project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.4.2b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.4.3b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-15 10:52+0800\n"
+"POT-Creation-Date: 2021-03-29 10:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -268,9 +268,10 @@ msgid ""
 "Center for Humanities and Social Sciences, Academia Sinica.</p> <p>Developing"
 " <em>depositar</em> has been a team work. The following people, in "
 "alphabetical order, have been or were once in the project team: Tyng-Ruey "
-"Chuang (project lead), Andrea Wei-Ching Huang, Cheng-Jen Lee (lead "
-"developer), Hsiung-Ming Liao, Yen-Tsen Liu, Huang-Sin Syu, Ally Chia-Hsun "
-"Wang (project manager), Yu-Huang Wang, and Yao-Hsien Yeh.</p> "
+"Chuang (project lead), Ming-Syuan Ho (project manager), Andrea Wei-Ching "
+"Huang, Cheng-Jen Lee (tech lead), Hsiung-Ming Liao, Yen-Tsen Liu, Huang-Sin "
+"Syu, Ally Chia-Hsun Wang (project manager), Yu-Huang Wang, and Yao-Hsien "
+"Yeh.</p> "
 msgstr ""
 
 #: ckanext/data_depositario/templates/home/snippets/idx_datasets.html:3
