@@ -6,3 +6,6 @@ syntax: glob
 *.bak
 dist
 build
+
+# node.js
+node_modules/
