@@ -8,3 +8,135 @@
 #map label:after {
   content: none;
 }
+.account-masthead {
+  color: #fff;
+  background: #000;
+  background-image: none;
+  padding-top: 5px;
+}
+.account-masthead .account ul li {
+  border-left: solid 1px #cccccc;
+}
+.account-masthead .account ul li a {
+  color: #fff;
+  background: transparent;
+  text-shadow: none;
+  font-weight: normal;
+  line-height: 21px;
+}
+.account-masthead .account ul li a:hover {
+  color: #fff;
+  background-color: #333333;
+}
+.masthead {
+  background-image: none;
+}
+.masthead .nav-collapse {
+  padding-top: 5px;
+}
+.masthead input[type="text"] {
+  border: 0px;
+  border-radius: 50px;
+  box-shadow: none;
+  background: #ededed;
+}
+.masthead .logo img {
+  width: 185px;
+  padding-left: 5px;
+}
+.masthead .navigation .nav-pills li a {
+  border-radius: 0;
+  color: #000;
+}
+.masthead .navigation .nav-pills li a:after {
+  content: '';
+  display: block;
+  width: 0px;
+  margin-top: 6px;
+  height: 3px;
+  background-color: #00e09b;
+  -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+  -webkit-transition-property: width, color;
+  transition-property: width, color;
+}
+.masthead .navigation .nav-pills li a:hover,
+.masthead .navigation .nav-pills li.active a {
+  background-color: #fff;
+}
+.masthead .navigation .nav-pills li a:hover:after {
+  width: 100%;
+}
+.masthead .navigation .nav-pills li.active a:after {
+  width: 100%;
+  margin-top: 6px;
+  height: 3px;
+  background-color: #00e09b;
+  border-radius: 0;
+}
+.masthead .nav > li > a,
+.masthead .nav > li > a:focus,
+.masthead .nav > li > a:hover,
+.masthead .nav > .active > a,
+.masthead .nav > .active > a:hover,
+.masthead .nav > .active > a:focus {
+  color: #000;
+  border-bottom: none;
+  font-size: 15px;
+}
+.masthead .site-search input {
+  width: 30px;
+  padding: 10px 15px;
+  color: #000;
+  margin: -7px -10px 0 0;
+  padding-bottom: 4px;
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+}
+.masthead .site-search input:hover {
+  width: 200px;
+}
+@media (max-width: 767px) {
+  .account-masthead {
+    margin-right: -40px;
+  }
+  .masthead .container {
+    padding-right: 0;
+  }
+  .mast_heading {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (max-width: 979px) {
+  .simple-input .field .btn-search {
+    top: 50%;
+  }
+  .masthead input[type="text"] {
+    width: 100%;
+    border-radius: 4px;
+    margin: 20px 0;
+  }
+  .masthead .btn-navbar,
+  .masthead .btn-navbar:hover {
+    background-color: #fff;
+    margin-top: 0px;
+    color: #000;
+    font-size: 25px;
+    border: none !important;
+  }
+  .masthead .nav-collapse {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .masthead .site-search {
+    display: inherit;
+  }
+  .masthead .site-search input {
+    padding: 20px 15px;
+    width: 100%;
+  }
+  .masthead .site-search input:hover {
+    width: 100%;
+  }
+}

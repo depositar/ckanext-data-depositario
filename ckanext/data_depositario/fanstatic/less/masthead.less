@@ -1,0 +1,162 @@
+.account-masthead {
+  color: @accountMastheadTextColor;
+  background: @accountMastheadBackgroundColor;
+  background-image: none;
+  padding-top: 5px;
+  .account {
+    ul {
+      li {
+        border-left: solid 1px darken(@accountMastheadTextColor, 20%);
+        a {
+          color: @accountMastheadTextColor;
+          background: transparent;
+          text-shadow: none;
+          font-weight: normal;
+          line-height: 21px;
+          &:hover {
+            color: @accountMastheadTextColor;
+            background-color: lighten(@accountMastheadBackgroundColor, 20%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.masthead {
+  background-image: none;
+
+  .nav-collapse {
+    padding-top: 5px;
+  }
+
+  input[type="text"] {
+    border: 0px;
+    border-radius: 50px;
+    box-shadow: none;
+    background: darken(@mastheadBackgroundColor, 7%);
+  }
+
+  .logo img {
+      width: 185px;
+      padding-left: 5px;
+  }
+
+  .navigation {
+    .nav-pills {
+      li {
+        a {
+          border-radius: 0;
+          color: @mastheadLinkColor;
+        }
+        a:after {
+          content: '';
+          display: block;
+          width: 0px;
+          margin-top: 6px;
+          height: 3px;
+          background-color: @mastheadLinkAnimationBackgroundColor;
+          -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+          -webkit-transition-property: width, color;
+          transition-property: width, color;
+        }
+        a:hover,
+        &.active a {
+          background-color: @mastheadBackgroundColor;
+        }
+        a:hover:after {
+          width: 100%;
+        }
+      }
+      li.active {
+        a:after {
+          width: 100%;
+          margin-top: 6px;
+          height: 3px;
+          background-color: @mastheadLinkActiveBackgroundColor;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  .nav > li > a,
+  .nav > li > a:focus,
+  .nav > li > a:hover,
+  .nav > .active > a,
+  .nav > .active > a:hover,
+  .nav > .active > a:focus {
+    color: @mastheadLinkColor;
+    border-bottom: none;
+    font-size: 15px;
+  }
+
+  .site-search {
+    input {
+      width: 30px;
+      padding: 10px 15px;
+      color: @mastheadTextColor;
+      margin: -7px -10px 0 0;
+      padding-bottom: 4px;
+      -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+    }
+    input:hover {
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .account-masthead {
+    margin-right: -40px;
+  }
+  .masthead {
+    .container {
+      padding-right: 0;
+    }
+  }
+  .mast_heading {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 979px) {
+  .simple-input {
+    .field {
+      .btn-search {
+        top: 50%;
+      }
+    }
+  }
+  .masthead {
+    input[type="text"] {
+      width: 100%;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+    .btn-navbar, .btn-navbar:hover {
+      background-color: @mastheadBackgroundColor;
+      margin-top: 0px;
+      color: @mastheadTextColor;
+      font-size: 25px;
+      border: none !important;
+    }
+    .nav-collapse {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .site-search {
+      display: inherit;
+      input {
+        padding: 20px 15px;
+        width: 100%;
+      }
+      input:hover {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -65,26 +65,9 @@ li{
   font-size: 12.5px;
 }
 
-[role=main], .main, .masthead{
+[role=main], .main {
   background-color: #FFFFFF;
   background-image: none;
-}
-
-.masthead a {
-  color: #000;
-}
-
-.account-masthead {
-  color: #000000;
-  background: #000;
-  background-image: none;
-  padding-top: 5px;
-}
-
-@media (max-width: 767px) {
-  .account-masthead {
-    margin-right: -40px;
-  }
 }
 
 .border-l{
@@ -108,27 +91,10 @@ header.navbar {
   padding-top: 20px;
 }
 
-.masthead .nav>li>a, .masthead .nav>li>a:focus, .masthead .nav>li>a:hover, .masthead .nav>.active>a, .masthead .nav>.active>a:hover, .masthead .nav>.active>a:focus {
-  color: #000;
-  text-shadow: none;
-  font-size: 15px;
-}
-
-
 @media (max-width: 979px) {
   .nav-collapse .nav>li {
     font-size: 25px;
     margin-top: 20px;
-  }
-}
-
-@media (max-width: 767px) {
-  .masthead .container{
-    padding-right: 0;
-  }
-  .mast_heading{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
   }
 }
 
@@ -560,92 +526,6 @@ header.navbar {
   font-size: 14px;
 }
 
-
-
-/* =====================================================
-   The "account masthead" bar across the top of the site
-   ===================================================== */
-
-
-/* The "bubble" containing the number of new notifications. */
-.account-masthead .account .notifications a span {
-  background-color: #cccccc;
-}
-/* The text and icons in the user account info. */
-
-.account-masthead .account ul li a {
-  color: #fff;
-  background: transparent;
-  text-shadow: none;
-  font-weight: normal;
-  line-height: 21px;
-  border-left: none;
-}
-
-.account-masthead .account ul li{
-  display: block;
-  float: left;
-  border-left: #cdcdcd solid 1px;
-}
-
-/* The user account info text and icons, when the user's pointer is hovering
-   over them. */
-.account-masthead .account ul li a:hover {
-  color: #fff;
-  background-color: #333;
-}
-
-
-/* ========================================================================
-   The main masthead bar that contains the site logo, nav links, and search
-   ======================================================================== */
-
-.masthead {
-  color:  #000;
-  background-color: #fff;
-}
-/* The "navigation pills" in the masthead (the links to Datasets,
-   Organizations, etc) when the user's pointer hovers over them. */
-
-.masthead .navigation .nav-pills li a {
-  border-radius: 0;
-  color: #000;
-}
-
-.masthead .navigation .nav-pills li a:after {
-  content: '';
-  display: block;
-  width: 0px;
-  margin-top: 6px;
-  height: 3px;
-  background-color: #00e09b;
-  -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.02);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.02);
-  -webkit-transition-property: width, color;
-  transition-property: width, color;
-}
-
-.masthead .navigation .nav-pills li a:hover:after {
-  width: 100%;
-}
-
-
-
-/* The "active" navigation pill (for example, when you're on the /dataset page
-   the "Datasets" link is active). */
-.masthead .navigation .nav-pills li.active a:after {
-  width: 100%;
-  margin-top: 6px;
-  height: 3px;
-  background-color: #00e09b;
-  border-radius: 0;
-}
-
-.masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li.active a {
-  background-color: #fff;
-}
-
-
 .nav-pills>li>a{
   border-radius: 0;
 }
@@ -681,18 +561,6 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   background-color: #333;
 }
 
-@media (max-width: 979px) {
-  .masthead .site-search {
-    display: inherit;
-  }
-  .masthead .site-search input {
-    width: 100%;
-    width: -moz-available;
-    width: -webkit-fill-available;
-    width: fill-available;
-  }
-}
-
 @media (max-width: 767px) {
   .nav-pills>li>a{
     border-radius: 0;
@@ -701,56 +569,8 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 /* masthead input for search */
 
-.masthead .site-search input{
-  width: 30px;
-  padding: 10px 15px;
-  color: #000;
-  margin: -7px -10px 0 0;
-  padding-bottom: 4px;
-  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
-}
-
-.masthead .site-search input:hover{
-  width: 200px;
-}
-
-
-.masthead input[type="text"]{
-  border: 0px;
-  border-radius: 50px;
-  box-shadow: none;
-  background: #ededed;
-}
-
 .simple-input .field .btn-search{
   top:40%;
-}
-
-.masthead .nav-collapse{
-  padding-top:5px;
-}
-
-
-@media (max-width: 979px) {
-  .masthead .nav-collapse{
-    padding-top:10px;
-    padding-bottom:10px;
-  }
-  .masthead .site-search input{
-    padding: 20px 15px;
-  }
-  .masthead input[type="text"]{
-    width: 100%;
-    border-radius: 4px;
-    margin: 20px 0;
-  }
-  .simple-input .field .btn-search{
-    top:50%;
-  }
-  .masthead .site-search input:hover{
-    width: 100%;
-  }
 }
 
 /* ====================================
@@ -1468,14 +1288,6 @@ div .module-heading > .search-form.no-bottom-border {
     }
 
     @media (max-width: 979px) {
-      .masthead .btn-navbar, .masthead .btn-navbar:hover{
-        background-color: #fff;
-        margin-top: 0px;
-        color: #000;
-        font-size: 25px;
-        border: none !important
-      }
-
       .navbar-inner {
         margin: -20px;
       }
