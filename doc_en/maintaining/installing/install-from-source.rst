@@ -77,6 +77,7 @@ f. Install the Python modules that customized extesion requires into your virtua
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
+      pip install -r /usr/lib/ckan/default/src/ckanext-depositar_theme/requirements.txt
 
 g. Install other required Python modules into your virtualenv:
 

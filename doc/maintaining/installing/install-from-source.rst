@@ -72,6 +72,7 @@ f. 安裝本平台客製套件所需 Python 套件
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
+      pip install -r /usr/lib/ckan/default/src/ckanext-depositar_theme/requirements.txt
 
 g. 安裝其他所需 Python 套件
 
