@@ -85,23 +85,12 @@ li{
 }
 /* navbar */
 
-header.navbar {
+/* header.navbar {
   background-color: #FFFFFF;
   border-bottom: none;
   padding-top: 20px;
-}
+} */
 
-@media (max-width: 979px) {
-  .nav-collapse .nav>li {
-    font-size: 25px;
-    margin-top: 20px;
-  }
-}
-
-.masthead .container .logo img {
-  width: 185px;
-  padding-left: 5px;
-}
 
 [role=main], .main{
   padding-top: 0px;
@@ -680,244 +669,6 @@ div .module-heading > .search-form.no-bottom-border {
     }
 
 
-    /* Featurettes
-    ------------------------- */
-
-    .mast_heading{
-      padding: 150px 0; /* Vertically center images part 1: add padding above and below text. */
-      overflow: hidden;
-    }
-
-    @media (min-width: 767px) and (max-width: 978 px) {
-      .mast_heading{
-        padding: 100px 0;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .masthead_main{
-        height: 250px;
-      }
-      .mast_heading{
-        padding: 75px 0;
-      }
-    }
-
-    .featurette-divider {
-      margin: 80px 0; /* Space out the Bootstrap <hr> more */
-    }
-    .featurette {
-      overflow: hidden; /* Vertically center images part 2: clear their floats. */
-    }
-    .featurette-image {
-      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-    }
-
-    .featurette-image.pull-left {
-      margin-right: 40px;
-    }
-    .featurette-image.pull-right {
-      margin-left: 40px;
-    }
-
-    .featurette-heading {
-      font-size: 35px;
-      font-weight: 700;
-      line-height: 1.45;
-      display: inline;
-      padding-bottom: 6px;
-    }
-
-    .featurette-heading a {
-      text-decoration: none;
-      color: #000;
-    }
-
-    .index_topics input[type="text"]{
-      border: 0px;
-      border-bottom: 2px solid #cdcdcd;
-      border-radius: 0px;
-      box-shadow: none;
-      font-size: 16px;
-      color: #000;
-      padding-top: 20px;
-      background-color: transparent;
-    }
-    @media (max-width: 767px) {
-    .index_topics input[type="text"]{
-      width:120px;
-      padding-top:10px;
-    }
-    }
-
-    .index_topics input[type="text"]:focus{
-      border-bottom: 2px solid #00e09b;
-    }
-
-    .index_topics .site-search {
-      margin: 0;
-    }
-
-    .js .modify_bloc_1{
-      height: 420px;
-      background: #012819;
-      overflow: hidden;
-      background-image: linear-gradient(to right, #00e09b -30%, #012819 40%, #012819 95%, #00e09b 130%) ;
-    }
-
-    .modify_bloc_1{
-      height: 420px;
-      background: #012819;
-      overflow: hidden;
-      background-image: url("../images/visual-md.png");
-      background-repeat:no-repeat;
-      background-position: 70% 45%;
-      background-size: auto 65% ;
-    }
-
-    .m1_bloc_1{
-      display: block;
-      float: left;
-      width: 400px;
-    }
-
-    .js .m1_bloc_2{
-      display: block;
-      float: left;
-      width: 132px;
-      height: 169px;
-      margin-top: -41px;
-      background-image: url("../images/logo_ani.svg");
-      background-repeat: no-repeat;
-    }
-
-    .m1_bloc_2{
-      display: none;
-    }
-
-    .m1_bloc_3{
-      display: block;
-      float: left;
-      width: auto;
-      margin-top: -81px;
-      padding-left: 1px;
-    }
-
-    @media (max-width: 979px) {
-      .js .modify_bloc_1{
-        background-image: url("../images/visual-md.png");
-        background-repeat:no-repeat;
-        background-position: 90% 40%;
-        background-size: 55% auto;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .js .modify_bloc_1{
-        background-blend-mode: overlay;
-        background-position: 50% 50%;
-        background-size: 90% auto;
-        height: 250px;
-      }
-      .js .m1_bloc_1{
-        padding-left: 15px;
-      }
-    }
-
-    .row-fluid .padding_tb_sm .bg_white .justify-content-center .modify_bloc_2{
-      background-color: white;
-    }
-
-    .modify_bloc_2{
-      background-color: #edf7f1;
-    }
-
-    .modify_bloc_3{
-      border-top: #ececec 10px solid;
-      background-color: #ffffff;
-      padding-bottom: 25px;
-    }
-
-    .modify_bloc_3 .tx_black{
-      width: 100%;
-      font-size: 13px;
-      line-height: 1.5em;
-    }
-
-    :lang(zh_TW) .modify_bloc_3 .tx_black{
-      font-size: 16px;
-    }
-
-    .img-circle{
-      border: 5px #012819 solid;
-      background: #012819;
-    }
-
-    .img-circle:hover{
-      -ms-transform: scale(1.08); /* IE 9 */
-      -webkit-transform: scale(1.08); /* Safari */
-      transform: scale(1.08);
-      transition: 0.13s;
-    }
-
-    .modify_bloc_4{
-      background:#ffffff;
-      background-image: url("../images/visual-bg.jpg");
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      border-top: #ececec 10px solid;
-    }
-
-    .modify_bloc_5{
-      border-top: #ececec 10px solid;
-      padding-bottom: 55px;
-    }
-    .modify_bloc_5 a{
-      text-decoration: none;
-      border-bottom: 2px solid #00e09b;
-      color: #000;
-    }
-    .modify_bloc_5 a:hover{
-      color: #00e09b;
-      transition: 0.1s;
-    }
-
-    @media only screen and (max-width: 978px) and (min-width: 767px){
-      .modify_bloc_1{
-        height: 400px;
-      }
-    }
-
-    @media only screen and (max-width: 767px){
-      .modify_bloc_1{
-        height: 250px;
-      }
-    }
-
-    @media (max-width: 979px) {
-      .modify_bloc_4_sub{
-        margin-left: -20px;
-      }
-      .modify_bloc_4, .modify_bloc_5{
-        padding-bottom: 25px;
-      }
-    }
-
-    .index_padding{
-      padding-left:20px;
-    }
-
-    .shadow{
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    }
-
-    @media (max-width: 979px){
-      .shadow{
-          box-shadow: none;
-      }
-    }
-
     /* RESPONSIVE CSS
     -------------------------------------------------- */
 
@@ -985,9 +736,9 @@ div .module-heading > .search-form.no-bottom-border {
         margin-top: 40px;
       }
 
-      .featurette-heading {
+      /* .featurette-heading {
         font-size: 30px;
-      }
+      } */
       .featurette .lead {
         font-size: 18px;
         line-height: 1.5;
