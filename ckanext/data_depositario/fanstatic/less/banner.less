@@ -1,0 +1,23 @@
+.btn_float {
+    border: 0;
+    background: none;
+    background-color: none;
+    color: @bannerBtnFloatColor !important;
+    border: solid 2px @bannerBtnFloatBorderColor !important;
+    border-radius: 4px;
+    text-shadow: none;
+    padding: 12px 22px;
+}
+
+.btn_float:hover, .btn_float:focus {
+    border: 0;
+    background: none;
+    background-color: @bannerBtnFloatHoverBackgroundColor;
+    box-shadow: none;
+    color: @bannerBtnFloatHoverColor;
+    text-shadow: none;
+    border: solid 2px @bannerBtnFloatHoverBorderColor !important;
+    box-shadow: @bannerBtnFloatHoverBoxShadow;
+    text-decoration: none;
+    transition: 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.02);;
+}

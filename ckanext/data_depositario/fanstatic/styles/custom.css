@@ -673,7 +673,7 @@ div .module-heading > .search-form.no-bottom-border {
     -------------------------------------------------- */
 
 
-    .btn_norm{
+    /* .btn_norm{
       border: 0;
       background: none;
       box-shadow: none;
@@ -694,9 +694,9 @@ div .module-heading > .search-form.no-bottom-border {
       border: solid 1px #00e09b  !important;
       text-decoration: none;
       transition: 0.2s;
-    }
+    } */
 
-    .btn_float{
+    /* .btn_float{
       border: 0;
       background: none;
       background-color: none;
@@ -717,9 +717,9 @@ div .module-heading > .search-form.no-bottom-border {
       box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
       text-decoration: none;
       transition: 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.02);;
-    }
+    } */
 
-    .btn_search{
+    /* .btn_search{
       margin-top: 12px;
       border: 0;
       background: none;
@@ -741,7 +741,7 @@ div .module-heading > .search-form.no-bottom-border {
 
     .btn_search:hover, .btn_search:focus{
       background-color:#00e09b;
-    }
+    } */
 
 
     /* MASTHEAD ANIMATION

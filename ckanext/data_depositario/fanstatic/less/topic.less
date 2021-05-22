@@ -1,0 +1,25 @@
+.btn_search {
+    margin-top: 12px;
+    border: 0;
+    // background-color: none;
+    background-color: @topicBtnSearchBackgroundColor;
+    box-shadow: none;
+    color: @topicBtnSearchColor;
+    // text-shadow: none;
+    border-radius: 30px;
+    padding: 12px 15px;
+    border: none !important;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+@media (max-width: 767px) {
+    .btn_search {
+        margin-top: 5px;
+    }
+}
+
+.btn_search:hover,
+.btn_search:focus {
+    background-color: @topicBtnSearchHoverBackgroundColor;
+}
