@@ -31,31 +31,6 @@
     }
 } 
 
-@media (max-width: 979px) {
-    .js .modify_bloc_1 {
-        background-image: url("../images/visual-md.png");
-        background-repeat: no-repeat;
-        background-position: 90% 40%;
-        background-size: 55% auto;
-    }
-}
-
-@media (max-width: 767px) {
-    .js {
-        .modify_bloc_1 {
-            background-blend-mode: overlay;
-            background-position: 50% 50%;
-            background-size: 90% auto;
-            height: 250px;
-        }
-
-        .m1_bloc_1{
-            padding-left: 15px;
-        }
-    }
-}
-
-
 .btn_float {
     border: 0;
     background: none;
@@ -85,14 +60,36 @@
     overflow: hidden;
 }
 
-@media (min-width: 767px) and (max-width: 978 px) {
+@media (max-width: 767px) {
+    .js {
+        .modify_bloc_1 {
+            background-blend-mode: overlay;
+            background-position: 50% 50%;
+            background-size: 90% auto;
+            height: 250px;
+        }
+
+        .m1_bloc_1{
+            padding-left: 15px;
+        }
+    }
+
     .mast_heading{
-        padding: 100px 0;
+        padding: 75px 0;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 979px) {
+    .js .modify_bloc_1 {
+        background-image: url("../images/visual-md.png");
+        background-repeat: no-repeat;
+        background-position: 90% 40%;
+        background-size: 55% auto;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 978 px) {
     .mast_heading{
-        padding: 75px 0;
+        padding: 100px 0;
     }
 }

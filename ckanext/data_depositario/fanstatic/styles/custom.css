@@ -658,17 +658,6 @@ div .module-heading > .search-form.no-bottom-border {
    ========== */
 
 
-    /* MASTHEAD ANIMATION
-    -------------------------------------------------- */
-    .landing_ani{
-      position: relative;
-      height: 200px;
-      width: 350px;
-      right: 0;
-      z-index: 1500 !important;
-    }
-
-
     /* RESPONSIVE CSS
     -------------------------------------------------- */
 
@@ -691,10 +680,6 @@ div .module-heading > .search-form.no-bottom-border {
         height: 500px;
       }
 
-      .featurette {
-        height: auto;
-        padding: 0;
-      }
       .featurette-image.pull-left,
       .featurette-image.pull-right {
         display: block;
@@ -736,13 +721,6 @@ div .module-heading > .search-form.no-bottom-border {
         margin-top: 40px;
       }
 
-      /* .featurette-heading {
-        font-size: 30px;
-      } */
-      .featurette .lead {
-        font-size: 18px;
-        line-height: 1.5;
-      }
     }
 
 /* ==========================================
