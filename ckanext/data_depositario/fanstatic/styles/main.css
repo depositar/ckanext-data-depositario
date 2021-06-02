@@ -1,3 +1,71 @@
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+.mt-1 {
+  margin-top: 10px;
+}
+.mt-2 {
+  margin-top: 20px;
+}
+.mt-3 {
+  margin-top: 30px;
+}
+.mb-2 {
+  margin-bottom: 20px;
+}
+.px-2 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.py-2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.btn,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  background: none;
+  box-shadow: none;
+  color: #333;
+  border: solid 2px #cdcdcd !important;
+  text-shadow: none;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+.btn-primary.question {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: 0 none !important;
+  color: white !important;
+}
+.btn-primary.question:hover,
+.btn-primary.question.question:focus {
+  background-color: none !important;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: 0 none !important;
+  padding: none !important;
+}
+.btn-primary .caret {
+  border-top-color: #cdcdcd;
+  border-bottom-color: #cdcdcd;
+}
+.btn:hover,
+.btn:focus {
+  background: none;
+  background-color: #00e09b;
+  box-shadow: none;
+  color: black;
+  text-shadow: none;
+  border: solid 2px #00e09b !important;
+  text-decoration: none;
+  transition: 0.2s;
+}
 #map {
   height: 400px;
 }
@@ -145,32 +213,6 @@ header.navbar {
     width: 100%;
   }
 }
-.w-100 {
-  width: 100%;
-}
-.h-100 {
-  height: 100%;
-}
-.mt-1 {
-  margin-top: 10px;
-}
-.mt-2 {
-  margin-top: 20px;
-}
-.mt-3 {
-  margin-top: 30px;
-}
-.mb-2 {
-  margin-bottom: 20px;
-}
-.px-2 {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.py-2 {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
 .padding_tb_sm {
   padding-top: 55px;
   padding-bottom: 50px;
@@ -248,22 +290,6 @@ header.navbar {
     margin-right: calc(-99vw / 2 + 942px / 2);
     padding-left: calc((100vw - 940px) / 2);
     padding-right: calc((100vw - 940px) / 2);
-  }
-}
-.modify_bloc_2 {
-  background-color: #edf7f1;
-}
-.featurette {
-  overflow: hidden;
-  /* Vertically center images part 2: clear their floats. */
-}
-.padding_tb_mini {
-  padding: 15px 0;
-}
-@media (max-width: 979px) {
-  .featurette {
-    height: auto;
-    padding: 0;
   }
 }
 .js .modify_bloc_1 {
@@ -348,6 +374,22 @@ header.navbar {
     padding: 100px 0;
   }
 }
+.modify_bloc_2 {
+  background-color: #edf7f1;
+}
+.featurette {
+  overflow: hidden;
+  /* Vertically center images part 2: clear their floats. */
+}
+.padding_tb_mini {
+  padding: 15px 0;
+}
+@media (max-width: 979px) {
+  .featurette {
+    height: auto;
+    padding: 0;
+  }
+}
 .modify_bloc_3 {
   border-top: #ececec 10px solid;
   background-color: #fff;
@@ -382,7 +424,7 @@ header.navbar {
   border: 0;
   background-color: #333;
   box-shadow: none;
-  color: white;
+  color: #fff;
   border-radius: 30px;
   padding: 12px 15px;
   border: none !important;
@@ -414,6 +456,11 @@ header.navbar {
     margin-top: 5px;
   }
 }
+.img_example {
+  background-color: #333;
+  position: relative;
+  border-width: 100%;
+}
 .modify_bloc_4 {
   background: #fff;
   background-image: url("../images/visual-bg.jpg");
@@ -444,46 +491,4 @@ header.navbar {
   .modify_bloc_5 {
     padding-bottom: 25px;
   }
-}
-.btn,
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.btn-primary.disabled,
-.btn-primary[disabled] {
-  background: none;
-  box-shadow: none;
-  color: #333;
-  border: solid 2px #cdcdcd !important;
-  text-shadow: none;
-  padding: 5px 10px;
-  text-decoration: none;
-}
-.btn-primary.question {
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-  border: 0 none !important;
-  color: white !important;
-}
-.btn-primary.question:hover,
-.btn-primary.question.question:focus {
-  background-color: none !important;
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-  border: 0 none !important;
-  padding: none !important;
-}
-.btn-primary .caret {
-  border-top-color: #cdcdcd;
-  border-bottom-color: #cdcdcd;
-}
-.btn:hover,
-.btn:focus {
-  background: none;
-  background-color: #00e09b;
-  box-shadow: none;
-  color: black;
-  text-shadow: none;
-  border: solid 2px #00e09b !important;
-  text-decoration: none;
-  transition: 0.2s;
 }
