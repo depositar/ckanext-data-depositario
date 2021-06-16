@@ -13,6 +13,8 @@ from ckan.common import OrderedDict
 import ckan.lib.mailer as mailer
 from ckan.lib.plugins import DefaultTranslation
 from ckanext.scheming import helpers as scheming_helpers
+from ckanext.depositar_theme import helpers as theme_helpers
+
 from ckanext.data_depositario import helpers
 from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
@@ -238,7 +240,7 @@ def user_create(context, data_dict):
 
         # Reset the created user's password immediately
         try:
-            mailer.send_reset_link(user)
+            theme_helpers.send_reg_link(user)
         except mailer.MailerException, e:
             log.debug('Could not send reset link: %s' % unicode(e))
 
