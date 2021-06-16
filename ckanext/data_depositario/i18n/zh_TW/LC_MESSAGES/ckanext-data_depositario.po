@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.4.3b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.4.4b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-29 10:41+0800\n"
+"POT-Creation-Date: 2021-06-16 10:00+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -47,22 +47,22 @@ msgid ""
 "before"
 msgstr "使用者 \"%s\" 已經註冊，但你仍以 \"%s\" 登入中"
 
-#: ckanext/data_depositario/plugin.py:188
+#: ckanext/data_depositario/plugin.py:190
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:189
+#: ckanext/data_depositario/plugin.py:191
 #: ckanext/data_depositario/templates/header.html:34
 msgid "Projects"
 msgstr "專案"
 
-#: ckanext/data_depositario/plugin.py:190
+#: ckanext/data_depositario/plugin.py:192
 #: ckanext/data_depositario/templates/header.html:33
 #: ckanext/data_depositario/templates/home/snippets/idx_topics.html:6
 msgid "Topics"
 msgstr "主題"
 
-#: ckanext/data_depositario/plugin.py:191
+#: ckanext/data_depositario/plugin.py:193
 msgid "Language"
 msgstr "語言"
 
@@ -167,7 +167,15 @@ msgstr "網站狀態"
 msgid "Help"
 msgstr "支援"
 
-#: ckanext/data_depositario/templates/footer.html:18
+#: ckanext/data_depositario/templates/footer.html:14
+msgid "Terms of Use"
+msgstr "使用條款"
+
+#: ckanext/data_depositario/templates/footer.html:14
+msgid "Privacy Policy"
+msgstr "隱私政策"
+
+#: ckanext/data_depositario/templates/footer.html:19
 msgid ""
 "<p>Source code available on <a href=\"https://github.com/depositar/\" "
 "class=\"external\" target=\"_blank\">GitHub.</a></p>"
