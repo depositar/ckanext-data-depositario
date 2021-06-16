@@ -2,7 +2,7 @@
 depositar
 =========
 
-.. image:: https://readthedocs.org/projects/datadepositario/badge/?version=latest
+.. image:: https://readthedocs.org/projects/datadepositario/badge/?version=stable
     :target: http://docs.depositar.io
     :alt: Documentation
 
