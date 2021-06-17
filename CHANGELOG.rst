@@ -7,6 +7,17 @@
 更新日誌
 --------
 
+v6.4.4 2021-06-18
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-citation <https://github.com/depositar/ckanext-citation>`_ 與 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+
+更新內容：
+ * 新增：使用條款與隱私政策。
+ * 更新：CKAN 核心至 `2.7.11 <https://docs.ckan.org/en/2.7/changelog.html#v-2-7-11-2021-05-19>`_。
+ * 其他程式最佳化與細部介面調整。
+
 v6.4.3 2021-04-01
 =================
 

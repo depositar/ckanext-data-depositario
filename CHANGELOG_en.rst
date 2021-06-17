@@ -7,6 +7,17 @@
 Changelog
 ---------
 
+v6.4.4 2021-06-18
+=================
+
+Notice:
+ * This version requires the latest `ckanext-citation <https://github.com/depositar/ckanext-citation>`_ and `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Add: Terms of Use and Privacy Policy.
+ * Update: CKAN core version `2.7.11 <https://docs.ckan.org/en/2.7/changelog.html#v-2-7-11-2021-05-19>`_.
+ * Other improvements and UI adjustments.
+
 v6.4.3 2021-04-01
 =================
 
