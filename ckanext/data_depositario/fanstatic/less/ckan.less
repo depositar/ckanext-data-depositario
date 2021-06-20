@@ -1,0 +1,80 @@
+body {
+    line-height: 30px;
+    font-size: 16px;
+    background-color: @bodyBackgroundColor;
+    padding-bottom: 40px;
+    color: @bodyColor;
+    line-height: 30px;
+    font-family: "Noto Sans TC", arial, "微軟正黑體修正", "微軟正黑體";
+}
+
+h1,
+h2,
+h3 {
+    line-height: 2.2rem;
+}
+
+a {
+    color: @linkColor;
+}
+
+.image a,
+.media-item a {
+    border-bottom: none !important;
+}
+
+::selection {
+    background: @selectionBackgroundColor;
+    color: @selectionColor;
+}
+
+.module-content a,
+.module-heading a,
+.modify_bloc_4 a {
+    text-decoration: none;
+    border-bottom: 2px solid @moduleLinkBorderBottomColor;
+    color: @moduleLinkColor;
+    transition: 0.1s;
+}
+
+.site-footer a {
+    text-decoration: none;
+    border-bottom: none;
+    color: @siteFooterLinkColor;
+}
+
+li {
+    line-height: 30px;
+}
+
+.p_mark {
+    text-transform: uppercase;
+    color: @pMarkColor;
+}
+
+.font_s {
+    font-size: 12.5px;
+}
+
+
+.border-l {
+    border-left: @borderLeftColor 1px solid;
+}
+
+.border-t {
+    border-top: @borderTopColor 1px solid;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-right: 40px;
+        background-color: @smallBodyBackgroundColor;
+        background: none;
+    }
+
+    .border-l,
+    .border-t {
+        border-top: none;
+        border-left: none;
+    }
+}
