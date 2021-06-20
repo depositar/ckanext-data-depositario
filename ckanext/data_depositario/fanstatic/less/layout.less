@@ -1,0 +1,146 @@
+
+// HOVER CONTENT
+
+.hover-content,
+.hover-content-s {
+    visibility: hidden;
+    position: absolute;
+    z-index: -200;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    overflow: hidden;
+    opacity: 90%;
+}
+
+.hover-content {
+    height: 550px;
+    margin: 0 15px;
+}
+
+.hover-content-s {
+    height: 265px;
+    margin: 0;
+}
+
+.hover-toggle,
+.hover-toggle-s {
+    overflow: hidden;
+    position: relative;
+}
+
+
+.hover-toggle {
+    height: 550px;
+}
+
+.hover-toggle-s {
+    height: 265px;
+}
+
+.content-toggle,
+.content-toggle-s {
+    position: absolute;
+    z-index: 200;
+    bottom: 0;
+    margin-top: 0;
+    margin-top: 0;
+    overflow: hidden;
+    opacity: 90%;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.content-toggle {
+    top: 300px;
+    left: 15px;
+    right: 15px;
+    -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+    -webkit-transition-property: all;
+    transition-property: all;
+    border-top: 0px @layoutBorderTopColor solid;
+}
+
+.content-toggle:hover {
+    border-top: 4px @layoutBorderTopColor solid;
+}
+
+
+.content-toggle-s {
+    top: 130px;
+    left: 0px;
+    right: 0px;
+}
+
+.content-toggle .desc {
+    width: 80%;
+}
+
+.hover-toggle:hover .content-toggle,
+.hover-toggle-s:hover .content-toggle-s {
+    top: 0;
+}
+
+.opacity {
+    opacity: 0;
+}
+
+.hover-toggle:hover .opacity,
+.hover-toggle-s:hover .opacity {
+    opacity: 1;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+@media (max-width: 767px) {
+    .property-767 {
+        margin-bottom: 20px;
+        padding-right: 0;
+        flex: auto;
+    }
+
+    .content-toggle {
+        right: auto;
+    }
+
+    .hover-toggle-s {
+        left: 15px;
+    }
+
+    .property-767-s {
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: auto;
+    }
+
+    .content-toggle .desc {
+        width: 100%;
+    }
+}
+
+@media (max-width: 370px) {
+    .content-toggle {
+        top: 130px;
+    }
+
+    .content-toggle h1 {
+        font-size: 21px;
+    }
+
+    .content-toggle h3 {
+        font-size: 16px;
+    }
+
+    .content-toggle .mt-3 {
+        margin-top: 20px;
+    }
+
+    .content-toggle .mb-2 {
+        margin-bottom: 10px;
+    }
+
+    .hover-toggle {
+        height: 350px;
+    }
+}

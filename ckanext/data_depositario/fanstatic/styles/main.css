@@ -254,6 +254,24 @@
   background-size: 100% auto;
   border-top: #ececec 10px solid;
 }
+.example-bg-1 {
+  background: #d0eddd;
+}
+.example-bg-1-bg {
+  background: linear-gradient(to right, #00e09b, #077a48);
+}
+.example-bg-2 {
+  background: #f9bdbd;
+}
+.example-bg-2-bg {
+  background: linear-gradient(to right, #f46464, #720404);
+}
+.example-bg-3 {
+  background: #e4d2f9;
+}
+.example-bg-3-bg {
+  background: linear-gradient(to right, #a587dd, #1d013d);
+}
 @media (max-width: 979px) {
   .modify_bloc_4 {
     padding-bottom: 25px;
@@ -414,6 +432,37 @@ header.navbar {
     width: 100%;
   }
 }
+.introjs-button {
+  background: none;
+  border-color: #00e09b;
+  color: black !important;
+  text-shadow: none;
+}
+.introjs-button:hover {
+  background: #00e09b;
+  border-color: #00e09b;
+  box-shadow: none;
+}
+.introjs-button:focus {
+  background: none;
+  border-color: #00e09b;
+  box-shadow: none;
+}
+.introjs-button:active {
+  background: #cdcdcd;
+  border-color: #00e09b;
+  box-shadow: none;
+}
+.introjs-nextbutton:hover {
+  background: #00e09b;
+  border-color: #00e09b;
+  color: black !important;
+  text-shadow: none;
+}
+.label[data-format=html],
+.label[data-format*=html] {
+  background-color: #f9bdbd;
+}
 #map {
   height: 400px;
 }
@@ -423,6 +472,121 @@ header.navbar {
 }
 #map label:after {
   content: none;
+}
+.hover-content,
+.hover-content-s {
+  visibility: hidden;
+  position: absolute;
+  z-index: -200;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow: hidden;
+  opacity: 90%;
+}
+.hover-content {
+  height: 550px;
+  margin: 0 15px;
+}
+.hover-content-s {
+  height: 265px;
+  margin: 0;
+}
+.hover-toggle,
+.hover-toggle-s {
+  overflow: hidden;
+  position: relative;
+}
+.hover-toggle {
+  height: 550px;
+}
+.hover-toggle-s {
+  height: 265px;
+}
+.content-toggle,
+.content-toggle-s {
+  position: absolute;
+  z-index: 200;
+  bottom: 0;
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 90%;
+  transition: all 0.4s ease-in-out 0s;
+}
+.content-toggle {
+  top: 300px;
+  left: 15px;
+  right: 15px;
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
+  -webkit-transition-property: all;
+  transition-property: all;
+  border-top: 0px #012819 solid;
+}
+.content-toggle:hover {
+  border-top: 4px #012819 solid;
+}
+.content-toggle-s {
+  top: 130px;
+  left: 0px;
+  right: 0px;
+}
+.content-toggle .desc {
+  width: 80%;
+}
+.hover-toggle:hover .content-toggle,
+.hover-toggle-s:hover .content-toggle-s {
+  top: 0;
+}
+.opacity {
+  opacity: 0;
+}
+.hover-toggle:hover .opacity,
+.hover-toggle-s:hover .opacity {
+  opacity: 1;
+  transition: all 0.4s ease-in-out 0s;
+}
+@media (max-width: 767px) {
+  .property-767 {
+    margin-bottom: 20px;
+    padding-right: 0;
+    flex: auto;
+  }
+  .content-toggle {
+    right: auto;
+  }
+  .hover-toggle-s {
+    left: 15px;
+  }
+  .property-767-s {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: auto;
+  }
+  .content-toggle .desc {
+    width: 100%;
+  }
+}
+@media (max-width: 370px) {
+  .content-toggle {
+    top: 130px;
+  }
+  .content-toggle h1 {
+    font-size: 21px;
+  }
+  .content-toggle h3 {
+    font-size: 16px;
+  }
+  .content-toggle .mt-3 {
+    margin-top: 20px;
+  }
+  .content-toggle .mb-2 {
+    margin-bottom: 10px;
+  }
+  .hover-toggle {
+    height: 350px;
+  }
 }
 .w-100 {
   width: 100%;
@@ -742,6 +906,16 @@ header.navbar {
     flex: 0 0 83.333333%;
     max-width: 83.333333%;
   }
+  .col-md-11 {
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+  .col-md-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 @media (min-width: 979px) {
   .col-lg {
@@ -871,35 +1045,4 @@ header.navbar {
 }
 .hidden-xl-down {
   display: none !important;
-}
-.introjs-button {
-  background: none;
-  border-color: #00e09b;
-  color: black !important;
-  text-shadow: none;
-}
-.introjs-button:hover {
-  background: #00e09b;
-  border-color: #00e09b;
-  box-shadow: none;
-}
-.introjs-button:focus {
-  background: none;
-  border-color: #00e09b;
-  box-shadow: none;
-}
-.introjs-button:active {
-  background: #cdcdcd;
-  border-color: #00e09b;
-  box-shadow: none;
-}
-.introjs-nextbutton:hover {
-  background: #00e09b;
-  border-color: #00e09b;
-  color: black !important;
-  text-shadow: none;
-}
-.label[data-format=html],
-.label[data-format*=html] {
-  background-color: #f9bdbd;
 }
