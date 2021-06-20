@@ -502,6 +502,53 @@ a.external:after:hover {
 div .module-heading > .search-form.no-bottom-border {
   padding-bottom: 0;
 }
+@media only screen and (min-width: 979px) {
+  .toolbar {
+    margin-bottom: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: calc(100vw / 2 - 940px / 2);
+    margin-left: calc(-100vw / 2 + 940px / 2);
+    margin-right: calc(-99vw / 2 + 940px / 2);
+    color: #fff;
+    background-color: #333333;
+  }
+  .toolbar .breadcrumb a,
+  .toolbar .breadcrumb li {
+    color: #fff;
+    font-size: 12pt;
+  }
+}
+@media (max-width: 979px) {
+  .toolbar {
+    margin-bottom: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #fff;
+    background-color: #333333;
+    padding-left: 40px;
+  }
+  .toolbar .breadcrumb a,
+  .toolbar .breadcrumb li {
+    color: #fff;
+    font-size: 12pt;
+  }
+}
+@media screen and (max-width: 978px) and (min-width: 767px) {
+  .toolbar {
+    padding-left: calc(100vw / 2 - 724px / 2);
+    margin-left: calc(-100vw / 2 + 724px / 2);
+    margin-right: calc(-99vw / 2 + 724px / 2);
+  }
+}
+@media screen and (max-width: 767px) {
+  .toolbar {
+    margin: 0 -40px 0px -40px;
+  }
+}
+.breadcrumb > li {
+  text-shadow: none;
+}
 .introjs-button {
   background: none;
   border-color: #00e09b;

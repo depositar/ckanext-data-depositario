@@ -1,38 +1,93 @@
-// INTRO JS
-.introjs-button {
-    background: none;
-    border-color: @toolbarBorderColor;
-    color: @toolbarColor !important;
+@media only screen and (min-width: 979px) {
+    .toolbar {
+        margin-bottom: 0px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: calc(100vw / 2 - 940px / 2);
+        margin-left: calc(-100vw / 2 + 940px / 2);
+        margin-right: calc(-99vw / 2 + 940px / 2);
+        color: @toolbarColor;
+        background-color: @toolbarBackgroundColor;
+
+        .breadcrumb a,
+        .breadcrumb li {
+            color: @breadcrumbColor;
+            font-size: 12pt;
+        }
+    }
+}
+
+@media (max-width: 979px) {
+    .toolbar {
+        margin-bottom: 0px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: @toolbarColor;
+        background-color: @toolbarBackgroundColor;
+        padding-left: 40px;
+
+        .breadcrumb a,
+        .breadcrumb li {
+            color: @breadcrumbColor;
+            font-size: 12pt;
+        }
+    }
+}
+
+@media screen and (max-width: 978px) and (min-width: 767px) {
+    .toolbar {
+        padding-left: calc(100vw / 2 - 724px / 2);
+        margin-left: calc(-100vw / 2 + 724px / 2);
+        margin-right: calc(-99vw / 2 + 724px / 2);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .toolbar {
+        margin: 0 -40px -0px -40px;
+    }
+}
+
+.breadcrumb>li {
     text-shadow: none;
 }
 
+
+// INTRO JS
+.introjs-button {
+    background: none;
+    border-color: @introjsBtnBorderColor;
+    color: @introjsBtnColor  !important;
+    text-shadow : none;
+}
+
 .introjs-button:hover {
-    background: @toolbarHoverBackgroundColor;
-    border-color: @toolbarBorderColor;
+    background: @introjsBtnHoverBackgroundColor;
+    border-color: @introjsBtnBorderColor;
     box-shadow: none;
 }
 
 .introjs-button:focus {
     background: none;
-    border-color: @toolbarBorderColor;
+    border-color: @introjsBtnBorderColor;
     box-shadow: none;
 }
 
 
 .introjs-button:active {
-    background: @toolbarActiveBackgroundColor;
-    border-color: @toolbarBorderColor;
+    background: @introjsBtnActiveBackgroundColor;
+    border-color: @introjsBtnBorderColor;
     box-shadow: none;
 }
 
 .introjs-nextbutton:hover {
-    background: @toolbarHoverBackgroundColor;
-    border-color: @toolbarBorderColor;
-    color: @toolbarColor !important;
-    text-shadow: none;
+    background: @introjsBtnHoverBackgroundColor;
+    border-color: @introjsBtnBorderColor;
+    color: @introjsBtnColor  !important;
+    text-shadow : none;
 }
 
 .label[data-format=html],
 .label[data-format*=html] {
-    background-color: @toolbarLabelBackgroundColor;
+    background-color: @introjsBtnLabelBackgroundColor;
 }
