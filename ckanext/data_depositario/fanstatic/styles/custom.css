@@ -426,38 +426,3 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   top:40%;
 }
 
-
-
-/* ==========
-   index page
-   ========== */
-
-
-    /* RESPONSIVE CSS
-    -------------------------------------------------- */
-
-    @media (max-width: 979px) {
-
-      .container.navbar-wrapper {
-        margin-bottom: 0;
-        width: auto;
-      }
-      .navbar-inner {
-        border-radius: 0;
-        margin: -20px 0;
-      }
-
-    }
-
-    @media (max-width: 979px) {
-      .navbar-inner {
-        margin: -20px;
-      }
-
-      .marketing .span4 + .span4 {
-        margin-top: 40px;
-      }
-
-    }
-
-
