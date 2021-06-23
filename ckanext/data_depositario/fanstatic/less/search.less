@@ -1,0 +1,30 @@
+.search-form {
+    .search-input {
+        & {
+            margin-bottom: 25px;
+        }
+
+        &.search-giant {
+            &:hover input {
+                box-shadow: @searchHoverInputBoxShadow;
+            }
+            
+            input {
+                box-shadow: @searchInputBoxShadow;
+                border: none;
+                transition: all 0.2s cubic-bezier(.25, .8, .25, 1);
+            }
+
+            button {
+                height: 34px;
+                margin-top: -12px;
+            }
+        }
+    }
+}
+
+/* masthead input for search */
+
+.simple-input .field .btn-search{
+    top:40%;
+}
