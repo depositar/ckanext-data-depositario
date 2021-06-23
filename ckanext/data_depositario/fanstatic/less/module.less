@@ -16,7 +16,7 @@
 }
 
 .dataset-heading {
-    border   : none;
+    border: none;
     font-size: 21px;
 
     a {
@@ -28,42 +28,50 @@
     li {
         a {
             background-color: @datasetResourcesListItemLinkBackgroundColor;
-            border          : none;
+            border: none;
         }
     }
 }
 
 .module-narrow {
     .module-heading {
-        border-top      : none;
+        border-top: none;
         background-color: @moduleBasicBackgroundColor;
-        border-bottom   : 1px solid @headingBoderBottomColor;
-        padding-left    : 0;
-        padding-right   : 10px;
-        margin          : 0;
+        border-bottom: 1px solid @headingBoderBottomColor;
+        padding-left: 0;
+        padding-right: 10px;
+        margin: 0;
     }
 
     .module-content {
         padding-left: 0px;
-        padding     : 10px 10px 10px 0px;
+        padding: 10px 10px 10px 0px;
     }
 }
 
+.module-content:first-child {
+    background-color: transparent;
+    margin-top: 10px;
+}
+
+
+
 @media only screen and (min-width: 979px) {
     .module-heading {
-        padding         : 30px 0px;
-        font-size       : 16px;
-        border-top      : none;
+        padding: 30px 0px;
+        font-size: 16px;
+        border-top: none;
         background-color: @smallHeadingBackgroundColor;
-        padding-left    : calc(100vw / 2 - 940px / 2);
-        padding-right   : calc(100vw / 2 - 940px / 2);
-        margin-left     : calc(-100vw / 2 + 940px / 2);
-        margin-right    : calc(-99vw / 2 + 940px / 2);
-        margin-top      : -25px;
-        border-bottom   : 1px solid @smallHeadingBorderBottomColor;
+        padding-left: calc(100vw / 2 - 940px / 2);
+        padding-right: calc(100vw / 2 - 940px / 2);
+        margin-left: calc(-100vw / 2 + 940px / 2);
+        margin-right: calc(-99vw / 2 + 940px / 2);
+        margin-top: -25px;
+        border-bottom: 1px solid @smallHeadingBorderBottomColor;
     }
-
+    
     .module {
+        
         &,
         &-narrow,
         &-shallow {
@@ -73,8 +81,8 @@
 }
 
 @media screen and (max-width: 978px) and (min-width: 767px) {
-    .span3{
-      width: 166px;
+    .span3 {
+        width: 166px;
     }
 }
 
@@ -84,23 +92,30 @@
     }
     
     .module-heading {
-        padding         : 20px 0px;
-        font-size       : 16px;
-        border-top      : none;
+        padding: 20px 0px;
+        font-size: 16px;
+        border-top: none;
         background-color: @smallHeadingBackgroundColor;
-        padding-left    : calc(100vw / 2 - 724px / 2);
-        padding-right   : calc(100vw / 2 - 724px / 2);
-        margin-left     : calc(-100vw / 2 + 724px / 2);
-        margin-right    : calc(-99vw / 2 + 724px / 2);
-        margin-top      : -25px;
+        padding-left: calc(100vw / 2 - 724px / 2);
+        padding-right: calc(100vw / 2 - 724px / 2);
+        margin-left: calc(-100vw / 2 + 724px / 2);
+        margin-right: calc(-99vw / 2 + 724px / 2);
+        margin-top: -25px;
     }
-
+    
     .module {
+        
         &,
         &-narrow,
         &-shallow {
             background-color: @moduleBasicBackgroundColor;
         }
+    }
+}
+
+@media (max-width: 767px) {
+    .module-content:first-child {
+        margin-top: 30px;
     }
 }
 
@@ -110,10 +125,10 @@
     }
     
     .module-heading {
-        padding         : 30px 20px;
-        font-size       : 16px;
-        border-top      : none;
+        padding: 30px 20px;
+        font-size: 16px;
+        border-top: none;
         background-color: @smallHeadingBackgroundColor;
-        margin          : -25px -20px;
+        margin: -25px -20px;
     }
 }

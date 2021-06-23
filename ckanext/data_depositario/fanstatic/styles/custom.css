@@ -1,17 +1,4 @@
 
-
-
-
-/*media grid*/
-
-.media-grid{
-  background: none;
-  background-color: #edf7f1;
-  border: none;
-  margin: 0;
-}
-
-
 /* primer page */
 
 .page-header{
@@ -51,18 +38,6 @@
 
 .span9 .page-header{
   border-bottom: 1px #333 solid;
-}
-
-.module-content:first-child{
-  background-color: transparent;
-  margin-top: 10px;
-}
-
-
-@media (max-width: 767px) {
-  .module-content:first-child{
-    margin-top: 30px;
-  }
 }
 
 .nav-tabs{

@@ -14,8 +14,7 @@ h3 {
 a {
   color: #077a48;
 }
-.image a,
-.media-item a {
+.image a {
   border-bottom: none !important;
 }
 ::selection {
@@ -98,6 +97,10 @@ li {
   padding-left: 0px;
   padding: 10px 10px 10px 0px;
 }
+.module-content:first-child {
+  background-color: transparent;
+  margin-top: 10px;
+}
 @media only screen and (min-width: 979px) {
   .module-heading {
     padding: 30px 0px;
@@ -143,6 +146,11 @@ li {
     background-color: #fff;
   }
 }
+@media (max-width: 767px) {
+  .module-content:first-child {
+    margin-top: 30px;
+  }
+}
 @media screen and (max-width: 767px) {
   .span3 {
     width: 100%;
@@ -154,6 +162,15 @@ li {
     background-color: #edf7f1;
     margin: -25px -20px;
   }
+}
+.media-item a {
+  border-bottom: none !important;
+}
+.media-grid {
+  background-color: none;
+  background-color: #edf7f1;
+  border: none;
+  margin: 0;
 }
 .account-masthead {
   color: #fff;
