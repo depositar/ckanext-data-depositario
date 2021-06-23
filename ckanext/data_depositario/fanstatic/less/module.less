@@ -197,6 +197,10 @@
         &:hover {
             border-radius: 0;
         }
+
+        > a {
+            line-height: 7px;
+        }
     }
 
     a:hover {
@@ -204,6 +208,7 @@
     }
 
     > .active > a {
+
         &,
         &:hover,
         &:focus {
@@ -216,5 +221,72 @@
             height: 15px;
             padding-top: 10px;
         }
+    }
+}
+
+
+.stages {
+    li {
+        &:before {
+            background-color: @stagesListItemBeforeBackgroundColor;
+        }
+
+        &.active {
+            .highlight {
+                background-color: @stagesListItemActiveBackgroundColor;
+            }
+
+            &:before {
+                color: @stagesListItemActiveColor;
+            }
+
+            &:after {
+                border-top-color: @stagesListItemActiveBorderColor;
+                border-bottom-color: @stagesListItemActiveBorderColor;
+            }
+        }
+
+        &.complete {
+            .highlight {
+                background: @stagesListItemCompleteHighlightBackgroundColor;
+                color: @stagesListItemCompleteHighlightColor;
+            }
+
+            &:before {
+                color: @stagesListItemCompleteBeforeColor;
+                background: @stagesListItemCompleteBeforeBackgroundColor;
+            }
+
+            &:after {
+                border-top-color: @stagesListItemCompleteAfterBorderColor;
+                border-bottom-color: @stagesListItemCompleteAfterBorderColor;
+            }
+        }
+    }
+}
+
+.error-block {
+    background: @errorBlockBackgroundColor;
+}
+
+.error-inline {
+    color: @errorInlineColor;
+}
+
+.editor .editor-info-block a {
+    color: @editorLinkColor;
+}
+
+.empty {
+    color: @emptyColor;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.navbar .nav > .active >a {
+    &,
+    &:hover,
+    &:focus {
+        box-shadow: none;
     }
 }

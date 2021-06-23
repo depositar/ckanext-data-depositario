@@ -1,72 +1,9 @@
 
-.stages li:before{
-  background-color: #cdcdcd;
-}
-.stages li.active .highlight{
-  background: #00e09b;
-}
-
-.stages li.active:before{
-  color: #00e09b;
-}
-.stages li.active:after{
-  border-top-color: #00e09b;
-  border-bottom-color: #00e09b;
-}
-
-.stages li.complete .highlight{
-  background: #d0eddd;
-  color: #ffffff;
-}
-
-.stages li.complete:before{
-  color: #d0eddd;
-  background: #ffffff;
-}
-.stages li.complete:after{
-  border-top-color: #d0eddd;
-  border-bottom-color: #d0eddd;
-}
-
-.error-block{
-  background: #f46464;
-}
-
-.error-inline{
-  color: #720404;
-}
-
-.editor .editor-info-block a{
-  color: #077a48;
-}
-
-.empty{
-  color: #cdcdcd;
-  font-style: normal;
-  font-size: 14px;
-}
-
-.nav-pills>li>a{
-  border-radius: 0;
-}
-
-.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus{
-  box-shadow: none;
-}
-
-.nav-tabs>li>a, .nav-pills>li>a{
-  line-height: 7px;
-}
 
 .pill{
   background-color: #333;
 }
 
-@media (max-width: 767px) {
-  .nav-pills>li>a{
-    border-radius: 0;
-  }
-}
 
 
 

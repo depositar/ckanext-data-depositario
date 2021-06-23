@@ -214,6 +214,9 @@ li {
 .nav-tabs li:hover {
   border-radius: 0;
 }
+.nav-tabs li > a {
+  line-height: 7px;
+}
 .nav-tabs a:hover {
   border-radius: 0;
 }
@@ -228,6 +231,50 @@ li {
   cursor: default;
   height: 15px;
   padding-top: 10px;
+}
+.stages li:before {
+  background-color: #cdcdcd;
+}
+.stages li.active .highlight {
+  background-color: #00e09b;
+}
+.stages li.active:before {
+  color: #00e09b;
+}
+.stages li.active:after {
+  border-top-color: #00e09b;
+  border-bottom-color: #00e09b;
+}
+.stages li.complete .highlight {
+  background: #d0eddd;
+  color: #fff;
+}
+.stages li.complete:before {
+  color: #d0eddd;
+  background: #fff;
+}
+.stages li.complete:after {
+  border-top-color: #d0eddd;
+  border-bottom-color: #d0eddd;
+}
+.error-block {
+  background: #f46464;
+}
+.error-inline {
+  color: #720404;
+}
+.editor .editor-info-block a {
+  color: #077a48;
+}
+.empty {
+  color: #cdcdcd;
+  font-style: normal;
+  font-size: 14px;
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  box-shadow: none;
 }
 .media-item a {
   border-bottom: none !important;
@@ -281,6 +328,7 @@ header.navbar {
 }
 .masthead .navigation .nav-pills li a {
   border-radius: 0;
+  line-height: 7px;
   color: #000;
 }
 .masthead .navigation .nav-pills li a:after {
@@ -341,6 +389,9 @@ header.navbar {
   .mast_heading {
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+  .nav-pills > li > a {
+    border-radius: 0;
   }
 }
 @media (max-width: 979px) {
