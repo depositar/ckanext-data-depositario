@@ -1,10 +1,84 @@
 #map {
   height: 400px;
+
   input {
     width: auto;
-    top: auto;
+    top  : auto;
   }
+
   label:after {
     content: none;
+  }
+}
+
+.control-group.error {
+  .control-label,
+  .help-block,
+  .help-inline {
+    color: @controlGroupErrorColor;
+  }
+
+  input,
+  select,
+  textarea,
+  .input-prepend .add-on,
+  .input-append .add-on {
+    border-color: @controlGroupErrorBorderColor;
+    background-color: @controlGroupErrorBackgroundColor;
+  }
+
+  input,
+  select,
+  textarea,
+  .checkbox,
+  .radio,
+  .input-prepend .add-on,
+  .input-append .add-on {
+    color      : @controlGroupErrorColor;
+    text-shadow: none;
+  }
+}
+
+.form-horizontal {
+  .control-label {
+    width: 140px;
+
+    &:after {
+      content: "";
+    }
+
+    .control-required:before {
+      content: " ";
+    }
+  }
+}
+
+.control-required {
+  color: @controlRequiredColor;
+}
+
+.form-actions:before,
+.form-messages:after {
+  display    : table;
+  content    : "";
+  line-height: 0;
+}
+
+.form-messages {
+  &:after {
+    clear: left;
+  }
+  
+  .control-required-message {
+    float        : left;
+    margin-left  : 20px;
+    margin-bottom: 0;
+    line-height  : 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-horizontal .controls {
+    margin-left: 150px;
   }
 }

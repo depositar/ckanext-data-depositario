@@ -111,59 +111,7 @@
   background: #f46464;
 }
 
-.control-group.error .control-label, .control-group.error .help-block, .control-group.error .help-inline{
-  color: #f46464;
-}
 
-.control-group.error input, .control-group.error select, .control-group.error textarea, .control-group.error .input-prepend .add-on, .control-group.error .input-append .add-on{
-  border-color: #f9bdbd;
-  background-color: #ffe6e6;
-}
-
-.control-group.error .checkbox, .control-group.error .radio, .control-group.error input, .control-group.error select, .control-group.error textarea, .control-group.error .input-prepend .add-on, .control-group.error .input-append .add-on{
-  color: #f46464;
-  text-shadow: none;
-}
-
-.form-horizontal .control-label {
-  width: 140px;
-}
-
-.control-label .control-required:before {
-  content: " ";
-}
-
-.control-label:after {
-  content: "";
-}
-
-@media (min-width: 768px) {
-  .form-horizontal .controls {
-    margin-left: 150px;
-  }
-}
-
-.form-actions:before,
-.form-messages:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-
-.form-messages:after {
-  clear: left;
-}
-
-.form-messages .control-required-message {
-  float: left;
-  margin-left: 20px;
-  margin-bottom: 0;
-  line-height: 30px;
-}
-
-.control-required {
-  color: #a587dd;
-}
 
 .error-inline{
   color: #720404;
