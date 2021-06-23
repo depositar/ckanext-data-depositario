@@ -1,3 +1,33 @@
+/*content wrapper*/
+.wrapper{
+    position: relative;
+    margin-top: 25px;
+    background-color: @wrapperBackgroundColor;
+    margin-bottom: 20px;
+    margin-left: 0;
+    border: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-image: url("../images/wrapper-bg.jpg");
+    background-position: 230px 10px;
+}
+  
+@media screen and (max-width: 978px) and (min-width: 767px) {
+    .wrapper{
+      background-position: 175px 10px;
+    }
+}
+  
+@media screen and (max-width: 767px) {
+    .wrapper{
+        background-image: none;
+    }
+}
+
 [role=main],
 .main {
     background-color: @layoutRoleMainBackgroundColor;
