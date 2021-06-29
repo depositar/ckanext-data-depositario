@@ -1,22 +1,9 @@
-// map
-
-.dataset-map-expanded #dataset-map{
-  padding-left: calc(100vw / 2 - 940px / 2);
-  padding-right: calc(99vw / 2 - 940px / 2);
-  margin-left: calc(-100vw / 2 + 940px / 2) !important;
-  margin-right: calc(-99vw / 2 + 940px / 2) !important;
-  width: 100% !important;
-  height: 484px !important;
-  box-shadow: @datasetMapBoxShadow;
-  transition: all 0.3s;
-}
-
 // homepage
 
 .img_example {
   background-color: @datasetImgExampleBackgroundColor;
   position: relative;
-  border-width: 100%;
+  width: 100%;
 }
 
 .modify_bloc_4 {
@@ -60,4 +47,14 @@
   .modify_bloc_4 {
     padding-bottom: 25px;
   }
+}
+
+// Additional info - used on both dataset and resource page
+.additional-info th {
+  width: 15%;
+}
+
+.additional-info td,
+.additional-info th {
+  border-top: none;
 }

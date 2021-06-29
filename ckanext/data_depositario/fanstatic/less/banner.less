@@ -34,7 +34,6 @@
 .btn_float {
     border: 0;
     background: none;
-    background-color: none;
     color: @bannerBtnFloatColor !important;
     border: solid 2px @bannerBtnFloatBorderColor !important;
     border-radius: 4px;
@@ -60,6 +59,21 @@
     overflow: hidden;
 }
 
+@media (max-width: 979px) {
+    .js .modify_bloc_1 {
+        background-image: url("../images/visual-md.png");
+        background-repeat: no-repeat;
+        background-position: 90% 40%;
+        background-size: 55% auto;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 978px) {
+    .mast_heading{
+        padding: 100px 0;
+    }
+}
+
 @media (max-width: 767px) {
     .js {
         .modify_bloc_1 {
@@ -76,20 +90,5 @@
 
     .mast_heading{
         padding: 75px 0;
-    }
-}
-
-@media (max-width: 979px) {
-    .js .modify_bloc_1 {
-        background-image: url("../images/visual-md.png");
-        background-repeat: no-repeat;
-        background-position: 90% 40%;
-        background-size: 55% auto;
-    }
-}
-
-@media (min-width: 767px) and (max-width: 978 px) {
-    .mast_heading{
-        padding: 100px 0;
     }
 }

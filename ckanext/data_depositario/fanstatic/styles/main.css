@@ -4,7 +4,7 @@ body {
   padding-bottom: 40px;
   color: #000;
   line-height: 30px;
-  font-family: "Noto Sans TC", arial, "微軟正黑體修正", "微軟正黑體";
+  font-family: "Noto Sans TC", arial, "微軟正黑體修正", "Microsoft JhengHei";
 }
 h1,
 h2,
@@ -65,14 +65,14 @@ li {
 .module-content {
   padding: 0 0px;
 }
-.select {
-  width: 100%;
-}
 .span3 {
   width: 210px;
 }
 #facets {
   background-color: #fff;
+}
+.pill {
+  background-color: #333;
 }
 .dataset-heading {
   border: none;
@@ -84,6 +84,16 @@ li {
 .dataset-resources li a {
   background-color: #d7e82d;
   border: none;
+}
+.dataset-map-expanded #dataset-map {
+  padding-left: calc(100vw / 2 - 940px / 2);
+  padding-right: calc(99vw / 2 - 940px / 2);
+  margin-left: calc(-100vw / 2 + 940px / 2) !important;
+  margin-right: calc(-99vw / 2 + 940px / 2) !important;
+  width: 100% !important;
+  height: 484px !important;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transition: all 0.3s;
 }
 .module-narrow .module-heading {
   border-top: none;
@@ -163,9 +173,7 @@ li {
     margin: -25px -20px;
   }
 }
-/* primer page */
 .page-header {
-  background-color: none !important;
   border-radius: 0;
   border-bottom: #333 1px solid;
 }
@@ -276,11 +284,28 @@ li {
 .navbar .nav > .active > a:focus {
   box-shadow: none;
 }
+a.external:after {
+  content: "\f08e";
+  font-family: FontAwesome;
+  font-weight: lighter;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-size: 10px;
+  line-height: 10px;
+  position: relative;
+  top: -3px;
+  left: 3px;
+  margin-right: 5px;
+}
+a.external:after:hover {
+  text-decoration: none;
+}
 .media-item a {
   border-bottom: none !important;
 }
 .media-grid {
-  background-color: none;
   background-color: #edf7f1;
   border: none;
   margin: 0;
@@ -304,11 +329,6 @@ li {
 .account-masthead .account ul li a:hover {
   color: #fff;
   background-color: #333333;
-}
-header.navbar {
-  background-color: #fff;
-  border-bottom: none;
-  padding-top: 20px;
 }
 .masthead {
   background-image: none;
@@ -540,32 +560,6 @@ header.navbar {
 .site-footer a:hover {
   color: #00e09b;
 }
-/* Additional info - used on both dataset and resource page */
-.additional-info th {
-  width: 15%;
-}
-.additional-info td,
-.additional-info th {
-  border-top: none;
-}
-a.external:after {
-  content: "\f08e";
-  font-family: FontAwesome;
-  font-weight: lighter;
-  font-style: normal;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-size: 10px;
-  line-height: 10px;
-  position: relative;
-  top: -3px;
-  left: 3px;
-  margin-right: 5px;
-}
-a.external:after:hover {
-  text-decoration: none;
-}
 div .module-heading > .search-form.no-bottom-border {
   padding-bottom: 0;
 }
@@ -767,16 +761,12 @@ div .module-heading > .search-form.no-bottom-border {
     padding-right: 0;
     flex: auto;
   }
-  .content-toggle {
-    right: auto;
-  }
   .hover-toggle-s {
     left: 15px;
   }
   .property-767-s {
     margin-left: auto;
     margin-right: auto;
-    padding-right: auto;
   }
   .content-toggle .desc {
     width: 100%;
@@ -850,10 +840,8 @@ div .module-heading > .search-form.no-bottom-border {
 }
 .btn-primary.question:hover,
 .btn-primary.question.question:focus {
-  background-color: none !important;
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
   border: 0 none !important;
-  padding: none !important;
 }
 .btn-primary .caret {
   border-top-color: #cdcdcd;
@@ -1260,6 +1248,9 @@ div .module-heading > .search-form.no-bottom-border {
 .hidden-xl-down {
   display: none !important;
 }
+.navbar-static-top {
+  padding-top: 20px;
+}
 .padding_tb_sm {
   padding-top: 55px;
   padding-bottom: 50px;
@@ -1295,7 +1286,6 @@ div .module-heading > .search-form.no-bottom-border {
 @media (max-width: 767px) {
   .width_full {
     width: auto;
-    margin-left: 0px -20px 0px 0px;
   }
   .padding_exceed {
     margin-left: -20px;
@@ -1369,7 +1359,6 @@ div .module-heading > .search-form.no-bottom-border {
 .btn_float {
   border: 0;
   background: none;
-  background-color: none;
   color: #00e09b !important;
   border: solid 2px #00e09b !important;
   border-radius: 4px;
@@ -1394,6 +1383,19 @@ div .module-heading > .search-form.no-bottom-border {
   /* Vertically center images part 1: add padding above and below text. */
   overflow: hidden;
 }
+@media (max-width: 979px) {
+  .js .modify_bloc_1 {
+    background-image: url("../images/visual-md.png");
+    background-repeat: no-repeat;
+    background-position: 90% 40%;
+    background-size: 55% auto;
+  }
+}
+@media (min-width: 767px) and (max-width: 978px) {
+  .mast_heading {
+    padding: 100px 0;
+  }
+}
 @media (max-width: 767px) {
   .js .modify_bloc_1 {
     background-blend-mode: overlay;
@@ -1406,19 +1408,6 @@ div .module-heading > .search-form.no-bottom-border {
   }
   .mast_heading {
     padding: 75px 0;
-  }
-}
-@media (max-width: 979px) {
-  .js .modify_bloc_1 {
-    background-image: url("../images/visual-md.png");
-    background-repeat: no-repeat;
-    background-position: 90% 40%;
-    background-size: 55% auto;
-  }
-}
-@media (min-width: 767px) and (max-width: 978 px) {
-  .mast_heading {
-    padding: 100px 0;
   }
 }
 .modify_bloc_2 {
@@ -1503,20 +1492,10 @@ div .module-heading > .search-form.no-bottom-border {
     margin-top: 5px;
   }
 }
-.dataset-map-expanded #dataset-map {
-  padding-left: calc(100vw / 2 - 940px / 2);
-  padding-right: calc(99vw / 2 - 940px / 2);
-  margin-left: calc(-100vw / 2 + 940px / 2) !important;
-  margin-right: calc(-99vw / 2 + 940px / 2) !important;
-  width: 100% !important;
-  height: 484px !important;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  transition: all 0.3s;
-}
 .img_example {
   background-color: #333;
   position: relative;
-  border-width: 100%;
+  width: 100%;
 }
 .modify_bloc_4 {
   background: #fff;
@@ -1548,6 +1527,13 @@ div .module-heading > .search-form.no-bottom-border {
   .modify_bloc_4 {
     padding-bottom: 25px;
   }
+}
+.additional-info th {
+  width: 15%;
+}
+.additional-info td,
+.additional-info th {
+  border-top: none;
 }
 .modify_bloc_5 {
   border-top: #ececec 10px solid;
