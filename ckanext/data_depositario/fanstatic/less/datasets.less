@@ -17,30 +17,22 @@
 
 // HOVER CONTENT
 
+each(@exampleStyleSet, {
+  @className: extract(@value, 1);
+  @bgColor: extract(@value, 2);
+  @bgGradientColor1: extract(@value, 3);
+  @bgGradientColor2: extract(@value, 4);
 
-.example-bg-1 {
-  background: #d0eddd;
-}
+  .example-bg-@{className} {
+    & {
+      background-color: @bgColor;
+    }
 
-.example-bg-1-bg {
-  background: linear-gradient(to right, #00e09b, #077a48);
-}
-
-.example-bg-2 {
-  background: #f9bdbd;
-}
-
-.example-bg-2-bg {
-  background: linear-gradient(to right, #f46464, #720404);
-}
-
-.example-bg-3 {
-  background: #e4d2f9;
-}
-
-.example-bg-3-bg {
-  background: linear-gradient(to right, #a587dd, #1d013d);
-}
+    &-bg {
+      background: linear-gradient(to right, @bgGradientColor1, @bgGradientColor2);
+    }
+  }
+});
 
 
 @media (max-width: 979px) {
