@@ -7,6 +7,17 @@
 Changelog
 ---------
 
+v6.4.5 2021-07-30
+=================
+
+Notice:
+ * This version requires the latest `ckanext-wikidatakeyword <https://github.com/depositar/ckanext-wikidatakeyword>`_ and `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Improvement: Fix the HTTP 500 error when uploading datasets via the Action API without keywords.
+ * Improvement: Fix overflow with long url in WebKit browsers.
+ * Other improvements and UI adjustments.
+
 v6.4.4 2021-06-18
 =================
 

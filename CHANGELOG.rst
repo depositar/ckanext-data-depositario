@@ -7,6 +7,17 @@
 更新日誌
 --------
 
+v6.4.5 2021-07-30
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-wikidatakeyword <https://github.com/depositar/ckanext-wikidatakeyword>`_ 與 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+
+更新內容：
+ * 改善：修復自 Action API 上傳資料集時，若未加上 keywords，會發生 HTTP 500 錯誤的問題。
+ * 改善：修復於 WebKit 系列瀏覽器網址顯示破版的問題。
+ * 其他程式最佳化與細部介面調整。
+
 v6.4.4 2021-06-18
 =================
 
