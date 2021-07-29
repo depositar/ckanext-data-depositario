@@ -154,6 +154,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             'get_gmap_config',
             'get_pkg_version',
             'googleanalytics_header',
+            'is_demo',
             'schema_license_choices',
             'schema_language_choices',
         )

@@ -99,6 +99,12 @@ def googleanalytics_header():
     return p.toolkit.render_snippet(
             'snippets/googleanalytics_header.html', data)
 
+def is_demo():
+    """
+    Tell whether or not this site is a demo.
+    """
+    return config.get('ckanext.data_depositario.demo.enabled', False)
+
 def schema_license_choices(field):
     """
     License choices helper.
