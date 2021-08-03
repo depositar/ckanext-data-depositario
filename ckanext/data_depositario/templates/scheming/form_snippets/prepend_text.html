@@ -8,8 +8,8 @@
     placeholder=h.scheming_language_text(field.form_placeholder),
     value=data[field.field_name],
     error=errors[field.field_name],
-    classes=['control-medium'],
-    attrs=field.form_attrs if 'form_attrs' in field else {"class": "form-control"},
+    classes=field.classes if 'classes' in field else ['control-medium'],
+    attrs=dict({"class": "form-control"}, **(field.get('form_attrs', {}))),
     is_required=h.scheming_field_required(field)
     )
 %}
