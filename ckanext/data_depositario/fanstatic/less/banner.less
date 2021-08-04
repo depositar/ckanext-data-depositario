@@ -1,0 +1,94 @@
+.js {
+    .modify_bloc_1 {
+        height: 420px;
+        background: @bannerBackgroundColor;
+        overflow: hidden;
+        background-image: @bannerBackgroundImage;
+    }
+
+    .m1_bloc_1 {
+        display: block;
+        float: left;
+        width: 400px;
+    }
+
+    .m1_bloc_2 {
+        display: block;
+        float: left;
+        width: 132px;
+        height: 169px;
+        margin-top: -41px;
+        background-image: url("../images/logo_ani.svg");
+        background-repeat: no-repeat;
+    }
+
+    .m1_bloc_3 {
+        display: block;
+        float: left;
+        width: auto;
+        margin-top: -81px;
+        padding-left: 1px;
+    }
+} 
+
+.btn_float {
+    border: 0;
+    background: none;
+    color: @bannerBtnFloatColor !important;
+    border: solid 2px @bannerBtnFloatBorderColor !important;
+    border-radius: 4px;
+    text-shadow: none;
+    padding: 12px 22px;
+}
+
+.btn_float:hover, .btn_float:focus {
+    border: 0;
+    background: none;
+    background-color: @bannerBtnFloatHoverBackgroundColor;
+    box-shadow: none;
+    color: @bannerBtnFloatHoverColor;
+    text-shadow: none;
+    border: solid 2px @bannerBtnFloatHoverBorderColor !important;
+    box-shadow: @bannerBtnFloatHoverBoxShadow;
+    text-decoration: none;
+    transition: 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.02);;
+}
+
+.mast_heading{
+    padding: 150px 0; /* Vertically center images part 1: add padding above and below text. */
+    overflow: hidden;
+}
+
+@media (max-width: 979px) {
+    .js .modify_bloc_1 {
+        background-image: url("../images/visual-md.png");
+        background-repeat: no-repeat;
+        background-position: 90% 40%;
+        background-size: 55% auto;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 978px) {
+    .mast_heading{
+        padding: 100px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .js {
+        .modify_bloc_1 {
+            background-blend-mode: overlay;
+            background-position: 50% 50%;
+            background-size: 90% auto;
+            height: 250px;
+        }
+
+        .m1_bloc_1{
+            padding-left: 15px;
+        }
+    }
+
+    .mast_heading{
+        padding: 75px 0;
+    }
+}

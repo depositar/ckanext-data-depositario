@@ -1,0 +1,21 @@
+.modify_bloc_5 {
+    border-top: @partnerBorderTopColor 10px solid;
+    padding-bottom: 55px;
+
+    a {
+        text-decoration: none;
+        border-bottom: 2px solid @partnerLinkBorderBottomColor;
+        color: @partnerLinkColor;
+    }
+
+    a:hover {
+        color: @partnerLinkHoverColor;
+        transition: 0.1s;
+    }
+}
+
+@media (max-width: 979px) {
+    .modify_bloc_5 {
+      padding-bottom: 25px;
+    }
+}
