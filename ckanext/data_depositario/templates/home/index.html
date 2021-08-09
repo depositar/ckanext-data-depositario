@@ -8,6 +8,11 @@
   {{ super() }}
 {% endblock -%}
 
+{%- block styles %}
+  {% resource 'depositar_theme/index' %}
+  {{ super() }}
+{% endblock -%}
+
 {% block main_content %}
   {% block flash %}
     <div class="flash-messages">
