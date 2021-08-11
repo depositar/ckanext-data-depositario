@@ -1,99 +1,74 @@
-/*content wrapper*/
 .wrapper{
-    position: relative;
     margin-top: 25px;
-    background-color: @wrapperBackgroundColor;
-    margin-bottom: 20px;
-    margin-left: 0;
     border: none;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    background-image: url("../images/wrapper-bg.jpg");
+}
+@media (min-width: 768px) {
+  .wrapper {
+    background-image:url("../images/wrapper-bg.jpg");
+    background-position: 175px 10px;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 980px) {
+  .wrapper {
     background-position: 230px 10px;
-}
-  
-@media screen and (max-width: 978px) and (min-width: 767px) {
-    .wrapper{
-      background-position: 175px 10px;
-    }
-}
-  
-@media screen and (max-width: 767px) {
-    .wrapper{
-        background-image: none;
-    }
+  }
 }
 
-[role=main],
-.main {
-    background-color: @layoutRoleMainBackgroundColor;
-    background-image: none;
+[role=main], .main {
+    background: @layoutBackgroundColor;
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
+.hover-toggle {
+  height: 550px;
 
-// HOVER CONTENT
+  .opacity {
+    opacity: 0;
+  }
 
-.hover-content,
-.hover-content-s {
-    visibility: hidden;
-    position: absolute;
-    z-index: -200;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  &:hover .content-toggle {
     top: 0;
+  }
 
-    overflow: hidden;
-    opacity: 90%;
-}
-
-.hover-content {
-    height: 550px;
-    margin: 0 15px;
-}
-
-.hover-content-s {
+  &-s {
     height: 265px;
-    margin: 0;
-}
 
-.hover-toggle,
-.hover-toggle-s {
+    &:hover .content-toggle-s {
+      top: 0;
+    }
+  }
+
+  &, &-s {
     overflow: hidden;
     position: relative;
-}
 
-
-.hover-toggle {
-    height: 550px;
-}
-
-.hover-toggle-s {
-    height: 265px;
-}
-
-.content-toggle,
-.content-toggle-s {
-    position: absolute;
-    z-index: 200;
-    bottom: 0;
-    margin-top: 0;
-    margin-top: 0;
-    overflow: hidden;
-    opacity: 90%;
-    transition: all 0.4s ease-in-out 0s;
-    div {
-        h3 {
-            opacity: 0.85;
-            width: 80%;
-        }
+    &:hover {
+      .opacity {
+        opacity: 1;
+        transition: all 0.4s ease-in-out 0s;
+      }
     }
+  }
+}
+@media (max-width: 767px) {
+  .hover-toggle-s {
+    left: 15px;
+  }
+}
+@media (max-width: 370px) {
+  .hover-toggle {
+    height: 350px;
+  }
 }
 
 .content-toggle {
@@ -105,36 +80,53 @@
     -webkit-transition-property: all;
     transition-property: all;
     border-top: 0px @layoutBorderTopColor solid;
-}
 
-.content-toggle:hover {
+  .desc {
+    width: 80%;
+  }
+
+  &:hover {
     border-top: 4px @layoutBorderTopColor solid;
-}
+  }
 
-
-.content-toggle-s {
+  &-s {
     top: 130px;
     left: 0px;
     right: 0px;
-}
+  }
 
-.content-toggle .desc {
-    width: 80%;
+  &, &-s {
+    position: absolute;
+    z-index: 200;
+    bottom: 0;
+    margin-top: 0;
+    overflow: hidden;
+    opacity: 90%;
+    div {
+      h3 {
+        opacity: 0.85;
+        width: 80%;
+      }
+    }
+  }
 }
-
-.hover-toggle:hover .content-toggle,
-.hover-toggle-s:hover .content-toggle-s {
-    top: 0;
+@media (max-width: 767px) {
+  .content-toggle .desc {
+    width: 100%;
+  }
 }
+@media (max-width: 370px) {
+  .content-toggle {
+    top: 130px;
 
-.opacity {
-    opacity: 0;
-}
+    h1 {
+      font-size: 21px;
+    }
 
-.hover-toggle:hover .opacity,
-.hover-toggle-s:hover .opacity {
-    opacity: 1;
-    transition: all 0.4s ease-in-out 0s;
+    h3 {
+      font-size: 16px;
+    }
+  }
 }
 
 @media (max-width: 767px) {
@@ -142,44 +134,9 @@
         margin-bottom: 20px;
         padding-right: 0;
         flex: auto;
-    }
-
-    .hover-toggle-s {
-        left: 15px;
-    }
-
-    .property-767-s {
+      &-s {
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .content-toggle .desc {
-        width: 100%;
-    }
-}
-
-@media (max-width: 370px) {
-    .content-toggle {
-        top: 130px;
-    }
-
-    .content-toggle h1 {
-        font-size: 21px;
-    }
-
-    .content-toggle h3 {
-        font-size: 16px;
-    }
-
-    .content-toggle .mt-3 {
-        margin-top: 20px;
-    }
-
-    .content-toggle .mb-2 {
-        margin-bottom: 10px;
-    }
-
-    .hover-toggle {
-        height: 350px;
+      }
     }
 }
