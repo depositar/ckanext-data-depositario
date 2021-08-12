@@ -2,9 +2,9 @@
   {% for dataset in datasets %}
     <div class="col hover-toggle property-767">
       <a href="{{ dataset.url }}">
-        <div class="example-bg-1-bg h-100">
-          <img class="img_example" src="{{ dataset.image }}" alt="{{ dataset.image }}">
-          <div class ="content-toggle example-bg-1">
+        <div class="h-100">
+          <img src="{{ dataset.image }}" alt="{{ dataset.image }}">
+          <div class ="content-toggle idx-datasets-bg-1">
             <div class="px-4 py-4">
               <h1 class="mt-4 mb-4">{{ dataset.title }}</h1>
               <h3>{{ dataset.short_desc|safe }}</h3>

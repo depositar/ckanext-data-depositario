@@ -1,9 +1,9 @@
 <div class="row-bs4 mx-auto py-3">
-  <div class="col-lg-8 col-md-6 col-sm-12 hover-toggle property-767">
+  <div class="col-lg-8 col-md-6 hover-toggle property-767">
     <a href="{{ datasets[0].url }}">
-      <div class="example-bg-1-bg h-100">
-        <img class="img_example" src="{{ datasets[0].image }}" alt="{{ datasets[0].image }}">
-        <div class ="content-toggle example-bg-1">
+      <div class="h-100">
+        <img src="{{ datasets[0].image }}" alt="{{ datasets[0].image }}">
+        <div class ="content-toggle idx-datasets-bg-1">
           <div class="px-4 py-4">
             <h1 class="mt-4 mb-4">{{ datasets[0].title }}</h1>
             <h3>{{ datasets[0].short_desc|safe }}</h3>
@@ -17,9 +17,9 @@
   <div class="col no-gutters pl-0 property-767-s">
     <div class="hover-toggle-s mb-3">
       <a href="{{ datasets[1].url }}">
-        <div class="example-bg-2-bg h-100">
-          <img class="img_example" src="{{ datasets[1].image }}" alt="{{ datasets[1].image }}">
-          <div class ="content-toggle-s example-bg-2">
+        <div class="h-100">
+          <img src="{{ datasets[1].image }}" alt="{{ datasets[1].image }}">
+          <div class ="content-toggle-s idx-datasets-bg-2">
             <div class="px-2 py-2">
               <h2 class="mt-1">{{ datasets[1].title }}</h2>
               <h3>{{ datasets[1].short_desc|safe }}</h3>
@@ -31,9 +31,9 @@
     </div>
     <div class="hover-toggle-s mb-3">
       <a href="{{ datasets[2].url }}">
-        <div class="example-bg-3-bg h-100">
-          <img class="img_example" src="{{ datasets[2].image }}" alt="{{ datasets[2].image }}">
-          <div class ="content-toggle-s example-bg-3">
+        <div class="h-100">
+          <img src="{{ datasets[2].image }}" alt="{{ datasets[2].image }}">
+          <div class ="content-toggle-s idx-datasets-bg-3">
             <div class="px-2 py-2">
               <h2 class="mt-1">{{ datasets[2].title }}</h2>
               <h3>{{ datasets[2].short_desc|safe }}</h3>

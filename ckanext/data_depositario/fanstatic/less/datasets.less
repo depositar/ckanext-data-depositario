@@ -1,52 +1,27 @@
-// homepage
-
-.img_example {
-  background-color: @datasetImgExampleBackgroundColor;
-  position: relative;
-  width: 100%;
-}
-
-.modify_bloc_4 {
-  background: @datasetBackgroundColor;
+.idx-datasets {
   background-image: url("../images/visual-bg.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% auto;
   border-top: @datasetBorderTopColor 10px solid;
+
+  a {
+    color: @datasetLinkColor;
+  }
+
+  each(@datasetBackgroundColor, {
+    &-bg-@{index} {
+      background: @value;
+    }
+  });
 }
 
-// HOVER CONTENT
-
-each(@exampleStyleSet, {
-  @className: extract(@value, 1);
-  @bgColor: extract(@value, 2);
-  @bgGradientColor1: extract(@value, 3);
-  @bgGradientColor2: extract(@value, 4);
-
-  .example-bg-@{className} {
-    & {
-      background-color: @bgColor;
-    }
-
-    &-bg {
-      background: linear-gradient(to right, @bgGradientColor1, @bgGradientColor2);
-    }
-  }
-});
-
-
 @media (max-width: 979px) {
-  .modify_bloc_4 {
+  .idx-datasets {
     padding-bottom: 25px;
   }
 }
 
-// Additional info - used on both dataset and resource page
 .additional-info th {
   width: 15%;
-}
-
-.additional-info td,
-.additional-info th {
-  border-top: none;
 }
