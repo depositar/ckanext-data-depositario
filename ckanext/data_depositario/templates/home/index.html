@@ -4,7 +4,6 @@
 
 {%- block scripts %}
   {% resource 'ckanext-data-depositario/index' %}
-  <script>document.documentElement.className = "js";</script>
   {{ super() }}
 {% endblock -%}
 
@@ -26,7 +25,7 @@
     </div>
   {% endblock %}
 
-  {% snippet "home/snippets/idx_masthead.html" %}
+  {% snippet "home/snippets/idx_hero.html" %}
   {#% snippet "home/snippets/idx_features.html" %#}
   {% snippet "home/snippets/idx_topics.html" %}
   {% snippet "home/snippets/idx_datasets.html" %}
