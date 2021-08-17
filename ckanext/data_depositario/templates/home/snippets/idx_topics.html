@@ -1,4 +1,4 @@
-<div class="idx"><div class="container index_topics modify_bloc_3">
+<div class="idx idx-topics"><div class="container">
   <!-- Heading of the block -->
   <div class="row-bs4 mx-auto py-3">
     <div class="col mt-1">
@@ -9,7 +9,7 @@
       <div class="pull-right">
         <form class="site-search" action="{% url_for controller='package', action='search' %}" method="get">
           <input type="text" name="q" value="" autocomplete="off" placeholder="{{ _('Find datasets?') }}">
-          <button class="btn_search" type="submit">
+          <button class="btn-search" type="submit">
             <i class="fa fa-search"></i>
           </button>
         </form>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <!-- Icons -->
-  <div class="row-bs4 align-self-center mx-auto mt-4">
+  <div class="row-bs4 mx-auto mt-4">
     <div class="col">
       <a href="group/general-reference"><img class="img-circle mt-1" src="/icon-01.svg" alt="general-reference"></a>
       <h5 class="text-center">{{ _('General reference') }}</h5>

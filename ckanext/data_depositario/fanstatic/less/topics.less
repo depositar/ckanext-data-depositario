@@ -1,23 +1,8 @@
-.modify_bloc_3 {
-    background-color: @topicBackgroundColor;
-    padding-bottom: 25px;
-    
-    .text-center {
-        width: 100%;
-        font-size: 13px;
-        line-height: 1.5em;
-    }
-}
-
-:lang(zh_TW) {
-  .modify_bloc_3 {
-    .text-center {
-      font-size: 16px;
-    }
+.idx-topics {
+  h5 {
+    line-height: 1.5em;
   }
-}
 
-.index_topics {
     .site-search {
         margin: 0;
 
@@ -30,17 +15,31 @@
             color: @topicSiteSearchInputColor;
             padding-top: 20px;
             background-color: transparent;
-        }
 
-        input[type="text"]:focus {
-            border-bottom: 2px solid @topicSiteSearchInputFocusBorderBottomColor;
+            &:focus {
+              border-bottom-color: @topicSiteSearchInputFocusBorderBottomColor;
+           }
         }
     }
 }
 
-.btn_search {
+@media (max-width: 767px) {
+  .idx-topics {
+    .site-search input[type="text"] {
+      width: 120px;
+      padding-top: 10px;
+    }
+  }
+}
+
+:lang(zh_TW) {
+  .idx-topics h5 {
+    font-size: 16px;
+  }
+}
+
+.btn-search {
     margin-top: 12px;
-    border: 0;
     background-color: @topicBtnSearchBackgroundColor;
     box-shadow: none;
     color: @topicBtnSearchColor;
@@ -49,33 +48,25 @@
     border: none !important;
     font-size: 16px;
     transition: 0.2s;
+
+  &:hover,
+  &:focus {
+    background-color: @topicBtnSearchHoverBackgroundColor;
+  }
 }
 
-
-.btn_search:hover,
-.btn_search:focus {
-    background-color: @topicBtnSearchHoverBackgroundColor;
+@media (max-width: 767px) {
+  .btn-search {
+    margin-top: 5px;
+  }
 }
 
 .img-circle {
     border: 5px @topicImgCircleBorderColor solid;
     background: @topicImgCircleBackgroundColor;
-}
 
-.img-circle:hover {
-    -ms-transform: scale(1.08); /* IE 9 */
-    -webkit-transform: scale(1.08); /* Safari */
+  &:hover {
     transform: scale(1.08);
     transition: 0.13s;
-}
-
-@media (max-width: 767px) {
-    .index_topics input[type="text"] {
-        width: 120px;
-        padding-top: 10px;
-    }
-
-    .btn_search {
-        margin-top: 5px;
-    }
+  }
 }
