@@ -28,7 +28,13 @@
 // }
 
 .masthead {
+  color: @mastheadTextColor;
+  background-color: @mastheadBackgroundColor;
   background-image: none;
+
+  a {
+    color: @mastheadLinkColor;
+  }
 
   .nav-collapse {
     padding-top: 5px;
@@ -114,14 +120,6 @@
 }
 
 @media (max-width: 767px) {
-  .account-masthead {
-    margin-right: -40px;
-  }
-  .masthead {
-    .container {
-      padding-right: 0;
-    }
-  }
   .mast_heading {
     padding-left: 0 !important;
     padding-right: 0 !important;

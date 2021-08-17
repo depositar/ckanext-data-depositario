@@ -12,6 +12,8 @@
   {{ super() }}
 {% endblock -%}
 
+{%- block content %}
+{% block maintag %}<div role="main">{% endblock %}
 {% block main_content %}
   {% block flash %}
     <div class="flash-messages">
@@ -30,6 +32,7 @@
   {% snippet "home/snippets/idx_topics.html" %}
   {% snippet "home/snippets/idx_datasets.html" %}
   {% snippet "home/snippets/idx_partners.html" %}
+{% endblock %}
 {% endblock %}
 
 {% block secondary %}{% endblock %}
