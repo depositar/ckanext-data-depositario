@@ -4,7 +4,7 @@ Displays a slider widget to define a date filter on the dataset search page side
 {% set date_range = h.get_default_slider_values() %}
 {% set default_dates = h.get_date_url_param() %}
 
-<section class="module module-narrow module-shallow">
+<section id="temporal-search" class="module module-narrow module-shallow">
   <h2 class="module-heading">
     <i class="fa fa-calendar"></i>
     {{ _('Filter by Time') }}

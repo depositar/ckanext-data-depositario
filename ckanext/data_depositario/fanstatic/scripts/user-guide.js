@@ -36,12 +36,12 @@ this.ckan.module('intro-action', function (jQuery) {
 	    position: 'right'
 	  },
           {
-            element: '[data-module="date-facet"]',
+            element: '#temporal-search',
             intro: this._('Here you can search datasets by a period of time.'),
             position: 'right'
           },
           {
-            element: '#facets',
+            element: '.filters',
             intro: this._('Here you can filter datasets.'),
             position: 'right'
           },
