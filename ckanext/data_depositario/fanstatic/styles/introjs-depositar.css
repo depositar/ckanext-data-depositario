@@ -147,6 +147,7 @@
 /*
  Buttons style by http://nicolasgallagher.com/lab/css3-github-buttons/
  Changed by Afshin Mehrabani
+ Adapted by Cheng-Jen Lee
 */
 .introjs-button {
   position: relative;
@@ -157,10 +158,12 @@
   margin: 0;
   outline: none;
   border: 2px solid;
-  background: transparent;
+  background: none;
   text-decoration: none;
+  text-shadow: none;
   font: 11px/normal sans-serif;
-  color: #2980b9 !important;
+  border-color: #00e09b;
+  color: #000;
   white-space: nowrap;
   cursor: pointer;
   outline: none !important;
@@ -184,18 +187,18 @@
 
 .introjs-button:hover {
   color: #fff;
-  background: #2671A2;
+  background: #00e09b;
   text-decoration: none;
-  border-color: #235677;
+  border-color: #00e09b;
 }
 
 .introjs-button:focus,
 .introjs-button:active {
-    background: #23587A;  text-decoration: none;
-    color: #fff;
+    text-decoration: none;
+    color: #000;
     /* bottom: -1px; */
     box-shadow: none;
-    border-color: #173B53;
+    border-color: #00e09b;
 }
 
 /* overrides extra padding on button elements in Firefox */
@@ -206,18 +209,20 @@
 
 .introjs-skipbutton {
   margin-right: 5px;
-  color: #c00;
+  color: #f46464;
+  border-color: #f46464;
   background: transparent;
 }
 
 .introjs-skipbutton:hover {
-    background: #EB1540;
-    border-color: #B91D0D;
+    background: #f46464;
+    border-color: #f46464;
 
 }
 
 .introjs-skipbutton:active, .introjs-skipbutton:focus {
-    background: #C02312;
+    background: #f9bdbd;
+    border-color: #f9bdbd;
     /* box-shadow: 0 1px 0px -0px #6F1309; */
 
 }
