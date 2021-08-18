@@ -1,36 +1,28 @@
+.toolbar {
+  background-color: @toolbarBackgroundColor;
+  margin-bottom: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  .breadcrumb a,
+  .breadcrumb li {
+    color: @breadcrumbColor;
+    font-size: 12pt;
+    text-shadow: none;
+  }
+}
+
 @media only screen and (min-width: 979px) {
     .toolbar {
-        margin-bottom: 0px;
-        padding-top: 15px;
-        padding-bottom: 15px;
         padding-left: calc(100vw / 2 - 940px / 2);
         margin-left: calc(-100vw / 2 + 940px / 2);
         margin-right: calc(-99vw / 2 + 940px / 2);
-        color: @toolbarColor;
-        background-color: @toolbarBackgroundColor;
-
-        .breadcrumb a,
-        .breadcrumb li {
-            color: @breadcrumbColor;
-            font-size: 12pt;
-        }
     }
 }
 
 @media (max-width: 979px) {
     .toolbar {
-        margin-bottom: 0px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        color: @toolbarColor;
-        background-color: @toolbarBackgroundColor;
         padding-left: 20px;
-
-        .breadcrumb a,
-        .breadcrumb li {
-            color: @breadcrumbColor;
-            font-size: 12pt;
-        }
     }
 }
 
@@ -47,48 +39,4 @@
       margin-left: -20px;
       margin-right: -20px;
     }
-}
-
-.breadcrumb>li {
-    text-shadow: none;
-}
-
-
-// INTRO JS
-.introjs-button {
-    background: none;
-    border-color: @introjsBtnBorderColor;
-    color: @introjsBtnColor  !important;
-    text-shadow : none;
-}
-
-.introjs-button:hover {
-    background: @introjsBtnHoverBackgroundColor;
-    border-color: @introjsBtnBorderColor;
-    box-shadow: none;
-}
-
-.introjs-button:focus {
-    background: none;
-    border-color: @introjsBtnBorderColor;
-    box-shadow: none;
-}
-
-
-.introjs-button:active {
-    background: @introjsBtnActiveBackgroundColor;
-    border-color: @introjsBtnBorderColor;
-    box-shadow: none;
-}
-
-.introjs-nextbutton:hover {
-    background: @introjsBtnHoverBackgroundColor;
-    border-color: @introjsBtnBorderColor;
-    color: @introjsBtnColor  !important;
-    text-shadow : none;
-}
-
-.label[data-format=html],
-.label[data-format*=html] {
-    background-color: @introjsBtnLabelBackgroundColor;
 }
