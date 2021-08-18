@@ -1,7 +1,7 @@
 .site-footer {
-    background-color: @footerBackgroundColor;
-    background-image: none;
-    padding: 80px 0px 60px 0px;
+  .account-masthead();
+
+  padding: 80px 0 60px 0;
 }
 
 @media (max-width: 767px) {
@@ -12,37 +12,30 @@
     }
 }
 
-/* The text in the footer. */
 .site-footer,
 .site-footer label,
 .site-footer small {
-    color: @footerColor;
+  color: @footerTextColor;
 }
 
-/* The link texts in the footer. */
+.site-footer a {
+  color: @footerLinkColor;
+  transition: 0.1s;
+
+  &:hover {
+    color: @footerLinkHoverColor;
+  }
+}
 
 .footer-logo {
     background: url("../images/logo_eng_horizontal_w.svg") no-repeat scroll;
     height: 50px;
     width: 30%;
-    padding: 0px 0px 10px 0px;
+  padding-bottom: 10px;
 }
 
 @media (max-width: 767px) {
     .footer-logo {
         width: 50%;
     }
-}
-
-.site-footer a {
-    color: @footerColor;
-    transition: 0.1s;
-
-    &:hover {
-        color: @footerLinkHoverColor;
-    }
-}
-
-div .module-heading>.search-form.no-bottom-border {
-    padding-bottom: 0;
 }
