@@ -16,12 +16,18 @@
             }
 
             button {
-                height: 34px;
                 margin-top: -12px;
             }
         }
     }
-  &.no-bottom-border {
-    padding-bottom: 0;
+
+  .filter-list {
+    .pill {
+      background-color: @filterListPillBackgroundColor;
+    }
   }
+}
+
+.module-heading > .search-form.no-bottom-border {
+  padding-bottom: 0;
 }

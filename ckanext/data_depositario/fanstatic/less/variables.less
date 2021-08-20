@@ -11,10 +11,8 @@
 @selectionColor: @smallBodyBackgroundColor;
 @selectionBackgroundColor: #00e09b;
 
-@moduleLinkColor: @bodyColor;
-@moduleLinkBorderBottomColor: @selectionBackgroundColor;
-
 @siteFooterLinkColor: @bodyColor;
+@emptyTextColor: #cdcdcd;
 
 @pMarkColor: @selectionBackgroundColor;
 
@@ -22,36 +20,22 @@
 @borderTopColor: @borderLeftColor;
 
 // Module
-@moduleBasicBackgroundColor: #fff;
+@moduleContentLinkTextColor: #000;
 
-@headingBoderBottomColor: #000;
-@smallHeadingBackgroundColor: #edf7f1;
-@smallHeadingBorderBottomColor: #999;
+@moduleLinkBorderBottomColor: #00e09b;
+@moduleHeadingBackgroundColor: #edf7f1;
+@moduleHeadingBorderBottomColor: #999;
+@moduleNarrowHeadingBackgroundColor: #fff;
+@moduleNarrowHeadingBoderBottomColor: #000;
 
-@facetsBackgroundColor: @moduleBasicBackgroundColor;
-
-@pillBackgroundColor: #333;
-
-@datasetResourcesListItemLinkBackgroundColor: #d7e82d;
 @datasetMapBoxShadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-
-@pageHeaderBorderBottomColor: @pillBackgroundColor;
-
-@navItemLinkBackgroundColor: @pillBackgroundColor;
-@navTabsBorderBottomColor: @moduleBasicBackgroundColor;
-@navTabsListItemBorderBottom: @pillBackgroundColor;
-@navTabsListItemBackgroundColor: @smallHeadingBackgroundColor;
-@navTabsLinkHoverColor: @pillBackgroundColor;
-@navTabsLinkHoverBackgroundColor: @moduleBasicBackgroundColor;
-@navTabsLinkHoverBorderColor: @pillBackgroundColor;
-@noNavBorderBottomColor: @pillBackgroundColor;
-@noNavBackgroundColor: @moduleBasicBackgroundColor;
-
-@emptyColor: @stagesListItemBeforeBackgroundColor;
 
 // Media
 @mediaItemBorderBottomColor: #ddd;
 @mediaGridBackgroundColor: #edf7f1;
+
+// Nav
+@navItemLinkBackgroundColor: #333;
 
 // Masthead
 @mastheadTextColor: #000;
@@ -79,6 +63,15 @@
 // Toolbar
 @toolbarBackgroundColor: #333;
 @breadcrumbColor: #fff;
+@pageHeaderBorderBottomColor: @toolbarBackgroundColor;
+@noNavBackgroundColor: @breadcrumbColor;
+
+@navTabsBorderBottomColor: #fff;
+@navTabsListItemBorderBottom: #333;
+@navTabsListItemBackgroundColor: #edf7f1;
+@navTabsLinkHoverColor: @navTabsListItemBorderBottom;
+@navTabsLinkHoverBorderColor: @navTabsListItemBorderBottom;
+@noNavBackgroundColor: @navTabsBorderBottomColor;
 
 // Footer
 @footerTextColor: rgba(255, 255, 255, 1);
@@ -93,9 +86,9 @@
 @stagesListItemActiveColor: @stagesListItemActiveBackgroundColor;
 @stagesListItemActiveBorderColor: @stagesListItemActiveBackgroundColor;
 @stagesListItemCompleteHighlightBackgroundColor: #d0eddd;
-@stagesListItemCompleteHighlightColor: @moduleBasicBackgroundColor;
+@stagesListItemCompleteHighlightColor: #fff;
 @stagesListItemCompleteBeforeColor: @stagesListItemCompleteHighlightBackgroundColor;
-@stagesListItemCompleteBeforeBackgroundColor: @moduleBasicBackgroundColor;
+@stagesListItemCompleteBeforeBackgroundColor: @stagesListItemCompleteHighlightColor;
 @stagesListItemCompleteAfterBorderColor: @stagesListItemCompleteHighlightBackgroundColor;
 
 @controlGroupErrorColor: #f46464;
@@ -105,9 +98,13 @@
 @errorText: #720404;
 @errorBlockBackground: @controlGroupErrorColor;
 
+// Dataset
+@resourceFormatBackground: #d7e82d;
+
 // Search
 @searchHoverInputBoxShadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 @searchInputBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+@filterListPillBackgroundColor: #333;
 
 // Index
 @idxBorderTopColor: #ececec;

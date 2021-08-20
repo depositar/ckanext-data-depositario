@@ -1,253 +1,88 @@
 .module-content {
     padding: 0 0px;
-}
 
-.span3 {
-    width: 210px;
-}
-
-
-#facets {
-    background-color: @facetsBackgroundColor;
-}
-
-.pill{
-    background-color: #333;
-}
-
-.dataset-heading {
-    border: none;
-    font-size: 21px;
-
-    a {
-        border-bottom: none !important;
-    }
-}
-
-.dataset-resources {
-    li {
-        a {
-            background-color: @datasetResourcesListItemLinkBackgroundColor;
-            border: none;
-        }
-    }
-}
-
-// map
-
-.dataset-map-expanded #dataset-map{
-    padding-left: calc(100vw / 2 - 940px / 2);
-    padding-right: calc(99vw / 2 - 940px / 2);
-    margin-left: calc(-100vw / 2 + 940px / 2) !important;
-    margin-right: calc(-99vw / 2 + 940px / 2) !important;
-    width: 100% !important;
-    height: 484px !important;
-    box-shadow: @datasetMapBoxShadow;
-    transition: all 0.3s;
-}
-
-// module
-
-.module-narrow {
-    .module-heading {
-        border-top: none;
-        background-color: @moduleBasicBackgroundColor;
-        border-bottom: 1px solid @headingBoderBottomColor;
-        padding-left: 0;
-        padding-right: 10px;
-        margin: 0;
-    }
-
-    .module-content {
-        padding-left: 0px;
-        padding: 10px 10px 10px 0px;
-    }
-}
-
-.module-content:first-child {
+  &:first-child {
     background-color: transparent;
     margin-top: 10px;
+  }
 }
 
+@media (max-width: 767px) {
+  .module-content:first-child {
+    margin-top: 30px;
+  }
+}
 
+.module-content a {
+  color: @moduleContentLinkTextColor;
+  text-decoration: none;
+  border-bottom: 2px solid @moduleLinkBorderBottomColor;
+}
+
+.module-heading {
+  background-color: @moduleHeadingBackgroundColor;
+  border-bottom-color: @moduleHeadingBorderBottomColor;
+  margin-top: -25px;
+}
 
 @media only screen and (min-width: 979px) {
     .module-heading {
         padding: 30px 0px;
-        font-size: 16px;
-        border-top: none;
-        background-color: @smallHeadingBackgroundColor;
         padding-left: calc(100vw / 2 - 940px / 2);
         padding-right: calc(100vw / 2 - 940px / 2);
         margin-left: calc(-100vw / 2 + 940px / 2);
         margin-right: calc(-99vw / 2 + 940px / 2);
-        margin-top: -25px;
-        border-bottom: 1px solid @smallHeadingBorderBottomColor;
-    }
-
-    .module {
-
-        &,
-        &-narrow,
-        &-shallow {
-            background-color: @moduleBasicBackgroundColor;
-        }
-    }
-}
-
-@media screen and (max-width: 978px) and (min-width: 767px) {
-    .span3 {
-        width: 166px;
     }
 }
 
 @media only screen and (max-width: 978px) and (min-width: 767px) {
-    .span3 {
-        width: 166px;
-    }
-
     .module-heading {
         padding: 20px 0px;
-        font-size: 16px;
-        border-top: none;
-        background-color: @smallHeadingBackgroundColor;
         padding-left: calc(100vw / 2 - 724px / 2);
         padding-right: calc(100vw / 2 - 724px / 2);
         margin-left: calc(-100vw / 2 + 724px / 2);
         margin-right: calc(-99vw / 2 + 724px / 2);
-        margin-top: -25px;
-    }
-
-    .module {
-
-        &,
-        &-narrow,
-        &-shallow {
-            background-color: @moduleBasicBackgroundColor;
-        }
-    }
-}
-
-@media (max-width: 767px) {
-    .module-content:first-child {
-        margin-top: 30px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .span3 {
-        width: 100%;
-    }
-
     .module-heading {
         padding: 30px 20px;
-        font-size: 16px;
-        border-top: none;
-        background-color: @smallHeadingBackgroundColor;
         margin: -25px -20px;
     }
 }
 
-// primer page
+// Secondary column specific
 
-.page-header {
-    border-radius: 0;
-    border-bottom: @pageHeaderBorderBottomColor 1px solid;
+.module-narrow {
+  .module-heading,
+  .module-footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-    .nav-tabs {
-        padding-left: 25px;
+  .module-heading {
+    font-size: 16px;
+    background-color: @moduleNarrowHeadingBackgroundColor;
+    border-top: none;
+    border-bottom-color: @moduleNarrowHeadingBoderBottomColor;
+    margin: 0;
+  }
 
-        > li > a {
-            line-height: 17px;
-        }
-    }
-
-    .btn {
-        margin-right: 14px;
-    }
+  .module-content {
+    padding: 10px 10px 10px 0;
+  }
 }
 
-.nav-item.active>a,
-.nav-aside li.active a {
-    background-color: @navItemLinkBackgroundColor;
+// Dataset Map
 
-    &:before {
-        background-image: none;
-    }
-}
-
-.nav-facet .nav-item.active>a:after {
-    right: 13px;
-}
-
-
-.no-nav .page-header {
-    -webkit-border-radius: 0px 0px 0 0;
-    -moz-border-radius: 0px 0px 0 0;
-    border-radius: 0px 0px 0 0;
-    background-color: @noNavBackgroundColor;
-    border-bottom: 1px @noNavBorderBottomColor solid;
-}
-
-.no-nav,
-.span9 {
-    .page-header {
-        border-bottom: 1px @noNavBorderBottomColor solid;
-    }
-}
-
-.fa {
-    line-height: 0 !important;
-}
-
-.nav-tabs {
-    border-bottom: 1px solid @navTabsBorderBottomColor;
-
-    li {
-        border-bottom: 1px @navTabsListItemBorderBottom solid;
-        background-color: @navTabsListItemBackgroundColor;
-        height: 35px;
-
-        &:hover {
-            border-radius: 0;
-        }
-
-        > a {
-            line-height: 7px;
-        }
-    }
-
-    a:hover {
-        border-radius: 0;
-    }
-
-    > .active > a {
-
-        &,
-        &:hover,
-        &:focus {
-            color: @navTabsLinkHoverColor;
-            background-color: @navTabsLinkHoverBackgroundColor;
-            border: 1px solid @navTabsLinkHoverBorderColor;
-            border-radius: 0;
-            border-bottom-color: transparent;
-            cursor: default;
-            height: 15px;
-            padding-top: 10px;
-        }
-    }
-}
-
-.empty {
-    color: @emptyColor;
-    font-style: normal;
-    font-size: 14px;
-}
-
-.navbar .nav > .active >a {
-    &,
-    &:hover,
-    &:focus {
-        box-shadow: none;
-    }
+.dataset-map-expanded #dataset-map {
+  padding-left: calc(100vw / 2 - 940px / 2);
+  padding-right: calc(99vw / 2 - 940px / 2);
+  margin-left: calc(-100vw / 2 + 940px / 2) !important;
+  margin-right: calc(-99vw / 2 + 940px / 2) !important;
+  width: 100% !important;
+  height: 484px !important;
+  box-shadow: @datasetMapBoxShadow;
+  transition: all 0.3s;
 }
