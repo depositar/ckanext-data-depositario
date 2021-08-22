@@ -5,27 +5,36 @@
   <div id="intro" data-module="intro-action"></div>
 {% endblock %}
 
-{% block pre_primary %}
-  <div class="module-heading">
-    {% set facets = {
-      'fields': c.fields_grouped,
-      'search': c.search_facets,
-      'titles': c.facet_titles,
-      'translated_fields': c.translated_fields,
-      'remove_field': c.remove_field }
-    %}
-    {% set sorting = [
-      (_('Relevance'), 'score desc, metadata_modified desc'),
-      (_('Name Ascending'), 'title_string asc'),
-      (_('Name Descending'), 'title_string desc'),
-      (_('Last Modified'), 'metadata_modified desc'),
-      (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
-    %}
-    {% snippet 'snippets/search_form.html', type='dataset', query=c.q, sorting=sorting, sorting_selected=c.sort_by_selected, count=c.page.item_count, facets=facets, show_empty=request.params, error=c.query_error, fields=c.fields, no_bottom_border=True %}
-  </div>
+{% block maintag %}
+  {{ super() }}
+  {% block form %}
+    <div class="dataset-search">
+      <div class="container">
+        {{ super () }}
+      </div>
+    </div>
+  {% endblock %}
 {% endblock %}
 
-{% block form %}
+{% block primary_content %}
+  <section class="module">
+    <div class="module-content">
+      {% block page_primary_action %}
+        {{ super() }}
+      {% endblock %}
+      {% block package_search_results_list %}
+        {{ super() }}
+      {% endblock %}
+    </div>
+
+    {% block page_pagination %}
+      {{ super() }}
+    {% endblock %}
+  </section>
+
+  {% block package_search_results_api %}
+    {{ super() }}
+  {% endblock %}
 {% endblock %}
 
 {% block secondary_content %}

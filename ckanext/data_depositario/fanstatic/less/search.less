@@ -1,9 +1,5 @@
 .search-form {
     .search-input {
-        & {
-            margin-bottom: 25px;
-        }
-
         &.search-giant {
             &:hover input {
                 box-shadow: @searchHoverInputBoxShadow;
@@ -16,7 +12,7 @@
             }
 
             button {
-                margin-top: -12px;
+                margin-top: -15px; // Remove this in CKAN >= 2.8
             }
         }
     }
@@ -28,6 +24,22 @@
   }
 }
 
-.module-heading > .search-form.no-bottom-border {
-  padding-bottom: 0;
+.dataset-search {
+  padding-top: 20px;
+  background-color: @datasetSearchBackgroundColor;
+  border-bottom: 1px solid @datasetSearchBorderBottomColor;
+
+  .search-form {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .dataset-search {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

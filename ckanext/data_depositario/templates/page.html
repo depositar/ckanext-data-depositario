@@ -1,0 +1,14 @@
+{% ckan_extends %}
+
+{% block maintag %}
+  {{ super() }}
+  <div class="toolbar">
+    <div class="container">
+      {% block breadcrumb %}
+        {{ super() }}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block toolbar %}{% endblock %}
