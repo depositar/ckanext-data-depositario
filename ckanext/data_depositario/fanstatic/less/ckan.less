@@ -2,10 +2,14 @@ body {
     line-height: 30px;
     font-size: 16px;
     background-color: @bodyBackgroundColor;
-    padding-bottom: 40px;
     color: @bodyColor;
-    line-height: 30px;
     font-family: "Noto Sans TC", arial, "Microsoft JhengHei", sans-serif;
+}
+
+@media (max-width: 767px) {
+  body {
+    background: none;
+  }
 }
 
 h1,
@@ -20,37 +24,18 @@ a {
   &.external:after {
     content: "\f08e";
     font-family: FontAwesome;
-    font-weight: lighter;
-    font-style: normal;
-    text-decoration: inherit;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
     font-size: 10px;
     line-height: 10px;
     position: relative;
     top: -3px;
     left: 3px;
     margin-right: 5px;
-
-    &:hover {
-      text-decoration: none;
-    }
   }
-}
-
-.image a {
-    border-bottom: none !important;
 }
 
 ::selection {
     background: @selectionBackgroundColor;
     color: @selectionColor;
-}
-
-.site-footer a {
-    text-decoration: none;
-    border-bottom: none;
-    color: @siteFooterLinkColor;
 }
 
 li {
@@ -63,37 +48,6 @@ li {
   font-size: 14px;
 }
 
-.p_mark {
-    text-transform: uppercase;
-    color: @pMarkColor;
-}
-
-.font_s {
-    font-size: 12.5px;
-}
-
-
-.border-l {
-    border-left: @borderLeftColor 1px solid;
-}
-
-.border-t {
-    border-top: @borderTopColor 1px solid;
-}
-
 .embedded-content p {
   word-wrap: break-word;
-}
-
-@media (max-width: 767px) {
-    body {
-        background-color: @smallBodyBackgroundColor;
-        background: none;
-    }
-
-    .border-l,
-    .border-t {
-        border-top: none;
-        border-left: none;
-    }
 }
