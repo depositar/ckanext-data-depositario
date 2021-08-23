@@ -3,24 +3,24 @@
     line-height: 1.5em;
   }
 
-    .site-search {
-        margin: 0;
+  .site-search {
+    margin: 0;
 
-        input[type="text"] {
-            border: 0px;
-            border-bottom: 2px solid @topicSiteSearchInputBorderBottomColor;
-            border-radius: 0px;
-            box-shadow: none;
-            font-size: 16px;
-            color: @topicSiteSearchInputColor;
-            padding-top: 20px;
-            background-color: transparent;
+    input[type="text"] {
+      border: 0;
+      border-bottom: 2px solid @topicSiteSearchInputBorderBottomColor;
+      border-radius: 0;
+      box-shadow: none;
+      font-size: 16px;
+      color: @topicSiteSearchInputColor;
+      padding-top: 20px;
+      background-color: transparent;
 
-            &:focus {
-              border-bottom-color: @topicSiteSearchInputFocusBorderBottomColor;
-           }
-        }
+      &:focus {
+        border-bottom-color: @topicSiteSearchInputFocusBorderBottomColor;
+      }
     }
+  }
 }
 
 @media (max-width: 767px) {
@@ -39,15 +39,15 @@
 }
 
 .btn-search {
-    margin-top: 12px;
-    background-color: @topicBtnSearchBackgroundColor;
-    box-shadow: none;
-    color: @topicBtnSearchColor;
-    border-radius: 30px;
-    padding: 12px 15px;
-    border: none !important;
-    font-size: 16px;
-    transition: 0.2s;
+  margin-top: 12px;
+  background-color: @topicBtnSearchBackgroundColor;
+  box-shadow: none;
+  color: @topicBtnSearchColor;
+  border-radius: 30px;
+  padding: 12px 15px;
+  border: none !important;
+  font-size: 16px;
+  transition: 0.2s;
 
   &:hover,
   &:focus {
@@ -62,8 +62,8 @@
 }
 
 .img-circle {
-    border: 5px @topicImgCircleBorderColor solid;
-    background: @topicImgCircleBackgroundColor;
+  border: 5px @topicImgCircleBorderColor solid;
+  background: @topicImgCircleBackgroundColor;
 
   &:hover {
     transform: scale(1.08);

@@ -1,16 +1,16 @@
-.wrapper{
-    margin-top: 25px;
-    border: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+.wrapper {
+  margin-top: 25px;
+  border: none;
+  box-shadow: none;
 }
+
 @media (min-width: 768px) {
   .wrapper {
-    background-image:url("@{imagePath}/wrapper-bg.jpg");
+    background-image: url("@{imagePath}/wrapper-bg.jpg");
     background-position: 175px 10px;
   }
 }
+
 @media (max-width: 768px) {
   .wrapper {
     margin-left: 0;
@@ -18,16 +18,18 @@
     margin-bottom: 20px;
   }
 }
+
 @media (min-width: 980px) {
   .wrapper {
     background-position: 230px 10px;
   }
 }
 
-[role=main], .main {
-    background: @layoutBackgroundColor;
-    padding-top: 0px;
-    padding-bottom: 0px;
+[role=main],
+.main {
+  background: @layoutBackgroundColor;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .context-info {
@@ -36,118 +38,6 @@
       border-bottom: none;
     }
   }
-}
-
-.hover-toggle {
-  height: 550px;
-
-  .opacity {
-    opacity: 0;
-  }
-
-  &:hover .content-toggle {
-    top: 0;
-  }
-
-  &-s {
-    height: 265px;
-
-    &:hover .content-toggle-s {
-      top: 0;
-    }
-  }
-
-  &, &-s {
-    overflow: hidden;
-    position: relative;
-
-    &:hover {
-      .opacity {
-        opacity: 1;
-        transition: all 0.4s ease-in-out 0s;
-      }
-    }
-  }
-}
-@media (max-width: 767px) {
-  .hover-toggle-s {
-    left: 15px;
-  }
-}
-@media (max-width: 370px) {
-  .hover-toggle {
-    height: 350px;
-  }
-}
-
-.content-toggle {
-    top: 300px;
-    left: 15px;
-    right: 15px;
-    -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.02);
-    -webkit-transition-property: all;
-    transition-property: all;
-    border-top: 0px @layoutBorderTopColor solid;
-
-  .desc {
-    width: 80%;
-  }
-
-  &:hover {
-    border-top: 4px @layoutBorderTopColor solid;
-  }
-
-  &-s {
-    top: 130px;
-    left: 0px;
-    right: 0px;
-  }
-
-  &, &-s {
-    position: absolute;
-    z-index: 200;
-    bottom: 0;
-    margin-top: 0;
-    overflow: hidden;
-    opacity: 90%;
-    div {
-      h3 {
-        opacity: 0.85;
-        width: 80%;
-      }
-    }
-  }
-}
-@media (max-width: 767px) {
-  .content-toggle .desc {
-    width: 100%;
-  }
-}
-@media (max-width: 370px) {
-  .content-toggle {
-    top: 130px;
-
-    h1 {
-      font-size: 21px;
-    }
-
-    h3 {
-      font-size: 16px;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-    .property-767 {
-        margin-bottom: 20px;
-        padding-right: 0;
-        flex: auto;
-      &-s {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
 }
 
 .span3 {

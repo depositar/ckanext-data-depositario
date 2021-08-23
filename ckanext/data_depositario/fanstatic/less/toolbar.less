@@ -24,6 +24,34 @@
 .page-header {
   border-bottom-color: @pageHeaderBorderBottomColor;
 
+  .nav-tabs {
+    border-bottom-color: @navTabsBorderBottomColor;
+
+    > li {
+      border-bottom: 1px @navTabsListItemBorderBottom solid;
+      background-color: @navTabsListItemBackgroundColor;
+
+      > a {
+        margin-right: 0;
+
+        &:hover {
+          border-radius: 0;
+        }
+      }
+
+      &.active > a {
+        &,
+        &:hover,
+        &:focus {
+          color: @navTabsLinkHoverColor;
+          border-color: @navTabsLinkHoverBorderColor;
+          border-radius: 0;
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+
   .btn {
     margin-right: 14px;
   }
@@ -36,33 +64,5 @@
 @media (min-width: 768px) {
   .span9 .page-header {
     margin-left: 0;
-  }
-}
-
-.nav-tabs {
-  border-bottom-color: @navTabsBorderBottomColor;
-
-  > li {
-    border-bottom: 1px @navTabsListItemBorderBottom solid;
-    background-color: @navTabsListItemBackgroundColor;
-
-    > a {
-      margin-right: 0;
-
-      &:hover {
-        border-radius: 0;
-      }
-    }
-
-    &.active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: @navTabsLinkHoverColor;
-        border-color: @navTabsLinkHoverBorderColor;
-        border-radius: 0;
-        border-bottom-color: transparent;
-      }
-    }
   }
 }
