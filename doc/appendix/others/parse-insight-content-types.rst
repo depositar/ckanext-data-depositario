@@ -41,11 +41,11 @@
      - raw
 
    * - 純文字資料
-     - 各種編碼之純文字檔案，與 CSV 檔案
+     - 各種編碼之純文字檔案
      - text
 
    * - 結構化文字資料
-     - XML、SGML、RTF、LaTeX、Markdown、ReST 等
+     - CSV、XML、JSON、SGML、RTF、LaTeX、Markdown、ReST 等
      - structured
 
    * - 壓縮檔資料
