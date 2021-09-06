@@ -84,52 +84,12 @@ g. Install other required Python modules into your virtualenv:
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements.txt
+      pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-scheming/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
 
--------------------------------------------------------
-3. Install DataPusher into a Python virtual environment
--------------------------------------------------------
-
-.. note::
-
-   This DataPusher is a service that automatically uploads data to the DataStore from suitable files (like CSV or Excel files), whether uploaded to CKAN’s FileStore or externally linked.
-
-   The CKAN DataStore extension provides an ad hoc database for storage of structured data from CKAN resources. Data can be pulled out of resource files and stored in the DataStore.
-
-a. Create a Python virtual environment (virtualenv) to install DataPusher into, and activate it:
-
-   .. parsed-literal::
-
-      sudo mkdir -p /usr/lib/ckan/datapusher
-      sudo chown \`whoami\` /usr/lib/ckan/datapusher
-      virtualenv --no-site-packages /usr/lib/ckan/datapusher
-      . /usr/lib/ckan/datapusher/bin/activate
-
-b. Install the DataPusher source code into your virtualenv:
-
-   .. important::
-
-      Please run all the commands below under the `ckan` directory:
-
-      .. parsed-literal::
-
-         cd /usr/lib/ckan/datapusher/
-
-   Install the DataPusher：
-
-   .. parsed-literal::
-
-      pip install -e 'git+https://github.com/ckan/datapusher.git@0.0.15#egg=datapusher'
-
-c. Install the Python modules that DataPusher requires into your virtualenv:
-
-   .. parsed-literal::
-
-      pip install -r /usr/lib/ckan/datapusher/src/datapusher/requirements.txt
-
 ---------------------------------
-4. Create the FireStore directory
+3. Create the FireStore directory
 ---------------------------------
 
 .. note::
@@ -146,7 +106,7 @@ c. Install the Python modules that DataPusher requires into your virtualenv:
 .. _postgres-setup:
 
 ------------------------------
-5. Setup a PostgreSQL database
+4. Setup a PostgreSQL database
 ------------------------------
 
 a. Create a database user:
@@ -191,7 +151,7 @@ e. (For |site_name| administrator) Restore database backup:
       gunzip -c datastore_db.sql.gz | sudo -u postgres psql datastore_default
 
 ----------------------------
-6. Create a CKAN config file
+5. Create a CKAN config file
 ----------------------------
 
 a. Create a directory to contain the site's config files:
@@ -242,7 +202,7 @@ c. Edit the development.ini file in a text editor, changing the following option
       ## Plugins Settings
       ckan.plugins = dat data_depositario depositar_iso639 depositar_theme
                      citation wikidatakeyword dcat_json_interface structured_data
-                     stats datastore datapusher
+                     stats datastore xloader
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view spatial_metadata spatial_query
@@ -254,9 +214,6 @@ c. Edit the development.ini file in a text editor, changing the following option
 
       ## Storage Settings
       ckan.storage_path = /var/lib/ckan/default
-
-      ## Datapusher Settings
-      ckan.datapusher.url = http://0.0.0.0:8800/
 
       ## Schema Settings
       ## Add these settings
@@ -283,7 +240,7 @@ c. Edit the development.ini file in a text editor, changing the following option
       ckanext.data_depositario.googleanalytics.id = GA_ID
 
 -------------------------------------------------------
-7. Setup Solr (with Chinese and spatial search support)
+6. Setup Solr (with Chinese and spatial search support)
 -------------------------------------------------------
 
 .. note::
@@ -349,7 +306,7 @@ j. Modify /etc/ckan/default/development.ini with Solr url:
       solr_url = http://127.0.0.1:8983/solr/ckan
 
 -------------------------
-8. Create database tables
+7. Create database tables
 -------------------------
 
 .. important::
@@ -364,14 +321,15 @@ a. Create the database tables via paster:
 
 b. You should see Initialising DB: SUCCESS.
 
-c. Then you can use this connection to set the permissions for DataStore:
+c. Then you can use this connection to set up the DataStore:
 
    .. parsed-literal::
 
       paster --plugin=ckan datastore set-permissions -c /etc/ckan/default/development.ini | sudo -u postgres psql --set ON_ERROR_STOP=1
+      wget -O- https://github.com/ckan/ckanext-xloader/raw/master/full_text_function.sql | sudo -u postgres psql datastore_default
 
 ----------------------
-9. Link to ``who.ini``
+8. Link to ``who.ini``
 ----------------------
 
 .. parsed-literal::
@@ -379,7 +337,7 @@ c. Then you can use this connection to set the permissions for DataStore:
    ln -s /usr/lib/ckan/default/src/ckan/who.ini /etc/ckan/default/who.ini
 
 ----------------------------
-10. Creating a sysadmin user
+9. Creating a sysadmin user
 ----------------------------
 
 .. important::
@@ -398,15 +356,20 @@ You have to create your first CKAN sysadmin user from the command line. For exam
    Then press Ctrl+D to exit the interactive shell.
 
 -----------------------------------------
-11. Serve CKAN under a development server
+10. Serve CKAN under a development server
 -----------------------------------------
 
-a. Run the DataPusher:
+a. Run the XLoader:
+
+   .. note::
+
+      This XLoader is a service that automatically uploads data to the DataStore from suitable files (like CSV or Excel files), whether uploaded to CKAN’s FileStore or externally linked.
+
+      The CKAN DataStore extension provides an ad hoc database for storage of structured data from CKAN resources. Data can be pulled out of resource files and stored in the DataStore.
 
    .. parsed-literal::
 
-      . /usr/lib/ckan/datapusher/bin/activate
-      JOB_CONFIG='/usr/lib/ckan/datapusher/src/datapusher/deployment/datapusher_settings.py' python /usr/lib/ckan/datapusher/src/datapusher/wsgi.py
+      paster --plugin=ckan jobs -c /etc/ckan/default/development.ini worker
 
 b. Open another terminal and use the Paste development server to serve CKAN from the command-line:
 

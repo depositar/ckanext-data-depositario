@@ -55,6 +55,10 @@ as follows:
 
    ckan.site_url = http://127.0.0.1
 
+   ## XLoader Settings
+   ## Refer to the CKAN database
+   ckanext.xloader.jobs_db.uri = postgresql://ckan_default:pass@localhost/ckan_default
+
 -------------------
 3. Install Gunicorn
 -------------------
@@ -64,9 +68,6 @@ Install Gunicorn into a Python virtual environment:
 .. parsed-literal::
 
    . /usr/lib/ckan/default/bin/activate
-   pip install gunicorn
-
-   . /usr/lib/ckan/datapusher/bin/activate
    pip install gunicorn
 
 ----------------------------------
@@ -139,80 +140,43 @@ f. You can stop the Systemd service by:
 
       sudo service ckan stop
 
-----------------------------------------
-5. Set the startup script for DataPusher
-----------------------------------------
+-------------------------------------
+5. Set the startup script for XLoader
+-------------------------------------
 
 .. note::
 
-   This DataPusher is a service that automatically uploads data to the DataStore from suitable files (like CSV or Excel files), whether uploaded to CKAN’s FileStore or externally linked.
+   This XLoader is a service that automatically uploads data to the DataStore from suitable files (like CSV or Excel files), whether uploaded to CKAN’s FileStore or externally linked.
 
-a. Create a Systemd service for DataPusher:
-
-   .. parsed-literal::
-
-      sudo vi /etc/systemd/system/datapusher.service
-
-b. In the vi editor, add the following contents:
+a. Install Supervisor:
 
    .. parsed-literal::
 
-      [Unit]
-      Description=Gunicorn instance to serve DataPusher
-      After=network.target
+      sudo apt install supervisor
 
-      [Service]
-      RuntimeDirectory=gunicorn
-      Environment=JOB_CONFIG=/usr/lib/ckan/datapusher/src/datapusher/deployment/datapusher_settings.py
-      ExecStart=/usr/lib/ckan/datapusher/bin/gunicorn wsgi:app
-      ExecReload=/bin/kill -s HUP $MAINPID
-      ExecStop=/bin/kill -s TERM $MAINPID
-      StandardOutput=null
-      StandardError=null
-      PrivateTmp=true
-
-      [Install]
-      WantedBy=multi-user.target
-
-c. Start the Systemd service:
+b. Copy the configuration file template:
 
    .. parsed-literal::
 
-      sudo systemctl enable datapusher
+      sudo cp /usr/lib/ckan/default/src/ckan/ckan/config/supervisor-ckan-worker.conf /etc/supervisor/conf.d
 
-d. To start the installed service, run the following command:
-
-   .. parsed-literal::
-
-      sudo service datapusher start
-
-e. You can check the status via:
+c. Restart Supervisor:
 
    .. parsed-literal::
 
-      sudo service datapusher status
+      sudo service supervisor restart
 
-   You should now be able to see the following output:
-
-   .. parsed-literal::
-
-      ● datapusher.service - Gunicorn instance to serve DataPusher
-         Loaded: loaded (/etc/systemd/system/datapusher.service; enabled; vendor preset: enabled)
-         Active: active (running) since Thr 2017-12-14 14:48:44 CST; 2min 44s ago
-        Process: 20571 ExecStop=/bin/kill -s TERM $MAINPID (code=exited, status=0/SUCCESS)
-       Main PID: 20626 (gunicorn)
-          Tasks: 2
-         Memory: 46.0M
-            CPU: 1.790s
-         CGroup: /system.slice/datapusher.service
-                 ├─20626 /usr/lib/ckan/datapusher/bin/python2 /usr/lib/ckan/datapusher/bin/gunicorn wsgi:app
-                 └─20673 /usr/lib/ckan/datapusher/bin/python2 /usr/lib/ckan/datapusher/bin/gunicorn wsgi:app
-
-f. You can stop the Systemd service by:
+d. You can check the status via:
 
    .. parsed-literal::
 
-      sudo service datapusher stop
+      sudo supervisorctl status
+
+e. You can restart the worker via:
+
+   .. parsed-literal::
+
+      sudo supervisorctl restart ckan-worker:*
 
 --------------------------
 6. Install and setup Nginx

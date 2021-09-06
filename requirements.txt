@@ -1,6 +1,7 @@
 requests[security]
 python-dateutil>=2.7.0
 pycountry==19.8.18 # see https://github.com/flyingcircusio/pycountry/issues/48
+ckanext-xloader
 -e git+git://github.com/ckan/ckanext-scheming.git@release-2.1.0#egg=ckanext-scheming
 -e git+git://github.com/depositar-io/ckanext-spatial.git#egg=ckanext-spatial
 -e git+git://github.com/depositar-io/ckanext-geoview.git#egg=ckanext-geoview
