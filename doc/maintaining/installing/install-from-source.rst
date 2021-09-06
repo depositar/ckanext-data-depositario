@@ -80,7 +80,6 @@ g. 安裝其他所需 Python 套件
 
       pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements.txt
       pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
-      pip install -r /usr/lib/ckan/default/src/ckanext-scheming/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
 
 ----------------------
@@ -202,8 +201,7 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view spatial_metadata spatial_query
-                     geo_view geojson_view wmts_view shp_view
-                     scheming_datasets repeating
+                     geo_view geojson_view wmts_view shp_view scheming_datasets
 
       ## Front-End Settings
       licenses_group_url = file:///usr/lib/ckan/default/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
@@ -214,10 +212,9 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ## Schema Settings
       ## 需自行新增
       scheming.presets = ckanext.scheming:presets.json
-                         ckanext.repeating:presets.json
                          ckanext.data_depositario:presets.json
                          ckanext.wikidatakeyword:presets.json
-      scheming.dataset_schemas = ckanext.data_depositario:scheming.json
+      scheming.dataset_schemas = ckanext.data_depositario.schemas:dataset.yaml
 
       ## Spatial Settings
       ## 需自行新增

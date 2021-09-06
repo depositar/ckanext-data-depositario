@@ -85,7 +85,6 @@ g. Install other required Python modules into your virtualenv:
 
       pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements.txt
       pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
-      pip install -r /usr/lib/ckan/default/src/ckanext-scheming/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
 
 ---------------------------------
@@ -206,8 +205,7 @@ c. Edit the development.ini file in a text editor, changing the following option
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view spatial_metadata spatial_query
-                     geo_view geojson_view wmts_view shp_view
-                     scheming_datasets repeating
+                     geo_view geojson_view wmts_view shp_view scheming_datasets
 
       ## Front-End Settings
       licenses_group_url = file:///usr/lib/ckan/default/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
@@ -218,10 +216,9 @@ c. Edit the development.ini file in a text editor, changing the following option
       ## Schema Settings
       ## Add these settings
       scheming.presets = ckanext.scheming:presets.json
-                         ckanext.repeating:presets.json
                          ckanext.data_depositario:presets.json
                          ckanext.wikidatakeyword:presets.json
-      scheming.dataset_schemas = ckanext.data_depositario:scheming.json
+      scheming.dataset_schemas = ckanext.data_depositario.schemas:dataset.yaml
 
       ## Spatial Settings
       ## Add these settings
