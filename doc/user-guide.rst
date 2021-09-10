@@ -395,6 +395,30 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 若您對特定資料集感興趣，您可以點選資料集頁面左欄處的「跟隨」功能鈕，訂閱該筆資料集。詳細內容請參考 :ref:`managing_your_news_feed` （您必須具有使用者帳號才能執行此功能）。
 
+本平台補充功能——引用資料集
+--------------------------
+
+您可使用資料集頁面左下角「引用為」工具，獲得該資料集之引用格式，如下圖：
+
+.. image:: /images/citation.png
+
+本平台提供主流引用格式：
+
+* American Psychological Association 6th edition (APA)
+* Modern Language Association 8th edition (MLA)
+* Chicago Manual of Style 17th edition (note)
+* Chicago Manual of Style 17th edition (author-date)
+* IEEE
+* Council of Science Editors, Citation-Sequence (numeric) (CSE C-S)
+* American Medical Association (AMA)
+* American Chemical Society (ACS)
+* American Institute of Physics (AIP)
+* American Society of Civil Engineers (ASCE)
+
+您亦可使用下拉選單上之搜尋列，找尋您需要的引用格式。
+
+完整引用格式列表，可至 `CSL Style Repository <https://github.com/citation-style-language/styles/tree/f5a731144d4b0a838e66ce60cd62a92f7a9e66df>`_ ，按下 t 鍵後進行搜尋。
+
 .. _data_preview:
 
 本平台補充功能——資料預覽功能介紹

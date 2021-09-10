@@ -1,0 +1,68 @@
+.toolbar {
+  background-color: @toolbarBackgroundColor;
+  margin-bottom: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  .breadcrumb a,
+  .breadcrumb li {
+    color: @breadcrumbColor;
+    font-size: 12pt;
+    text-shadow: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .toolbar {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.page-header {
+  border-bottom-color: @pageHeaderBorderBottomColor;
+
+  .nav-tabs {
+    border-bottom-color: @navTabsBorderBottomColor;
+
+    > li {
+      border-bottom: 1px @navTabsListItemBorderBottom solid;
+      background-color: @navTabsListItemBackgroundColor;
+
+      > a {
+        margin-right: 0;
+
+        &:hover {
+          border-radius: 0;
+        }
+      }
+
+      &.active > a {
+        &,
+        &:hover,
+        &:focus {
+          color: @navTabsLinkHoverColor;
+          border-color: @navTabsLinkHoverBorderColor;
+          border-radius: 0;
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin-right: 14px;
+  }
+}
+
+.no-nav .page-header {
+  background-color: @noNavBackgroundColor;
+}
+
+@media (min-width: 768px) {
+  .span9 .page-header {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,61 @@
+.module-content {
+  padding: 0 0;
+
+  &:first-child {
+    background-color: transparent;
+  }
+}
+
+.module-content a {
+  color: @moduleContentLinkTextColor;
+  text-decoration: none;
+  border-bottom: 2px solid @moduleLinkBorderBottomColor;
+}
+
+@media (min-width: 979px) {
+  .module-heading {
+    padding: 30px 0;
+  }
+}
+
+// Secondary column specific
+
+.module-narrow {
+  .module-heading,
+  .module-footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .module-heading {
+    font-size: 16px;
+    background-color: @moduleNarrowHeadingBackgroundColor;
+    border-top: none;
+    border-bottom-color: @moduleNarrowHeadingBoderBottomColor;
+    margin: 0;
+  }
+
+  .module-content {
+    padding: 10px 10px 10px 0;
+  }
+
+  .ui-rangeSlider {
+    padding-top: 10px;
+    padding-bottom: 7px;
+  }
+}
+
+// Dataset Map
+
+.dataset-map-expanded #dataset-map {
+  padding-left: calc(100vw / 2 - 940px / 2);
+  padding-right: calc(99vw / 2 - 940px / 2);
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
+  margin-left: calc(-100vw / 2 + 940px / 2) !important;
+  margin-right: calc(-99vw / 2 + 940px / 2) !important;
+  width: 100% !important;
+  height: 414px !important;
+  box-shadow: @datasetMapBoxShadow;
+  transition: all 0.3s;
+}

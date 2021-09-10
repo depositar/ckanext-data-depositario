@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.4.4b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.4.6b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-16 10:00+0800\n"
+"POT-Creation-Date: 2021-09-09 13:56+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -58,7 +58,6 @@ msgstr "專案"
 
 #: ckanext/data_depositario/plugin.py:192
 #: ckanext/data_depositario/templates/header.html:33
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:6
 msgid "Topics"
 msgstr "主題"
 
@@ -195,17 +194,9 @@ msgstr "關於"
 msgid "Filter by location"
 msgstr "空間搜尋"
 
-#: ckanext/data_depositario/templates/citation/package/snippets/citation.html:5
-msgid "Cite as"
-msgstr "引用為"
-
 #: ckanext/data_depositario/templates/home/help.html:14
 msgid "Your browser does not support iframes."
 msgstr "你的瀏覽器不支援此頁框"
-
-#: ckanext/data_depositario/templates/home/index.html:3
-msgid "depositar — Deposit, Discover, Reuse"
-msgstr "depositar — 儲存、尋找、分享"
 
 #: ckanext/data_depositario/templates/home/snippets/about_text.html:5
 msgid ""
@@ -324,174 +315,9 @@ msgstr ""
 "target=\"_blank\">地理資訊科學研究專題中心</a>（隸屬於人文社會科學研究中心）的協力研究工作，並維持到現在。</p> "
 "<p><b>研究資料寄存所</b>的發展是一項團隊工作。目前或是曾經參與此計畫團隊的人員包括（按姓名英文字母序）：莊庭瑞（計畫主持）、何明諠（專案經理）、黃韋菁、李承錱（技術經理）、廖泫銘、劉彥岑、許煌鑫、王家薰（專案經理）、王豫煌，以及葉耀鮮。</p>"
 
-#: ckanext/data_depositario/templates/home/snippets/idx_datasets.html:3
-msgid "Taiwan History and Culture in Time and Space"
-msgstr "台灣歷史文化空間資訊"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_datasets.html:6
-msgid ""
-"Do you know that there are ancient waterway routes around "
-"Taiwan?<br/>Have you heard about the routes for gold prospecting in "
-"Eastern Taiwan during the Dutch Formosa period?"
-msgstr "你知道古代台灣人的航海路線嗎？<br/>你知道東印度公司在轄臺時期，深入花東地區的探金路線嗎？"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_datasets.html:7
-msgid ""
-"The Taiwan History and Culture in Time and Space (THCTS) is a digital "
-"collection of historical atlas focused on the development and "
-"environmental changes in Taiwan from 1654 to 1990. This rich dataset "
-"covers a wide range of subjects including population distribution, "
-"education, societal events, waterways, routes for gold prospecting, etc. "
-"It allows you to have a glimpse of people’s life in ancient Taiwan."
-msgstr "這是中研院跨所結合各領域專家，以臺灣的歷史發展與環境變遷，擘畫一套臺灣地圖集，遠從荷西時期的1654年至近代的1996年間，資料類別從人口分佈、交通／軍事防禦、學校教育、社會事件、航海路線、採金路線等等相當多元又豐富，讓您一探古早人的留下來的數位遺跡。"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_datasets.html:14
-msgid "Selected Datasets"
-msgstr "資料集精選"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_features.html:5
-#: ckanext/data_depositario/templates/home/snippets/idx_features.html:15
-#: ckanext/data_depositario/templates/home/snippets/idx_features.html:24
-msgid "for your ––––"
-msgstr "給您的 ––––"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_features.html:6
-msgid "Dataset"
-msgstr "資料集"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_features.html:9
-#: ckanext/data_depositario/templates/home/snippets/idx_features.html:18
-#: ckanext/data_depositario/templates/home/snippets/idx_features.html:27
-msgid "more"
-msgstr "更多"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_features.html:16
-msgid "Project"
-msgstr "專案"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_features.html:25
-msgid "Promotion"
-msgstr "推廣營運"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_masthead.html:6
-msgid "deposit・discover・reuse"
-msgstr "儲存・尋找・分享"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_masthead.html:7
-msgid "Learn More"
-msgstr "了解更多"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:4
-msgid "Partners"
-msgstr "合作夥伴"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:8
-msgid ""
-"<a href=\"http://gis.rchss.sinica.edu.tw/index.php?lang=en\">Center for "
-"GIS, RCHSS, Academia Sinica</a><br/>"
-msgstr "<a href=\"http://gis.rchss.sinica.edu.tw/\">中研院人社中心地理資訊科學研究專題中心</a><br/>"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:10
-msgid ""
-"<a href=\"https://chia-nan.geospat.io/en/\">Chia-nan Interdisciplinary "
-"Project</a><br/>"
-msgstr "<a href=\"https://chia-nan.geospat.io/\">嘉南大圳研究群</a><br/>"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:15
-msgid "<a href=\"#\">Collaborative Zuojhen Project</a><br/>"
-msgstr "<a href=\"#\">左鎮跨領域協作教學研究群</a><br/>"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:16
-msgid ""
-"<a href=\"http://soundscape.twgrid.org/\">Asian Soundscape Monitoring "
-"Network</a><br/>"
-msgstr "<a href=\"http://soundscape.twgrid.org/\">亞洲聲景網絡計畫</a><br/>"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_partners.html:17
-msgid ""
-"<a href=\"https://roadkill.tw/en/\">Taiwan Roadkill Observation "
-"Network</a><br/>"
-msgstr "<a href=\"https://roadkill.tw/\">台灣動物路死觀察網</a><br/>"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:11
-msgid "Find datasets?"
-msgstr "想直接搜尋嗎？"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:23
-msgid "General reference"
-msgstr "一般性參考資料"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:27
-msgid "Culture and the arts"
-msgstr "文化與藝術"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:32
-msgid "Geography and places"
-msgstr "地理與地方"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:36
-msgid "Health and fitness"
-msgstr "健康與健身"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:41
-msgid "History and events"
-msgstr "歷史與事件"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:45
-msgid "Human activities"
-msgstr "人類活動"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:50
-msgid "Mathematics and logic"
-msgstr "數學與邏輯"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:54
-msgid "Natural and physical sciences"
-msgstr "自然與物理科學"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:59
-msgid "People and self"
-msgstr "人群與個人"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:63
-msgid "Philosophy and thinking"
-msgstr "哲學與思想"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:68
-msgid "Religion and belief systems"
-msgstr "宗教與信仰"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:72
-msgid "Society and social sciences"
-msgstr "社會與社會科學"
-
-#: ckanext/data_depositario/templates/home/snippets/idx_topics.html:77
-msgid "Technology and applied sciences"
-msgstr "技術與應用科學"
-
 #: ckanext/data_depositario/templates/package/read_base.html:11
 msgid "History"
 msgstr "歷史紀錄"
-
-#: ckanext/data_depositario/templates/package/search.html:18
-msgid "Relevance"
-msgstr "關聯"
-
-#: ckanext/data_depositario/templates/package/search.html:19
-msgid "Name Ascending"
-msgstr "根據名稱遞增排序"
-
-#: ckanext/data_depositario/templates/package/search.html:20
-msgid "Name Descending"
-msgstr "根據名稱遞減排序"
-
-#: ckanext/data_depositario/templates/package/search.html:21
-msgid "Last Modified"
-msgstr "最後修改"
-
-#: ckanext/data_depositario/templates/package/search.html:22
-msgid "Popular"
-msgstr "熱門的"
 
 #: ckanext/data_depositario/templates/package/snippets/revisions_table.html:7
 msgid "Revision"
@@ -544,7 +370,7 @@ msgstr "格式"
 msgid "unknown"
 msgstr "未知的"
 
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:30
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:33
 msgid "License"
 msgstr "授權"
 

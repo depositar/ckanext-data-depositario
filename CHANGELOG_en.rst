@@ -7,6 +7,43 @@
 Changelog
 ---------
 
+v6.4.6 2021-09-10
+=================
+
+Notice:
+ * This version requires a requirements upgrade::
+
+    pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
+    pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements-py2.txt
+    pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
+    pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
+
+ * This version requires changes to the configuration file. You will have to manually
+   change the following settings according to the 5-c. section in the :doc:`maintaining/installing/install-from-source`:
+
+    - Plugins Settings
+    - Schema Settings
+
+ * This version requires changes to the deployment configurations. You will have to
+   set the startup script for XLoader according to the section 2 (XLoader Settings) and the section 5 in the :doc:`maintaining/installing/deployment`.
+ * The following Python modules can be safely removed:
+
+    - geomet
+    - ckanext-repeating
+    - DataPusher
+
+Changes:
+ * Add: (User guide) Citing a Dataset.
+ * Update: (Metadata at the dataset level) Description of Data Type (:ref:`parse-insight-content-types`).
+
+    - Plain text: Remove CSV
+    - Structured text: Add CSV and JSON
+
+ * Improvement: CSS refactoring and simplified.
+ * Improvement: Replace DataPusher with XLoader for uploading data to the DataStore to prevent from failures due to wrong field type guessing (#11).
+ * Upgrade Python dependencies ahead of upcoming updates of CKAN core.
+ * Other improvements and UI adjustments.
+
 v6.4.5 2021-07-30
 =================
 

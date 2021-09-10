@@ -49,6 +49,10 @@
 
    ckan.site_url = http://127.0.0.1
 
+   ## XLoader Settings
+   ## 同 CKAN 資料庫連線設定
+   ckanext.xloader.jobs_db.uri = postgresql://ckan_default:pass@localhost/ckan_default
+
 ----------------
 3. 安裝 Gunicorn
 ----------------
@@ -58,9 +62,6 @@
 .. parsed-literal::
 
    . /usr/lib/ckan/default/bin/activate
-   pip install gunicorn
-
-   . /usr/lib/ckan/datapusher/bin/activate
    pip install gunicorn
 
 ------------------------
@@ -133,80 +134,43 @@ f. 你可以使用以下指令停止網站
 
       sudo service ckan stop
 
-------------------------------
-5. 設定開機自動執行 DataPusher
-------------------------------
+---------------------------
+5. 設定開機自動執行 XLoader
+---------------------------
 
 .. note::
 
-   DataPusher 是一個 CKAN 的擴充套件，當使用者新增結構資料（如 CSV 或 XLS 檔案，無論為上傳至本機的檔案或僅有連結）至 CKAN 時，DataPusher 會自動上傳資料內容至 CKAN 的 DataStore 資料庫，以提供 :ref:`data_api` 等功能。
+   XLoader 是一個 CKAN 的擴充套件，當使用者新增結構資料（如 CSV 或 XLS 檔案，無論為上傳至本機的檔案或僅有連結）至 CKAN 時，XLoader 會自動上傳資料內容至 CKAN 的 DataStore 資料庫，以提供 :ref:`data_api` 等功能。
 
-a. 建立 Systemd 服務
-
-   .. parsed-literal::
-
-      sudo vi /etc/systemd/system/datapusher.service
-
-b. 在開啟的 vi 編輯器中，輸入以下內容
+a. 安裝 Supervisor
 
    .. parsed-literal::
 
-      [Unit]
-      Description=Gunicorn instance to serve DataPusher
-      After=network.target
+      sudo apt install supervisor
 
-      [Service]
-      RuntimeDirectory=gunicorn
-      Environment=JOB_CONFIG=/usr/lib/ckan/datapusher/src/datapusher/deployment/datapusher_settings.py
-      ExecStart=/usr/lib/ckan/datapusher/bin/gunicorn wsgi:app
-      ExecReload=/bin/kill -s HUP $MAINPID
-      ExecStop=/bin/kill -s TERM $MAINPID
-      StandardOutput=null
-      StandardError=null
-      PrivateTmp=true
-
-      [Install]
-      WantedBy=multi-user.target
-
-c. 啟用此 Systemd 服務
+b. 複製設定檔
 
    .. parsed-literal::
 
-      sudo systemctl enable datapusher
+      sudo cp /usr/lib/ckan/default/src/ckan/ckan/config/supervisor-ckan-worker.conf /etc/supervisor/conf.d
 
-d. 之後便可使用以下指令啟動 DataPusher
-
-   .. parsed-literal::
-
-      sudo service datapusher start
-
-e. 你可以使用以下指令確認 DataPusher 是否正常運作：
+c. 重新啟動 Supervisor
 
    .. parsed-literal::
 
-      sudo service datapusher status
+      sudo service supervisor restart
 
-   你應該可以看到類似下面的輸出：
-
-   .. parsed-literal::
-
-      ● datapusher.service - Gunicorn instance to serve DataPusher
-         Loaded: loaded (/etc/systemd/system/datapusher.service; enabled; vendor preset: enabled)
-         Active: active (running) since 四 2017-12-14 14:48:44 CST; 2min 44s ago
-        Process: 20571 ExecStop=/bin/kill -s TERM $MAINPID (code=exited, status=0/SUCCESS)
-       Main PID: 20626 (gunicorn)
-          Tasks: 2
-         Memory: 46.0M
-            CPU: 1.790s
-         CGroup: /system.slice/datapusher.service
-                 ├─20626 /usr/lib/ckan/datapusher/bin/python2 /usr/lib/ckan/datapusher/bin/gunicorn wsgi:app
-                 └─20673 /usr/lib/ckan/datapusher/bin/python2 /usr/lib/ckan/datapusher/bin/gunicorn wsgi:app
-
-f. 你可以使用以下指令停止 DataPusher
+d. 你可以使用以下指令確認 Supervisor 是否正常運作
 
    .. parsed-literal::
 
-      sudo service datapusher stop
+      sudo supervisorctl status
+
+e. 你可以使用以下指令重新啟動 XLoader worker
+
+   .. parsed-literal::
+
+      sudo supervisorctl restart ckan-worker:*
 
 --------------------------
 6. 安裝與設定 nginx 伺服器

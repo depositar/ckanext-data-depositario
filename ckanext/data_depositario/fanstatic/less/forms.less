@@ -1,0 +1,158 @@
+// Override the default form widths.
+
+.form-horizontal {
+  .control-label {
+    width: 140px;
+
+    &::after {
+      content: "";
+    }
+  }
+}
+
+// Errors
+
+.control-group.error {
+  .help-block,
+  .help-inline {
+    color: @controlGroupErrorColor;
+  }
+
+  input,
+  select,
+  textarea,
+  .input-prepend .add-on,
+  .input-append .add-on {
+    color: @controlGroupErrorColor;
+    border-color: @controlGroupErrorBorderColor;
+    background-color: @controlGroupErrorBackgroundColor;
+  }
+
+  .control-label,
+  .checkbox,
+  .radio {
+    color: @controlGroupErrorColor;
+    text-shadow: none;
+  }
+}
+
+.error-inline {
+  color: @errorText;
+}
+
+.error-block {
+  background: @errorBlockBackground;
+}
+
+.control-required {
+  color: @controlRequiredColor;
+
+  &::before {
+    content: " ";
+  }
+}
+
+@media (min-width: 768px) {
+  .form-horizontal .controls {
+    margin-left: 150px;
+  }
+}
+
+.form-actions {
+  margin-left: -19px;
+}
+
+// Form actions without border-top
+
+.form-messages {
+  &::after {
+    clear: left;
+    display: table;
+    content: "";
+  }
+
+  .control-required-message {
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 0;
+    line-height: 30px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+// Single Field Inputs
+
+@media (min-width: 980px) {
+  .simple-input .field .btn-search {
+    top: 40%;
+  }
+}
+
+.editor .editor-info-block a {
+  color: @editorLinkColor;
+}
+
+// Stages
+
+.stages {
+  margin-left: -15px;
+
+  li {
+    &::before {
+      background-color: @stagesListItemBeforeBackgroundColor;
+    }
+
+    &.active {
+      &::before {
+        color: @stagesListItemActiveColor;
+      }
+
+      &::after {
+        border-top-color: @stagesListItemActiveBorderColor;
+        border-bottom-color: @stagesListItemActiveBorderColor;
+      }
+
+      .highlight {
+        background-color: @stagesListItemActiveBackgroundColor;
+      }
+    }
+
+    &.complete {
+      &::before {
+        color: @stagesListItemCompleteBeforeColor;
+        background: @stagesListItemCompleteBeforeBackgroundColor;
+      }
+
+      &::after {
+        border-top-color: @stagesListItemCompleteAfterBorderColor;
+        border-bottom-color: @stagesListItemCompleteAfterBorderColor;
+      }
+
+      .highlight {
+        background: @stagesListItemCompleteHighlightBackgroundColor;
+        color: @stagesListItemCompleteHighlightColor;
+      }
+    }
+  }
+}
+
+#map {
+  height: 400px;
+
+  input {
+    width: auto;
+    top: auto;
+  }
+
+  label::after {
+    content: none;
+  }
+
+  a {
+    color: unset;
+    border-bottom: unset;
+  }
+}

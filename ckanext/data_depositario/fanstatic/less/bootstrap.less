@@ -1,0 +1,46 @@
+.btn {
+  padding: 5px 10px;
+  background: none;
+  border: 2px solid @bootstrapBtnBorderColor !important;
+  border-bottom-color: @bootstrapBtnBorderColor;
+  box-shadow: none;
+  text-shadow: none;
+  color: @bootstrapBtnColor;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @bootstrapBtnHoverColor;
+    background-color: @bootstrapBtnHoverBackgroundColor;
+    transition: 0.2s;
+    border: 2px solid @bootstrapBtnHoverBorderColor !important;
+  }
+
+  &.question {
+    background: unset;
+    border: 0 !important;
+    color: unset;
+  }
+
+  .caret {
+    border-top-color: @bootstrapBtnBorderColor;
+  }
+}
+
+.btn-group.open {
+  .btn-primary.dropdown-toggle {
+    background-color: @bootstrapBtnHoverBackgroundColor;
+  }
+}
+
+.navbar-static-top {
+  padding-top: 20px;
+}
+
+.navbar .nav > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    box-shadow: none;
+  }
+}

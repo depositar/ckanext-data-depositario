@@ -2,7 +2,6 @@ import pycountry
 from pylons import config
 import ckan.plugins as p
 from ckan.common import json
-from geomet import wkt
 import re
 import json
 import logging
@@ -17,9 +16,6 @@ def extras_to_dict(pkg):
        for extra in pkg['extras']:
             extras_dict[extra['key']] = extra['value']
    return extras_dict
-
-def geojson_to_wkt(value):
-   return wkt.dumps(json.loads(value))
 
 def get_default_slider_values():
    data_dict = {

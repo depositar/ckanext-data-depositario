@@ -7,6 +7,43 @@
 更新日誌
 --------
 
+v6.4.6 2021-09-10
+=================
+
+注意事項：
+ * 需更新相依套件：
+
+   ::
+
+     pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
+     pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements-py2.txt
+     pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
+     pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
+
+ * 需調整 CKAN 設定檔，請參照 :doc:`maintaining/installing/install-from-source` 5-c. 小節，更新以下設定：
+
+   - Plugins Settings
+   - Schema Settings
+
+ * 需調整佈署設定，設定開機執行 XLoader。請參照 :doc:`maintaining/installing/deployment` 第 2 節（XLoader Settings）與第 5 節進行設定。
+ * 以下 Python 相依套件可安全移除：
+
+   - geomet
+   - ckanext-repeating
+   - DataPusher
+
+更新內容：
+ * 新增：（操作手冊）引用資料集功能介紹。
+ * 更新：（資料集後設資料）資料類型 (:ref:`parse-insight-content-types`) 說明。
+
+   - 純文字資料：移除 CSV
+   - 結構化文字資料：加入 CSV 與 JSON
+
+ * 改善：CSS 重構與精簡化。
+ * 改善：以 XLoader 擴充套件取代原 DataPusher 上傳結構化資料至 DataStore 資料庫，避免因資料欄位類型自動判定錯誤導致上傳失敗 (#11)。
+ * 更新 Python 相依套件，為未來 CKAN 核心升級預作準備。
+ * 其他程式最佳化與細部介面調整。
+
 v6.4.5 2021-07-30
 =================
 

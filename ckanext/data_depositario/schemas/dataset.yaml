@@ -141,16 +141,16 @@ dataset_fields:
   - value: structured
     icon: table
     description:
-      en: XML, SGML, RTF, LaTeX, Markdown, ReST, etc.
-      zh_TW: XML、SGML、RTF、LaTeX、Markdown、ReST 等
+      en: CSV, XML, JSON, SGML, RTF, LaTeX, Markdown, ReST, etc.
+      zh_TW: CSV、XML、JSON、SGML、RTF、LaTeX、Markdown、ReST 等
     label:
       en: Structured text
       zh_TW: 結構化文字資料
   - value: text
     icon: file-text-o
     description:
-      en: TXT in various encodings, and CSV files
-      zh_TW: 各種編碼之純文字檔案，與 CSV 檔案
+      en: TXT in various encodings
+      zh_TW: 各種編碼之純文字檔案
     label:
       en: Plain text
       zh_TW: 純文字資料

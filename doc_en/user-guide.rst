@@ -538,6 +538,32 @@ using the "Follow" button on the dataset page. See the section
 :ref:`managing_your_news_feed` below. You must have a user account and be
 logged in to use this feature.
 
+Extended feature — Citing a Dataset
+-----------------------------------
+
+You can get the citation for the dataset using the **Cite as** widget in the bottom left corner of the dataset page:
+
+.. image:: /images/citation.png
+
+We provide the following major citation styles:
+
+* American Psychological Association 6th edition (APA)
+* Modern Language Association 8th edition (MLA)
+* Chicago Manual of Style 17th edition (note)
+* Chicago Manual of Style 17th edition (author-date)
+* IEEE
+* Council of Science Editors, Citation-Sequence (numeric) (CSE C-S)
+* American Medical Association (AMA)
+* American Chemical Society (ACS)
+* American Institute of Physics (AIP)
+* American Society of Civil Engineers (ASCE)
+
+You can also find the other citation styles using the search box on the top of the dropdown.
+
+To get the complete list of citation styles,
+please visit the `CSL Style Repository <https://github.com/citation-style-language/styles/tree/f5a731144d4b0a838e66ce60cd62a92f7a9e66df>`_.
+To search the styles in the style repository by file name, press “t” and start typing.
+
 .. _data_preview:
 
 Extended feature — Data preview and visualization

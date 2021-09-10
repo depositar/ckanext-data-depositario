@@ -1,0 +1,18 @@
+.nav-item.active > a,
+.nav-aside li.active a {
+  background-color: @navItemLinkBackgroundColor;
+}
+
+@media (min-width: 768px) {
+  .nav-item.active > a::before,
+  .nav-aside li.active a::before {
+    background-image: none;
+  }
+}
+
+// FACET NAVIGATION
+
+.nav-facet .nav-item > a:hover::after,
+.nav-facet .nav-item.active > a::after {
+  right: 13px;
+}

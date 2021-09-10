@@ -32,10 +32,10 @@ Adapted from `Metadata Schema for the Description of Research Data Repositories`
      - device specific output
 
    * - Plain text
-     - TXT in various encodings, and CSV files
+     - TXT in various encodings
 
    * - Structured text
-     - XML, SGML, RTF, LaTeX, Markdown, ReST, etc.
+     - CSV, XML, JSON, SGML, RTF, LaTeX, Markdown, ReST, etc.
 
    * - Archived data
      - ZIP, RAR, JAR, etc.

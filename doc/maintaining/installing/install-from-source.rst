@@ -72,57 +72,17 @@ f. 安裝本平台客製套件所需 Python 套件
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
-      pip install -r /usr/lib/ckan/default/src/ckanext-depositar_theme/requirements.txt
 
 g. 安裝其他所需 Python 套件
 
    .. parsed-literal::
 
-      pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements.txt
-      pip install -r /usr/lib/ckan/default/src/ckanext-scheming/requirements.txt
+      pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements-py2.txt
+      pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
 
--------------------------------------
-3. 安裝 DataPusher 於 Python 虛擬環境
--------------------------------------
-
-.. note::
-
-   DataPusher 是一個 CKAN 的擴充套件，當使用者新增結構資料（如 CSV 或 XLS 檔案，無論為上傳至本機的檔案或僅有連結）至 CKAN 時，DataPusher 會自動上傳資料內容至 CKAN 的 DataStore 資料庫（關於 DataStore 請見下節的說明），以提供 :ref:`data_api` 等功能。
-
-a. 新增一個 Python 虛擬環境供 DataPusher 使用，並進入該虛擬環境
-
-   .. parsed-literal::
-
-      sudo mkdir -p /usr/lib/ckan/datapusher
-      sudo chown \`whoami\` /usr/lib/ckan/datapusher
-      virtualenv --no-site-packages /usr/lib/ckan/datapusher
-      . /usr/lib/ckan/datapusher/bin/activate
-
-b. 安裝 DataPusher 於虛擬環境
-
-   .. important::
-
-      執行以下指令時，請確定您位於虛擬環境根目錄：
-
-      .. parsed-literal::
-
-         cd /usr/lib/ckan/datapusher/
-
-   安裝 DataPusher：
-
-   .. parsed-literal::
-
-      pip install -e 'git+https://github.com/ckan/datapusher.git@0.0.15#egg=datapusher'
-
-c. 安裝 DataPusher 所需 Python 套件
-
-   .. parsed-literal::
-
-      pip install -r /usr/lib/ckan/datapusher/src/datapusher/requirements.txt
-
 ----------------------
-4. 建立 FileStore 目錄
+3. 建立 FileStore 目錄
 ----------------------
 
 .. note::
@@ -138,7 +98,7 @@ c. 安裝 DataPusher 所需 Python 套件
 .. _postgres-setup:
 
 -------------
-5. 設定資料庫
+4. 設定資料庫
 -------------
 
 a. 新增 CKAN 使用之 PostgreSQL 使用者
@@ -185,7 +145,7 @@ e. （供本平台管理員資訊）自已備份資料庫還原
       gunzip -c datastore_db.sql.gz | sudo -u postgres psql datastore_default
 
 -------------------------
-6. 建立與修改 CKAN 設定檔
+5. 建立與修改 CKAN 設定檔
 -------------------------
 
 a. 新增放置 CKAN 設定檔之目錄
@@ -236,12 +196,11 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ## Plugins Settings
       ckan.plugins = dcat depositar_iso639 data_depositario depositar_theme
                      citation wikidatakeyword dcat_json_interface structured_data
-                     stats datastore datapusher
+                     stats datastore xloader
                      resource_proxy recline_view text_view image_view
                      webpage_view recline_grid_view recline_map_view
                      pdf_view spatial_metadata spatial_query
-                     geo_view geojson_view wmts_view shp_view
-                     scheming_datasets repeating
+                     geo_view geojson_view wmts_view shp_view scheming_datasets
 
       ## Front-End Settings
       licenses_group_url = file:///usr/lib/ckan/default/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
@@ -249,16 +208,12 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ## Storage Settings
       ckan.storage_path = /var/lib/ckan/default
 
-      ## Datapusher Settings
-      ckan.datapusher.url = http://0.0.0.0:8800/
-
       ## Schema Settings
       ## 需自行新增
       scheming.presets = ckanext.scheming:presets.json
-                         ckanext.repeating:presets.json
                          ckanext.data_depositario:presets.json
                          ckanext.wikidatakeyword:presets.json
-      scheming.dataset_schemas = ckanext.data_depositario:scheming.json
+      scheming.dataset_schemas = ckanext.data_depositario.schemas:dataset.yaml
 
       ## Spatial Settings
       ## 需自行新增
@@ -278,7 +233,7 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ckanext.data_depositario.googleanalytics.id = GA_ID
 
 ------------------------------------
-7. 安裝 Solr（含中文與空間搜尋支援）
+6. 安裝 Solr（含中文與空間搜尋支援）
 ------------------------------------
 
 .. note::
@@ -345,7 +300,7 @@ j. 修改 /etc/ckan/default/development.ini，指定 Solr 連線位址
       solr_url = http://127.0.0.1:8983/solr/ckan
 
 ---------------
-8. 初始化資料庫
+7. 初始化資料庫
 ---------------
 
 .. important::
@@ -360,14 +315,15 @@ a. 透過 paster 指令初始化 CKAN 資料庫
 
 b. 如果一切正常，則會看到此訊息：Initialising DB: SUCCESS
 
-c. DataStore 資料庫權限設定
+c. DataStore 資料庫設定
 
    .. parsed-literal::
 
       paster --plugin=ckan datastore set-permissions -c /etc/ckan/default/development.ini | sudo -u postgres psql --set ON_ERROR_STOP=1
+      wget -O- https://github.com/ckan/ckanext-xloader/raw/master/full_text_function.sql | sudo -u postgres psql datastore_default
 
 --------------------
-9. 建立 who.ini link
+8. 建立 who.ini link
 --------------------
 
 .. parsed-literal::
@@ -375,7 +331,7 @@ c. DataStore 資料庫權限設定
    ln -s /usr/lib/ckan/default/src/ckan/who.ini /etc/ckan/default/who.ini
 
 ------------------------
-10. 新增 CKAN 系統管理者
+9. 新增 CKAN 系統管理者
 ------------------------
 
 .. important::
@@ -399,15 +355,18 @@ c. DataStore 資料庫權限設定
    admin 請代換為您需要的使用者名稱，並依照程式提示設定密碼。
 
 --------------------
-11. 在開發環境下執行
+10. 在開發環境下執行
 --------------------
 
-a. 執行 DataPusher
+a. 執行 XLoader
+
+   .. note::
+
+      XLoader 是一個 CKAN 的擴充套件，當使用者新增結構資料（如 CSV 或 XLS 檔案，無論為上傳至本機的檔案或僅有連結）至 CKAN 時，XLoader 會自動上傳資料內容至 CKAN 的 DataStore 資料庫（關於 DataStore 請見第 4 節的說明），以提供 :ref:`data_api` 等功能。
 
    .. parsed-literal::
 
-      . /usr/lib/ckan/datapusher/bin/activate
-      JOB_CONFIG='/usr/lib/ckan/datapusher/src/datapusher/deployment/datapusher_settings.py' python /usr/lib/ckan/datapusher/src/datapusher/wsgi.py
+      paster --plugin=ckan jobs -c /etc/ckan/default/development.ini worker
 
 b. 開啟另一終端機視窗，並透過 paster 指令啟動新安裝的 CKAN 網站
 

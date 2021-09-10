@@ -1,12 +1,12 @@
-requests[security]
+requests>=2.26.0
 python-dateutil>=2.7.0
-geomet>=0.1.0
 pycountry==19.8.18 # see https://github.com/flyingcircusio/pycountry/issues/48
+ckanext-xloader
 -e git+git://github.com/ckan/ckanext-scheming.git@release-2.1.0#egg=ckanext-scheming
 -e git+git://github.com/depositar-io/ckanext-spatial.git#egg=ckanext-spatial
 -e git+git://github.com/depositar-io/ckanext-geoview.git#egg=ckanext-geoview
 -e git+git://github.com/depositar-io/ckanext-wikidatakeyword.git#egg=ckanext-wikidatakeyword
 -e git+git://github.com/depositar-io/ckanext-pdfview.git#egg=ckanext-pdfview
--e git+git://github.com/ckan/ckanext-dcat.git@v1.1.0#egg=ckanext-dcat
+-e git+git://github.com/ckan/ckanext-dcat.git@v1.1.2#egg=ckanext-dcat
 -e git+git://github.com/depositar/ckanext-depositar_theme.git#egg=ckanext-depositar_theme
 git+git://github.com/depositar/ckanext-citation.git#egg=ckanext-citation
