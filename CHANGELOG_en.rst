@@ -18,6 +18,10 @@ Notice:
     pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
     pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
 
+ * This version does require a database upgrade::
+
+    wget -O- https://github.com/ckan/ckanext-xloader/raw/master/full_text_function.sql | sudo -u postgres psql datastore_default
+
  * This version requires changes to the configuration file. You will have to manually
    change the following settings according to the 5-c. section in the :doc:`maintaining/installing/install-from-source`:
 
@@ -28,7 +32,6 @@ Notice:
    set the startup script for XLoader according to the section 2 (XLoader Settings) and the section 5 in the :doc:`maintaining/installing/deployment`.
  * The following Python modules can be safely removed:
 
-    - geomet
     - ckanext-repeating
     - DataPusher
 

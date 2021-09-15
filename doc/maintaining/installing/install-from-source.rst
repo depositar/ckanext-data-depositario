@@ -307,20 +307,20 @@ j. 修改 /etc/ckan/default/development.ini，指定 Solr 連線位址
 
    （供本平台管理員資訊）請忽略此步驟。
 
-a. 透過 paster 指令初始化 CKAN 資料庫
-
-   .. parsed-literal::
-
-      paster --plugin=ckan db init -c /etc/ckan/default/development.ini
-
-b. 如果一切正常，則會看到此訊息：Initialising DB: SUCCESS
-
-c. DataStore 資料庫設定
+a. DataStore 資料庫設定
 
    .. parsed-literal::
 
       paster --plugin=ckan datastore set-permissions -c /etc/ckan/default/development.ini | sudo -u postgres psql --set ON_ERROR_STOP=1
       wget -O- https://github.com/ckan/ckanext-xloader/raw/master/full_text_function.sql | sudo -u postgres psql datastore_default
+
+b. 透過 paster 指令初始化 CKAN 資料庫
+
+   .. parsed-literal::
+
+      paster --plugin=ckan db init -c /etc/ckan/default/development.ini
+
+c. 如果一切正常，則會看到此訊息：Initialising DB: SUCCESS
 
 --------------------
 8. 建立 who.ini link

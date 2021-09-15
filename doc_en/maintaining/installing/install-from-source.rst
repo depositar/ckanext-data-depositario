@@ -309,20 +309,20 @@ j. Modify /etc/ckan/default/development.ini with Solr url:
 
    (For |site_name| administrator) Please ignore this step.
 
-a. Create the database tables via paster:
-
-   .. parsed-literal::
-
-      paster --plugin=ckan db init -c /etc/ckan/default/development.ini
-
-b. You should see Initialising DB: SUCCESS.
-
-c. Then you can use this connection to set up the DataStore:
+a. Set up the DataStore:
 
    .. parsed-literal::
 
       paster --plugin=ckan datastore set-permissions -c /etc/ckan/default/development.ini | sudo -u postgres psql --set ON_ERROR_STOP=1
       wget -O- https://github.com/ckan/ckanext-xloader/raw/master/full_text_function.sql | sudo -u postgres psql datastore_default
+
+b. Create the database tables via paster:
+
+   .. parsed-literal::
+
+      paster --plugin=ckan db init -c /etc/ckan/default/development.ini
+
+c. You should see Initialising DB: SUCCESS.
 
 ----------------------
 8. Link to ``who.ini``
