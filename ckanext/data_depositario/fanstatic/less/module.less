@@ -21,9 +21,7 @@
 // Secondary column specific
 
 .module-narrow {
-  .module-heading,
   .module-footer {
-    padding-left: 0;
     padding-right: 0;
   }
 
@@ -33,10 +31,18 @@
     border-top: none;
     border-bottom-color: @moduleNarrowHeadingBoderBottomColor;
     margin: 0;
+
+    @media (max-width: 768px) {
+      .action {
+        padding-right: 10px;
+      }
+    }
   }
 
-  .module-content {
-    padding: 10px 10px 10px 0;
+  @media (min-width: 768px) {
+    .module-content {
+      padding-left: 0;
+    }
   }
 
   .ui-rangeSlider {
