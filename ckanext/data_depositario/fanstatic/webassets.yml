@@ -1,0 +1,99 @@
+main-css:
+  output: ckanext-data-depositario/%(version)s_main.css
+  contents:
+    - styles/main.css
+
+package-form-js:
+  output: ckanext-data-depositario/%(version)s_package-form.js
+  contents:
+    - scripts/vendor/leaflet/plugins/Leaflet.GridLayer.GoogleMutant/Leaflet.GoogleMutant.js
+    - scripts/vendor/js-sha1/sha1.js
+    - scripts/vendor/lodash.js/lodash.js
+    - scripts/map.js
+    - scripts/modules/contact_person.js
+    - scripts/modules/parcel-corner-to-geojson.js
+    - scripts/modules/dataset-visibility.js
+    - scripts/modules/slug-preview-slug-hash.js
+    - scripts/modules/select2-enabler.js
+    - scripts/modules/tooltip.js
+  extra:
+    preload:
+      - base/main
+      - vendor/jquery
+      - ckanext-data-depositario/leaflet-js
+
+package-form-css:
+  output: ckanext-data-depositario/%(version)s_package-form.css
+  extra:
+    preload:
+      - ckanext-data-depositario/leaflet-css
+
+date-facet-slider-js:
+  output: ckanext-data-depositario/%(version)s_date_facet_slider.js
+  contents:
+    - scripts/vendor/momentjs/moment.js
+    - scripts/vendor/jquery-range-slider/jQDateRangeSlider.js
+    - scripts/date-facet.js
+  extra:
+    preload:
+      - vendor/jquery
+      - ckanext-data-depositario/jquery-ui-js
+
+date-facet-slider-css:
+  output: ckanext-data-depositario/%(version)s_date_facet_slider.css
+  contents:
+    - scripts/vendor/jqueryui/jquery-ui.css
+    - scripts/vendor/jquery-range-slider/iThing.css
+  extra:
+    preload:
+      - ckanext-data-depositario/jquery-ui-css
+
+user-guide-js:
+  output: ckanext-data-depositario/%(version)s_user-guide.js
+  contents:
+    - scripts/vendor/intro.js/intro.js
+    - scripts/user-guide.js
+  extra:
+    preload:
+      - ckanext-data-depositario/mobile-detect
+
+user-guide-css:
+  output: ckanext-data-depositario/%(version)s_user-guide.css
+  contents:
+    - scripts/vendor/intro.js/introjs.css
+    - styles/introjs-depositar.css
+
+select2-pagination:
+  output: ckanext-data-depositario/%(version)s_select2-pagination.js
+  contents:
+    - scripts/modules/select2-pagination.js
+  extra:
+    preload:
+      - base/main
+
+leaflet-js:
+  output: ckanext-data-depositario/%(version)s_leaflet.js
+  contents:
+    - scripts/vendor/leaflet/leaflet.js
+    - scripts/vendor/leaflet/plugins/leaflet.draw/leaflet.draw.js
+
+leaflet-css:
+  output: ckanext-data-depositario/%(version)s_leaflet.css
+  contents:
+    - scripts/vendor/leaflet/leaflet.css
+    - scripts/vendor/leaflet/plugins/leaflet.draw/leaflet.draw.css
+
+jquery-ui-js:
+  output: ckanext-data-depositario/%(version)s_jquery-ui.js
+  contents:
+    - scripts/vendor/jqueryui/jquery-ui.js
+
+jquery-ui-css:
+  output: ckanext-data-depositario/%(version)s_jquery-ui.css
+  contents:
+    - scripts/vendor/jqueryui/jquery-ui.css
+
+mobile-detect:
+  output: ckanext-data-depositario/%(version)s_mobile-detect.js
+  contents:
+    - scripts/vendor/mobile-detect/mobile-detect.js
