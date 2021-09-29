@@ -69,9 +69,7 @@ a.tag:hover {
     padding: 30px 0;
   }
 }
-.module-narrow .module-heading,
 .module-narrow .module-footer {
-  padding-left: 0;
   padding-right: 0;
 }
 .module-narrow .module-heading {
@@ -81,8 +79,10 @@ a.tag:hover {
   border-bottom-color: #000;
   margin: 0;
 }
-.module-narrow .module-content {
-  padding: 10px 10px 10px 0;
+@media (max-width: 768px) {
+  .module-narrow .module-heading .action {
+    padding-right: 10px;
+  }
 }
 .module-narrow .ui-rangeSlider {
   padding-top: 10px;
@@ -148,6 +148,9 @@ a.tag:hover {
 .masthead .logo img {
   width: 185px;
   padding-left: 5px;
+}
+.masthead .header-text-logo a {
+  color: #000;
 }
 .masthead .navigation .nav-pills li a {
   border-radius: 0;
