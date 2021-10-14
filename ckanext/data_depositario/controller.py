@@ -24,12 +24,6 @@ DataError = dictization_functions.DataError
 unflatten = dictization_functions.unflatten
 
 
-class HelpController(BaseController):
-
-    def index(self):
-        return p.toolkit.render('home/help.html')
-
-
 class CustomUserController(UserController):
     """
     Adapted from original CKAN's UserController to prompt new user to

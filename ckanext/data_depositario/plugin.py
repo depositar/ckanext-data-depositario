@@ -166,12 +166,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             action='register')
         return map
 
-    def after_map(self, map):
-        map.connect('help', '/help',
-            controller='ckanext.data_depositario.controller:HelpController',
-            action='index')
-        return map
-
     ## IActions
     def get_actions(self):
         return {'license_list': license_list, 'user_create': user_create}
