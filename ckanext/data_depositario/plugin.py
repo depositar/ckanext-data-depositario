@@ -1,6 +1,7 @@
 from logging import getLogger
 
 from calendar import monthrange
+from collections import OrderedDict
 from datetime import date
 from datetime import datetime
 from dateutil.parser import parse
@@ -9,7 +10,6 @@ import ckan.logic as logic
 from ckan.logic.action.create import user_create as ckan_user_create
 import ckan.model as model
 from ckan.common import json
-from ckan.common import OrderedDict
 import ckan.lib.mailer as mailer
 from ckan.lib.plugins import DefaultTranslation
 from ckanext.scheming import helpers as scheming_helpers
@@ -180,12 +180,12 @@ def _get_module_functions(module, function_names):
 def _add_facets(facets_dict, group=False):
     new_facets_dict = OrderedDict([
         ('keywords_facet', ''),
-        facets_dict.items()[2],
+        list(facets_dict.items())[2],
         ('data_type_facet', p.toolkit._('Data Type')),
         ('organization', p.toolkit._('Projects')),
         ('groups', p.toolkit._('Topics')),
         ('language_facet', p.toolkit._('Language'))
-    ] + facets_dict.items()[3:])
+    ] + list(facets_dict.items())[3:])
 
     if not group:
         new_facets_dict['date_facet'] = ''
