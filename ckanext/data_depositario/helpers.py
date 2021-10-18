@@ -1,6 +1,6 @@
 import pycountry
-from pylons import config
 import ckan.plugins as p
+from ckan.plugins.toolkit import config
 from ckan.common import json
 import re
 import json
