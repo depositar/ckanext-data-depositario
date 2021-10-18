@@ -9,13 +9,15 @@ import ckan.plugins as p
 import ckan.logic as logic
 from ckan.logic.action.create import user_create as ckan_user_create
 import ckan.model as model
-from ckan.common import json
+from ckan.common import json, _
 import ckan.lib.mailer as mailer
+import ckan.lib.helpers as h
 from ckan.lib.plugins import DefaultTranslation
 from ckanext.scheming import helpers as scheming_helpers
 from ckanext.depositar_theme import helpers as theme_helpers
 
 from ckanext.data_depositario import helpers
+from ckanext.data_depositario import routes
 from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
 
@@ -40,7 +42,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     p.implements(p.IPackageController, inherit=True)
     p.implements(p.IFacets)
     p.implements(p.IValidators)
-    p.implements(p.IRoutes, inherit=True)
+    p.implements(p.IBlueprint, inherit=True)
     p.implements(p.IActions)
 
     ## IConfigurer
@@ -159,12 +161,9 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         )
         return _get_module_functions(helpers, function_names)
 
-    ## IRoutes
-    def before_map(self, map):
-        map.connect('/user/register',
-            controller='ckanext.data_depositario.controller:CustomUserController',
-            action='register')
-        return map
+    ## IBlueprint
+    def get_blueprint(self):
+        return routes.blueprints
 
     ## IActions
     def get_actions(self):
@@ -235,7 +234,12 @@ def user_create(context, data_dict):
         # Reset the created user's password immediately
         try:
             theme_helpers.send_reg_link(user)
-        except mailer.MailerException, e:
-            log.debug('Could not send reset link: %s' % unicode(e))
+        except mailer.MailerException as e:
+            h.flash_error(
+                _(u'Error sending the email. Try again later '
+                  'or contact an administrator for help')
+            )
+            log.exception(e)
+            return h.redirect_to(u'/')
 
     return user_dict
