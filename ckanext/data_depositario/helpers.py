@@ -51,14 +51,14 @@ def get_gmap_config():
     '''
     namespace = 'ckanext.data_depositario.gmap.'
 
-    gmap_configs = dict([(k.replace(namespace, ''), v) for k, v in config.iteritems()
+    gmap_configs = dict([(k.replace(namespace, ''), v) for k, v in config.items()
             if k.startswith(namespace)])
 
     if not gmap_configs.get('api_key'):
         log.critical('''Please specify a ckanext.data_depositario.gmap.api_key
                      in your config for the Google Maps layer''')
 
-    return dict([(k.replace(namespace, ''), v) for k, v in config.iteritems()
+    return dict([(k.replace(namespace, ''), v) for k, v in config.items()
                  if k.startswith(namespace)])
 
 def get_pkg_version():
