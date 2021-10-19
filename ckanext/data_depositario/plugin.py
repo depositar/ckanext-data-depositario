@@ -149,7 +149,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     ## ITemplateHelpers
     def get_helpers(self):
         function_names = (
-            'extras_to_dict',
             'get_default_slider_values',
             'get_date_url_param',
             'get_gmap_config',

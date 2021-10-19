@@ -10,13 +10,6 @@ from ckanext import data_depositario
 log = logging.getLogger(__name__)
 
 
-def extras_to_dict(pkg):
-   extras_dict = {}
-   if pkg and 'extras' in pkg:
-       for extra in pkg['extras']:
-            extras_dict[extra['key']] = extra['value']
-   return extras_dict
-
 def get_default_slider_values():
    data_dict = {
       'sort': 'start_time_t asc',
