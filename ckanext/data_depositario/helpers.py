@@ -100,7 +100,7 @@ def schema_license_choices(field):
     """
     license_list = p.toolkit.get_action('license_list')({}, {})
     licenses = [{'value': license['id'], 'label': {'en': license['title'],
-            'zh_TW': license['title_zh']}} for license in license_list]
+            'zh_Hant_TW': license['title_zh']}} for license in license_list]
 
     return licenses
 
