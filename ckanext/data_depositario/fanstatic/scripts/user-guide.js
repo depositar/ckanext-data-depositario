@@ -27,7 +27,7 @@ this.ckan.module('intro-action', function (jQuery) {
         doneLabel: this._('Confirm'),
         steps: [
           {
-            element: '.search-input',
+            element: '.search-input-group',
             intro: this._('Here you can search datasets by a keyword.')
           },
 	  {
