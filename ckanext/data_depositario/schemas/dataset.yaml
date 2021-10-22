@@ -216,6 +216,7 @@ dataset_fields:
     zh_Hant_TW: 時間解析度
   icon: clock-o
   preset: select
+  validators: ignore_empty scheming_choices
   choices:
   - value: yearly
     label:
@@ -445,6 +446,7 @@ resource_fields:
     zh_Hant_TW: 字元編碼
   icon: keyboard-o
   preset: select
+  validators: ignore_empty scheming_choices
   form_attrs:
     data-module: autocomplete
   choices:
