@@ -19,7 +19,6 @@ package-form-js:
   extra:
     preload:
       - base/main
-      - vendor/jquery
       - ckanext-data-depositario/leaflet-js
 
 package-form-css:
