@@ -198,18 +198,19 @@ dataset_fields:
   help_text:
     en: Languages used in the dataset. For ISO 639-3 Language Codes, please refer
       to https://iso639-3.sil.org/code_tables.
-    zh_Hant_TW: 資料集內容所使用之語言。ISO 639-3 語言編碼請參見 https://iso639-3.sil.org/code_tables。
+    zh_Hant_TW: 資料集內容所使用之語言。ISO 639-3 語言編碼請參見<a href="https://iso639-3.sil.org/code_tables">列表</a>。
+  help_allow_html: true
   choices_helper: schema_language_choices
   form_select_attrs:
     data-module: select2-pagination
     data-module-multiple: 'true'
+    class: ''
 - field_name: remarks
   label:
     en: Remarks
     zh_Hant_TW: 備註
   icon: sticky-note-o
-  form_snippet: markdown.html
-  display_snippet: markdown.html
+  preset: markdown
 - field_name: temp_res
   label:
     en: Temporal Resolution
@@ -359,11 +360,10 @@ dataset_fields:
     en: Process Step
     zh_Hant_TW: 資料處理歷程
   icon: cogs
+  preset: markdown
   form_placeholder:
     en: Steps of data generating process
     zh_Hant_TW: 以文字描述資料形成所經過之處理過程，建議以各階段或步驟為導向進行填寫
-  form_snippet: markdown.html
-  display_snippet: markdown.html
 - field_name: owner_org
   label:
     en: Project
@@ -449,6 +449,7 @@ resource_fields:
   validators: ignore_empty scheming_choices
   form_attrs:
     data-module: autocomplete
+    class: ''
   choices:
   - value: big5
     label:
@@ -507,6 +508,10 @@ resource_fields:
     zh_Hant_TW: 格式
   icon: archive
   preset: resource_format_autocomplete
+  form_attrs:
+    data-module: autocomplete
+    data-module-source: /api/2/util/resource/format_autocomplete?incomplete=?
+    class: ''
   form_placeholder:
     en: eg. CSV, XML or JSON
     zh_Hant_TW: 例如：CSV, XML 或 JSON
