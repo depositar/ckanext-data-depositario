@@ -49,7 +49,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     def update_config(self, config):
         p.toolkit.add_template_directory(config, 'templates')
         p.toolkit.add_public_directory(config, 'public')
-        p.toolkit.add_resource('fanstatic', 'ckanext-data-depositario')
+        p.toolkit.add_resource('public', 'ckanext-data-depositario')
 
     ## IPackageController
     def before_search(self, search_params):

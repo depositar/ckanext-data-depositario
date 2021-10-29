@@ -20,7 +20,7 @@ const build = () =>
     .pipe(less())
     .pipe(if_(with_sourcemaps(), sourcemaps.write()))
     .pipe(rename(renamer))
-    .pipe(dest(__dirname + "/ckanext/data_depositario/fanstatic/styles/"));
+    .pipe(dest(__dirname + "/ckanext/data_depositario/public/styles/"));
 
 const watchSource = () =>
   watch(
