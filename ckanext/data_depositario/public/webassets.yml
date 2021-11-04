@@ -1,8 +1,3 @@
-main-css:
-  output: ckanext-data-depositario/%(version)s_main.css
-  contents:
-    - styles/main.css
-
 package-form-js:
   filters: rjsmin
   output: ckanext-data-depositario/%(version)s_package-form.js
