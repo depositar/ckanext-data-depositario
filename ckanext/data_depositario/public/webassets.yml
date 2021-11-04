@@ -4,11 +4,9 @@ main-css:
     - styles/main.css
 
 package-form-js:
+  filters: rjsmin
   output: ckanext-data-depositario/%(version)s_package-form.js
   contents:
-    - scripts/vendor/leaflet/plugins/Leaflet.GridLayer.GoogleMutant/Leaflet.GoogleMutant.js
-    - scripts/vendor/js-sha1/sha1.js
-    - scripts/vendor/lodash.js/lodash.js
     - scripts/map.js
     - scripts/modules/contact_person.js
     - scripts/modules/parcel-corner-to-geojson.js
@@ -18,8 +16,8 @@ package-form-js:
     - scripts/modules/tooltip.js
   extra:
     preload:
-      - base/main
       - ckanext-data-depositario/leaflet-js
+      - ckanext-data-depositario/package-form-vendor
 
 package-form-css:
   filters: cssrewrite
@@ -31,22 +29,17 @@ package-form-css:
 date-facet-slider-js:
   output: ckanext-data-depositario/%(version)s_date_facet_slider.js
   contents:
-    - scripts/vendor/momentjs/moment.js
     - scripts/vendor/jquery-range-slider/jQDateRangeSlider.js
     - scripts/date-facet.js
   extra:
     preload:
-      - vendor/jquery
-      - ckanext-data-depositario/jquery-ui-js
+      - vendor/vendor
+      - vendor/reorder
 
 date-facet-slider-css:
   output: ckanext-data-depositario/%(version)s_date_facet_slider.css
   contents:
-    - scripts/vendor/jqueryui/jquery-ui.css
     - scripts/vendor/jquery-range-slider/iThing.css
-  extra:
-    preload:
-      - ckanext-data-depositario/jquery-ui-css
 
 user-guide-js:
   output: ckanext-data-depositario/%(version)s_user-guide.js
@@ -64,29 +57,23 @@ user-guide-css:
     - styles/introjs-depositar.css
 
 select2-pagination:
+  filters: rjsmin
   output: ckanext-data-depositario/%(version)s_select2-pagination.js
   contents:
     - scripts/modules/select2-pagination.js
-  extra:
-    preload:
-      - base/main
+
+package-form-vendor:
+  output: ckanext-data-depositario/%(version)s_package-form-vendor.js
+  contents:
+    - scripts/vendor/leaflet/plugins/Leaflet.GridLayer.GoogleMutant/Leaflet.GoogleMutant.js
+    - scripts/vendor/js-sha1/sha1.js
+    - scripts/vendor/lodash.js/lodash.js
 
 leaflet-js:
   output: ckanext-data-depositario/%(version)s_leaflet.js
   contents:
     - scripts/vendor/leaflet/leaflet.js
     - scripts/vendor/leaflet/plugins/leaflet.draw/leaflet.draw.js
-
-jquery-ui-js:
-  output: ckanext-data-depositario/%(version)s_jquery-ui.js
-  contents:
-    - scripts/vendor/jqueryui/jquery-ui.js
-
-jquery-ui-css:
-  filters: cssrewrite
-  output: ckanext-data-depositario/%(version)s_jquery-ui.css
-  contents:
-    - scripts/vendor/jqueryui/jquery-ui.css
 
 mobile-detect:
   output: ckanext-data-depositario/%(version)s_mobile-detect.js
