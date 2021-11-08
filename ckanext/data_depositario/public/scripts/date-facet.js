@@ -72,7 +72,7 @@
         }
       },
       _checkForChanges: function (event) {
-        $('[id="dateSlider"]', this.el).dateRangeSlider('resize');
+        $("#dateSlider").dateRangeSlider('resize');
       },
       _sliderFormatter: function (value) {
         return value.getFullYear();
