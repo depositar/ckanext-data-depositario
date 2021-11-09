@@ -36,6 +36,15 @@ date-facet-slider-css:
   contents:
     - scripts/vendor/jquery-range-slider/iThing.css
 
+show-filters:
+  filters: rjsmin
+  output: ckanext-data-depositario/%(version)s_show-filters.js
+  contents:
+    - scripts/show-filters.js
+  extra:
+    preload:
+      - base/main
+
 user-guide-js:
   output: ckanext-data-depositario/%(version)s_user-guide.js
   contents:
