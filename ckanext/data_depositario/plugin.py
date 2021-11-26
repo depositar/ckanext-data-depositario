@@ -75,6 +75,8 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         return search_params
 
     def before_index(self, data_dict):
+        if data_dict['type'] != 'dataset':
+            return data_dict
         for field_name in ['data_type', 'language']:
             value = data_dict.get(field_name)
             try:
@@ -103,6 +105,8 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         facets = search_results.get('search_facets')
         results = search_results.get('results')
         if not facets or not results:
+            return search_results
+        if results[0]['type'] != 'dataset':
             return search_results
         schema = scheming_helpers.scheming_get_dataset_schema(results[0]['type'])
         for facet in facets.values():
