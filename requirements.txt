@@ -1,4 +1,5 @@
 requests>=2.26.0
+Shapely==1.7.1 # see https://github.com/Toblerity/Shapely/issues/1207
 pycountry
 ckanext-xloader
 -e git+git://github.com/ckan/ckanext-scheming.git@a5b5522#egg=ckanext-scheming
@@ -7,6 +8,7 @@ ckanext-xloader
 -e git+git://github.com/depositar-io/ckanext-wikidatakeyword.git#egg=ckanext-wikidatakeyword
 -e git+git://github.com/depositar-io/ckanext-pdfview.git#egg=ckanext-pdfview
 -e git+git://github.com/ckan/ckanext-dcat.git@v1.1.2#egg=ckanext-dcat
+-e git+git://github.com/ckan/ckanext-showcase.git@v1.4.5#egg=ckanext-showcase
 -e git+git://github.com/ckan/ckanext-harvest.git@v1.3.3#egg=ckanext-harvest # required by ckanext-spatial
 -e git+git://github.com/depositar/ckanext-depositar_theme.git#egg=ckanext-depositar_theme
 git+git://github.com/depositar/ckanext-citation.git#egg=ckanext-citation
