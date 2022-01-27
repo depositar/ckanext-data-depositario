@@ -2,7 +2,7 @@
 Installing CKAN from source
 ===========================
 
-This section describes how to install CKAN used by |site_name| from source on an Ubuntu 16.04 server.
+This section describes how to install CKAN used by |site_name| from source on an Ubuntu 18.04 server.
 
 --------------------------------
 1. Install the required packages
@@ -10,7 +10,7 @@ This section describes how to install CKAN used by |site_name| from source on an
 
 .. parsed-literal::
 
-   sudo apt-get install build-essential libxslt1-dev libxml2-dev python-dev postgresql libpq-dev python-pip python-virtualenv git-core openjdk-8-jdk redis-server
+   sudo apt install python3-dev postgresql libpq-dev python3-pip python3-venv git openjdk-8-jdk redis-server
 
 -------------------------------------------------
 2. Install CKAN into a Python virtual environment
@@ -22,69 +22,65 @@ a. Create a Python virtual environment (virtualenv) to install CKAN into, and ac
 
       sudo mkdir -p /usr/lib/ckan/default
       sudo chown \`whoami\` /usr/lib/ckan/default
-      virtualenv --no-site-packages /usr/lib/ckan/default
+      python3 -m venv /usr/lib/ckan/default
       . /usr/lib/ckan/default/bin/activate
 
-.. important::
+   .. important::
 
-   The final command above activates your virtualenv. The virtualenv has to
-   remain active for the rest of the installation and deployment process,
-   or commands will fail. You can tell when the virtualenv is active because
-   its name appears in front of your shell prompt, something like this::
+      The final command above activates your virtualenv. The virtualenv has to
+      remain active for the rest of the installation and deployment process,
+      or commands will fail. You can tell when the virtualenv is active because
+      its name appears in front of your shell prompt, something like this::
 
-     (default) $ _
+        (default) $ _
 
-   For example, if you logout and login again, or if you close your terminal
-   window and open it again, your virtualenv will no longer be activated. You
-   can always reactivate the virtualenv with this command::
+      For example, if you logout and login again, or if you close your terminal
+      window and open it again, your virtualenv will no longer be activated. You
+      can always reactivate the virtualenv with this command::
 
-     . /usr/lib/ckan/default/bin/activate
+        . /usr/lib/ckan/default/bin/activate
 
 b. Install the recommended setuptools version:
 
-    .. important::
+   .. important::
 
-       Please run all the commands below under the `ckan` directory:
+      Please run all the commands below under the `ckan` directory:
 
-       .. parsed-literal::
+      .. parsed-literal::
 
-          cd /usr/lib/ckan/default/
+         cd /usr/lib/ckan/default/
 
    .. parsed-literal::
 
-      pip install setuptools==36.1
+      pip install setuptools==44.1.0
+      pip install --upgrade pip
 
 c. Install CKAN into your virtualenv:
 
    .. parsed-literal::
 
-      pip install -e 'git+git://github.com/depositar-io/ckan.git#egg=ckan'
+      pip install -e 'git+git://github.com/depositar/ckan.git#egg=ckan[requirements]'
 
 d. Install customized extesion into your virtualenv:
 
    .. parsed-literal::
 
-      pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
+      pip install -e 'git+https://github.com/depositar/ckanext-data-depositario.git#egg=ckanext-data-depositario'
 
-e. Install the Python modules that CKAN requires into your virtualenv:
-
-   .. parsed-literal::
-
-      pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
-
-f. Install the Python modules that customized extesion requires into your virtualenv:
+e. Install the Python modules that customized extesion requires into your virtualenv:
 
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
 
-g. Install other required Python modules into your virtualenv:
+f. Install other required Python modules into your virtualenv:
 
    .. parsed-literal::
 
-      pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements-py2.txt
+      pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements.txt
       pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
+      pip install -r /usr/lib/ckan/default/src/ckanext-harvest/pip-requirements.txt
 
 ---------------------------------
 3. Create the FireStore directory
@@ -123,9 +119,9 @@ c. Install the PostGIS:
 
    .. parsed-literal::
 
-      sudo apt-get install postgresql-9.5-postgis-2.2 python-dev libxml2-dev libxslt1-dev libgeos-c1v5
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/9.5/contrib/postgis-2.2/postgis.sql
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/9.5/contrib/postgis-2.2/spatial_ref_sys.sql
+      sudo apt-get install postgresql-10-postgis-2.4 python3-dev libxml2-dev libxslt1-dev libgeos-c1v5
+      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/10/contrib/postgis-2.4/postgis.sql
+      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/10/contrib/postgis-2.4/spatial_ref_sys.sql
       sudo -u postgres psql -d ckan_default -c 'ALTER VIEW geometry_columns OWNER TO ckan_default;'
       sudo -u postgres psql -d ckan_default -c 'ALTER TABLE spatial_ref_sys OWNER TO ckan_default;'
 
@@ -145,8 +141,8 @@ e. (For |site_name| administrator) Restore database backup:
 
    .. parsed-literal::
 
-      gunzip -c main_db.sql.gz | sudo -u postgres psql ckan_default
-      gunzip -c datastore_db.sql.gz | sudo -u postgres psql datastore_default
+      cat main_db.sql.gz | gunzip | sudo -u postgres psql ckan_default
+      cat datastore_db.sql.gz | gunzip | sudo -u postgres psql datastore_default
 
 ----------------------------
 5. Create a CKAN config file
@@ -159,7 +155,7 @@ a. Create a directory to contain the site's config files:
       sudo mkdir -p /etc/ckan/default
       sudo chown -R \`whoami\` /etc/ckan/
 
-b. Create the CKAN config file via paster:
+b. Create a CKAN config file:
 
    .. important::
 
@@ -175,9 +171,10 @@ b. Create the CKAN config file via paster:
 
    .. parsed-literal::
 
-      paster make-config ckan /etc/ckan/default/development.ini
+      ckan generate config /etc/ckan/default/ckan.ini
+      ckan config-tool /etc/ckan/default/ckan.ini -f /usr/lib/ckan/default/src/ckanext-data-depositario/config/custom_options.ini
 
-c. Edit the development.ini file in a text editor, changing the following options:
+c. Edit the ckan.ini file in a text editor, changing the following options:
 
    .. note::
 
@@ -194,33 +191,15 @@ c. Edit the development.ini file in a text editor, changing the following option
       ## Replace ``pass`` with the ``DataStore database`` password that you created
       ckan.datastore.read_url = postgresql://datastore_default:pass@localhost/datastore_default
 
-      ## Site Settings
-      ckan.site_url = http://127.0.0.1:5000
-
-      ## Plugins Settings
-      ckan.plugins = dat data_depositario depositar_iso639 depositar_theme
-                     citation wikidatakeyword dcat_json_interface structured_data
-                     stats datastore xloader
-                     resource_proxy recline_view text_view image_view
-                     webpage_view recline_grid_view recline_map_view
-                     pdf_view spatial_metadata spatial_query
-                     geo_view geojson_view wmts_view shp_view scheming_datasets
-
-      ## Front-End Settings
-      licenses_group_url = file:///usr/lib/ckan/default/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
-
-      ## Storage Settings
-      ckan.storage_path = /var/lib/ckan/default
+      ## Add the following lines above Logging configuration
 
       ## Schema Settings
-      ## Add these settings
       scheming.presets = ckanext.scheming:presets.json
                          ckanext.data_depositario:presets.json
                          ckanext.wikidatakeyword:presets.json
       scheming.dataset_schemas = ckanext.data_depositario.schemas:dataset.yaml
 
       ## Spatial Settings
-      ## Add these settings
       ckanext.spatial.search_backend = solr-spatial-field
 
       ## DCAT Settings
@@ -229,7 +208,6 @@ c. Edit the development.ini file in a text editor, changing the following option
       ckanext.dcat.enable_content_negotiation = True
 
       ## ckanext-data-depositario Settings
-      ## Add these settings
       ## GMAP_AKI_KEY is the API key for Google Maps
       ckanext.data_depositario.gmap.api_key = GMAP_AKI_KEY
       ## GA_ID is the id for Google Analytics
@@ -295,14 +273,16 @@ h. Create a new Solr core called ``ckan`` by entering the following link in a we
 
 i. Open http://127.0.0.1:8983/solr/#/ckan in a web browser, and you should see the Solr front page.
 
-j. Modify /etc/ckan/default/development.ini with Solr url:
+----------------------
+7. Link to ``who.ini``
+----------------------
 
-   .. parsed-literal::
+.. parsed-literal::
 
-      solr_url = http://127.0.0.1:8983/solr/ckan
+   ln -s /usr/lib/ckan/default/src/ckan/who.ini /etc/ckan/default/who.ini
 
 -------------------------
-7. Create database tables
+8. Create database tables
 -------------------------
 
 .. important::
@@ -313,24 +293,15 @@ a. Set up the DataStore:
 
    .. parsed-literal::
 
-      paster --plugin=ckan datastore set-permissions -c /etc/ckan/default/development.ini | sudo -u postgres psql --set ON_ERROR_STOP=1
-      wget -O- https://github.com/ckan/ckanext-xloader/raw/master/full_text_function.sql | sudo -u postgres psql datastore_default
+      ckan -c /etc/ckan/default/ckan.ini db init
 
-b. Create the database tables via paster:
+   You should see Initialising DB: SUCCESS.
+
+b. Then you can use this connection to set up the DataStore:
 
    .. parsed-literal::
 
-      paster --plugin=ckan db init -c /etc/ckan/default/development.ini
-
-c. You should see Initialising DB: SUCCESS.
-
-----------------------
-8. Link to ``who.ini``
-----------------------
-
-.. parsed-literal::
-
-   ln -s /usr/lib/ckan/default/src/ckan/who.ini /etc/ckan/default/who.ini
+      ckan -c /etc/ckan/default/ckan.ini datastore set-permissions | sudo -u postgres psql --set ON_ERROR_STOP=1
 
 ----------------------------
 9. Creating a sysadmin user
@@ -340,16 +311,11 @@ c. You should see Initialising DB: SUCCESS.
 
    (For |site_name| administrator) Please ignore this step.
 
-You have to create your first CKAN sysadmin user from the command line. For example, to create a user called `admin` and make him a sysadmin:
+Set password for the default CKAN sysadmin user from the command line.
 
 .. parsed-literal::
 
-   paster --plugin=ckan sysadmin add admin -c /etc/ckan/default/development.ini
-   paster --plugin=pylons shell /etc/ckan/default/development.ini
-   Execute the following commands in the interactive shell:
-   model.User.get('admin').state = 'active'
-   model.Session.commit()
-   Then press Ctrl+D to exit the interactive shell.
+   ckan -c /etc/ckan/default/ckan.ini user setpass default
 
 -----------------------------------------
 10. Serve CKAN under a development server
@@ -365,14 +331,14 @@ a. Run the XLoader:
 
    .. parsed-literal::
 
-      paster --plugin=ckan jobs -c /etc/ckan/default/development.ini worker
+      ckan -c /etc/ckan/default/ckan.ini jobs worker
 
 b. Open another terminal and use the Paste development server to serve CKAN from the command-line:
 
    .. parsed-literal::
 
       . /usr/lib/ckan/default/bin/activate
-      paster serve /etc/ckan/default/development.ini
+      ckan -c /etc/ckan/default/development.ini
 
 c. Open http://127.0.0.1:5000/ in a web browser, and you should see the CKAN front page.
 

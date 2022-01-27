@@ -76,13 +76,13 @@ b. 建立個別語系待翻譯字串
 
    .. parsed-literal::
 
-      python setup.py update_catalog -l zh_TW
+      python setup.py update_catalog -l zh_Hant_TW
 
 c. 開啟以下檔案並開始翻譯字串（msgstr 部分）
 
    .. parsed-literal::
 
-      vi ckanext/data_depositario/i18n/zh_TW/LC_MESSAGES/ckanext-data_depositario.po
+      vi ckanext/data_depositario/i18n/zh_Hant_TW/LC_MESSAGES/ckanext-data_depositario.po
 
 d. 編譯已翻譯字串
 
@@ -98,4 +98,4 @@ e. 重新啟動 CKAN 以使更改生效
 
    .. parsed-literal::
 
-      sudo stop ckan && sudo start ckan
+      sudo supervisorctl restart ckan-uwsgi:*

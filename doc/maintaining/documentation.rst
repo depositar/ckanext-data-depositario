@@ -17,15 +17,13 @@
 
 ::
 
-    sudo apt-get install python-dev libpq-dev python-pip python-virtualenv
-    virtualenv --no-site-packages pyenv
+    sudo apt install python3-dev python3-pip python3-venv git
+    python3 -m venv pyenv
     . pyenv/bin/activate
-    pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
-    cd pyenv/src/ckanext-data-depositario
-    pip install -r requirements-docs.txt
-    cd ../ckan
-    pip install -r requirements.txt
-    pip install setuptools==36.1
+    pip install setuptools==44.1.0
+    pip install -e 'git+git://github.com/depositar/ckan.git#egg=ckan[requirements]'
+    pip install -e 'git+https://github.com/depositar/ckanext-data-depositario.git#egg=ckanext-data-depositario'
+    pip install -r pyenv/src/ckanext-data-depositario/requirements-docs.txt
 
 開始編輯
 ========
@@ -45,7 +43,7 @@
 
 .. parsed-literal::
 
-   cd ../ckanext-data-depositario
+   cd pyenv/src/ckanext-data-depositario
    python setup.py build_sphinx
 
 您即可使用瀏覽器開啟 ``build/sphinx/html/index.html`` 檔案瀏覽生成之 HTML 檔案。

@@ -31,10 +31,10 @@ rst_epilog = u'''
 
 .. |site_name| replace:: ``depositar``
 
-.. _Writing documentation: http://docs.ckan.org/en/2.7/contributing/documentation.html
+.. _Writing documentation: http://docs.ckan.org/en/2.9/contributing/documentation.html
 .. _User guide — CKAN 2.7.6 documentation: http://docs.ckan.org/en/2.7/user-guide.html
-.. _Maintainer’s guide — CKAN 2.7.6 documentation: http://docs.ckan.org/en/2.7/maintaining/index.html
-.. _String internationalization: http://docs.ckan.org/en/2.7/contributing/string-i18n.html
+.. _Maintainer’s guide — CKAN 2.9.5 documentation: http://docs.ckan.org/en/2.9/maintaining/index.html
+.. _String internationalization: http://docs.ckan.org/en/2.9/contributing/string-i18n.html
 .. _contact us: data.contact@depositar.io
 '''
 
@@ -60,7 +60,7 @@ master_doc = 'contents'
 
 # General information about the project.
 project = u'depositar'
-copyright = u'''2017, The <a href="https://data.depositar.io/">depositar</a> Team.
+copyright = u'''2022, The <a href="https://data.depositar.io/">depositar</a> Team.
     Licensed under <a
     href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons
     Attribution ShareAlike (Unported) v3.0 License</a>.<br />

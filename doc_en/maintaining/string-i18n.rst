@@ -77,22 +77,22 @@ b. Create translation files for a locale:
 
    .. note::
 
-      We will create translation files for the ``zh_TW`` locale.
+      We will create translation files for the ``zh_Hant_TW`` locale.
 
-      Since the ``zh_TW`` locale already exists, we run the ``update_catalog`` command 
+      Since the ``zh_Hant_TW`` locale already exists, we run the ``update_catalog`` command
       to keep the translated strings. If you want to create a new locale, please use 
       ``init_catalog`` instead.
 
    .. parsed-literal::
 
-      python setup.py update_catalog -l zh_TW
+      python setup.py update_catalog -l zh_Hant_TW
 
 c. Open the generated translation file and add translations for it
    by editing the ``msgstr`` section:
 
    .. parsed-literal::
 
-      vi ckanext/data_depositario/i18n/zh_TW/LC_MESSAGES/ckanext-data_depositario.po
+      vi ckanext/data_depositario/i18n/zh_Hant_TW/LC_MESSAGES/ckanext-data_depositario.po
 
 d. Compiling the catalog:
 
@@ -108,4 +108,4 @@ e. Restart CKAN:
 
    .. parsed-literal::
 
-      sudo stop ckan && sudo start ckan
+      sudo supervisorctl restart ckan-uwsgi:*

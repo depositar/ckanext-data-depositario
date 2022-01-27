@@ -442,6 +442,10 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
 * 影像類：png, jpg, jpeg, gif。
 
+* 影片類：MP4, WebM, Ogg。
+
+* 音訊類：MP3, WAV, Ogg。
+
 * 表格類：csv, xls(x)。
 
 * 空間資料：WMTS, WMS, Shapefile（Shapefile 請標記為「shp」，否則將無法預覽）。
@@ -493,7 +497,7 @@ b) 點選頁面上方的「專案」連結，接下來請選擇您所要發布�
 
    .. image:: /images/data_api_2.png
   
-#. 部分 API 功能會需要使用者帳號的 API Key 作為認證，取得方式為至個人資訊頁面（點選任一頁面最上方之個人帳號），API Key 將顯示於頁面左欄下方處。
+#. 部分 API 功能會需要使用者帳號的 API Key 作為認證，取得方式為至個人資訊頁面（點選任一頁面最上方之個人帳號），API Key 將顯示於頁面左欄下方處。您亦可使用位於頁面上方的 API Tokens 功能取得 API Key。
 
     .. image:: /images/data_api_3.png
 
