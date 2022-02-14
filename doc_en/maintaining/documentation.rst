@@ -17,15 +17,13 @@ Create a Python virtual environment (virtualenv) to install documentation into, 
 
 ::
 
-    sudo apt-get install python-dev libpq-dev python-pip python-virtualenv
-    virtualenv --no-site-packages pyenv
+    sudo apt install python3-dev python3-pip python3-venv git
+    python3 -m venv pyenv
     . pyenv/bin/activate
-    pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
-    cd pyenv/src/ckanext-data-depositario
-    pip install -r requirements-docs.txt
-    cd ../ckan
-    pip install -r requirements.txt
-    pip install setuptools==36.1
+    pip install setuptools==44.1.0
+    pip install -e 'git+git://github.com/depositar/ckan.git#egg=ckan[requirements]'
+    pip install -e 'git+https://github.com/depositar/ckanext-data-depositario.git#egg=ckanext-data-depositario'
+    pip install -r pyenv/src/ckanext-data-depositario/requirements-docs.txt
 
 Edit the reStructuredText files
 ===============================
@@ -46,7 +44,7 @@ Build the docs
 You should now be able to build the CKAN documentation locally. Make sure your
 virtual environment is activated, and then run the these commands::
 
-    cd ../ckanext-data-depositario
+    cd pyenv/src/ckanext-data-depositario
     python setup.py build_sphinx
 
 Now you can open the built HTML files in
