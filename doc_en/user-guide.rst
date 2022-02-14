@@ -307,6 +307,29 @@ project, then any registered user can edit it.)
 
 .. image:: /images/edit_dataset.png
 
+.. _dataset_collaborators:
+
+Dataset collaborators
+---------------------
+
+In addition to traditional project-based permissions, CKAN instances can also enable
+the dataset collaborators feature, which allows dataset-level authorization. This provides
+more granular control over who can access and modify datasets that belong to a project,
+or allows authorization setups not based on projects.
+
+You can manage dataset collaborators through the "Collaborators" tab in the "Edit dataset" page.
+
+By default, only Administrators of the project a dataset belongs to can add collaborators
+to a dataset. When adding them, they can choose between two roles: member and editor.
+
+A **member** can:
+
+* View the dataset if it is private.
+
+An **editor** can do everything a **member** can plus:
+
+* Make the dataset public or private.
+* Edit or delete the dataset (including assigning it to a project)
 
 Adding, deleting and editing resources
 --------------------------------------
