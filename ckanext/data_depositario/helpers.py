@@ -1,6 +1,6 @@
 import pycountry
-from pylons import config
 import ckan.plugins as p
+from ckan.plugins.toolkit import config
 from ckan.common import json
 import re
 import json
@@ -9,13 +9,6 @@ from ckanext import data_depositario
 
 log = logging.getLogger(__name__)
 
-
-def extras_to_dict(pkg):
-   extras_dict = {}
-   if pkg and 'extras' in pkg:
-       for extra in pkg['extras']:
-            extras_dict[extra['key']] = extra['value']
-   return extras_dict
 
 def get_default_slider_values():
    data_dict = {
@@ -58,14 +51,14 @@ def get_gmap_config():
     '''
     namespace = 'ckanext.data_depositario.gmap.'
 
-    gmap_configs = dict([(k.replace(namespace, ''), v) for k, v in config.iteritems()
+    gmap_configs = dict([(k.replace(namespace, ''), v) for k, v in config.items()
             if k.startswith(namespace)])
 
     if not gmap_configs.get('api_key'):
         log.critical('''Please specify a ckanext.data_depositario.gmap.api_key
                      in your config for the Google Maps layer''')
 
-    return dict([(k.replace(namespace, ''), v) for k, v in config.iteritems()
+    return dict([(k.replace(namespace, ''), v) for k, v in config.items()
                  if k.startswith(namespace)])
 
 def get_pkg_version():
@@ -107,7 +100,7 @@ def schema_license_choices(field):
     """
     license_list = p.toolkit.get_action('license_list')({}, {})
     licenses = [{'value': license['id'], 'label': {'en': license['title'],
-            'zh_TW': license['title_zh']}} for license in license_list]
+            'zh_Hant_TW': license['title_zh']}} for license in license_list]
 
     return licenses
 

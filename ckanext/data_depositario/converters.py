@@ -10,7 +10,7 @@ def value_string_convert(key, data, errors, context):
     and parses values. These are added to the data dict, enumerated. Borrowed
     from tag_string_convert in CKAN core.
     """
-    if isinstance(data[key], basestring):
+    if isinstance(data[key], str):
         values = [value.strip() \
                 for value in data[key].split(',') \
                 if value.strip()]

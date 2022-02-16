@@ -20,6 +20,12 @@ v6.4.6 2021-09-10
      pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
      pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
 
+ * 需進行資料庫更新：
+
+   ::
+
+     wget -O- https://github.com/ckan/ckanext-xloader/raw/master/full_text_function.sql | sudo -u postgres psql datastore_default
+
  * 需調整 CKAN 設定檔，請參照 :doc:`maintaining/installing/install-from-source` 5-c. 小節，更新以下設定：
 
    - Plugins Settings
@@ -28,7 +34,6 @@ v6.4.6 2021-09-10
  * 需調整佈署設定，設定開機執行 XLoader。請參照 :doc:`maintaining/installing/deployment` 第 2 節（XLoader Settings）與第 5 節進行設定。
  * 以下 Python 相依套件可安全移除：
 
-   - geomet
    - ckanext-repeating
    - DataPusher
 

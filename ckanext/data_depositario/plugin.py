@@ -1,6 +1,7 @@
 from logging import getLogger
 
 from calendar import monthrange
+from collections import OrderedDict
 from datetime import date
 from datetime import datetime
 from dateutil.parser import parse
@@ -8,14 +9,15 @@ import ckan.plugins as p
 import ckan.logic as logic
 from ckan.logic.action.create import user_create as ckan_user_create
 import ckan.model as model
-from ckan.common import json
-from ckan.common import OrderedDict
+from ckan.common import json, _
 import ckan.lib.mailer as mailer
+import ckan.lib.helpers as h
 from ckan.lib.plugins import DefaultTranslation
 from ckanext.scheming import helpers as scheming_helpers
 from ckanext.depositar_theme import helpers as theme_helpers
 
 from ckanext.data_depositario import helpers
+from ckanext.data_depositario import routes
 from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
 
@@ -40,14 +42,14 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     p.implements(p.IPackageController, inherit=True)
     p.implements(p.IFacets)
     p.implements(p.IValidators)
-    p.implements(p.IRoutes, inherit=True)
+    p.implements(p.IBlueprint, inherit=True)
     p.implements(p.IActions)
 
     ## IConfigurer
     def update_config(self, config):
         p.toolkit.add_template_directory(config, 'templates')
         p.toolkit.add_public_directory(config, 'public')
-        p.toolkit.add_resource('fanstatic', 'ckanext-data-depositario')
+        p.toolkit.add_resource('public', 'ckanext-data-depositario')
 
     ## IPackageController
     def before_search(self, search_params):
@@ -73,6 +75,8 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         return search_params
 
     def before_index(self, data_dict):
+        if data_dict['type'] != 'dataset':
+            return data_dict
         for field_name in ['data_type', 'language']:
             value = data_dict.get(field_name)
             try:
@@ -101,6 +105,8 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         facets = search_results.get('search_facets')
         results = search_results.get('results')
         if not facets or not results:
+            return search_results
+        if results[0]['type'] != 'dataset':
             return search_results
         schema = scheming_helpers.scheming_get_dataset_schema(results[0]['type'])
         for facet in facets.values():
@@ -147,7 +153,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     ## ITemplateHelpers
     def get_helpers(self):
         function_names = (
-            'extras_to_dict',
             'get_default_slider_values',
             'get_date_url_param',
             'get_gmap_config',
@@ -159,18 +164,9 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         )
         return _get_module_functions(helpers, function_names)
 
-    ## IRoutes
-    def before_map(self, map):
-        map.connect('/user/register',
-            controller='ckanext.data_depositario.controller:CustomUserController',
-            action='register')
-        return map
-
-    def after_map(self, map):
-        map.connect('help', '/help',
-            controller='ckanext.data_depositario.controller:HelpController',
-            action='index')
-        return map
+    ## IBlueprint
+    def get_blueprint(self):
+        return routes.blueprints
 
     ## IActions
     def get_actions(self):
@@ -186,12 +182,12 @@ def _get_module_functions(module, function_names):
 def _add_facets(facets_dict, group=False):
     new_facets_dict = OrderedDict([
         ('keywords_facet', ''),
-        facets_dict.items()[2],
+        list(facets_dict.items())[2],
         ('data_type_facet', p.toolkit._('Data Type')),
         ('organization', p.toolkit._('Projects')),
         ('groups', p.toolkit._('Topics')),
         ('language_facet', p.toolkit._('Language'))
-    ] + facets_dict.items()[3:])
+    ] + list(facets_dict.items())[3:])
 
     if not group:
         new_facets_dict['date_facet'] = ''
@@ -241,7 +237,12 @@ def user_create(context, data_dict):
         # Reset the created user's password immediately
         try:
             theme_helpers.send_reg_link(user)
-        except mailer.MailerException, e:
-            log.debug('Could not send reset link: %s' % unicode(e))
+        except mailer.MailerException as e:
+            h.flash_error(
+                _(u'Error sending the email. Try again later '
+                  'or contact an administrator for help')
+            )
+            log.exception(e)
+            return h.redirect_to(u'/')
 
     return user_dict

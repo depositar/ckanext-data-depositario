@@ -2,7 +2,7 @@
 自原始碼安裝
 ============
 
-本節將描述如何自原始碼安裝本平台（|site_name|）使用之 CKAN 軟體。示範系統為 Ubuntu 16.04。
+本節將描述如何自原始碼安裝本平台（|site_name|）使用之 CKAN 軟體。示範系統為 Ubuntu 18.04。
 
 ---------------
 1. 安裝必須套件
@@ -10,7 +10,7 @@
 
 .. parsed-literal::
 
-   sudo apt-get install build-essential libxslt1-dev libxml2-dev python-dev postgresql libpq-dev python-pip python-virtualenv git-core openjdk-8-jdk redis-server
+   sudo apt install python3-dev postgresql libpq-dev python3-pip python3-venv git openjdk-8-jdk redis-server
 
 -------------------------------
 2. 安裝 CKAN 於 Python 虛擬環境
@@ -22,7 +22,7 @@ a. 新增一個 Python 虛擬環境（virtualenv）供 CKAN 使用，並進入�
 
       sudo mkdir -p /usr/lib/ckan/default
       sudo chown \`whoami\` /usr/lib/ckan/default
-      virtualenv --no-site-packages /usr/lib/ckan/default
+      python3 -m venv /usr/lib/ckan/default
       . /usr/lib/ckan/default/bin/activate
 
    .. important::
@@ -47,39 +47,35 @@ b. 安裝建議的 setuptools 版本
 
    .. parsed-literal::
 
-      pip install setuptools==36.1
+      pip install setuptools==44.1.0
+      pip install --upgrade pip
 
 c. 安裝 CKAN
 
    .. parsed-literal::
 
-      pip install -e 'git+git://github.com/depositar-io/ckan.git#egg=ckan'
+      pip install -e 'git+git://github.com/depositar/ckan.git#egg=ckan[requirements]'
 
 d. 安裝本平台客製套件
 
    .. parsed-literal::
 
-      pip install -e 'git+https://github.com/depositar-io/ckanext-data-depositario.git#egg=ckanext-data-depositario'
+      pip install -e 'git+https://github.com/depositar/ckanext-data-depositario.git#egg=ckanext-data-depositario'
 
-e. 安裝 CKAN 所需 Python 套件
-
-   .. parsed-literal::
-
-      pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
-
-f. 安裝本平台客製套件所需 Python 套件
+e. 安裝本平台客製套件所需 Python 套件
 
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
 
-g. 安裝其他所需 Python 套件
+f. 安裝其他所需 Python 套件
 
    .. parsed-literal::
 
-      pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements-py2.txt
+      pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements.txt
       pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
+      pip install -r /usr/lib/ckan/default/src/ckanext-harvest/pip-requirements.txt
 
 ----------------------
 3. 建立 FileStore 目錄
@@ -117,9 +113,9 @@ c. 安裝 PostGIS
 
    .. parsed-literal::
 
-      sudo apt-get install postgresql-9.5-postgis-2.2 python-dev libxml2-dev libxslt1-dev libgeos-c1v5
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/9.5/contrib/postgis-2.2/postgis.sql
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/9.5/contrib/postgis-2.2/spatial_ref_sys.sql
+      sudo apt-get install postgresql-10-postgis-2.4 python3-dev libxml2-dev libxslt1-dev libgeos-c1v5
+      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/10/contrib/postgis-2.4/postgis.sql
+      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/10/contrib/postgis-2.4/spatial_ref_sys.sql
       sudo -u postgres psql -d ckan_default -c 'ALTER VIEW geometry_columns OWNER TO ckan_default;'
       sudo -u postgres psql -d ckan_default -c 'ALTER TABLE spatial_ref_sys OWNER TO ckan_default;'
 
@@ -141,8 +137,8 @@ e. （供本平台管理員資訊）自已備份資料庫還原
 
    .. parsed-literal::
 
-      gunzip -c main_db.sql.gz | sudo -u postgres psql ckan_default
-      gunzip -c datastore_db.sql.gz | sudo -u postgres psql datastore_default
+      cat main_db.sql.gz | gunzip | sudo -u postgres psql ckan_default
+      cat datastore_db.sql.gz | gunzip | sudo -u postgres psql datastore_default
 
 -------------------------
 5. 建立與修改 CKAN 設定檔
@@ -155,7 +151,7 @@ a. 新增放置 CKAN 設定檔之目錄
       sudo mkdir -p /etc/ckan/default
       sudo chown -R \`whoami\` /etc/ckan/
 
-b. 透過 paster 新增範例設定檔
+b. 新增設定檔
 
    .. important::
 
@@ -169,9 +165,10 @@ b. 透過 paster 新增範例設定檔
 
    .. parsed-literal::
 
-      paster make-config ckan /etc/ckan/default/development.ini
+      ckan generate config /etc/ckan/default/ckan.ini
+      ckan config-tool /etc/ckan/default/ckan.ini -f /usr/lib/ckan/default/src/ckanext-data-depositario/config/custom_options.ini
 
-c. 修改前面新增的 development.ini 檔案中對應之設定如下
+c. 修改前面新增的 ckan.ini 檔案中對應之設定如下
 
    .. note::
 
@@ -190,44 +187,24 @@ c. 修改前面新增的 development.ini 檔案中對應之設定如下
       ## pass 請填寫 DataStore 資料庫密碼
       ckan.datastore.read_url = postgresql://datastore_default:pass@localhost/datastore_default
 
-      ## Site Settings
-      ckan.site_url = http://127.0.0.1:5000
-
-      ## Plugins Settings
-      ckan.plugins = dcat depositar_iso639 data_depositario depositar_theme
-                     citation wikidatakeyword dcat_json_interface structured_data
-                     stats datastore xloader
-                     resource_proxy recline_view text_view image_view
-                     webpage_view recline_grid_view recline_map_view
-                     pdf_view spatial_metadata spatial_query
-                     geo_view geojson_view wmts_view shp_view scheming_datasets
-
-      ## Front-End Settings
-      licenses_group_url = file:///usr/lib/ckan/default/src/ckanext-data-depositario/ckanext/data_depositario/public/license_list.json
-
-      ## Storage Settings
-      ckan.storage_path = /var/lib/ckan/default
+      ## 以下需自行新增於 Logging configuration 上方
 
       ## Schema Settings
-      ## 需自行新增
       scheming.presets = ckanext.scheming:presets.json
                          ckanext.data_depositario:presets.json
                          ckanext.wikidatakeyword:presets.json
       scheming.dataset_schemas = ckanext.data_depositario.schemas:dataset.yaml
 
       ## Spatial Settings
-      ## 需自行新增
       ckanext.spatial.search_backend = solr-spatial-field
 
       ## DCAT Settings
-      ## 需自行新增
       ckanext.dcat.rdf.profiles = dcat
       ckanext.dcat.translate_keys = False
       ckanext.dcat.enable_content_negotiation = True
 
       ## ckanext-data-depositario Settings
-      ## 需自行新增
-      ## GMAP_AKI_KEY請填入申請之 Google Maps API key
+      ## GMAP_AKI_KEY 請填入申請之 Google Maps API key
       ckanext.data_depositario.gmap.api_key = GMAP_AKI_KEY
       ## GA_ID 請填入申請之 Google Analytics id
       ckanext.data_depositario.googleanalytics.id = GA_ID
@@ -264,7 +241,7 @@ c. 建立供 CKAN 使用之 Solr configset
       sudo -u solr touch /var/solr/data/configsets/ckan/conf/protwords.txt
       sudo -u solr touch /var/solr/data/configsets/ckan/conf/synonyms.txt
 
-d. 下載中文斷詞函式庫 ``mmesg4j``，並複製至 Solr 目錄
+d. 下載中文斷詞函式庫 ``mmseg4j``，並複製至 Solr 目錄
 
    .. parsed-literal::
 
@@ -293,66 +270,49 @@ h. 在瀏覽器輸入以下連結，以建立供 CKAN 使用之 Solr Core（此�
 
 i. 打開瀏覽器，前往 http://127.0.0.1:8983/solr/#/ckan ，若能看到畫面則代表安裝完成
 
-j. 修改 /etc/ckan/default/development.ini，指定 Solr 連線位址
-
-   .. parsed-literal::
-
-      solr_url = http://127.0.0.1:8983/solr/ckan
-
----------------
-7. 初始化資料庫
----------------
-
-.. important::
-
-   （供本平台管理員資訊）請忽略此步驟。
-
-a. 透過 paster 指令初始化 CKAN 資料庫
-
-   .. parsed-literal::
-
-      paster --plugin=ckan db init -c /etc/ckan/default/development.ini
-
-b. 如果一切正常，則會看到此訊息：Initialising DB: SUCCESS
-
-c. DataStore 資料庫設定
-
-   .. parsed-literal::
-
-      paster --plugin=ckan datastore set-permissions -c /etc/ckan/default/development.ini | sudo -u postgres psql --set ON_ERROR_STOP=1
-      wget -O- https://github.com/ckan/ckanext-xloader/raw/master/full_text_function.sql | sudo -u postgres psql datastore_default
-
 --------------------
-8. 建立 who.ini link
+7. 建立 who.ini link
 --------------------
 
 .. parsed-literal::
 
    ln -s /usr/lib/ckan/default/src/ckan/who.ini /etc/ckan/default/who.ini
 
+---------------
+8. 初始化資料庫
+---------------
+
+.. important::
+
+   （供本平台管理員資訊）請忽略此步驟。
+
+a. 初始化 CKAN 資料庫
+
+   .. parsed-literal::
+
+      ckan -c /etc/ckan/default/ckan.ini db init
+
+   如果一切正常，則會看到此訊息：Initialising DB: SUCCESS
+
+b. DataStore 資料庫設定
+
+   .. parsed-literal::
+
+      ckan -c /etc/ckan/default/ckan.ini datastore set-permissions | sudo -u postgres psql --set ON_ERROR_STOP=1
+
 ------------------------
-9. 新增 CKAN 系統管理者
+9. 設定 CKAN 系統管理者
 ------------------------
 
 .. important::
 
    （供本平台管理員資訊）請忽略此步驟。
 
-請依序執行以下指令，以新增 CKAN 系統管理者
+請執行以下指令，以修改預設 CKAN 系統管理者密碼（帳號為 default）
 
 .. parsed-literal::
 
-   paster --plugin=ckan sysadmin add admin email=admin@localhost -c /etc/ckan/default/development.ini
-   paster --plugin=ckan sysadmin add admin -c /etc/ckan/default/development.ini
-   paster --plugin=pylons shell /etc/ckan/default/development.ini
-   並於出現的提示介面中依序執行
-   model.User.get('admin').state = 'active'
-   model.Session.commit()
-   後再以 Ctrl+D 離開提示介面
-
-.. note::
-
-   admin 請代換為您需要的使用者名稱，並依照程式提示設定密碼。
+   ckan -c /etc/ckan/default/ckan.ini user setpass default
 
 --------------------
 10. 在開發環境下執行
@@ -366,13 +326,13 @@ a. 執行 XLoader
 
    .. parsed-literal::
 
-      paster --plugin=ckan jobs -c /etc/ckan/default/development.ini worker
+      ckan -c /etc/ckan/default/ckan.ini jobs worker
 
-b. 開啟另一終端機視窗，並透過 paster 指令啟動新安裝的 CKAN 網站
+b. 開啟另一終端機視窗，並透過啟動新安裝的 CKAN 網站
 
    .. parsed-literal::
 
       . /usr/lib/ckan/default/bin/activate
-      paster serve /etc/ckan/default/development.ini
+      ckan -c /etc/ckan/default/ckan.ini run
 
 c. 打開瀏覽器，前往 http://127.0.0.1:5000/ ，若能看到網站畫面即表示安裝完成。

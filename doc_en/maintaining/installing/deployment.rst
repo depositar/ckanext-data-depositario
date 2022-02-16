@@ -2,55 +2,48 @@
 Deploying a source install
 ==========================
 
-Since CKAN is written mainly in Pylons and supports WSGI,
+Since CKAN is written mainly in Flask and supports WSGI,
 CKAN can be used with a number of different web server and deployment configurations.
 
-This guide explains how to deploy CKAN using Gunicorn and proxied 
-with Nginx on an Ubuntu server. These instructions have been tested on Ubuntu 16.04.
+This guide explains how to deploy CKAN using uwsgi and proxied with nginx.
 
------------------------------------
-1. Create a ``production.ini`` file
------------------------------------
+------------------------------
+1. Create the WSGI script file
+------------------------------
+
+.. parsed-literal::
+
+   sudo cp /usr/lib/ckan/default/src/ckan/wsgi.py /etc/ckan/default/
+
+-------------------------
+2. Create the WSGI Server
+-------------------------
+
+Install uwsgi into a Python virtual environment and create the configuration file:
+
+.. parsed-literal::
+
+   . /usr/lib/ckan/default/bin/activate
+   pip install uwsgi
+   sudo cp /usr/lib/ckan/default/src/ckan/ckan-uwsgi.ini /etc/ckan/default/
+
+Edit the /etc/ckan/default/ckan-uwsgi.ini and replace the uid and pid with
+the owner of the virtual environment.
+
+--------------------------------
+3. Modify the configuration file
+--------------------------------
 
 .. important::
 
    (For |site_name| administrator) Please ignore this step
-   and use ``production.ini`` the in the ``configs.tar.gz``.
+   and use the backed up ``production.ini``.
 
-.. parsed-literal::
-
-   cp /etc/ckan/default/development.ini /etc/ckan/default/production.ini
-
--------------------------------------
-2. Modify the ``production.ini`` file
--------------------------------------
-
-.. important::
-
-   (For |site_name| administrator) Please ignore this step.
-
-Edit the production.ini  file in a text editor, changing the [server:main] and [app:main] sections
+Edit the production.ini file in a text editor, changing the [app:main] sections
 as follows:
 
 .. parsed-literal::
 
-   [server:main]
-   #use = egg:Paste#http
-   #host = 0.0.0.0
-   #port = 5000
-   use = egg:gunicorn#main
-   bind = unix:/var/run/gunicorn/ckan_socket.sock
-   preload = true
-   ## The Error log file to write to.
-   errorlog = /etc/ckan/default/ckan.log
-   loglevel = warning
-   ## ``USER`` is the owner of ``/etc/ckan/default``
-   user = USER
-   group = www-data
-   umask = 0113
-
-   [app:main]
-   ...
    ## Site Settings
 
    ckan.site_url = http://127.0.0.1
@@ -59,130 +52,96 @@ as follows:
    ## Refer to the CKAN database
    ckanext.xloader.jobs_db.uri = postgresql://ckan_default:pass@localhost/ckan_default
 
--------------------
-3. Install Gunicorn
--------------------
-
-Install Gunicorn into a Python virtual environment:
+---------------------
+4. Install Supervisor
+---------------------
 
 .. parsed-literal::
 
-   . /usr/lib/ckan/default/bin/activate
-   pip install gunicorn
+   sudo apt-get install supervisor
 
 ----------------------------------
-4. Set the startup script for CKAN
+5. Set the startup script for CKAN
 ----------------------------------
 
-a. Create a Systemd service for CKAN:
+a. Create the Supervisor configuration for CKAN:
 
    .. parsed-literal::
 
-      sudo vi /etc/systemd/system/ckan.service
+      sudo vi /etc/supervisor/conf.d/ckan-uwsgi.conf
 
 b. In the vi editor, add the following contents:
 
    .. parsed-literal::
 
-      [Unit]
-      Description=Gunicorn instance to serve CKAN
-      After=network.target
+      [program:ckan-uwsgi]
 
-      [Service]
-      WorkingDirectory=/usr/lib/ckan/default/src/ckan
-      RuntimeDirectory=gunicorn
-      ExecStart=/usr/lib/ckan/default/bin/gunicorn --paste /etc/ckan/default/production.ini
-      ExecReload=/bin/kill -s HUP $MAINPID
-      ExecStop=/bin/kill -s TERM $MAINPID
-      StandardError=syslog
-      PrivateTmp=true
+      command=/usr/lib/ckan/default/bin/uwsgi -i /etc/ckan/default/ckan-uwsgi.ini
 
-      [Install]
-      WantedBy=multi-user.target
+      ; Start just a single worker. Increase this number if you have many or
+      ; particularly long running background jobs.
+      numprocs=1
+      process_name=%(program_name)s-%(process_num)02d
 
-c. Start the Systemd service:
+      ; Log files - change this to point to the existing CKAN log files
+      stdout_logfile=/etc/ckan/default/uwsgi.OUT
+      stderr_logfile=/etc/ckan/default/uwsgi.ERR
 
-   .. parsed-literal::
+      ; Make sure that the worker is started on system start and automatically
+      ; restarted if it crashes unexpectedly.
+      autostart=true
+      autorestart=true
 
-      sudo systemctl enable ckan
+      ; Number of seconds the process has to run before it is considered to have
+      ; started successfully.
+      startsecs=10
 
-d. To start the installed service, run the following command:
+      ; Need to wait for currently executing tasks to finish at shutdown.
+      ; Increase this if you have very long running tasks.
+      stopwaitsecs = 600
 
-   .. parsed-literal::
-
-      sudo service ckan start
-
-e. You can check the site status via:
-
-   .. parsed-literal::
-
-      sudo service ckan status
-
-   You should now be able to see the following output:
-
-   .. parsed-literal::
-
-      ● ckan.service - Gunicorn instance to serve CKAN
-         Loaded: loaded (/etc/systemd/system/ckan.service; enabled; vendor preset: enabled)
-         Active: active (running) since Thr 2017-12-14 14:36:37 CST; 2s ago
-        Process: 20152 ExecStop=/bin/kill -s TERM $MAINPID (code=exited, status=0/SUCCESS)
-       Main PID: 20191 (gunicorn)
-          Tasks: 2
-         Memory: 88.0M
-            CPU: 1.596s
-         CGroup: /system.slice/ckan.service
-                 ├─20191 /usr/lib/ckan/default/bin/python2 /usr/lib/ckan/default/bin/gunicorn --paste /etc/ckan/default/production.ini
-                 └─20198 /usr/lib/ckan/default/bin/python2 /usr/lib/ckan/default/bin/gunicorn --paste /etc/ckan/default/production.ini
-
-f. You can stop the Systemd service by:
-
-   .. parsed-literal::
-
-      sudo service ckan stop
+      ; Required for uWSGI as it does not obey SIGTERM.
+      stopsignal=QUIT
 
 -------------------------------------
-5. Set the startup script for XLoader
+6. Set the startup script for XLoader
 -------------------------------------
 
 .. note::
 
    This XLoader is a service that automatically uploads data to the DataStore from suitable files (like CSV or Excel files), whether uploaded to CKAN’s FileStore or externally linked.
 
-a. Install Supervisor:
+.. parsed-literal::
 
-   .. parsed-literal::
+   sudo mkdir -p /var/log/ckan
+   sudo cp /usr/lib/ckan/default/src/ckan/ckan/config/supervisor-ckan-worker.conf /etc/supervisor/conf.d
 
-      sudo apt install supervisor
+---------------------
+7. Restart Supervisor
+---------------------
 
-b. Copy the configuration file template:
+.. parsed-literal::
 
-   .. parsed-literal::
+   sudo service supervisor restart
 
-      sudo cp /usr/lib/ckan/default/src/ckan/ckan/config/supervisor-ckan-worker.conf /etc/supervisor/conf.d
+You can check the status via:
 
-c. Restart Supervisor:
+.. parsed-literal::
 
-   .. parsed-literal::
+   sudo supervisorctl status
 
-      sudo service supervisor restart
+You can restart the workers via:
 
-d. You can check the status via:
+.. parsed-literal::
 
-   .. parsed-literal::
-
-      sudo supervisorctl status
-
-e. You can restart the worker via:
-
-   .. parsed-literal::
-
-      sudo supervisorctl restart ckan-worker:*
+   sudo supervisorctl restart ckan-uwsgi:*
+   sudo supervisorctl restart ckan-worker:*
 
 --------------------------
-6. Install and setup Nginx
+8. Install and setup nginx
 --------------------------
 
-a. Install Nginx:
+a. Install nginx:
 
    .. parsed-literal::
 
@@ -194,45 +153,39 @@ following contents:
    .. parsed-literal::
 
       proxy_cache_path /tmp/nginx_cache levels=1:2 keys_zone=cache:30m max_size=250m;
+      proxy_temp_path /tmp/nginx_proxy 1 2;
 
       server {
-          listen 80;
-          server_name 127.0.0.1;
-          client_max_body_size 1000M;
-          access_log /var/log/nginx/ckan_access.log;
-          error_log /var/log/nginx/ckan_error.log error;
-
+          client_max_body_size 100M;
           location / {
-              try_files $uri @proxy_to_app;
-          }
-
-          location @proxy_to_app {
-              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-              # enable this if and only if you use HTTPS
-              # proxy_set_header X-Forwarded-Proto https;
-              proxy_set_header Host $http_host;
-              # we don't want nginx trying to do something clever with
-              # redirects, we set the Host: header above already.
-              proxy_redirect off;
-              proxy_pass http://unix:/var/run/gunicorn/ckan_socket.sock;
+              proxy_pass http://127.0.0.1:8080/;
+              proxy_set_header X-Forwarded-For $remote_addr;
+              proxy_set_header Host $host;
+              proxy_cache cache;
+              proxy_cache_bypass $cookie_auth_tkt;
+              proxy_no_cache $cookie_auth_tkt;
+              proxy_cache_valid 30m;
+              proxy_cache_key $host$scheme$proxy_host$request_uri;
+              # In emergency comment out line to force caching
+              # proxy_ignore_headers X-Accel-Expires Expires Cache-Control;
           }
       }
 
-c. To prevent conflicts, disable your default Nginx sites. Finally, enable your CKAN site in Nginx:
+c. To prevent conflicts, disable your default nginx sites. Finally, enable your CKAN site in nginx:
 
    .. parsed-literal::
 
       sudo rm /etc/nginx/sites-enabled/default
       sudo ln -s /etc/nginx/sites-available/ckan /etc/nginx/sites-enabled/ckan
 
-d. Restart Nginx:
+d. Restart nginx:
 
    .. parsed-literal::
 
       sudo service nginx restart
 
 ----------------
-7. Test the site
+9. Test the site
 ----------------
 
 You should now be able to visit your server (at http://127.0.0.1) in a web browser

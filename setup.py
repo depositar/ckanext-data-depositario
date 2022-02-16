@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '6.4.6'
+version = '6.5.0b'
 
 entry_points = {
     'ckan.plugins': [
@@ -44,7 +44,7 @@ setup(
     message_extractors={
         'ckanext': [
             ('**.py', 'python', None),
-            ('**/fanstatic/scripts/vendor/**.js', 'ignore', None),
+            ('**/public/scripts/vendor/**.js', 'ignore', None),
             ('**.js', 'javascript', None),
             ('**/templates/**.html', 'ckan', None),
         ],
