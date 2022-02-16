@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.4.6b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.5.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-09-09 13:56+0800\n"
+"POT-Creation-Date: 2022-02-16 17:01+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -17,53 +17,29 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.7.0\n"
 
-#: ckanext/data_depositario/controller.py:67
-#, python-format
-msgid "Unauthorized to create user %s"
-msgstr "沒有權限建立使用者%s"
-
-#: ckanext/data_depositario/controller.py:69
-msgid "User not found"
-msgstr "使用者不存在"
-
-#: ckanext/data_depositario/controller.py:71
-msgid "Integrity Error"
-msgstr "完整性錯誤"
-
-#: ckanext/data_depositario/controller.py:73
-msgid "Bad Captcha. Please try again."
-msgstr "驗證碼錯誤，請再試一次。"
-
-#: ckanext/data_depositario/controller.py:81
-msgid "Please check your inbox to set your password."
-msgstr "請至信箱收信，並依通知信指示設定密碼。"
-
-#: ckanext/data_depositario/controller.py:87
-#, python-format
-msgid ""
-"User \"%s\" is now registered but you are still logged in as \"%s\" from "
-"before"
-msgstr "使用者 \"%s\" 已經註冊，但你仍以 \"%s\" 登入中"
-
-#: ckanext/data_depositario/plugin.py:190
+#: ckanext/data_depositario/plugin.py:186
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:191
-#: ckanext/data_depositario/templates/header.html:34
+#: ckanext/data_depositario/plugin.py:187
 msgid "Projects"
 msgstr "專案"
 
-#: ckanext/data_depositario/plugin.py:192
-#: ckanext/data_depositario/templates/header.html:33
+#: ckanext/data_depositario/plugin.py:188
 msgid "Topics"
 msgstr "主題"
 
-#: ckanext/data_depositario/plugin.py:193
+#: ckanext/data_depositario/plugin.py:189
 msgid "Language"
 msgstr "語言"
+
+#: ckanext/data_depositario/plugin.py:242
+msgid ""
+"Error sending the email. Try again later or contact an administrator for "
+"help"
+msgstr "無法傳送電子郵件。請再次嘗試或聯繫系統管理員尋求協助"
 
 #: ckanext/data_depositario/validators.py:24
 msgid "Must be a valid longitude coordinate"
@@ -85,59 +61,91 @@ msgstr "日期格式不正確"
 msgid "End time should be greater than              or equal to start time"
 msgstr "結束時間需晚於或等於起始時間"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:26
+#: ckanext/data_depositario/public/scripts/user-guide.js:26
 msgid "Skip"
 msgstr "略過"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:27
+#: ckanext/data_depositario/public/scripts/user-guide.js:27
 msgid "Confirm"
 msgstr "確認"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:31
+#: ckanext/data_depositario/public/scripts/user-guide.js:31
 msgid "Here you can search datasets by a keyword."
 msgstr "您可以在此進行關鍵字搜尋。"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:35
+#: ckanext/data_depositario/public/scripts/user-guide.js:35
 msgid "Here you can search datasets by the map."
 msgstr "您可以在此進行空間搜尋。"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:40
+#: ckanext/data_depositario/public/scripts/user-guide.js:40
 msgid "Here you can search datasets by a period of time."
 msgstr "您可以在此進行時間搜尋。"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:45
+#: ckanext/data_depositario/public/scripts/user-guide.js:45
 msgid "Here you can filter datasets."
 msgstr "您可以在此過濾資料集。"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:50
+#: ckanext/data_depositario/public/scripts/user-guide.js:50
 msgid "The matched datasets will list here."
 msgstr "符合搜尋條件的資料集將顯示在這裡。"
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:55
+#: ckanext/data_depositario/public/scripts/user-guide.js:55
 msgid "Click this question mark to show this help again."
 msgstr "點選此問號按鈕再次觀看導覽。"
 
-#: ckanext/data_depositario/fanstatic/scripts/modules/parcel-corner-to-geojson.js:23
+#: ckanext/data_depositario/public/scripts/modules/parcel-corner-to-geojson.js:23
 msgid ""
 "The value of X.max (Y.max) must be greater than the value of X.min "
 "(Y.min)."
 msgstr "X (Y) 之最小值需小於最大值"
 
-#: ckanext/data_depositario/fanstatic/scripts/modules/parcel-corner-to-geojson.js:41
+#: ckanext/data_depositario/public/scripts/modules/parcel-corner-to-geojson.js:41
 msgid "Please fill in parcel corner coordinates."
 msgstr "請輸入完整四至座標資訊"
 
-#: ckanext/data_depositario/fanstatic/scripts/modules/select2-pagination.js:46
+#: ckanext/data_depositario/public/scripts/modules/select2-pagination.js:46
 msgid "No matches found"
 msgstr "沒有匹配的資料"
 
-#: ckanext/data_depositario/fanstatic/scripts/modules/slug-preview-slug-hash.js:31
+#: ckanext/data_depositario/public/scripts/modules/slug-preview-slug-hash.js:31
 msgid "URL"
 msgstr "網址"
 
-#: ckanext/data_depositario/fanstatic/scripts/modules/slug-preview-slug-hash.js:32
+#: ckanext/data_depositario/public/scripts/modules/slug-preview-slug-hash.js:32
 msgid "Edit"
 msgstr "編輯"
+
+#: ckanext/data_depositario/routes/user.py:39
+msgid "Unauthorized to register as a user."
+msgstr "沒有權限註冊為使用者"
+
+#: ckanext/data_depositario/routes/user.py:54
+msgid "Integrity Error"
+msgstr "完整性錯誤"
+
+#: ckanext/data_depositario/routes/user.py:60
+msgid "Bad Captcha. Please try again."
+msgstr "驗證碼錯誤，請再試一次。"
+
+#: ckanext/data_depositario/routes/user.py:67
+#, python-format
+msgid "Unauthorized to create user %s"
+msgstr "沒有權限建立使用者%s"
+
+#: ckanext/data_depositario/routes/user.py:69
+msgid "User not found"
+msgstr "使用者不存在"
+
+#: ckanext/data_depositario/routes/user.py:79
+#, python-format
+msgid ""
+"User \"%s\" is now registered but you are still logged in as \"%s\" from "
+"before"
+msgstr "使用者 \"%s\" 已經註冊，但你仍以 \"%s\" 登入中"
+
+#: ckanext/data_depositario/routes/user.py:90
+msgid "Please check your inbox to set your password."
+msgstr "請至信箱收信，並依通知信指示設定密碼。"
 
 #: ckanext/data_depositario/templates/footer.html:6
 msgid "Contact Us"
@@ -147,198 +155,37 @@ msgstr "聯絡我們"
 msgid "About depositar"
 msgstr "關於研究資料寄存所 (depositar)"
 
-#: ckanext/data_depositario/templates/footer.html:13
+#: ckanext/data_depositario/templates/footer.html:12
 msgid "CKAN API"
 msgstr "CKAN API"
 
-#: ckanext/data_depositario/templates/footer.html:13
+#: ckanext/data_depositario/templates/footer.html:12
 msgid "Site Statistics"
 msgstr "網站統計"
 
-#: ckanext/data_depositario/templates/footer.html:13
+#: ckanext/data_depositario/templates/footer.html:12
 msgid "Site Status"
 msgstr "網站狀態"
 
-#: ckanext/data_depositario/templates/footer.html:13
-#: ckanext/data_depositario/templates/header.html:36
-#: ckanext/data_depositario/templates/home/help.html:3
-#: ckanext/data_depositario/templates/home/help.html:7
+#: ckanext/data_depositario/templates/footer.html:12
 msgid "Help"
 msgstr "支援"
 
-#: ckanext/data_depositario/templates/footer.html:14
+#: ckanext/data_depositario/templates/footer.html:13
 msgid "Terms of Use"
 msgstr "使用條款"
 
-#: ckanext/data_depositario/templates/footer.html:14
+#: ckanext/data_depositario/templates/footer.html:13
 msgid "Privacy Policy"
 msgstr "隱私政策"
 
-#: ckanext/data_depositario/templates/footer.html:19
+#: ckanext/data_depositario/templates/footer.html:18
 msgid ""
 "<p>Source code available on <a href=\"https://github.com/depositar/\" "
 "class=\"external\" target=\"_blank\">GitHub.</a></p>"
 msgstr ""
 "<p>程式碼可於 <a href=\"https://github.com/depositar/\" class=\"external\" "
 "target=\"_blank\">GitHub</a> 取得。</p>"
-
-#: ckanext/data_depositario/templates/header.html:32
-msgid "Datasets"
-msgstr "資料集"
-
-#: ckanext/data_depositario/templates/header.html:35
-msgid "About"
-msgstr "關於"
-
-#: ckanext/data_depositario/templates/theme.html:3
-msgid "Filter by location"
-msgstr "空間搜尋"
-
-#: ckanext/data_depositario/templates/home/help.html:14
-msgid "Your browser does not support iframes."
-msgstr "你的瀏覽器不支援此頁框"
-
-#: ckanext/data_depositario/templates/home/snippets/about_text.html:5
-msgid ""
-" <h1>What is <em>depositar</em>?</h1> <p><em>depositar</em> — taking the "
-"term from the Portuguese/Spanish verb for <em>to deposit</em> — is an "
-"online repository for research data. The site <a "
-"href=\"https://data.depositar.io/\">data.depositar.io</a> is built by the"
-" researchers for the researchers. You are free to deposit, discover, and "
-"reuse datasets on <em>depositar</em> for all your research purposes.</p> "
-msgstr ""
-" <h1>什麼是「研究資料寄存所」(<em>depositar</em>)？</h1> <p><em>depositar</em> "
-"這個詞在葡萄牙語／西班牙語裡是<b>寄存</b>的意思，我們用它來稱呼這個線上寄存研究資料的所在。<a "
-"href=\"https://data.depositar.io/\">data.depositar.io</a> "
-"這網站是由研究人員依據研究人員的需求所建立的。為了研究目的，您可在<b>研究資料寄存所</b>上面自由的儲存、尋找、並再次使用研究資料。</p>"
-
-#: ckanext/data_depositario/templates/home/snippets/about_text.html:15
-msgid ""
-" <h2>Your datasets</h2> <p>Datasets — collections of tables, maps, "
-"documents, or other data files — are fast to upload and preview. Once "
-"uploaded, datasets have permanent links for all to reference and "
-"download. You are encouraged to annotate your datasets with rich metadata"
-" so that they can be better discovered. An intuitive interface is "
-"provided to support spatiotemporal description and query for datasets. "
-"Moreover, in <em>depositar</em> all datasets use keywords sourced from <a"
-" href=\"https://wikidata.org/\" class=\"external\" "
-"target=\"_blank\">Wikidata</a>! Datasets on <em>depositar</em> are inter-"
-"connected by their semantics. They are ready to be explored and "
-"reused.</p> "
-msgstr ""
-" <h2>您的資料集</h2> "
-"<p>資料集——表格、地圖、文件或其他資料檔案——在本平台上可以快速的上傳與預覽。上傳之後，資料集會有個永久的連結，供眾人下載和引用。建議您盡可能為資料集填寫詳細的後設資料，這將有助於他們被發現使用。本平台的使用介面相當直觀，並提供資料集的時空描述與查詢功能。此外，<b>研究資料寄存所</b>上面的資料集所使用的關鍵字都來自"
-" <a href=\"https://wikidata.org/\" class=\"external\" "
-"target=\"_blank\">Wikidata</a>! 所寄存的資料集經由語意相互連結，方便探索與再次使用。</p> "
-
-#: ckanext/data_depositario/templates/home/snippets/about_text.html:31
-msgid ""
-" <h2>Your projects</h2> <p>Research is team work, and <em>depositar</em> "
-"is built for collaborative research! After getting accounts on "
-"<em>depositar</em>, researchers can form projects to share datasets among"
-" themselves. Datasets can be put under access control, so that they "
-"remain private to project members. Metadata in <em>depositar</em> can be "
-"collaboratively edited, and different uploads of a dataset are versioned."
-" When it is time to release the data, there are several open licenses to "
-"choose from. Of course, data can be dedicated to the public domain "
-"too.</p> "
-msgstr ""
-" <h2>您的專案</h2> "
-"<p>研究是團隊工作，<b>研究資料寄存所</b>就是為了協同研究而建立的！在取得個人帳號之後，研究者就可建立專案，彼此分享資料集。資料集可設有取用限制，僅供專案成員使用。在研究資料寄存所，資料集的後設資料亦可以協同編輯。而且，更新上傳的同份資料集也留存不同的版本。研究資料到可公開釋出的時候，將有數種開放授權條款可供選擇。當然，也可以直接將資料貢獻到公眾領域"
-" (Public Domain)。</p> "
-
-#: ckanext/data_depositario/templates/home/snippets/about_text.html:44
-msgid ""
-" <h2>It's open and free!</h2> <p>The software for <em>depositar</em> is "
-"built on top of <a href=\"https://ckan.org/\" class=\"external\" "
-"target=\"_blank\">CKAN</a>, an open source software package for "
-"publishing open data. CKAN stands for <em>Comprehensive Knowledge Archive"
-" Network</em>. CKAN is a project from <a href=\"https://okfn.org/\" "
-"class=\"external\" target=\"_blank\">Open Knowledge International</a>, "
-"and is itself supported by a viable developer and user community. We "
-"customize and extend the CKAN codebase to better support research data "
-"management. Our extensions to CKAN are <a "
-"href=\"https://github.com/depositar/\" class=\"external\" "
-"target=\"_blank\">open source</a> too. The service provided by <a "
-"href=\"https://data.depositar.io/\">data.depositar.io</a> is experimental"
-" as of now. It is free for all academic use.</p> "
-msgstr ""
-" <h2>開放且自由使用</h2> <p><b>研究資料寄存所</b>此平台是基於 <a href=\"https://ckan.org/\" "
-"class=\"external\" target=\"_blank\">CKAN</a> 這套軟體建立的。CKAN (Comprehensive"
-" Knowledge Archive Network) 是一套用來發布開放資料的開放原始碼軟體，乃是「開放知識國際」(<a "
-"href=\"https://okfn.org/\" class=\"external\" target=\"_blank\">Open "
-"Knowledge International</a>) 此組織的一項專案產出，並由眾多開發者和用戶群所支持。我們客製化並擴充 CKAN "
-"的程式碼，以支援研究資料管理。我們新擴充的功能也採用<a href=\"https://github.com/depositar/\" "
-"class=\"external\" target=\"_blank\">開放原始碼</a>方式對外釋出。目前 <a "
-"href=\"https://data.depositar.io/\">data.depositar.io</a> "
-"所提供的服務仍屬實驗性質，可自由使用於學術用途。</p> "
-
-#: ckanext/data_depositario/templates/home/snippets/about_text.html:60
-#, python-format
-msgid ""
-" <h2>More about <em>depositar</em></h2> <p>Project <em>depositar</em> is "
-"a work in progress. Both <a href=\"https://github.com/depositar/\" "
-"class=\"external\" target=\"_blank\">source code</a> and <a "
-"href=\"%(doc_url)s\" class=\"external\" target=\"_blank\">user manual</a>"
-" are available. Please send comments and feedbacks to data.contact AT "
-"depositar.io.</p> <p>This work has been carried out in <a "
-"href=\"https://www.sinica.edu.tw/\" class=\"external\" "
-"target=\"_blank\">Academia Sinica</a>, Taiwan. It has been supported by "
-"the <a href=\"https://www.iis.sinica.edu.tw/\" class=\"external\" "
-"target=\"_blank\">Institute of Information Science</a> and the <a "
-"href=\"https://www.citi.sinica.edu.tw/\" class=\"external\" "
-"target=\"_blank\">Research Center for Information Technology "
-"Innovation</a> (both at Academia Sinica), and in part by research grants "
-"from the Ministry of Science and Technology of Taiwan. The project "
-"started from and remains as a collaboration with the <a "
-"href=\"http://gis.rchss.sinica.edu.tw/\" class=\"external\" "
-"target=\"_blank\">Center for GIS</a> at the Research Center for "
-"Humanities and Social Sciences, Academia Sinica.</p> <p>Developing "
-"<em>depositar</em> has been a team work. The following people, in "
-"alphabetical order, have been or were once in the project team: Tyng-Ruey"
-" Chuang (project lead), Ming-Syuan Ho (project manager), Andrea Wei-Ching"
-" Huang, Cheng-Jen Lee (tech lead), Hsiung-Ming Liao, Yen-Tsen Liu, Huang-"
-"Sin Syu, Ally Chia-Hsun Wang (project manager), Yu-Huang Wang, and Yao-"
-"Hsien Yeh.</p> "
-msgstr ""
-" <h2>關於「研究資料寄存所」的更多資訊</h2> <p><b>研究資料寄存所</b>是進行中的工作。<a "
-"href=\"https://github.com/depositar/\" class=\"external\" "
-"target=\"_blank\">原始程式碼</a>以及<a href=\"%(doc_url)s\" class=\"external\" "
-"target=\"_blank\">使用手冊</a>都可線上取得。任何使用上的意見與回饋，請寄到 data.contact AT "
-"depositar.io.</p> <p>這項工作在台灣的<a href=\"https://www.sinica.edu.tw/\" "
-"class=\"external\" target=\"_blank\">中央研究院</a>進行，得到中央研究院的<a "
-"href=\"https://www.iis.sinica.edu.tw/\" class=\"external\" "
-"target=\"_blank\">資訊科學研究所</a>以及<a "
-"href=\"https://www.citi.sinica.edu.tw/\" class=\"external\" "
-"target=\"_blank\">資訊科技創新研究中心</a>的支持，另外也得到台灣科技部的專題研究計畫的補助。這項計畫啟始於和同在中央研究院的<a"
-" href=\"http://gis.rchss.sinica.edu.tw/\" class=\"external\" "
-"target=\"_blank\">地理資訊科學研究專題中心</a>（隸屬於人文社會科學研究中心）的協力研究工作，並維持到現在。</p> "
-"<p><b>研究資料寄存所</b>的發展是一項團隊工作。目前或是曾經參與此計畫團隊的人員包括（按姓名英文字母序）：莊庭瑞（計畫主持）、何明諠（專案經理）、黃韋菁、李承錱（技術經理）、廖泫銘、劉彥岑、許煌鑫、王家薰（專案經理）、王豫煌，以及葉耀鮮。</p>"
-
-#: ckanext/data_depositario/templates/package/read_base.html:11
-msgid "History"
-msgstr "歷史紀錄"
-
-#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:7
-msgid "Revision"
-msgstr "版本"
-
-#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:8
-msgid "Timestamp"
-msgstr "變更的時間"
-
-#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:9
-msgid "Author"
-msgstr "作者"
-
-#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:10
-msgid "Log Message"
-msgstr "記錄訊息"
-
-#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:24
-#, python-format
-msgid "Read dataset as of %s"
-msgstr "閱讀資料集 %s"
 
 #: ckanext/data_depositario/templates/scheming/display_snippets/collapse_text.html:3
 #: ckanext/data_depositario/templates/scheming/display_snippets/collapse_text.html:6

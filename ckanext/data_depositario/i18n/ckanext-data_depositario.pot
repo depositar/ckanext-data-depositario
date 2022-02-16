@@ -1,67 +1,41 @@
 # Translations template for ckanext-data-depositario.
-# Copyright (C) 2021 ORGANIZATION
+# Copyright (C) 2022 ORGANIZATION
 # This file is distributed under the same license as the
 # ckanext-data-depositario project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.4.6b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.5.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-09-09 13:56+0800\n"
+"POT-Creation-Date: 2022-02-16 17:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.7.0\n"
 
-#: ckanext/data_depositario/controller.py:67
-#, python-format
-msgid "Unauthorized to create user %s"
-msgstr ""
-
-#: ckanext/data_depositario/controller.py:69
-msgid "User not found"
-msgstr ""
-
-#: ckanext/data_depositario/controller.py:71
-msgid "Integrity Error"
-msgstr ""
-
-#: ckanext/data_depositario/controller.py:73
-msgid "Bad Captcha. Please try again."
-msgstr ""
-
-#: ckanext/data_depositario/controller.py:81
-msgid "Please check your inbox to set your password."
-msgstr ""
-
-#: ckanext/data_depositario/controller.py:87
-#, python-format
-msgid ""
-"User \"%s\" is now registered but you are still logged in as \"%s\" from "
-"before"
-msgstr ""
-
-#: ckanext/data_depositario/plugin.py:190
+#: ckanext/data_depositario/plugin.py:186
 msgid "Data Type"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:191
-#: ckanext/data_depositario/templates/header.html:34
+#: ckanext/data_depositario/plugin.py:187
 msgid "Projects"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:192
-#: ckanext/data_depositario/templates/header.html:33
+#: ckanext/data_depositario/plugin.py:188
 msgid "Topics"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:193
+#: ckanext/data_depositario/plugin.py:189
 msgid "Language"
+msgstr ""
+
+#: ckanext/data_depositario/plugin.py:242
+msgid "Error sending the email. Try again later or contact an administrator for help"
 msgstr ""
 
 #: ckanext/data_depositario/validators.py:24
@@ -84,56 +58,88 @@ msgstr ""
 msgid "End time should be greater than              or equal to start time"
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:26
+#: ckanext/data_depositario/public/scripts/user-guide.js:26
 msgid "Skip"
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:27
+#: ckanext/data_depositario/public/scripts/user-guide.js:27
 msgid "Confirm"
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:31
+#: ckanext/data_depositario/public/scripts/user-guide.js:31
 msgid "Here you can search datasets by a keyword."
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:35
+#: ckanext/data_depositario/public/scripts/user-guide.js:35
 msgid "Here you can search datasets by the map."
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:40
+#: ckanext/data_depositario/public/scripts/user-guide.js:40
 msgid "Here you can search datasets by a period of time."
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:45
+#: ckanext/data_depositario/public/scripts/user-guide.js:45
 msgid "Here you can filter datasets."
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:50
+#: ckanext/data_depositario/public/scripts/user-guide.js:50
 msgid "The matched datasets will list here."
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/user-guide.js:55
+#: ckanext/data_depositario/public/scripts/user-guide.js:55
 msgid "Click this question mark to show this help again."
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/modules/parcel-corner-to-geojson.js:23
+#: ckanext/data_depositario/public/scripts/modules/parcel-corner-to-geojson.js:23
 msgid "The value of X.max (Y.max) must be greater than the value of X.min (Y.min)."
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/modules/parcel-corner-to-geojson.js:41
+#: ckanext/data_depositario/public/scripts/modules/parcel-corner-to-geojson.js:41
 msgid "Please fill in parcel corner coordinates."
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/modules/select2-pagination.js:46
+#: ckanext/data_depositario/public/scripts/modules/select2-pagination.js:46
 msgid "No matches found"
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/modules/slug-preview-slug-hash.js:31
+#: ckanext/data_depositario/public/scripts/modules/slug-preview-slug-hash.js:31
 msgid "URL"
 msgstr ""
 
-#: ckanext/data_depositario/fanstatic/scripts/modules/slug-preview-slug-hash.js:32
+#: ckanext/data_depositario/public/scripts/modules/slug-preview-slug-hash.js:32
 msgid "Edit"
+msgstr ""
+
+#: ckanext/data_depositario/routes/user.py:39
+msgid "Unauthorized to register as a user."
+msgstr ""
+
+#: ckanext/data_depositario/routes/user.py:54
+msgid "Integrity Error"
+msgstr ""
+
+#: ckanext/data_depositario/routes/user.py:60
+msgid "Bad Captcha. Please try again."
+msgstr ""
+
+#: ckanext/data_depositario/routes/user.py:67
+#, python-format
+msgid "Unauthorized to create user %s"
+msgstr ""
+
+#: ckanext/data_depositario/routes/user.py:69
+msgid "User not found"
+msgstr ""
+
+#: ckanext/data_depositario/routes/user.py:79
+#, python-format
+msgid ""
+"User \"%s\" is now registered but you are still logged in as \"%s\" from "
+"before"
+msgstr ""
+
+#: ckanext/data_depositario/routes/user.py:90
+msgid "Please check your inbox to set your password."
 msgstr ""
 
 #: ckanext/data_depositario/templates/footer.html:6
@@ -144,158 +150,34 @@ msgstr ""
 msgid "About depositar"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:13
+#: ckanext/data_depositario/templates/footer.html:12
 msgid "CKAN API"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:13
+#: ckanext/data_depositario/templates/footer.html:12
 msgid "Site Statistics"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:13
+#: ckanext/data_depositario/templates/footer.html:12
 msgid "Site Status"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:13
-#: ckanext/data_depositario/templates/header.html:36
-#: ckanext/data_depositario/templates/home/help.html:3
-#: ckanext/data_depositario/templates/home/help.html:7
+#: ckanext/data_depositario/templates/footer.html:12
 msgid "Help"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:14
+#: ckanext/data_depositario/templates/footer.html:13
 msgid "Terms of Use"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:14
+#: ckanext/data_depositario/templates/footer.html:13
 msgid "Privacy Policy"
 msgstr ""
 
-#: ckanext/data_depositario/templates/footer.html:19
+#: ckanext/data_depositario/templates/footer.html:18
 msgid ""
 "<p>Source code available on <a href=\"https://github.com/depositar/\" "
 "class=\"external\" target=\"_blank\">GitHub.</a></p>"
-msgstr ""
-
-#: ckanext/data_depositario/templates/header.html:32
-msgid "Datasets"
-msgstr ""
-
-#: ckanext/data_depositario/templates/header.html:35
-msgid "About"
-msgstr ""
-
-#: ckanext/data_depositario/templates/theme.html:3
-msgid "Filter by location"
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/help.html:14
-msgid "Your browser does not support iframes."
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/snippets/about_text.html:5
-msgid ""
-" <h1>What is <em>depositar</em>?</h1> <p><em>depositar</em> — taking the term"
-" from the Portuguese/Spanish verb for <em>to deposit</em> — is an online "
-"repository for research data. The site <a "
-"href=\"https://data.depositar.io/\">data.depositar.io</a> is built by the "
-"researchers for the researchers. You are free to deposit, discover, and reuse"
-" datasets on <em>depositar</em> for all your research purposes.</p> "
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/snippets/about_text.html:15
-msgid ""
-" <h2>Your datasets</h2> <p>Datasets — collections of tables, maps, documents,"
-" or other data files — are fast to upload and preview. Once uploaded, "
-"datasets have permanent links for all to reference and download. You are "
-"encouraged to annotate your datasets with rich metadata so that they can be "
-"better discovered. An intuitive interface is provided to support "
-"spatiotemporal description and query for datasets. Moreover, in "
-"<em>depositar</em> all datasets use keywords sourced from <a "
-"href=\"https://wikidata.org/\" class=\"external\" "
-"target=\"_blank\">Wikidata</a>! Datasets on <em>depositar</em> are inter-"
-"connected by their semantics. They are ready to be explored and reused.</p> "
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/snippets/about_text.html:31
-msgid ""
-" <h2>Your projects</h2> <p>Research is team work, and <em>depositar</em> is "
-"built for collaborative research! After getting accounts on "
-"<em>depositar</em>, researchers can form projects to share datasets among "
-"themselves. Datasets can be put under access control, so that they remain "
-"private to project members. Metadata in <em>depositar</em> can be "
-"collaboratively edited, and different uploads of a dataset are versioned. "
-"When it is time to release the data, there are several open licenses to "
-"choose from. Of course, data can be dedicated to the public domain too.</p> "
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/snippets/about_text.html:44
-msgid ""
-" <h2>It's open and free!</h2> <p>The software for <em>depositar</em> is built"
-" on top of <a href=\"https://ckan.org/\" class=\"external\" "
-"target=\"_blank\">CKAN</a>, an open source software package for publishing "
-"open data. CKAN stands for <em>Comprehensive Knowledge Archive Network</em>. "
-"CKAN is a project from <a href=\"https://okfn.org/\" class=\"external\" "
-"target=\"_blank\">Open Knowledge International</a>, and is itself supported "
-"by a viable developer and user community. We customize and extend the CKAN "
-"codebase to better support research data management. Our extensions to CKAN "
-"are <a href=\"https://github.com/depositar/\" class=\"external\" "
-"target=\"_blank\">open source</a> too. The service provided by <a "
-"href=\"https://data.depositar.io/\">data.depositar.io</a> is experimental as "
-"of now. It is free for all academic use.</p> "
-msgstr ""
-
-#: ckanext/data_depositario/templates/home/snippets/about_text.html:60
-#, python-format
-msgid ""
-" <h2>More about <em>depositar</em></h2> <p>Project <em>depositar</em> is a "
-"work in progress. Both <a href=\"https://github.com/depositar/\" "
-"class=\"external\" target=\"_blank\">source code</a> and <a "
-"href=\"%(doc_url)s\" class=\"external\" target=\"_blank\">user manual</a> are"
-" available. Please send comments and feedbacks to data.contact AT "
-"depositar.io.</p> <p>This work has been carried out in <a "
-"href=\"https://www.sinica.edu.tw/\" class=\"external\" "
-"target=\"_blank\">Academia Sinica</a>, Taiwan. It has been supported by the "
-"<a href=\"https://www.iis.sinica.edu.tw/\" class=\"external\" "
-"target=\"_blank\">Institute of Information Science</a> and the <a "
-"href=\"https://www.citi.sinica.edu.tw/\" class=\"external\" "
-"target=\"_blank\">Research Center for Information Technology Innovation</a> "
-"(both at Academia Sinica), and in part by research grants from the Ministry "
-"of Science and Technology of Taiwan. The project started from and remains as "
-"a collaboration with the <a href=\"http://gis.rchss.sinica.edu.tw/\" "
-"class=\"external\" target=\"_blank\">Center for GIS</a> at the Research "
-"Center for Humanities and Social Sciences, Academia Sinica.</p> <p>Developing"
-" <em>depositar</em> has been a team work. The following people, in "
-"alphabetical order, have been or were once in the project team: Tyng-Ruey "
-"Chuang (project lead), Ming-Syuan Ho (project manager), Andrea Wei-Ching "
-"Huang, Cheng-Jen Lee (tech lead), Hsiung-Ming Liao, Yen-Tsen Liu, Huang-Sin "
-"Syu, Ally Chia-Hsun Wang (project manager), Yu-Huang Wang, and Yao-Hsien "
-"Yeh.</p> "
-msgstr ""
-
-#: ckanext/data_depositario/templates/package/read_base.html:11
-msgid "History"
-msgstr ""
-
-#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:7
-msgid "Revision"
-msgstr ""
-
-#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:8
-msgid "Timestamp"
-msgstr ""
-
-#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:9
-msgid "Author"
-msgstr ""
-
-#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:10
-msgid "Log Message"
-msgstr ""
-
-#: ckanext/data_depositario/templates/package/snippets/revisions_table.html:24
-#, python-format
-msgid "Read dataset as of %s"
 msgstr ""
 
 #: ckanext/data_depositario/templates/scheming/display_snippets/collapse_text.html:3
