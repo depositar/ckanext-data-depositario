@@ -7,6 +7,34 @@
 更新日誌
 --------
 
+v6.5.0 2022-02-18
+=================
+
+注意事項：
+ * 此版本起將僅支援 Python 3.6 以上環境（目前支援 Python 3.6、3.7 與 3.8）。
+ * 請根據 :doc:`maintaining/installing/install-from-source` 重新建立 Python 虛擬環境與更新 CKAN 設定檔，並依序執行以下指令：
+
+   ::
+
+     . /usr/lib/ckan/default/bin/activate
+     ckan -c /etc/ckan/default/ckan.ini db upgrade
+     ckan -c /etc/ckan/default/ckan.ini search-index rebuild
+     python /usr/lib/ckan/default/src/ckan/migration/migrate_package_activity.py -c /etc/ckan/default/ckan.ini
+
+更新內容：
+ * 更新：CKAN 核心至 `2.9.4 <http://docs.ckan.org/en/2.9/changelog.html#v-2-9-4-2021-09-22>`_。來自 CKAN 2.8 與 2.9 的變更：
+
+   - 以 Bootstrap 3 為基礎的新介面
+   - 支援影片（MP4、WebM 與 Ogg 格式）與音訊（MP3、WAV 與 Ogg 格式）預覽
+   - :ref:`dataset_collaborators` 功能，可針對非公開資料集個別新增協作者，並賦予編輯或瀏覽權限
+   - API Tokens：支援建立多組 API key，並可隨時撤銷（詳見 :ref:`data_api` ）
+   - 使用者可自訂個人資料圖片（支援直接上傳或連結）
+   - 資料集「歷史紀錄」併入「動態牆」
+
+   （以上更新內容翻譯與修改自 `Open Knowledge Foundation <https://okfn.org/>`_ and `contributors <https://github.com/ckan/ckan/graphs/contributors>`_ 所編寫之 `Changelog — CKAN 2.9.5 documentation <http://docs.ckan.org/en/2.9/changelog.html>`_，該作品以 `創用CC 姓名標示-相同方式分享 3.0 未本地化 <https://creativecommons.org/licenses/by-sa/3.0/deed.zh_TW>`_ (`Creative Commons Attribution-ShareAlike 3.0 Unported <https://creativecommons.org/licenses/by-sa/3.0/>`_) 授權條款釋出。）
+
+ * 其他程式最佳化與細部介面調整。
+
 v6.4.6 2021-09-10
 =================
 

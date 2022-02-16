@@ -7,6 +7,37 @@
 Changelog
 ---------
 
+v6.5.0 2022-02-18
+=================
+
+Notice:
+ * Since this version, |site_name| only supports Python 3.6 or greater.
+   |site_name| now supports Python 3.6, 3.7 and 3.8.
+ * Please rebuild the Python virtual environment and update the CKAN config file
+   according to the :doc:`maintaining/installing/install-from-source` section.
+   Then run the commands below:
+
+   ::
+
+     . /usr/lib/ckan/default/bin/activate
+     ckan -c /etc/ckan/default/ckan.ini db upgrade
+     ckan -c /etc/ckan/default/ckan.ini search-index rebuild
+     python /usr/lib/ckan/default/src/ckan/migration/migrate_package_activity.py -c /etc/ckan/default/ckan.ini
+
+Changes:
+ * Update: CKAN core version `2.9.4 <http://docs.ckan.org/en/2.9/changelog.html#v-2-9-4-2021-09-22>`_. Changes from CKAN 2.8 and 2.9:
+
+    - New interface based on Bootstrap 3.
+    - Video (MP4, WebM, and Ogg) and audio (MP3, WAV, and Ogg) preview.
+    - :ref:`dataset_collaborators` which allows users with appropriate permissions to give permissions to other users over individual datasets.
+    - API Tokens: Tokens can be created and removed on demand and there is no restriction on the maximum number of tokens per user. Check the documentation on :ref:`data_api`.
+    - Users can now upload or link to custom profile pictures.
+    - History of a dataset is now in the Activity Stream.
+
+   (The above changelog is adapted from `Changelog — CKAN 2.9.5 documentation <http://docs.ckan.org/en/2.9/changelog.html>`_ by `Open Knowledge Foundation <https://okfn.org/>`_ and `contributors <https://github.com/ckan/ckan/graphs/contributors>`_ licensed under `Creative Commons Attribution-ShareAlike 3.0 Unported <https://creativecommons.org/licenses/by-sa/3.0/>`_.)
+
+ * Other improvements and UI adjustments.
+
 v6.4.6 2021-09-10
 =================
 
