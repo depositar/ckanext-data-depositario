@@ -222,53 +222,46 @@ a. 下載並解壓縮 Solr
    .. parsed-literal::
 
       cd ~
-      wget http://archive.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz
-      tar xzf solr-5.5.5.tgz solr-5.5.5/bin/install_solr_service.sh --strip-components=2
+      wget http://archive.apache.org/dist/lucene/solr/8.11.1/solr-8.11.1.tgz
+      tar xzf solr-8.11.1.tgz solr-8.11.1/bin/install_solr_service.sh --strip-components=2
 
 b. 執行 Solr 安裝腳本
 
    .. parsed-literal::
 
-      sudo bash ./install_solr_service.sh solr-5.5.5.tgz
+      sudo bash ./install_solr_service.sh solr-8.11.1.tgz
 
-c. 建立供 CKAN 使用之 Solr configset
-
-   .. parsed-literal::
-
-      sudo -u solr mkdir -p /var/solr/data/configsets/ckan/conf
-      sudo ln -s /usr/lib/ckan/default/src/ckanext-data-depositario/solr/schema.xml /var/solr/data/configsets/ckan/conf/schema.xml
-      sudo -u solr cp /opt/solr/server/solr/configsets/basic_configs/conf/solrconfig.xml /var/solr/data/configsets/ckan/conf/.
-      sudo -u solr touch /var/solr/data/configsets/ckan/conf/protwords.txt
-      sudo -u solr touch /var/solr/data/configsets/ckan/conf/synonyms.txt
-
-d. 下載中文斷詞函式庫 ``mmseg4j``，並複製至 Solr 目錄
+c. 建立供 CKAN 使用之 Solr core
 
    .. parsed-literal::
 
-      wget -O mmseg4j-core-1.10.0.jar https://search.maven.org/remotecontent?filepath=com/chenlb/mmseg4j/mmseg4j-core/1.10.0/mmseg4j-core-1.10.0.jar
-      wget -O mmseg4j-solr-2.4.0.jar https://search.maven.org/remotecontent?filepath=com/chenlb/mmseg4j/mmseg4j-solr/2.4.0/mmseg4j-solr-2.4.0.jar
-      sudo cp mmseg4j-\*.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
+      sudo -u solr /opt/solr/bin/solr create -c ckan
+      sudo ln -sf /usr/lib/ckan/default/src/ckanext-data-depositario/solr/schema.xml /var/solr/data/ckan/conf/managed-schema
 
-e. 下載空間搜尋函式庫 JTS 1.13 或以上版本並複製至 Solr 目錄
+d. 下載中文斷詞函式庫 ``ik-analyzer``，並複製至 Solr 目錄
 
    .. parsed-literal::
 
-      wget -O jts-1.13.jar https://search.maven.org/remotecontent?filepath=com/vividsolutions/jts/1.13/jts-1.13.jar
-      sudo cp jts-1.13.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
+      wget https://repo1.maven.org/maven2/com/github/magese/ik-analyzer/8.5.0/ik-analyzer-8.5.0.jar
+      sudo cp ik-analyzer-8.5.0.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
+      sudo mkdir /opt/solr/server/solr-webapp/webapp/WEB-INF/classes
+      sudo ln -s /usr/lib/ckan/default/src/ckanext-data-depositario/solr/IKAnalyzer.cfg.xml /opt/solr/server/solr-webapp/webapp/WEB-INF/classes/.
+      sudo ln -s /usr/lib/ckan/default/src/ckanext-data-depositario/solr/dic/words.dic /opt/solr/server/solr-webapp/webapp/WEB-INF/classes/words.dic
 
-f. 修改 /var/solr/data/configsets/ckan/conf/solrconfig.xml，將第 99 至 102 行關於 ``<schemaFactory class="ManagedIndexSchemaFactory">`` 之設定刪除，並改為 ``<schemaFactory class="ClassicIndexSchemaFactory"/>``
+e. 下載空間搜尋函式庫 JTS 1.18 或以上版本並複製至 Solr 目錄
 
-g. 重新啟動 Solr
+   .. parsed-literal::
+
+      wget https://repo1.maven.org/maven2/org/locationtech/jts/jts-core/1.18.2/jts-core-1.18.2.jar
+      sudo cp jts-core-1.18.2.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
+
+f. 重新啟動 Solr
 
    .. parsed-literal::
 
       sudo service solr restart
 
-h. 在瀏覽器輸入以下連結，以建立供 CKAN 使用之 Solr Core（此處命名為 ckan）
-
-   http://127.0.0.1:8983/solr/admin/cores?action=CREATE&name=ckan&configSet=ckan
-
-i. 打開瀏覽器，前往 http://127.0.0.1:8983/solr/#/ckan ，若能看到畫面則代表安裝完成
+g. 打開瀏覽器，前往 http://127.0.0.1:8983/solr/#/ckan ，若能看到畫面則代表安裝完成
 
 --------------------
 7. 建立 who.ini link

@@ -226,52 +226,46 @@ a. Download and extract the service installation file:
    .. parsed-literal::
 
       cd ~
-      wget http://archive.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz
-      tar xzf solr-5.5.5.tgz solr-5.5.5/bin/install_solr_service.sh --strip-components=2
+      wget http://archive.apache.org/dist/lucene/solr/8.11.1/solr-8.11.1.tgz
+      tar xzf solr-8.11.1.tgz solr-8.11.1/bin/install_solr_service.sh --strip-components=2
 
 b. Install Solr as a service using the script:
 
    .. parsed-literal::
 
-      sudo bash ./install_solr_service.sh solr-5.5.5.tgz
+      sudo bash ./install_solr_service.sh solr-8.11.1.tgz
 
-c. Create the Solr configset for CKAN:
-
-   .. parsed-literal::
-
-      sudo -u solr mkdir -p /var/solr/data/configsets/ckan/conf
-      sudo ln -s /usr/lib/ckan/default/src/ckanext-data-depositario/solr/schema.xml /var/solr/data/configsets/ckan/conf/schema.xml
-      sudo -u solr cp /opt/solr/server/solr/configsets/basic_configs/conf/solrconfig.xml /var/solr/data/configsets/ckan/conf/.
-      sudo -u solr touch /var/solr/data/configsets/ckan/conf/protwords.txt
-      sudo -u solr touch /var/solr/data/configsets/ckan/conf/synonyms.txt
-
-d. Download Chinese tokenizer ``mmseg4j`` and copy it to the Solr directory:
-
-   .. parsed-literal::
-      wget -O mmseg4j-core-1.10.0.jar https://search.maven.org/remotecontent?filepath=com/chenlb/mmseg4j/mmseg4j-core/1.10.0/mmseg4j-core-1.10.0.jar
-      wget -O mmseg4j-solr-2.4.0.jar https://search.maven.org/remotecontent?filepath=com/chenlb/mmseg4j/mmseg4j-solr/2.4.0/mmseg4j-solr-2.4.0.jar
-      sudo cp mmseg4j-\*.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
-
-e. Download geometry library JTS Topology Suite 1.13 (or above) and copy it to the Solr directory:
+c. Create the Solr core for CKAN:
 
    .. parsed-literal::
 
-      wget -O jts-1.13.jar https://search.maven.org/remotecontent?filepath=com/vividsolutions/jts/1.13/jts-1.13.jar
-      sudo cp jts-1.13.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
+      sudo -u solr /opt/solr/bin/solr create -c ckan
+      sudo ln -sf /usr/lib/ckan/default/src/ckanext-data-depositario/solr/schema.xml /var/solr/data/ckan/conf/managed-schema
 
-f. Replace all lines in /var/solr/data/configsets/ckan/conf/solrconfig.xml from line 99 to line 102 about ``<schemaFactory class="ManagedIndexSchemaFactory">`` with ``<schemaFactory class="ClassicIndexSchemaFactory"/>``.
+d. Download Chinese tokenizer ``ik-analyzer`` and copy it to the Solr directory:
 
-g. Restart Solr:
+   .. parsed-literal::
+
+      wget https://repo1.maven.org/maven2/com/github/magese/ik-analyzer/8.5.0/ik-analyzer-8.5.0.jar
+      sudo cp ik-analyzer-8.5.0.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
+      sudo mkdir /opt/solr/server/solr-webapp/webapp/WEB-INF/classes
+      sudo ln -s /usr/lib/ckan/default/src/ckanext-data-depositario/solr/IKAnalyzer.cfg.xml /opt/solr/server/solr-webapp/webapp/WEB-INF/classes/.
+      sudo ln -s /usr/lib/ckan/default/src/ckanext-data-depositario/solr/dic/words.dic /opt/solr/server/solr-webapp/webapp/WEB-INF/classes/words.dic
+
+e. Download geometry library JTS Topology Suite 1.18 (or above) and copy it to the Solr directory:
+
+   .. parsed-literal::
+
+      wget https://repo1.maven.org/maven2/org/locationtech/jts/jts-core/1.18.2/jts-core-1.18.2.jar
+      sudo cp jts-core-1.18.2.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
+
+f. Restart Solr:
 
    .. parsed-literal::
 
       sudo service solr restart
 
-h. Create a new Solr core called ``ckan`` by entering the following link in a web browser:
-
-   http://127.0.0.1:8983/solr/admin/cores?action=CREATE&name=ckan&configSet=ckan
-
-i. Open http://127.0.0.1:8983/solr/#/ckan in a web browser, and you should see the Solr front page.
+g. Open http://127.0.0.1:8983/solr/#/ckan in a web browser, and you should see the Solr front page.
 
 ----------------------
 7. Link to ``who.ini``
