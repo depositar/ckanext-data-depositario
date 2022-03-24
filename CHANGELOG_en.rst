@@ -7,6 +7,31 @@
 Changelog
 ---------
 
+v6.5.1 2022-03-25
+=================
+
+Notice:
+ * This version requires the latest `ckanext-wikidatakeyword <https://github.com/depositar/ckanext-wikidatakeyword>`_.
+ * This version requires Solr 8. Run the commands below to upgrade Solr to 8.11.1:
+
+   ::
+
+     sudo service solr stop
+     sudo rm /etc/default/solr.in.sh
+     sudo bash ./install_solr_service.sh solr-8.11.1.tgz -f
+     sudo -u solr /opt/solr/bin/solr delete -c ckan
+     sudo -u solr /opt/solr/bin/solr create -c ckan
+     sudo ln -sf /usr/lib/ckan/default/src/ckanext-data-depositario/solr/schema.xml /var/solr/data/ckan/conf/managed-schema
+     sudo mkdir /opt/solr/server/solr-webapp/webapp/WEB-INF/classes
+     sudo ln -s /usr/lib/ckan/default/src/ckanext-data-depositario/solr/IKAnalyzer.cfg.xml /opt/solr/server/solr-webapp/webapp/WEB-INF/classes/.
+     sudo ln -s /usr/lib/ckan/default/src/ckanext-data-depositario/solr/words.dic /var/solr/data/ckan/conf/words.dic
+     . /usr/lib/ckan/default/bin/activate
+     ckan -c /etc/ckan/default/ckan.ini search-index rebuild
+
+Changes:
+ * Update: CKAN core version `2.9.5 <http://docs.ckan.org/en/2.9/changelog.html#v-2-9-5-2022-01-19>`_.
+ * Improvement: Fix an issue where some fields disappear when displaying the form with errors.
+
 v6.5.0 2022-02-18
 =================
 
