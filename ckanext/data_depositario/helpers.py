@@ -1,6 +1,6 @@
 import pycountry
 import ckan.plugins as p
-from ckan.plugins.toolkit import config
+from ckan.plugins.toolkit import config, asbool
 from ckan.common import json
 import re
 import json
@@ -92,7 +92,7 @@ def is_demo():
     """
     Tell whether or not this site is a demo.
     """
-    return config.get('ckanext.data_depositario.demo.enabled', False)
+    return asbool(config.get('ckanext.data_depositario.demo.enabled'))
 
 def schema_license_choices(field):
     """
