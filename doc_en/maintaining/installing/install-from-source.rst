@@ -59,7 +59,7 @@ c. Install CKAN into your virtualenv:
 
    .. parsed-literal::
 
-      pip install -e 'git+git://github.com/depositar/ckan.git#egg=ckan[requirements]'
+      pip install -e 'git+https://github.com/depositar/ckan.git#egg=ckan[requirements]'
 
 d. Install customized extesion into your virtualenv:
 
@@ -164,7 +164,7 @@ b. Create a CKAN config file:
 
    .. important::
 
-      The virtualenv has to remain active when running the paster command.
+      The virtualenv has to remain active when running the ckan command.
       You can always reactivate the virtualenv with this command: ::
 
       . /usr/lib/ckan/default/bin/activate

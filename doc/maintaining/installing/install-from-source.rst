@@ -54,7 +54,7 @@ c. 安裝 CKAN
 
    .. parsed-literal::
 
-      pip install -e 'git+git://github.com/depositar/ckan.git#egg=ckan[requirements]'
+      pip install -e 'git+https://github.com/depositar/ckan.git#egg=ckan[requirements]'
 
 d. 安裝本平台客製套件
 
@@ -159,7 +159,7 @@ b. 新增設定檔
 
    .. important::
 
-      執行任何 paster 指令時，請確認是在 CKAN 虛擬環境下。您可隨時執行以下指令以返回虛擬環境： ::
+      執行任何 ckan 指令時，請確認是在 CKAN 虛擬環境下。您可隨時執行以下指令以返回虛擬環境： ::
 
       . /usr/lib/ckan/default/bin/activate
 
