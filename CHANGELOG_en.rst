@@ -7,6 +7,18 @@
 Changelog
 ---------
 
+v6.5.2 2022-05-06
+=================
+
+Notice:
+ * This version requires the latest `ckanext-citation <https://github.com/depositar/ckanext-citation>`_.
+
+Changes:
+ * Improvement: Fix an issue where the month is wrongly displayed in the BibTeX generic citation style.
+ * Improvement: Fix an issue where the citation-key in the BibTeX generic citation may not be valid.
+ * Improvement: Load the ``ckanext.data_depositario.demo.enabled`` config correctly.
+ * Update: Correct some errors in documentation.
+
 v6.5.1 2022-03-25
 =================
 

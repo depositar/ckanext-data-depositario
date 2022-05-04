@@ -7,6 +7,18 @@
 更新日誌
 --------
 
+v6.5.2 2022-05-06
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-citation <https://github.com/depositar/ckanext-citation>`_ 使用。
+
+更新內容：
+ * 改善：修復 BibTeX generic citation style 月份顯示錯誤。
+ * 改善：修復 BibTeX generic citation style 的 citation-key 值可能未落於規範內的問題。
+ * 改善：正確讀取 ``ckanext.data_depositario.demo.enabled`` 設定。
+ * 更新：手冊勘誤。
+
 v6.5.1 2022-03-25
 =================
 
