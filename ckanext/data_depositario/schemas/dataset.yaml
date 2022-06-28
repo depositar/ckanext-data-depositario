@@ -8,6 +8,7 @@ dataset_fields:
     zh_Hant_TW: 標題
   icon: book
   preset: title
+  ark: true
   form_placeholder:
     en: eg. A descriptive title
     zh_Hant_TW: 例如：一個描述性的標題
@@ -242,19 +243,21 @@ dataset_fields:
     zh_Hant_TW: 起始時間
   icon: calendar
   validators: ignore_empty
+  ark: true
   form_placeholder:
     en: Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'
     zh_Hant_TW: 接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'
   help_text:
     en: Please fill in the time related to contents of the dataset, not the time when
       the resources in the dataset were created or finished.
-    zh_Hant_TW: 請填寫與資料集內涵所關聯之時間，而資料集內資源的產出或完成之時間。
+    zh_Hant_TW: 請填寫與資料集內涵所關聯之時間，而非資料集內資源的產出或完成之時間。
 - field_name: end_time
   label:
     en: End Time
     zh_Hant_TW: 結束時間
   icon: calendar
   validators: ignore_empty end_time_validator
+  ark: true
   form_placeholder:
     en: Accept 'YYYY', 'YYYY-MM', or 'YYYY-MM-DD'
     zh_Hant_TW: 接受 'YYYY'、'YYYY-MM'、'YYYY-MM-DD'
@@ -334,12 +337,13 @@ dataset_fields:
     zh_Hant_TW: 宣告本資料集所使用的授權。若不在候選清單內，請選擇「其他授權」，並於上方「備註」欄位註明授權條款。
 - field_name: author
   label:
-    en: Author
+    en: Creator
     zh_Hant_TW: 產製者
   icon: user
   form_placeholder: Joe Bloggs
   display_property: dc:creator
   required: true
+  ark: true
   help_text:
     en: The name of the person or project responsible for producing the dataset
     zh_Hant_TW: 資料生產者或單位的名稱
