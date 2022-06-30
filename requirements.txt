@@ -3,6 +3,7 @@ Shapely==1.7.1 # see https://github.com/Toblerity/Shapely/issues/1207
 pycountry
 ckanext-pdfview
 ckanext-showcase>=1.4.8
+ckanext-ark
 -e git+https://github.com/ckan/ckanext-xloader.git@0.10.0#egg=ckanext-xloader
 -e git+https://github.com/ckan/ckanext-scheming.git@a5b5522#egg=ckanext-scheming
 -e git+https://github.com/depositar/ckanext-spatial.git#egg=ckanext-spatial
