@@ -104,7 +104,7 @@ Dataset Level
      - :dcat_2:`DCAT 2 <Property:distribution_license>`
      - See :ref:`field_transforms`
 
-   * - Author
+   * - Creator
      - dc:creator
      - rdfs:Literal
      - :dcat_ap_jrc:`DCAT-AP-JRC <dataset-contributor-as-literal>`

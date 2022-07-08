@@ -8,7 +8,7 @@
    * - License
      - *Default validators for required fields*
 
-   * - Author
+   * - Creator
      - *Default validators for required fields*
 
    * - Created Time

@@ -23,7 +23,7 @@
        | `TWOGDL <https://data.gov.tw/license>`_
        | Other Licenses
 
-   * - Author
+   * - Creator
      - Yes
      - The name of the person or project responsible for producing the data.
      -
