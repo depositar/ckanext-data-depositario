@@ -7,6 +7,16 @@
 更新日誌
 --------
 
+v6.5.3 2022-07-08
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-citation <https://github.com/depositar/ckanext-citation>`_ 與 `ckanext-ark <https://github.com/depositar/ckanext-ark>`_ 使用。
+
+更新內容：
+ * 新增：:ref:`ark-identifier` 功能，賦予符合條件的資料集以 ARK 為編碼規格的持續識別碼。
+ * 其他程式最佳化與細部介面調整。
+
 v6.5.2 2022-05-06
 =================
 

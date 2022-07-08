@@ -7,6 +7,17 @@
 Changelog
 ---------
 
+v6.5.3 2022-07-08
+=================
+
+Notice:
+ * This version requires the latest `ckanext-citation <https://github.com/depositar/ckanext-citation>`_ and `ckanext-ark <https://github.com/depositar/ckanext-ark>`_.
+
+Changes:
+ * Add: :ref:`ark-identifier` which assigns ARKs as persistent identifiers (PID) to datasets.
+ * Update: Rename the ``Author`` field to ``Creator``.
+ * Other improvements and UI adjustments.
+
 v6.5.2 2022-05-06
 =================
 
