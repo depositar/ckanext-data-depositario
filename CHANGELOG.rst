@@ -11,7 +11,7 @@ v6.5.4 2022-09-23
 =================
 
 注意事項：
- * 此版本需搭配最新版`ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+ * 此版本需搭配最新版 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
 
 更新內容：
  * 更新：全新首頁設計。
