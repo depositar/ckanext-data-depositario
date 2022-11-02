@@ -7,6 +7,13 @@
 Changelog
 ---------
 
+v6.5.6 2022-11-03
+=================
+
+Changes:
+ * Update: CKAN core version `2.9.7 <https://docs.ckan.org/en/2.9/changelog.html#v-2-9-7-2022-10-26>`_.
+ * Update: ckanext-xloader 0.11.0.
+
 v6.5.5 2022-10-14
 =================
 
