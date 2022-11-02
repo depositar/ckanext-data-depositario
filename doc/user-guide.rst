@@ -620,7 +620,7 @@ ARK 持續識別碼
 
 本服務發行的 ARK 持續識別碼均以 ``ark:`` 開頭（例如： ``ark:37281/k5c8w2q9c`` ），依序以下列編碼規則產生：
 
-* ``37281`` ：註冊於 `N2T.net <https://n2t.net/ark:37281/>`_ 之 `NAAN <https://arks.org/about/ark-naans-and-systems/>`_ (Name Assigning Authority Number)，用以識別 ARK 的發行組織
+* ``37281`` ：註冊於 `N2T.net <https://n2t.net/ark:37281/>`__ 之 `NAAN <https://arks.org/about/ark-naans-and-systems/>`_ (Name Assigning Authority Number)，用以識別 ARK 的發行組織
 * ``k5`` ：固定且專用於本平台資料集的子命名空間（ARK 稱之為 `shoulder <https://www.ietf.org/archive/id/draft-kunze-ark-34.html#name-optional-shoulders>`_ ）
 * 唯一識別碼：ARK 稱之為 blade，為使用 ``redededk`` 規則（ARK 稱之為 `template <https://metacpan.org/dist/Noid/view/noid#TEMPLATES>`_ ）編碼之 7 位英數字：
 
@@ -657,7 +657,7 @@ ARK 識別碼發放條件
 
 此 ARK 網址將自動導向資料集頁面。
 
-本平台所使用的 ARK 識別碼名稱對應服務 (Name Mapping Authority, NMA) 為 https://pid.depositar.io/。您亦可使用 `N2T.net <https://n2t.net/>`_ 所提供的對應服務，僅需將網址的 https://pid.depositar.io/ 代換為 https://n2t.net/ 即可。
+本平台所使用的 ARK 識別碼名稱對應服務 (Name Mapping Authority, NMA) 為 https://pid.depositar.io/。您亦可使用 `N2T.net <https://n2t.net/>`__ 所提供的對應服務，僅需將網址的 https://pid.depositar.io/ 代換為 https://n2t.net/ 即可。
 
 .. note::
 

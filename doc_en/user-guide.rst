@@ -784,7 +784,7 @@ just like the Digital Object Identifier (DOI).
 |site_name| assigns ARKs followed by ``ark:`` (e.g. ``ark:37281/k5c8w2q9c``)
 using the following rules:
 
-* ``37281``: The `NAAN <https://arks.org/about/ark-naans-and-systems/>`_ (Name Assigning Authority Number) registered on `N2T.net <https://n2t.net/ark:37281/>`_ to identify the organization that assigns ARKs.
+* ``37281``: The `NAAN <https://arks.org/about/ark-naans-and-systems/>`_ (Name Assigning Authority Number) registered on `N2T.net <https://n2t.net/ark:37281/>`__ to identify the organization that assigns ARKs.
 * ``k5``: The fixed and dedicated sub-namespace (`shoulder <https://www.ietf.org/archive/id/draft-kunze-ark-34.html#name-optional-shoulders>`_ in the ARK) for datasets on the |site_name|.
 * A unique identifier (blade in the ARK): The identifier is seven characters long and coded
   using the ``redededk`` `template <https://metacpan.org/dist/Noid/view/noid#TEMPLATES>`_:
@@ -825,7 +825,7 @@ You can get the ARK identifier followed by ``ark:`` and its URL using the ARK Id
 The ARK URL will lead you to the target dataset.
 
 The Name Mapping Authority (NMA) of |site_name| is https://pid.depositar.io/.
-You can also use the NMA provided by `N2T.net <https://n2t.net/>`_,
+You can also use the NMA provided by `N2T.net <https://n2t.net/>`__,
 just replace the https://pid.depositar.io/ part in the URL with https://n2t.net/.
 
 .. note::
