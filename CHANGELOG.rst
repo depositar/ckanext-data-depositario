@@ -7,6 +7,15 @@
 更新日誌
 --------
 
+v6.5.7 2022-12-01
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+
+更新內容：
+ * 改善：首頁效能提升。
+
 v6.5.6 2022-11-03
 =================
 

@@ -7,6 +7,15 @@
 Changelog
 ---------
 
+v6.5.7 2022-12-01
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Improvement: performance tweaks for the homepage.
+
 v6.5.6 2022-11-03
 =================
 
