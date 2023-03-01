@@ -293,6 +293,14 @@ b. DataStore 資料庫設定
 
       ckan -c /etc/ckan/default/ckan.ini datastore set-permissions | sudo -u postgres psql --set ON_ERROR_STOP=1
 
+c. ARK 資料庫設定
+
+   .. parsed-literal::
+
+      ckan -c /etc/ckan/default/ckan.ini ark initdb
+
+   如果一切正常，則會看到此訊息：ARK table created
+
 ------------------------
 9. 設定 CKAN 系統管理者
 ------------------------

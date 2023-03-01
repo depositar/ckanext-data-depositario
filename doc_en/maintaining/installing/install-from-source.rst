@@ -297,6 +297,14 @@ b. Then you can use this connection to set up the DataStore:
 
       ckan -c /etc/ckan/default/ckan.ini datastore set-permissions | sudo -u postgres psql --set ON_ERROR_STOP=1
 
+c. Set up the ARK database:
+
+   .. parsed-literal::
+
+      ckan -c /etc/ckan/default/ckan.ini ark initdb
+
+   You should see ARK table created.
+
 ----------------------------
 9. Creating a sysadmin user
 ----------------------------
