@@ -74,6 +74,18 @@ def get_pkg_version():
        pkg_version = 'latest'
     return pkg_version
 
+def get_site_notice():
+    """
+    Get and show a site notice on the header.
+    """
+    site_notice = config.get('ckanext.data_depositario.site_notice')
+
+    data = {
+        'site_notice': site_notice
+    }
+
+    return p.toolkit.render_snippet('snippets/site_notice.html', data)
+
 def googleanalytics_header():
     """
     Render the googleanalytics_header snippet for CKAN 2.0 templates.
