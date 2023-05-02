@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.5.0b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.5.9b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-02-16 17:01+0800\n"
+"POT-Creation-Date: 2023-05-02 04:06+0000\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -19,23 +19,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: ckanext/data_depositario/plugin.py:186
+#: ckanext/data_depositario/plugin.py:189
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:187
+#: ckanext/data_depositario/plugin.py:190
 msgid "Projects"
 msgstr "專案"
 
-#: ckanext/data_depositario/plugin.py:188
+#: ckanext/data_depositario/plugin.py:191
 msgid "Topics"
 msgstr "主題"
 
-#: ckanext/data_depositario/plugin.py:189
+#: ckanext/data_depositario/plugin.py:192
 msgid "Language"
 msgstr "語言"
 
-#: ckanext/data_depositario/plugin.py:242
+#: ckanext/data_depositario/plugin.py:245
 msgid ""
 "Error sending the email. Try again later or contact an administrator for "
 "help"
@@ -146,46 +146,6 @@ msgstr "使用者 \"%s\" 已經註冊，但你仍以 \"%s\" 登入中"
 #: ckanext/data_depositario/routes/user.py:90
 msgid "Please check your inbox to set your password."
 msgstr "請至信箱收信，並依通知信指示設定密碼。"
-
-#: ckanext/data_depositario/templates/footer.html:6
-msgid "Contact Us"
-msgstr "聯絡我們"
-
-#: ckanext/data_depositario/templates/footer.html:7
-msgid "About depositar"
-msgstr "關於研究資料寄存所 (depositar)"
-
-#: ckanext/data_depositario/templates/footer.html:12
-msgid "CKAN API"
-msgstr "CKAN API"
-
-#: ckanext/data_depositario/templates/footer.html:12
-msgid "Site Statistics"
-msgstr "網站統計"
-
-#: ckanext/data_depositario/templates/footer.html:12
-msgid "Site Status"
-msgstr "網站狀態"
-
-#: ckanext/data_depositario/templates/footer.html:12
-msgid "Help"
-msgstr "支援"
-
-#: ckanext/data_depositario/templates/footer.html:13
-msgid "Terms of Use"
-msgstr "使用條款"
-
-#: ckanext/data_depositario/templates/footer.html:13
-msgid "Privacy Policy"
-msgstr "隱私政策"
-
-#: ckanext/data_depositario/templates/footer.html:18
-msgid ""
-"<p>Source code available on <a href=\"https://github.com/depositar/\" "
-"class=\"external\" target=\"_blank\">GitHub.</a></p>"
-msgstr ""
-"<p>程式碼可於 <a href=\"https://github.com/depositar/\" class=\"external\" "
-"target=\"_blank\">GitHub</a> 取得。</p>"
 
 #: ckanext/data_depositario/templates/scheming/display_snippets/collapse_text.html:3
 #: ckanext/data_depositario/templates/scheming/display_snippets/collapse_text.html:6
