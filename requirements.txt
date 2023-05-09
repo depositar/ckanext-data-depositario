@@ -10,6 +10,6 @@ ckanext-ark
 -e git+https://github.com/depositar/ckanext-geoview.git#egg=ckanext-geoview
 -e git+https://github.com/depositar/ckanext-wikidatakeyword.git#egg=ckanext-wikidatakeyword
 -e git+https://github.com/ckan/ckanext-dcat.git@v1.1.2#egg=ckanext-dcat
--e git+https://github.com/ckan/ckanext-harvest.git@v1.3.3#egg=ckanext-harvest # required by ckanext-spatial
+-e git+https://github.com/ckan/ckanext-harvest.git@v1.5.3#egg=ckanext-harvest # required by ckanext-spatial
 -e git+https://github.com/depositar/ckanext-depositar_theme.git#egg=ckanext-depositar_theme
 git+https://github.com/depositar/ckanext-citation.git#egg=ckanext-citation
