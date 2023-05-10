@@ -1,6 +1,6 @@
 # this is a namespace package
 
-__version__ = '6.5.9b'
+__version__ = '6.5.9'
 
 try:
     import pkg_resources
