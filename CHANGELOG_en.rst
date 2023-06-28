@@ -7,6 +7,16 @@
 Changelog
 ---------
 
+v6.6.0 2023-06-29
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Update: CKAN core version `2.9.9 <https://docs.ckan.org/en/2.9/changelog.html#v-2-9-9-2023-05-24>`_.
+ * Improvement: fix a typo in the homepage.
+
 v6.5.9 2023-05-11
 =================
 
