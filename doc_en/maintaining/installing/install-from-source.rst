@@ -78,7 +78,7 @@ f. Install other required Python modules into your virtualenv:
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements.txt
-      pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/master/requirements.txt
+      pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/0.11.0/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-harvest/pip-requirements.txt
 
