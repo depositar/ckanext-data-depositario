@@ -448,7 +448,7 @@ Then select the "Add Member" button.
 
 .. image:: /images/invite_user.png
 
-You can invite an user to your project by his/her email or username in the "Existing User" section.
+You can invite an user to your project by his/her username in the "Existing User" section.
 Or you can invite a new user via email.
 
 .. _finding_data:
