@@ -2,7 +2,7 @@
 Installing CKAN from source
 ===========================
 
-This section describes how to install CKAN used by |site_name| from source on an Ubuntu 18.04 server.
+This section describes how to install CKAN used by |site_name| from source on an Ubuntu 20.04 server.
 
 --------------------------------
 1. Install the required packages
@@ -40,7 +40,7 @@ a. Create a Python virtual environment (virtualenv) to install CKAN into, and ac
 
         . /usr/lib/ckan/default/bin/activate
 
-b. Install the recommended setuptools version:
+b. Install wheel:
 
    .. important::
 
@@ -52,8 +52,7 @@ b. Install the recommended setuptools version:
 
    .. parsed-literal::
 
-      pip install setuptools==44.1.0
-      pip install --upgrade pip
+      pip install wheel
 
 c. Install CKAN into your virtualenv:
 
@@ -119,9 +118,9 @@ c. Install the PostGIS:
 
    .. parsed-literal::
 
-      sudo apt-get install postgresql-10-postgis-2.4 python3-dev libxml2-dev libxslt1-dev libgeos-c1v5
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/10/contrib/postgis-2.4/postgis.sql
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/10/contrib/postgis-2.4/spatial_ref_sys.sql
+      sudo apt install postgresql-12-postgis-3 python3-dev libxml2-dev libxslt1-dev libgeos-c1v5
+      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/12/contrib/postgis-3.0/postgis.sql
+      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/12/contrib/postgis-3.0/spatial_ref_sys.sql
       sudo -u postgres psql -d ckan_default -c 'ALTER VIEW geometry_columns OWNER TO ckan_default;'
       sudo -u postgres psql -d ckan_default -c 'ALTER TABLE spatial_ref_sys OWNER TO ckan_default;'
 
@@ -226,14 +225,14 @@ a. Download and extract the service installation file:
    .. parsed-literal::
 
       cd ~
-      wget http://archive.apache.org/dist/lucene/solr/8.11.1/solr-8.11.1.tgz
-      tar xzf solr-8.11.1.tgz solr-8.11.1/bin/install_solr_service.sh --strip-components=2
+      wget http://archive.apache.org/dist/lucene/solr/8.11.2/solr-8.11.2.tgz
+      tar xzf solr-8.11.2.tgz solr-8.11.2/bin/install_solr_service.sh --strip-components=2
 
 b. Install Solr as a service using the script:
 
    .. parsed-literal::
 
-      sudo bash ./install_solr_service.sh solr-8.11.1.tgz
+      sudo bash ./install_solr_service.sh solr-8.11.2.tgz
 
 c. Create the Solr core for CKAN:
 
@@ -256,8 +255,8 @@ e. Download geometry library JTS Topology Suite 1.18 (or above) and copy it to t
 
    .. parsed-literal::
 
-      wget https://repo1.maven.org/maven2/org/locationtech/jts/jts-core/1.18.2/jts-core-1.18.2.jar
-      sudo cp jts-core-1.18.2.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
+      wget https://repo1.maven.org/maven2/org/locationtech/jts/jts-core/1.19.0/jts-core-1.19.0.jar
+      sudo cp jts-core-1.19.0.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
 
 f. Restart Solr:
 

@@ -20,8 +20,8 @@
     sudo apt install python3-dev python3-pip python3-venv git
     python3 -m venv pyenv
     . pyenv/bin/activate
-    pip install setuptools==44.1.0
-    pip install -e 'git+git://github.com/depositar/ckan.git#egg=ckan[requirements]'
+    pip install wheel
+    pip install -e 'git+https://github.com/depositar/ckan.git#egg=ckan[requirements]'
     pip install -e 'git+https://github.com/depositar/ckanext-data-depositario.git#egg=ckanext-data-depositario'
     pip install -r pyenv/src/ckanext-data-depositario/requirements-docs.txt
 

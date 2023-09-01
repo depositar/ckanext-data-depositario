@@ -2,7 +2,7 @@
 自原始碼安裝
 ============
 
-本節將描述如何自原始碼安裝本平台（|site_name|）使用之 CKAN 軟體。示範系統為 Ubuntu 18.04。
+本節將描述如何自原始碼安裝本平台（|site_name|）使用之 CKAN 軟體。示範系統為 Ubuntu 20.04。
 
 ---------------
 1. 安裝必須套件
@@ -35,7 +35,7 @@ a. 新增一個 Python 虛擬環境（virtualenv）供 CKAN 使用，並進入�
 
         . /usr/lib/ckan/default/bin/activate
 
-b. 安裝建議的 setuptools 版本
+b. 安裝 wheel
 
    .. important::
 
@@ -47,8 +47,7 @@ b. 安裝建議的 setuptools 版本
 
    .. parsed-literal::
 
-      pip install setuptools==44.1.0
-      pip install --upgrade pip
+      pip install wheel
 
 c. 安裝 CKAN
 
@@ -113,9 +112,9 @@ c. 安裝 PostGIS
 
    .. parsed-literal::
 
-      sudo apt-get install postgresql-10-postgis-2.4 python3-dev libxml2-dev libxslt1-dev libgeos-c1v5
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/10/contrib/postgis-2.4/postgis.sql
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/10/contrib/postgis-2.4/spatial_ref_sys.sql
+      sudo apt install postgresql-12-postgis-3 python3-dev libxml2-dev libxslt1-dev libgeos-c1v5
+      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/12/contrib/postgis-3.0/postgis.sql
+      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/12/contrib/postgis-3.0/spatial_ref_sys.sql
       sudo -u postgres psql -d ckan_default -c 'ALTER VIEW geometry_columns OWNER TO ckan_default;'
       sudo -u postgres psql -d ckan_default -c 'ALTER TABLE spatial_ref_sys OWNER TO ckan_default;'
 
@@ -222,14 +221,14 @@ a. 下載並解壓縮 Solr
    .. parsed-literal::
 
       cd ~
-      wget http://archive.apache.org/dist/lucene/solr/8.11.1/solr-8.11.1.tgz
-      tar xzf solr-8.11.1.tgz solr-8.11.1/bin/install_solr_service.sh --strip-components=2
+      wget http://archive.apache.org/dist/lucene/solr/8.11.2/solr-8.11.2.tgz
+      tar xzf solr-8.11.2.tgz solr-8.11.2/bin/install_solr_service.sh --strip-components=2
 
 b. 執行 Solr 安裝腳本
 
    .. parsed-literal::
 
-      sudo bash ./install_solr_service.sh solr-8.11.1.tgz
+      sudo bash ./install_solr_service.sh solr-8.11.2.tgz
 
 c. 建立供 CKAN 使用之 Solr core
 
@@ -252,8 +251,8 @@ e. 下載空間搜尋函式庫 JTS 1.18 或以上版本並複製至 Solr 目錄
 
    .. parsed-literal::
 
-      wget https://repo1.maven.org/maven2/org/locationtech/jts/jts-core/1.18.2/jts-core-1.18.2.jar
-      sudo cp jts-core-1.18.2.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
+      wget https://repo1.maven.org/maven2/org/locationtech/jts/jts-core/1.19.0/jts-core-1.19.0.jar
+      sudo cp jts-core-1.19.0.jar /opt/solr/server/solr-webapp/webapp/WEB-INF/lib/.
 
 f. 重新啟動 Solr
 
