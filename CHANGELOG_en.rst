@@ -7,6 +7,12 @@
 Changelog
 ---------
 
+v6.6.1 2023-09-14
+=================
+
+Changes:
+  * Update: Amend and make corrections to the documentation.
+
 v6.6.0 2023-06-29
 =================
 
