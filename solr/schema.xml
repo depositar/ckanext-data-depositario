@@ -182,7 +182,7 @@ attribute with the form `ckan-X.Y` -->
     <dynamicField name="extras_*" type="text" indexed="true" stored="true" multiValued="false"/>
     <dynamicField name="res_extras_*" type="text" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="vocab_*" type="string" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="*" type="text" indexed="true" stored="false"/>
+    <dynamicField name="*" type="string" indexed="true" stored="false"/>
 
     <!-- For temporal search -->
     <dynamicField name="*_time" type="date_range" indexed="true" stored="true" multiValued="false"/>
@@ -221,5 +221,7 @@ attribute with the form `ckan-X.Y` -->
 <copyField source="res_description" dest="text"/>
 <copyField source="maintainer" dest="text"/>
 <copyField source="author" dest="text"/>
+<copyField source="remarks" dest="text"/>
+<copyField source="contact_person" dest="text"/>
 
 </schema>
