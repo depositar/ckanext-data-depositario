@@ -7,11 +7,22 @@
 更新日誌
 --------
 
+v6.6.2 2023-10-26
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+
+更新內容：
+ * 新增：`BinderHub <https://binderhub.readthedocs.io/>`_ 功能，可將公開的資料集建立為 JupyterLab 等運算環境。
+ * 改善：（Solr 索引）設定 dynamic field * 為 string 類型，以避免錯誤斷詞 (discussions #13)。
+ * 改善：首頁文案修正。
+
 v6.6.1 2023-09-14
 =================
 
 更新內容：
-  * 更新：手冊修訂與勘誤。
+ * 更新：手冊修訂與勘誤。
 
 v6.6.0 2023-06-29
 =================

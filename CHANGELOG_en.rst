@@ -7,11 +7,22 @@
 Changelog
 ---------
 
+v6.6.2 2023-10-26
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Add: `BinderHub <https://binderhub.readthedocs.io/>`_ which creates computing environments (such as JupyterLab) from public datasets.
+ * Improvement: (Solr index) set the type of dynamic field * to string for preventing false tokenization (discussions #13).
+ * Improvement: fix a typo in the homepage.
+
 v6.6.1 2023-09-14
 =================
 
 Changes:
-  * Update: Amend and make corrections to the documentation.
+ * Update: Amend and make corrections to the documentation.
 
 v6.6.0 2023-06-29
 =================
