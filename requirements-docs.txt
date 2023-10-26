@@ -2,3 +2,10 @@
 
 -r requirements.txt
 -r dev-requirements.txt
+Jinja2==2.10.1 # below for readthedocs/readthedocs.org#10798
+Pillow==9.2.0
+mock==2.0.0
+markupsafe==1.1.1
+commonmark
+recommonmark
+readthedocs-sphinx-ext
