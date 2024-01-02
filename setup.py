@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '6.6.2'
+version = '6.6.3b'
 
 entry_points = {
     'ckan.plugins': [
