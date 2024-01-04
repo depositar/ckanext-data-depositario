@@ -7,6 +7,12 @@
 Changelog
 ---------
 
+v6.6.3 2024-01-04
+=================
+
+Changes:
+ * Update: CKAN core version `2.9.10 <https://docs.ckan.org/en/2.9/changelog.html#v-2-9-10-2023-12-13>`_.
+
 v6.6.2 2023-10-26
 =================
 
