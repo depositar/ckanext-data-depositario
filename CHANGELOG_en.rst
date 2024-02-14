@@ -7,6 +7,15 @@
 Changelog
 ---------
 
+v6.6.4 2024-02-15
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Upgrade Python dependencies ahead of upcoming updates of CKAN core.
+
 v6.6.3 2024-01-04
 =================
 
