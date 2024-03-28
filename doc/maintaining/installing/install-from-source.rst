@@ -188,6 +188,9 @@ c. 修改前面新增的 ckan.ini 檔案中對應之設定如下
 
       ## 以下需自行新增於 Logging configuration 上方
 
+      ## Search Settings
+      ckan.search.solr_allowed_query_parsers = field
+
       ## Schema Settings
       scheming.presets = ckanext.scheming:presets.json
                          ckanext.data_depositario:presets.json

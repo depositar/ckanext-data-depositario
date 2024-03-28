@@ -192,6 +192,9 @@ c. Edit the ckan.ini file in a text editor, changing the following options:
 
       ## Add the following lines above Logging configuration
 
+      ## Search Settings
+      ckan.search.solr_allowed_query_parsers = field
+
       ## Schema Settings
       scheming.presets = ckanext.scheming:presets.json
                          ckanext.data_depositario:presets.json
