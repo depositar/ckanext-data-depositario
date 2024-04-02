@@ -16,7 +16,8 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
+from datetime import date
+# import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -60,14 +61,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'研究資料寄存所'
-copyright = u'''2022, The <a href="https://data.depositar.io/">depositar</a> Team.
-    Licensed under <a
-    href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons
-    Attribution ShareAlike (Unported) v3.0 License</a>.<br />
-    <img src="https://i.creativecommons.org/l/by-sa/3.0/80x15.png" alt="CC License Logo" />
-    <a href="http://opendefinition.org/"><img src="https://assets.okfn.org/images/ok_buttons/oc_80x15_blue.png" border="0"
-      alt="{{ _('Open Content') }}" /></a>
-  '''
+copyright = u'&copy; 2018-{} '.format(date.today().strftime("%Y"))
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -91,9 +85,6 @@ language = 'zh_TW'
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-# The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
-
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
@@ -103,35 +94,27 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'pydata_sphinx_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
 html_theme_options = {
-    'logo_only': True
+    'footer_items': ['copyright'],
+    'icon_links': [
+        {
+            'name': 'GitHub',
+            'url': 'https://github.com/depositar/ckanext-data-depositario',
+            'icon': 'fa-brands fa-github',
+        }
+    ]
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-
-html_context = {
-    'css_files': [
-        '_static/theme_overrides.css',  # override wide tables in RTD theme
-        ],
-     }
-
-# Custom sidebar templates, must be a dictionary that maps document names
-# to template names.
-#
-# This is required for the alabaster theme
-# refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    '**': ['globaltoc.html'],
-}
+html_static_path = []
 
 html_logo = 'images/logo.png'
 
