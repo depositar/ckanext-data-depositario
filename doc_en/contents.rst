@@ -1,3 +1,5 @@
+:orphan: true
+
 ======================
 Full table of contents
 ======================
