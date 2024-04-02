@@ -4,7 +4,7 @@ Full table of contents
 
 .. toctree::
 
-   user-guide
+   user-guide/index
    maintaining/index
    appendix/index
    changelog
