@@ -7,6 +7,17 @@
 更新日誌
 --------
 
+v6.6.5 2024-04-10
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+
+更新內容：
+ * 更新：CKAN 核心至 `2.9.11 <https://docs.ckan.org/en/2.9/changelog.html#v-2-9-11-2024-03-13>`_。
+ * 更新：手冊主題改用 `pydata-sphinx-theme <https://pydata-sphinx-theme.readthedocs.io/>`_ 、修訂與勘誤。
+ * 改善：部分文案修正。
+
 v6.6.4 2024-02-15
 =================
 

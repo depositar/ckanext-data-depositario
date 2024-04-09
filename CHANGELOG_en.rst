@@ -7,6 +7,17 @@
 Changelog
 ---------
 
+v6.6.5 2024-04-10
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Update: CKAN core version `2.9.11 <https://docs.ckan.org/en/2.9/changelog.html#v-2-9-11-2024-03-13>`_.
+ * Update: Documentation now uses the `pydata-sphinx-theme <https://pydata-sphinx-theme.readthedocs.io/>`_. Amend and make corrections to the documentation.
+ * Improvement: Tweak the wording.
+
 v6.6.4 2024-02-15
 =================
 
