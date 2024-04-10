@@ -24,6 +24,5 @@
    data-api
    rdf-serializations
    ark-identifier
-   binder
    personalization
    limitation
