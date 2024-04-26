@@ -35,7 +35,7 @@ def get_default_slider_values():
 
 def get_date_url_param():
    params = ['', '']
-   for k, v in p.toolkit.request.params.items():
+   for k, v in p.toolkit.request.args.items():
       if k == 'ext_begin':
          params[0] = v
       elif k == 'ext_end':
