@@ -230,8 +230,9 @@ def user_create(context, data_dict):
             }
             p.toolkit.get_action('group_member_create')(context, group_dict)
 
+    user = context['auth_user_obj']
     # We don't need these when inviting new users
-    if not context['auth_user_obj']:
+    if user and user.is_anonymous:
         user = model.User.get(user_dict['id'])
 
         # Set the user as pending before changing his/her password.
