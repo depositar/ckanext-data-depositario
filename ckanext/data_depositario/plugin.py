@@ -52,7 +52,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         p.toolkit.add_resource('public', 'ckanext-data-depositario')
 
     ## IPackageController
-    def before_search(self, search_params):
+    def before_dataset_search(self, search_params):
         if (search_params.get('extras', None) and 'ext_begin' in
                 search_params['extras'] and 'ext_end' in
                 search_params['extras']):
@@ -74,7 +74,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
         return search_params
 
-    def before_index(self, data_dict):
+    def before_dataset_index(self, data_dict):
         if data_dict['type'] != 'dataset':
             return data_dict
         for field_name in ['data_type', 'language']:
@@ -103,7 +103,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
         return data_dict
 
-    def after_search(self, search_results, search_params):
+    def after_dataset_search(self, search_results, search_params):
         facets = search_results.get('search_facets')
         results = search_results.get('results')
         if not facets or not results:
