@@ -108,15 +108,18 @@ html_theme_options = {
             'url': 'https://github.com/depositar/ckanext-data-depositario',
             'icon': 'fa-brands fa-github',
         }
-    ]
+    ],
+    'logo': {
+        'image_dark': 'images/logo_dark.svg',
+    }
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []
+html_static_path = ['images']
 
-html_logo = 'images/logo.png'
+html_logo = 'images/logo.svg'
 
 
 # -- Options for HTMLHelp output ------------------------------------------
