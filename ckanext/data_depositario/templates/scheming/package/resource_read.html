@@ -1,12 +1,5 @@
 {% ckan_extends %}
 
-{%- block resource_format -%}
-  <tr>
-    <th scope="row">{{ _('Format') }}</th>
-    <td>{{ res.format or res.mimetype_inner or res.mimetype or _('unknown') }}</td>
-  </tr>
-{%- endblock -%}
-
 {%- block resource_license -%}
 {%- endblock -%}
 

@@ -5,6 +5,6 @@
     {% if not package.notes %}
       {% do package.update({'notes': ''}) %}
     {% endif %}
-    {% snippet 'snippets/package_item.html', package=package, item_class=item_class, hide_resources=hide_resources, banner=banner, truncate=truncate, truncate_title=truncate_title %}
+    {% snippet 'snippets/package_item.html', package=package, item_class=item_class, hide_resources=hide_resources %}
   {% endfor %}
 {% endblock %}
