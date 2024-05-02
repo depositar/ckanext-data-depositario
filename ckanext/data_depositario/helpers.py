@@ -86,20 +86,6 @@ def get_site_notice():
 
     return p.toolkit.render_snippet('snippets/site_notice.html', data)
 
-def googleanalytics_header():
-    """
-    Render the googleanalytics_header snippet for CKAN 2.0 templates.
-    Borrowed from ckanext-googleanalytics.
-    """
-    googleanalytics_id = config.get('ckanext.data_depositario.googleanalytics.id')
-
-    data = {
-        'googleanalytics_id': googleanalytics_id
-    }
-
-    return p.toolkit.render_snippet(
-            'snippets/googleanalytics_header.html', data)
-
 def is_demo():
     """
     Tell whether or not this site is a demo.
