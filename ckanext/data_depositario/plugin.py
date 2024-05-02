@@ -79,10 +79,15 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             return data_dict
         for field_name in ['data_type', 'language']:
             value = data_dict.get(field_name)
-            try:
-                data_dict[field_name+'_facet'] = json.loads(value)
-            except ValueError:
-                # For old datasets with single data_type and language.
+            if isinstance(value, str):
+                try:
+                    data_dict[field_name+'_facet'] = json.loads(value)
+                except ValueError:
+                    # For old datasets with single data_type and language.
+                    data_dict[field_name+'_facet'] = value
+            # Hacky hacks to resolve ckan/ckan#7926
+            if isinstance(value, list):
+                data_dict[field_name] = json.dumps(value)
                 data_dict[field_name+'_facet'] = value
         # Index start_time and end_time in TrieDateField because
         # DateRangeField is not sortable.
