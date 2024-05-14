@@ -45,7 +45,9 @@ rst_epilog = u'''
 # ones.
 extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.todo',
-    'sphinx.ext.extlinks']
+    'sphinx.ext.extlinks',
+    'sphinx_design',
+    'sphinx_copybutton']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
