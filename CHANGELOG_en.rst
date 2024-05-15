@@ -7,6 +7,12 @@
 Changelog
 ---------
 
+v6.6.6 2024-05-15
+=================
+
+Changes:
+ * Add: (User guide) Binder service
+
 v6.6.5 2024-04-10
 =================
 
