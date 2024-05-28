@@ -47,7 +47,18 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.todo',
     'sphinx.ext.extlinks',
     'sphinx_design',
-    'sphinx_copybutton']
+    'sphinx_copybutton',
+    'myst_parser',
+]
+
+myst_enable_extensions = [
+    'colon_fence',
+    'substitution',
+]
+
+myst_substitutions = {
+    'site_name': '``depositar``',
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

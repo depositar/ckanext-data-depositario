@@ -103,7 +103,7 @@ Interface           Description
 `JupyterLab`_       The default interface. An IDE containing Python, R, and Julia environment.
 `Jupyter Notebook`_ The classic Jupyter notebook interface.
 `RStudio`_          An IDE for R statistical language.
-`Shiny`_            A package builds interactive web applications from R.
+`Shiny`_            A package for building interactive web applications from R.
 =================== ==========================================================================
 
 #. JupyterLab

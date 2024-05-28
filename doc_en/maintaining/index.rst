@@ -12,3 +12,4 @@ Maintainer's guide
    installing/index
    string-i18n
    documentation
+   binder/index
