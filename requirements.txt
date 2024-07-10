@@ -1,8 +1,8 @@
 requests>=2.26.0
 pycountry
 ckanext-ark
--e git+https://github.com/ckan/ckanext-xloader.git@0.11.0#egg=ckanext-xloader
--e git+https://github.com/ckan/ckanext-scheming.git@a5b5522#egg=ckanext-scheming
+ckanext-scheming==3.0.0
+-e git+https://github.com/dathere/datapusher-plus.git@1.0.1#egg=datapusher-plus
 -e git+https://github.com/depositar/ckanext-spatial.git#egg=ckanext-spatial
 -e git+https://github.com/depositar/ckanext-geoview.git#egg=ckanext-geoview
 -e git+https://github.com/depositar/ckanext-wikidatakeyword.git#egg=ckanext-wikidatakeyword
