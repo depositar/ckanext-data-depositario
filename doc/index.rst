@@ -11,6 +11,10 @@
    user-guide/index
    maintaining/index
    appendix/index
+
+.. toctree::
+   :maxdepth: 1
+
    changelog
 
 .. seealso::

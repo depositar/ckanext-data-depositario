@@ -16,6 +16,6 @@ You can get access to DataStore API through the following steps:
 
    .. image:: /images/data_api_2.png
 
-#. Some API functions require an API key. You can get your key from the user profile page using the "User" link at the top of any page. You can also get a key from the API Tokens function located at the top of the user page:
+#. Some API functions require an API token. You can get a token from the user profile page using the "User" link at the top of any page.
 
    .. image:: /images/data_api_3.png

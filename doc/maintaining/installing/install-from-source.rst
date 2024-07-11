@@ -2,7 +2,7 @@
 自原始碼安裝
 ============
 
-本節將描述如何自原始碼安裝本平台（|site_name|）使用之 CKAN 軟體。示範系統為 Ubuntu 20.04。
+本節將描述如何自原始碼安裝本平台（|site_name|）使用之 CKAN 軟體。示範系統為 Ubuntu 22.04。
 
 ---------------
 1. 安裝必須套件
@@ -10,7 +10,7 @@
 
 .. parsed-literal::
 
-   sudo apt install python3-dev postgresql libpq-dev python3-pip python3-venv git openjdk-8-jdk redis-server
+   sudo apt install uchardet python3-dev libpq-dev python3-pip python3-venv git redis-server postgresql openjdk-11-jdk
 
 -------------------------------
 2. 安裝 CKAN 於 Python 虛擬環境
@@ -35,7 +35,7 @@ a. 新增一個 Python 虛擬環境（virtualenv）供 CKAN 使用，並進入�
 
         . /usr/lib/ckan/default/bin/activate
 
-b. 安裝 wheel
+b. 安裝 CKAN 於虛擬環境
 
    .. important::
 
@@ -47,34 +47,22 @@ b. 安裝 wheel
 
    .. parsed-literal::
 
-      pip install wheel
-
-c. 安裝 CKAN
-
-   .. parsed-literal::
-
       pip install -e 'git+https://github.com/depositar/ckan.git#egg=ckan[requirements]'
 
-d. 安裝本平台客製套件
+c. 安裝本平台客製套件
 
    .. parsed-literal::
 
       pip install -e 'git+https://github.com/depositar/ckanext-data-depositario.git#egg=ckanext-data-depositario'
 
-e. 安裝本平台客製套件所需 Python 套件
+d. 安裝其他所需 Python 套件
 
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
-
-f. 安裝其他所需 Python 套件
-
-   .. parsed-literal::
-
       pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements.txt
-      pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/0.11.0/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
-      pip install -r /usr/lib/ckan/default/src/ckanext-harvest/pip-requirements.txt
+      pip install -r /usr/lib/ckan/default/src/datapusher-plus/requirements.txt
 
 ----------------------
 3. 建立 FileStore 目錄
@@ -108,21 +96,11 @@ b. 新增 CKAN 使用之資料庫
 
       sudo -u postgres createdb -O ckan_default ckan_default -E utf-8
 
-c. 安裝 PostGIS
-
-   .. parsed-literal::
-
-      sudo apt install postgresql-12-postgis-3 python3-dev libxml2-dev libxslt1-dev libgeos-c1v5
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/12/contrib/postgis-3.0/postgis.sql
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/12/contrib/postgis-3.0/spatial_ref_sys.sql
-      sudo -u postgres psql -d ckan_default -c 'ALTER VIEW geometry_columns OWNER TO ckan_default;'
-      sudo -u postgres psql -d ckan_default -c 'ALTER TABLE spatial_ref_sys OWNER TO ckan_default;'
-
-d. 本平台使用 CKAN 之 DataStore 功能，故需要建立相關之資料庫與使用者
+c. 本平台使用 CKAN 之 DataStore 功能，故需要建立相關之資料庫與使用者
 
    .. note::
 
-      DataStore 是一個內建於 CKAN 的功能，透過一獨立資料庫儲存上傳至 CKAN 之結構資料內容（CSV 或 XLS 檔案，無論為上傳至本機的檔案或僅有連結）。
+      DataStore 是一個內建於 CKAN 的功能，透過一獨立資料庫儲存上傳至 CKAN 之結構資料內容。
 
    .. parsed-literal::
 
@@ -130,7 +108,7 @@ d. 本平台使用 CKAN 之 DataStore 功能，故需要建立相關之資料庫
       sudo -u postgres createdb -O ckan_default datastore_default -E utf-8
 
 
-e. （供本平台管理員資訊）自已備份資料庫還原
+d. （供本平台管理員資訊）自已備份資料庫還原
 
    還原資料庫指令如下
 
@@ -166,50 +144,26 @@ b. 新增設定檔
 
       ckan generate config /etc/ckan/default/ckan.ini
       ckan config-tool /etc/ckan/default/ckan.ini -f /usr/lib/ckan/default/src/ckanext-data-depositario/config/custom_options.ini
+      sed -i -e '/^\\[app:main\\]/a\\\\' -e '/^\\[app:main\\]/r /usr/lib/ckan/default/src/ckanext-data-depositario/config/custom_options_extra.ini' /etc/ckan/default/ckan.ini
 
 c. 修改前面新增的 ckan.ini 檔案中對應之設定如下
 
    .. note::
 
-      * 以 # 開頭之文字為註解，可視需求刪除。
-      * 此僅為使本系統正常運作之最小需求設定。
+      此僅為使本系統正常運作之最小需求設定。
 
    .. parsed-literal::
 
-      ## Database Settings
-      ## CKAN 資料庫連線設定，請依照 :ref:`postgres-setup` 所新增的資料庫設定
-      ## pass 請填寫 CKAN 資料庫密碼
+      ## 資料庫連線設定，請依照 :ref:`postgres-setup` 所新增的資料庫設定
+      ## ``pass`` 請填寫 ``CKAN 資料庫`` 密碼
       sqlalchemy.url = postgresql://ckan_default:pass@localhost/ckan_default
-      ## DataStore 資料庫連線設定，請依照 :ref:`postgres-setup` 所新增的資料庫設定
-      ## pass 請填寫 CKAN 資料庫密碼
+      ## ``pass`` 請填寫 ``CKAN 資料庫`` 密碼
       ckan.datastore.write_url = postgresql://ckan_default:pass@localhost/datastore_default
-      ## pass 請填寫 DataStore 資料庫密碼
+      ## ``pass`` 請填寫 ``DataStore 資料庫`` 密碼
       ckan.datastore.read_url = postgresql://datastore_default:pass@localhost/datastore_default
 
-      ## 以下需自行新增於 Logging configuration 上方
-
-      ## Search Settings
-      ckan.search.solr_allowed_query_parsers = field
-
-      ## Schema Settings
-      scheming.presets = ckanext.scheming:presets.json
-                         ckanext.data_depositario:presets.json
-                         ckanext.wikidatakeyword:presets.json
-      scheming.dataset_schemas = ckanext.data_depositario.schemas:dataset.yaml
-
-      ## Spatial Settings
-      ckanext.spatial.search_backend = solr-spatial-field
-
-      ## DCAT Settings
-      ckanext.dcat.rdf.profiles = dcat
-      ckanext.dcat.translate_keys = False
-      ckanext.dcat.enable_content_negotiation = True
-
-      ## ckanext-data-depositario Settings
       ## GMAP_AKI_KEY 請填入申請之 Google Maps API key
       ckanext.data_depositario.gmap.api_key = GMAP_AKI_KEY
-      ## GA_ID 請填入申請之 Google Analytics id
-      ckanext.data_depositario.googleanalytics.id = GA_ID
 
 ------------------------------------
 6. 安裝 Solr（含中文與空間搜尋支援）
@@ -224,14 +178,14 @@ a. 下載並解壓縮 Solr
    .. parsed-literal::
 
       cd ~
-      wget http://archive.apache.org/dist/lucene/solr/8.11.2/solr-8.11.2.tgz
-      tar xzf solr-8.11.2.tgz solr-8.11.2/bin/install_solr_service.sh --strip-components=2
+      wget http://archive.apache.org/dist/lucene/solr/8.11.3/solr-8.11.3.tgz
+      tar xzf solr-8.11.3.tgz solr-8.11.3/bin/install_solr_service.sh --strip-components=2
 
 b. 執行 Solr 安裝腳本
 
    .. parsed-literal::
 
-      sudo bash ./install_solr_service.sh solr-8.11.2.tgz
+      sudo bash ./install_solr_service.sh solr-8.11.3.tgz
 
 c. 建立供 CKAN 使用之 Solr core
 
@@ -265,16 +219,8 @@ f. 重新啟動 Solr
 
 g. 打開瀏覽器，前往 http://127.0.0.1:8983/solr/#/ckan ，若能看到畫面則代表安裝完成
 
---------------------
-7. 建立 who.ini link
---------------------
-
-.. parsed-literal::
-
-   ln -s /usr/lib/ckan/default/src/ckan/who.ini /etc/ckan/default/who.ini
-
 ---------------
-8. 初始化資料庫
+7. 初始化資料庫
 ---------------
 
 .. important::
@@ -303,8 +249,16 @@ c. ARK 資料庫設定
 
    如果一切正常，則會看到此訊息：ARK table created
 
+d. DataPusher+ 資料庫設定
+
+   .. code-block:: shell
+
+      ckan -c /etc/ckan/default/ckan.ini datapusher init-db
+
+   如果一切正常，則會看到此訊息：Datapusher Plus tables created
+
 ------------------------
-9. 設定 CKAN 系統管理者
+8. 設定 CKAN 系統管理者
 ------------------------
 
 .. important::
@@ -317,15 +271,42 @@ c. ARK 資料庫設定
 
    ckan -c /etc/ckan/default/ckan.ini user setpass default
 
+-------------------
+9. 設定 DataPusher+
+-------------------
+
+.. note::
+
+   DataPusher+ 是一個 CKAN 的擴充套件，當使用者新增結構資料（如 CSV 或 XLS 檔案，無論為上傳至本機的檔案或僅有連結）至 CKAN 時，DataPusher+ 會自動上傳資料內容至 CKAN 的 DataStore 資料庫，以提供 :doc:`../../user-guide/data-api` 等功能。
+
+a. 下載並安裝 qsv
+
+   .. code-block:: shell
+
+      cd ~
+      wget https://github.com/jqnatividad/qsv/releases/download/0.128.0/qsv-0.128.0-x86_64-unknown-linux-gnu.zip
+      unzip qsv-0.128.0-x86_64-unknown-linux-gnu.zip
+      rm qsv-0.128.0-x86_64-unknown-linux-gnu.zip
+      sudo mv qsv* /usr/local/bin
+
+b. 新增 DataPusher+ 使用的 API token
+
+   .. code-block:: shell
+
+      ckan -c /etc/ckan/default/ckan.ini user token add default datapusher-plus
+
+c. 更新 CKAN 設定檔
+
+   .. code-block:: ini
+      :caption: /etc/ckan/default/ckan.ini
+
+      ckan.datapusher.api_token = <前一步驟取得的 token>
+
 --------------------
 10. 在開發環境下執行
 --------------------
 
-a. 執行 XLoader
-
-   .. note::
-
-      XLoader 是一個 CKAN 的擴充套件，當使用者新增結構資料（如 CSV 或 XLS 檔案，無論為上傳至本機的檔案或僅有連結）至 CKAN 時，XLoader 會自動上傳資料內容至 CKAN 的 DataStore 資料庫（關於 DataStore 請見第 4 節的說明），以提供 :ref:`data_api` 等功能。
+a. 執行 DataPusher+
 
    .. parsed-literal::
 

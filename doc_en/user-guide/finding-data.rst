@@ -190,20 +190,55 @@ You can add a new resource view through the following steps:
    .. image:: /images/new_preview_1.png
 
 #. Select the "Views" tab in the next page. From here you can create new views,
-   update or delete existing ones and reorder them. Available view plugins are:
+   update or delete existing ones and reorder them. Available view plugins [#]_ are:
 
-   * Data Explorer: It allows querying, filtering, graphing and mapping data.
-
-   * Grid: Displays a filterable, sortable, table view of structured data.
-
-   * Map: Shows data stored on the DataStore in an interactive map.
-     It supports plotting markers from a pair of latitude / longitude fields or
-     from a field containing a GeoJSON representation of the geometries.
+   * Table: Displays a multi-function table view of structured data.
 
    * Image: If the resource format is a common image format like PNG, JPEG or GIF,
      it adds an ``<img>`` tag pointing to the resource URL.
+     You can provide an alternative URL on the edit view form.
 
-   * Web page: Adds an ``<iframe>`` tag to embed the resource URL.
+   * Video: Displays a video player for MP4, WebM, and OGG video content.
+
+   * Audio: Displays an audio player for MP3, WAV, and OGG audio content.
+
+   * Website: Adds an ``<iframe>`` tag to embed the resource URL.
+
+   * Text: Displays files in XML, JSON or plain text based formats with the syntax highlighted.
+
+   * GeoJSON: Renders the GeoJSON file on a map.
+
+   * Shapefile: Renders the Shapefile on a map.
+
+   * WMTS: Renders the WMTS (Web Map Tile Service) layers on a map.
+
+   * Data Explorer [#deprecated-views]_: It allows querying, filtering, graphing and mapping data.
+
+   * Grid [#deprecated-views]_: Displays a filterable, sortable, table view of structured data.
+
+   * Map [#deprecated-views]_: Shows data stored on the DataStore in an interactive map.
+     It supports plotting markers from a pair of latitude / longitude fields or
+     from a field containing a GeoJSON representation of the geometries.
+
+   .. [#] The available view plugins are decided by the resource format.
+   .. [#deprecated-views] The ReclineJS-based view plugins, including Data Explorer,
+      Grid, and Map, will be removed and replaced by DataTables-based Table view plugin
+      in future versions. You can still use all of them at present.
+
+      * Compare with the ReclineJS-based view plugins, Table view plugin has the following
+        features (refer to the `CKAN’s documentation <https://docs.ckan.org/en/2.10/maintaining/data-viewer.html#datatables-view>`_ for more details):
+
+        * Download filtered records in CSV, TSV, JSON, or XML.
+        * Share saved searches via URLs.
+        * Column Filters
+        * Multi-column sorting
+        * Column Visibility control
+
+      * Meanwhile, Table view plugin lacks:
+
+        * Graphing data function
+        * Mapping data function
+        * Chinese search
 
    .. image:: /images/new_preview_2.png
 

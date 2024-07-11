@@ -2,7 +2,7 @@
 Installing CKAN from source
 ===========================
 
-This section describes how to install CKAN used by |site_name| from source on an Ubuntu 20.04 server.
+This section describes how to install CKAN used by |site_name| from source on an Ubuntu 22.04 server.
 
 --------------------------------
 1. Install the required packages
@@ -10,7 +10,7 @@ This section describes how to install CKAN used by |site_name| from source on an
 
 .. parsed-literal::
 
-   sudo apt install python3-dev postgresql libpq-dev python3-pip python3-venv git openjdk-8-jdk redis-server
+   sudo apt install uchardet python3-dev libpq-dev python3-pip python3-venv git redis-server postgresql openjdk-11-jdk
 
 -------------------------------------------------
 2. Install CKAN into a Python virtual environment
@@ -40,7 +40,7 @@ a. Create a Python virtual environment (virtualenv) to install CKAN into, and ac
 
         . /usr/lib/ckan/default/bin/activate
 
-b. Install wheel:
+b. Install CKAN into your virtualenv:
 
    .. important::
 
@@ -52,34 +52,22 @@ b. Install wheel:
 
    .. parsed-literal::
 
-      pip install wheel
-
-c. Install CKAN into your virtualenv:
-
-   .. parsed-literal::
-
       pip install -e 'git+https://github.com/depositar/ckan.git#egg=ckan[requirements]'
 
-d. Install customized extesion into your virtualenv:
+c. Install customized extesion into your virtualenv:
 
    .. parsed-literal::
 
       pip install -e 'git+https://github.com/depositar/ckanext-data-depositario.git#egg=ckanext-data-depositario'
 
-e. Install the Python modules that customized extesion requires into your virtualenv:
+d. Install other required Python modules into your virtualenv:
 
    .. parsed-literal::
 
       pip install -r /usr/lib/ckan/default/src/ckanext-data-depositario/requirements.txt
-
-f. Install other required Python modules into your virtualenv:
-
-   .. parsed-literal::
-
       pip install -r /usr/lib/ckan/default/src/ckanext-spatial/pip-requirements.txt
-      pip install -r https://raw.githubusercontent.com/ckan/ckanext-xloader/0.11.0/requirements.txt
       pip install -r /usr/lib/ckan/default/src/ckanext-dcat/requirements.txt
-      pip install -r /usr/lib/ckan/default/src/ckanext-harvest/pip-requirements.txt
+      pip install -r /usr/lib/ckan/default/src/datapusher-plus/requirements.txt
 
 ---------------------------------
 3. Create the FireStore directory
@@ -114,17 +102,7 @@ b. Create a new database:
 
       sudo -u postgres createdb -O ckan_default ckan_default -E utf-8
 
-c. Install the PostGIS:
-
-   .. parsed-literal::
-
-      sudo apt install postgresql-12-postgis-3 python3-dev libxml2-dev libxslt1-dev libgeos-c1v5
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/12/contrib/postgis-3.0/postgis.sql
-      sudo -u postgres psql -d ckan_default -f /usr/share/postgresql/12/contrib/postgis-3.0/spatial_ref_sys.sql
-      sudo -u postgres psql -d ckan_default -c 'ALTER VIEW geometry_columns OWNER TO ckan_default;'
-      sudo -u postgres psql -d ckan_default -c 'ALTER TABLE spatial_ref_sys OWNER TO ckan_default;'
-
-d. Create a new database user and a new database for DataStore:
+c. Create a new database user and a new database for DataStore:
 
    .. note::
 
@@ -136,7 +114,7 @@ d. Create a new database user and a new database for DataStore:
       sudo -u postgres createdb -O ckan_default datastore_default -E utf-8
 
 
-e. (For |site_name| administrator) Restore database backup:
+d. (For |site_name| administrator) Restore database backup:
 
    .. parsed-literal::
 
@@ -172,17 +150,17 @@ b. Create a CKAN config file:
 
       ckan generate config /etc/ckan/default/ckan.ini
       ckan config-tool /etc/ckan/default/ckan.ini -f /usr/lib/ckan/default/src/ckanext-data-depositario/config/custom_options.ini
+      sed -i -e '/^\\[app:main\\]/a\\\\' -e '/^\\[app:main\\]/r /usr/lib/ckan/default/src/ckanext-data-depositario/config/custom_options_extra.ini' /etc/ckan/default/ckan.ini
 
 c. Edit the ckan.ini file in a text editor, changing the following options:
 
    .. note::
 
-      * The settings below is the minimum requirements to run the CKAN.
+      The settings below is the minimum requirements to run the CKAN.
 
    .. parsed-literal::
 
-      ## Database Settings
-      ## This should refer to the database we created in :ref:`postgres-setup` above
+      ## Database Settings. This should refer to the database we created in :ref:`postgres-setup` above
       ## Replace ``pass`` with the ``CKAN database`` password that you created
       sqlalchemy.url = postgresql://ckan_default:pass@localhost/ckan_default
       ## Replace ``pass`` with the ``CKAN database`` password that you created
@@ -190,30 +168,8 @@ c. Edit the ckan.ini file in a text editor, changing the following options:
       ## Replace ``pass`` with the ``DataStore database`` password that you created
       ckan.datastore.read_url = postgresql://datastore_default:pass@localhost/datastore_default
 
-      ## Add the following lines above Logging configuration
-
-      ## Search Settings
-      ckan.search.solr_allowed_query_parsers = field
-
-      ## Schema Settings
-      scheming.presets = ckanext.scheming:presets.json
-                         ckanext.data_depositario:presets.json
-                         ckanext.wikidatakeyword:presets.json
-      scheming.dataset_schemas = ckanext.data_depositario.schemas:dataset.yaml
-
-      ## Spatial Settings
-      ckanext.spatial.search_backend = solr-spatial-field
-
-      ## DCAT Settings
-      ckanext.dcat.rdf.profiles = dcat
-      ckanext.dcat.translate_keys = False
-      ckanext.dcat.enable_content_negotiation = True
-
-      ## ckanext-data-depositario Settings
       ## GMAP_AKI_KEY is the API key for Google Maps
       ckanext.data_depositario.gmap.api_key = GMAP_AKI_KEY
-      ## GA_ID is the id for Google Analytics
-      ckanext.data_depositario.googleanalytics.id = GA_ID
 
 -------------------------------------------------------
 6. Setup Solr (with Chinese and spatial search support)
@@ -228,14 +184,14 @@ a. Download and extract the service installation file:
    .. parsed-literal::
 
       cd ~
-      wget http://archive.apache.org/dist/lucene/solr/8.11.2/solr-8.11.2.tgz
-      tar xzf solr-8.11.2.tgz solr-8.11.2/bin/install_solr_service.sh --strip-components=2
+      wget http://archive.apache.org/dist/lucene/solr/8.11.3/solr-8.11.3.tgz
+      tar xzf solr-8.11.3.tgz solr-8.11.3/bin/install_solr_service.sh --strip-components=2
 
 b. Install Solr as a service using the script:
 
    .. parsed-literal::
 
-      sudo bash ./install_solr_service.sh solr-8.11.2.tgz
+      sudo bash ./install_solr_service.sh solr-8.11.3.tgz
 
 c. Create the Solr core for CKAN:
 
@@ -269,16 +225,8 @@ f. Restart Solr:
 
 g. Open http://127.0.0.1:8983/solr/#/ckan in a web browser, and you should see the Solr front page.
 
-----------------------
-7. Link to ``who.ini``
-----------------------
-
-.. parsed-literal::
-
-   ln -s /usr/lib/ckan/default/src/ckan/who.ini /etc/ckan/default/who.ini
-
 -------------------------
-8. Create database tables
+7. Create database tables
 -------------------------
 
 .. important::
@@ -307,8 +255,16 @@ c. Set up the ARK database:
 
    You should see ARK table created.
 
+d. Set up the DataPusher+ database:
+
+   .. code-block:: shell
+
+      ckan -c /etc/ckan/default/ckan.ini datapusher init-db
+
+   You should see Datapusher Plus tables created.
+
 ----------------------------
-9. Creating a sysadmin user
+8. Creating a sysadmin user
 ----------------------------
 
 .. important::
@@ -321,17 +277,42 @@ Set password for the default CKAN sysadmin user from the command line.
 
    ckan -c /etc/ckan/default/ckan.ini user setpass default
 
+--------------------
+9. Setup DataPusher+
+--------------------
+
+.. note::
+
+   This DataPusher+ is an extension that automatically uploads data to the DataStore from suitable files (like CSV or Excel files), whether uploaded to CKAN’s FileStore or externally linked, to provide functions such as the :doc:`../../user-guide/data-api`.
+
+a. Download and install qsv:
+
+   .. code-block:: shell
+
+      cd ~
+      wget https://github.com/jqnatividad/qsv/releases/download/0.128.0/qsv-0.128.0-x86_64-unknown-linux-gnu.zip
+      unzip qsv-0.128.0-x86_64-unknown-linux-gnu.zip
+      rm qsv-0.128.0-x86_64-unknown-linux-gnu.zip
+      sudo mv qsv* /usr/local/bin
+
+b. Create an API token for DataPusher+:
+
+   .. code-block:: shell
+
+      ckan -c /etc/ckan/default/ckan.ini user token add default datapusher-plus
+
+c. Update the CKAN config file:
+
+   .. code-block:: ini
+      :caption: /etc/ckan/default/ckan.ini
+
+      ckan.datapusher.api_token = <The newly created token>
+
 -----------------------------------------
 10. Serve CKAN under a development server
 -----------------------------------------
 
-a. Run the XLoader:
-
-   .. note::
-
-      This XLoader is a service that automatically uploads data to the DataStore from suitable files (like CSV or Excel files), whether uploaded to CKAN’s FileStore or externally linked.
-
-      The CKAN DataStore extension provides an ad hoc database for storage of structured data from CKAN resources. Data can be pulled out of resource files and stored in the DataStore.
+a. Run the DataPusher+:
 
    .. parsed-literal::
 
