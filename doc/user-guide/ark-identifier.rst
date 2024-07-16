@@ -3,10 +3,6 @@ ARK 持續識別碼
 
 `資源典藏碼 <https://arks.org/about/>`_ (Archival Resource Key, ARK) 是一種多用途、可以用來指稱各類資訊物件的通用識別碼。本平台透過 `ckanext-ark <https://github.com/depositar/ckanext-ark>`_ 套件，賦予符合條件的資料集以 ARK 為編碼規格的持續識別碼 (persistent identifier, PID)，提供資料集長期不變的網址，功能類同於數位物件識別碼 (Digital Object Identifier, DOI)。
 
-.. note::
-
-   此功能正在測試中，如有任何問題或建議，請 聯絡我們_。
-
 本服務發行的 ARK 持續識別碼均以 ``ark:`` 開頭（例如： ``ark:37281/k5c8w2q9c`` ），依序以下列編碼規則產生：
 
 * ``37281`` ：註冊於 `N2T.net <https://n2t.net/ark:37281/>`__ 之 `NAAN <https://arks.org/about/ark-naans-and-systems/>`_ (Name Assigning Authority Number)，用以識別 ARK 的發行組織

@@ -42,10 +42,6 @@
 
    ckan.site_url = http://127.0.0.1
 
-   ## XLoader Settings
-   ## 同 CKAN 資料庫連線設定
-   ckanext.xloader.jobs_db.uri = postgresql://ckan_default:pass@localhost/ckan_default
-
 ------------------
 4. 安裝 Supervisor
 ------------------
@@ -97,13 +93,9 @@ b. 在開啟的 vi 編輯器中，輸入以下內容
       ; Required for uWSGI as it does not obey SIGTERM.
       stopsignal=QUIT
 
----------------------------
-6. 設定開機自動執行 XLoader
----------------------------
-
-.. note::
-
-   XLoader 是一個 CKAN 的擴充套件，當使用者新增結構資料（如 CSV 或 XLS 檔案，無論為上傳至本機的檔案或僅有連結）至 CKAN 時，XLoader 會自動上傳資料內容至 CKAN 的 DataStore 資料庫，以提供 :ref:`data_api` 等功能。
+-------------------------------
+6. 設定開機自動執行 Datapusher+
+-------------------------------
 
 .. parsed-literal::
 
@@ -124,7 +116,7 @@ b. 在開啟的 vi 編輯器中，輸入以下內容
 
    sudo supervisorctl status
 
-你可以使用以下指令重新啟動 CKAN 與 XLoader worker
+你可以使用以下指令重新啟動 CKAN 與 worker
 
 .. parsed-literal::
 
@@ -145,7 +137,6 @@ b. 新增 /etc/nginx/sites-available/ckan 檔案，並編輯加入以下設定
 
    .. parsed-literal::
 
-      proxy_cache_path /tmp/nginx_cache levels=1:2 keys_zone=cache:30m max_size=250m;
       proxy_temp_path /tmp/nginx_proxy 1 2;
 
       server {
@@ -154,17 +145,10 @@ b. 新增 /etc/nginx/sites-available/ckan 檔案，並編輯加入以下設定
               proxy_pass http://127.0.0.1:8080/;
               proxy_set_header X-Forwarded-For $remote_addr;
               proxy_set_header Host $host;
-              proxy_cache cache;
-              proxy_cache_bypass $cookie_auth_tkt;
-              proxy_no_cache $cookie_auth_tkt;
-              proxy_cache_valid 30m;
-              proxy_cache_key $host$scheme$proxy_host$request_uri;
-              # In emergency comment out line to force caching
-              # proxy_ignore_headers X-Accel-Expires Expires Cache-Control;
           }
       }
 
-c. 建立 alies 至 sites-enabled 以啟用剛才新增之設定（並刪除預設設定檔）
+c. 建立 alies 至 sites-enabled 以啟用剛才新增之設定（並停用預設設定檔）
 
    .. parsed-literal::
 

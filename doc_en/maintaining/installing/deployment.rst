@@ -48,10 +48,6 @@ as follows:
 
    ckan.site_url = http://127.0.0.1
 
-   ## XLoader Settings
-   ## Refer to the CKAN database
-   ckanext.xloader.jobs_db.uri = postgresql://ckan_default:pass@localhost/ckan_default
-
 ---------------------
 4. Install Supervisor
 ---------------------
@@ -103,13 +99,9 @@ b. In the vi editor, add the following contents:
       ; Required for uWSGI as it does not obey SIGTERM.
       stopsignal=QUIT
 
--------------------------------------
-6. Set the startup script for XLoader
--------------------------------------
-
-.. note::
-
-   This XLoader is a service that automatically uploads data to the DataStore from suitable files (like CSV or Excel files), whether uploaded to CKAN’s FileStore or externally linked.
+-----------------------------------------
+6. Set the startup script for DataPusher+
+-----------------------------------------
 
 .. parsed-literal::
 
@@ -130,7 +122,7 @@ You can check the status via:
 
    sudo supervisorctl status
 
-You can restart the workers via:
+You can restart CKAN and workers via:
 
 .. parsed-literal::
 
@@ -147,12 +139,10 @@ a. Install nginx:
 
       sudo apt-get install nginx
 
-b. Create your site's Nginx config file at /etc/nginx/sites-available/ckan, with the
-following contents:
+b. Create your site's Nginx config file at /etc/nginx/sites-available/ckan, with the following contents:
 
    .. parsed-literal::
 
-      proxy_cache_path /tmp/nginx_cache levels=1:2 keys_zone=cache:30m max_size=250m;
       proxy_temp_path /tmp/nginx_proxy 1 2;
 
       server {
@@ -161,13 +151,6 @@ following contents:
               proxy_pass http://127.0.0.1:8080/;
               proxy_set_header X-Forwarded-For $remote_addr;
               proxy_set_header Host $host;
-              proxy_cache cache;
-              proxy_cache_bypass $cookie_auth_tkt;
-              proxy_no_cache $cookie_auth_tkt;
-              proxy_cache_valid 30m;
-              proxy_cache_key $host$scheme$proxy_host$request_uri;
-              # In emergency comment out line to force caching
-              # proxy_ignore_headers X-Accel-Expires Expires Cache-Control;
           }
       }
 

@@ -52,7 +52,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         p.toolkit.add_resource('public', 'ckanext-data-depositario')
 
     ## IPackageController
-    def before_search(self, search_params):
+    def before_dataset_search(self, search_params):
         if (search_params.get('extras', None) and 'ext_begin' in
                 search_params['extras'] and 'ext_end' in
                 search_params['extras']):
@@ -74,15 +74,20 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
         return search_params
 
-    def before_index(self, data_dict):
+    def before_dataset_index(self, data_dict):
         if data_dict['type'] != 'dataset':
             return data_dict
         for field_name in ['data_type', 'language']:
             value = data_dict.get(field_name)
-            try:
-                data_dict[field_name+'_facet'] = json.loads(value)
-            except ValueError:
-                # For old datasets with single data_type and language.
+            if isinstance(value, str):
+                try:
+                    data_dict[field_name+'_facet'] = json.loads(value)
+                except ValueError:
+                    # For old datasets with single data_type and language.
+                    data_dict[field_name+'_facet'] = value
+            # Hacky hacks to resolve ckan/ckan#7926
+            if isinstance(value, list):
+                data_dict[field_name] = json.dumps(value)
                 data_dict[field_name+'_facet'] = value
         # Index start_time and end_time in TrieDateField because
         # DateRangeField is not sortable.
@@ -103,9 +108,24 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
 
         return data_dict
 
-    def after_search(self, search_results, search_params):
+    def after_dataset_search(self, search_results, search_params):
         facets = search_results.get('search_facets')
         results = search_results.get('results')
+
+        # Page-view tracking summary data, borrowed from CKAN core
+        # TODO: Remove this after upgrading to CKAN 2.11 since the tracking
+        # core extension will include tracking summary data (ckan/ckan#7772).
+        for package_dict in results:
+            tracking_summary = model.TrackingSummary.get_for_package(
+                package_dict["id"]
+                )
+            package_dict["tracking_summary"] = tracking_summary
+            for resource_dict in package_dict["resources"]:
+                summary = model.TrackingSummary.get_for_resource(
+                    resource_dict["url"]
+                    )
+                resource_dict["tracking_summary"] = summary
+
         if not facets or not results:
             return search_results
         if results[0]['type'] != 'dataset':
@@ -160,7 +180,6 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             'get_gmap_config',
             'get_pkg_version',
             'get_site_notice',
-            'googleanalytics_header',
             'is_demo',
             'schema_license_choices',
             'schema_language_choices',
@@ -230,8 +249,9 @@ def user_create(context, data_dict):
             }
             p.toolkit.get_action('group_member_create')(context, group_dict)
 
+    user = context['auth_user_obj']
     # We don't need these when inviting new users
-    if not context['auth_user_obj']:
+    if user and user.is_anonymous:
         user = model.User.get(user_dict['id'])
 
         # Set the user as pending before changing his/her password.

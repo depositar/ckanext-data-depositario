@@ -1,3 +1,1 @@
 bump2version
-Sphinx==5.1.1
-pydata-sphinx-theme==0.14.4

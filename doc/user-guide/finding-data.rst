@@ -155,17 +155,48 @@
 
    .. image:: /images/new_preview_1.png
 
-#. 在資源編輯頁面內切換至「檢視」頁籤，並於「新增檢視」下拉選單內，選擇適合該資源的預覽類型後進行設定：
+#. 在資源編輯頁面內切換至「檢視」頁籤，並於「新增檢視」下拉選單內，選擇適合該資源的預覽類型後進行設定，以下為部分支援類型 [#]_：
 
-   * Data Explorer：可同時提供表格、統計圖、地圖介面三種預覽方式，可於設定內選擇過濾的條件（如某欄位的值須大於門檻值才會顯示）。
+   * Table（表格）：提供多功能表格瀏覽。
 
-   * Grid：提供表格預覽介面，可於設定內選擇過濾的條件。
+   * 圖片：除瀏覽 PNG、JPEG 與 GIF 等圖片資源外，亦可新增一張外部圖片做為資源預覽圖。
 
-   * Map：提供地圖預覽介面，您須於設定內指定代表經緯度的欄位，亦可設定過濾條件。
+   * 影片：提供 MP4、WebM 與 OGG 影片瀏覽。
 
-   * 圖片：您可新增一張外部圖片（須為連結）來做為資源預覽圖。
+   * 音訊：提供 MP3、WAV 與 OGG 音訊瀏覽。
 
-   * 網站：您可新增一個網站連結來做為預覽介面。
+   * 網站：提供網頁瀏覽。
+
+   * 文字檔案：提供 XML、JSON 或純文字檔案瀏覽，支援語法突顯 (Syntax Highlighting)。
+
+   * GeoJSON：提供 GeoJSON 空間格式瀏覽。
+
+   * Shapefile：提供 Shapefile 空間格式瀏覽。
+
+   * WMTS：提供 WMTS (Web Map Tile Service) 圖磚瀏覽。
+
+   * 資料瀏覽器 [#deprecated-views]_：可以同時提供表格、統計圖、地圖介面三種瀏覽方式。
+
+   * 網格 [#deprecated-views]_：提供表格瀏覽。
+
+   * 地圖 [#deprecated-views]_：將表格中含有經緯度資訊的資料列呈現於地圖上。必須於設定內指定經緯度或 GeoJSON 欄位。
+
+   .. [#] 可選擇的預覽類型將根據資源的格式而定。
+   .. [#deprecated-views] 以 ReclineJS 開發之資料瀏覽器、網格與地圖檢視（Recline 檢視），將於未來移除，並由以 DataTables 開發之 Table（表格）檢視取代。目前您仍可同時建立 Recline 檢視與表格檢視。
+
+      * 相較 Recline 檢視，表格檢視具備以下特色（更多功能請參考 `CKAN 文件 <https://docs.ckan.org/en/2.10/maintaining/data-viewer.html#datatables-view>`_ ）：
+
+        * 下載過濾結果為 CSV、TSV、JSON 或 XML
+        * 儲存過濾狀態並產生直接連結
+        * 單一欄位搜尋
+        * 多欄位排序
+        * 欄位顯示開關
+
+      * 同時，表格檢視尚存在以下問題：
+
+        * 無簡易圖表功能
+        * 無地圖瀏覽功能
+        * 不支援中文搜尋
 
    .. image:: /images/new_preview_2.png
 

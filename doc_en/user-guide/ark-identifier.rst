@@ -5,11 +5,6 @@ ARK Persistent Identifier
 |site_name| assigns ARKs as persistent identifiers (PID) to datasets via the `ckanext-ark <https://github.com/depositar/ckanext-ark>`_ extension,
 just like the Digital Object Identifier (DOI).
 
-.. note::
-
-   This feature is a work in process.
-   If you have any comment or feedback, please `contact us`_.
-
 |site_name| assigns ARKs followed by ``ark:`` (e.g. ``ark:37281/k5c8w2q9c``)
 using the following rules:
 

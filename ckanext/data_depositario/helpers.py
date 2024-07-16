@@ -35,7 +35,7 @@ def get_default_slider_values():
 
 def get_date_url_param():
    params = ['', '']
-   for k, v in p.toolkit.request.params.items():
+   for k, v in p.toolkit.request.args.items():
       if k == 'ext_begin':
          params[0] = v
       elif k == 'ext_end':
@@ -85,20 +85,6 @@ def get_site_notice():
     }
 
     return p.toolkit.render_snippet('snippets/site_notice.html', data)
-
-def googleanalytics_header():
-    """
-    Render the googleanalytics_header snippet for CKAN 2.0 templates.
-    Borrowed from ckanext-googleanalytics.
-    """
-    googleanalytics_id = config.get('ckanext.data_depositario.googleanalytics.id')
-
-    data = {
-        'googleanalytics_id': googleanalytics_id
-    }
-
-    return p.toolkit.render_snippet(
-            'snippets/googleanalytics_header.html', data)
 
 def is_demo():
     """

@@ -2,10 +2,12 @@
 
 -r requirements.txt
 -r dev-requirements.txt
-Jinja2==2.10.1 # below for readthedocs/readthedocs.org#10798
+Sphinx==5.1.1
+pydata-sphinx-theme==0.15.4
+Jinja2==3.1.2 # below for readthedocs/readthedocs.org#10798
 Pillow==10.3.0
-mock==2.0.0
-markupsafe==1.1.1
+mock
+markupsafe==2.1.1
 commonmark
 recommonmark
 readthedocs-sphinx-ext

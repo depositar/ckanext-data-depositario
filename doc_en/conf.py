@@ -114,7 +114,7 @@ html_theme = 'pydata_sphinx_theme'
 # documentation.
 #
 html_theme_options = {
-    'footer_items': ['copyright'],
+    'footer_start': ['copyright'],
     'icon_links': [
         {
             'name': 'GitHub',

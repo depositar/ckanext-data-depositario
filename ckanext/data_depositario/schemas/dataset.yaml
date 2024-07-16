@@ -17,7 +17,7 @@ dataset_fields:
     en: URL
     zh_Hant_TW: 網址
   preset: dataset_slug
-  validators: not_empty unicode package_name_validator
+  validators: not_empty unicode_safe package_name_validator
   form_placeholder:
     en: eg. my-dataset
     zh_Hant_TW: 例如：我的資料集
@@ -44,7 +44,7 @@ dataset_fields:
   multiple: true
   choices:
   - value: archive
-    icon: file-archive-o
+    icon: file-zipper
     description:
       en: ZIP, RAR, JAR, etc.
       zh_Hant_TW: ZIP、RAR、JAR 等
@@ -76,7 +76,7 @@ dataset_fields:
       en: Databases
       zh_Hant_TW: 資料庫
   - value: doc
-    icon: file-word-o
+    icon: file-word
     description:
       en: text documents, spreadsheets, presentations
       zh_Hant_TW: 文字文件、試算表、簡報
@@ -92,7 +92,7 @@ dataset_fields:
       en: Structured graphics
       zh_Hant_TW: 結構化圖形
   - value: image
-    icon: picture-o
+    icon: image
     description:
       en: JPEG, JPEG2000, GIF, TIF, PNG, SVG, etc.
       zh_Hant_TW: JPEG、JPEG2000、GIF、TIF、PNG、SVG 等
@@ -116,7 +116,7 @@ dataset_fields:
       en: Networkbased data
       zh_Hant_TW: 網路通訊資料
   - value: raw
-    icon: file-o
+    icon: file
     description:
       en: device specific output
       zh_Hant_TW: 數位裝置輸出之資料
@@ -148,7 +148,7 @@ dataset_fields:
       en: Structured text
       zh_Hant_TW: 結構化文字資料
   - value: text
-    icon: file-text-o
+    icon: file-lines
     description:
       en: TXT in various encodings
       zh_Hant_TW: 各種編碼之純文字檔案
@@ -210,13 +210,13 @@ dataset_fields:
   label:
     en: Remarks
     zh_Hant_TW: 備註
-  icon: sticky-note-o
+  icon: note-sticky
   preset: markdown
 - field_name: temp_res
   label:
     en: Temporal Resolution
     zh_Hant_TW: 時間解析度
-  icon: clock-o
+  icon: clock
   preset: select
   validators: ignore_empty scheming_choices
   choices:
@@ -394,7 +394,7 @@ dataset_fields:
     en: Contact Person Email
     zh_Hant_TW: 聯絡人的電子郵件
   icon: envelope
-  validators: ignore_missing unicode email_validator
+  validators: ignore_missing unicode_safe email_validator
   form_placeholder: joe@example.com
   display_property: dc:contributor
   display_snippet: email.html
@@ -431,7 +431,7 @@ resource_fields:
     en: Name
     zh_Hant_TW: 名稱
   icon: book
-  validators: ignore_missing unicode
+  validators: ignore_missing unicode_safe
   form_placeholder:
     en: eg. January 2011 Gold Prices
     zh_Hant_TW: 例如：2011 年 1 月金價

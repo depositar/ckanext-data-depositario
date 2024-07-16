@@ -11,6 +11,6 @@
 
    .. image:: /images/data_api_2.png
 
-#. 部分 API 功能會需要使用者帳號的 API Key 作為認證，取得方式為至個人資訊頁面（點選任一頁面最上方之個人帳號），API Key 將顯示於頁面左欄下方處。您亦可使用位於頁面上方的 API Tokens 功能取得 API Key。
+#. 部分 API 功能需要使用者帳號的 API token 作為認證，您可自個人資訊頁面（於頁面最上方使用者帳號功能列，點選儀表版圖示）的 API Tokens 功能取得 API token。
 
    .. image:: /images/data_api_3.png
