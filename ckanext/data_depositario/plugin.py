@@ -111,6 +111,21 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     def after_dataset_search(self, search_results, search_params):
         facets = search_results.get('search_facets')
         results = search_results.get('results')
+
+        # Page-view tracking summary data, borrowed from CKAN core
+        # TODO: Remove this after upgrading to CKAN 2.11 since the tracking
+        # core extension will include tracking summary data (ckan/ckan#7772).
+        for package_dict in results:
+            tracking_summary = model.TrackingSummary.get_for_package(
+                package_dict["id"]
+                )
+            package_dict["tracking_summary"] = tracking_summary
+            for resource_dict in package_dict["resources"]:
+                summary = model.TrackingSummary.get_for_resource(
+                    resource_dict["url"]
+                    )
+                resource_dict["tracking_summary"] = summary
+
         if not facets or not results:
             return search_results
         if results[0]['type'] != 'dataset':
