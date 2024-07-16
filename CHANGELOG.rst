@@ -1,11 +1,86 @@
-.. This tocdepth stops Sphinx from putting every subsection title in this file
-   into the master table of contents.
-
-:tocdepth: 1
-
 --------
 更新日誌
 --------
+
+v6.7.0 2024-07-18
+=================
+
+升級指引：
+ * 請根據 :doc:`maintaining/installing/install-from-source` 第 2 點重新建立 Python 虛擬環境。
+ * 請根據 :doc:`maintaining/installing/install-from-source` 第 9 點設定 DataPusher+。
+ * 請移除 ``/etc/ckan/default/who.ini`` 。
+ * 請根據以下內容更新 CKAN 設定檔
+
+   .. code-block:: ini
+      :caption: /etc/ckan/default/ckan.ini
+
+      ## Authorization Settings
+
+      ckan.auth.create_unowned_dataset = true
+      ckan.auth.create_user_via_web = true
+
+      ## Search Settings
+
+      ckan.search.solr_allowed_query_parsers = field
+
+      ## Plugins Settings
+
+      ckan.plugins = dcat activity depositar_iso639 data_depositario depositar_theme_rep_str depositar_theme ark citation wikidatakeyword showcase dcat_json_interface structured_data stats datastore resource_proxy datapusher_plus datatables_view recline_view text_view image_view webpage_view recline_grid_view recline_map_view audio_view video_view pdf_view spatial_metadata spatial_query geo_view geojson_view wmts_view shp_view scheming_datasets
+
+      ## XLoader Settings
+
+      (移除此設定) ckanext.xloader.jobs_db.uri
+
+      ## Datapusher settings
+
+      ckan.datapusher.formats = csv xls xlsx tsv application/csv application/vnd.ms-excel application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ods application/vnd.oasis.opendocument.spreadsheet
+
+      ## Theming Settings
+
+      ckan.base_public_folder = public-bs3
+      ckan.base_templates_folder = templates-bs3
+
+      ## ckanext-data-depositario Settings
+
+      (移除此設定) ckanext.data_depositario.googleanalytics.id = GA_ID
+
+ * 請執行 CKAN 升級指令如下
+
+   .. code-block:: shell
+
+      . /usr/lib/ckan/default/bin/activate
+      ckan -c /etc/ckan/default/ckan.ini db upgrade
+      ckan -c /etc/ckan/default/ckan.ini search-index rebuild
+
+ * 修改 nginx 設定檔如下，之後重新啟動 nginx
+
+   .. code-block:: nginx
+      :caption: /etc/nginx/sites-available/ckan
+
+      proxy_temp_path /tmp/nginx_proxy 1 2;
+
+      server {
+          client_max_body_size 100M;
+          location / {
+              proxy_pass http://127.0.0.1:8080/;
+              proxy_set_header X-Forwarded-For $remote_addr;
+              proxy_set_header Host $host;
+          }
+      }
+
+注意事項：
+ * 此版本起將僅支援 Python 3.7 以上環境（目前支援 Python 3.7 至 3.10）。
+ * 已移除 Google Analytics 支援。
+ * 不再支援舊有的單一 API key 作為認證方式，請改用 API token（詳見 :doc:`../../user-guide/data-api` ）。
+
+更新內容：
+ * 更新：CKAN 核心至 `2.10.4 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-4-2024-03-13>`_ 。來自 CKAN 2.10 的變更：
+
+   - 可選擇以使用者名稱或電子郵件登入
+   - Table（表格）檢視（詳見 :ref:`data_preview` ）
+   - Font Awesome 6.0 圖示
+
+ （以上更新內容翻譯與修改自 `Open Knowledge Foundation <https://okfn.org/>`_ and `contributors <https://github.com/ckan/ckan/graphs/contributors>`_ 所編寫之 `Changelog — CKAN 2.10.4 documentation <http://docs.ckan.org/en/2.10/changelog.html>`_，該作品以 `創用CC 姓名標示-相同方式分享 3.0 未本地化 <https://creativecommons.org/licenses/by-sa/3.0/deed.zh_TW>`_ (`Creative Commons Attribution-ShareAlike 3.0 Unported <https://creativecommons.org/licenses/by-sa/3.0/>`_) 授權條款釋出。）
 
 v6.6.6 2024-05-15
 =================

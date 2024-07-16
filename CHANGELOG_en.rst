@@ -1,11 +1,88 @@
-.. This tocdepth stops Sphinx from putting every subsection title in this file
-   into the master table of contents.
-
-:tocdepth: 1
-
 ---------
 Changelog
 ---------
+
+v6.7.0 2024-07-18
+=================
+
+Migration notes:
+ * Please refer to the section 2 of the :doc:`maintaining/installing/install-from-source` to rebuild a Python virtual environment.
+ * Please refer to the section 9 of the :doc:`maintaining/installing/install-from-source` to setup DataPusher+.
+ * Please remove ``/etc/ckan/default/who.ini``.
+ * Please update your CKAN config file as follows:
+
+   .. code-block:: ini
+      :caption: /etc/ckan/default/ckan.ini
+
+      ## Authorization Settings
+
+      ckan.auth.create_unowned_dataset = true
+      ckan.auth.create_user_via_web = true
+
+      ## Search Settings
+
+      ckan.search.solr_allowed_query_parsers = field
+
+      ## Plugins Settings
+
+      ckan.plugins = dcat activity depositar_iso639 data_depositario depositar_theme_rep_str depositar_theme ark citation wikidatakeyword showcase dcat_json_interface structured_data stats datastore resource_proxy datapusher_plus datatables_view recline_view text_view image_view webpage_view recline_grid_view recline_map_view audio_view video_view pdf_view spatial_metadata spatial_query geo_view geojson_view wmts_view shp_view scheming_datasets
+
+      ## XLoader Settings
+
+      (remove this setting) ckanext.xloader.jobs_db.uri
+
+      ## Datapusher settings
+
+      ckan.datapusher.formats = csv xls xlsx tsv application/csv application/vnd.ms-excel application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ods application/vnd.oasis.opendocument.spreadsheet
+
+      ## Theming Settings
+
+      ckan.base_public_folder = public-bs3
+      ckan.base_templates_folder = templates-bs3
+
+      ## ckanext-data-depositario Settings
+
+      (remove this setting) ckanext.data_depositario.googleanalytics.id = GA_ID
+
+ * Run the commands below to upgrade CKAN:
+
+   .. code-block:: shell
+
+      . /usr/lib/ckan/default/bin/activate
+      ckan -c /etc/ckan/default/ckan.ini db upgrade
+      ckan -c /etc/ckan/default/ckan.ini search-index rebuild
+
+ * Update the nginx config file as follows, then restart nginx:
+
+   .. code-block:: nginx
+      :caption: /etc/nginx/sites-available/ckan
+
+      proxy_temp_path /tmp/nginx_proxy 1 2;
+
+      server {
+          client_max_body_size 100M;
+          location / {
+              proxy_pass http://127.0.0.1:8080/;
+              proxy_set_header X-Forwarded-For $remote_addr;
+              proxy_set_header Host $host;
+          }
+      }
+
+Notice:
+ * Since this version, |site_name| only supports Python 3.7 or greater.
+   |site_name| now supports Python 3.7 to 3.10.
+ * The support for Google Analytics has been removed.
+ * Legacy API keys are no longer supported for authentication.
+   API tokens should be used instead. Please refer to the :doc:`../../user-guide/data-api`.
+
+Changes:
+ * Update: CKAN core version `2.10.4 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-4-2024-03-13>`_. Changes from CKAN 2.10:
+
+   - Users can login with username or email.
+   - Table view. Please refer to the :ref:`data_preview`.
+   - Font Awesome 6.0 icons
+
+   (The above changelog is adapted from `Changelog — CKAN 2.10.4 documentation <http://docs.ckan.org/en/2.10/changelog.html>`_ by `Open Knowledge Foundation <https://okfn.org/>`_ and `contributors <https://github.com/ckan/ckan/graphs/contributors>`_ licensed under `Creative Commons Attribution-ShareAlike 3.0 Unported <https://creativecommons.org/licenses/by-sa/3.0/>`_.)
 
 v6.6.6 2024-05-15
 =================
