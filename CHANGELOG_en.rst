@@ -2,6 +2,16 @@
 Changelog
 ---------
 
+v6.7.1 2024-09-18
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ and `ckanext-geoview <https://github.com/depositar/ckanext-geoview>`_.
+
+Changes:
+ * Update: CKAN core version `2.10.5 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-5-2024-08-21>`_.
+ * Update: ckanext-depositar_theme 1.1.12 and ckanext-geoview 0.2.0.
+
 v6.7.0 2024-07-18
 =================
 

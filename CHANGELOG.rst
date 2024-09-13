@@ -2,6 +2,16 @@
 更新日誌
 --------
 
+v6.7.1 2024-09-18
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 與 `ckanext-geoview <https://github.com/depositar/ckanext-geoview>`_ 使用。
+
+更新內容：
+ * 更新：CKAN 核心至 `2.10.5 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-5-2024-08-21>`_。
+ * 更新：ckanext-depositar_theme 1.1.12 與 ckanext-geoview 0.2.0。
+
 v6.7.0 2024-07-18
 =================
 
