@@ -17,5 +17,6 @@ deploy-locally
 hardware-software
 k8s-setup
 install-binderhub
+upgrade-binderhub
 others
 ```
