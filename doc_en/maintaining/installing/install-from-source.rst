@@ -1,8 +1,8 @@
-===========================
-Installing CKAN from source
-===========================
+================================
+Installing depositar from source
+================================
 
-This section describes how to install CKAN used by |site_name| from source on an Ubuntu 22.04 server.
+This section describes how to install |site_name| from source on an Ubuntu 22.04 server.
 
 --------------------------------
 1. Install the required packages

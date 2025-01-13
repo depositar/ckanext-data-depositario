@@ -1,15 +1,17 @@
----------
-安裝 CKAN
----------
+--------------
+安裝 depositar
+--------------
 
-目前本平台係以原始碼方式安裝 CKAN。
-
-詳見 :doc:`install-from-source` 與 :doc:`deployment` 。
-
-------------
+單機安裝
+========
 
 .. toctree::
    :maxdepth: 1
 
    install-from-source
    deployment
+
+Docker Compose 安裝
+===================
+
+僅供快速安裝與評估之用。請參考 https://github.com/depositar/depositar-docker/wiki/Quick-Setup 的說明。
