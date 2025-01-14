@@ -2,6 +2,16 @@
 Changelog
 ---------
 
+v6.7.2 2025-01-15
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Update: CKAN core version `2.10.6 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-6-2024-12-11>`_.
+ * Update: add ``Docker Compose install`` and ``Upgrade BinderHub`` section to the Maintainer’s guide.
+
 v6.7.1 2024-09-18
 =================
 

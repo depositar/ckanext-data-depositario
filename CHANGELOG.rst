@@ -2,6 +2,16 @@
 更新日誌
 --------
 
+v6.7.2 2025-01-15
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+
+更新內容：
+ * 更新：CKAN 核心至 `2.10.6 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-6-2024-12-11>`_。
+ * 更新：維護手冊增訂 Docker Compose 安裝。
+
 v6.7.1 2024-09-18
 =================
 
