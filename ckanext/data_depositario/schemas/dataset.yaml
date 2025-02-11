@@ -451,9 +451,6 @@ resource_fields:
   icon: keyboard-o
   preset: select
   validators: ignore_empty scheming_choices
-  form_attrs:
-    data-module: autocomplete
-    class: ''
   choices:
   - value: big5
     label:
