@@ -163,6 +163,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
             'json_validator',
             'date_validator',
             'end_time_validator',
+            'format_no_initial_period',
         )
         converter_names = (
             'remove_blank_wrap',

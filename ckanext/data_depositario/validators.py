@@ -115,3 +115,17 @@ def end_time_validator(key, data, errors, context):
    if end_time_p < start_time_p:
        raise Invalid(_('End time should be greater than \
              or equal to start time'))
+
+def format_no_initial_period(value, context):
+   """
+   Raises Invalid if there is a leading period in the resource format.
+   """
+
+   if value == '':
+      return value
+
+   if value[0] == '.':
+      raise Invalid(_('Format should not include the initial period. \
+            Please also check other resources in this dataset.'))
+
+   return value

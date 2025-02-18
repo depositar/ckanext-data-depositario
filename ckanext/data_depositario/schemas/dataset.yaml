@@ -509,15 +509,16 @@ resource_fields:
     zh_Hant_TW: 格式
   icon: archive
   preset: resource_format_autocomplete
+  validators: if_empty_guess_format ignore_missing format_no_initial_period clean_format unicode_safe
   form_attrs:
     data-module: autocomplete
     data-module-source: /api/2/util/resource/format_autocomplete?incomplete=?
     class: ''
   form_placeholder:
-    en: eg. CSV, XML or JSON
-    zh_Hant_TW: 例如：CSV, XML 或 JSON
+    en: Exclude the initial period. eg. CSV, XML or JSON
+    zh_Hant_TW: 不包含開頭的「.」。例如：CSV, XML 或 JSON
   help_text:
     en: Specify the shapefile as “shp” in the Format field when filling out resource
-      information and upload a ZIP archive containing the .shp, .shx, .dbf, and .prj
+      information and upload a ZIP archive containing the shp, shx, dbf, and prj
       files, otherwise the shapefile can not be previewed.
-    zh_Hant_TW: Shapefile 檔案請填寫「shp」，並將 .shp、.shx、.dbf、.prj 檔案置於一 zip 壓縮檔內，否則將無法開啟預覽功能。
+    zh_Hant_TW: Shapefile 檔案請填寫「shp」，並將 shp、shx、dbf、prj 檔案置於一 zip 壓縮檔內，否則將無法開啟預覽功能。
