@@ -1,40 +1,40 @@
 # Translations template for ckanext-data-depositario.
-# Copyright (C) 2023 ORGANIZATION
+# Copyright (C) 2025 ORGANIZATION
 # This file is distributed under the same license as the
 # ckanext-data-depositario project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.5.9b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.7.3b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-05-02 04:06+0000\n"
+"POT-Creation-Date: 2025-02-14 13:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.10.3\n"
 
-#: ckanext/data_depositario/plugin.py:189
+#: ckanext/data_depositario/plugin.py:223
 msgid "Data Type"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:190
+#: ckanext/data_depositario/plugin.py:224
 msgid "Projects"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:191
+#: ckanext/data_depositario/plugin.py:225
 msgid "Topics"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:192
+#: ckanext/data_depositario/plugin.py:226
 msgid "Language"
 msgstr ""
 
-#: ckanext/data_depositario/plugin.py:245
+#: ckanext/data_depositario/plugin.py:280
 msgid "Error sending the email. Try again later or contact an administrator for help"
 msgstr ""
 
@@ -56,6 +56,12 @@ msgstr ""
 
 #: ckanext/data_depositario/validators.py:116
 msgid "End time should be greater than              or equal to start time"
+msgstr ""
+
+#: ckanext/data_depositario/validators.py:128
+msgid ""
+"Format should not include the initial period.             Please also check "
+"other resources in this dataset."
 msgstr ""
 
 #: ckanext/data_depositario/public/scripts/user-guide.js:26
@@ -110,35 +116,35 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ckanext/data_depositario/routes/user.py:39
+#: ckanext/data_depositario/routes/user.py:42
 msgid "Unauthorized to register as a user."
 msgstr ""
 
-#: ckanext/data_depositario/routes/user.py:54
+#: ckanext/data_depositario/routes/user.py:57
 msgid "Integrity Error"
 msgstr ""
 
-#: ckanext/data_depositario/routes/user.py:60
+#: ckanext/data_depositario/routes/user.py:62
 msgid "Bad Captcha. Please try again."
 msgstr ""
 
-#: ckanext/data_depositario/routes/user.py:67
+#: ckanext/data_depositario/routes/user.py:69
 #, python-format
 msgid "Unauthorized to create user %s"
 msgstr ""
 
-#: ckanext/data_depositario/routes/user.py:69
+#: ckanext/data_depositario/routes/user.py:71
 msgid "User not found"
 msgstr ""
 
-#: ckanext/data_depositario/routes/user.py:79
+#: ckanext/data_depositario/routes/user.py:82
 #, python-format
 msgid ""
 "User \"%s\" is now registered but you are still logged in as \"%s\" from "
 "before"
 msgstr ""
 
-#: ckanext/data_depositario/routes/user.py:90
+#: ckanext/data_depositario/routes/user.py:96
 msgid "Please check your inbox to set your password."
 msgstr ""
 
@@ -164,15 +170,7 @@ msgstr ""
 msgid "Use a map to fill in spatial coverage"
 msgstr ""
 
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:5
-msgid "Format"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:6
-msgid "unknown"
-msgstr ""
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:33
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:26
 msgid "License"
 msgstr ""
 

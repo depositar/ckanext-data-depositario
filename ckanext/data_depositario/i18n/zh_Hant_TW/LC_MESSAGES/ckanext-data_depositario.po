@@ -6,36 +6,36 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-data-depositario 6.5.9b0\n"
+"Project-Id-Version: ckanext-data-depositario 6.7.3b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-05-02 04:06+0000\n"
+"POT-Creation-Date: 2025-02-14 13:55+0800\n"
 "PO-Revision-Date: 2017-09-02 16:58+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
 "Language-Team: zh_Hant_TW <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.10.3\n"
 
-#: ckanext/data_depositario/plugin.py:189
+#: ckanext/data_depositario/plugin.py:223
 msgid "Data Type"
 msgstr "資料類型"
 
-#: ckanext/data_depositario/plugin.py:190
+#: ckanext/data_depositario/plugin.py:224
 msgid "Projects"
 msgstr "專案"
 
-#: ckanext/data_depositario/plugin.py:191
+#: ckanext/data_depositario/plugin.py:225
 msgid "Topics"
 msgstr "主題"
 
-#: ckanext/data_depositario/plugin.py:192
+#: ckanext/data_depositario/plugin.py:226
 msgid "Language"
 msgstr "語言"
 
-#: ckanext/data_depositario/plugin.py:245
+#: ckanext/data_depositario/plugin.py:280
 msgid ""
 "Error sending the email. Try again later or contact an administrator for "
 "help"
@@ -60,6 +60,12 @@ msgstr "日期格式不正確"
 #: ckanext/data_depositario/validators.py:116
 msgid "End time should be greater than              or equal to start time"
 msgstr "結束時間需晚於或等於起始時間"
+
+#: ckanext/data_depositario/validators.py:128
+msgid ""
+"Format should not include the initial period.             Please also "
+"check other resources in this dataset."
+msgstr "格式不應包含開頭的「.」。也請確認此資料集內的其他資源。"
 
 #: ckanext/data_depositario/public/scripts/user-guide.js:26
 msgid "Skip"
@@ -115,35 +121,35 @@ msgstr "網址"
 msgid "Edit"
 msgstr "編輯"
 
-#: ckanext/data_depositario/routes/user.py:39
+#: ckanext/data_depositario/routes/user.py:42
 msgid "Unauthorized to register as a user."
 msgstr "沒有權限註冊為使用者"
 
-#: ckanext/data_depositario/routes/user.py:54
+#: ckanext/data_depositario/routes/user.py:57
 msgid "Integrity Error"
 msgstr "完整性錯誤"
 
-#: ckanext/data_depositario/routes/user.py:60
+#: ckanext/data_depositario/routes/user.py:62
 msgid "Bad Captcha. Please try again."
 msgstr "驗證碼錯誤，請再試一次。"
 
-#: ckanext/data_depositario/routes/user.py:67
+#: ckanext/data_depositario/routes/user.py:69
 #, python-format
 msgid "Unauthorized to create user %s"
 msgstr "沒有權限建立使用者%s"
 
-#: ckanext/data_depositario/routes/user.py:69
+#: ckanext/data_depositario/routes/user.py:71
 msgid "User not found"
 msgstr "使用者不存在"
 
-#: ckanext/data_depositario/routes/user.py:79
+#: ckanext/data_depositario/routes/user.py:82
 #, python-format
 msgid ""
 "User \"%s\" is now registered but you are still logged in as \"%s\" from "
 "before"
 msgstr "使用者 \"%s\" 已經註冊，但你仍以 \"%s\" 登入中"
 
-#: ckanext/data_depositario/routes/user.py:90
+#: ckanext/data_depositario/routes/user.py:96
 msgid "Please check your inbox to set your password."
 msgstr "請至信箱收信，並依通知信指示設定密碼。"
 
@@ -169,15 +175,7 @@ msgstr "只對專案內成員公開"
 msgid "Use a map to fill in spatial coverage"
 msgstr "使用圖台填寫空間範圍"
 
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:5
-msgid "Format"
-msgstr "格式"
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:6
-msgid "unknown"
-msgstr "未知的"
-
-#: ckanext/data_depositario/templates/scheming/package/resource_read.html:33
+#: ckanext/data_depositario/templates/scheming/package/resource_read.html:26
 msgid "License"
 msgstr "授權"
 
@@ -204,4 +202,10 @@ msgstr "清除"
 #: ckanext/data_depositario/templates/snippets/date_facet_slider.html:17
 msgid "Add datasets with time range to use this facet"
 msgstr "新增具有時間資訊的資料集以使用此過濾器"
+
+#~ msgid "Format"
+#~ msgstr "格式"
+
+#~ msgid "unknown"
+#~ msgstr "未知的"
 
