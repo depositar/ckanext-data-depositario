@@ -2,6 +2,18 @@
 Changelog
 ---------
 
+v6.7.3 2025-03-06
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Add: `statistics page <https://stats.depositar.io/>`_ (an external site).
+ * Update: CKAN core version `2.10.7 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-7-2025-02-05>`_.
+ * Improvement: add the blank choice to the encoding field (#27).
+ * Improvement: check and restrict the resource format field to not have a leading period.
+
 v6.7.2 2025-01-15
 =================
 

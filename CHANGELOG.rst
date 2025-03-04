@@ -2,6 +2,18 @@
 更新日誌
 --------
 
+v6.7.3 2025-03-06
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+
+更新內容：
+ * 新增：`收錄統計 <https://stats.depositar.io/>`_ （外部網站）。
+ * 更新：CKAN 核心至 `2.10.7 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-7-2025-02-05>`_。
+ * 改善：字元編碼欄位新增空白值 (#27)。
+ * 改善：檢查並限制資源格式開頭不得為 ``.``。
+
 v6.7.2 2025-01-15
 =================
 
