@@ -11,49 +11,59 @@ this.ckan.module('intro-action', function (jQuery) {
     },
 
     initialize: function () {
-      intro = introJs();
+      const driver = window.driver.js.driver;
       var introStart = true;
       var visited = localStorage.getItem('intro');
       introStart = visited ? false : true;
       var md = new MobileDetect(window.navigator.userAgent);
       var isMobile = md.mobile() ? true : false;
 
-      intro.setOptions({
-        overlayOpacity: 0.5,
-        nextLabel: ' &rarr; ',
-        prevLabel: '&larr; ',
-        showStepNumbers: false,
-        skipLabel: this._('Skip'),
-        doneLabel: this._('Confirm'),
+      driverObj = driver({
+        nextBtnText: ' &rarr; ',
+        prevBtnText: '&larr; ',
+        doneBtnText: this._('Confirm'),
+        side: 'bottom',
         steps: [
           {
             element: '.search-input-group',
-            intro: this._('Here you can search datasets by a keyword.')
+            popover: {
+              description: this._('Here you can search datasets by a keyword.'),
+              side: 'bottom'
+            }
           },
-	  {
-	    element: '#dataset-map',
-	    intro: this._('Here you can search datasets by the map.'),
-	    position: 'right'
-	  },
+	      {
+	        element: '#dataset-map',
+            popover: {
+              description: this._('Here you can search datasets by the map.'),
+              side: 'right'
+            }
+	      },
           {
             element: '#temporal-search',
-            intro: this._('Here you can search datasets by a period of time.'),
-            position: 'right'
+            popover: {
+              description: this._('Here you can search datasets by a period of time.'),
+              side: 'right'
+            }
           },
           {
             element: '.filters',
-            intro: this._('Here you can filter datasets.'),
-            position: 'right'
+            popover: {
+              description: this._('Here you can filter datasets.'),
+              side: 'right'
+            }
           },
           {
             element: '.dataset-list',
-            intro: this._('The matched datasets will list here.'),
-            position: 'right'
+            popover: {
+              description: this._('The matched datasets will list here.')
+            }
           },
           {
             element: '#intro-switch',
-            intro: this._('Click this question mark to show this help again.'),
-            position: 'right'
+            popover: {
+              description: this._('Click this question mark to show this help again.'),
+              side: 'right'
+            }
           }
         ]
       });
@@ -67,7 +77,7 @@ this.ckan.module('intro-action', function (jQuery) {
 
       if(introStart) {
         localStorage.setItem('intro', 1);
-        intro.start();
+        driverObj.drive();
       }
     },
 
@@ -79,7 +89,7 @@ this.ckan.module('intro-action', function (jQuery) {
     },
 
     _onClick: function(event) {
-      intro.start();
+      driverObj.drive();
     }
   }
 });

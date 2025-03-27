@@ -47,7 +47,7 @@ show-filters:
 user-guide-js:
   output: ckanext-data-depositario/%(version)s_user-guide.js
   contents:
-    - scripts/vendor/intro.js/intro.js
+    - scripts/vendor/driver.js/driver.js.iife.js
     - scripts/user-guide.js
   extra:
     preload:
@@ -56,8 +56,7 @@ user-guide-js:
 user-guide-css:
   output: ckanext-data-depositario/%(version)s_user-guide.css
   contents:
-    - scripts/vendor/intro.js/introjs.css
-    - styles/introjs-depositar.css
+    - scripts/vendor/driver.js/driver.css
 
 select2-pagination:
   filters: rjsmin
