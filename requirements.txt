@@ -7,7 +7,7 @@ ckanext-scheming==3.0.0
 -e git+https://github.com/depositar/ckanext-geoview.git#egg=ckanext-geoview
 -e git+https://github.com/depositar/ckanext-wikidatakeyword.git#egg=ckanext-wikidatakeyword
 -e git+https://github.com/ckan/ckanext-dcat.git@v1.5.1#egg=ckanext-dcat
-git+https://github.com/ckan/ckanext-showcase.git@v1.6.1#egg=ckanext-showcase
+git+https://github.com/ckan/ckanext-showcase.git@v1.8.3#egg=ckanext-showcase
 git+https://github.com/ckan/ckanext-pdfview.git@0.0.8#egg=ckanext-pdfview
 -e git+https://github.com/depositar/ckanext-depositar_theme.git#egg=ckanext-depositar_theme
 git+https://github.com/depositar/ckanext-citation.git#egg=ckanext-citation
