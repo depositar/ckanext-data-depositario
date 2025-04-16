@@ -2,6 +2,18 @@
 Changelog
 ---------
 
+v6.7.4 2025-04-17
+=================
+
+Migration notes:
+ * Please update your CKAN config file (/etc/ckan/default/ckan.ini) and remove the ``ckan.base_templates_flder`` and ``ckan.base_public_folder`` configs.
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.cm/depositar/ckanext-depositar_theme>`__, `ckanext-showcase <https://github.com/ckan/ckanext-showcase>`__ (>= 1.8.3), and `ckanext-ark <https://github.com/depositar/ckanext-ark>`__ (>= 1.0.4).
+
+Changes:
+ * New interface based on Bootstrap 5.
+
 v6.7.3 2025-03-06
 =================
 

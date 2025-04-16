@@ -2,6 +2,18 @@
 更新日誌
 --------
 
+v6.7.4 2025-04-17
+=================
+
+升級指引：
+ * 請更新 CKAN 設定檔 (/etc/ckan/default/ckan.ini)，移除 ``ckan.base_templates_folder`` 與 ``ckan.base_public_folder`` 設定。
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`__、`ckanext-showcase <https://github.com/ckan/ckanext-showcase>`__ (>= 1.8.3)，與 `ckanext-ark <https://github.com/depositar/ckanext-ark>`__ (>= 1.0.4) 使用。
+
+更新內容：
+ * 以 Bootstrap 5 為基礎的新介面。
+
 v6.7.3 2025-03-06
 =================
 
