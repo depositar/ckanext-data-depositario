@@ -264,7 +264,7 @@ dataset_fields:
   help_text:
     en: Please fill in the time related to contents of the dataset, not the time when
       the resources in the dataset were created or finished.
-    zh_Hant_TW: 請填寫與資料集內涵所關聯之時間，而資料集內資源的產出或完成之時間。
+    zh_Hant_TW: 請填寫與資料集內涵所關聯之時間，而非資料集內資源的產出或完成之時間。
 - field_name: spatial
   label:
     en: Spatial Coverage
