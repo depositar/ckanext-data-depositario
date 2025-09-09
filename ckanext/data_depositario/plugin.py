@@ -13,6 +13,7 @@ from ckan.common import json, _
 import ckan.lib.mailer as mailer
 import ckan.lib.helpers as h
 from ckan.lib.plugins import DefaultTranslation
+import ckanext.datapackager.lib.util as datapackager_util
 from ckanext.scheming import helpers as scheming_helpers
 from ckanext.depositar_theme import helpers as theme_helpers
 
@@ -20,6 +21,7 @@ from ckanext.data_depositario import helpers
 from ckanext.data_depositario import routes
 from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
+from ckanext.data_depositario.datapackage.package import DepositarCkanPackage
 
 log = getLogger(__name__)
 
@@ -50,6 +52,10 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         p.toolkit.add_template_directory(config, 'templates')
         p.toolkit.add_public_directory(config, 'public')
         p.toolkit.add_resource('public', 'ckanext-data-depositario')
+
+        # Override the ckanext-datapackager
+        datapackager_util.generate_datapackage_json = \
+            generate_datapackage_json
 
     ## IPackageController
     def before_dataset_search(self, search_params):
@@ -270,3 +276,6 @@ def user_create(context, data_dict):
             return h.redirect_to(u'/')
 
     return user_dict
+
+def generate_datapackage_json(dataset):
+    return DepositarCkanPackage.from_dict(dataset).to_dp().to_dict()
