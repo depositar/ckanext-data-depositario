@@ -115,13 +115,13 @@ class DepositarCkanPackage(CkanPackage):
 
         # Resources
         package.resources = []
-        for index, item in enumerate(self.resources):
+        for index, item in enumerate(self.resources, start=1):
             resource = item.to_dp()
 
             # Override dplib-py to avoid slugification
             # - https://github.com/frictionlessdata/dplib-py/
             # blob/v1.1.0/dplib/plugins/ckan/models/resource.py#L35
-            resource.name = str(index)
+            resource.name = f"resource_{str(index)}"
 
             package.resources.append(resource)
 
