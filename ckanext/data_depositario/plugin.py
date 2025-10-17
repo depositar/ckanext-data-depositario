@@ -22,6 +22,7 @@ from ckanext.data_depositario import routes
 from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
 from ckanext.data_depositario.datapackage.package import DepositarCkanPackage
+from ckanext.data_depositario.datapackage.package import DepositarDPPackage
 
 log = getLogger(__name__)
 
@@ -56,6 +57,8 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         # Override the ckanext-datapackager
         datapackager_util.generate_datapackage_json = \
             generate_datapackage_json
+        datapackager_util.create_dataset_from_datapackage = \
+            create_dataset_from_datapackage
 
     ## IPackageController
     def before_dataset_search(self, search_params):
@@ -279,3 +282,7 @@ def user_create(context, data_dict):
 
 def generate_datapackage_json(dataset):
     return DepositarCkanPackage.from_dict(dataset).to_dp().to_dict()
+
+def create_dataset_from_datapackage(dp):
+    depositar_dp = DepositarDPPackage(**dp.model_dump())
+    return DepositarCkanPackage.from_dp(depositar_dp).to_dict()

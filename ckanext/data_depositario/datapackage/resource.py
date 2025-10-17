@@ -6,6 +6,13 @@ from dplib.models import Resource
 from dplib.plugins.ckan.models.package import CkanResource
 
 
+class DepositarDPResource(Resource):
+    """Depositar CKAN Data Resource model"""
+
+    encoding: Optional[str] = None
+    resource_crs: Optional[int] = None
+
+
 class DepositarCkanResource(CkanResource):
     """Depositar CKAN Resource model"""
 
@@ -31,3 +38,26 @@ class DepositarCkanResource(CkanResource):
             resource.resource_crs = self.resource_crs
 
         return resource
+
+    @classmethod
+    def from_dp(cls, resource: DepositarDPResource) -> Optional[CkanResource]:
+        """Create CKAN Resource from Data Resource
+
+        Parameters:
+            resource: Data Resource
+
+        Returns:
+            CKAN Resource
+        """
+        ckan = super().from_dp(resource)
+
+        if resource.title:
+            ckan.name = resource.title
+
+        if resource.encoding:
+            ckan.encoding = resource.encoding
+
+        if resource.resource_crs:
+            ckan.resource_crs = resource.resource_crs
+
+        return ckan
