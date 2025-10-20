@@ -16,6 +16,7 @@ from ckan.lib.plugins import DefaultTranslation
 import ckanext.datapackager.lib.util as datapackager_util
 from ckanext.scheming import helpers as scheming_helpers
 from ckanext.depositar_theme import helpers as theme_helpers
+import pydantic
 
 from ckanext.data_depositario import helpers
 from ckanext.data_depositario import routes
@@ -284,5 +285,12 @@ def generate_datapackage_json(dataset):
     return DepositarCkanPackage.from_dict(dataset).to_dp().to_dict()
 
 def create_dataset_from_datapackage(dp):
-    depositar_dp = DepositarDPPackage(**dp.model_dump())
+    try:
+        depositar_dp = DepositarDPPackage(**dp.model_dump())
+    # Handle the invalid extended Data Package properties
+    # The built-in Data Package properties are handled by ckanext-datapackager
+    except pydantic.ValidationError as e:
+        msg = {'datapackage': e.errors()}
+        raise p.toolkit.ValidationError(msg)
+
     return DepositarCkanPackage.from_dp(depositar_dp).to_dict()
