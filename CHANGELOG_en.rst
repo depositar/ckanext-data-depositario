@@ -2,6 +2,18 @@
 Changelog
 ---------
 
+v6.7.6 2025-11-05
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Update: CKAN core version `2.10.9 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-9-2025-10-29>`_.
+ * Improvement: Hide the custom fields when editing a topic or a project.
+ * Improvement: Fix links and labels on dashboard/My Projects page.
+ * Improvement: Tweak the wording.
+
 v6.7.5 2025-05-20
 =================
 
