@@ -14,3 +14,4 @@ readthedocs-sphinx-ext
 sphinx_design
 sphinx-copybutton
 myst-parser==1.0.0
+jieba==0.42.1

@@ -123,6 +123,8 @@ html_static_path = ['images']
 
 html_logo = 'images/logo.svg'
 
+html_search_language = 'zh'
+
 
 # -- Options for HTMLHelp output ------------------------------------------
 
