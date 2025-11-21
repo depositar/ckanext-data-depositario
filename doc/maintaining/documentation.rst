@@ -56,6 +56,20 @@
 
       rm -rf build; python setup.py build_sphinx
 
+產製 Data Package 設定檔文件
+============================
+
+於 Data Package 設定檔修訂時，在 ``pyenv/src/ckanext-data-depositario/depositar-dp`` 下新增版本後，請執行以下指令產製對應之 :doc:`設定檔 (profile) <../appendix/datapackage/index>` 文件：
+
+.. parsed-literal::
+
+   cd pyenv/src/ckanext-data-depositario
+   python setup.py build_dp_profile_doc
+
+.. note::
+
+   產製前會經 `jsonschema <https://python-jsonschema.readthedocs.io/en/v4.23.0/api/jsonschema/protocols/#jsonschema.protocols.Validator.check_schema>`_ 套件檢查語法。
+
 ------------
 文件發佈方法
 ------------

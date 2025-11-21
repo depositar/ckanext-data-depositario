@@ -62,6 +62,20 @@ Now you can open the built HTML files in
 
        rm -rf build; python setup.py build_sphinx
 
+Build the docs for the Data Package profile
+===========================================
+
+When revising the Data Package profile, after adding a new profile version to the ``pyenv/src/ckanext-data-depositario/depositar-dp``, run the following commands to build the :doc:`documentation <../appendix/datapackage/index>` for the profile:
+
+.. parsed-literal::
+
+   cd pyenv/src/ckanext-data-depositario
+   python setup.py build_dp_profile_doc
+
+.. note::
+
+   The syntax will be checked via `jsonschema <https://python-jsonschema.readthedocs.io/en/v4.23.0/api/jsonschema/protocols/#jsonschema.protocols.Validator.check_schema>`_ before building the documentation.
+
 ----------------
 Publish the docs
 ----------------

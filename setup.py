@@ -14,6 +14,10 @@ entry_points = {
     'babel.extractors': [
         'ckan = ckan.lib.extract:extract_ckan',
     ],
+    'distutils.commands': [
+        'build_dp_profile_doc = ckanext.data_depositario.'
+        'build_dp_profile_doc:BuildDPProfileDoc',
+    ],
 }
 
 setup(
