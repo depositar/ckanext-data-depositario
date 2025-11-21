@@ -17,7 +17,7 @@ dataset_fields:
     en: URL
     zh_Hant_TW: 網址
   preset: dataset_slug
-  validators: not_empty unicode_safe package_name_validator
+  validators: not_empty unicode_safe name_validator package_name_validator
   form_placeholder:
     en: eg. my-dataset
     zh_Hant_TW: 例如：我的資料集
