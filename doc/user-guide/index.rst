@@ -25,5 +25,6 @@
    rdf-serializations
    ark-identifier
    binder
+   datapackage
    personalization
    limitation
