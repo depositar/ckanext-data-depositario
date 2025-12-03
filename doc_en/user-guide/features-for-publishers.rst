@@ -184,8 +184,7 @@ Editing a dataset
 -----------------
 
 You can edit the dataset you have created, or any dataset owned by an
-project that you are a member of. (If a dataset is not owned by any
-project, then any registered user can edit it.)
+project that you are a member of.
 
 #. Go to the dataset's page. You can find it by entering the title in the search box on any page.
 
