@@ -20,6 +20,7 @@ from ckanext.data_depositario import helpers
 from ckanext.data_depositario import routes
 from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
+from ckanext.data_depositario.logic.auth.update import package_update
 
 log = getLogger(__name__)
 
@@ -44,6 +45,7 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     p.implements(p.IValidators)
     p.implements(p.IBlueprint, inherit=True)
     p.implements(p.IActions)
+    p.implements(p.IAuthFunctions)
 
     ## IConfigurer
     def update_config(self, config):
@@ -194,6 +196,10 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
     ## IActions
     def get_actions(self):
         return {'license_list': license_list, 'user_create': user_create}
+
+    ## IAuthFunctions
+    def get_auth_functions(self):
+        return {'package_update': package_update}
 
 def _get_module_functions(module, function_names):
     functions = {}
