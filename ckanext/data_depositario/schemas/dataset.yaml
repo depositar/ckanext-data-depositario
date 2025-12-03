@@ -376,8 +376,9 @@ dataset_fields:
   label_name: organizations
   preset: dataset_organization
   help_text:
-    en: Choose which project should own the dataset
-    zh_Hant_TW: 設定資料集所屬專案
+    en: Choose which project should own the dataset. If you select “No project”, the
+      dataset will be opened to the public.
+    zh_Hant_TW: 設定資料集所屬專案。若選擇「不屬於任何專案」，則此資料集會強制設定為「公開」狀態。
 - field_name: contact_person
   label:
     en: Contact Person

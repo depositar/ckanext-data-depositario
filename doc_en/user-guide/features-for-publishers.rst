@@ -8,7 +8,7 @@ Adding a new dataset
 
 .. note::
 
-   You need a user account associated with a project (See :ref:`creating_an_project`) to add and edit datasets.
+   You may need an user account in order to add and edit datasets.
 
 **Step 1**. You can access CKAN's "Create dataset" screen in two ways.
 
@@ -183,8 +183,9 @@ using your account information (for account information, please refer to :ref:`m
 Editing a dataset
 -----------------
 
-You can edit the dataset you have created, or any dataset owned by a
-project that you are a member of.
+You can edit the dataset you have created, or any dataset owned by an
+project that you are a member of. (If a dataset is not owned by any
+project, then any registered user can edit it.)
 
 #. Go to the dataset's page. You can find it by entering the title in the search box on any page.
 
