@@ -2,6 +2,18 @@
 Changelog
 ---------
 
+v6.7.7 2025-12-10
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Improvement: Fix rendering issues caused by Markdown field truncation.
+ * Improvement: Datasets not belonging to any project can only be edited by the uploader or collaborators.
+ * Improvement: Search in the Chinese documentation.
+ * Improvement: Tweak the wording.
+
 v6.7.6 2025-11-05
 =================
 
