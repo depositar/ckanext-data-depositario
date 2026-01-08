@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from typing import List, Optional
 
+from ckan.plugins.toolkit import config
 from dplib.models import Package
 from dplib.plugins.ckan.models.package import CkanPackage
 
@@ -119,14 +120,14 @@ class DepositarCkanPackage(CkanPackage):
         if self.contact_email:
             package.contact_email = self.contact_email
 
-        sources_path = f"https://data.depositar.io/dataset/{self.name}"
+        sources_path = f"{config.get('ckan.site_url')}/dataset/{self.name}"
 
         if hasattr(self, "ark"):
             package.id = f"https://n2t.net/{self.ark}"
             sources_path = package.id
 
         package.sources = [{
-            "title": "depositar",
+            "title": "研究資料寄存所 | depositar",
             "path": sources_path,
             "email": "data.contact@depositar.io"
         }]
