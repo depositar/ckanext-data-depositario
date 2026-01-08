@@ -10,7 +10,7 @@ Via the `ckanext-datapackager`_ extension, |site_name| allows users to download 
 
 .. note::
 
-    This feature is a work in process. If you have any comment or feedback, please `contact us`_.
+    This feature is a work in progress. If you have comment or feedback, please `contact us`_.
 
 Features
 --------

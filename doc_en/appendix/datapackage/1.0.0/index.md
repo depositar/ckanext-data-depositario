@@ -2,7 +2,7 @@
 
 Metadata in the depositar Data Package are expressed in a `datapackage.json` file. It follows the [Data Package](https://datapackage.org/standard/data-package/) specifications and includes generic **Data Package properties** and specific **depositar DP properties**. Properties indicated with `*` are required (i.e. cannot be empty).
 
-Source: [depositar-dp-profile.json](https://github.com/depositar/ckanext-data-depositario/blob/master/depositar-dp/1.0.0/depositar-dp-profile.json)
+Source: [depositar-dp-profile.json](https://github.com/depositar/ckanext-data-depositario/blob/dp-support/depositar-dp/1.0.0/depositar-dp-profile.json)
 
 ## resources *
 
