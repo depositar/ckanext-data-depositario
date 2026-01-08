@@ -134,7 +134,7 @@ class DepositarCkanPackage(CkanPackage):
 
         package.custom["$schema"] = \
             "https://raw.githubusercontent.com/depositar/" \
-            "ckanext-data-depositario/master/depositar-dp/1.0.0/" \
+            "ckanext-data-depositario/dp-support/depositar-dp/1.0.0/" \
             "depositar-dp-profile.json"
 
         # Resources
