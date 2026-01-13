@@ -182,8 +182,10 @@ Automatic Data Package Generation
 When a dataset is created or edited, and the total size of the resources in the dataset
 is 50 MB or less, a Data Package will be generated automatically and uploaded as a resource for the dataset:
 
-* The file name of the Data Package is fixed as ``datapackage.zip``
-* The Data Package resource is **NOT LISTED** in the resource list on the dataset page and the edit dataset page
+* The Data Package file is named ``datapackage_YYYY-MM-DD_HH-MM-SS_dataset-name.zip``.
+  The timestamp indicates when the package was created, and ``dataset-name``
+  corresponds to the string following ``/dataset/`` in the dataset URL.
+* The Data Package resource is **NOT LISTED** in the resource list on the dataset page and the edit dataset page.
 * The Data Package resource is **LISTED** in the API results, :doc:`rdf-serializations`, and :doc:`binder`. You need to exclude the Data Package resource when calculating the resource count via the API.
 * The Data Package resource only includes data files uploaded to |site_name|. External URLs will only be listed in the ``datapackage.json``, and any resource without a URL will not be included.
 * The Data Package resource will not be updated (and the existing one will be deleted)

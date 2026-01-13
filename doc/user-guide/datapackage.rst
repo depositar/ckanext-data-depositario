@@ -172,7 +172,7 @@ Data Package
 
 當您建立與編輯資料集，且資料集內（上傳至本站的）資源大小合計 **小於或等於 50 MB** ，本平台將自動產製 Data Package，並上傳為一資源：
 
-* Data Package 檔案名稱固定為 ``datapackage.zip``
+* Data Package 檔案名稱格式為 ``datapackage_YYYY-MM-DD_HH-MM-SS_dataset-name.zip`` ，其中時間戳記為 Data Package 產製時間， ``dataset-name`` 為資料集網址中 ``/dataset/`` 後之部分
 * Data Package 資源 **不列於** 資料集資源列表與資料集編輯頁面
 * Data Package 資源 **列於** API、 :doc:`rdf-serializations` 與 :doc:`binder` ，若您使用 API 計算資源數量，需自行排除
 * Data Package 內僅包含上傳至本平台的資源；外部連結資源將僅列示於 ``datapackage.json`` ；無網址之資源將被排除
