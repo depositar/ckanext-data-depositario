@@ -4,7 +4,7 @@ import json
 from typing import List, Optional
 
 from ckan.plugins.toolkit import config
-from dplib.models import Package
+from dplib.models import Contributor, Package
 from dplib.plugins.ckan.models.package import CkanPackage
 
 from ckanext.data_depositario.datapackage.resource import DepositarCkanResource
@@ -29,8 +29,6 @@ class DepositarDPPackage(Package):
     spatial_res: Optional[float] = None
     created_time: Optional[str] = None
     process_step: Optional[str] = None
-    contact_person: Optional[str] = None
-    contact_email: Optional[str] = None
 
 
 class DepositarCkanPackage(CkanPackage):
@@ -114,11 +112,16 @@ class DepositarCkanPackage(CkanPackage):
         if self.process_step:
             package.process_step = self.process_step
 
+        # Contributors
+        package.contributors = []
+        if self.author:
+            contributor = Contributor(title=self.author, roles=["creator"])
+            package.contributors.append(contributor)
         if self.contact_person:
-            package.contact_person = self.contact_person
-
-        if self.contact_email:
-            package.contact_email = self.contact_email
+            contributor = Contributor(title=self.contact_person, roles=["contact"])
+            if self.contact_email:
+                contributor.email = self.contact_email
+            package.contributors.append(contributor)
 
         sources_path = f"{config.get('ckan.site_url')}/dataset/{self.name}"
 
@@ -209,11 +212,22 @@ class DepositarCkanPackage(CkanPackage):
         if package.process_step:
             ckan.process_step = package.process_step
 
-        if package.contact_person:
-            ckan.contact_person = package.contact_person
-
-        if package.contact_email:
-            ckan.contact_email = package.contact_email
+        # Contributors
+        authors = []
+        for contributor in package.contributors:
+            if contributor.roles:
+                if "contact" in contributor.roles:
+                    # Due to email format validation, we only retrieve
+                    # the first contact person
+                    if getattr(ckan, "contact_person", None):
+                        continue
+                    ckan.contact_person = contributor.title
+                    ckan.contact_email = contributor.email or ""
+                roles = ", ".join(contributor.roles)
+                authors.append(f"{contributor.title} ({roles})")
+            else:
+                authors.append(contributor.title)
+        ckan.author = ", ".join(authors)
 
         # Resources
         ckan.resources = []
