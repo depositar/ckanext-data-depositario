@@ -14,7 +14,7 @@ from ckanext.data_depositario.datapackage.resource import DepositarDPResource
 class DepositarDPPackage(Package):
     """Depositar Data Package model"""
 
-    data_type: List[str] = []
+    data_type: List[str] = ["other"]
     wd_keywords: List[str] = []
     language: List[str] = []
     remarks: Optional[str] = None
@@ -227,7 +227,14 @@ class DepositarCkanPackage(CkanPackage):
                 authors.append(f"{contributor.title} ({roles})")
             else:
                 authors.append(contributor.title)
+        # Default Creator (author)
+        if not authors:
+            authors = ["unnamed creators"]
         ckan.author = ", ".join(authors)
+
+        # Default License
+        if not package.licenses:
+            ckan.license_id = "notspecified"
 
         # Resources
         ckan.resources = []
