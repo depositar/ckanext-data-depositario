@@ -45,7 +45,7 @@ Data Package
               "title": "Resource 1",
               "description": "A longer description of the resource.",
               "encoding": "utf-8",
-              "resource_crs": "4326",
+              "resource_crs": 4326,
               "format": "HTML"
             }
           ],
@@ -68,11 +68,11 @@ Data Package
           "start_time": "2024-01-01",
           "end_time": "2025-01-01",
           "spatial": {"type": "Polygon", "coordinates": [[[120.01,22.96], [120.01,23.12], [120.23,23.12], [120.23,22.96], [120.01,22.96]]]},
-          "x_min": "120.01",
-          "x_max": "120.23",
-          "y_min": "22.96",
-          "y_max": "23.12",
-          "spatial_res": "1.0",
+          "x_min": 120.01,
+          "x_max": 120.23,
+          "y_min": 22.96,
+          "y_max": 23.12,
+          "spatial_res": 1.0,
           "licenses": [
             {
               "name": "notspecified"
@@ -124,12 +124,13 @@ Data Package
           ]
         }
 
-2. 若 Data Package 包含 **欲上傳至本站** 之資料檔案，請將資料檔案與 ``datapackage.json`` 壓縮為一 zip 壓縮檔（請注意：檔案仍受 :doc:`limitation` 之規範）
+2. 若 Data Package 包含 **欲上傳至本站** 之資料檔案，請將資料檔案與 ``datapackage.json`` 壓縮為一 zip 壓縮檔；請於 ``datapackage.json`` 之 ``resources`` 屬性，所包含的各 resource 之 ``path`` 屬性，填寫該資料檔案相對於最上層目錄的路徑（請注意：檔案仍受 :doc:`limitation` 之規範）
 
 .. note::
     * ``datapackage.json`` 必須放置於 zip 壓縮檔之最上層目錄
     * ``datapackage.json`` 為 JSON 檔案，可使用任何文字編輯器（Visual Studio Code 等）或 `JSON Editor Online`_ 網頁服務撰寫
-    * 若包含欲上傳至本站之資料檔案，請於 ``datapackage.json`` 之 ``resources`` 屬性，所包含的各 resource 之 ``path`` 屬性，填寫該資料檔案相對於最上層目錄的路徑
+    * 您可使用 `Data Package Validator`_ 線上服務，驗證 ``datapackage.json`` 檔案的正確性
+    * 由於 `frictionless-py`_ 套件現僅支援 Data Package v1 規格，缺少 v1 必填屬性（``contributor.title`` 與 ``source.title``）的 ``datapackage.json`` 檔案，將無法匯入
     * 必填屬性： ``resources`` 、 ``name`` 、 ``licenses`` 、 ``contributors`` 、 ``data_type``
 
 -----------------
@@ -233,3 +234,5 @@ API 方法
 .. _ckanext-datapackager: https://github.com/depositar/ckanext-datapackager
 .. _JSON Schema: https://json-schema.org/
 .. _JSON Editor Online: https://jsoneditoronline.org/
+.. _Data Package Validator: https://datapackage-validator.datist.io/
+.. _frictionless-py: https://pypi.org/project/frictionless/

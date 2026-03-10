@@ -46,7 +46,7 @@ Prepare a Data Package
               "title": "Resource 1",
               "description": "A longer description of the resource.",
               "encoding": "utf-8",
-              "resource_crs": "4326",
+              "resource_crs": 4326,
               "format": "HTML"
             }
           ],
@@ -69,11 +69,11 @@ Prepare a Data Package
           "start_time": "2024-01-01",
           "end_time": "2025-01-01",
           "spatial": {"type": "Polygon", "coordinates": [[[120.01,22.96], [120.01,23.12], [120.23,23.12], [120.23,22.96], [120.01,22.96]]]},
-          "x_min": "120.01",
-          "x_max": "120.23",
-          "y_min": "22.96",
-          "y_max": "23.12",
-          "spatial_res": "1.0",
+          "x_min": 120.01,
+          "x_max": 120.23,
+          "y_min": 22.96,
+          "y_max": 23.12,
+          "spatial_res": 1.0,
           "licenses": [
             {
               "name": "notspecified"
@@ -127,14 +127,15 @@ Prepare a Data Package
 
 2. If you want to upload the data file(s) to |site_name|,
    please compress the data file(s) and ``datapackage.json`` into a single zip file.
+   Specify the path of each data file relative to the top-level directory
+   within the ``path`` attribute of each resource found in the ``resources`` property of ``datapackage.json``.
    Note that the data file(s) must still adhere to the :doc:`limitation`.
 
 .. note::
     * The ``datapackage.json`` must be placed in the top-level directory of the zip file.
     * The ``datapackage.json`` is a JSON file; you can author it using any text editor (e.g., Visual Studio Code) or an online tool like `JSON Editor Online`_.
-    * If you want to upload the data file(s) to |site_name|, please specify the path
-      of each data file relative to the top-level directory within the ``path`` attribute
-      of each resource found in the ``resources`` property of ``datapackage.json``.
+    * The `Data Package Validator`_ online service allows you to validate the ``datapackage.json`` file.
+    * A ``datapackage.json`` file without ``contributor.title`` and ``source.title`` properties will not be accepted because `frictionless-py`_ only supports the Data Package v1 specification.
     * Required properties: ``resources``, ``name``, ``licenses``, ``contributors``, and ``data_type``
 
 -----------------------
@@ -249,3 +250,5 @@ For uploading a remote Data Package:
 .. _ckanext-datapackager: https://github.com/depositar/ckanext-datapackager
 .. _JSON Schema: https://json-schema.org/
 .. _JSON Editor Online: https://jsoneditoronline.org/
+.. _Data Package Validator: https://datapackage-validator.datist.io/
+.. _frictionless-py: https://pypi.org/project/frictionless/
