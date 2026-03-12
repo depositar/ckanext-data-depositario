@@ -168,6 +168,8 @@ Data Package
 
     匯入之 Data Package 屬性，經轉換為本平台欄位後，若不符合 :doc:`../appendix/fields/index` 之資料範圍規定，將顯示錯誤訊息，並停止匯入。
 
+.. _automatic-data-package-generation:
+
 自動產製 Data Package
 ~~~~~~~~~~~~~~~~~~~~~
 

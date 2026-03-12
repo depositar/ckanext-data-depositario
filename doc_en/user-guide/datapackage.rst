@@ -177,6 +177,8 @@ Import the Data Package
     listed in the :doc:`../appendix/fields/index`, the import will be terminated
     and an error will displayed.
 
+.. _automatic-data-package-generation:
+
 Automatic Data Package Generation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
