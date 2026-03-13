@@ -55,7 +55,7 @@ class DepositarCkanResource(CkanResource):
             ckan.name = resource.title
 
         if resource.encoding:
-            ckan.encoding = resource.encoding
+            ckan.encoding = resource.encoding.lower()
 
         if resource.resource_crs:
             ckan.resource_crs = resource.resource_crs
