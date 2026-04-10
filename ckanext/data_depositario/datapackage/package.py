@@ -213,20 +213,25 @@ class DepositarCkanPackage(CkanPackage):
             ckan.process_step = package.process_step
 
         # Contributors
+        contact_primary = None
+        contact_fallback = None
         authors = []
         for contributor in package.contributors:
             if contributor.roles:
                 if "contact" in contributor.roles:
                     # Due to email format validation, we only retrieve
                     # the first contact person
-                    if getattr(ckan, "contact_person", None):
-                        continue
-                    ckan.contact_person = contributor.title
-                    ckan.contact_email = contributor.email or ""
-                roles = ", ".join(contributor.roles)
-                authors.append(f"{contributor.title} ({roles})")
-            else:
-                authors.append(contributor.title)
+                    # , with a preference for those who have an email address
+                    if not contact_primary and contributor.title and contributor.email:
+                        contact_primary = contributor
+                    if not contact_fallback:
+                        contact_fallback = contributor
+                if "creator" in contributor.roles:
+                    authors.append(contributor.title)
+        contact = contact_primary or contact_fallback
+        if contact:
+            ckan.contact_person = contact.title
+            ckan.contact_email = contact.email or ""
         # Default Creator (author)
         if not authors:
             authors = ["unnamed creators"]
