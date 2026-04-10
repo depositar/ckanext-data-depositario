@@ -51,8 +51,13 @@ class DepositarCkanResource(CkanResource):
         """
         ckan = super().from_dp(resource)
 
+        if not ckan:
+            return
+
         if resource.title:
             ckan.name = resource.title
+        elif resource.name:
+            ckan.name = resource.name
 
         if resource.encoding:
             ckan.encoding = resource.encoding.lower()
