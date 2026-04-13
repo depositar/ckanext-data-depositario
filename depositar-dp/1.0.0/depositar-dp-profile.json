@@ -107,12 +107,21 @@
           "items": {
             "properties": {
               "roles": {
+                "description": "An array of strings describing the roles of the contributor. One `creator` is required; `contact` is optional.",
+                "uniqueItems": true,
                 "items": {
                   "enum": [
-                    "author",
-                    "maintainer"
+                    "creator",
+                    "contact"
                   ]
                 }
+              }
+            }
+          },
+          "contains": {
+            "properties": {
+              "roles": {
+                "contains": { "const": "creator" }
               }
             }
           }
@@ -210,15 +219,6 @@
           "description": "Steps of data generating process. Markdown is encouraged.",
           "type": "string",
           "format": "textarea"
-        },
-        "contact_person": {
-          "description": "The person responsible for maintaining the dataset.",
-          "type": "string"
-        },
-        "contact_email": {
-          "description": "The email of the person responsible for maintaining the dataset.",
-          "type": "string",
-          "format": "email"
         }
       }
     }

@@ -54,9 +54,9 @@ Source: [depositar-dp-profile.json](https://github.com/depositar/ckanext-data-de
 
 - **Description**: See [Data Package specification](https://datapackage.org/standard/data-package/#contributors). The depositar DP makes this a required property and restricts role values. Can include people and organizations.
 
-| Name   | Description   | Type   | Example   | Constraints                  |
-|--------|---------------|--------|-----------|------------------------------|
-| roles  |               |        |           | enum: `author`, `maintainer` |
+| Name   | Description                                                                                                    | Type   | Example   | Constraints                                     |
+|--------|----------------------------------------------------------------------------------------------------------------|--------|-----------|-------------------------------------------------|
+| roles  | An array of strings describing the roles of the contributor. One `creator` is required; `contact` is optional. |        |           | uniqueItems: `True`, enum: `creator`, `contact` |
 
 ## sources
 
@@ -153,15 +153,4 @@ Source: [depositar-dp-profile.json](https://github.com/depositar/ckanext-data-de
 - **Description**: Steps of data generating process. Markdown is encouraged.
 - **Type**: `string`
 - **Constraints**: format: `textarea`
-
-## contact_person
-
-- **Description**: The person responsible for maintaining the dataset.
-- **Type**: `string`
-
-## contact_email
-
-- **Description**: The email of the person responsible for maintaining the dataset.
-- **Type**: `string`
-- **Constraints**: format: `email`
 
