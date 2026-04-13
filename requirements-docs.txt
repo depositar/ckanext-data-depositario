@@ -5,7 +5,7 @@
 Sphinx==5.1.1
 pydata-sphinx-theme==0.15.4
 Jinja2==3.1.2 # below for readthedocs/readthedocs.org#10798
-Pillow==10.3.0
+Pillow==12.2.0
 mock
 markupsafe==2.1.1
 commonmark
