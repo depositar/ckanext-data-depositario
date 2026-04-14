@@ -99,10 +99,10 @@ Dataset Level
        | Other Licenses: other
 
    * - Creator
-     - contributors
-     - Included when downloading the dataset as a Data Package: ``"contributors": [{"title": "<author>", "roles": ["author"]}]``.
+     - contributors (roles: ``creator``)
+     - Included when downloading the dataset as a Data Package: ``"contributors": [{"title": "<author>", "roles": ["creator"]}]``.
 
-       | Insert ``"contributors": [{"title": "<CREATOR_NAME>", "roles": ["author"]}]`` when importing the Data Package as a dataset.
+       | Insert ``"contributors": [{"title": "<CREATOR_NAME>", "roles": ["creator"]}]`` when importing the Data Package as a dataset. For multiple contributors, the imported Creator field will be formatted as follows: ``contributor_1_title, contributor_2_title, ...``.
 
    * - Created Time
      - created_time
@@ -117,12 +117,14 @@ Dataset Level
      - Excluded when downloading the dataset as a Data Package. Select the project when importing the Data Package as a dataset.
 
    * - Contact Person
-     - contact_person
-     -
+     - contributors (roles: ``contact``)
+     - Included when downloading the dataset as a Data Package: ``"contributors": [{"title": "<contact_person>", "roles": ["contact"], "email": "<contact_email>"}]``.
+
+       | Insert ``"contributors": [{"title": "<CONTACT_PERSON_NAME>", "roles": ["contact"], "email": "<CONTACT_EMAIL>"}]`` when importing the Data Package as a dataset. If there are multiple contributors with the ``contact`` role, only the first contributor with email will be imported. If no contributors with the ``contact`` role have an email, the first contributor will be used.
 
    * - Contact Person Email
-     - contact_email
-     -
+     - contributors (email)
+     - (Refer to the ``Contact Person`` field above)
 
    * - Topic
      - (N/A)
@@ -148,8 +150,8 @@ Resource Level
      -
 
    * - Name
-     - title
-     -
+     - title / name
+     - Use the ``title``, with the ``name`` as a fallback, when importing the Data Package as a dataset.
 
    * - Description
      - description

@@ -82,13 +82,18 @@ Data Package
             {
               "title": "Creator Name",
               "roles": [
-                "author"
+                "creator"
               ]
+            },
+            {
+              "title": "Joe Bloggs",
+              "roles": [
+                "contact"
+              ],
+              "email": "joe@example.com"
             }
           ],
-          "process_step": "Steps of data generating process.",
-          "contact_person": "Joe Bloggs",
-          "contact_email": "joe@example.com"
+          "process_step": "Steps of data generating process."
         }
 
 .. dropdown:: 範例：可供匯入的精簡 ``datapackage.json`` 內容（點選以顯示）
@@ -115,7 +120,7 @@ Data Package
             {
               "title": "Creator Name",
               "roles": [
-                "author"
+                "creator"
               ]
             }
           ],
@@ -130,8 +135,14 @@ Data Package
     * ``datapackage.json`` 必須放置於 zip 壓縮檔之最上層目錄
     * ``datapackage.json`` 為 JSON 檔案，可使用任何文字編輯器（Visual Studio Code 等）或 `JSON Editor Online`_ 網頁服務撰寫
     * 您可使用 `Data Package Validator`_ 線上服務，驗證 ``datapackage.json`` 檔案的正確性
+    * 缺少 ``resources`` 屬性的 ``datapackage.json`` 檔案，將無法匯入
     * 由於 `frictionless-py`_ 套件現僅支援 Data Package v1 規格，缺少 v1 必填屬性（``contributor.title`` 與 ``source.title``）的 ``datapackage.json`` 檔案，將無法匯入
-    * 必填屬性： ``resources`` 、 ``name`` 、 ``licenses`` 、 ``contributors`` 、 ``data_type``
+    * 若未填寫如下 |site_name| 必填欄位，將以預設值取代：
+
+      * 網址：dataset-``uuid``，其中 ``uuid`` 為 8 位隨機英數字
+      * 授權：授權條款未指定
+      * 產製者：unnamed creators
+      * 資料類型：其他
 
 -----------------
 匯入 Data Package

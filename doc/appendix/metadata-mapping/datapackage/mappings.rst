@@ -99,10 +99,10 @@
        | 其他授權：other
 
    * - 產製者
-     - contributors
-     - 下載 Data Package 時：將輸出為 ``"contributors": [{"title": "<author>", "roles": ["author"]}]``
+     - contributors (roles: ``creator``)
+     - 下載 Data Package 時：將輸出為 ``"contributors": [{"title": "<author>", "roles": ["creator"]}]``
 
-       | 匯入 Data Package 時：請填寫 ``"contributors": [{"title": "<CREATOR_NAME>", "roles": ["author"]}]``
+       | 匯入 Data Package 時：請填寫 ``"contributors": [{"title": "<CREATOR_NAME>", "roles": ["creator"]}]``；若有多位 roles 包含 ``creator`` 之 contributor，則會以 ``contributor_1_title, contributor_2_title, ...`` 形式匯入
 
    * - 資料產製時間
      - created_time
@@ -117,12 +117,14 @@
      - 下載 Data Package 時，不輸出此欄位；匯入 Data Package 時，請於頁面選擇欲匯入專案
 
    * - 聯絡人
-     - contact_person
-     -
+     - contributors (roles: ``contact``)
+     - 下載 Data Package 時：將輸出為 ``"contributors": [{"title": "<contact_person>", "roles": ["contact"], "email": "<contact_email>"}]``
+
+       | 匯入 Data Package 時：請填寫 ``"contributors": [{"title": "<CONTACT_PERSON_NAME>", "roles": ["contact"], "email": "<CONTACT_EMAIL>"}]``；若有多位 roles 包含 ``contact`` 之 contributor，則僅將匯入第一位包含 email 者；若均無 email，則匯入第一位
 
    * - 聯絡人的電子郵件
-     - contact_email
-     -
+     - contributors (email)
+     - （請參考上方聯絡人欄位）
 
    * - 主題
      - （無對應）
@@ -148,8 +150,8 @@
      -
 
    * - 名稱
-     - title
-     -
+     - title / name
+     - 匯入 Data Package 時，若無 title，則使用 name
 
    * - 摘要
      - description

@@ -83,13 +83,18 @@ Prepare a Data Package
             {
               "title": "Creator Name",
               "roles": [
-                "author"
+                "creator"
               ]
+            },
+            {
+              "title": "Joe Bloggs",
+              "roles": [
+                "contact"
+              ],
+              "email": "joe@example.com"
             }
           ],
-          "process_step": "Steps of data generating process.",
-          "contact_person": "Joe Bloggs",
-          "contact_email": "joe@example.com"
+          "process_step": "Steps of data generating process."
         }
 
 .. dropdown:: Example: A simple ``datapackage.json`` for import (click to expand)
@@ -116,7 +121,7 @@ Prepare a Data Package
             {
               "title": "Creator Name",
               "roles": [
-                "author"
+                "creator"
               ]
             }
           ],
@@ -135,8 +140,14 @@ Prepare a Data Package
     * The ``datapackage.json`` must be placed in the top-level directory of the zip file.
     * The ``datapackage.json`` is a JSON file; you can author it using any text editor (e.g., Visual Studio Code) or an online tool like `JSON Editor Online`_.
     * The `Data Package Validator`_ online service allows you to validate the ``datapackage.json`` file.
+    * A ``datapackage.json`` file without a ``resources`` property will not be accepted.
     * A ``datapackage.json`` file without ``contributor.title`` and ``source.title`` properties will not be accepted because `frictionless-py`_ only supports the Data Package v1 specification.
-    * Required properties: ``resources``, ``name``, ``licenses``, ``contributors``, and ``data_type``
+    * The following required fields in |site_name| will be set to default values if missing:
+
+      * URL: dataset-``uuid``, where ``uuid`` is a random 8-character alphanumeric string
+      * License: License Not Specified
+      * Creator: unnamed creators
+      * Data Type: Other
 
 -----------------------
 Import the Data Package
