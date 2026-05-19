@@ -13,13 +13,17 @@ from ckan.common import json, _
 import ckan.lib.mailer as mailer
 import ckan.lib.helpers as h
 from ckan.lib.plugins import DefaultTranslation
+import ckanext.datapackager.lib.util as datapackager_util
 from ckanext.scheming import helpers as scheming_helpers
 from ckanext.depositar_theme import helpers as theme_helpers
+import pydantic
 
 from ckanext.data_depositario import helpers
 from ckanext.data_depositario import routes
 from ckanext.data_depositario import validators
 from ckanext.data_depositario import converters
+from ckanext.data_depositario.datapackage.package import DepositarCkanPackage
+from ckanext.data_depositario.datapackage.package import DepositarDPPackage
 from ckanext.data_depositario.logic.auth.update import package_update
 
 log = getLogger(__name__)
@@ -52,6 +56,12 @@ class DataDepositarioDatasets(p.SingletonPlugin, DefaultTranslation):
         p.toolkit.add_template_directory(config, 'templates')
         p.toolkit.add_public_directory(config, 'public')
         p.toolkit.add_resource('public', 'ckanext-data-depositario')
+
+        # Override the ckanext-datapackager
+        datapackager_util.generate_datapackage_json = \
+            generate_datapackage_json
+        datapackager_util.create_dataset_from_datapackage = \
+            create_dataset_from_datapackage
 
     ## IPackageController
     def before_dataset_search(self, search_params):
@@ -276,3 +286,17 @@ def user_create(context, data_dict):
             return h.redirect_to(u'/')
 
     return user_dict
+
+def generate_datapackage_json(dataset):
+    return DepositarCkanPackage.from_dict(dataset).to_dp().to_dict()
+
+def create_dataset_from_datapackage(dp):
+    try:
+        depositar_dp = DepositarDPPackage(**dp.model_dump())
+    # Handle the invalid extended Data Package properties
+    # The built-in Data Package properties are handled by ckanext-datapackager
+    except pydantic.ValidationError as e:
+        msg = {'datapackage': e.errors()}
+        raise p.toolkit.ValidationError(msg)
+
+    return DepositarCkanPackage.from_dp(depositar_dp).to_dict()

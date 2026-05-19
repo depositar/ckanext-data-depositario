@@ -11,3 +11,4 @@ git+https://github.com/ckan/ckanext-showcase.git@v1.8.3#egg=ckanext-showcase
 git+https://github.com/ckan/ckanext-pdfview.git@0.0.8#egg=ckanext-pdfview
 -e git+https://github.com/depositar/ckanext-depositar_theme.git#egg=ckanext-depositar_theme
 git+https://github.com/depositar/ckanext-citation.git#egg=ckanext-citation
+-e git+https://github.com/depositar/ckanext-datapackager.git@release-depositar#egg=ckanext-datapackager

@@ -29,5 +29,6 @@ users with sysadmin status, and are documented in http://docs.ckan.org/en/2.7/sy
    rdf-serializations
    ark-identifier
    binder
+   datapackage
    personalization
    limitation
