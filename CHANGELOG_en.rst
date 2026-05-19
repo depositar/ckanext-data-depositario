@@ -2,6 +2,32 @@
 Changelog
 ---------
 
+v6.8.0 2026-05-20
+=================
+
+Migration notes:
+ * Please update your CKAN config file
+
+   .. code-block:: ini
+      :caption: /etc/ckan/default/ckan.ini
+
+      ## Plugins Settings
+
+      ckan.plugins = (...) ark datapackager citation (...)
+
+      ## Datapackager Settings
+
+      ckanext.datapackager.api_token = API_TOKEN
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ and `ckanext-datapackager <https://github.com/depositar/ckanext-datapackager>`_.
+
+Changes:
+ * Add: :doc:`user-guide/datapackage` support. You can download the dataset as a Data Package or import the Data Package as a dataset.
+ * Update: CKAN core version `2.10.10 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-10-2026-04-29>`_.
+ * Improvement: (Maintainer’s guide) Use the DNS-01 challenge to obtain a TLS certificate from Let's Encrypt.
+ * Improvement: Tweak the wording.
+
 v6.7.7 2025-12-10
 =================
 

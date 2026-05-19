@@ -2,6 +2,31 @@
 更新日誌
 --------
 
+v6.8.0 2026-05-20
+=================
+
+升級指引：
+ * 請更新 CKAN 設定檔
+
+   .. code-block:: ini
+      :caption: /etc/ckan/default/ckan.ini
+
+      ## Plugins Settings
+
+      ckan.plugins = (...) ark datapackager citation (...)
+
+      ## Datapackager Settings
+
+      ckanext.datapackager.api_token = API_TOKEN
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 與 `ckanext-datapackager <https://github.com/depositar/ckanext-datapackager>`_ 使用。
+
+更新內容：
+ * 新增：:doc:`user-guide/datapackage` （資料封裝包）功能。可下載資料集為 Data Package，或匯入 Data Package 為資料集。
+ * 更新：CKAN 核心至 `2.10.10 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-10-2026-04-29>`_。
+ * 改善：部分文案修正。
+
 v6.7.7 2025-12-10
 =================
 
