@@ -70,6 +70,8 @@ Then visit <http://binder.depositar.io>.
 
 ## Secure with HTTPS
 
+First, create a Gandi Personal Access Token (PAT) with access to the domains.
+
 Install cert-manager:
 
 ```bash
@@ -88,6 +90,13 @@ NAME                                       READY   STATUS    RESTARTS      AGE
 cert-manager-cainjector-65c7bff89d-hh57j   1/1     Running   0             10s
 cert-manager-cbcf9668d-sf55h               1/1     Running   0             10s
 cert-manager-webhook-594cb9799b-vmlf2      1/1     Running   0             10s
+```
+
+Install cert-manager-webhook-gandi:
+
+```bash
+helm repo add cert-manager-webhook-gandi https://sintef.github.io/cert-manager-webhook-gandi
+helm install cert-manager-webhook-gandi cert-manager-webhook-gandi/cert-manager-webhook-gandi --namespace cert-manager --set gandiPat=<PAT>
 ```
 
 Update BinderHub with HTTPS:
