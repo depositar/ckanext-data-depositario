@@ -155,7 +155,7 @@
 
    .. image:: /images/new_preview_1.png
 
-#. 在資源編輯頁面內切換至「檢視」頁籤，並於「新增檢視」下拉選單內，選擇適合該資源的預覽類型後進行設定，以下為部分支援類型 [#]_：
+#. 在資源編輯頁面內切換至「畫面」頁籤，並於「新增畫面」下拉選單內，選擇適合該資源的預覽類型後進行設定，以下為部分支援類型 [#]_：
 
    * Table（表格）：提供多功能表格瀏覽。
 
@@ -182,9 +182,9 @@
    * 地圖 [#deprecated-views]_：將表格中含有經緯度資訊的資料列呈現於地圖上。必須於設定內指定經緯度或 GeoJSON 欄位。
 
    .. [#] 可選擇的預覽類型將根據資源的格式而定。
-   .. [#deprecated-views] 以 ReclineJS 開發之資料瀏覽器、網格與地圖檢視（Recline 檢視），將於未來移除，並由以 DataTables 開發之 Table（表格）檢視取代。目前您仍可同時建立 Recline 檢視與表格檢視。
+   .. [#deprecated-views] 以 ReclineJS 開發之資料瀏覽器、網格與地圖畫面（Recline 畫面），將於未來移除，並由以 DataTables 開發之 Table（表格）畫面取代。目前您仍可同時建立 Recline 畫面與表格畫面。
 
-      * 相較 Recline 檢視，表格檢視具備以下特色（更多功能請參考 `CKAN 文件 <https://docs.ckan.org/en/2.10/maintaining/data-viewer.html#datatables-view>`_ ）：
+      * 相較 Recline 畫面，表格畫面具備以下特色（更多功能請參考 `CKAN 文件 <https://docs.ckan.org/en/2.10/maintaining/data-viewer.html#datatables-view>`_ ）：
 
         * 下載過濾結果為 CSV、TSV、JSON 或 XML
         * 儲存過濾狀態並產生直接連結
@@ -192,7 +192,7 @@
         * 多欄位排序
         * 欄位顯示開關
 
-      * 同時，表格檢視尚存在以下問題：
+      * 同時，表格畫面尚存在以下問題：
 
         * 無簡易圖表功能
         * 無地圖瀏覽功能
@@ -200,4 +200,4 @@
 
    .. image:: /images/new_preview_2.png
 
-#. 完成預覽模式設定後按「新增」即完成新增預覽（您也可以使用「預覽」按鈕來事先查看完成發布後的情況）。
+#. 完成預覽模式設定後按「新增」即完成新增畫面（您也可以使用「預覽」按鈕來事先查看完成發布後的情況）。
