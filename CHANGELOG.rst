@@ -2,6 +2,18 @@
 更新日誌
 --------
 
+v6.8.1 2026-09-09
+=================
+
+注意事項：
+ * 此版本需搭配最新版 `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_ 使用。
+
+更新內容：
+ * 更新：CKAN 核心至 `2.10.11 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-11-2026-08-26>`_。
+ * 改善：手機介面優先顯示中欄資訊。
+ * 改善：於註冊頁面提示使用者名稱規定。
+ * 改善：部分文案修正。
+
 v6.8.0 2026-05-20
 =================
 

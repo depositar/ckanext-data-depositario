@@ -2,6 +2,18 @@
 Changelog
 ---------
 
+v6.8.1 2026-09-09
+=================
+
+Notice:
+ * This version requires the latest `ckanext-depositar_theme <https://github.com/depositar/ckanext-depositar_theme>`_.
+
+Changes:
+ * Update: CKAN core version `2.10.11 <https://docs.ckan.org/en/2.10/changelog.html#v-2-10-11-2026-08-26>`_.
+ * Improvement: Display primary column first on mobile devices.
+ * Improvement: Add username requirements on the registration page.
+ * Improvement: Tweak the wording.
+
 v6.8.0 2026-05-20
 =================
 
